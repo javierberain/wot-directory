@@ -1,0 +1,594 @@
+{
+  "characters": [
+    {
+      "name_used_in_text": "Padan Fain",
+      "likely_matches_existing": "Padan Fain",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "filthy skin",
+        "age": "over forty years as a Darkfriend",
+        "filiations": null,
+        "personality": "abject, debased, degraded, vile beyond measure; greedy for rewards; terrified of his master; willing to betray anyone; driven by compulsion to hunt his targets"
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Darkfriend for over forty years; transformed by the Dark One into a hound for hunting; compelled to hunt Rand, Mat, and Perrin"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "the Dark One's hound",
+          "alias_type": "epithet",
+          "notes": "Description of his role after being changed at Shayol Ghul"
+        }
+      ],
+      "notes": "Fain has been transformed by the Dark One in ways that make him something worse than an ordinary Darkfriend. He was taken to Shayol Ghul three years ago and changed to hunt the three ta'veren. He is now imprisoned in Fal Dara's cells."
+    },
+    {
+      "name_used_in_text": "Lain Mandragoran",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Malkieri",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "brother of King al'Akir Mandragoran; husband of Breyan; acclaimed hero",
+        "personality": "bold, reckless; close as a twin to his brother al'Akir"
+      },
+      "factions": [
+        {
+          "name": "Malkier",
+          "faction_type": "other",
+          "role": "leader",
+          "notes": "King's brother; led forces into the Blight"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Historical figure. Led his lances through the Blight to the Blasted Lands on a dare from his wife Breyan, and died there with most of his men. His death was a key event in the fall of Malkier."
+    },
+    {
+      "name_used_in_text": "al'Akir Mandragoran",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Malkieri",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "last crowned King of the Malkieri; father of Lan; brother of Lain; husband of el'Leanna",
+        "personality": "such a man and king as comes once in a hundred years; close as a twin to his brother Lain; wept when he killed his friend Cowin"
+      },
+      "factions": [
+        {
+          "name": "Malkier",
+          "faction_type": "other",
+          "role": "leader",
+          "notes": "Last crowned King of the Malkieri"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "King",
+          "alias_type": "title",
+          "notes": "King of Malkier"
+        }
+      ],
+      "notes": "Historical figure. Lan's father. Died at Herat's Crossing defending Malkier against the Shadow."
+    },
+    {
+      "name_used_in_text": "Breyan",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Malkieri",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "wife of Lain Mandragoran; mother of Isam",
+        "personality": "jealous, envious; burned with envy that al'Akir was raised to throne instead of Lain; plotted treason for revenge"
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Plotted with Cowin Gemallan to seize the throne; conspired with a Darkfriend"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Historical figure. Fled with her infant son Isam when the plot failed; run down by Trollocs. Her jealousy and plotting were instrumental in the fall of Malkier."
+    },
+    {
+      "name_used_in_text": "Isam",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Malkieri",
+        "physical_traits": null,
+        "age": "infant at time of fall of Malkier",
+        "filiations": "son of Lain Mandragoran and Breyan",
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Historical figure. Infant son of Lain and Breyan. His mother fled with him when her plot failed; they were run down by Trollocs. Their fate is uncertain but can be guessed."
+    },
+    {
+      "name_used_in_text": "Cowin Gemallan",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Malkieri",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "one of the Great Lords of Malkier",
+        "personality": "jealous; never forgot that he nearly became king; hero turned traitor"
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Darkfriend who plotted with Breyan to seize the throne"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Cowin Fairheart",
+          "alias_type": "epithet",
+          "notes": "Name by which he was known as a hero before his treachery was revealed"
+        },
+        {
+          "alias_text": "Fairheart",
+          "alias_type": "epithet",
+          "notes": "Short form of his hero name"
+        }
+      ],
+      "notes": "Historical figure. Darkfriend and traitor. One of the Great Lords of Malkier, came within two votes of being king. Plotted with Breyan, stripped the Borderforts, allowing Trolloc invasion. Captured by Jain Charin and slain in single combat by King al'Akir."
+    },
+    {
+      "name_used_in_text": "Jain Charin",
+      "likely_matches_existing": "Jain Farstrider",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "heroic; already called Farstrider in his youth"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Jain Farstrider",
+          "alias_type": "epithet",
+          "notes": "Already called this when he captured Cowin Fairheart"
+        }
+      ],
+      "notes": "Historical context: captured Cowin Fairheart and brought him to the Seven Towers in chains. This is the same person as Jain Farstrider from the roster."
+    },
+    {
+      "name_used_in_text": "el'Leanna",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Malkieri",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "Queen of Malkier; wife of al'Akir; mother of Lan",
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "Malkier",
+          "faction_type": "other",
+          "role": "leader",
+          "notes": "Queen of Malkier"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Queen",
+          "alias_type": "title",
+          "notes": "Queen of Malkier"
+        }
+      ],
+      "notes": "Historical figure. Lan's mother. With her husband, consecrated infant Lan as Dai Shan and next King of Malkier. Died at Herat's Crossing."
+    },
+    {
+      "name_used_in_text": "Mafal Dadaranell",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "medium",
+      "character_type": "other",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "This appears to be the name of a location (a Waygate) near Fal Dara, not a character. However, given the context of Ogier naming conventions, it might be an Ogier name for a stedding or grove. Treating cautiously as potentially a place-name rather than a character."
+    }
+  ],
+  "appearances": [
+    {
+      "character": "Rand al'Thor",
+      "whereabouts": "Fal Dara, in a dining chamber",
+      "notable_actions": "Paces restlessly, counting strides; worries about what Fain is telling Moiraine; listens to Agelmar's story about Lan; learns that Fain has been hunting him for three years; realizes the Dark One has been pursuing him specifically",
+      "demeanor": "restless, anxious, irritable; discovers himself keeping tally unconsciously; feels a chill at learning he's been hunted for three years but wonders why it doesn't frighten him more",
+      "alliances_shown": [
+        "Mat",
+        "Perrin",
+        "Moiraine"
+      ]
+    },
+    {
+      "character": "Perrin Aybara",
+      "whereabouts": "Fal Dara, in the dining chamber",
+      "notable_actions": "Crumbles bread and pushes crumbs around absently; stares unfocused; remembers Fain's strange behavior three springs ago; asks if Fain followed them through the Ways",
+      "demeanor": "distant, preoccupied, staring at nothing; yellow eyes unfocused; seems to see something far off; appears unsurprised by revelations",
+      "alliances_shown": [
+        "Rand",
+        "Mat"
+      ]
+    },
+    {
+      "character": "Matrim Cauthon",
+      "whereabouts": "Fal Dara, in the dining chamber",
+      "notable_actions": "Slouches in chair; unconsciously touches the Shadar Logoth dagger through his coat repeatedly; knocks his chair over in frustration; curses softly; remembers Fain's odd behavior; opens mouth to speak and shuts it at Rand's look",
+      "demeanor": "nervous, grinning nervously (not with amusement); restless; frustrated; cursing; hand constantly straying to his dagger",
+      "alliances_shown": [
+        "Rand",
+        "Perrin"
+      ]
+    },
+    {
+      "character": "Loial",
+      "whereabouts": "Fal Dara, in the dining chamber",
+      "notable_actions": "Studies the stone walls of the room closely; stands in the middle turning slowly in a circle; presses his nose against the stone while tracing joins with his fingers; closes his eyes to feel the stone; mutters to himself in Ogier; listens intently to Moiraine's revelations; speaks of Manetheren as most beautiful except for Tar Valon; whispers 'The Light preserve us' when learning of Fain and the Black Wind",
+      "demeanor": "absorbed in examining the architecture; not worried unlike the others; fascinated by the stonework; reverent when speaking of Manetheren; horrified at mention of Fain understanding the Black Wind",
+      "alliances_shown": [
+        "Rand",
+        "Moiraine"
+      ]
+    },
+    {
+      "character": "Nynaeve al'Meara",
+      "whereabouts": "Fal Dara, in the dining chamber",
+      "notable_actions": "Laughs at Agelmar's stories; listens closely to the tale of Lan's past; stares into her cup looking troubled after hearing Lan's history; avoids looking at Lan when he enters; tightens her mouth at Mat's cursing; glares at Mat; shakes her head at Rand indicating she has not told Moiraine about his origins",
+      "demeanor": "initially amused by Agelmar's stories; becomes troubled and pale after learning of Lan's tragic past; deliberately avoids looking at Lan; disapproving of Mat's language",
+      "alliances_shown": [
+        "Egwene",
+        "Rand"
+      ]
+    },
+    {
+      "character": "Egwene",
+      "whereabouts": "Fal Dara, in the dining chamber",
+      "notable_actions": "Giggles at Agelmar's stories; asks about Lan's identity and titles; listens to the story of Malkier; puts a sympathetic hand on Nynaeve's arm; gasps when learning Fain brought Trollocs to Emond's Field; asks why Fain would do that; questions about Fain escaping the Black Wind; raises an eyebrow at Mat",
+      "demeanor": "initially cheerful and entertained; becomes somber and sympathetic as she learns darker truths; shocked at revelations about Fain; concerned for Nynaeve",
+      "alliances_shown": [
+        "Nynaeve",
+        "Rand",
+        "Mat",
+        "Perrin"
+      ]
+    },
+    {
+      "character": "Agelmar",
+      "whereabouts": "Fal Dara, in the dining chamber as host",
+      "notable_actions": "Tells stories to entertain Nynaeve and Egwene; relates the full history of Lan and the fall of Malkier with pride and sadness; calls Rand, Mat, and Perrin 'country oafs'; questions Moiraine's learning from Fain; offers to get information from Fain through harsh means; argues that the party should wait to learn more; offers to replace the young men with experienced soldiers; stares in shock when learning the farmboys will fight at the Eye; initially reaches for his sword in alarm; slowly accepts Moiraine's explanation about the old blood of Manetheren",
+      "demeanor": "hospitable and entertaining at first; shows fatherly pride when speaking of Lan; contemptuous of the idea the Dark One was loose; sick-looking when Lan confirms evil fought evil at Shadar Logoth; stubborn in arguing for caution; shocked and disbelieving that farmboys are ta'veren; gradually accepting",
+      "alliances_shown": [
+        "Lan",
+        "Moiraine"
+      ]
+    },
+    {
+      "character": "Moiraine",
+      "whereabouts": "Interviews Fain, then returns to the dining chamber",
+      "notable_actions": "Interrogates Padan Fain; asks for washbasin and washes her hands vigorously in steaming water; reveals everything Fain told her about his transformation by the Dark One, his hunting of the three boys, and his journey; explains Fain was chosen and changed at Shayol Ghul three years ago; describes how Fain was made into the Dark One's hound; reveals Fain brought the Trollocs to Emond's Field; explains the Waygate at Manetheren and orders it sealed; describes Fain's compulsion and suffering; says Fain knows something about the Eye of the World but won't reveal it; tells Agelmar they must leave immediately; insists the three young men are ta'veren and must go to the Eye; invokes the old blood of Manetheren",
+      "demeanor": "feels soiled and degraded from contact with Fain; determined; urgent about the need to leave; drained by what she did with Fain; gentle but firm with Agelmar; implacable in her insistence on taking the boys; studying Rand and his friends, weighing their strength",
+      "alliances_shown": [
+        "Lan",
+        "Rand",
+        "Mat",
+        "Perrin"
+      ]
+    },
+    {
+      "character": "Lan",
+      "whereabouts": "With Moiraine during the interview with Fain, then returns to the dining chamber",
+      "notable_actions": "Accompanies Moiraine to interview Fain; returns with her; confirms that Fain was the one he sensed following them; states that something drove four Fades to Shadar Logoth",
+      "demeanor": "observant, matter-of-fact in discussing the threat",
+      "alliances_shown": [
+        "Moiraine",
+        "Agelmar"
+      ]
+    },
+    {
+      "character": "Padan Fain",
+      "whereabouts": "Imprisoned in the cells below Fal Dara, being interrogated by Moiraine",
+      "notable_actions": "Is interrogated by Moiraine; reveals (under compulsion) his entire history: taken to Shayol Ghul three years ago, transformed by Ba'alzamon, sent to hunt in the Two Rivers area, found the three boys in Emond's Field, marked them, guided the Trolloc attack, was forced to run with Trollocs and threatened with being cooked, crossed the Taren, was leashed by a Myrddraal and dragged behind them, led the Myrddraal back to Shadar Logoth, fled the city, was driven by compulsion to keep hunting, could not eat or stop, felt his quarry from a mile away, followed them into the Ways, murdered the shop owner in Caemlyn, was caught by the Black Wind but it fled from him; clamped his jaws shut when the Eye of the World was mentioned; screamed often of fire and burning; hides something important despite Moiraine's efforts",
+      "demeanor": "terrified, debased, abject; screaming; whimpering when speaking of Shadar Logoth; trying to hide knowledge; shattered and ruined by torture; greedy for promised rewards showing through at times",
+      "alliances_shown": []
+    },
+    {
+      "character": "Ba'alzamon",
+      "whereabouts": "Mentioned as having appeared at Shayol Ghul and in dreams",
+      "notable_actions": "Summoned Fain to Shayol Ghul three years ago; transformed Fain with fire and burning; set Fain to hunt; commanded Fain through dreams two years ago; came to Fain in a dream in Lugard and demanded rites; promised Fain great rewards and power; appeared at Shadar Logoth as a flickering projection that vanished and reappeared; drove four Myrddraal into Shadar Logoth; burned Fain's hands when he tried to resist opening the Waygate; has walked in dreams of those who live in the Light this year",
+      "demeanor": "described as having eyes of fire; terrifying; powerful; the source of Fain's torture and compulsion",
+      "alliances_shown": []
+    },
+    {
+      "character": "Lain Mandragoran",
+      "whereabouts": "Historical: led forces through the Blight to the Blasted Lands",
+      "notable_actions": "Led his lances through the Blight on a dare from his wife Breyan; died in the Blasted Lands with most of his men; this weakened Malkier critically",
+      "demeanor": "remembered as acclaimed for his deeds, close as a twin to his brother",
+      "alliances_shown": [
+        "al'Akir Mandragoran"
+      ]
+    },
+    {
+      "character": "al'Akir Mandragoran",
+      "whereabouts": "Historical: ruled Malkier, died at Herat's Crossing",
+      "notable_actions": "Ruled as King of Malkier; with his Queen brought infant Lan to them in his cradle; placed the sword of Malkieri kings in Lan's infant hands; anointed Lan's head with oil, naming him Dai Shan; consecrated Lan as next King; swore the ancient oath over Lan; gave Lan over to twenty of his Bodyguard with orders to carry him to Fal Moran; faced Cowin Gemallan in single combat and slew him, weeping; led the Malkieri against the Shadow at Herat's Crossing and died there",
+      "demeanor": "remembered as a man and king such as comes once in a hundred years; wept when he killed his friend Cowin",
+      "alliances_shown": [
+        "el'Leanna",
+        "Lan"
+      ]
+    },
+    {
+      "character": "Breyan",
+      "whereabouts": "Historical: plotted in Malkier, then fled south",
+      "notable_actions": "Made the dare that sent Lain into the Blight, motivated by envy; blamed al'Akir for Lain's death; plotted with Cowin Gemallan to seize the throne for her son Isam; moved soldiers back from the Blight to seize the Seven Towers; fled south with infant Isam when the plot failed; was run down by Trollocs",
+      "demeanor": "envious, jealous, vengeful, treacherous",
+      "alliances_shown": [
+        "Cowin Gemallan"
+      ]
+    },
+    {
+      "character": "Isam",
+      "whereabouts": "Historical: fled with his mother Breyan",
+      "notable_actions": "Was the intended beneficiary of his mother's plot to seize the throne; fled with Breyan; fate uncertain after being run down by Trollocs",
+      "demeanor": "an infant; innocent victim",
+      "alliances_shown": []
+    },
+    {
+      "character": "Cowin Gemallan",
+      "whereabouts": "Historical: plotted in Malkier, captured and executed",
+      "notable_actions": "Plotted with Breyan to seize the throne; was a Darkfriend; moved soldiers back from the Blight, stripping Borderforts to bare garrisons; allowed Trolloc invasion of Malkier; was captured by Jain Charin and brought to Seven Towers in chains; was slain in single combat by King al'Akir",
+      "demeanor": "jealous, traitorous; remembered as having been a hero before his treachery",
+      "alliances_shown": [
+        "Breyan"
+      ]
+    },
+    {
+      "character": "Jain Charin",
+      "whereabouts": "Historical: captured Cowin Gemallan in Malkier",
+      "notable_actions": "Captured Cowin Fairheart and brought him in chains to the Seven Towers",
+      "demeanor": "heroic; already called Farstrider",
+      "alliances_shown": [
+        "al'Akir Mandragoran"
+      ]
+    },
+    {
+      "character": "el'Leanna",
+      "whereabouts": "Historical: ruled as Queen of Malkier, died at Herat's Crossing",
+      "notable_actions": "With her husband brought infant Lan to them; wrapped Lan in swaddling clothes by her own hand; placed a locket around Lan's neck for remembrance; gave Lan to twenty of the King's Bodyguard; led the Malkieri against the Shadow at Herat's Crossing and died there",
+      "demeanor": "loving mother; determined ruler; died defending her people",
+      "alliances_shown": [
+        "al'Akir Mandragoran",
+        "Lan"
+      ]
+    },
+    {
+      "character": "Black Rider",
+      "whereabouts": "Mentioned as having been at Emond's Field and other locations in the past",
+      "notable_actions": "Failed at Emond's Field; brought Fain with the Trollocs on the trail; would not let Fain ride with him; forced Fain to run with Trollocs; another Fade found Fain before Baerlon and was less kind; made Fain sleep in a Trolloc kettle; used Fain as far as Shadar Logoth; four returned to Shadar Logoth driven by something or someone",
+      "demeanor": "cruel to Fain; disbelieving of Fain's tracking ability at first",
+      "alliances_shown": []
+    },
+    {
+      "character": "Bela",
+      "whereabouts": "Not present in this chapter; mentioned in context of past journeys",
+      "notable_actions": "None in this chapter",
+      "demeanor": "Not applicable",
+      "alliances_shown": []
+    }
+  ],
+  "relationships": [
+    {
+      "character_a": "Padan Fain",
+      "character_b": "Ba'alzamon",
+      "relationship_type": "servant",
+      "directed": true,
+      "description": "Fain is bound to Ba'alzamon as the Dark One's hound, transformed and compelled to hunt; he both fears and hates his master"
+    },
+    {
+      "character_a": "Padan Fain",
+      "character_b": "Rand al'Thor",
+      "relationship_type": "enemy",
+      "directed": false,
+      "description": "Fain has been compelled to hunt Rand as one of his three targets for three years"
+    },
+    {
+      "character_a": "Padan Fain",
+      "character_b": "Matrim Cauthon",
+      "relationship_type": "enemy",
+      "directed": false,
+      "description": "Fain has been compelled to hunt Mat as one of his three targets for three years"
+    },
+    {
+      "character_a": "Padan Fain",
+      "character_b": "Perrin Aybara",
+      "relationship_type": "enemy",
+      "directed": false,
+      "description": "Fain has been compelled to hunt Perrin as one of his three targets for three years"
+    },
+    {
+      "character_a": "Moiraine",
+      "character_b": "Lan",
+      "relationship_type": "warder_bond",
+      "directed": true,
+      "description": "Moiraine is Aes Sedai and Lan is her Warder; she relies on him and he accompanies her"
+    },
+    {
+      "character_a": "Nynaeve al'Meara",
+      "character_b": "Lan",
+      "relationship_type": "romantic",
+      "directed": false,
+      "description": "Nynaeve becomes troubled and pale learning of Lan's tragic history; deliberately avoids looking at him; Egwene gives her a sympathetic look; romantic tension evident"
+    },
+    {
+      "character_a": "al'Akir Mandragoran",
+      "character_b": "el'Leanna",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "Husband and wife; King and Queen of Malkier; parents of Lan"
+    },
+    {
+      "character_a": "al'Akir Mandragoran",
+      "character_b": "Lan",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "Father and son; al'Akir consecrated infant Lan as Dai Shan and next King before dying at Herat's Crossing"
+    },
+    {
+      "character_a": "el'Leanna",
+      "character_b": "Lan",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "Mother and son; el'Leanna wrapped Lan in swaddling clothes and placed a locket around his neck before giving him to the Bodyguard"
+    },
+    {
+      "character_a": "al'Akir Mandragoran",
+      "character_b": "Lain Mandragoran",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "Brothers; as close as twins even after al'Akir was raised to the throne"
+    },
+    {
+      "character_a": "Lain Mandragoran",
+      "character_b": "Breyan",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "Husband and wife; Breyan's jealousy over al'Akir's kingship led her to dare Lain into the Blight"
+    },
+    {
+      "character_a": "Lain Mandragoran",
+      "character_b": "Isam",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "Father and son"
+    },
+    {
+      "character_a": "Breyan",
+      "character_b": "Isam",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "Mother and son; Breyan plotted to seize the throne for Isam"
+    },
+    {
+      "character_a": "Breyan",
+      "character_b": "Cowin Gemallan",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Plotted together to seize the throne of Malkier for Breyan's son Isam"
+    },
+    {
+      "character_a": "Cowin Gemallan",
+      "character_b": "al'Akir Mandragoran",
+      "relationship_type": "enemy",
+      "directed": false,
+      "description": "Cowin betrayed the King; al'Akir slew Cowin in single combat, weeping for his former friend"
+    },
+    {
+      "character_a": "Rand al'Thor",
+      "character_b": "Matrim Cauthon",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Close friends from the Two Rivers; traveling together; both targeted by the Dark One"
+    },
+    {
+      "character_a": "Rand al'Thor",
+      "character_b": "Perrin Aybara",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Close friends from the Two Rivers; traveling together; both targeted by the Dark One"
+    },
+    {
+      "character_a": "Matrim Cauthon",
+      "character_b": "Perrin Aybara",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Close friends from the Two Rivers; traveling together; both targeted by the Dark One"
+    },
+    {
+      "character_a": "Agelmar",
+      "character_b": "Lan",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Agelmar speaks of Lan with fatherly pride and deep respect; knows his history well"
+    },
+    {
+      "character_a": "Egwene",
+      "character_b": "Nynaeve al'Meara",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Close friends; Egwene shows sympathy for Nynaeve's feelings about Lan"
+    },
+    {
+      "character_a": "Moiraine",
+      "character_b": "Rand al'Thor",
+      "relationship_type": "mentor",
+      "directed": true,
+      "description": "Moiraine is guiding Rand and studying him; she insists he must go to the Eye of the World"
+    },
+    {
+      "character_a": "Moiraine",
+      "character_b": "Matrim Cauthon",
+      "relationship_type": "mentor",
+      "directed": true,
+      "description": "Moiraine is guiding Mat; she insists he must go to the Eye of the World"
+    },
+    {
+      "character_a": "Moiraine",
+      "character_b": "Perrin Aybara",
+      "relationship_type": "mentor",
+      "directed": true,
+      "description": "Moiraine is guiding Perrin; she insists he must go to the Eye of the World"
+    }
+  ],
+  "_meta": {
+    "book_order": 1,
+    "chapter_number": 47,
+    "chapter_id": 48,
+    "chapter_title": "More Tales of the Wheel",
+    "model": "claude-sonnet-4-5",
+    "input_tokens": 16325,
+    "output_tokens": 8348
+  }
+}

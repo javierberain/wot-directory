@@ -1,0 +1,756 @@
+{
+  "characters": [
+    {
+      "name_used_in_text": "Nynaeve",
+      "likely_matches_existing": "Nynaeve al'Meara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "determined, fierce, protective, willing to take risks for others"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Training as an Aes Sedai"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "She channels to open the collar on a damane, leads a rescue mission for Egwene"
+    },
+    {
+      "name_used_in_text": "Min",
+      "likely_matches_existing": "Min",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Baerlon (presumably)",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Assists in the rescue mission for Egwene"
+    },
+    {
+      "name_used_in_text": "Elayne",
+      "likely_matches_existing": "Elayne",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Andoran",
+        "physical_traits": "red-gold hair",
+        "age": null,
+        "filiations": null,
+        "personality": "brave, willing to wear the collar to rescue Egwene"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Training"
+        },
+        {
+          "name": "House Trakand",
+          "faction_type": "house",
+          "role": "member",
+          "notes": "Daughter-Heir of Andor"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Prepares to wear a damane collar as part of the rescue plan"
+    },
+    {
+      "name_used_in_text": "Seta",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Seanchan",
+        "physical_traits": "blue eyes, pale-skinned, yellow hair",
+        "age": null,
+        "filiations": null,
+        "personality": "terrified of being seen wearing a damane collar, initially defiant but becomes compliant under threat"
+      },
+      "factions": [
+        {
+          "name": "Seanchan",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "sul'dam, a handler of leashed channelers"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "A sul'dam captured by Nynaeve who is forced to wear the damane collar and dress to help the rescue. The a'dam works on her, revealing sul'dam can channel."
+    },
+    {
+      "name_used_in_text": "Bayle Domon",
+      "likely_matches_existing": "Bayle Domon",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Captain",
+          "alias_type": "title",
+          "notes": "His role as ship captain"
+        }
+      ],
+      "notes": "Waits on his ship with his crew, preparing to help the women escape"
+    },
+    {
+      "name_used_in_text": "Yarin",
+      "likely_matches_existing": "Yarin Maeldan",
+      "is_new_character": false,
+      "confidence": "medium",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Member of Domon's crew, nervous about the plan"
+    },
+    {
+      "name_used_in_text": "Rand",
+      "likely_matches_existing": "Rand al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "tall, heron-marked blade",
+        "age": null,
+        "filiations": null,
+        "personality": "determined, protective of Egwene, struggles with using saidin"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Lord Rand",
+          "alias_type": "title",
+          "notes": "Used by Hurin"
+        }
+      ],
+      "notes": "Kills Turak in single combat, sees Egwene wearing a damane collar and vows to rescue her"
+    },
+    {
+      "name_used_in_text": "Hurin",
+      "likely_matches_existing": "Hurin",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienaran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "loyal, nervous"
+      },
+      "factions": [
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Sniffer"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "sniffer",
+          "alias_type": "epithet",
+          "notes": "His ability"
+        }
+      ],
+      "notes": "Tracks Fain's scent through Falme"
+    },
+    {
+      "name_used_in_text": "Ingtar",
+      "likely_matches_existing": "Ingtar",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienaran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "obsessed with recovering the Horn, feverish intensity"
+      },
+      "factions": [
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "leader",
+          "notes": "Lord"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Lord Ingtar",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Says 'I am saved' when he sees the Horn; leads the raid to recover it"
+    },
+    {
+      "name_used_in_text": "Mat",
+      "likely_matches_existing": "Matrim Cauthon",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "eyes in hollows of eye sockets, pale and drawn",
+        "age": null,
+        "filiations": null,
+        "personality": "suffering from the dagger's influence"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Senses the dagger, kills a Seanchan soldier with it causing horrific death, recovers both Horn and dagger"
+    },
+    {
+      "name_used_in_text": "Perrin",
+      "likely_matches_existing": "Perrin Aybara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "curly-haired",
+        "age": null,
+        "filiations": null,
+        "personality": "reluctant to fight, looks sick after killing"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Uses his axe in the fight, clearly disturbed by the violence"
+    },
+    {
+      "name_used_in_text": "Turak",
+      "likely_matches_existing": "Turak",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Seanchan",
+        "physical_traits": "shaven head, long fingernails (blue-lacquered), hard muscles",
+        "age": null,
+        "filiations": null,
+        "personality": "calm, confident, blademaster, indifferent to danger"
+      },
+      "factions": [
+        {
+          "name": "Seanchan",
+          "faction_type": "other",
+          "role": "leader",
+          "notes": "High Lord"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "High Lord Turak",
+          "alias_type": "title",
+          "notes": null
+        },
+        {
+          "alias_text": "the High Lord",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Killed by Rand in a sword duel; wields a heron-marked blade, a true blademaster"
+    },
+    {
+      "name_used_in_text": "Egwene",
+      "likely_matches_existing": "Egwene",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Was training"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Seen by Rand wearing a damane collar in a garden across from Turak's house. She is a prisoner of the Seanchan."
+    },
+    {
+      "name_used_in_text": "Padan Fain",
+      "likely_matches_existing": "Padan Fain",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Fain",
+          "alias_type": "given_name",
+          "notes": null
+        }
+      ],
+      "notes": "Turak suspected him of killing a guard; his scent is everywhere in Falme; appears to have been at Turak's house recently"
+    },
+    {
+      "name_used_in_text": "Gawyn",
+      "likely_matches_existing": "Gawyn",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Andoran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "House Trakand",
+          "faction_type": "house",
+          "role": "member",
+          "notes": "Brother to Elayne"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Mentioned by Elayne as someone who will 'eat his heart out' when he hears of their adventure"
+    },
+    {
+      "name_used_in_text": "Red",
+      "likely_matches_existing": "Red",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "horse",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": "bay stallion",
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "the bay",
+          "alias_type": "epithet",
+          "notes": "His color"
+        }
+      ],
+      "notes": "Rand's horse, left tied behind a stable"
+    },
+    {
+      "name_used_in_text": "Verin",
+      "likely_matches_existing": "Verin Mathwin",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "other",
+          "role": "member",
+          "notes": null
+        },
+        {
+          "name": "Brown Ajah",
+          "faction_type": "ajah",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Not present in this chapter but mentioned as someone who told Rand about damane sensing channeling, and as someone who might search his saddlebags"
+    },
+    {
+      "name_used_in_text": "Sheriam",
+      "likely_matches_existing": "Sheriam Sedai",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Mistress of Novices"
+        },
+        {
+          "name": "Blue Ajah",
+          "faction_type": "ajah",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Mentioned as having punished Elayne by making her feel as if she'd been beaten"
+    },
+    {
+      "name_used_in_text": "Huan",
+      "likely_matches_existing": "Huan",
+      "is_new_character": false,
+      "confidence": "medium",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Seanchan",
+        "physical_traits": "yellow hair, braid",
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "Seanchan",
+          "faction_type": "other",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Mentioned by Turak as having died mysteriously; Turak suspects Fain"
+    },
+    {
+      "name_used_in_text": "Marith",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "medium",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Novice or Accepted"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Mentioned only as someone Elayne threw a cup at, earning punishment from Sheriam"
+    }
+  ],
+  "appearances": [
+    {
+      "character": "Nynaeve",
+      "whereabouts": "Falme streets, then a shed, then approaching the damane quarters",
+      "notable_actions": "Leads the rescue mission, channels to open a damane collar, captures a sul'dam named Seta, forces the bracelet onto Seta and discovers it works on her, prepares to infiltrate the damane compound",
+      "demeanor": "grimly determined, angry, focused, nervous about channeling",
+      "alliances_shown": [
+        "Min",
+        "Elayne"
+      ]
+    },
+    {
+      "character": "Min",
+      "whereabouts": "Falme streets watching for Seanchan, then the shed, then heading to damane quarters",
+      "notable_actions": "Serves as lookout, helps capture and subdue the sul'dam, wrestles Seta into the shed, helps with the disguises",
+      "demeanor": "nervous, rubbing hands, dutiful",
+      "alliances_shown": [
+        "Nynaeve",
+        "Elayne"
+      ]
+    },
+    {
+      "character": "Elayne",
+      "whereabouts": "Falme streets watching for Seanchan, then the shed, then heading to damane quarters",
+      "notable_actions": "Serves as lookout, shouts encouragement to the freed damane, helps capture Seta, prepares to wear the collar but Nynaeve changes the plan",
+      "demeanor": "eager, bouncing nervously, willing to sacrifice herself, relieved when plan changes",
+      "alliances_shown": [
+        "Nynaeve",
+        "Min"
+      ]
+    },
+    {
+      "character": "Seta",
+      "whereabouts": "Falme streets, then captured and taken to a shed, forced to wear damane collar and dress",
+      "notable_actions": "Walking with a damane when attacked, tries to escape after being captured, begs not to wear the collar, forced to cooperate under threat, reveals sul'dam can be controlled by a'dam",
+      "demeanor": "startled, then struggling, then terrified when collared, pleading, crying, finally compliant under threats",
+      "alliances_shown": [
+        "Seanchan (former)",
+        "now coerced by Nynaeve's group"
+      ]
+    },
+    {
+      "character": "Bayle Domon",
+      "whereabouts": "On his ship docked in Falme harbor",
+      "notable_actions": "Waits for the women to return, orders his crew to prepare to cut mooring lines, threatens to split the skull of anyone who cuts lines early, watches the town nervously",
+      "demeanor": "tense, nervous, determined to wait for the women, protective",
+      "alliances_shown": [
+        "Nynaeve",
+        "Min",
+        "Elayne"
+      ]
+    },
+    {
+      "character": "Yarin",
+      "whereabouts": "On Domon's ship",
+      "notable_actions": "Questions the plan, worries about Seanchan soldiers",
+      "demeanor": "nervous, questioning",
+      "alliances_shown": [
+        "Bayle Domon"
+      ]
+    },
+    {
+      "character": "Rand",
+      "whereabouts": "Riding into Falme, through horse lots, into Turak's house, then fighting Turak",
+      "notable_actions": "Enters Falme with the group, helps locate the Horn, sees Egwene wearing a damane collar from Turak's window, duels and kills Turak in single combat using the void but refusing saidin, vows to rescue Egwene, flees with the Horn",
+      "demeanor": "tense, determined, shocked by seeing Egwene collared, desperate during the duel, horrified after killing Turak, torn between duty to the Horn and saving Egwene",
+      "alliances_shown": [
+        "Ingtar",
+        "Mat",
+        "Perrin",
+        "Hurin"
+      ]
+    },
+    {
+      "character": "Hurin",
+      "whereabouts": "Riding into Falme, tracking Fain's scent, in horse lots, in Turak's house",
+      "notable_actions": "Tracks Fain's scent through Falme streets, helps scout the house, fights Seanchan soldiers, watches from the window",
+      "demeanor": "nervous but dutiful, focused on his tracking ability",
+      "alliances_shown": [
+        "Rand",
+        "Ingtar",
+        "Mat",
+        "Perrin"
+      ]
+    },
+    {
+      "character": "Ingtar",
+      "whereabouts": "Riding into Falme, entering Turak's house, fighting Seanchan",
+      "notable_actions": "Leads the raid to recover the Horn, kills a Seanchan guard in the garden, touches the Horn with awe and says 'I am saved', fights soldiers, insists they must leave immediately, tries to convince Rand to abandon Egwene, drags Rand away",
+      "demeanor": "feverishly intense, obsessed with the Horn, awestruck when he sees it, urgent and commanding",
+      "alliances_shown": [
+        "Rand",
+        "Mat",
+        "Perrin",
+        "Hurin"
+      ]
+    },
+    {
+      "character": "Mat",
+      "whereabouts": "Riding into Falme, in Turak's house, fighting Seanchan",
+      "notable_actions": "Senses the dagger's location, grabs both Horn and dagger, kills a Seanchan soldier with the dagger causing horrific corruption and death, refuses to give up the Horn to Ingtar, tosses the Horn over the wall, flees with it",
+      "demeanor": "pale and drawn, obsessed with the dagger, triumphant when he recovers it, shaken by the crazy behavior of Seanchan servants",
+      "alliances_shown": [
+        "Rand",
+        "Ingtar",
+        "Perrin",
+        "Hurin"
+      ]
+    },
+    {
+      "character": "Perrin",
+      "whereabouts": "Riding into Falme, in Turak's house, fighting Seanchan",
+      "notable_actions": "Fights with his axe, kills soldiers, looks sick afterwards, exchanges glances with Rand about the situation",
+      "demeanor": "reluctant, snarling wordlessly in battle, sick and disturbed after killing",
+      "alliances_shown": [
+        "Rand",
+        "Mat",
+        "Ingtar",
+        "Hurin"
+      ]
+    },
+    {
+      "character": "Turak",
+      "whereabouts": "In his house in Falme",
+      "notable_actions": "Discovers the intruders stealing the Horn and dagger, has his servants remove his robe, draws his heron-marked sword, duels Rand, tests Rand's skill then grows more serious, is killed by Rand using River Undercuts the Bank",
+      "demeanor": "calm, uninterested in their weapons at first, soft-voiced, surprised then concentrated during the duel, arrogant confidence that fades to concentration",
+      "alliances_shown": [
+        "Seanchan"
+      ]
+    },
+    {
+      "character": "Egwene",
+      "whereabouts": "In a garden behind a house across the street from Turak's residence",
+      "notable_actions": "Walks in the garden wearing a damane collar linked to a sul'dam, looks up and seems to make eye contact with Rand, disappears into a building",
+      "demeanor": "collared, leashed, walking in pairs with other damane as prisoners",
+      "alliances_shown": [
+        "captive of Seanchan"
+      ]
+    },
+    {
+      "character": "Padan Fain",
+      "whereabouts": "Not physically present but his scent/trail is throughout Falme, especially near Turak's house",
+      "notable_actions": "His scent crisscrosses the town, was at Turak's house recently (possibly last night), suspected by Turak of killing a guard and wanting the dagger",
+      "demeanor": null,
+      "alliances_shown": []
+    }
+  ],
+  "relationships": [
+    {
+      "character_a": "Nynaeve",
+      "character_b": "Seta",
+      "relationship_type": "enemy",
+      "directed": true,
+      "description": "Nynaeve captures Seta, a sul'dam, puts the a'dam collar on her, and forces her to help rescue Egwene under threat"
+    },
+    {
+      "character_a": "Nynaeve",
+      "character_b": "Min",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Working together to rescue Egwene from the Seanchan"
+    },
+    {
+      "character_a": "Nynaeve",
+      "character_b": "Elayne",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Working together to rescue Egwene from the Seanchan"
+    },
+    {
+      "character_a": "Min",
+      "character_b": "Elayne",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Working together to rescue Egwene from the Seanchan"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Turak",
+      "relationship_type": "enemy",
+      "directed": false,
+      "description": "Rand kills Turak in a blademaster duel after being discovered stealing the Horn"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Ingtar",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Working together to recover the Horn, though tension over whether to rescue Egwene"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Mat",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Raiding Turak's house together to recover Horn and dagger"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Perrin",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Raiding Turak's house together, share understanding looks"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Hurin",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Hurin tracks for Rand's group and fights alongside them"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Egwene",
+      "relationship_type": "romantic",
+      "directed": false,
+      "description": "Rand sees Egwene collared as a damane and vows to rescue her, willing to abandon the Horn for her"
+    },
+    {
+      "character_a": "Mat",
+      "character_b": "Ingtar",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Working together to recover the Horn, though Mat refuses to give the Horn to Ingtar"
+    },
+    {
+      "character_a": "Turak",
+      "character_b": "Padan Fain",
+      "relationship_type": "other",
+      "directed": false,
+      "description": "Turak suspects Fain of killing his guard Huan and of wanting the dagger"
+    },
+    {
+      "character_a": "Bayle Domon",
+      "character_b": "Nynaeve",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Domon waits with his ship to help the women escape Falme"
+    },
+    {
+      "character_a": "Bayle Domon",
+      "character_b": "Yarin",
+      "relationship_type": "other",
+      "directed": true,
+      "description": "Captain and crew member; Domon commands Yarin"
+    }
+  ],
+  "_meta": {
+    "book_order": 2,
+    "chapter_number": 45,
+    "chapter_id": 100,
+    "chapter_title": "Blademaster",
+    "model": "claude-sonnet-4-5",
+    "input_tokens": 25909,
+    "output_tokens": 7373
+  }
+}

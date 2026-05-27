@@ -1,0 +1,969 @@
+{
+  "characters": [
+    {
+      "name_used_in_text": "Alar",
+      "likely_matches_existing": "Alar",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "ogier",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "big hand",
+        "age": "Eldest",
+        "filiations": null,
+        "personality": "dignified, wise, concerned about the outside world"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Eldest",
+          "alias_type": "title",
+          "notes": "Title indicating her position among Ogier"
+        }
+      ],
+      "notes": "Clearly matches the roster entry for Alar, an Ogier Eldest from Stedding Tsofu."
+    },
+    {
+      "name_used_in_text": "Juin",
+      "likely_matches_existing": "Juin",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "ogier",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "anxious to leave the Waygate"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Treebrother",
+          "alias_type": "title",
+          "notes": "Mentioned by Alar at the end"
+        }
+      ],
+      "notes": "Matches the roster entry for Juin, an Ogier with the title Treebrother."
+    },
+    {
+      "name_used_in_text": "Rand",
+      "likely_matches_existing": "Rand al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "gray-flecked beard (in alternate life), ruined face scarred by sickness (in alternate life)",
+        "age": null,
+        "filiations": "son of Tam al'Thor",
+        "personality": "reluctant to use the One Power, afraid yet hungry for saidin, deeply concerned for friends and Emond's Field, conflicted about his identity as Dragon Reborn"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Dragon Reborn",
+          "alias_type": "epithet",
+          "notes": "Repeatedly referenced, though Rand denies it"
+        },
+        {
+          "alias_text": "Lews Therin",
+          "alias_type": "epithet",
+          "notes": "Referenced by the voice in the visions"
+        }
+      ],
+      "notes": "Central protagonist. Experiences visions of alternate lives through the Portal Stone. Denies being the Dragon Reborn but is addressed as such."
+    },
+    {
+      "name_used_in_text": "Mat",
+      "likely_matches_existing": "Matrim Cauthon",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "ill-looking",
+        "age": null,
+        "filiations": null,
+        "personality": "eager, gambler, frightened by visions, loyal despite fear"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Still suffering from illness. Experienced disturbing visions. Concerned about the dagger and finding Fain."
+    },
+    {
+      "name_used_in_text": "Hurin",
+      "likely_matches_existing": "Hurin",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienaran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "confident initially, shaken by the Portal Stone experience"
+      },
+      "factions": [
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Shienaran soldier"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "sniffer",
+          "alias_type": "epithet",
+          "notes": "His ability to track Darkfriends"
+        }
+      ],
+      "notes": "Looking for a place to run after the Portal Stone experience."
+    },
+    {
+      "name_used_in_text": "Loial",
+      "likely_matches_existing": "Loial",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "ogier",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": "son of Arent son of Halan",
+        "personality": "concerned about being allowed to go, stunned by the Portal Stone experience"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Received an admonitory look from Alar before departure."
+    },
+    {
+      "name_used_in_text": "Ingtar",
+      "likely_matches_existing": "Ingtar",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienaran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "House Shinowa",
+        "personality": "determined to recover the Horn, deeply shaken by visions, vows to walk in the Light"
+      },
+      "factions": [
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Shienaran military leader"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Lord Ingtar",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Had sword out and shaking after the Portal Stone experience. Vows vehemently to walk in the Light and find the Horn."
+    },
+    {
+      "name_used_in_text": "Verin",
+      "likely_matches_existing": "Verin Mathwin",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "knowledgeable about Portal Stones, practical, concerned about controlling the One Power"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": null
+        },
+        {
+          "name": "Brown Ajah",
+          "faction_type": "ajah",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Verin Sedai",
+          "alias_type": "title",
+          "notes": null
+        },
+        {
+          "alias_text": "Aes Sedai",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Guides the group through the Portal Stone. Helps others recover from the traumatic experience."
+    },
+    {
+      "name_used_in_text": "Red",
+      "likely_matches_existing": "Red",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "horse",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "bay",
+        "age": null,
+        "filiations": null,
+        "personality": "wild-eyed and rolling eyes, stiff-legged and quivering after Portal Stone"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "the bay",
+          "alias_type": "epithet",
+          "notes": "Referenced on roster"
+        }
+      ],
+      "notes": "Rand's horse. Severely affected by the Portal Stone experience."
+    },
+    {
+      "name_used_in_text": "Uno",
+      "likely_matches_existing": "Uno",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienaran",
+        "physical_traits": "one-eyed",
+        "age": null,
+        "filiations": null,
+        "personality": "rough, curses at others"
+      },
+      "factions": [
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Shienaran soldier"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "the one-eyed man",
+          "alias_type": "epithet",
+          "notes": null
+        }
+      ],
+      "notes": "Kneeling and vomiting after the Portal Stone experience."
+    },
+    {
+      "name_used_in_text": "Perrin",
+      "likely_matches_existing": "Perrin Aybara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "curly-haired, yellow eyes, red marks scored on forehead and cheeks from nails",
+        "age": null,
+        "filiations": null,
+        "personality": "thoughtful, deeply affected by visions, philosophical about choices"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Young Bull",
+          "alias_type": "epithet",
+          "notes": "Referenced on roster"
+        }
+      ],
+      "notes": "Had fingers dug into his face after the Portal Stone experience. Reflects on the lack of choices."
+    },
+    {
+      "name_used_in_text": "Masema",
+      "likely_matches_existing": "Masema",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienaran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "emotional, weeping openly after trauma"
+      },
+      "factions": [
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Shienaran soldier"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Wept openly with tears streaming down his face after the Portal Stone experience."
+    },
+    {
+      "name_used_in_text": "Selene",
+      "likely_matches_existing": "Selene",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Cairhienin",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "knowledgeable about Portal Stones"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Lady Selene",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Mentioned in passing—she showed Rand a symbol on a Portal Stone previously. Not physically present in this chapter."
+    },
+    {
+      "name_used_in_text": "Tam",
+      "likely_matches_existing": "Tam al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "father of Rand al'Thor",
+        "personality": "loving, protective, skilled with sword"
+      },
+      "factions": [
+        {
+          "name": "Village Council",
+          "faction_type": "other",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "father",
+          "alias_type": "epithet",
+          "notes": null
+        }
+      ],
+      "notes": "Appears in Rand's Portal Stone visions—fighting Trollocs, teaching Rand the sword, dying."
+    },
+    {
+      "name_used_in_text": "Egwene",
+      "likely_matches_existing": "Egwene",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "caring, becomes Wisdom in alternate lives, stern as Amyrlin in one vision"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Wisdom",
+          "alias_type": "title",
+          "notes": "In alternate life"
+        },
+        {
+          "alias_text": "Amyrlin Seat",
+          "alias_type": "title",
+          "notes": "In alternate life"
+        }
+      ],
+      "notes": "Appears in multiple Portal Stone visions—as Rand's wife, as Wisdom, as Amyrlin who gentles him, as one who kills him with a dagger."
+    },
+    {
+      "name_used_in_text": "Nynaeve",
+      "likely_matches_existing": "Nynaeve al'Meara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "skilled healer"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": null
+        },
+        {
+          "name": "Women's Circle",
+          "faction_type": "other",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Wisdom",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Appears in Portal Stone visions as the Wisdom before Egwene, and as one who tries to help but cannot save Egwene from sickness."
+    },
+    {
+      "name_used_in_text": "Elayne",
+      "likely_matches_existing": "Elayne",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Andoran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "House Trakand",
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": null
+        },
+        {
+          "name": "House Trakand",
+          "faction_type": "house",
+          "role": "member",
+          "notes": "Daughter-Heir"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Daughter-Heir",
+          "alias_type": "title",
+          "notes": null
+        },
+        {
+          "alias_text": "Queen",
+          "alias_type": "title",
+          "notes": "In one alternate life"
+        }
+      ],
+      "notes": "Appears in Portal Stone visions—marries a Tairen prince in one life, becomes Queen in another, is one of the women Rand loves/marries in various lives."
+    },
+    {
+      "name_used_in_text": "Min",
+      "likely_matches_existing": "Min",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Baerlon (presumably)",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "tells crazy things about people"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Appears in Portal Stone visions—meets Rand in Baerlon and tells him crazy things; is one of the women he loves/marries in various lives."
+    },
+    {
+      "name_used_in_text": "Moiraine",
+      "likely_matches_existing": "Moiraine",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown (not Two Rivers)",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": null
+        },
+        {
+          "name": "Blue Ajah",
+          "faction_type": "ajah",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Appears in Portal Stone visions—sometimes comes to take Rand from the Two Rivers, sometimes does not."
+    },
+    {
+      "name_used_in_text": "Fain",
+      "likely_matches_existing": "Padan Fain",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "enemy, possesses the dagger Mat needs"
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Darkfriend"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Not physically present but discussed as the target—he has the Horn and the dagger."
+    },
+    {
+      "name_used_in_text": "Serafelle",
+      "likely_matches_existing": "Serafelle",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "knowledgeable about lost books"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": null
+        },
+        {
+          "name": "Brown Ajah",
+          "faction_type": "ajah",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Mentioned by Verin in reference to lost books. Not physically present."
+    },
+    {
+      "name_used_in_text": "Artur Hawkwing",
+      "likely_matches_existing": "Artur Hawkwing",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "High King",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Mentioned in Portal Stone visions—his armies return in some alternate timelines."
+    },
+    {
+      "name_used_in_text": "Barthanes",
+      "likely_matches_existing": "Barthanes",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Cairhienin",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "House Damodred",
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "member",
+          "notes": null
+        },
+        {
+          "name": "House Damodred",
+          "faction_type": "house",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Lord Barthanes",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Mentioned by Ingtar as someone he believes he could make talk. Not physically present."
+    }
+  ],
+  "appearances": [
+    {
+      "character": "Alar",
+      "whereabouts": "At the Portal Stone near the Waygate in Stedding Tsofu, then departs into the trees",
+      "notable_actions": "Leads the group from the Waygate to the Portal Stone; explains the Stone's history; gives a farewell speech wishing them well; gives Loial an admonitory look; departs with Juin",
+      "demeanor": "dignified, thoughtful, concerned about the world Outside and Tarmon Gai'don",
+      "alliances_shown": [
+        "Ogier"
+      ]
+    },
+    {
+      "character": "Juin",
+      "whereabouts": "At the Portal Stone in Stedding Tsofu, then departs with Alar",
+      "notable_actions": "Anxious to leave the Waygate; departs with Alar into the trees",
+      "demeanor": "anxious, eager to leave",
+      "alliances_shown": [
+        "Ogier"
+      ]
+    },
+    {
+      "character": "Rand",
+      "whereabouts": "At the Portal Stone in Stedding Tsofu, then transported to Toman Head",
+      "notable_actions": "Leads Red by the reins to the Stone; discusses symbols with Verin; channels saidin to activate the Portal Stone; experiences countless alternate lives in visions; collapses after the transport; refuses Verin's Aes Sedai help; consoles Mat and Perrin; mounts and rides west with the group",
+      "demeanor": "reluctant, conflicted, afraid yet hungry for the One Power, desperate to save Mat and stop Fain, shaken by visions, determined",
+      "alliances_shown": [
+        "Mat",
+        "Perrin",
+        "Verin",
+        "Ingtar",
+        "Hurin"
+      ]
+    },
+    {
+      "character": "Verin",
+      "whereabouts": "At the Portal Stone in Stedding Tsofu, then transported to Toman Head",
+      "notable_actions": "Thanks Alar for help; instructs Rand on Portal Stone symbols; guides Rand through the channeling attempt; struggles and collapses during the transport; explains what happened; helps others recover from trauma by touching them; announces they are on Toman Head but have lost four months; leads the group west",
+      "demeanor": "brisk, knowledgeable, practical, shaken but recovering quickly, concerned about controlling the Power",
+      "alliances_shown": [
+        "Rand",
+        "Ingtar",
+        "Shienaran soldiers"
+      ]
+    },
+    {
+      "character": "Mat",
+      "whereabouts": "At the Portal Stone in Stedding Tsofu, then transported to Toman Head",
+      "notable_actions": "Makes a weak joke before the transport; huddles in a ball with arms around his head during visions; grabs Rand's coat and protests he would never betray him; asks how they will find Fain and the dagger now",
+      "demeanor": "ill-looking, frightened, anxious, loyal despite fear",
+      "alliances_shown": [
+        "Rand",
+        "Perrin"
+      ]
+    },
+    {
+      "character": "Hurin",
+      "whereabouts": "At the Portal Stone in Stedding Tsofu, then transported to Toman Head",
+      "notable_actions": "Appears confident before the transport; looks around for a place to run after the visions",
+      "demeanor": "initially confident, then shaken and seeking escape",
+      "alliances_shown": [
+        "Shienaran soldiers",
+        "Ingtar"
+      ]
+    },
+    {
+      "character": "Loial",
+      "whereabouts": "At the Portal Stone in Stedding Tsofu, then transported to Toman Head",
+      "notable_actions": "Appears concerned about Alar changing her mind; gives a loud gulp before the transport; sits sprawled and stunned after the visions",
+      "demeanor": "concerned, nervous, stunned",
+      "alliances_shown": [
+        "Rand",
+        "Verin"
+      ]
+    },
+    {
+      "character": "Ingtar",
+      "whereabouts": "At the Portal Stone in Stedding Tsofu, then transported to Toman Head",
+      "notable_actions": "Questions the necessity of using the Portal Stone; vows to follow Verin even to Shayol Ghul; has sword out and shaking after visions; gripped by frantic state declaring he walks in the Light and will find the Horn; recovers after Verin touches him; leads soldiers west",
+      "demeanor": "questioning, determined, then frantic and desperate to prove loyalty to the Light, shaken by visions",
+      "alliances_shown": [
+        "Verin",
+        "Shienaran soldiers"
+      ]
+    },
+    {
+      "character": "Red",
+      "whereabouts": "At the Portal Stone in Stedding Tsofu, then transported to Toman Head",
+      "notable_actions": "Led by Rand to the Stone; stands stiff-legged and quivering with wild rolling eyes after the transport",
+      "demeanor": "terrified, traumatized",
+      "alliances_shown": []
+    },
+    {
+      "character": "Uno",
+      "whereabouts": "At the Portal Stone in Stedding Tsofu, then transported to Toman Head",
+      "notable_actions": "Kneels vomiting after the transport; curses at someone hanging back",
+      "demeanor": "physically ill, rough",
+      "alliances_shown": [
+        "Shienaran soldiers"
+      ]
+    },
+    {
+      "character": "Perrin",
+      "whereabouts": "At the Portal Stone in Stedding Tsofu, then transported to Toman Head",
+      "notable_actions": "Has fingers dug into his face during visions as if wanting to rip away what he saw; drops hands with red marks scored on his face; speaks philosophically about lack of choices",
+      "demeanor": "deeply traumatized, thoughtful, resigned",
+      "alliances_shown": [
+        "Rand",
+        "Mat"
+      ]
+    },
+    {
+      "character": "Masema",
+      "whereabouts": "At the Portal Stone in Stedding Tsofu, then transported to Toman Head",
+      "notable_actions": "Weeps openly with tears streaming down his face after the visions",
+      "demeanor": "openly emotional, weeping, traumatized",
+      "alliances_shown": [
+        "Shienaran soldiers"
+      ]
+    },
+    {
+      "character": "Tam",
+      "whereabouts": "In Rand's Portal Stone visions—at the farmhouse in the Two Rivers",
+      "notable_actions": "In visions: fights Trollocs with a heron-mark sword; is pulled down and killed; teaches Rand the sword; gives Rand a letter of introduction; hugs Rand goodbye; dies and is buried",
+      "demeanor": "protective, loving, skilled warrior (in visions)",
+      "alliances_shown": [
+        "Rand"
+      ]
+    },
+    {
+      "character": "Egwene",
+      "whereabouts": "In Rand's Portal Stone visions—in the Two Rivers, various locations",
+      "notable_actions": "In visions: marries Rand; becomes Wisdom; cares for Rand during sickness; dies; takes sick and dies before wedding; becomes stern-faced Amyrlin Seat who gentles Rand; plunges a dagger into Rand's heart while crying",
+      "demeanor": "loving, caring, stern, tragic (in visions)",
+      "alliances_shown": [
+        "Rand",
+        "White Tower"
+      ]
+    },
+    {
+      "character": "Nynaeve",
+      "whereabouts": "In Rand's Portal Stone visions—in the Two Rivers",
+      "notable_actions": "In visions: tries to console Rand; is shaken by inability to cure Egwene; serves as Wisdom before Egwene",
+      "demeanor": "caring, skilled but helpless (in visions)",
+      "alliances_shown": [
+        "Two Rivers"
+      ]
+    },
+    {
+      "character": "Elayne",
+      "whereabouts": "In Rand's Portal Stone visions—in Caemlyn",
+      "notable_actions": "In visions: does not look at Rand; marries a Tairen prince unhappily; becomes Queen and vows not to leave Caemlyn",
+      "demeanor": "distant, unhappy, determined (in visions)",
+      "alliances_shown": [
+        "Andor"
+      ]
+    },
+    {
+      "character": "Min",
+      "whereabouts": "In Rand's Portal Stone visions—in Baerlon",
+      "notable_actions": "In visions: meets Rand in Baerlon; tells him crazy things about himself; is one of the women Rand loves/marries",
+      "demeanor": "unsettling, prophetic (in visions)",
+      "alliances_shown": []
+    },
+    {
+      "character": "Moiraine",
+      "whereabouts": "In Rand's Portal Stone visions—various locations",
+      "notable_actions": "In visions: sometimes comes to take Rand from the Two Rivers (alone or with friends); sometimes does not come",
+      "demeanor": "variable (in visions)",
+      "alliances_shown": [
+        "White Tower"
+      ]
+    },
+    {
+      "character": "Selene",
+      "whereabouts": "Not physically present; mentioned in conversation",
+      "notable_actions": "Previously showed Rand the symbol for their world on a Portal Stone",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Fain",
+      "whereabouts": "Unknown—possibly on Toman Head",
+      "notable_actions": "Discussed as the target; has the Horn and the dagger Mat needs",
+      "demeanor": null,
+      "alliances_shown": [
+        "The Shadow"
+      ]
+    },
+    {
+      "character": "Serafelle",
+      "whereabouts": "Not present; mentioned in conversation",
+      "notable_actions": "Verin references her knowledge about lost books",
+      "demeanor": null,
+      "alliances_shown": [
+        "White Tower",
+        "Brown Ajah"
+      ]
+    },
+    {
+      "character": "Artur Hawkwing",
+      "whereabouts": "Historical figure; appears in Portal Stone visions",
+      "notable_actions": "In visions: his armies return as descendants or reincarnations; they conquer nations and tear down the White Tower",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Barthanes",
+      "whereabouts": "Not present; mentioned in conversation",
+      "notable_actions": "Ingtar believes he could make Barthanes reveal information",
+      "demeanor": null,
+      "alliances_shown": [
+        "The Shadow",
+        "House Damodred"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "character_a": "Alar",
+      "character_b": "Loial",
+      "relationship_type": "mentor",
+      "directed": true,
+      "description": "Alar gives Loial an admonitory look before he departs, suggesting concern or warning"
+    },
+    {
+      "character_a": "Alar",
+      "character_b": "Juin",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Fellow Ogier who depart together from the Portal Stone"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Verin",
+      "relationship_type": "mentor",
+      "directed": true,
+      "description": "Verin guides Rand in using the Portal Stone and instructs him about controlling the Power"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Mat",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Close friends; Rand consoles Mat after the visions and Mat protests his loyalty"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Perrin",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Close friends; Rand checks on Perrin after the traumatic visions"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Tam",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "Father and son; Tam appears in Rand's Portal Stone visions fighting to protect him and teaching him"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Egwene",
+      "relationship_type": "romantic",
+      "directed": false,
+      "description": "In many Portal Stone visions, Rand marries Egwene; in others she is his killer or the one who gentles him"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Elayne",
+      "relationship_type": "romantic",
+      "directed": false,
+      "description": "In some Portal Stone visions, Rand loves or marries Elayne"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Min",
+      "relationship_type": "romantic",
+      "directed": false,
+      "description": "In some Portal Stone visions, Rand loves or marries Min"
+    },
+    {
+      "character_a": "Verin",
+      "character_b": "Ingtar",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Verin leads the quest and Ingtar commands the soldiers; she helps him recover from trauma"
+    },
+    {
+      "character_a": "Ingtar",
+      "character_b": "Hurin",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Both Shienaran; Ingtar commands the mission and Hurin serves as tracker"
+    },
+    {
+      "character_a": "Mat",
+      "character_b": "Perrin",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Friends from the Two Rivers who share the traumatic Portal Stone experience"
+    },
+    {
+      "character_a": "Uno",
+      "character_b": "Masema",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Fellow Shienaran soldiers serving under Ingtar"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Fain",
+      "relationship_type": "enemy",
+      "directed": false,
+      "description": "Rand hunts Fain to recover the Horn and the dagger that is killing Mat"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Red",
+      "relationship_type": "other",
+      "directed": true,
+      "description": "Rand owns and rides Red as his mount"
+    }
+  ],
+  "_meta": {
+    "book_order": 2,
+    "chapter_number": 37,
+    "chapter_id": 92,
+    "chapter_title": "What Might Be",
+    "model": "claude-sonnet-4-5",
+    "input_tokens": 20711,
+    "output_tokens": 9066
+  }
+}

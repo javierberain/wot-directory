@@ -1,0 +1,647 @@
+{
+  "characters": [
+    {
+      "name_used_in_text": "Rand",
+      "likely_matches_existing": "Rand al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "heron brand on right palm, wears gold-embroidered red coat",
+        "age": "young - younger than any Cairhienin blademaster",
+        "filiations": null,
+        "personality": "uncomfortable with pretense and noble treatment, self-conscious about his abilities and situation"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Lord Rand",
+          "alias_type": "title",
+          "notes": "used by Caldevwin, Hurin, others - Rand does not claim this title himself"
+        },
+        {
+          "alias_text": "my Lord",
+          "alias_type": "title",
+          "notes": "form of address used by innkeeper and others"
+        }
+      ],
+      "notes": "Carries a blademaster's sword with herons. Playing the flute in the common room. Concerned about being followed by Moiraine or others. Possesses the Horn (in the chest)."
+    },
+    {
+      "name_used_in_text": "Selene",
+      "likely_matches_existing": "Selene",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Cairhien",
+        "physical_traits": "beautiful, slender, wears fine white dress",
+        "age": null,
+        "filiations": null,
+        "personality": "aloof, cool, composed, mysterious"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Lady Selene",
+          "alias_type": "title",
+          "notes": "how others address her"
+        },
+        {
+          "alias_text": "my Lady",
+          "alias_type": "title",
+          "notes": "form of address"
+        }
+      ],
+      "notes": "Leaves during the night without being seen by Caldevwin's watchers. Leaves a note signed with crescent moon and stars seal. Claims she will await Rand in Cairhien. Does not like crowds or Caldevwin."
+    },
+    {
+      "name_used_in_text": "Loial",
+      "likely_matches_existing": "Loial",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "ogier",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "large, tufted ears, wide mouth, carries heavy loads easily",
+        "age": null,
+        "filiations": "son of Arent son of Halan",
+        "personality": "self-conscious, thoughtful, finds humans confusing"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "friend Ogier",
+          "alias_type": "epithet",
+          "notes": "used by Mistress Madwen and others"
+        },
+        {
+          "alias_text": "Builder",
+          "alias_type": "epithet",
+          "notes": "used by Hurin to refer to Loial"
+        }
+      ],
+      "notes": "Carries the chest containing the Horn under a blanket. Pretends it contains his books. From the Borderlands."
+    },
+    {
+      "name_used_in_text": "Hurin",
+      "likely_matches_existing": "Hurin",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienaran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "deferential, knowledgeable about customs, tries to be invisible when appropriate"
+      },
+      "factions": [
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "serves as a sniffer"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "sniffer",
+          "alias_type": "epithet",
+          "notes": "his role/ability"
+        }
+      ],
+      "notes": "Treated as a servant by the innkeeper and others. Carries their baggage. Knowledgeable about Daes Dae'mar and Cairhienin customs."
+    },
+    {
+      "name_used_in_text": "Maglin Madwen",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Lugard (originally), married a Cairhienin",
+        "physical_traits": "lean, long nose, graying hair, wrinkles from smiling",
+        "age": "middle-aged or older - married 23 years",
+        "filiations": "widow of Barin Madwen",
+        "personality": "bustling, motherly, ready smile, practical, speaks frankly"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Mistress Madwen",
+          "alias_type": "title",
+          "notes": "how she is addressed"
+        }
+      ],
+      "notes": "Innkeeper of The Nine Rings. Inherited the inn from her Cairhienin husband. Gives Rand advice about reconciling with Selene."
+    },
+    {
+      "name_used_in_text": "Aldrin Caldevwin",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Cairhienin",
+        "physical_traits": "shaven front of head dusted with white powder, long hair in back, wears officer's uniform with red and yellow slashes",
+        "age": null,
+        "filiations": null,
+        "personality": "suspicious, probing, plays Daes Dae'mar, courteous but calculating"
+      },
+      "factions": [
+        {
+          "name": "Cairhien military",
+          "faction_type": "other",
+          "role": "leader",
+          "notes": "Captain in His Majesty's service, commands soldiers and laborers excavating the statue"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Captain",
+          "alias_type": "title",
+          "notes": "his rank"
+        },
+        {
+          "alias_text": "Captain Caldevwin",
+          "alias_type": "title",
+          "notes": "full title"
+        }
+      ],
+      "notes": "In charge of excavating an Age of Legends statue for King Galldrian. Commands 500 laborers and 50+ soldiers. Suspicious of Rand's party. Has the inn watched. Notices the herons on Rand's sword."
+    },
+    {
+      "name_used_in_text": "Elricain Tavolin",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Cairhienin",
+        "physical_traits": "shaven front of head, wears officer's uniform with two white bars on banner",
+        "age": "younger than Caldevwin",
+        "filiations": null,
+        "personality": "taciturn, barely speaks, follows orders"
+      },
+      "factions": [
+        {
+          "name": "Cairhien military",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "junior officer commanding the escort to Cairhien"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Commands the 50-soldier escort assigned to Rand's party. Very quiet, gives only a brief smile."
+    },
+    {
+      "name_used_in_text": "Catrine",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Cairhienin (presumably)",
+        "physical_traits": null,
+        "age": "young",
+        "filiations": null,
+        "personality": "clumsy, accident-prone, easily distracted by romantic interests"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Serving girl at The Nine Rings. Drops a lamp causing a small fire. Known for breaking dishes when distracted by young men. Has a sudden twinge in her arm."
+    },
+    {
+      "name_used_in_text": "Lidan",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Cairhienin (presumably)",
+        "physical_traits": null,
+        "age": "young",
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Serving girl at The Nine Rings. Fetches Selene's saddlebags."
+    },
+    {
+      "name_used_in_text": "Barin Madwen",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Cairhienin",
+        "physical_traits": null,
+        "age": "deceased",
+        "filiations": "husband of Maglin Madwen",
+        "personality": "tricksome and scheming - typical Cairhienin according to his wife"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Barin",
+          "alias_type": "given_name",
+          "notes": null
+        }
+      ],
+      "notes": "Deceased husband of the innkeeper. Left her the inn and his brother the money. Married for 23 years."
+    },
+    {
+      "name_used_in_text": "Mother Caredwain",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Tremonsien (presumably)",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "skilled with soothing herbs"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Local healer mentioned by Mistress Madwen when Selene says she feels unwell. Not actually summoned."
+    },
+    {
+      "name_used_in_text": "Galldrian",
+      "likely_matches_existing": "Galldrian su Riatin Rie",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Cairhienin",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "House Riatin",
+          "faction_type": "house",
+          "role": "leader",
+          "notes": "King of Cairhien"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "His Majesty",
+          "alias_type": "title",
+          "notes": "formal reference"
+        }
+      ],
+      "notes": "King of Cairhien who ordered the Age of Legends statue excavated and moved to the capital as a monument."
+    },
+    {
+      "name_used_in_text": "Moiraine",
+      "likely_matches_existing": "Moiraine",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown (not Two Rivers)",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "Aes Sedai"
+        },
+        {
+          "name": "Blue Ajah",
+          "faction_type": "ajah",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Not present in this chapter but mentioned by Rand in his thoughts. He wonders if she let him go or is following/waiting for him. Her precise accent is compared to Caldevwin's."
+    },
+    {
+      "name_used_in_text": "Gareth Bryne",
+      "likely_matches_existing": "Gareth Bryne",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Andoran",
+        "physical_traits": "gray in his hair",
+        "age": "old enough to have gray hair, old enough to be Caldevwin's father",
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "Queen's Guards",
+          "faction_type": "order",
+          "role": "leader",
+          "notes": "Captain-General"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Captain-General",
+          "alias_type": "title",
+          "notes": "of the Queen's Guards"
+        }
+      ],
+      "notes": "Not present but mentioned. Caldevwin claims to have met him but cannot remember his name. Rand provides the name as a test."
+    },
+    {
+      "name_used_in_text": "Egwene",
+      "likely_matches_existing": "Egwene",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Not present but in Rand's thoughts when he considers Mistress Madwen's advice about Selene. He thinks Egwene would kill him."
+    },
+    {
+      "name_used_in_text": "Elder Haman",
+      "likely_matches_existing": "Elder Haman",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "ogier",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "very intelligent"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Haman",
+          "alias_type": "given_name",
+          "notes": null
+        }
+      ],
+      "notes": "Not present but mentioned by Loial. Said it would take a greater mind than his to understand human behavior."
+    },
+    {
+      "name_used_in_text": "Padan Fain",
+      "likely_matches_existing": "Padan Fain",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "pursuing Rand"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Fain",
+          "alias_type": "given_name",
+          "notes": null
+        }
+      ],
+      "notes": "Not present but mentioned by Rand in his thoughts - he hopes Fain won't try anything against fifty soldiers."
+    },
+    {
+      "name_used_in_text": "Ingtar",
+      "likely_matches_existing": "Ingtar",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienaran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Lord"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Not present but mentioned in Rand's thoughts - Rand plans to turn the Horn over to him."
+    },
+    {
+      "name_used_in_text": "Mat",
+      "likely_matches_existing": "Matrim Cauthon",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Not present but mentioned in Rand's thoughts - Rand plans to turn the dagger over to him."
+    },
+    {
+      "name_used_in_text": "Red",
+      "likely_matches_existing": "Red",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "horse",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "bay colored",
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "the bay",
+          "alias_type": "epithet",
+          "notes": "from roster"
+        }
+      ],
+      "notes": "Rand's horse."
+    }
+  ],
+  "appearances": [
+    {
+      "character": "Rand",
+      "whereabouts": "The Nine Rings inn in Tremonsien village, then traveling toward Cairhien",
+      "notable_actions": "Arrives at inn with companions; plays flute in common room (Heron on the Wing, Old Two Rivers songs); speaks with Captain Caldevwin; receives note from Selene; departs with military escort toward Cairhien",
+      "demeanor": "Uncomfortable with being treated as a lord, self-conscious, suspicious of Caldevwin's motives, troubled by thoughts of Moiraine and what happened 'back there', worried about protecting the Horn",
+      "alliances_shown": [
+        "Selene",
+        "Loial",
+        "Hurin"
+      ]
+    },
+    {
+      "character": "Selene",
+      "whereabouts": "The Nine Rings inn, then departs during the night unseen",
+      "notable_actions": "Arrives with Rand's party; claims to feel unwell after lamp incident; requests separate room; leaves during night without being detected by Caldevwin's watchers; leaves sealed note for Rand",
+      "demeanor": "Cool, aloof, detached, barely acknowledging the room or people around her; cold voice that 'left a chill in the air'; refuses healer",
+      "alliances_shown": [
+        "Rand"
+      ]
+    },
+    {
+      "character": "Loial",
+      "whereabouts": "The Nine Rings inn in Tremonsien, then traveling toward Cairhien",
+      "notable_actions": "Carries the chest containing the Horn disguised under a blanket; claims it contains his books; eats heartily; discusses the Age of Legends statue and Ogier building; expresses confusion about human behavior and Daes Dae'mar",
+      "demeanor": "Self-conscious, helpful, puzzled by human customs, genuine",
+      "alliances_shown": [
+        "Rand",
+        "Hurin"
+      ]
+    },
+    {
+      "character": "Hurin",
+      "whereabouts": "The Nine Rings inn, then traveling toward Cairhien",
+      "notable_actions": "Carries all the saddlebags and bundled items; explains Daes Dae'mar to Rand; points out Mistress Madwen is not Cairhienin; notices Caldevwin had the inn watched; suggests consulting Selene about the escort",
+      "demeanor": "Deferential, tries to be invisible when appropriate as a servant, knowledgeable about Cairhienin customs, helpful to Rand",
+      "alliances_shown": [
+        "Rand",
+        "Loial"
+      ]
+    },
+    {
+      "character": "Maglin Madwen",
+      "whereabouts": "The Nine Rings inn",
+      "notable_actions": "Greets guests; arranges rooms and meals; deals with lamp fire; puts out flames with serving girl; settles Selene in her room; gives Rand relationship advice; delivers Selene's note in the morning",
+      "demeanor": "Bustling, motherly, friendly, practical, speaks frankly with guests, handles emergencies calmly",
+      "alliances_shown": []
+    },
+    {
+      "character": "Aldrin Caldevwin",
+      "whereabouts": "The Nine Rings inn and village of Tremonsien",
+      "notable_actions": "Dismisses his soldiers when Rand plays flute; questions Rand about his identity and companions; asks about Captain-General Gareth Bryne; stares at Selene; discusses the Age of Legends statue excavation; arranges escort for Rand's party; has inn watched during night; confronts junior officer when Selene escapes unseen",
+      "demeanor": "Courteous but suspicious, probing, calculating, plays Daes Dae'mar, notices details (herons on sword), entranced by Selene's beauty",
+      "alliances_shown": [
+        "Elricain Tavolin",
+        "soldiers"
+      ]
+    },
+    {
+      "character": "Elricain Tavolin",
+      "whereabouts": "Village of Tremonsien, riding toward Cairhien",
+      "notable_actions": "Commands the 50-soldier escort; barely speaks; receives whispered instructions from Caldevwin; rides with Rand's party",
+      "demeanor": "Taciturn, dutiful, gives only brief smiles, follows orders without question",
+      "alliances_shown": [
+        "Aldrin Caldevwin"
+      ]
+    },
+    {
+      "character": "Catrine",
+      "whereabouts": "The Nine Rings inn common room",
+      "notable_actions": "Drops lamp causing small fire; claims she had a twinge in her arm; cleans up the mess",
+      "demeanor": "Clumsy, apologetic, on verge of tears, makes excuses",
+      "alliances_shown": []
+    },
+    {
+      "character": "Lidan",
+      "whereabouts": "The Nine Rings inn",
+      "notable_actions": "Fetches Selene's saddlebags from Hurin",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Red",
+      "whereabouts": "Village of Tremonsien, traveling toward Cairhien",
+      "notable_actions": "Rand's mount",
+      "demeanor": null,
+      "alliances_shown": []
+    }
+  ],
+  "relationships": [
+    {
+      "character_a": "Rand",
+      "character_b": "Selene",
+      "relationship_type": "romantic",
+      "directed": false,
+      "description": "Romantic tension; Selene's note says she will always think of Rand and knows he thinks of her; Mistress Madwen assumes they are lovers having a quarrel; Rand is torn between attraction and worry about Egwene"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Loial",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Traveling companions protecting the Horn together; trust each other"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Hurin",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Traveling companions; Hurin serves and advises Rand, though Rand treats him more as friend than servant"
+    },
+    {
+      "character_a": "Aldrin Caldevwin",
+      "character_b": "Rand",
+      "relationship_type": "rival",
+      "directed": true,
+      "description": "Caldevwin is suspicious of Rand and his party, watches them, probes for information, plays Daes Dae'mar against them"
+    },
+    {
+      "character_a": "Aldrin Caldevwin",
+      "character_b": "Elricain Tavolin",
+      "relationship_type": "other",
+      "directed": true,
+      "description": "Military command relationship; Caldevwin orders Tavolin to escort Rand's party"
+    },
+    {
+      "character_a": "Maglin Madwen",
+      "character_b": "Barin Madwen",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "Husband and wife for 23 years until his death; she inherited his inn"
+    },
+    {
+      "character_a": "Aldrin Caldevwin",
+      "character_b": "Galldrian",
+      "relationship_type": "servant",
+      "directed": true,
+      "description": "Caldevwin serves King Galldrian, carrying out his orders to excavate and move the statue"
+    }
+  ],
+  "_meta": {
+    "book_order": 2,
+    "chapter_number": 21,
+    "chapter_id": 76,
+    "chapter_title": "The Nine Rings",
+    "model": "claude-sonnet-4-5",
+    "input_tokens": 17844,
+    "output_tokens": 6637
+  }
+}

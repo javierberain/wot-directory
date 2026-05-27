@@ -1,0 +1,688 @@
+{
+  "characters": [
+    {
+      "name_used_in_text": "Ingtar",
+      "likely_matches_existing": "Ingtar",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienaran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "Dutiful soldier accustomed to odd commands; methodical and concerned with chain of command"
+      },
+      "factions": [
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "leader",
+          "notes": "Commands the lance in pursuit of the Horn"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Lord Ingtar",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": null
+    },
+    {
+      "name_used_in_text": "Uno",
+      "likely_matches_existing": "Uno",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienaran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "Foul-mouthed, blunt, observant"
+      },
+      "factions": [
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Scout leader and would normally be second in command"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Claims to have seen a woman at both the ferry and before finding the Halfman"
+    },
+    {
+      "name_used_in_text": "Ragan",
+      "likely_matches_existing": "Ragan",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienaran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Lancer in Ingtar's company"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": null
+    },
+    {
+      "name_used_in_text": "Rand al'Thor",
+      "likely_matches_existing": "Rand al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "Conflicted about his identity and powers; resistant to Aes Sedai manipulation; desperate to help his friends"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Rand",
+          "alias_type": "given_name",
+          "notes": null
+        },
+        {
+          "alias_text": "the Dragon Reborn",
+          "alias_type": "epithet",
+          "notes": "What Moiraine and the Amyrlin have told him he is"
+        },
+        {
+          "alias_text": "Lord Rand",
+          "alias_type": "title",
+          "notes": "Used by Hurin"
+        }
+      ],
+      "notes": "Revealed in this chapter that he can channel and has been named second in command by Agelmar on Moiraine's instruction"
+    },
+    {
+      "name_used_in_text": "Moiraine",
+      "likely_matches_existing": "Moiraine",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown (not Two Rivers)",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "Manipulative, controlling, strategic; works to guide Rand along a path she has chosen"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Aes Sedai"
+        },
+        {
+          "name": "Blue Ajah",
+          "faction_type": "ajah",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Moiraine Sedai",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Not physically present in chapter but her actions drive the plot—she gave Ingtar the banner to give to Rand"
+    },
+    {
+      "name_used_in_text": "Mat",
+      "likely_matches_existing": "Matrim Cauthon",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "Fearful, practical, self-preserving; concerned about Rand's channeling"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Terrified when he learns Rand can channel; distances himself from Rand"
+    },
+    {
+      "name_used_in_text": "Perrin",
+      "likely_matches_existing": "Perrin Aybara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "Yellow eyes that seem to shine in shadows",
+        "age": null,
+        "filiations": null,
+        "personality": "Thoughtful, deliberate, analytical; more accepting than Mat but still wary"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "His yellow eyes are mentioned, suggesting connection to wolves; advises Rand to run but also says 'sometimes you can't run'"
+    },
+    {
+      "name_used_in_text": "Loial",
+      "likely_matches_existing": "Loial",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "ogier",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": "Long-stemmed pipe",
+        "age": null,
+        "filiations": null,
+        "personality": "Scholarly, curious about old stones and markings"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "the Builder",
+          "alias_type": "epithet",
+          "notes": "Used by Hurin"
+        },
+        {
+          "alias_text": "the Ogier",
+          "alias_type": "epithet",
+          "notes": null
+        }
+      ],
+      "notes": "Examining a weathered worked stone that may have been a column"
+    },
+    {
+      "name_used_in_text": "Hurin",
+      "likely_matches_existing": "Hurin",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienaran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "Deferential, friendly; accepts Rand without fear"
+      },
+      "factions": [
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Sniffer"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "sniffer",
+          "alias_type": "epithet",
+          "notes": "His ability"
+        }
+      ],
+      "notes": "Shows no fear of Rand; makes his bed near Rand and Loial"
+    },
+    {
+      "name_used_in_text": "Padan Fain",
+      "likely_matches_existing": "Padan Fain",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "Mad, megalomaniacal, transformed by his experiences in Shadar Logoth; believes himself whole and powerful"
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Was a Darkfriend but now acts independently; killed the Myrddraal"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Fain",
+          "alias_type": "given_name",
+          "notes": null
+        }
+      ],
+      "notes": "POV section shows he killed the Myrddraal with a hammer and spikes; commands Trollocs and Darkfriends; possesses the ruby-hilted dagger from Shadar Logoth and the golden chest (the Horn)"
+    },
+    {
+      "name_used_in_text": "Red",
+      "likely_matches_existing": "Red",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "horse",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": "Big bay",
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "the bay",
+          "alias_type": "epithet",
+          "notes": null
+        }
+      ],
+      "notes": "Rand's horse"
+    },
+    {
+      "name_used_in_text": "Ba'alzamon",
+      "likely_matches_existing": "Elan Morin Tedronai",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "leader",
+          "notes": "Summoned Fain and changed him"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Referenced in Fain's POV as having summoned and distilled him; was Fain's master before Fain changed"
+    },
+    {
+      "name_used_in_text": "Agelmar",
+      "likely_matches_existing": "Agelmar",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "leader",
+          "notes": "Lord of Fal Dara"
+        },
+        {
+          "name": "House Jagad",
+          "faction_type": "house",
+          "role": "leader",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Lord Agelmar",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Not present but mentioned as having given Ingtar the orders about Rand being second"
+    },
+    {
+      "name_used_in_text": "the Amyrlin Seat",
+      "likely_matches_existing": "the Amyrlin Seat",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "other",
+          "role": "leader",
+          "notes": "The Amyrlin Seat"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "the Amyrlin",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Not present but mentioned as knowing Rand can channel and telling him he's the Dragon Reborn"
+    },
+    {
+      "name_used_in_text": "Masema",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienaran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "Hostile toward Rand; would need little excuse to kill him"
+      },
+      "factions": [
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "One of the lancers"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "First mention in text; one of Ingtar's men who apparently dislikes Rand"
+    },
+    {
+      "name_used_in_text": "Lews Therin Telamon",
+      "likely_matches_existing": "Lews Therin Telamon",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Lews Therin Kinslayer",
+          "alias_type": "epithet",
+          "notes": null
+        },
+        {
+          "alias_text": "the Dragon",
+          "alias_type": "epithet",
+          "notes": null
+        }
+      ],
+      "notes": "Historical figure; the banner Moiraine gave Rand belonged to him"
+    }
+  ],
+  "appearances": [
+    {
+      "character": "Ingtar",
+      "whereabouts": "Leading the company south of the Erinin, making camp in a defensive hollow",
+      "notable_actions": "Calls early halt; orders defensive camp setup with scouts; gives Rand the banner from Moiraine; reveals Rand has been made second in command by Lord Agelmar on Moiraine's instruction; explains the chain of command",
+      "demeanor": "Troubled by what they found in the village; dutiful but disturbed; attempting to maintain order",
+      "alliances_shown": [
+        "Agelmar",
+        "Moiraine",
+        "Fal Dara"
+      ]
+    },
+    {
+      "character": "Uno",
+      "whereabouts": "In camp with the other Shienarans",
+      "notable_actions": "Argues with Ragan about seeing a woman at both the ferry and before finding the Halfman; sent out to organize scouts",
+      "demeanor": "Agitated, insistent on what he saw, profane",
+      "alliances_shown": [
+        "Ingtar",
+        "Fal Dara"
+      ]
+    },
+    {
+      "character": "Ragan",
+      "whereabouts": "In camp with the other Shienarans",
+      "notable_actions": "Disputes Uno's claim about seeing a woman; helps set up camp",
+      "demeanor": "Skeptical",
+      "alliances_shown": [
+        "Ingtar",
+        "Fal Dara"
+      ]
+    },
+    {
+      "character": "Rand al'Thor",
+      "whereabouts": "With Ingtar's company south of the Erinin, camping in a hollow",
+      "notable_actions": "Receives the Dragon banner from Ingtar; learns he's been made second in command; reveals to Mat and Perrin that he can channel and that the Aes Sedai claim he's the Dragon Reborn; hides the banner in his saddlebags; makes his bed with Loial and Hurin away from Mat and Perrin",
+      "demeanor": "Tormented, conflicted, angry at Moiraine's manipulation, afraid of going mad, desperate to help Mat find the dagger",
+      "alliances_shown": [
+        "Mat",
+        "Perrin",
+        "Loial",
+        "Hurin"
+      ]
+    },
+    {
+      "character": "Moiraine",
+      "whereabouts": "Not present; elsewhere (likely Tar Valon or traveling)",
+      "notable_actions": "Before the company left Fal Dara, gave Ingtar the Dragon banner with instructions to give it to Rand at the first camp south of the Erinin; told Rand his life might depend on it; arranged with Agelmar for Rand to be second in command",
+      "demeanor": null,
+      "alliances_shown": [
+        "Agelmar",
+        "the Amyrlin Seat",
+        "White Tower"
+      ]
+    },
+    {
+      "character": "Mat",
+      "whereabouts": "In camp with Ingtar's company",
+      "notable_actions": "Discovers Rand with the Dragon banner; reacts with horror when Rand confirms he can channel; fears they will all be killed as Darkfriends; decides to sleep as far from Rand as possible",
+      "demeanor": "Terrified, panicked, self-preserving; torn between gratitude that Rand came to help him and fear of what Rand has become",
+      "alliances_shown": [
+        "Perrin"
+      ]
+    },
+    {
+      "character": "Perrin",
+      "whereabouts": "In camp with Ingtar's company",
+      "notable_actions": "Follows Mat to where Rand is; calmly asks Rand if he can channel; advises Rand to run or burn/bury the banner; stays calmer than Mat but is also troubled",
+      "demeanor": "Thoughtful, deliberate, troubled but more accepting than Mat; his yellow eyes are noted",
+      "alliances_shown": [
+        "Mat",
+        "Rand"
+      ]
+    },
+    {
+      "character": "Loial",
+      "whereabouts": "In camp, examining a weathered stone",
+      "notable_actions": "Reads and smokes his pipe; examines what appears to be a worked column with weathered markings; makes his bed with Rand and Hurin",
+      "demeanor": "Scholarly, curious, peaceful",
+      "alliances_shown": [
+        "Rand",
+        "Hurin"
+      ]
+    },
+    {
+      "character": "Hurin",
+      "whereabouts": "In camp, near the stone Loial is examining",
+      "notable_actions": "Makes his bed near Loial and Rand; shows no fear of Rand; addresses him as 'Lord Rand' but corrects to just 'Rand'",
+      "demeanor": "Friendly, deferential, unafraid",
+      "alliances_shown": [
+        "Rand",
+        "Loial",
+        "Ingtar"
+      ]
+    },
+    {
+      "character": "Padan Fain",
+      "whereabouts": "North of Ingtar's camp, at his own camp with Trollocs and Darkfriends",
+      "notable_actions": "Stares north; reflects on how he was changed by Ba'alzamon and Shadar Logoth; recalls killing the Myrddraal with hammer and spikes; orders Trollocs to kill and butcher the remaining villagers; threatens his Darkfriend followers; guards the golden chest (the Horn); plans to draw Rand to Toman Head",
+      "demeanor": "Mad, megalomaniacal, cruel, transformed; believes himself freed from his old masters and now whole and powerful",
+      "alliances_shown": []
+    },
+    {
+      "character": "Red",
+      "whereabouts": "In camp with Rand",
+      "notable_actions": "Left standing with reins dangling; rubbed down and resaddled by Rand",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Ba'alzamon",
+      "whereabouts": "Not present",
+      "notable_actions": "In Fain's recollection: summoned Fain, distilled knowledge of the three boys from Emond's Field from him, fed the essence back so Fain could track them, and did terrible things to transform Fain",
+      "demeanor": null,
+      "alliances_shown": [
+        "The Shadow"
+      ]
+    },
+    {
+      "character": "Agelmar",
+      "whereabouts": "Not present; back at Fal Dara",
+      "notable_actions": "Called Ingtar and Uno to him before the company left; with Moiraine present, told Ingtar that Rand was to be second in command",
+      "demeanor": null,
+      "alliances_shown": [
+        "Moiraine",
+        "Ingtar"
+      ]
+    },
+    {
+      "character": "the Amyrlin Seat",
+      "whereabouts": "Not present",
+      "notable_actions": "In Rand's recollection: told Rand he's the Dragon Reborn; knows he can channel; said he could go wherever he wanted",
+      "demeanor": null,
+      "alliances_shown": [
+        "Moiraine",
+        "White Tower"
+      ]
+    },
+    {
+      "character": "Masema",
+      "whereabouts": "In camp with the other Shienarans",
+      "notable_actions": "None directly shown; mentioned as someone who would need little excuse to kill Rand if he knew Rand could channel",
+      "demeanor": "Hostile toward Rand (per Perrin's assessment)",
+      "alliances_shown": [
+        "Fal Dara"
+      ]
+    },
+    {
+      "character": "Lews Therin Telamon",
+      "whereabouts": "Not present; historical figure",
+      "notable_actions": "None; his banner is given to Rand",
+      "demeanor": null,
+      "alliances_shown": []
+    }
+  ],
+  "relationships": [
+    {
+      "character_a": "Ingtar",
+      "character_b": "Rand al'Thor",
+      "relationship_type": "mentor",
+      "directed": true,
+      "description": "Ingtar has been ordered to make Rand his second in command; explains the chain of command and duty to Rand; believes Rand has what it takes to do what is needed"
+    },
+    {
+      "character_a": "Moiraine",
+      "character_b": "Rand al'Thor",
+      "relationship_type": "mentor",
+      "directed": true,
+      "description": "Moiraine manipulates Rand's path by giving him the Dragon banner and arranging his position as second; Rand resents this manipulation but feels unable to escape it"
+    },
+    {
+      "character_a": "Rand al'Thor",
+      "character_b": "Mat",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Childhood friends; Rand came on the journey to help Mat find the dagger; Mat is now terrified of Rand because he can channel and distances himself"
+    },
+    {
+      "character_a": "Rand al'Thor",
+      "character_b": "Perrin",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Childhood friends; Perrin is troubled by Rand's ability to channel but more thoughtful and less openly fearful than Mat; advises Rand"
+    },
+    {
+      "character_a": "Rand al'Thor",
+      "character_b": "Loial",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Travel companions; Loial shows no fear of Rand and camps with him"
+    },
+    {
+      "character_a": "Rand al'Thor",
+      "character_b": "Hurin",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Hurin gladly makes his bed near Rand and treats him with respect, showing no fear"
+    },
+    {
+      "character_a": "Ba'alzamon",
+      "character_b": "Padan Fain",
+      "relationship_type": "other",
+      "directed": true,
+      "description": "Ba'alzamon summoned Fain and transformed him to track Rand and the others; Fain was Fain's master but Fain now believes himself freed from that control"
+    },
+    {
+      "character_a": "Padan Fain",
+      "character_b": "Rand al'Thor",
+      "relationship_type": "enemy",
+      "directed": true,
+      "description": "Fain obsessively tracks Rand; wants to lure Rand to Toman Head and kill him; believes Rand will follow him"
+    },
+    {
+      "character_a": "Moiraine",
+      "character_b": "Agelmar",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Moiraine was present when Agelmar gave Ingtar orders; they cooperated to arrange Rand's position as second"
+    },
+    {
+      "character_a": "Moiraine",
+      "character_b": "the Amyrlin Seat",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Both told Rand he's the Dragon Reborn; working together to manipulate his path"
+    },
+    {
+      "character_a": "Ingtar",
+      "character_b": "Uno",
+      "relationship_type": "other",
+      "directed": true,
+      "description": "Ingtar commands Uno to organize scouts; Uno would normally be second in command but Rand has been placed above him"
+    },
+    {
+      "character_a": "Mat",
+      "character_b": "Perrin",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Travel together and share concerns about Rand; both are Rand's childhood friends"
+    }
+  ],
+  "_meta": {
+    "book_order": 2,
+    "chapter_number": 11,
+    "chapter_id": 66,
+    "chapter_title": "Glimmers of the Pattern",
+    "model": "claude-sonnet-4-5",
+    "input_tokens": 17536,
+    "output_tokens": 6764
+  }
+}

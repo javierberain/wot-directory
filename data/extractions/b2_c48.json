@@ -1,0 +1,660 @@
+{
+  "characters": [
+    {
+      "name_used_in_text": "Min",
+      "likely_matches_existing": "Min",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Baerlon (presumably)",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "direct, pragmatic, self-deprecating; prefers older educated men; reluctant to be caught up in the Pattern"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Searches for Egwene, Elayne, and Nynaeve. Finds and tends to Rand."
+    },
+    {
+      "name_used_in_text": "Egwene",
+      "likely_matches_existing": "Egwene",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "training to become Aes Sedai"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Felt Rand pulling at her, needing her. Confronts Min about Rand. Going with the White Tower."
+    },
+    {
+      "name_used_in_text": "Elayne",
+      "likely_matches_existing": "Elayne",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Andoran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "training to become Aes Sedai"
+        },
+        {
+          "name": "House Trakand",
+          "faction_type": "house",
+          "role": "member",
+          "notes": "Daughter-Heir of Andor"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Felt Rand pulling at her. Getting horses with Nynaeve."
+    },
+    {
+      "name_used_in_text": "Nynaeve",
+      "likely_matches_existing": "Nynaeve al'Meara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "training to become Aes Sedai"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Wisdom",
+          "alias_type": "title",
+          "notes": "former role in the Two Rivers"
+        }
+      ],
+      "notes": "Did not feel Rand pulling at her. Getting horses with Elayne. Plans to leave soon. Expected to help heal Rand."
+    },
+    {
+      "name_used_in_text": "Bayle Domon",
+      "likely_matches_existing": "Bayle Domon",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Leaving Falme on his ship Spray; Min does not blame him for departing after what she saw."
+    },
+    {
+      "name_used_in_text": "Birgitte",
+      "likely_matches_existing": "Birgitte",
+      "is_new_character": false,
+      "confidence": "medium",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Min believes she saw Birgitte riding across water with her bow, shooting silver arrows at a Seanchan ship. Possibly a hero from legend manifesting."
+    },
+    {
+      "name_used_in_text": "Artur Hawkwing",
+      "likely_matches_existing": "Artur Hawkwing",
+      "is_new_character": false,
+      "confidence": "medium",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Min insists she saw him. Possibly manifesting as a hero from legend."
+    },
+    {
+      "name_used_in_text": "Rand",
+      "likely_matches_existing": "Rand al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "has silky hair, tall with long legs and broad shoulders",
+        "age": null,
+        "filiations": null,
+        "personality": "stubborn"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Lews Therin Telamon",
+          "alias_type": "given_name",
+          "notes": "Lanfear refers to him by this name; his identity as the Dragon Reborn"
+        },
+        {
+          "alias_text": "the Dragon Reborn",
+          "alias_type": "epithet",
+          "notes": "Lanfear calls him this"
+        },
+        {
+          "alias_text": "Lord Shepherd",
+          "alias_type": "epithet",
+          "notes": "Min's sarcastic address"
+        }
+      ],
+      "notes": "Found unconscious in a garden with burned wound in side, hilt with heron brand stuck to palm, icy cold. Pulling at Egwene and Elayne. Min tends to him. Lanfear claims him as hers."
+    },
+    {
+      "name_used_in_text": "Bela",
+      "likely_matches_existing": "Bela",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "horse",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Found by Egwene and Elayne among horses left behind by Seanchan."
+    },
+    {
+      "name_used_in_text": "Lanfear",
+      "likely_matches_existing": "Lanfear",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": "most beautiful woman Min had ever seen; pale smooth skin, long black hair, eyes as dark as night; graceful movements",
+        "age": null,
+        "filiations": null,
+        "personality": "possessive, manipulative, claims to be guiding and controlling events"
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "leader",
+          "notes": "one of the Forsaken"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Daughter of the Night",
+          "alias_type": "epithet",
+          "notes": "known epithet from roster"
+        }
+      ],
+      "notes": "Appears in Rand's room. Claims Lews Therin/Rand as hers. Says she has guided his steps. Believes she controls events, not Ishamael. Draws what looks like Dragon's Fang on Rand's forehead, causing him to stir. Vanishes suddenly."
+    },
+    {
+      "name_used_in_text": "Ishamael",
+      "likely_matches_existing": "Elan Morin Tedronai",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "leader",
+          "notes": "one of the Forsaken"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Mentioned by Lanfear; she says he thinks he controls events but she does."
+    },
+    {
+      "name_used_in_text": "Byar",
+      "likely_matches_existing": "Byar",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": "gaunt face",
+        "age": null,
+        "filiations": null,
+        "personality": "grim, dutiful, suspicious of Darkfriends"
+      },
+      "factions": [
+        {
+          "name": "Children of the Light",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "Child Byar"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Child Byar",
+          "alias_type": "title",
+          "notes": "from roster"
+        }
+      ],
+      "notes": "Fleeing Falme. Saw the legion destroyed, Lord Captain Geofram Bornhald dead. Believes Darkfriends like Perrin betrayed them. Riding to tell Dain Bornhald and Pedron Niall what he saw in the sky above Falme."
+    },
+    {
+      "name_used_in_text": "Perrin",
+      "likely_matches_existing": "Perrin Aybara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Perrin of the Two Rivers",
+          "alias_type": "given_name",
+          "notes": "how Byar thinks of him"
+        }
+      ],
+      "notes": "Not present in chapter, but Byar blames him as a Darkfriend who betrayed the Children."
+    },
+    {
+      "name_used_in_text": "Dain Bornhald",
+      "likely_matches_existing": "Dain",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "son of Lord Captain Geofram Bornhald",
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "Children of the Light",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "Lord Captain Bornhald's son, watching Tar Valon with the Children"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Not present in chapter. With the Children watching Tar Valon. Byar intends to tell him of his father's death."
+    },
+    {
+      "name_used_in_text": "Geofram Bornhald",
+      "likely_matches_existing": "Bornhald",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "father of Dain Bornhald",
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "Children of the Light",
+          "faction_type": "order",
+          "role": "leader",
+          "notes": "Lord Captain"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Lord Captain Geofram Bornhald",
+          "alias_type": "title",
+          "notes": "full title and name"
+        },
+        {
+          "alias_text": "Lord Captain Bornhald",
+          "alias_type": "title",
+          "notes": "from roster"
+        }
+      ],
+      "notes": "Dead, according to Byar. Led the legion that was destroyed."
+    },
+    {
+      "name_used_in_text": "Pedron Niall",
+      "likely_matches_existing": "Pedron Niall",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "Children of the Light",
+          "faction_type": "order",
+          "role": "leader",
+          "notes": "Lord Captain Commander"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Not present in chapter. Byar intends to tell him what he saw in the sky above Falme."
+    }
+  ],
+  "appearances": [
+    {
+      "character": "Min",
+      "whereabouts": "streets of Falme, then a house with garden where she finds Rand, then a small bedroom in the house",
+      "notable_actions": "pushes through crowds in Falme; sees Seanchan ships burning, Birgitte and Artur Hawkwing, Spray departing; finds Rand unconscious in a garden; drags him inside to a bedroom; lights fire and gets under blankets to warm him; confronts Egwene about Rand; encounters Lanfear",
+      "demeanor": "determined, practical, frustrated by being caught up in the Pattern; protective of Rand; conflicted about her feelings; defensive when Egwene finds her with Rand; frightened by Lanfear",
+      "alliances_shown": [
+        "Rand",
+        "Egwene",
+        "Elayne",
+        "Nynaeve"
+      ]
+    },
+    {
+      "character": "Egwene",
+      "whereabouts": "arrives at the house where Min is tending Rand",
+      "notable_actions": "felt Rand pulling at her; found Bela; getting horses with Nynaeve and Elayne; confronts Min about being with Rand; fetches Nynaeve to heal him",
+      "demeanor": "controlled, dignified despite emotional tension; hurt but composed when seeing Min with Rand; walks out with back straight and head high",
+      "alliances_shown": [
+        "Elayne",
+        "Nynaeve",
+        "White Tower"
+      ]
+    },
+    {
+      "character": "Elayne",
+      "whereabouts": "getting horses with Nynaeve (not directly present in scenes)",
+      "notable_actions": "felt Rand pulling at her; getting horses with Nynaeve; found Bela",
+      "demeanor": null,
+      "alliances_shown": [
+        "Egwene",
+        "Nynaeve",
+        "White Tower"
+      ]
+    },
+    {
+      "character": "Nynaeve",
+      "whereabouts": "getting horses with Elayne (not directly present in scenes)",
+      "notable_actions": "did not feel Rand pulling at her; getting horses with Elayne; says they should leave soon; expected to heal Rand",
+      "demeanor": "practical, taking charge of preparations to leave",
+      "alliances_shown": [
+        "Egwene",
+        "Elayne",
+        "White Tower"
+      ]
+    },
+    {
+      "character": "Bayle Domon",
+      "whereabouts": "on his ship Spray, departing Falme harbor",
+      "notable_actions": "sailing away from Falme along the coast after waiting as long as he could",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Birgitte",
+      "whereabouts": "riding across the water of Falme harbor",
+      "notable_actions": "appeared on horseback riding across water; raised silver bow and shot silver arrow at Seanchan ship, engulfing it in fire; then vanished",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Artur Hawkwing",
+      "whereabouts": "above Falme (Min saw him in the sky)",
+      "notable_actions": "manifested in some form that Min witnessed",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Rand",
+      "whereabouts": "unconscious in a garden behind a house in Falme, then moved to a bedroom",
+      "notable_actions": "lay unconscious with burned wound in side, hilt branded into palm, icy cold; stirred and murmured when Lanfear touched his forehead; pulling at Egwene and Elayne",
+      "demeanor": "unconscious, pale, breathing slowly and irregularly, cold as ice",
+      "alliances_shown": []
+    },
+    {
+      "character": "Bela",
+      "whereabouts": "among horses left behind by Seanchan in Falme",
+      "notable_actions": "found by Egwene and Elayne",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Lanfear",
+      "whereabouts": "appears in the bedroom where Rand lies",
+      "notable_actions": "appears suddenly; smooths Rand's hair; declares he is Lews Therin Telamon and hers; claims to have guided his steps; says she will shape him; draws what looks like Dragon's Fang on his forehead, making him stir; vanishes suddenly",
+      "demeanor": "graceful, beautiful, possessive, confident, commanding; treats Min as insignificant; claims control over events",
+      "alliances_shown": [
+        "The Shadow"
+      ]
+    },
+    {
+      "character": "Ishamael",
+      "whereabouts": "not present; mentioned by Lanfear",
+      "notable_actions": "none in this chapter; Lanfear says he thinks he controls events",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Byar",
+      "whereabouts": "fleeing Falme on horseback",
+      "notable_actions": "galloping away from Falme with the sun setting behind him; witnessed the destruction of the legion and Lord Captain Bornhald's death; saw something in the sky above Falme; plans to tell Dain Bornhald and Pedron Niall; blames Darkfriends like Perrin for the betrayal",
+      "demeanor": "grim, determined, never looking back; flogging his horse",
+      "alliances_shown": [
+        "Children of the Light"
+      ]
+    },
+    {
+      "character": "Perrin",
+      "whereabouts": "not present in chapter",
+      "notable_actions": "none in this chapter; Byar believes he betrayed the Children as a Darkfriend",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Dain Bornhald",
+      "whereabouts": "with the Children of the Light watching Tar Valon (not present)",
+      "notable_actions": "none in this chapter; Byar intends to tell him of his father's death",
+      "demeanor": null,
+      "alliances_shown": [
+        "Children of the Light"
+      ]
+    },
+    {
+      "character": "Geofram Bornhald",
+      "whereabouts": "dead at Falme",
+      "notable_actions": "died leading the legion",
+      "demeanor": null,
+      "alliances_shown": [
+        "Children of the Light"
+      ]
+    },
+    {
+      "character": "Pedron Niall",
+      "whereabouts": "not present; presumably at Children of the Light headquarters",
+      "notable_actions": "none in this chapter; Byar intends to report to him",
+      "demeanor": null,
+      "alliances_shown": [
+        "Children of the Light"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "character_a": "Min",
+      "character_b": "Rand",
+      "relationship_type": "romantic",
+      "directed": false,
+      "description": "Min tends to unconscious Rand, gets under blankets to warm him, holds him protectively; conflicted about her feelings; knows from her viewings that he is tied to her, Egwene, and another woman; uncertain if he will choose her"
+    },
+    {
+      "character_a": "Egwene",
+      "character_b": "Rand",
+      "relationship_type": "romantic",
+      "directed": false,
+      "description": "felt Rand pulling at her, needing her; hurt to find Min with him; reminds Min that Rand cannot marry and isn't safe for any of them; tension over their past connection and his nature as the Dragon Reborn"
+    },
+    {
+      "character_a": "Elayne",
+      "character_b": "Rand",
+      "relationship_type": "romantic",
+      "directed": false,
+      "description": "felt Rand pulling at her; mentioned by Egwene as having tossed Rand aside for the White Tower"
+    },
+    {
+      "character_a": "Min",
+      "character_b": "Egwene",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Min was searching for Egwene; tension between them over Rand, but underlying alliance; Min feels guilty when Egwene finds her with Rand; Egwene goes to bring Nynaeve to help"
+    },
+    {
+      "character_a": "Min",
+      "character_b": "Elayne",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Min was searching for Elayne; implied alliance"
+    },
+    {
+      "character_a": "Min",
+      "character_b": "Nynaeve",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Min was searching for Nynaeve; expects Nynaeve to heal Rand"
+    },
+    {
+      "character_a": "Egwene",
+      "character_b": "Elayne",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "working together to get horses; both felt Rand pulling at them"
+    },
+    {
+      "character_a": "Egwene",
+      "character_b": "Nynaeve",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "working together to get horses; Nynaeve planning their departure"
+    },
+    {
+      "character_a": "Elayne",
+      "character_b": "Nynaeve",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "working together to get horses"
+    },
+    {
+      "character_a": "Lanfear",
+      "character_b": "Rand",
+      "relationship_type": "romantic",
+      "directed": true,
+      "description": "Lanfear claims Rand/Lews Therin as hers; says she has guided, pushed, pulled, enticed him; intends to shape him; possessive and controlling; tells Min to tend him well for her until she comes for him"
+    },
+    {
+      "character_a": "Lanfear",
+      "character_b": "Ishamael",
+      "relationship_type": "rival",
+      "directed": false,
+      "description": "Lanfear claims Ishamael thinks he controls events but she actually does; rivalry over control within the Shadow"
+    },
+    {
+      "character_a": "Byar",
+      "character_b": "Geofram Bornhald",
+      "relationship_type": "other",
+      "directed": true,
+      "description": "Byar served under Lord Captain Bornhald; witnessed his death; intends to tell his son"
+    },
+    {
+      "character_a": "Byar",
+      "character_b": "Dain Bornhald",
+      "relationship_type": "other",
+      "directed": true,
+      "description": "Byar intends to report to Dain about his father's death"
+    },
+    {
+      "character_a": "Byar",
+      "character_b": "Pedron Niall",
+      "relationship_type": "other",
+      "directed": true,
+      "description": "Byar intends to report to Pedron Niall about what he saw in the sky above Falme"
+    },
+    {
+      "character_a": "Byar",
+      "character_b": "Perrin",
+      "relationship_type": "enemy",
+      "directed": true,
+      "description": "Byar believes Perrin is a Darkfriend who betrayed the Children and caused the legion's destruction"
+    },
+    {
+      "character_a": "Geofram Bornhald",
+      "character_b": "Dain Bornhald",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "father and son"
+    }
+  ],
+  "_meta": {
+    "book_order": 2,
+    "chapter_number": 48,
+    "chapter_id": 103,
+    "chapter_title": "First Claiming",
+    "model": "claude-sonnet-4-5",
+    "input_tokens": 17074,
+    "output_tokens": 6868
+  }
+}

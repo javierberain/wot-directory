@@ -1,0 +1,385 @@
+{
+  "characters": [
+    {
+      "name_used_in_text": "Rand al'Thor",
+      "likely_matches_existing": "Rand al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "increasingly troubled by strange dreams and disturbing experiences; seeks understanding of what is happening to him"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Protagonist POV for this chapter. Experiencing recurring nightmares of Ba'alzamon in a maze environment, and has a mysterious wound that bleeds after waking from the dream. Shows strange abilities like climbing to dangerous heights without fear."
+    },
+    {
+      "name_used_in_text": "Ba'alzamon",
+      "likely_matches_existing": "Ba'alzamon",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": "eyes that blaze like furnaces, wears blood-red cloak",
+        "age": null,
+        "filiations": null,
+        "personality": "relentless pursuer, commanding, ominous"
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "leader",
+          "notes": "Appears in dreams/nightmares hunting Rand"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "the Dark One",
+          "alias_type": "epithet",
+          "notes": "Rand refers to him as the Dark One in thought"
+        }
+      ],
+      "notes": "Appears only in Rand's dreams/nightmares this chapter, pursuing him through maze-like environments."
+    },
+    {
+      "name_used_in_text": "Matrim Cauthon",
+      "likely_matches_existing": "Matrim Cauthon",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "brooding since Shadar Logoth; secretive about the dagger; greedy for treasure"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Mat",
+          "alias_type": "nickname",
+          "notes": "Common short form used throughout"
+        }
+      ],
+      "notes": "Possesses a dagger taken from Shadar Logoth (curved with gold scabbard, ruby pommel). Experiencing nightmares similar to Rand's. Increasingly withdrawn and secretive."
+    },
+    {
+      "name_used_in_text": "Thom Merrilin",
+      "likely_matches_existing": "The Gleeman",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "from Baerlon area",
+        "physical_traits": "white hair, long mustaches",
+        "age": "older",
+        "filiations": null,
+        "personality": "watchful, protective of the boys, skilled entertainer and teacher"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Thom",
+          "alias_type": "given_name",
+          "notes": "First name used throughout"
+        }
+      ],
+      "notes": "Teaching Rand and Mat gleeman skills (juggling, tumbling, stories, flute). Watching the crew carefully for signs of mutiny. Has hidden knives in his cloak."
+    },
+    {
+      "name_used_in_text": "Bayle Domon",
+      "likely_matches_existing": "Bayle Domon",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": "ham-like fists",
+        "age": null,
+        "filiations": null,
+        "personality": "driven, demanding captain; knowledgeable about world's wonders; collector of ancient artifacts"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Captain Domon",
+          "alias_type": "title",
+          "notes": "His role as captain of the Spray"
+        }
+      ],
+      "notes": "Driving the Spray downriver with great urgency, fearing Trolloc pursuit. Shares stories of wonders seen across the world."
+    },
+    {
+      "name_used_in_text": "Floran Gelb",
+      "likely_matches_existing": "Floran Gelb",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": "wiry figure, long nose",
+        "age": null,
+        "filiations": null,
+        "personality": "defensive, resentful, prone to blaming others; murderous toward the passengers"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Gelb",
+          "alias_type": "given_name",
+          "notes": "Surname or single name used"
+        }
+      ],
+      "notes": "Blamed by crew for failed watch that allowed Trolloc attack. Relegated to filthy jobs. Shows murderous intent toward Rand, Mat, and Thom."
+    },
+    {
+      "name_used_in_text": "Egwene",
+      "likely_matches_existing": "Egwene",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Not present in this chapter but mentioned by Rand as someone he hopes is still alive and might catch up to the boat."
+    },
+    {
+      "name_used_in_text": "Perrin",
+      "likely_matches_existing": "Perrin Aybara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Not present in this chapter but mentioned by Rand and Mat as someone they hope is alive."
+    },
+    {
+      "name_used_in_text": "Moiraine",
+      "likely_matches_existing": "Moiraine",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown (not Two Rivers)",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Aes Sedai"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Not present but mentioned by Mat regarding her warnings about Mordeth's gifts."
+    },
+    {
+      "name_used_in_text": "Mordeth",
+      "likely_matches_existing": "Mordeth",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Aridhol (historical)",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Not present but mentioned by Mat in connection with the dagger and warnings about accepting gifts."
+    },
+    {
+      "name_used_in_text": "Tam",
+      "likely_matches_existing": "Tam al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "Village Council",
+          "faction_type": "other",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Not present but mentioned by Rand when thinking of home and his father."
+    },
+    {
+      "name_used_in_text": "pigtailed sailor",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "medium",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "hair in a pigtail, small blue star tattooed on cheek, barefoot",
+        "age": null,
+        "filiations": null,
+        "personality": "blunt, dismissive of Gelb's complaints"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Minor crew member who rejects Gelb's attempts to blame the passengers. Used as representative of crew attitude."
+    }
+  ],
+  "appearances": [
+    {
+      "character": "Rand al'Thor",
+      "whereabouts": "aboard the Spray traveling down the Arinelle; in his nightmares in maze-like dream environments",
+      "notable_actions": "experiences recurring nightmares of Ba'alzamon pursuing him through mazes; wakes with a bleeding finger from a thorn prick that occurred in the dream; climbs to the top of the ship's mast and sits there fearlessly; slides down the forestay; converses with Mat about the dagger and their dreams; takes juggling lessons from Thom",
+      "demeanor": "troubled by dreams and mysterious changes in himself; exhilarated when at height of mast; concerned about companions left behind; worried about going mad",
+      "alliances_shown": [
+        "Mat",
+        "Thom Merrilin"
+      ]
+    },
+    {
+      "character": "Ba'alzamon",
+      "whereabouts": "in Rand's dreams, pursuing him through maze-like environments",
+      "notable_actions": "hunts Rand through dream mazes; confronts Rand directly; declares Rand is his and threatens him; attempts to touch/capture Rand before being disrupted when Rand calls it a dream",
+      "demeanor": "relentless, threatening, commanding, possessive of Rand",
+      "alliances_shown": []
+    },
+    {
+      "character": "Matrim Cauthon",
+      "whereabouts": "aboard the Spray, often sitting in the bows",
+      "notable_actions": "keeps the stolen dagger from Shadar Logoth hidden under his coat; slides it in and out of its sheath repeatedly; makes Rand promise not to tell anyone about it; admits to having nightmares like Rand's but refuses to discuss them; shows interest in the metal tower and treasure; broods alone much of the time",
+      "demeanor": "withdrawn, secretive, brooding, defensive about the dagger, fixated on treasure",
+      "alliances_shown": [
+        "Rand al'Thor"
+      ]
+    },
+    {
+      "character": "Thom Merrilin",
+      "whereabouts": "aboard the Spray",
+      "notable_actions": "entertains the crew with stories and songs to prevent mutiny; teaches Rand and Mat gleeman skills (juggling, tumbling, flute, stories); climbs the mast to bring Rand down; watches the crew carefully for signs of trouble; convinces Captain Domon that Rand's mast-climbing was part of training",
+      "demeanor": "watchful, protective, concerned for the boys' safety, pedagogical",
+      "alliances_shown": [
+        "Rand al'Thor",
+        "Matrim Cauthon"
+      ]
+    },
+    {
+      "character": "Bayle Domon",
+      "whereabouts": "aboard the Spray, commanding the vessel down the Arinelle",
+      "notable_actions": "drives the crew hard to maintain speed downriver; uses captured Trolloc weapons as reminders when crew grumbles; refuses to put to shore; shares stories with Rand about wonders of the world (metal tower, Tremalking stone hand, Tanchico animal bones, etc.); watches Rand's mast antics with concern",
+      "demeanor": "driven, urgent, demanding, knowledgeable about world geography and wonders, somewhat paternal toward the boys",
+      "alliances_shown": []
+    },
+    {
+      "character": "Floran Gelb",
+      "whereabouts": "aboard the Spray, assigned to solitary filthy tasks",
+      "notable_actions": "attempts to blame Rand, Mat, and Thom for the Trolloc attack; scrubs galley pots and crawls in bilges; stops talking to anyone after crew rejection; watches Rand, Mat, and Thom with murderous intent",
+      "demeanor": "defensive, resentful, injured, sullen, murderous toward the passengers",
+      "alliances_shown": []
+    },
+    {
+      "character": "pigtailed sailor",
+      "whereabouts": "aboard the Spray working on deck",
+      "notable_actions": "rejects Gelb's attempts to blame the passengers; tells Gelb to go away; spits on Gelb's foot",
+      "demeanor": "dismissive, blunt, focused on work",
+      "alliances_shown": []
+    }
+  ],
+  "relationships": [
+    {
+      "character_a": "Rand al'Thor",
+      "character_b": "Matrim Cauthon",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Close friends from Emond's Field traveling together; Mat tells Rand they're the only two left from home and must trust only each other; they share secrets about dreams and the dagger"
+    },
+    {
+      "character_a": "Rand al'Thor",
+      "character_b": "Thom Merrilin",
+      "relationship_type": "mentor",
+      "directed": true,
+      "description": "Thom teaches Rand gleeman skills and watches over him protectively"
+    },
+    {
+      "character_a": "Matrim Cauthon",
+      "character_b": "Thom Merrilin",
+      "relationship_type": "mentor",
+      "directed": true,
+      "description": "Thom teaches Mat gleeman skills and watches over him"
+    },
+    {
+      "character_a": "Ba'alzamon",
+      "character_b": "Rand al'Thor",
+      "relationship_type": "enemy",
+      "directed": false,
+      "description": "Ba'alzamon pursues Rand in dreams, claiming Rand is his and threatening to strangle him; Rand flees from him"
+    },
+    {
+      "character_a": "Floran Gelb",
+      "character_b": "Rand al'Thor",
+      "relationship_type": "enemy",
+      "directed": true,
+      "description": "Gelb shows murderous intent toward Rand, blaming him for his troubles"
+    },
+    {
+      "character_a": "Floran Gelb",
+      "character_b": "Matrim Cauthon",
+      "relationship_type": "enemy",
+      "directed": true,
+      "description": "Gelb shows murderous intent toward Mat, blaming him for his troubles"
+    },
+    {
+      "character_a": "Floran Gelb",
+      "character_b": "Thom Merrilin",
+      "relationship_type": "enemy",
+      "directed": true,
+      "description": "Gelb shows murderous intent toward Thom, blaming him for his troubles"
+    },
+    {
+      "character_a": "Rand al'Thor",
+      "character_b": "Tam",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "Father and son; Rand thinks of Tam and home, wanting to return to raise sheep like his father"
+    }
+  ],
+  "_meta": {
+    "book_order": 1,
+    "chapter_number": 24,
+    "chapter_id": 25,
+    "chapter_title": "Flight Down the Arinelle",
+    "model": "claude-sonnet-4-5",
+    "input_tokens": 13589,
+    "output_tokens": 4281
+  }
+}

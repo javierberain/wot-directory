@@ -1,0 +1,530 @@
+{
+  "characters": [
+    {
+      "name_used_in_text": "Loial",
+      "likely_matches_existing": "Loial",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "ogier",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "large, strong enough to grapple a Trolloc",
+        "age": null,
+        "filiations": "son of Arent son of Halan",
+        "personality": "gentle, uncomfortable with violence, kind-hearted"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "alantin",
+          "alias_type": "title",
+          "notes": "used by Selene when addressing him"
+        },
+        {
+          "alias_text": "Builder",
+          "alias_type": "epithet",
+          "notes": "reference to Ogier as Builders"
+        }
+      ],
+      "notes": "Character is clearly the known Ogier Loial from the roster."
+    },
+    {
+      "name_used_in_text": "Rand",
+      "likely_matches_existing": "Rand al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "son of Tam al'Thor",
+        "personality": "protective, concerned for others, struggles with his power"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Lord Rand",
+          "alias_type": "title",
+          "notes": "used by Hurin"
+        },
+        {
+          "alias_text": "my Lord",
+          "alias_type": "title",
+          "notes": "used by servants and Hurin"
+        }
+      ],
+      "notes": "The protagonist. Known character from roster. Possesses the Horn of Valere, struggles with saidin."
+    },
+    {
+      "name_used_in_text": "Dena",
+      "likely_matches_existing": "Dena",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Cairhienin",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "associated with Thom Merrilin",
+        "personality": "clever at games, cheerful"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Mentioned as having won all the money back in a game, giving 'a little lesson'. Associated with the gleeman's establishment."
+    },
+    {
+      "name_used_in_text": "Selene",
+      "likely_matches_existing": "Selene",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Cairhienin",
+        "physical_traits": "beautiful, wears white dress, spicy perfume",
+        "age": null,
+        "filiations": null,
+        "personality": "mysterious, confident, pushes Rand toward greatness, seems to know more than she reveals"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Lady Selene",
+          "alias_type": "title",
+          "notes": "addressed as such"
+        },
+        {
+          "alias_text": "my Lady",
+          "alias_type": "title",
+          "notes": "form of address"
+        }
+      ],
+      "notes": "Known from roster. Her behavior is mysterious—she appears unexpectedly, urges Rand toward greatness and the Horn, leaves notes with the crescent moon and stars seal. Her connection to events is unclear but deliberate."
+    },
+    {
+      "name_used_in_text": "Fain",
+      "likely_matches_existing": "Padan Fain",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "malicious, commands Trollocs and Darkfriends"
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Commands Trollocs and Darkfriends to hunt Rand"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Not physically present but referenced as the one directing the Trolloc hunt. Known character Padan Fain."
+    },
+    {
+      "name_used_in_text": "Hurin",
+      "likely_matches_existing": "Hurin",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienaran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "dutiful, loyal, respectful"
+      },
+      "factions": [
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Serves as a sniffer"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "sniffer",
+          "alias_type": "epithet",
+          "notes": "his role/ability"
+        }
+      ],
+      "notes": "At the inn, alone with the Horn when Rand and Loial are out. Concerned for Rand's safety."
+    },
+    {
+      "name_used_in_text": "Ingtar",
+      "likely_matches_existing": "Ingtar",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienaran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "leader",
+          "notes": "Lord, leading the party searching for the Horn"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Lord Ingtar",
+          "alias_type": "title",
+          "notes": "his title"
+        }
+      ],
+      "notes": "Not present in the chapter but repeatedly referenced. Rand wishes he would arrive."
+    },
+    {
+      "name_used_in_text": "Thom",
+      "likely_matches_existing": "Thom Merrilin",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "from Baerlon area",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "the gleeman",
+          "alias_type": "epithet",
+          "notes": "his profession"
+        }
+      ],
+      "notes": "Mentioned in passing. Rand had visited him earlier. Known character from roster."
+    },
+    {
+      "name_used_in_text": "Aludra",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "hair done in multitude of short braids, wears dress worked elaborately across the breast, pale green in color",
+        "age": null,
+        "filiations": null,
+        "personality": "sharp-tempered, demanding, exacting in her work"
+      },
+      "factions": [
+        {
+          "name": "Illuminators",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "Member of the Illuminators' guild, in charge of preparations at the chapter house"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "An Illuminator who berates Tammuz for the accident. Her appearance and clothing suggest she is not Cairhienin, possibly from another nation where the Illuminators have presence."
+    },
+    {
+      "name_used_in_text": "Tammuz",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "wears baggy yellow breeches and shirt with embroidery",
+        "age": null,
+        "filiations": null,
+        "personality": "defensive, makes excuses, complains about unfair treatment"
+      },
+      "factions": [
+        {
+          "name": "Illuminators",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "Works with fireworks preparations, blamed for accidents"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "An Illuminator. Aludra blames him for the premature firework and assigns him degrading work (buying manure). His clothing style matches Aludra's, suggesting they may be from the same region."
+    },
+    {
+      "name_used_in_text": "Galldrian",
+      "likely_matches_existing": "Galldrian su Riatin Rie",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Cairhienin",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "House Riatin",
+          "faction_type": "house",
+          "role": "leader",
+          "notes": "King of Cairhien"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "King of Cairhien",
+          "alias_type": "title",
+          "notes": "his royal title"
+        }
+      ],
+      "notes": "Mentioned as the one for whom the fireworks display is being prepared. Not physically present."
+    },
+    {
+      "name_used_in_text": "Cuale",
+      "likely_matches_existing": "Cuale",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Cairhienin",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "observant, curious"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "innkeeper",
+          "alias_type": "epithet",
+          "notes": "his profession"
+        }
+      ],
+      "notes": "The innkeeper at The Defender of the Dragonwall. Known from roster."
+    },
+    {
+      "name_used_in_text": "Trolloc",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "trolloc",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "goat-horned, disguised as puppet initially",
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Attacking on Fain's orders"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Individual Trolloc that initially appears disguised as a puppet and attacks Rand. Rand kills it with his sword (The Moon Rises Over the Lakes). This is a distinct individual creature that acts in the scene."
+    },
+    {
+      "name_used_in_text": "boar-snouted Trolloc",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "trolloc",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "boar snout, tusks, hairy, thick arms, rank smell (sour sweat and pigsty)",
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Attacks Rand and Loial"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Distinct individual Trolloc that Loial fights and kills by breaking its neck against a wall. Acts as a named individual in the scene."
+    }
+  ],
+  "appearances": [
+    {
+      "character": "Rand",
+      "whereabouts": "The Foregate of Cairhien, moving through streets, then to the Illuminators' chapter house on a hill outside the Foregate, and finally returning to The Defender of the Dragonwall inn",
+      "notable_actions": "Leaves The Bunch of Grapes with Loial; is hunted by Trollocs and Darkfriends through the Foregate; enters the Illuminators' compound seeking refuge; kills a Trolloc with his sword; accidentally sets off a firework that destroys Trollocs and part of a building; escapes back to the inn; receives a note from Selene with crescent moon seal; worries about Selene and the Horn",
+      "demeanor": "anxious, protective of his companions, conflicted about using saidin, frustrated and worried about Selene's capture",
+      "alliances_shown": [
+        "Loial",
+        "Hurin",
+        "Selene"
+      ]
+    },
+    {
+      "character": "Loial",
+      "whereabouts": "With Rand throughout—in the Foregate, fleeing from Trollocs, at the Illuminators' compound, and back to the inn",
+      "notable_actions": "Discusses losing at gambling to Dena; fights and kills a Trolloc by breaking its neck; helps Rand escape from the Illuminators; tries unsuccessfully to stop Selene from going back",
+      "demeanor": "troubled by having killed for the first time, nervous around the fireworks, apologetic about Selene's escape, protective of Rand",
+      "alliances_shown": [
+        "Rand",
+        "Selene"
+      ]
+    },
+    {
+      "character": "Dena",
+      "whereabouts": "The Bunch of Grapes (mentioned as having just been there)",
+      "notable_actions": "Won all the money back from Loial in gambling, called it 'a little lesson'",
+      "demeanor": null,
+      "alliances_shown": [
+        "Thom Merrilin"
+      ]
+    },
+    {
+      "character": "Selene",
+      "whereabouts": "Appears suddenly in the Foregate where Rand and Loial are being hunted; accompanies them to the Illuminators' compound; goes back toward the Illuminators when they escape; her ultimate fate in this chapter unclear",
+      "notable_actions": "Finds Rand and Loial during the Trolloc hunt; urges Rand to think of greatness and the Horn; helps them find a door into the Illuminators' compound; slips away from Loial and goes back toward the Illuminators when they are escaping; sends a note to Rand via an old woman servant",
+      "demeanor": "composed, confident even in danger, mysterious, seems to orchestrate events, becomes angry when Rand resists talk of greatness",
+      "alliances_shown": [
+        "Rand",
+        "Loial"
+      ]
+    },
+    {
+      "character": "Hurin",
+      "whereabouts": "The room at The Defender of the Dragonwall inn, guarding the Horn of Valere",
+      "notable_actions": "Cleans his weapons while waiting for Rand and Loial to return; inquires about their visit with the gleeman",
+      "demeanor": "dutiful, calm, respectful",
+      "alliances_shown": [
+        "Rand",
+        "Loial"
+      ]
+    },
+    {
+      "character": "Fain",
+      "whereabouts": "Not physically present but directing Trollocs and Darkfriends to hunt Rand in the Foregate",
+      "notable_actions": "Has Trollocs disguised as puppets hunting for Rand; coordinates the search to drive Rand eastward away from populated areas",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Aludra",
+      "whereabouts": "Illuminators' chapter house on the hill east of the Foregate",
+      "notable_actions": "Supervises preparations for a fireworks display for King Galldrian; berates Tammuz for the premature explosion; works to put out the fire started by Rand's accident; assigns Tammuz to menial tasks",
+      "demeanor": "sharp-tempered, exacting, furious at Tammuz for the mishap",
+      "alliances_shown": [
+        "Tammuz",
+        "other Illuminators"
+      ]
+    },
+    {
+      "character": "Tammuz",
+      "whereabouts": "Illuminators' chapter house, preparing the display and dealing with aftermath of the accidents",
+      "notable_actions": "Claims everything was ready for the display; cleans up after the first premature firework; is blamed by Aludra and assigned to buy manure as punishment",
+      "demeanor": "defensive, feeling unfairly blamed, grumbling about his treatment",
+      "alliances_shown": [
+        "Aludra",
+        "other Illuminators"
+      ]
+    },
+    {
+      "character": "Cuale",
+      "whereabouts": "The Defender of the Dragonwall inn",
+      "notable_actions": "Presents Rand with a sealed note delivered by an old woman servant; watches Rand and Loial with curiosity",
+      "demeanor": "observant, curious, inviting confidences",
+      "alliances_shown": []
+    },
+    {
+      "character": "Trolloc",
+      "whereabouts": "The Foregate, disguised as a puppet",
+      "notable_actions": "Disguised as a goat-horned puppet; attacks Rand when the disguise is dropped; is killed by Rand's sword",
+      "demeanor": "aggressive, snarling",
+      "alliances_shown": [
+        "Darkfriends controlling the puppet"
+      ]
+    },
+    {
+      "character": "boar-snouted Trolloc",
+      "whereabouts": "The Foregate street",
+      "notable_actions": "Grabs Rand from behind; grapples with Loial; tries to draw its sword; is thrown against a wall by Loial and killed",
+      "demeanor": "violent, snarling, speaking in Trolloc tongue",
+      "alliances_shown": []
+    }
+  ],
+  "relationships": [
+    {
+      "character_a": "Rand",
+      "character_b": "Loial",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Close companions traveling together; Loial protects Rand from the Trolloc and helps him escape"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Selene",
+      "relationship_type": "romantic",
+      "directed": false,
+      "description": "Selene pursues Rand and urges him toward greatness; Rand is attracted to her but confused by her; she sends him notes signed with crescent moon seal"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Hurin",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Hurin serves and protects Rand, guards the Horn in his absence"
+    },
+    {
+      "character_a": "Fain",
+      "character_b": "Rand",
+      "relationship_type": "enemy",
+      "directed": true,
+      "description": "Fain hunts Rand with Trollocs and Darkfriends, trying to capture or kill him"
+    },
+    {
+      "character_a": "Aludra",
+      "character_b": "Tammuz",
+      "relationship_type": "other",
+      "directed": true,
+      "description": "Aludra supervises Tammuz harshly, blaming him for accidents and assigning him demeaning tasks"
+    },
+    {
+      "character_a": "Loial",
+      "character_b": "boar-snouted Trolloc",
+      "relationship_type": "enemy",
+      "directed": false,
+      "description": "Loial kills the Trolloc to protect Rand, his first time killing"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Trolloc",
+      "relationship_type": "enemy",
+      "directed": false,
+      "description": "Rand kills the goat-horned Trolloc with his sword when it attacks"
+    },
+    {
+      "character_a": "Dena",
+      "character_b": "Thom",
+      "relationship_type": "other",
+      "directed": false,
+      "description": "Dena is associated with Thom at The Bunch of Grapes, appears to be his companion"
+    }
+  ],
+  "_meta": {
+    "book_order": 2,
+    "chapter_number": 27,
+    "chapter_id": 82,
+    "chapter_title": "The Shadow in the Night.",
+    "model": "claude-sonnet-4-5",
+    "input_tokens": 19654,
+    "output_tokens": 5496
+  }
+}

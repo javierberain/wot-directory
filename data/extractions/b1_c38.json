@@ -1,0 +1,563 @@
+{
+  "characters": [
+    {
+      "name_used_in_text": "Perrin",
+      "likely_matches_existing": "Perrin Aybara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "thick slabs of muscle from hours at the forge, yellow eyes (irises)",
+        "age": null,
+        "filiations": "apprentice to Master Luhhan",
+        "personality": "thoughtful, fearful of his wolf connection, protective"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "blacksmith",
+          "alias_type": "epithet",
+          "notes": "Used by Lan repeatedly"
+        }
+      ],
+      "notes": "His eyes have turned yellow (irises only, not sclera). Moiraine and Nynaeve both note this change. The text confirms his connection to wolves (Dapple) and reveals Moiraine knows about it."
+    },
+    {
+      "name_used_in_text": "Egwene",
+      "likely_matches_existing": "Egwene",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Held captive with Perrin by the Whitecloaks, now rescued by Lan and Moiraine."
+    },
+    {
+      "name_used_in_text": "Byar",
+      "likely_matches_existing": "Byar",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "tall, gaunt, skeletal, hollow-eyed, sunken hollows",
+        "age": null,
+        "filiations": "Whitecloak who believes Perrin killed two Children",
+        "personality": "emotionless, methodical cruelty without emotion, convinced Perrin and Egwene are Darkfriends"
+      },
+      "factions": [
+        {
+          "name": "Children of the Light",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "Wears golden sun and two golden stars on cloak"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Child Byar",
+          "alias_type": "title",
+          "notes": "His rank within the Children"
+        }
+      ],
+      "notes": "Has appropriated Perrin's axe as his own. Knocked unconscious by Lan during the rescue."
+    },
+    {
+      "name_used_in_text": "Lan",
+      "likely_matches_existing": "Lan",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Malkieri",
+        "physical_traits": "hard planes of face",
+        "age": null,
+        "filiations": "Warder to Moiraine, former student of Elyas Machera",
+        "personality": "certain, strong, cautious about saying too much, sympathetic"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "al'Lan Mandragoran",
+          "alias_type": "given_name",
+          "notes": "Full formal name"
+        },
+        {
+          "alias_text": "Lord of the Seven Towers",
+          "alias_type": "title",
+          "notes": "Malkieri title"
+        },
+        {
+          "alias_text": "Diademed Battle Lord of the Malkieri",
+          "alias_type": "title",
+          "notes": "Formal title revealed by Moiraine"
+        }
+      ],
+      "notes": "This chapter reveals his full titles and backstory. He knew Elyas Machera when Elyas was a Warder. Rescues Perrin and Egwene from the Whitecloaks."
+    },
+    {
+      "name_used_in_text": "Moiraine",
+      "likely_matches_existing": "Moiraine",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "diminutive",
+        "age": null,
+        "filiations": "Aes Sedai",
+        "personality": "firm, commanding, cryptic"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "Aes Sedai"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Moiraine Sedai",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Knows about Perrin's wolf connection and his yellow eyes. Says it is not an illness and not the Dark One's doing directly, but worries about the Pattern. Created the lightning storm to cover the rescue."
+    },
+    {
+      "name_used_in_text": "Nynaeve",
+      "likely_matches_existing": "Nynaeve al'Meara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "small size but strong",
+        "age": null,
+        "filiations": "Wisdom of Emond's Field",
+        "personality": "stubborn, skilled healer, mistrustful of Moiraine, protective"
+      },
+      "factions": [
+        {
+          "name": "Women's Circle",
+          "faction_type": "other",
+          "role": "leader",
+          "notes": "As Wisdom"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "the Wisdom",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Helped rescue Perrin and Egwene. Brought Bela with her. Still antagonistic toward Moiraine. Her ointments heal Perrin's bruises remarkably fast, surprising even herself."
+    },
+    {
+      "name_used_in_text": "Lord Captain Bornhald",
+      "likely_matches_existing": "Bornhald",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": "Commander of this Whitecloak force",
+        "personality": "duty-bound, caught between conflicting priorities"
+      },
+      "factions": [
+        {
+          "name": "Children of the Light",
+          "faction_type": "order",
+          "role": "leader",
+          "notes": "Lord Captain commanding this column"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Lord Captain",
+          "alias_type": "title",
+          "notes": null
+        },
+        {
+          "alias_text": "the Lord Captain",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Ordered that Perrin and Egwene be kept alive for the Questioners in Amador. Faces a dilemma: must reach Caemlyn on time but is slowed by the prisoners."
+    },
+    {
+      "name_used_in_text": "Bela",
+      "likely_matches_existing": "Bela",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "horse",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "shaggy mare",
+        "age": null,
+        "filiations": "ridden by Egwene and others from Emond's Field",
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Nynaeve rode Bela to find and rescue Perrin and Egwene."
+    },
+    {
+      "name_used_in_text": "Dapple",
+      "likely_matches_existing": "Dapple",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "wolf",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": "member of wolf pack that communicated with Perrin",
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Alive and communicates with Perrin during this chapter. Sends the message 'Help comes' and later 'One day again,' suggesting a future meeting."
+    },
+    {
+      "name_used_in_text": "Elyas",
+      "likely_matches_existing": "Elyas Machera",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "wounded in his side",
+        "age": null,
+        "filiations": "former Warder, taught Lan about the Blight and sword work, can communicate with wolves",
+        "personality": "guide and intermediary for those who can speak with wolves"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Elyas Machera",
+          "alias_type": "given_name",
+          "notes": "Full name"
+        }
+      ],
+      "notes": "Revealed to have been a Warder before something happened involving the Red Ajah. Currently alive but wounded, resting in a cave. Perrin sees him via wolf-vision from Dapple."
+    },
+    {
+      "name_used_in_text": "Mandarb",
+      "likely_matches_existing": "Mandarb",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "horse",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "tall black stallion",
+        "age": null,
+        "filiations": "Lan's warhorse",
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Blade",
+          "alias_type": "epithet",
+          "notes": "Translation of Mandarb"
+        }
+      ],
+      "notes": "Lan rides Mandarb during the rescue and afterward."
+    },
+    {
+      "name_used_in_text": "Rand",
+      "likely_matches_existing": "Rand al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Not present in this chapter. Moiraine believes he is in Caemlyn or on his way there. Separated from the group."
+    },
+    {
+      "name_used_in_text": "Mat",
+      "likely_matches_existing": "Matrim Cauthon",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Not present in this chapter. Moiraine believes he is in Caemlyn or on his way there. Separated from the group."
+    },
+    {
+      "name_used_in_text": "Ba'alzamon",
+      "likely_matches_existing": "Ba'alzamon",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "leader",
+          "notes": "Associated with the Dark One"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Mentioned in Perrin's thoughts regarding dreams. Not physically present."
+    }
+  ],
+  "appearances": [
+    {
+      "character": "Perrin",
+      "whereabouts": "Whitecloak camp, then fleeing with Lan's group toward Caemlyn",
+      "notable_actions": "Bound and guarded by Whitecloaks; receives mental communication from Dapple that help is coming; rescued by Lan during lightning storm; retrieves his axe and white cloaks; flees camp; has wounds treated by Nynaeve; discusses his wolf connection with Lan",
+      "demeanor": "Fearful, anxious, exhausted, relieved at rescue, worried about the meaning of his yellow eyes and wolf connection",
+      "alliances_shown": [
+        "Egwene",
+        "Lan",
+        "Moiraine",
+        "Nynaeve",
+        "Dapple"
+      ]
+    },
+    {
+      "character": "Egwene",
+      "whereabouts": "Whitecloak camp, then fleeing with Lan's group toward Caemlyn",
+      "notable_actions": "Bound and held captive with Perrin; rescued by Lan; reunited with Nynaeve; asks about Rand and Mat; treated by Nynaeve for rope burns and bruises; falls asleep by the fire",
+      "demeanor": "Exhausted, frightened during captivity, excited and buoyed after rescue",
+      "alliances_shown": [
+        "Perrin",
+        "Nynaeve",
+        "Lan",
+        "Moiraine"
+      ]
+    },
+    {
+      "character": "Byar",
+      "whereabouts": "Whitecloak camp",
+      "notable_actions": "Guards Perrin and Egwene; kicks Perrin; checks their bonds roughly; offers them a rock to 'escape' (actually a trap to justify killing them); attacks Lan with Perrin's axe; knocked unconscious by Lan",
+      "demeanor": "Cold, emotionless, methodical, calculating, convinced of their guilt as Darkfriends",
+      "alliances_shown": [
+        "Lord Captain Bornhald",
+        "Children of the Light"
+      ]
+    },
+    {
+      "character": "Lan",
+      "whereabouts": "Rescuing Perrin and Egwene from Whitecloak camp, then leading group toward Caemlyn",
+      "notable_actions": "Silently infiltrates Whitecloak camp; kills or incapacitates guards; disarms and knocks out Byar; extinguishes lantern; leads escape during Moiraine's lightning storm; scouts back twice for pursuit; discusses Perrin's wolf connection and reveals his knowledge of Elyas; reveals his full titles when confronted by Moiraine",
+      "demeanor": "Competent, deadly efficient, sympathetic toward Perrin, uncertain when discussing factions within Tar Valon, grimly philosophical about the end times",
+      "alliances_shown": [
+        "Moiraine",
+        "Perrin",
+        "Egwene",
+        "Nynaeve"
+      ]
+    },
+    {
+      "character": "Moiraine",
+      "whereabouts": "Waiting outside Whitecloak camp during rescue, then leading group toward Caemlyn",
+      "notable_actions": "Creates massive lightning storm to cover the rescue; confronts Lan about his oath when he wants to go back for Nynaeve; examines Perrin's yellow eyes; discusses the meaning with Nynaeve; reveals knowledge of Perrin's wolf connection; says she believes Rand and Mat are in Caemlyn; uses the One Power to protect the group",
+      "demeanor": "Commanding, firm with Lan, cryptic, worried about the Pattern and what Perrin's changes mean, focused on reaching Caemlyn",
+      "alliances_shown": [
+        "Lan",
+        "Perrin",
+        "Egwene",
+        "Nynaeve"
+      ]
+    },
+    {
+      "character": "Nynaeve",
+      "whereabouts": "Returns to group outside Whitecloak camp on Bela, then travels with group toward Caemlyn",
+      "notable_actions": "Rescues or helps rescue Perrin and Egwene (details unclear); brings Bela and another horse; reunites with Egwene; treats Egwene's and Perrin's wounds with ointments; discovers Perrin's yellow eyes; asks Moiraine about it; confronts Moiraine about finding Rand and Mat",
+      "demeanor": "Determined, protective, skilled healer, antagonistic toward Moiraine, surprised and frightened by how well her ointment worked on Perrin",
+      "alliances_shown": [
+        "Egwene",
+        "Perrin",
+        "Lan"
+      ]
+    },
+    {
+      "character": "Lord Captain Bornhald",
+      "whereabouts": "Whitecloak camp",
+      "notable_actions": "Ordered prisoners kept alive for Questioners; faces dilemma about reaching Caemlyn on time while slowed by prisoners",
+      "demeanor": "Dutiful, conflicted between priorities",
+      "alliances_shown": [
+        "Children of the Light",
+        "Byar"
+      ]
+    },
+    {
+      "character": "Bela",
+      "whereabouts": "With Nynaeve, then traveling with the group",
+      "notable_actions": "Carried Nynaeve to the rescue; used as mount afterward",
+      "demeanor": null,
+      "alliances_shown": [
+        "Nynaeve",
+        "Egwene"
+      ]
+    },
+    {
+      "character": "Dapple",
+      "whereabouts": "Somewhere with Elyas, communicating mentally with Perrin",
+      "notable_actions": "Sends mental message to Perrin that help is coming; shows him image of wounded Elyas in a cave; sends farewell message 'One day again'",
+      "demeanor": null,
+      "alliances_shown": [
+        "Perrin",
+        "Elyas"
+      ]
+    },
+    {
+      "character": "Elyas",
+      "whereabouts": "In a cave, wounded in his side",
+      "notable_actions": "Resting and tending his wound; alive despite Whitecloaks' claims",
+      "demeanor": "Wounded but alive",
+      "alliances_shown": [
+        "Perrin",
+        "Dapple"
+      ]
+    },
+    {
+      "character": "Mandarb",
+      "whereabouts": "With Lan during rescue and journey",
+      "notable_actions": "Carries Lan during the infiltration and escape",
+      "demeanor": null,
+      "alliances_shown": [
+        "Lan"
+      ]
+    },
+    {
+      "character": "Rand",
+      "whereabouts": "Unknown, possibly Caemlyn or on the way there",
+      "notable_actions": "Not present; separated from the group",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Mat",
+      "whereabouts": "Unknown, possibly Caemlyn or on the way there with Rand",
+      "notable_actions": "Not present; separated from the group",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Ba'alzamon",
+      "whereabouts": "Not physically present",
+      "notable_actions": "Mentioned in Perrin's fearful thoughts about dreams",
+      "demeanor": null,
+      "alliances_shown": []
+    }
+  ],
+  "relationships": [
+    {
+      "character_a": "Moiraine",
+      "character_b": "Lan",
+      "relationship_type": "warder_bond",
+      "directed": true,
+      "description": "Moiraine holds the Warder bond with Lan. She invokes his oaths when he wants to return for Nynaeve."
+    },
+    {
+      "character_a": "Lan",
+      "character_b": "Elyas",
+      "relationship_type": "mentor",
+      "directed": true,
+      "description": "Elyas was Lan's teacher, instructing him about the Blight and sword work when Elyas was a Warder."
+    },
+    {
+      "character_a": "Byar",
+      "character_b": "Perrin",
+      "relationship_type": "enemy",
+      "directed": false,
+      "description": "Byar is convinced Perrin is a Darkfriend and goes out of his way to hurt him because Perrin killed two Whitecloaks."
+    },
+    {
+      "character_a": "Perrin",
+      "character_b": "Dapple",
+      "relationship_type": "other",
+      "directed": false,
+      "description": "Mental/psychic bond allowing communication. Dapple can send thoughts and images to Perrin."
+    },
+    {
+      "character_a": "Perrin",
+      "character_b": "Elyas",
+      "relationship_type": "mentor",
+      "directed": true,
+      "description": "Elyas served as Perrin's guide and intermediary in learning to communicate with wolves."
+    },
+    {
+      "character_a": "Nynaeve",
+      "character_b": "Moiraine",
+      "relationship_type": "rival",
+      "directed": false,
+      "description": "Nynaeve mistrusts and is antagonistic toward Moiraine, though they work together."
+    },
+    {
+      "character_a": "Nynaeve",
+      "character_b": "Egwene",
+      "relationship_type": "other",
+      "directed": false,
+      "description": "Protective relationship; Nynaeve is concerned for Egwene's safety and treats her wounds."
+    },
+    {
+      "character_a": "Egwene",
+      "character_b": "Perrin",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Fellow captives who support each other through their ordeal with the Whitecloaks."
+    },
+    {
+      "character_a": "Lan",
+      "character_b": "Mandarb",
+      "relationship_type": "other",
+      "directed": false,
+      "description": "Lan's warhorse, his trusted mount."
+    },
+    {
+      "character_a": "Byar",
+      "character_b": "Lord Captain Bornhald",
+      "relationship_type": "servant",
+      "directed": true,
+      "description": "Byar serves under Lord Captain Bornhald's command in the Children of the Light."
+    }
+  ],
+  "_meta": {
+    "book_order": 1,
+    "chapter_number": 38,
+    "chapter_id": 39,
+    "chapter_title": "Rescue",
+    "model": "claude-sonnet-4-5",
+    "input_tokens": 16227,
+    "output_tokens": 5887
+  }
+}

@@ -1,0 +1,758 @@
+{
+  "characters": [
+    {
+      "name_used_in_text": "Hyam Kinch",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Andoran",
+        "physical_traits": "leathery-faced, taciturn, smokes a pipe",
+        "age": "mature adult (old enough to have raised children)",
+        "filiations": "has a wife and children",
+        "personality": "jovial but laconic, distrustful of authority and change, nostalgic for 'the old days', helpful despite suspicions"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Master Kinch",
+          "alias_type": "title",
+          "notes": "used by narrative"
+        }
+      ],
+      "notes": "A farmer who gives Rand and Mat a ride. His taciturn nature is emphasized by his habit of speaking around his pipe and using few words. He notices their suspicious behavior and offers them shelter on his farm, though they decline."
+    },
+    {
+      "name_used_in_text": "Alpert Mull",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Andoran",
+        "physical_traits": "square face, square hands, worn and grooved from hard work and worry",
+        "age": "mature adult (has children old enough to have scarves)",
+        "filiations": "has a wife and children",
+        "personality": "conflicted between fear and kindness, worried about his family and farm, apologetic about his fear"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Master Mull",
+          "alias_type": "title",
+          "notes": "used by narrative"
+        }
+      ],
+      "notes": "A farmer who gives Rand and Mat a ride and two scarves belonging to his sons. He is torn between wanting to help them and fear for his family's safety. Repeatedly emphasizes the hard times and his family obligations."
+    },
+    {
+      "name_used_in_text": "Rulan Allwine",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Andoran",
+        "physical_traits": "stout with a gleaming white apron",
+        "age": "adult",
+        "filiations": null,
+        "personality": "irritable about the crowds and disruption, practical, clean and orderly, complains about people not staying where they belong"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Master Allwine",
+          "alias_type": "title",
+          "notes": "used by narrative"
+        }
+      ],
+      "notes": "Innkeeper of The Queen's Man. His name reminds Rand of Emond's Field. He becomes fearful when Rand falls ill, worried other guests will learn of the sickness."
+    },
+    {
+      "name_used_in_text": "Gode",
+      "likely_matches_existing": "Howal Gode",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Whitebridge (from context)",
+        "physical_traits": "burned, cracked, oozing skin; skull-like face with shriveled lips; lidless eyes (in dream/vision)",
+        "age": "adult",
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Darkfriend who pursued Rand and Mat; appears dead but featured in Rand's dream"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Appears only in Rand's dream/vision where Ba'alzamon shows him Gode's fate. His burned appearance suggests he died in fire at The Dancing Cartman in Four Kings."
+    },
+    {
+      "name_used_in_text": "Paitr",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Andoran",
+        "physical_traits": "thick dark curls, well-dressed with embroidered blue-striped shirt, dark blue cloak embroidered around hem, unscuffed leather boots",
+        "age": "young adult, older than Rand and Mat",
+        "filiations": "village youth",
+        "personality": "nervous, fearful, conflicted about his role as Darkfriend, tries to appear cocky but is transparently anxious"
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Darkfriend assigned to find and talk to Rand and Mat in Market Sheran"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "A young Darkfriend who approaches Rand and Mat in Market Sheran. He claims he is alone and just wants to talk, but his nervousness and fear are evident. After Rand hits him, he flees when an old man overhears him mention the Great Lord of the Dark."
+    },
+    {
+      "name_used_in_text": "the woman with the dagger",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "medium",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": "about Nynaeve's age, sharp-featured, pretty in a sharp-featured fashion, pale green silk dress, rich soft gray cloak, heavy gold necklace, frothy lace net in hair",
+        "age": "young adult (same age as Nynaeve)",
+        "filiations": null,
+        "personality": "cold and self-assured, commanding presence, calculating, lacks warmth or feeling in her face and manner"
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Darkfriend who attempts to kill Mat with a poisoned dagger"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "A well-dressed Darkfriend woman who enters the stable claiming to check on her horse. She attempts to kill Mat with a dagger that chars wood and produces smoke. Her blade appears similar to the Shadar Logoth dagger in its corruption. When captured, she warns that a Myrddraal is coming. No proper name is given in the chapter; she is referred to only by description and role."
+    },
+    {
+      "name_used_in_text": "Mother Brune",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Andoran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "village healer/midwife equivalent",
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "The local healer figure in the village where The Queen's Man is located. Mat seeks her help for Rand but she is away birthing a baby. The villagers do not know what a Wisdom is."
+    },
+    {
+      "name_used_in_text": "Logain",
+      "likely_matches_existing": "Logain",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "the false Dragon",
+          "alias_type": "epithet",
+          "notes": "how he is referred to throughout"
+        }
+      ],
+      "notes": "Referenced repeatedly as the reason for the crowds on the Caemlyn Road. People are traveling to Caemlyn to see him. The woman Darkfriend calls him 'that egotistical fool Gode' in an apparent slip, then mentions confusion since 'what happened with that egotistical fool Gode' - these appear to be separate references."
+    },
+    {
+      "name_used_in_text": "Rand",
+      "likely_matches_existing": "Rand al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "determined, loyal to friends, struggles with identity questions, fears going mad"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": null
+    },
+    {
+      "name_used_in_text": "Mat",
+      "likely_matches_existing": "Matrim Cauthon",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "eyes damaged by bright light, wears scarf around forehead",
+        "age": null,
+        "filiations": null,
+        "personality": "protective, loyal, suspicious of everyone, willing to use violence when threatened"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "His eyes are recovering from damage that made him nearly blind. He still squints in daylight and wears a scarf low over his forehead. He carries the Shadar Logoth dagger and uses it to threaten the Darkfriend woman."
+    },
+    {
+      "name_used_in_text": "Ba'alzamon",
+      "likely_matches_existing": "Ba'alzamon",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": "fires in his face, eyes burning",
+        "age": null,
+        "filiations": null,
+        "personality": "rageful, hateful, triumphant, controlling"
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "leader",
+          "notes": "Appears to command Darkfriends and Myrddraal"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "the Great Lord of the Dark",
+          "alias_type": "title",
+          "notes": "how Darkfriends refer to him"
+        },
+        {
+          "alias_text": "the Great Lord",
+          "alias_type": "title",
+          "notes": "shortened form used by the woman Darkfriend"
+        }
+      ],
+      "notes": "Appears in Rand's dreams/visions, showing him Gode's fate and claiming Rand belongs to him. Says 'What protects you also makes you vulnerable' and 'The Eye of the World will never serve you.'"
+    },
+    {
+      "name_used_in_text": "Moiraine",
+      "likely_matches_existing": "Moiraine",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown (not Two Rivers)",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Aes Sedai"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Appears in Rand's feverish visions/dreams. He expects to find her in Caemlyn. In the vision, she warns him he must go to Tar Valon or be taken by the Dark One."
+    },
+    {
+      "name_used_in_text": "Lan",
+      "likely_matches_existing": "Lan",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown (not Two Rivers)",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Appears in Rand's feverish visions/dreams, covered in blood, warning that anyone can be a Darkfriend and questioning if Rand is worthy of the heron-mark blade."
+    },
+    {
+      "name_used_in_text": "Thom",
+      "likely_matches_existing": "Thom Merrilin",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Appears in Rand's feverish visions/dreams with charred, burned clothes and flesh, warning about the price of Aes Sedai help. Rand and Mat still carry his cloak and instrument cases."
+    },
+    {
+      "name_used_in_text": "Egwene",
+      "likely_matches_existing": "Egwene",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "long dark braid",
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Appears in Rand's feverish visions/dreams, accusing him of abandoning everyone and saying they are all dead because of him."
+    },
+    {
+      "name_used_in_text": "Perrin",
+      "likely_matches_existing": "Perrin Aybara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Appears in Rand's feverish visions/dreams, accusing and pleading for help."
+    },
+    {
+      "name_used_in_text": "Tam",
+      "likely_matches_existing": "Tam al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "Rand's father",
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Appears in Rand's feverish visions/dreams, frowning and shaking his head but saying nothing. Rand desperately asks him 'Who am I?' The vision causes Rand to cling to his sword, calling Tam 'my father.'"
+    },
+    {
+      "name_used_in_text": "Mistress al'Vere",
+      "likely_matches_existing": "Mistress al'Vere",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "Egwene's mother",
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Appears in Rand's feverish visions/dreams, weeping for her daughter."
+    },
+    {
+      "name_used_in_text": "Bayle Domon",
+      "likely_matches_existing": "Bayle Domon",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Appears in Rand's feverish visions/dreams, cursing Rand for bringing Fades down on his vessel."
+    },
+    {
+      "name_used_in_text": "Master Fitch",
+      "likely_matches_existing": "Master Fitch",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Baerlon (presumably)",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "innkeeper",
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Appears in Rand's feverish visions/dreams, wringing his hands over the ashes of his inn."
+    },
+    {
+      "name_used_in_text": "Min",
+      "likely_matches_existing": "Min",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Baerlon (presumably)",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Appears in Rand's feverish visions/dreams, screaming in a Trolloc's clutches."
+    },
+    {
+      "name_used_in_text": "Nynaeve",
+      "likely_matches_existing": "Nynaeve al'Meara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Wisdom",
+          "alias_type": "title",
+          "notes": "her role"
+        }
+      ],
+      "notes": "Referenced when Mat says there is no Wisdom in the village, and the woman's age is compared to Nynaeve's."
+    },
+    {
+      "name_used_in_text": "Master al'Vere",
+      "likely_matches_existing": "Brandelwyn al'Vere",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Referenced when Rand wonders what Master al'Vere would say about the Two Rivers being part of the Queen's Realm."
+    },
+    {
+      "name_used_in_text": "Queen Morgase",
+      "likely_matches_existing": "Queen Morgase",
+      "is_new_character": false,
+      "confidence": "medium",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Andoran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "Queen of Andor",
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "the Queen",
+          "alias_type": "title",
+          "notes": "how she is referred to throughout"
+        }
+      ],
+      "notes": "Referenced multiple times but never named directly in this chapter. The Queen's Guards serve her, inns are named for her, and people invoke 'the Light illumine her.' From roster context, this is Queen Morgase of Andor."
+    }
+  ],
+  "appearances": [
+    {
+      "character": "Rand",
+      "whereabouts": "Traveling east on the Caemlyn Road from Four Kings through several villages, riding in various carts and wagons, spending a feverish night in the stable of The Queen's Man inn",
+      "notable_actions": "Suffers through severe illness with alternating chills and fever; has vivid dreams/visions of Ba'alzamon, Gode, and various people from his past; struggles with identity questions ('Who am I?'); throws the Darkfriend woman's dagger into water where it hisses and steams; collapses from weakness multiple times",
+      "demeanor": "Weakened and delirious from illness, fearful and paranoid about Darkfriends, protective of his sword and identity, grateful for help but suspicious of everyone",
+      "alliances_shown": [
+        "Mat"
+      ]
+    },
+    {
+      "character": "Mat",
+      "whereabouts": "Traveling east on the Caemlyn Road with Rand, staying in the stable of The Queen's Man inn",
+      "notable_actions": "Cares for Rand through his illness, fetching water and food; his eyesight gradually improves; defends them from the Darkfriend woman by deflecting her dagger strike and threatening her with the Shadar Logoth dagger; punches Paitr in the nose when threatened; juggles for payment at the inn",
+      "demeanor": "Protective and loyal to Rand, increasingly paranoid and suspicious of everyone, willing to use violence when threatened, tired and strained from caring for Rand",
+      "alliances_shown": [
+        "Rand"
+      ]
+    },
+    {
+      "character": "Hyam Kinch",
+      "whereabouts": "Traveling on the Caemlyn Road in his hay wagon, heading home to his farm",
+      "notable_actions": "Gives Rand and Mat a ride; exchanges brief, jovial words with villagers; suspects they are running from something serious and offers them shelter at his farm; leaves when Mat reacts suspiciously to his mention of Darkfriends",
+      "demeanor": "Taciturn but helpful, pragmatic, somewhat nostalgic for 'the old days', unoffended by their refusal of help",
+      "alliances_shown": [
+        "Rand",
+        "Mat"
+      ]
+    },
+    {
+      "character": "Alpert Mull",
+      "whereabouts": "Traveling on the Caemlyn Road in his wagon, returning from buying hay",
+      "notable_actions": "Gives Rand and Mat a ride; complains about hard times and failed crops; gives them two woolen scarves belonging to his sons despite his fear; repeatedly emphasizes his family obligations",
+      "demeanor": "Conflicted between kindness and fear, worried about his family, apologetic about not offering more help, ultimately generous despite his anxiety",
+      "alliances_shown": [
+        "Rand",
+        "Mat"
+      ]
+    },
+    {
+      "character": "Rulan Allwine",
+      "whereabouts": "At The Queen's Man inn, managing his overcrowded establishment",
+      "notable_actions": "Charges high prices due to hard times; hires Rand and Mat to perform for the crowd; becomes fearful when Rand falls ill and has them moved to the stable to hide the sickness from other guests",
+      "demeanor": "Harried by the crowds, irritable about the disruption caused by people traveling to see Logain, practical and self-protective",
+      "alliances_shown": []
+    },
+    {
+      "character": "Paitr",
+      "whereabouts": "At The Queen's Man inn in Market Sheran",
+      "notable_actions": "Approaches Rand and Mat claiming he wants to talk; admits he is a Darkfriend but says he is alone and only wants them to stop running; warns that a Myrddraal is coming; flees when an old man overhears him mention the Great Lord of the Dark",
+      "demeanor": "Nervous and frightened, trying to appear casual but transparently anxious, conflicted about his assignment, desperate to convince them to stop fleeing",
+      "alliances_shown": [
+        "The Shadow"
+      ]
+    },
+    {
+      "character": "the woman with the dagger",
+      "whereabouts": "At the stable of The Queen's Man inn",
+      "notable_actions": "Enters the stable claiming to check on her horse; attempts to kill Mat with a poisoned/corrupted dagger; after being captured, tries to convince them to come willingly to 'the Great Lord'; warns that a Myrddraal is coming; mentions confusion since events at Four Kings and Market Sheran",
+      "demeanor": "Cold and self-assured, calculating, lacks warmth or feeling, maintains composure even when threatened, speaks as if their capture is inevitable",
+      "alliances_shown": [
+        "The Shadow"
+      ]
+    },
+    {
+      "character": "Ba'alzamon",
+      "whereabouts": "In Rand's fever dreams/visions",
+      "notable_actions": "Shows Rand Gode's fate as punishment/reward; claims Rand belongs to him alive or dead; says 'What protects you also makes you vulnerable'; declares 'The Eye of the World will never serve you'; marks Rand as his by throwing a ball of flame at his face",
+      "demeanor": "Rageful, hateful, triumphant, commanding, possessive of Rand",
+      "alliances_shown": [
+        "The Shadow",
+        "Gode"
+      ]
+    },
+    {
+      "character": "Gode",
+      "whereabouts": "In Rand's fever dream/vision at The Dancing Cartman",
+      "notable_actions": "Appears burned and dying/dead; makes eager garbled sounds; crumbles to dust as Ba'alzamon 'rewards' him; shows brief joy that turns to horror at the last moment",
+      "demeanor": "Eager to please Ba'alzamon even while dying, experiencing final horror at his fate",
+      "alliances_shown": [
+        "The Shadow",
+        "Ba'alzamon"
+      ]
+    },
+    {
+      "character": "Moiraine",
+      "whereabouts": "In Rand's fever dreams/visions",
+      "notable_actions": "Warns Rand he must go to Tar Valon or be taken by the Dark One; says only Aes Sedai can save him now",
+      "demeanor": "Serene but bloodless and pale, her voice a lash, urgent",
+      "alliances_shown": []
+    },
+    {
+      "character": "Lan",
+      "whereabouts": "In Rand's fever dreams/visions",
+      "notable_actions": "Questions whether Rand is worthy of the heron-mark blade; warns that anyone can be a Darkfriend; says Rand is alone now",
+      "demeanor": "Hard as granite, bleeding, giving a wolf's smile, ominous",
+      "alliances_shown": []
+    },
+    {
+      "character": "Thom",
+      "whereabouts": "In Rand's fever dreams/visions",
+      "notable_actions": "Warns about trusting Aes Sedai; says the price of Aes Sedai help is always smaller than you believe and greater than you can imagine; advises Rand to run",
+      "demeanor": "Sardonically grinning despite being burned and charred, warning",
+      "alliances_shown": []
+    },
+    {
+      "character": "Egwene",
+      "whereabouts": "In Rand's fever dreams/visions",
+      "notable_actions": "Accuses Rand of abandoning everyone; claims they are all dead because he left them; says death is the kingdom of the Dark One",
+      "demeanor": "Pained, mournful, accusing",
+      "alliances_shown": []
+    },
+    {
+      "character": "Perrin",
+      "whereabouts": "In Rand's fever dreams/visions",
+      "notable_actions": "Accuses Rand and pleads for help",
+      "demeanor": "Accusing, pleading",
+      "alliances_shown": []
+    },
+    {
+      "character": "Tam",
+      "whereabouts": "In Rand's fever dreams/visions",
+      "notable_actions": "Stands over Rand frowning and shaking his head but says nothing; this causes Rand to desperately ask 'Who am I?'",
+      "demeanor": "Silent, frowning, disappointed or disapproving",
+      "alliances_shown": []
+    },
+    {
+      "character": "Mistress al'Vere",
+      "whereabouts": "In Rand's fever dreams/visions",
+      "notable_actions": "Weeps for her daughter Egwene",
+      "demeanor": "Weeping, grieving",
+      "alliances_shown": []
+    },
+    {
+      "character": "Bayle Domon",
+      "whereabouts": "In Rand's fever dreams/visions",
+      "notable_actions": "Curses Rand for bringing Fades down on his vessel",
+      "demeanor": "Angry, cursing",
+      "alliances_shown": []
+    },
+    {
+      "character": "Master Fitch",
+      "whereabouts": "In Rand's fever dreams/visions",
+      "notable_actions": "Wrings his hands over the ashes of his inn",
+      "demeanor": "Distressed, despairing",
+      "alliances_shown": []
+    },
+    {
+      "character": "Min",
+      "whereabouts": "In Rand's fever dreams/visions",
+      "notable_actions": "Screams while in a Trolloc's clutches",
+      "demeanor": "Terrified, screaming",
+      "alliances_shown": []
+    }
+  ],
+  "relationships": [
+    {
+      "character_a": "Rand",
+      "character_b": "Mat",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Deep friendship and mutual protection. Mat cares for Rand through his illness, and Rand refuses to leave Mat despite his blindness. They rely on each other completely for survival."
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Tam",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "Father-son relationship. Rand clings to his sword and insists 'He's my father' while feverish, and desperately asks Tam's vision 'Who am I?' showing deep need for paternal validation and identity clarity."
+    },
+    {
+      "character_a": "Ba'alzamon",
+      "character_b": "Rand",
+      "relationship_type": "enemy",
+      "directed": true,
+      "description": "Ba'alzamon claims ownership of Rand, saying he belongs to him alive or dead, and marks him with fire. Pursues Rand relentlessly through dreams and Darkfriends."
+    },
+    {
+      "character_a": "Ba'alzamon",
+      "character_b": "Gode",
+      "relationship_type": "servant",
+      "directed": true,
+      "description": "Gode served Ba'alzamon as a 'hound' searching for Rand. Ba'alzamon 'rewards' him by crumbling him to dust, showing the relationship is one of master to disposable tool."
+    },
+    {
+      "character_a": "Ba'alzamon",
+      "character_b": "Paitr",
+      "relationship_type": "servant",
+      "directed": true,
+      "description": "Paitr serves Ba'alzamon (the Great Lord of the Dark) as a Darkfriend, though reluctantly and fearfully."
+    },
+    {
+      "character_a": "Ba'alzamon",
+      "character_b": "the woman with the dagger",
+      "relationship_type": "servant",
+      "directed": true,
+      "description": "The woman serves Ba'alzamon (the Great Lord) as a Darkfriend, attempting to capture or kill Rand and Mat on his behalf."
+    },
+    {
+      "character_a": "Paitr",
+      "character_b": "Rand",
+      "relationship_type": "enemy",
+      "directed": false,
+      "description": "Paitr is assigned to find and talk to Rand as a Darkfriend, though he claims no hostile intent. Rand punches him and they flee."
+    },
+    {
+      "character_a": "Paitr",
+      "character_b": "Mat",
+      "relationship_type": "enemy",
+      "directed": false,
+      "description": "Paitr is a Darkfriend pursuing Mat; Mat threatens to expose him publicly."
+    },
+    {
+      "character_a": "the woman with the dagger",
+      "character_b": "Mat",
+      "relationship_type": "enemy",
+      "directed": false,
+      "description": "She attempts to kill Mat with a poisoned/corrupted dagger; Mat captures and threatens her with the Shadar Logoth dagger."
+    },
+    {
+      "character_a": "the woman with the dagger",
+      "character_b": "Rand",
+      "relationship_type": "enemy",
+      "directed": false,
+      "description": "She is a Darkfriend sent to capture or kill Rand; would have killed him after Mat if her first strike had succeeded."
+    },
+    {
+      "character_a": "Hyam Kinch",
+      "character_b": "Rand",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Kinch helps Rand by giving him a ride and offering shelter, recognizing he is running from something but not judging him as a Darkfriend."
+    },
+    {
+      "character_a": "Hyam Kinch",
+      "character_b": "Mat",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Kinch helps Mat with a ride and offer of shelter, though Mat's suspicion ends the relationship."
+    },
+    {
+      "character_a": "Alpert Mull",
+      "character_b": "Rand",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Mull gives Rand a ride and a scarf despite his fear, showing conflicted kindness."
+    },
+    {
+      "character_a": "Alpert Mull",
+      "character_b": "Mat",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Mull gives Mat a ride and a scarf despite his fear, showing conflicted kindness."
+    }
+  ],
+  "_meta": {
+    "book_order": 1,
+    "chapter_number": 33,
+    "chapter_id": 34,
+    "chapter_title": "The Dark Waits",
+    "model": "claude-sonnet-4-5",
+    "input_tokens": 21510,
+    "output_tokens": 8953
+  }
+}

@@ -1,0 +1,676 @@
+{
+  "characters": [
+    {
+      "name_used_in_text": "Nynaeve al'Meara",
+      "likely_matches_existing": "Nynaeve al'Meara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "shorter than Min, dark eyes, dark hair in a braid down to her waist",
+        "age": "young",
+        "filiations": "Father taught her hunting and tracking (deceased)",
+        "personality": "stubborn, determined, suspicious of Aes Sedai, protective of Emond's Field folk, capable of calling Women's Circle to action when men are indecisive"
+      },
+      "factions": [
+        {
+          "name": "Women's Circle",
+          "faction_type": "society",
+          "role": "leader",
+          "notes": "As Wisdom, she leads the Women's Circle and can call them together to make decisions"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "the Wisdom",
+          "alias_type": "title",
+          "notes": "her official role in Emond's Field"
+        }
+      ],
+      "notes": "Known character from roster; this chapter provides significant expansion of her role and reveals she tracked the party to Baerlon"
+    },
+    {
+      "name_used_in_text": "Rand al'Thor",
+      "likely_matches_existing": "Rand al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "Tam al'Thor (father figure), Kari al'Thor (mother, deceased). Nynaeve reveals Tam found Rand as a baby after Tam returned from seeking adventure; Rand was born outside the Two Rivers",
+        "personality": "trying to take responsibility, concerned about protecting Emond's Field from Trollocs, increasingly troubled by questions of his birth"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Major revelation this chapter: Nynaeve confirms Rand was born outside the Two Rivers and brought back by Tam and Kari as a baby. Rand learns his fever-dream memories were likely true."
+    },
+    {
+      "name_used_in_text": "Moiraine",
+      "likely_matches_existing": "Moiraine",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown (not Two Rivers)",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "patient but with limited tolerance, protective of the young people, methodical in gathering information"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "Aes Sedai; can touch saidar and the True Source"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Mistress Alys",
+          "alias_type": "disguise",
+          "notes": "the false name she is using in Baerlon"
+        }
+      ],
+      "notes": "Questioned Nynaeve about whether any of the boys were born outside the Two Rivers, seeking reasons for the Shadow's interest"
+    },
+    {
+      "name_used_in_text": "Lan",
+      "likely_matches_existing": "Lan",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown (not Two Rivers)",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "professional, surprised and impressed by Nynaeve's tracking ability, protective, approving of competence"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Master Andra",
+          "alias_type": "disguise",
+          "notes": "the false name he is using in Baerlon"
+        },
+        {
+          "alias_text": "the Warder",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Genuinely surprised that Nynaeve tracked them successfully; can sense evil (Trollocs) within a quarter mile through his connection to Moiraine"
+    },
+    {
+      "name_used_in_text": "Perrin Aybara",
+      "likely_matches_existing": "Perrin Aybara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "large size",
+        "age": null,
+        "filiations": "apprenticed to Master Luhhan (blacksmith)",
+        "personality": "hesitant, concerned about how Master Luhhan reacted to his leaving"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Led the way to the meeting with Nynaeve but was hesitant entering"
+    },
+    {
+      "name_used_in_text": "Matrim Cauthon",
+      "likely_matches_existing": "Matrim Cauthon",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "son of Abell Cauthon",
+        "personality": "tries tricks with outlanders according to his father's worry; quick to respond but sometimes uncertain"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Mat",
+          "alias_type": "given_name",
+          "notes": null
+        }
+      ],
+      "notes": "Concerned about what his father said; unsure how to respond to Nynaeve's mixed assessment"
+    },
+    {
+      "name_used_in_text": "Egwene",
+      "likely_matches_existing": "Egwene",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "hair now unbraided",
+        "age": null,
+        "filiations": null,
+        "personality": "torn between desire to be dignified and fear of confrontation with Nynaeve; left a note explaining her departure"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Has unbraided her hair and wears a hooded cloak to hide this fact from Nynaeve; clearly anxious about the Wisdom's reaction"
+    },
+    {
+      "name_used_in_text": "Thom Merrilin",
+      "likely_matches_existing": "The Gleeman",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "from Baerlon area",
+        "physical_traits": "white hair, long mustaches, thick eyebrows",
+        "age": "older",
+        "filiations": null,
+        "personality": "gruff, concerned about Whitecloaks, protective in his own way, theatrical when making points"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "the gleeman",
+          "alias_type": "epithet",
+          "notes": null
+        },
+        {
+          "alias_text": "gleeman",
+          "alias_type": "epithet",
+          "notes": null
+        }
+      ],
+      "notes": "The roster lists him as 'The Gleeman' but text consistently uses 'Thom'; this is clearly the same character. Gave advice about not speaking before thinking. Warned about Whitecloak danger."
+    },
+    {
+      "name_used_in_text": "Min",
+      "likely_matches_existing": "Min",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Baerlon (presumably)",
+        "physical_traits": "taller than Nynaeve",
+        "age": null,
+        "filiations": null,
+        "personality": "urgent, frustrated when not listened to, possesses some kind of vision ability"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Can see 'sparks' around certain people; sees them between Nynaeve and Moiraine, and around the group. Her visions have grown sharper and more furious. Rand keeps her secret ability hidden from others."
+    },
+    {
+      "name_used_in_text": "Tam al'Thor",
+      "likely_matches_existing": "Tam al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "Rand's adoptive father; married to Kari al'Thor (deceased, red-haired outlander wife); ran away seeking adventure as a boy, returned as a grown man with wife and baby Rand",
+        "personality": "sensible usually, convinced by Moiraine's arguments, wanted to come after the boys himself despite being too weak"
+      },
+      "factions": [
+        {
+          "name": "Village Council",
+          "faction_type": "other",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Tam",
+          "alias_type": "given_name",
+          "notes": null
+        }
+      ],
+      "notes": "Revealed to have found Rand as a baby and brought him back to Emond's Field; had himself carried to village meeting despite weakness to argue for believing Moiraine"
+    },
+    {
+      "name_used_in_text": "Kari al'Thor",
+      "likely_matches_existing": "Kari",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "outlander (not Two Rivers)",
+        "physical_traits": "red-haired",
+        "age": null,
+        "filiations": "Tam's wife, Rand's adoptive mother (deceased)",
+        "personality": "loving mother"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Kari",
+          "alias_type": "given_name",
+          "notes": null
+        }
+      ],
+      "notes": "Nynaeve remembers her cradling baby Rand with great love; described as an outlander wife when Tam returned to Emond's Field"
+    },
+    {
+      "name_used_in_text": "Brandelwyn al'Vere",
+      "likely_matches_existing": "Brandelwyn al'Vere",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "husband of Mistress al'Vere, Egwene's father",
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "Village Council",
+          "faction_type": "other",
+          "role": "leader",
+          "notes": "Mayor of Emond's Field; wears scales of office"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Bran al'Vere",
+          "alias_type": "given_name",
+          "notes": null
+        }
+      ],
+      "notes": "Wanted to be part of the rescue party at the village meeting"
+    },
+    {
+      "name_used_in_text": "Haral Luhhan",
+      "likely_matches_existing": "Haral Luhhan",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "husband of Alsbet Luhhan, master blacksmith, Perrin's master",
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "Village Council",
+          "faction_type": "other",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Master Luhhan",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Wanted to join rescue party until Alsbet made him sit down; not pleased about Perrin leaving"
+    },
+    {
+      "name_used_in_text": "Alsbet Luhhan",
+      "likely_matches_existing": "Alsbet Luhhan",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "wife of Haral Luhhan",
+        "personality": "assertive enough to make her husband sit down at village meeting"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Alsbet",
+          "alias_type": "given_name",
+          "notes": null
+        }
+      ],
+      "notes": "Made Haral sit down when he wanted to join the rescue party"
+    },
+    {
+      "name_used_in_text": "Cenn Buie",
+      "likely_matches_existing": "Cenn Buie",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "Village Council",
+          "faction_type": "other",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Wanted to be part of the rescue party at the village meeting"
+    },
+    {
+      "name_used_in_text": "Mavra Mallen",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "from Deven Ride",
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Came from Deven Ride to serve as Wisdom temporarily while Nynaeve is away; wants to return home as soon as possible"
+    },
+    {
+      "name_used_in_text": "Abell Cauthon",
+      "likely_matches_existing": "Abell Cauthon",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "Mat's father",
+        "personality": "worried Mat will try tricks with outlanders and get hurt; according to Nynaeve, 'never much brighter than' Mat"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "More afraid of Mat's tricks getting him in trouble than of Moiraine"
+    }
+  ],
+  "appearances": [
+    {
+      "character": "Nynaeve al'Meara",
+      "whereabouts": "The Stag and Lion inn in Baerlon, in a private room meeting with Moiraine and then the entire party",
+      "notable_actions": "Tracked the party from Emond's Field to Baerlon despite Lan's efforts to hide their trail; confronted Moiraine; revealed she convinced the Women's Circle to send her after the young people when the men couldn't decide; questioned Moiraine's motives and protection claims; had a private conversation with Moiraine; spoke privately with Rand about his birth and Tam's fever-words; decided to stay and observe rather than immediately forcing them home",
+      "demeanor": "Stubborn, defensive, angry at the Aes Sedai, protective of the Emond's Field youth, momentarily disconcerted by Lan's compliment on her tracking, ultimately uncertain but willing to wait and see",
+      "alliances_shown": [
+        "Emond's Field folk",
+        "Women's Circle",
+        "the four young people"
+      ]
+    },
+    {
+      "character": "Rand al'Thor",
+      "whereabouts": "The Stag and Lion inn in Baerlon",
+      "notable_actions": "Sat down at the table first to break the standoff between Moiraine and Nynaeve; argued they cannot return to Emond's Field; spoke privately with Min who warned him about sparks around Nynaeve; had a private conversation with Nynaeve about his birth and learned she knows he was found as a baby",
+      "demeanor": "Determined to keep the group moving toward Tar Valon, uncomfortable facing Nynaeve alone, deeply troubled by confirmation he was born outside the Two Rivers and adopted by Tam",
+      "alliances_shown": [
+        "Moiraine",
+        "his friends",
+        "conflicted about Nynaeve"
+      ]
+    },
+    {
+      "character": "Moiraine",
+      "whereabouts": "The Stag and Lion inn in Baerlon, in a private room",
+      "notable_actions": "Questioned Nynaeve about the boys' origins, particularly whether any were born outside the Two Rivers; explained her protection abilities through the True Source and saidar; had a private conversation with Nynaeve; observed Rand taking initiative",
+      "demeanor": "Patient but with limited tolerance for Nynaeve's resistance, impassive during tense moments, methodical in her questioning",
+      "alliances_shown": [
+        "Lan",
+        "the young people",
+        "White Tower"
+      ]
+    },
+    {
+      "character": "Lan",
+      "whereabouts": "The Stag and Lion inn in Baerlon, in the private room and standing guard in the hallway",
+      "notable_actions": "Offered Nynaeve wine; questioned how she tracked them; expressed genuine surprise and approval at her tracking skill; warned about keeping secrets from Whitecloaks; stood guard outside during private conversation; spoke privately with Nynaeve",
+      "demeanor": "Professional, surprised by Nynaeve's competence, protective, approving when skill is demonstrated, weighing and assessing people",
+      "alliances_shown": [
+        "Moiraine",
+        "the party"
+      ]
+    },
+    {
+      "character": "Perrin Aybara",
+      "whereabouts": "The Stag and Lion inn in Baerlon",
+      "notable_actions": "Led the way to the room but hesitated before entering; asked about Master Luhhan's reaction; left quickly when dismissed by Moiraine",
+      "demeanor": "Hesitant, concerned about his master's reaction to his departure",
+      "alliances_shown": [
+        "Rand",
+        "Mat",
+        "Egwene",
+        "concerned about Master Luhhan"
+      ]
+    },
+    {
+      "character": "Matrim Cauthon",
+      "whereabouts": "The Stag and Lion inn in Baerlon",
+      "notable_actions": "Asked about his father's reaction; explained to Thom that Nynaeve's arrival was just more bad luck; left quickly when dismissed",
+      "demeanor": "Uncertain, grumpy about Nynaeve's arrival, comparing her presence to Whitecloaks being there",
+      "alliances_shown": [
+        "Rand",
+        "Perrin",
+        "Egwene"
+      ]
+    },
+    {
+      "character": "Egwene",
+      "whereabouts": "The Stag and Lion inn in Baerlon",
+      "notable_actions": "Stood with back against wall with hood pulled up to hide unbraided hair; mentioned leaving a note; gathered everyone to leave when Moiraine dismissed them; asked about Thom's advice but was distracted by concern about the private meeting",
+      "demeanor": "Anxious, torn between dignity and fear of confrontation with Nynaeve over her unbraided hair, trying to hide behind her hood",
+      "alliances_shown": [
+        "the boys",
+        "conflicted about Nynaeve"
+      ]
+    },
+    {
+      "character": "Thom Merrilin",
+      "whereabouts": "The Stag and Lion inn in Baerlon",
+      "notable_actions": "Urged Rand not to waste time; warned Nynaeve dramatically about Whitecloak danger and the need to guard secrets; gave advice to the boys about thinking before speaking; left muttering about better things to do",
+      "demeanor": "Gruff, impatient, theatrical when warning about danger, protective in his way, concerned about Whitecloaks",
+      "alliances_shown": [
+        "the party",
+        "concerned about everyone's safety"
+      ]
+    },
+    {
+      "character": "Min",
+      "whereabouts": "The Stag and Lion inn in Baerlon, in a hallway",
+      "notable_actions": "Pulled Rand aside urgently; told him about seeing sparks around Nynaeve meeting Moiraine; warned that the visions are sharper and more furious today and everyone is in more danger since Nynaeve arrived; shook her fist at Rand when he left",
+      "demeanor": "Urgent, frustrated at not being listened to, concerned about the danger",
+      "alliances_shown": [
+        "Rand",
+        "concerned about the whole group's safety"
+      ]
+    },
+    {
+      "character": "Tam al'Thor",
+      "whereabouts": "Emond's Field (mentioned, not present)",
+      "notable_actions": "Mentioned only; convinced by Moiraine's arguments, tried to warn the village, wanted to pursue the boys himself despite being unable to stand",
+      "demeanor": null,
+      "alliances_shown": [
+        "believed Moiraine",
+        "protective of Rand and the boys"
+      ]
+    },
+    {
+      "character": "Brandelwyn al'Vere",
+      "whereabouts": "Emond's Field (mentioned, not present)",
+      "notable_actions": "Wore his scales of office at the village meeting; wanted to be part of the rescue party",
+      "demeanor": null,
+      "alliances_shown": [
+        "Village Council",
+        "concerned about the young people"
+      ]
+    },
+    {
+      "character": "Haral Luhhan",
+      "whereabouts": "Emond's Field (mentioned, not present)",
+      "notable_actions": "Wanted to join the rescue party until Alsbet made him sit down",
+      "demeanor": null,
+      "alliances_shown": [
+        "Village Council",
+        "concerned about Perrin"
+      ]
+    },
+    {
+      "character": "Alsbet Luhhan",
+      "whereabouts": "Emond's Field (mentioned, not present)",
+      "notable_actions": "Made Haral sit down when he wanted to join the rescue party",
+      "demeanor": null,
+      "alliances_shown": [
+        "practical voice at village meeting"
+      ]
+    },
+    {
+      "character": "Cenn Buie",
+      "whereabouts": "Emond's Field (mentioned, not present)",
+      "notable_actions": "Wanted to be part of the rescue party",
+      "demeanor": null,
+      "alliances_shown": [
+        "Village Council"
+      ]
+    },
+    {
+      "character": "Abell Cauthon",
+      "whereabouts": "Emond's Field (mentioned, not present)",
+      "notable_actions": "Expressed worry about Mat trying tricks with outlanders",
+      "demeanor": null,
+      "alliances_shown": [
+        "concerned father"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "character_a": "Nynaeve al'Meara",
+      "character_b": "Rand al'Thor",
+      "relationship_type": "mentor",
+      "directed": true,
+      "description": "Nynaeve knows the truth of Rand's birth and adoption by Tam and Kari; serves as a trusted authority figure who reassures him about his parentage"
+    },
+    {
+      "character_a": "Nynaeve al'Meara",
+      "character_b": "Moiraine",
+      "relationship_type": "rival",
+      "directed": false,
+      "description": "Deep suspicion and antagonism; Nynaeve distrusts Aes Sedai and sees Moiraine as having abducted the young people; Moiraine sees Nynaeve as an obstacle to protecting them"
+    },
+    {
+      "character_a": "Nynaeve al'Meara",
+      "character_b": "Lan",
+      "relationship_type": "other",
+      "directed": false,
+      "description": "Mutual professional respect; Lan genuinely impressed by Nynaeve's tracking ability; Nynaeve momentarily flustered by his approval"
+    },
+    {
+      "character_a": "Nynaeve al'Meara",
+      "character_b": "Egwene",
+      "relationship_type": "mentor",
+      "directed": true,
+      "description": "Nynaeve is angry about Egwene leaving with unbraided hair and without proper permission; mentorship relationship strained by Egwene's departure"
+    },
+    {
+      "character_a": "Tam al'Thor",
+      "character_b": "Rand al'Thor",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "Adoptive father and son; Tam found Rand as a baby and raised him; their bond revealed to be adoptive but strong"
+    },
+    {
+      "character_a": "Kari al'Thor",
+      "character_b": "Rand al'Thor",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "Adoptive mother and son; Kari loved Rand as her own child despite him not being born to her"
+    },
+    {
+      "character_a": "Tam al'Thor",
+      "character_b": "Kari al'Thor",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "Husband and wife; Tam brought his outlander red-haired wife back to Emond's Field"
+    },
+    {
+      "character_a": "Abell Cauthon",
+      "character_b": "Matrim Cauthon",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "Father and son; Abell worried about Mat's tendency to try tricks with outlanders"
+    },
+    {
+      "character_a": "Haral Luhhan",
+      "character_b": "Perrin Aybara",
+      "relationship_type": "mentor",
+      "directed": true,
+      "description": "Master and apprentice blacksmith; not pleased about Perrin's departure"
+    },
+    {
+      "character_a": "Haral Luhhan",
+      "character_b": "Alsbet Luhhan",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "Husband and wife"
+    },
+    {
+      "character_a": "Moiraine",
+      "character_b": "Lan",
+      "relationship_type": "warder_bond",
+      "directed": true,
+      "description": "Aes Sedai and Warder bond; Lan can sense Trollocs through their connection; he guards and protects her"
+    },
+    {
+      "character_a": "Min",
+      "character_b": "Rand al'Thor",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Min confides her visions to Rand and he protects her secret from others"
+    },
+    {
+      "character_a": "Rand al'Thor",
+      "character_b": "Perrin Aybara",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Close friends from Emond's Field facing danger together"
+    },
+    {
+      "character_a": "Rand al'Thor",
+      "character_b": "Matrim Cauthon",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Close friends from Emond's Field facing danger together"
+    },
+    {
+      "character_a": "Rand al'Thor",
+      "character_b": "Egwene",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Friends from Emond's Field; romantic interest suggested"
+    }
+  ],
+  "_meta": {
+    "book_order": 1,
+    "chapter_number": 16,
+    "chapter_id": 17,
+    "chapter_title": "The Wisdom",
+    "model": "claude-sonnet-4-5",
+    "input_tokens": 11472,
+    "output_tokens": 7567
+  }
+}

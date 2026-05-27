@@ -1,0 +1,873 @@
+{
+  "characters": [
+    {
+      "name_used_in_text": "Rand al'Thor",
+      "likely_matches_existing": "Rand al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "protective, impulsive, haunted by responsibility"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "sheepherder",
+          "alias_type": "epithet",
+          "notes": "used by Lan throughout"
+        }
+      ],
+      "notes": "Primary POV character of the chapter. Experiences nightmares and an unnerving sense of being watched. Channels inadvertently when tortured by Liandrin."
+    },
+    {
+      "name_used_in_text": "Mat",
+      "likely_matches_existing": "Matrim Cauthon",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "bloodless pale face",
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Matrim Cauthon",
+          "alias_type": "given_name",
+          "notes": "full name used by Moiraine"
+        }
+      ],
+      "notes": "Appears in Rand's nightmare with a dagger in his chest. Found unconscious in the dungeon. The cursed dagger he carried is now missing."
+    },
+    {
+      "name_used_in_text": "Perrin",
+      "likely_matches_existing": "Perrin Aybara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "empty eye sockets (in nightmare), blood streaming down face",
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Appears in Rand's nightmare claiming to be free, with eyes gone. Mentioned as someone who knows the Black Hills and Caralain Grass."
+    },
+    {
+      "name_used_in_text": "Padan Fain",
+      "likely_matches_existing": "Padan Fain",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "sinister, obsessed with Rand"
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Has escaped, left taunting message for Rand on dungeon door"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "the peddler",
+          "alias_type": "epithet",
+          "notes": null
+        }
+      ],
+      "notes": "Appears in Rand's nightmare and his cell is found empty after the attack. Left bloody message 'WE WILL MEET AGAIN ON TOMAN HEAD. IT IS NEVER OVER, AL'THOR.'"
+    },
+    {
+      "name_used_in_text": "Ba'alzamon",
+      "likely_matches_existing": "Elan Morin Tedronai",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": "blood-colored mask, eyes of flame, mouth of roaring fires",
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "leader",
+          "notes": "Central antagonist figure"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Appears in Rand's nightmare along with two red-clad Aes Sedai. Rand insists Ba'alzamon is dead, though others doubt this."
+    },
+    {
+      "name_used_in_text": "Nynaeve",
+      "likely_matches_existing": "Nynaeve al'Meara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "dark-eyed and slender, hair in a fat braid, pretty",
+        "age": "a few years older than Rand",
+        "filiations": null,
+        "personality": "touchy about authority, stubborn, protective"
+      },
+      "factions": [
+        {
+          "name": "Women's Circle",
+          "faction_type": "other",
+          "role": "leader",
+          "notes": "As Wisdom"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Wisdom",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Knitting in Egwene's room when Rand wakes. Warns Rand about naming the Dark One. Dressed in fine blue silk for the feast."
+    },
+    {
+      "name_used_in_text": "Egwene",
+      "likely_matches_existing": "Egwene",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "determined, healer's temperament"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Went to visit Padan Fain in the dungeon. Found unconscious, struck on the head. Moiraine says she will be fine after sleep."
+    },
+    {
+      "name_used_in_text": "Moiraine",
+      "likely_matches_existing": "Moiraine",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown (not Two Rivers)",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "calm, authoritative, protective of her charges"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": null
+        },
+        {
+          "name": "Blue Ajah",
+          "faction_type": "ajah",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Aes Sedai",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Intervenes to stop Liandrin's torture of Rand. Heals Egwene and examines Mat. Had Agelmar exempt Rand from the order closing the gates."
+    },
+    {
+      "name_used_in_text": "Lan",
+      "likely_matches_existing": "Lan",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown (not Two Rivers)",
+        "physical_traits": "stone-faced",
+        "age": null,
+        "filiations": null,
+        "personality": "controlled, protective, occasionally shows humor"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "As Warder to Moiraine"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Warder",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Finds Rand after the events and tells him he can now leave. Shows rare humor about the women's fascination with Rand."
+    },
+    {
+      "name_used_in_text": "Liandrin",
+      "likely_matches_existing": "Liandrin",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Taraboner",
+        "physical_traits": "pale gold hair in a dozen or more braids, dark eyes, pretty in a sulky way, tightness to her mouth",
+        "age": "not much older than Rand",
+        "filiations": null,
+        "personality": "cold, hostile, suspicious"
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Known from roster to be a Darkfriend"
+        },
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": null
+        },
+        {
+          "name": "Red Ajah",
+          "faction_type": "ajah",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Discovers Rand in the dungeon and immediately attacks him with the Power, causing intense pain. Hostile toward Moiraine and contemptuous of men."
+    },
+    {
+      "name_used_in_text": "Ingtar",
+      "likely_matches_existing": "Ingtar",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienaran",
+        "physical_traits": "dark and stocky",
+        "age": null,
+        "filiations": null,
+        "personality": "warrior, honorable, deeply shamed by loss of the Horn"
+      },
+      "factions": [
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Military officer"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Lord Ingtar",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Confronts the Myrddraal in the hallway. Reports the Horn of Valere has been stolen. Deeply troubled and ashamed by the loss."
+    },
+    {
+      "name_used_in_text": "Agelmar",
+      "likely_matches_existing": "Agelmar",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "leader",
+          "notes": "Lord of Fal Dara"
+        },
+        {
+          "name": "House Jagad",
+          "faction_type": "house",
+          "role": "leader",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Lord Agelmar",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Ordered the gates tripled-guarded after the attack. Exempted Rand from the closure order at Moiraine's request."
+    },
+    {
+      "name_used_in_text": "Amalisa",
+      "likely_matches_existing": "Amalisa",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienaran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Lady of the keep"
+        },
+        {
+          "name": "House Jagad",
+          "faction_type": "house",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Lady Amalisa",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Nynaeve saw her coming out of a storeroom with her face covered in dust, unusual during preparations for the feast. Fascinated by Rand."
+    },
+    {
+      "name_used_in_text": "the Amyrlin Seat",
+      "likely_matches_existing": "the Amyrlin Seat",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "leader",
+          "notes": "Amyrlin Seat"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Mother",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Rand encounters her in the hallway during his flight. Her eyes widened at the sight of him. Mat is taken to her chambers for Healing."
+    },
+    {
+      "name_used_in_text": "Verin",
+      "likely_matches_existing": "Verin Mathwin",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "scholarly, fascinated by dark knowledge"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": null
+        },
+        {
+          "name": "Brown Ajah",
+          "faction_type": "ajah",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Examining the Trolloc script in the dungeon guardroom with another Brown sister, finding it 'interesting.'"
+    },
+    {
+      "name_used_in_text": "Ronan",
+      "likely_matches_existing": "Ronan",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienaran",
+        "physical_traits": null,
+        "age": "old man",
+        "filiations": null,
+        "personality": "brave warrior"
+      },
+      "factions": [
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "shambayan - keeper of the strongroom"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "shambayan",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Dead. Was guarding the strongroom where the Horn was kept. Held Jehaan Tower with twenty men against a thousand Trollocs in his youth. Had blood on his dagger when he died."
+    },
+    {
+      "name_used_in_text": "Changu",
+      "likely_matches_existing": "Changu",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienaran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Was a guard"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "One of the murdered guards. Rand is glad he doesn't recognize the severed heads because knowing them would have made it worse."
+    },
+    {
+      "name_used_in_text": "Ragan",
+      "likely_matches_existing": "Ragan",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienaran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Mentioned as someone who would not have made up the earlier gate-closing order."
+    },
+    {
+      "name_used_in_text": "Tema",
+      "likely_matches_existing": "Tema",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienaran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Mentioned as someone who would not have made up the earlier gate-closing order."
+    },
+    {
+      "name_used_in_text": "Kajin",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienaran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Checking to see if anyone is missing"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Checking to see if anyone is missing from the keep to identify Darkfriends."
+    },
+    {
+      "name_used_in_text": "Red",
+      "likely_matches_existing": "Red",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "horse",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": "bay",
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "the bay",
+          "alias_type": "epithet",
+          "notes": null
+        }
+      ],
+      "notes": "Rand's horse. Rand tried to take him out of the stable during the day but was prevented."
+    }
+  ],
+  "appearances": [
+    {
+      "character": "Rand al'Thor",
+      "whereabouts": "Egwene's room in the women's apartments, then fleeing through the keep to the dungeon",
+      "notable_actions": "Wakes from a nightmare. Flees through the women's apartments when bells ring. Confronts three Trollocs. Discovers the murdered guards and the bloody message from Fain. Finds Egwene and Mat unconscious. Is tortured by Liandrin with the One Power until Moiraine intervenes. Inadvertently channels while being tortured.",
+      "demeanor": "terrified, protective, increasingly desperate and paranoid",
+      "alliances_shown": [
+        "Egwene",
+        "Mat",
+        "Perrin",
+        "Nynaeve",
+        "Moiraine",
+        "Lan",
+        "Ingtar"
+      ]
+    },
+    {
+      "character": "Nynaeve",
+      "whereabouts": "Egwene's room, knitting",
+      "notable_actions": "Watches over the sleeping Rand. Warns him about naming the Dark One. Reports unusual activity among the women searching for something. Prepares to attend the feast.",
+      "demeanor": "calm, protective, authoritative",
+      "alliances_shown": [
+        "Rand",
+        "Egwene"
+      ]
+    },
+    {
+      "character": "Egwene",
+      "whereabouts": "In the dungeon visiting Padan Fain, then unconscious",
+      "notable_actions": "Went to the dungeon to try to help Fain by showing him familiar faces. Was struck on the head and knocked unconscious.",
+      "demeanor": "unconscious for most of chapter",
+      "alliances_shown": [
+        "Rand",
+        "Mat",
+        "Perrin"
+      ]
+    },
+    {
+      "character": "Mat",
+      "whereabouts": "In the dungeon, then unconscious",
+      "notable_actions": "Went with Egwene to see Fain. Found unconscious, his cursed dagger missing. Taken to the Amyrlin's chambers for Healing.",
+      "demeanor": "unconscious, deathly pale, labored breathing",
+      "alliances_shown": [
+        "Egwene",
+        "Rand"
+      ]
+    },
+    {
+      "character": "Perrin",
+      "whereabouts": "Appears only in Rand's nightmare",
+      "notable_actions": "In the nightmare, claims to have gotten rid of 'them' and holds out bloody hands with empty eye sockets.",
+      "demeanor": "horrifying nightmare figure",
+      "alliances_shown": [
+        "Rand"
+      ]
+    },
+    {
+      "character": "Padan Fain",
+      "whereabouts": "Escaped from his dungeon cell",
+      "notable_actions": "Escaped during the Trolloc attack. Left a taunting message in blood for Rand on the door: 'WE WILL MEET AGAIN ON TOMAN HEAD. IT IS NEVER OVER, AL'THOR.' Appears to have orchestrated or participated in the brutal murders of the guards. Took Mat's cursed dagger.",
+      "demeanor": "absent but menacing presence",
+      "alliances_shown": [
+        "The Shadow",
+        "Trollocs"
+      ]
+    },
+    {
+      "character": "Ba'alzamon",
+      "whereabouts": "Appears in Rand's nightmare",
+      "notable_actions": "In the nightmare, enters through the broken door with two red-clad Aes Sedai and speaks in unison with Fain: 'For you, the battle is never done.'",
+      "demeanor": "terrifying, flame-eyed",
+      "alliances_shown": [
+        "Padan Fain",
+        "red-clad Aes Sedai"
+      ]
+    },
+    {
+      "character": "Moiraine",
+      "whereabouts": "In the dungeon during the aftermath of the attack",
+      "notable_actions": "Stops Liandrin from torturing Rand. Examines and Heals Egwene. Examines Mat and orders him taken to the Amyrlin for Healing. Notes the missing dagger. Had Agelmar exempt Rand from the gate closure. Had Rand's belongings moved from Egwene's room.",
+      "demeanor": "calm, authoritative, protective",
+      "alliances_shown": [
+        "Rand",
+        "Egwene",
+        "Mat",
+        "Lan"
+      ]
+    },
+    {
+      "character": "Lan",
+      "whereabouts": "Throughout the keep, finds Rand after the events",
+      "notable_actions": "Tells Rand his belongings have been moved. Explains how the women are fascinated by Rand's behavior. Tells him he can now leave. Shows rare humor.",
+      "demeanor": "controlled with moments of humor",
+      "alliances_shown": [
+        "Rand",
+        "Moiraine"
+      ]
+    },
+    {
+      "character": "Liandrin",
+      "whereabouts": "In the dungeon",
+      "notable_actions": "Discovers Rand in the dungeon and immediately suspects him of involvement in the murders. Tortures him with the One Power, causing intense pain by squeezing him with cold and piercing his brain with needles of agony. Stopped by Moiraine. Studies the other men present suspiciously.",
+      "demeanor": "cold, suspicious, hostile, cruel",
+      "alliances_shown": []
+    },
+    {
+      "character": "Ingtar",
+      "whereabouts": "Fighting through the keep, then in the dungeon",
+      "notable_actions": "Confronts a Myrddraal that killed seven men. Sends Rand to check on Egwene. Investigates the dungeon. Reports the theft of the Horn of Valere and the death of Ronan. Deeply troubled by the loss of the Horn and the treachery within Fal Dara.",
+      "demeanor": "angry, ashamed, pained by failure",
+      "alliances_shown": [
+        "Rand",
+        "Agelmar",
+        "Fal Dara"
+      ]
+    },
+    {
+      "character": "Agelmar",
+      "whereabouts": "Not physically present, but issuing orders",
+      "notable_actions": "Ordered the gates tripled-guarded after hearing of the attack. Later exempted Rand from the closure at Moiraine's request.",
+      "demeanor": "commanding (reported action)",
+      "alliances_shown": [
+        "Fal Dara",
+        "Moiraine"
+      ]
+    },
+    {
+      "character": "Amalisa",
+      "whereabouts": "Seen by Nynaeve coming out of a storeroom",
+      "notable_actions": "Searching through storerooms with her face covered in dust when she should have been preparing for the feast. According to Lan, fascinated by Rand and asking many questions about him.",
+      "demeanor": "engaged in unusual activity, curious",
+      "alliances_shown": [
+        "Fal Dara"
+      ]
+    },
+    {
+      "character": "the Amyrlin Seat",
+      "whereabouts": "In the women's apartments hallway",
+      "notable_actions": "Encounters Rand in the hallway. Her eyes widen at the sight of him. A tall Aes Sedai with a staff puts herself between them. Mat is ordered taken to her chambers for Healing.",
+      "demeanor": "startled, alarmed",
+      "alliances_shown": [
+        "Aes Sedai",
+        "White Tower"
+      ]
+    },
+    {
+      "character": "Verin",
+      "whereabouts": "In the dungeon guardroom",
+      "notable_actions": "Examines the Trolloc script written in blood on the walls with another Brown sister. Finds it 'interesting' and makes notes. Studies the writing carefully and comments on its quality.",
+      "demeanor": "scholarly, detached, fascinated",
+      "alliances_shown": [
+        "White Tower",
+        "Brown Ajah"
+      ]
+    },
+    {
+      "character": "Ronan",
+      "whereabouts": "Dead in the strongroom",
+      "notable_actions": "Died defending the strongroom where the Horn was kept. Had blood on his dagger, showing he fought before dying.",
+      "demeanor": "died fighting bravely",
+      "alliances_shown": [
+        "Fal Dara"
+      ]
+    },
+    {
+      "character": "Changu",
+      "whereabouts": "Dead, his severed head on the table",
+      "notable_actions": "Was murdered, head and body parts left in the guardroom.",
+      "demeanor": "dead, brutally murdered",
+      "alliances_shown": [
+        "Fal Dara"
+      ]
+    },
+    {
+      "character": "Ragan",
+      "whereabouts": "Not physically present",
+      "notable_actions": "None in this chapter, mentioned in reference to the earlier gate order.",
+      "demeanor": null,
+      "alliances_shown": [
+        "Fal Dara"
+      ]
+    },
+    {
+      "character": "Tema",
+      "whereabouts": "Not physically present",
+      "notable_actions": "None in this chapter, mentioned in reference to the earlier gate order.",
+      "demeanor": null,
+      "alliances_shown": [
+        "Fal Dara"
+      ]
+    },
+    {
+      "character": "Kajin",
+      "whereabouts": "Checking throughout the keep",
+      "notable_actions": "Checking to see if anyone is missing from the keep to identify Darkfriends who helped in the attack.",
+      "demeanor": "dutiful, investigative",
+      "alliances_shown": [
+        "Fal Dara",
+        "Ingtar"
+      ]
+    },
+    {
+      "character": "Red",
+      "whereabouts": "In the stable",
+      "notable_actions": "Rand tried to take him out during the day but was prevented.",
+      "demeanor": null,
+      "alliances_shown": [
+        "Rand"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "character_a": "Liandrin",
+      "character_b": "Rand al'Thor",
+      "relationship_type": "enemy",
+      "directed": true,
+      "description": "Liandrin discovers Rand in the dungeon and immediately tortures him with the One Power, causing excruciating pain."
+    },
+    {
+      "character_a": "Moiraine",
+      "character_b": "Rand al'Thor",
+      "relationship_type": "mentor",
+      "directed": true,
+      "description": "Moiraine protects Rand from Liandrin's torture and arranges for him to be able to leave the keep."
+    },
+    {
+      "character_a": "Moiraine",
+      "character_b": "Lan",
+      "relationship_type": "warder_bond",
+      "directed": true,
+      "description": "Lan is Moiraine's Warder, acting on her instructions throughout."
+    },
+    {
+      "character_a": "Nynaeve",
+      "character_b": "Lan",
+      "relationship_type": "romantic",
+      "directed": false,
+      "description": "Rand notes Nynaeve's feelings for Lan, hoping she doesn't know he's aware of them."
+    },
+    {
+      "character_a": "Rand al'Thor",
+      "character_b": "Egwene",
+      "relationship_type": "romantic",
+      "directed": false,
+      "description": "Rand is desperately concerned for Egwene's safety and rushes to protect her."
+    },
+    {
+      "character_a": "Padan Fain",
+      "character_b": "Rand al'Thor",
+      "relationship_type": "enemy",
+      "directed": true,
+      "description": "Fain leaves a personal message in blood for Rand: 'IT IS NEVER OVER, AL'THOR' and promises to meet him again at Toman Head."
+    },
+    {
+      "character_a": "Ingtar",
+      "character_b": "Rand al'Thor",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Ingtar protects Rand from the Myrddraal and trusts him with information about the Horn's theft."
+    },
+    {
+      "character_a": "Liandrin",
+      "character_b": "Moiraine",
+      "relationship_type": "rival",
+      "directed": false,
+      "description": "Liandrin challenges Moiraine's decisions and shows contempt for her protection of Rand."
+    },
+    {
+      "character_a": "Egwene",
+      "character_b": "Mat",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Egwene and Mat went together to visit Fain and were both injured."
+    },
+    {
+      "character_a": "Rand al'Thor",
+      "character_b": "Mat",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Rand is deeply concerned for Mat's safety and welfare after finding him unconscious."
+    }
+  ],
+  "_meta": {
+    "book_order": 2,
+    "chapter_number": 6,
+    "chapter_id": 61,
+    "chapter_title": "Dark Prophecy",
+    "model": "claude-sonnet-4-5",
+    "input_tokens": 21286,
+    "output_tokens": 8426
+  }
+}

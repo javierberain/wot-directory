@@ -1,0 +1,699 @@
+{
+  "characters": [
+    {
+      "name_used_in_text": "Perrin",
+      "likely_matches_existing": "Perrin Aybara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "heavy-shouldered",
+        "age": null,
+        "filiations": null,
+        "personality": "wary, troubled by past violence, careful with his wolf abilities"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Young Bull",
+          "alias_type": "epithet",
+          "notes": "name given by wolves"
+        },
+        {
+          "alias_text": "the lad who claimed to be a blacksmith",
+          "alias_type": "epithet",
+          "notes": "how Bornhald recalls him"
+        },
+        {
+          "alias_text": "Perrin of the Two Rivers",
+          "alias_type": "given_name",
+          "notes": "formal reference"
+        }
+      ],
+      "notes": "Can communicate with wolves; wary of Whitecloaks due to past encounter where he killed two Children."
+    },
+    {
+      "name_used_in_text": "Mat",
+      "likely_matches_existing": "Matrim Cauthon",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "pale cheeks with flush, skin tight over skull",
+        "age": null,
+        "filiations": null,
+        "personality": "eager to recover the dagger, physically deteriorating"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Seeking the dagger taken by Fain; clearly suffering physically from its loss. Can sense the dagger if close enough."
+    },
+    {
+      "name_used_in_text": "Hurin",
+      "likely_matches_existing": "Hurin",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienaran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "skilled tracker, disturbed by violence he senses"
+      },
+      "factions": [
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "serves as sniffer for Shienaran forces"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "the sniffer",
+          "alias_type": "epithet",
+          "notes": "his role as tracker"
+        }
+      ],
+      "notes": "Can smell violence and evil; tracks Fain's trail by scent."
+    },
+    {
+      "name_used_in_text": "Ingtar",
+      "likely_matches_existing": "Ingtar",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienaran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "military leader, practical, focused on recovering the Horn"
+      },
+      "factions": [
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "leader",
+          "notes": "leads the expedition to recover the Horn"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Lord Ingtar",
+          "alias_type": "title",
+          "notes": "formal address"
+        }
+      ],
+      "notes": "Leading the party seeking the Horn of Valere."
+    },
+    {
+      "name_used_in_text": "Verin",
+      "likely_matches_existing": "Verin Mathwin",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "contemplative, speaks of the Pattern and ta'veren, cautious about channeling near damane"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": null
+        },
+        {
+          "name": "Brown Ajah",
+          "faction_type": "ajah",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Verin Sedai",
+          "alias_type": "title",
+          "notes": null
+        },
+        {
+          "alias_text": "Aes Sedai",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Drawing patterns in dirt; speaks of the Pattern and five riding forth; cannot go to Falme herself due to damane risk."
+    },
+    {
+      "name_used_in_text": "Rand",
+      "likely_matches_existing": "Rand al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "determined to find Fain, practices sword forms, fears using the void"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Lord Rand",
+          "alias_type": "title",
+          "notes": "formal address used by Shienarans"
+        }
+      ],
+      "notes": "Practicing Heron Wading in the Rushes; fears assuming the void; determined to find Fain. One of three ta'veren."
+    },
+    {
+      "name_used_in_text": "Loial",
+      "likely_matches_existing": "Loial",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "ogier",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "scholarly, wants to see new places, helpful"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Reading; wants to see Falme and the Aryth Ocean; told he cannot go due to lack of Ogier on Toman Head."
+    },
+    {
+      "name_used_in_text": "Uno",
+      "likely_matches_existing": "Uno",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienaran",
+        "physical_traits": "one-eyed",
+        "age": null,
+        "filiations": null,
+        "personality": "loyal soldier, protective of his lords"
+      },
+      "factions": [
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "soldier in Shienaran forces"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Spots approaching horsemen; wants to accompany the group to Falme; will lead the remaining soldiers."
+    },
+    {
+      "name_used_in_text": "Fain",
+      "likely_matches_existing": "Padan Fain",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "evil presence tracked by his scent"
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "His trail leads to Falme; Hurin can track him by his distinctive evil smell; has the Horn and Mat's dagger."
+    },
+    {
+      "name_used_in_text": "Geofram Bornhald",
+      "likely_matches_existing": "Bornhald",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": "has a son named Dain",
+        "personality": "tactical commander, preparing for what he believes will be his final battle"
+      },
+      "factions": [
+        {
+          "name": "Children of the Light",
+          "faction_type": "order",
+          "role": "leader",
+          "notes": "Lord Captain commanding over a thousand Children"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "my Lord Captain",
+          "alias_type": "title",
+          "notes": null
+        },
+        {
+          "alias_text": "Lord Captain",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Has brought over a thousand Whitecloaks to Toman Head; had skirmishes with Seanchan including one with Aes Sedai; expects to die; recalls Perrin."
+    },
+    {
+      "name_used_in_text": "Byar",
+      "likely_matches_existing": "Byar",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "gaunt-faced",
+        "age": null,
+        "filiations": null,
+        "personality": "obedient to orders, believes all orders should be obeyed equally whether from Lord Captain or Questioners"
+      },
+      "factions": [
+        {
+          "name": "Children of the Light",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "serves under Bornhald"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Child Byar",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Ordered by Bornhald not to fight in the coming battle but to carry messages to Dain and Pedron Niall; believes Perrin is a Darkfriend."
+    },
+    {
+      "name_used_in_text": "Lan",
+      "likely_matches_existing": "Lan",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "sword instructor"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "Warder"
+        },
+        {
+          "name": "Malkier",
+          "faction_type": "other",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Mentioned as Rand's sword instructor who taught him the form Heron Wading in the Rushes."
+    },
+    {
+      "name_used_in_text": "Dain",
+      "likely_matches_existing": "Dain",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": "son of Geofram Bornhald",
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "Children of the Light",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "with Lord Captain Eamon Valda near Tar Valon"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "my son",
+          "alias_type": "epithet",
+          "notes": "how Bornhald refers to him"
+        }
+      ],
+      "notes": "Bornhald's son, currently with Eamon Valda near Tar Valon; Byar is to carry messages to him."
+    },
+    {
+      "name_used_in_text": "Pedron Niall",
+      "likely_matches_existing": "Pedron Niall",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "Children of the Light",
+          "faction_type": "order",
+          "role": "leader",
+          "notes": "Lord Captain Commander"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Lord Captain Commander",
+          "alias_type": "title",
+          "notes": null
+        },
+        {
+          "alias_text": "the Lord Captain Commander",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Leader of the Children of the Light in Amador; Byar is to report to him about Seanchan and Aes Sedai fighting openly."
+    },
+    {
+      "name_used_in_text": "Eamon Valda",
+      "likely_matches_existing": "Eamon Valda",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "Children of the Light",
+          "faction_type": "order",
+          "role": "leader",
+          "notes": "Lord Captain near Tar Valon"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Lord Captain Eamon Valda",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Currently near Tar Valon with Dain Bornhald."
+    }
+  ],
+  "appearances": [
+    {
+      "character": "Perrin",
+      "whereabouts": "In an abandoned village on Toman Head, then riding west to escape Whitecloaks, then at the hilltop camp",
+      "notable_actions": "Scouts for Fain's trail; communicates with wolves to confirm Whitecloaks aren't pursuing; volunteers to go to Falme",
+      "demeanor": "Wary, self-conscious about his mixed clothing and axe, troubled by memories of killing Whitecloaks",
+      "alliances_shown": [
+        "Mat",
+        "Hurin",
+        "Ingtar",
+        "Verin",
+        "Rand"
+      ]
+    },
+    {
+      "character": "Mat",
+      "whereabouts": "Scouting with Perrin and Hurin, then at the hilltop camp",
+      "notable_actions": "Reports finding Fain's trail leading to Falme; eager to retrieve the dagger; volunteers to go to Falme",
+      "demeanor": "Excited but physically deteriorating; flush in pale cheeks, skin tight over skull",
+      "alliances_shown": [
+        "Perrin",
+        "Hurin",
+        "Ingtar",
+        "Rand"
+      ]
+    },
+    {
+      "character": "Hurin",
+      "whereabouts": "Scouting with Perrin and Mat, then at the hilltop camp",
+      "notable_actions": "Tracks Fain's trail to near Falme using his ability to smell violence; disturbed by the smell of a burned execution site",
+      "demeanor": "Focused on tracking but disturbed by what he senses",
+      "alliances_shown": [
+        "Perrin",
+        "Mat",
+        "Ingtar"
+      ]
+    },
+    {
+      "character": "Ingtar",
+      "whereabouts": "At the hilltop camp outside a village on Toman Head",
+      "notable_actions": "Directs the scouting efforts; plans the infiltration of Falme; chooses who will enter the town; gives orders to Uno",
+      "demeanor": "Focused, practical, determined to recover the Horn",
+      "alliances_shown": [
+        "Hurin",
+        "Perrin",
+        "Mat",
+        "Rand",
+        "Verin",
+        "Uno"
+      ]
+    },
+    {
+      "character": "Verin",
+      "whereabouts": "At the hilltop camp",
+      "notable_actions": "Draws patterns in the dirt; speaks of the Pattern and ta'veren; determines that five must ride to Falme; explains why she cannot go due to damane",
+      "demeanor": "Calm, contemplative, cryptic about the Pattern",
+      "alliances_shown": [
+        "Ingtar",
+        "Rand",
+        "Mat",
+        "Perrin"
+      ]
+    },
+    {
+      "character": "Rand",
+      "whereabouts": "At the hilltop camp",
+      "notable_actions": "Practices sword forms (Heron Wading in the Rushes); volunteers to go to Falme; worries about the others' lateness; fears assuming the void",
+      "demeanor": "Anxious, troubled, wants to avoid thinking; determined to find Fain",
+      "alliances_shown": [
+        "Ingtar",
+        "Mat",
+        "Perrin",
+        "Loial",
+        "Verin"
+      ]
+    },
+    {
+      "character": "Loial",
+      "whereabouts": "At the hilltop camp",
+      "notable_actions": "Reading; ear-twitching possibly from tension; wants to see Falme and the Aryth Ocean; told he cannot go",
+      "demeanor": "Curious, disappointed at being excluded",
+      "alliances_shown": [
+        "Rand",
+        "Ingtar",
+        "Verin"
+      ]
+    },
+    {
+      "character": "Uno",
+      "whereabouts": "At the hilltop camp",
+      "notable_actions": "Spots approaching horsemen (which turn out to be Perrin, Mat, and Hurin); volunteers to go to Falme; receives orders to bring other soldiers after the infiltration party",
+      "demeanor": "Alert, protective, loyal",
+      "alliances_shown": [
+        "Ingtar",
+        "Rand",
+        "other Shienarans"
+      ]
+    },
+    {
+      "character": "Fain",
+      "whereabouts": "Trail leads to Falme (not present in chapter)",
+      "notable_actions": "Has taken the Horn of Valere and Mat's dagger to Falme",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Geofram Bornhald",
+      "whereabouts": "In a village on Toman Head with over a thousand Children of the Light",
+      "notable_actions": "Secures the village; imprisons villagers in the inn; orders Byar not to fight in the coming battle but to carry messages; remembers seeing Perrin",
+      "demeanor": "Tactical, resigned to dying, focused on his mission",
+      "alliances_shown": [
+        "Byar",
+        "Children of the Light"
+      ]
+    },
+    {
+      "character": "Byar",
+      "whereabouts": "In the village with Bornhold",
+      "notable_actions": "Reports securing the village; receives orders to watch the coming battle and carry messages to Dain and Pedron Niall; investigates villagers' information about their blacksmith",
+      "demeanor": "Obedient but reluctant to avoid the coming fight",
+      "alliances_shown": [
+        "Geofram Bornhald",
+        "Children of the Light"
+      ]
+    },
+    {
+      "character": "Lan",
+      "whereabouts": "Not present (mentioned only)",
+      "notable_actions": "Taught Rand the sword form Heron Wading in the Rushes",
+      "demeanor": null,
+      "alliances_shown": [
+        "Rand"
+      ]
+    },
+    {
+      "character": "Dain",
+      "whereabouts": "Near Tar Valon with Eamon Valda (not present in chapter)",
+      "notable_actions": "None in this chapter",
+      "demeanor": null,
+      "alliances_shown": [
+        "Eamon Valda",
+        "Children of the Light"
+      ]
+    },
+    {
+      "character": "Pedron Niall",
+      "whereabouts": "In Amador (not present in chapter)",
+      "notable_actions": "None in this chapter; will receive reports from Byar",
+      "demeanor": null,
+      "alliances_shown": [
+        "Children of the Light"
+      ]
+    },
+    {
+      "character": "Eamon Valda",
+      "whereabouts": "Near Tar Valon with Dain (not present in chapter)",
+      "notable_actions": "None in this chapter",
+      "demeanor": null,
+      "alliances_shown": [
+        "Dain",
+        "Children of the Light"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "character_a": "Geofram Bornhald",
+      "character_b": "Dain",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "Father and son"
+    },
+    {
+      "character_a": "Geofram Bornhald",
+      "character_b": "Byar",
+      "relationship_type": "other",
+      "directed": true,
+      "description": "Bornhald commands Byar; trusts him to carry critical messages"
+    },
+    {
+      "character_a": "Ingtar",
+      "character_b": "Uno",
+      "relationship_type": "other",
+      "directed": true,
+      "description": "Ingtar commands Uno as part of Shienaran forces"
+    },
+    {
+      "character_a": "Ingtar",
+      "character_b": "Hurin",
+      "relationship_type": "other",
+      "directed": true,
+      "description": "Ingtar relies on Hurin's tracking abilities"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Lan",
+      "relationship_type": "mentor",
+      "directed": true,
+      "description": "Lan taught Rand sword forms"
+    },
+    {
+      "character_a": "Verin",
+      "character_b": "Ingtar",
+      "relationship_type": "other",
+      "directed": false,
+      "description": "Advisor relationship; she guides the Pattern interpretation but he commands"
+    },
+    {
+      "character_a": "Perrin",
+      "character_b": "Mat",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Friends from the Two Rivers traveling together"
+    },
+    {
+      "character_a": "Perrin",
+      "character_b": "Rand",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Friends from the Two Rivers traveling together"
+    },
+    {
+      "character_a": "Mat",
+      "character_b": "Rand",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Friends from the Two Rivers traveling together"
+    },
+    {
+      "character_a": "Mat",
+      "character_b": "Fain",
+      "relationship_type": "enemy",
+      "directed": false,
+      "description": "Mat seeks the dagger Fain stole, which is killing him"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Fain",
+      "relationship_type": "enemy",
+      "directed": false,
+      "description": "Rand is determined to find and stop Fain"
+    },
+    {
+      "character_a": "Geofram Bornhald",
+      "character_b": "Perrin",
+      "relationship_type": "enemy",
+      "directed": false,
+      "description": "Bornhald remembers Perrin as a suspected Darkfriend who killed two Children"
+    },
+    {
+      "character_a": "Byar",
+      "character_b": "Perrin",
+      "relationship_type": "enemy",
+      "directed": false,
+      "description": "Byar believes Perrin is a Darkfriend"
+    }
+  ],
+  "_meta": {
+    "book_order": 2,
+    "chapter_number": 44,
+    "chapter_id": 99,
+    "chapter_title": "Five Will Ride Forth",
+    "model": "claude-sonnet-4-5",
+    "input_tokens": 19522,
+    "output_tokens": 6365
+  }
+}

@@ -1,0 +1,816 @@
+{
+  "characters": [
+    {
+      "name_used_in_text": "Nynaeve",
+      "likely_matches_existing": "Nynaeve al'Meara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "determined, decisive, capable of harsh judgment, angry at injustice"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "Though she does not yet consider herself fully Aes Sedai in this chapter"
+        },
+        {
+          "name": "Women's Circle",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Former Wisdom of Emond's Field"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Wearing a sul'dam dress with lightning panels. Channels to open Egwene's collar. Has sat in judgment with the Women's Circle and pronounced justice as Wisdom."
+    },
+    {
+      "name_used_in_text": "Egwene",
+      "likely_matches_existing": "Egwene",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "slender, dark-haired",
+        "age": null,
+        "filiations": null,
+        "personality": "traumatized, capable of fierce hatred when hurt, struggling with darker impulses"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "In training"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Tuli",
+          "alias_type": "nickname",
+          "notes": "Used by Renna"
+        }
+      ],
+      "notes": "Freed from a'dam in this chapter. Experiences powerful rage and desire for revenge against her captors. Channels destructively against Seanchan soldiers."
+    },
+    {
+      "name_used_in_text": "Seta",
+      "likely_matches_existing": "Seta",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Seanchan",
+        "physical_traits": "yellow-haired",
+        "age": null,
+        "filiations": null,
+        "personality": "terrified when confronted with truth about herself"
+      },
+      "factions": [
+        {
+          "name": "Seanchan",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Sul'dam who can channel but does not know it"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Leashed by Nynaeve using an a'dam. Left collared at the end of the chapter as 'justice' for her crimes. Reveals the secret that sul'dam can channel."
+    },
+    {
+      "name_used_in_text": "Elayne",
+      "likely_matches_existing": "Elayne",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Andoran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "compassionate even toward enemies, trying to steel herself"
+      },
+      "factions": [
+        {
+          "name": "House Trakand",
+          "faction_type": "house",
+          "role": "member",
+          "notes": "Daughter-Heir of Andor"
+        },
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "In training"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "the Daughter-Heir",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Helps Egwene change clothes. Feels conflicted about leaving Seta collared despite her crimes."
+    },
+    {
+      "name_used_in_text": "Min",
+      "likely_matches_existing": "Min",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Baerlon (presumably)",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "practical, dry humor"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Leads the group through the damane house. Dressed in plain dark woolens like a servant."
+    },
+    {
+      "name_used_in_text": "Renna",
+      "likely_matches_existing": "Renna",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Seanchan",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "cruel, convinced of her righteousness"
+      },
+      "factions": [
+        {
+          "name": "Seanchan",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Sul'dam"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Attacked by Egwene with a pitcher and collared with her own a'dam. Left collared as punishment for what she did to Egwene."
+    },
+    {
+      "name_used_in_text": "Bayle Domon",
+      "likely_matches_existing": "Bayle Domon",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "stubborn, keeps his word, determined"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Captain",
+          "alias_type": "title",
+          "notes": "Captain of the Spray"
+        }
+      ],
+      "notes": "Waiting at the docks with his ship despite the chaos in Falme. Insists on keeping his word to wait for the women."
+    },
+    {
+      "name_used_in_text": "Aedwin Cole",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": "crew member of the Spray",
+        "personality": "frightened, wants to flee"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Cole",
+          "alias_type": "given_name",
+          "notes": null
+        }
+      ],
+      "notes": "Member of Domon's crew. Tries to cut the mooring cable to escape but is stopped by Domon."
+    },
+    {
+      "name_used_in_text": "Yarin",
+      "likely_matches_existing": "Yarin Maeldan",
+      "is_new_character": false,
+      "confidence": "medium",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": "crew member of the Spray",
+        "personality": "anxious, urging flight"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Member of Domon's crew. Urges Domon to leave while the Seanchan are distracted."
+    },
+    {
+      "name_used_in_text": "Geofram Bornhald",
+      "likely_matches_existing": "Bornhald",
+      "is_new_character": false,
+      "confidence": "medium",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "commanding, determined"
+      },
+      "factions": [
+        {
+          "name": "Children of the Light",
+          "faction_type": "order",
+          "role": "leader",
+          "notes": "Lord Captain"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Lord Captain",
+          "alias_type": "title",
+          "notes": null
+        },
+        {
+          "alias_text": "my Lord Captain",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Leading a thousand Children of the Light toward Falme. Sends Byar away before the advance."
+    },
+    {
+      "name_used_in_text": "Byar",
+      "likely_matches_existing": "Byar",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": "gaunt-faced",
+        "age": null,
+        "filiations": null,
+        "personality": "reluctant to leave Bornhald"
+      },
+      "factions": [
+        {
+          "name": "Children of the Light",
+          "faction_type": "order",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Child Byar",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Ordered by Bornhald to leave before the battle. Reluctantly obeys."
+    },
+    {
+      "name_used_in_text": "Rand",
+      "likely_matches_existing": "Rand al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "blood crusted on cheek, cuts from Turak",
+        "age": null,
+        "filiations": null,
+        "personality": "concerned for others, sensing connections to people in danger"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Lord Rand",
+          "alias_type": "title",
+          "notes": "Used by Hurin"
+        }
+      ],
+      "notes": "Has an odd feeling that threads of his life are in danger in Falme, including Egwene. Wounded from a fight with Turak. Trying to escape with the Horn of Valere."
+    },
+    {
+      "name_used_in_text": "Ingtar",
+      "likely_matches_existing": "Ingtar",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienaran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "House Shinowa",
+        "personality": "guilt-ridden, seeking redemption, ultimately choosing honor"
+      },
+      "factions": [
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "member",
+          "notes": null
+        },
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Confesses to being a Darkfriend who now seeks redemption"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Lord Ingtar",
+          "alias_type": "title",
+          "notes": null
+        },
+        {
+          "alias_text": "Lord Ingtar of House Shinowa",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Confesses to Rand that he is a Darkfriend, that he arranged for Fain to enter Fal Dara. Chooses to redeem himself by holding off Seanchan to let Rand escape. Preparing to 'Sheathe the Sword' (die honorably)."
+    },
+    {
+      "name_used_in_text": "Mat",
+      "likely_matches_existing": "Matrim Cauthon",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "With Perrin watching a Seanchan patrol. Part of the group trying to escape Falme with the Horn."
+    },
+    {
+      "name_used_in_text": "Perrin",
+      "likely_matches_existing": "Perrin Aybara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "With Mat watching a Seanchan patrol. Part of the group trying to escape Falme with the Horn."
+    },
+    {
+      "name_used_in_text": "Hurin",
+      "likely_matches_existing": "Hurin",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienaran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "loyal, shocked by Ingtar's confession"
+      },
+      "factions": [
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Sniffer"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "sniffer",
+          "alias_type": "epithet",
+          "notes": null
+        }
+      ],
+      "notes": "Reports patrol movements. Gasps when Rand gives Ingtar the last embrace of the mother. Clearly shocked by what is happening."
+    },
+    {
+      "name_used_in_text": "Turak",
+      "likely_matches_existing": "Turak",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Seanchan",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "Seanchan",
+          "faction_type": "other",
+          "role": "leader",
+          "notes": "High Lord"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "High Lord Turak",
+          "alias_type": "title",
+          "notes": null
+        },
+        {
+          "alias_text": "the High Lord",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Mentioned as having fought and wounded Rand. His banner (golden hawk clutching lightning) is referenced."
+    },
+    {
+      "name_used_in_text": "Bela",
+      "likely_matches_existing": "Bela",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "horse",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Egwene mentions knowing the stable where Bela is kept but cannot retrieve her. They must leave Bela behind."
+    },
+    {
+      "name_used_in_text": "Galad",
+      "likely_matches_existing": "Galadedrid Damodred",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Cairhienin (by father) / Andoran (by upbringing)",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "House Damodred",
+          "faction_type": "house",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Mentioned only in Egwene's dream/fantasy of rescue. Not actually present in the chapter."
+    },
+    {
+      "name_used_in_text": "Verin",
+      "likely_matches_existing": "Verin Mathwin",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": null
+        },
+        {
+          "name": "Brown Ajah",
+          "faction_type": "ajah",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Mentioned by Ingtar as having brought them to Falme via Portal Stone, where he lived other lives."
+    },
+    {
+      "name_used_in_text": "the Amyrlin",
+      "likely_matches_existing": "the Amyrlin Seat",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "leader",
+          "notes": "Amyrlin Seat"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Amyrlin Seat",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Mentioned by Ingtar as having given Rand the charge for the Horn (though Ingtar says she should have done so from the start). Also mentioned as a possible target of an arrow shot by someone Ingtar let into Fal Dara."
+    },
+    {
+      "name_used_in_text": "Spray",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "other",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": "Bayle Domon's ship",
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Domon's ship waiting at the harbor. Not a character but a named vessel that acts as the means of escape."
+    }
+  ],
+  "appearances": [
+    {
+      "character": "Nynaeve",
+      "whereabouts": "Falme; the damane house, then fleeing through the streets toward the harbor",
+      "notable_actions": "Leads the rescue of Egwene. Channels to open Egwene's collar. Decides to leave Seta and Renna collared as justice. Tries to lead the group to safety but they are attacked by damane. Channels lightning in response to a fireball attack.",
+      "demeanor": "determined, commanding, struggling with anger and the moral weight of her decision to leave the sul'dam collared",
+      "alliances_shown": [
+        "Egwene",
+        "Elayne",
+        "Min",
+        "Bayle Domon"
+      ]
+    },
+    {
+      "character": "Egwene",
+      "whereabouts": "Falme; collared in a small room in the damane house, then freed and fleeing toward the harbor",
+      "notable_actions": "Freed from the a'dam by Nynaeve. Violently attacks Renna and collars her in revenge. Channels destructively against Seanchan soldiers in the street, creating massive explosions. Reveals the secret that sul'dam can channel.",
+      "demeanor": "traumatized, filled with rage and hatred toward her captors, struggling with dark impulses for revenge, determined never to be collared again",
+      "alliances_shown": [
+        "Nynaeve",
+        "Elayne",
+        "Min"
+      ]
+    },
+    {
+      "character": "Seta",
+      "whereabouts": "Falme; leashed and led through the damane house, left collared in Egwene's former room",
+      "notable_actions": "Cooperates with the rescue out of terror. Left collared at the end as punishment for her crimes as a sul'dam.",
+      "demeanor": "terrified, trembling, in denial about being able to channel, pleading not to be left collared",
+      "alliances_shown": [
+        "none - victim and captive"
+      ]
+    },
+    {
+      "character": "Elayne",
+      "whereabouts": "Falme; in the damane house and fleeing through the streets",
+      "notable_actions": "Helps Egwene change clothes. Carries a bundle of clothing. Expresses compassion for Seta despite her crimes. Separated from Nynaeve when they dive into different alleys to escape a fireball.",
+      "demeanor": "nervous, compassionate, trying to steel herself to the harsh realities",
+      "alliances_shown": [
+        "Nynaeve",
+        "Egwene",
+        "Min"
+      ]
+    },
+    {
+      "character": "Min",
+      "whereabouts": "Falme; leading the group through the damane house and fleeing through the streets",
+      "notable_actions": "Leads the rescue party to Egwene's room. Dressed as a servant. Separated from Nynaeve when fleeing the fireball attack.",
+      "demeanor": "practical, grimly acknowledging the sul'dam deserve punishment",
+      "alliances_shown": [
+        "Nynaeve",
+        "Egwene",
+        "Elayne"
+      ]
+    },
+    {
+      "character": "Renna",
+      "whereabouts": "Falme; enters Egwene's room in the damane house, is attacked and collared",
+      "notable_actions": "Enters the room demanding to know what is happening. Is attacked by Egwene with a pitcher, then collared with her own a'dam. Left collared as punishment.",
+      "demeanor": "authoritative and demanding at first, then terrified and disbelieving when collared",
+      "alliances_shown": [
+        "Seanchan forces"
+      ]
+    },
+    {
+      "character": "Bayle Domon",
+      "whereabouts": "At the docks in Falme harbor, on his ship Spray",
+      "notable_actions": "Waits for Nynaeve and the others despite the chaos. Prevents his crew from cutting the mooring cables and fleeing. Insists he gave his word to wait.",
+      "demeanor": "stubborn, determined, honorable, increasingly anxious about the delay",
+      "alliances_shown": [
+        "Nynaeve",
+        "Egwene",
+        "Elayne",
+        "Min"
+      ]
+    },
+    {
+      "character": "Aedwin Cole",
+      "whereabouts": "On the Spray at Falme harbor",
+      "notable_actions": "Tries to cut the mooring cable to escape but is stopped by Domon.",
+      "demeanor": "terrified, desperate to flee",
+      "alliances_shown": [
+        "Bayle Domon (crew)"
+      ]
+    },
+    {
+      "character": "Yarin",
+      "whereabouts": "On the Spray at Falme harbor",
+      "notable_actions": "Urges Domon to flee while the Seanchan are distracted.",
+      "demeanor": "frightened, urging flight",
+      "alliances_shown": [
+        "Bayle Domon (crew)"
+      ]
+    },
+    {
+      "character": "Geofram Bornhald",
+      "whereabouts": "In the hills outside Falme, leading a thousand Children of the Light",
+      "notable_actions": "Orders Byar to leave. Commands the legion to advance at a walk toward Falme.",
+      "demeanor": "commanding, resolute, preparing for battle",
+      "alliances_shown": [
+        "Children of the Light"
+      ]
+    },
+    {
+      "character": "Byar",
+      "whereabouts": "With Bornhald's forces in the hills outside Falme, then sent away",
+      "notable_actions": "Reluctantly obeys Bornhald's order to leave.",
+      "demeanor": "reluctant, showing every sign of not wanting to go",
+      "alliances_shown": [
+        "Geofram Bornhald",
+        "Children of the Light"
+      ]
+    },
+    {
+      "character": "Rand",
+      "whereabouts": "In an alley between two stables in Falme, near where they left their horses",
+      "notable_actions": "Watches Seanchan patrols. Has an odd feeling that threads of his life are in danger in Falme, including Egwene. Listens to Ingtar's confession. Gives Ingtar the last embrace of the mother. Flees with Hurin after leaving Ingtar to hold the Seanchan.",
+      "demeanor": "concerned, confused by the chaos, shocked by Ingtar's revelation, compassionate toward Ingtar",
+      "alliances_shown": [
+        "Ingtar",
+        "Mat",
+        "Perrin",
+        "Hurin"
+      ]
+    },
+    {
+      "character": "Ingtar",
+      "whereabouts": "In an alley between two stables in Falme",
+      "notable_actions": "Confesses to Rand that he is a Darkfriend who let Fain into Fal Dara. Reveals he has been seeking redemption by sounding the Horn. Chooses to remain behind and hold off the Seanchan to allow Rand and the others to escape with the Horn. Prepares to 'Sheathe the Sword' (die fighting).",
+      "demeanor": "guilt-ridden, confessional, seeking redemption, ultimately achieving peace and contentment with his choice to die honorably",
+      "alliances_shown": [
+        "The Shadow (formerly)",
+        "Rand (redemption)"
+      ]
+    },
+    {
+      "character": "Mat",
+      "whereabouts": "At the other end of the alley in Falme, watching a Seanchan patrol",
+      "notable_actions": "Watches Seanchan patrol with Perrin. Goes on ahead when the patrol turns away.",
+      "demeanor": null,
+      "alliances_shown": [
+        "Rand",
+        "Perrin",
+        "Hurin"
+      ]
+    },
+    {
+      "character": "Perrin",
+      "whereabouts": "At the other end of the alley in Falme, watching a Seanchan patrol",
+      "notable_actions": "Watches Seanchan patrol with Mat. Goes on ahead when the patrol turns away.",
+      "demeanor": null,
+      "alliances_shown": [
+        "Rand",
+        "Mat",
+        "Hurin"
+      ]
+    },
+    {
+      "character": "Hurin",
+      "whereabouts": "In the alley with Rand and Ingtar in Falme",
+      "notable_actions": "Reports that the patrol turned aside. Witnesses Ingtar's decision to stay behind. Gasps when Rand gives Ingtar the last embrace of the mother, clearly shocked. Flees with Rand.",
+      "demeanor": "anxious, shocked by what is happening with Ingtar",
+      "alliances_shown": [
+        "Rand",
+        "Ingtar"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "character_a": "Nynaeve",
+      "character_b": "Egwene",
+      "relationship_type": "mentor",
+      "directed": true,
+      "description": "Nynaeve leads the rescue of Egwene and counsels her against becoming like her tormentors"
+    },
+    {
+      "character_a": "Nynaeve",
+      "character_b": "Seta",
+      "relationship_type": "enemy",
+      "directed": false,
+      "description": "Nynaeve leashes Seta and leaves her collared as punishment for her crimes as a sul'dam"
+    },
+    {
+      "character_a": "Egwene",
+      "character_b": "Seta",
+      "relationship_type": "enemy",
+      "directed": false,
+      "description": "Seta was one of Egwene's sul'dam captors; Egwene wants to make her suffer as she suffered"
+    },
+    {
+      "character_a": "Egwene",
+      "character_b": "Renna",
+      "relationship_type": "enemy",
+      "directed": false,
+      "description": "Renna was Egwene's sul'dam captor; Egwene violently attacks and collars her in revenge"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Egwene",
+      "relationship_type": "romantic",
+      "directed": false,
+      "description": "Rand senses Egwene is in danger and feels she is one of the threads of his life that must be protected"
+    },
+    {
+      "character_a": "Ingtar",
+      "character_b": "Rand",
+      "relationship_type": "mentor",
+      "directed": true,
+      "description": "Ingtar confesses his betrayal to Rand and seeks redemption; Rand shows him compassion and grants him the last embrace of the mother"
+    },
+    {
+      "character_a": "Ingtar",
+      "character_b": "the Shadow",
+      "relationship_type": "other",
+      "directed": false,
+      "description": "Ingtar was a Darkfriend who now seeks redemption by sacrificing himself"
+    },
+    {
+      "character_a": "Bayle Domon",
+      "character_b": "Nynaeve",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Domon waits with his ship to help Nynaeve and the others escape despite great danger"
+    },
+    {
+      "character_a": "Geofram Bornhald",
+      "character_b": "Byar",
+      "relationship_type": "other",
+      "directed": true,
+      "description": "Bornhald commands Byar and sends him away before leading the Children into battle"
+    }
+  ],
+  "_meta": {
+    "book_order": 2,
+    "chapter_number": 46,
+    "chapter_id": 101,
+    "chapter_title": "To Come Out of the Shadow",
+    "model": "claude-sonnet-4-5",
+    "input_tokens": 21855,
+    "output_tokens": 8206
+  }
+}

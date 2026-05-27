@@ -1,0 +1,357 @@
+{
+  "characters": [
+    {
+      "name_used_in_text": "Perrin",
+      "likely_matches_existing": "Perrin Aybara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "troubled by his connection to wolves, anxious about Aes Sedai influence"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Clear match to roster. Displays his wolf-communication abilities throughout the chapter."
+    },
+    {
+      "name_used_in_text": "Ingtar",
+      "likely_matches_existing": "Ingtar",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienaran",
+        "physical_traits": "wears crescent-crested helmet",
+        "age": null,
+        "filiations": null,
+        "personality": "obsessively focused on recovering the Horn, pressing, urgent"
+      },
+      "factions": [
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "leader",
+          "notes": "Leading this expedition"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Clear match to roster. His desperation about finding the Horn is prominent."
+    },
+    {
+      "name_used_in_text": "Mat",
+      "likely_matches_existing": "Matrim Cauthon",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "growing paler",
+        "age": null,
+        "filiations": null,
+        "personality": "tries to appear unconcerned despite illness, juggling to maintain normalcy"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Clear match to roster. His deteriorating condition is noted; Verin examines him frequently."
+    },
+    {
+      "name_used_in_text": "Verin",
+      "likely_matches_existing": "Verin Mathwin",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "plump, graying hair",
+        "age": null,
+        "filiations": null,
+        "personality": "intensely curious, absorbed in something about Rand, urgent about speed"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "Aes Sedai"
+        },
+        {
+          "name": "Brown Ajah",
+          "faction_type": "ajah",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Aes Sedai",
+          "alias_type": "title",
+          "notes": null
+        },
+        {
+          "alias_text": "Wise One",
+          "alias_type": "epithet",
+          "notes": "What Urien mistakenly calls her, though she corrects him"
+        }
+      ],
+      "notes": "Clear match to roster. She is preoccupied with something about Rand and deeply interested in Rhuidean."
+    },
+    {
+      "name_used_in_text": "Rand",
+      "likely_matches_existing": "Rand al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Clear match to roster. Not present in chapter but frequently mentioned; Verin knows something about him, and Urien's description of 'He Who Comes With the Dawn' seems to match him."
+    },
+    {
+      "name_used_in_text": "Uno",
+      "likely_matches_existing": "Uno",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienaran",
+        "physical_traits": "one-eyed",
+        "age": null,
+        "filiations": null,
+        "personality": "cautious, experienced scout, colorful curser"
+      },
+      "factions": [
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Soldier in Ingtar's force"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Clear match to roster. He spots the Aiel first."
+    },
+    {
+      "name_used_in_text": "Masema",
+      "likely_matches_existing": "Masema",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienaran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "aggressive, quick to attack, violent"
+      },
+      "factions": [
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Soldier in Ingtar's force"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Clear match to roster. His violence toward Urien is consistent with his character."
+    },
+    {
+      "name_used_in_text": "Urien",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Aiel",
+        "physical_traits": "tall, sun-darkened skin, red hair cut short with a tail in back, blue eyes",
+        "age": null,
+        "filiations": "Two Spires sept of the Reyn Aiel",
+        "personality": "proud, fearless, respectful to Wise Ones/Aes Sedai, ready for combat but not aggressive without cause"
+      },
+      "factions": [
+        {
+          "name": "Red Shield",
+          "faction_type": "society",
+          "role": "member",
+          "notes": "Aiel warrior society"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Urien, of the Two Spires sept of the Reyn Aiel",
+          "alias_type": "given_name",
+          "notes": "Full formal introduction"
+        }
+      ],
+      "notes": "New character. An Aiel warrior searching for 'He Who Comes With the Dawn.' Resembles Rand physically."
+    },
+    {
+      "name_used_in_text": "Fain",
+      "likely_matches_existing": "Padan Fain",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Clear match to roster. Not present but mentioned by wolves as traveling with the Trollocs."
+    }
+  ],
+  "appearances": [
+    {
+      "character": "Perrin",
+      "whereabouts": "riding through Kinslayer's Dagger pass with Ingtar's column, heading toward Cairhien",
+      "notable_actions": "watches the mountains nervously, communicates with wolves who report people in the mountains and Trollocs ahead following 'Shadowkiller,' repeatedly explains wolf reports to Ingtar, dismounts to meet Urien, observes Urien's resemblance to Rand, grips his axe when tensions rise",
+      "demeanor": "uncomfortable, anxious about the mountains and the wolves' reports, troubled by Aes Sedai influence, cautious",
+      "alliances_shown": [
+        "Ingtar",
+        "Mat",
+        "Verin"
+      ]
+    },
+    {
+      "character": "Ingtar",
+      "whereabouts": "leading the column through Kinslayer's Dagger pass",
+      "notable_actions": "presses the column hard to catch up with Fain and the Horn, repeatedly asks Perrin about wolf reports, rides back to question Perrin again, dismounts to meet Urien, questions Urien about Trollocs and Darkfriends, orders soldiers to remove armor as they enter Cairhien",
+      "demeanor": "obsessed, urgent, desperate to find the Horn, impatient with delays, losing composure",
+      "alliances_shown": [
+        "Perrin",
+        "Verin",
+        "Uno"
+      ]
+    },
+    {
+      "character": "Mat",
+      "whereabouts": "riding with the column through Kinslayer's Dagger",
+      "notable_actions": "juggles three colored balls, dismounts to see Urien up close, comments that Urien looks like Rand, mutters recognition of the ancient Aes Sedai symbol, asks Perrin if Urien was talking about Rand",
+      "demeanor": "seemingly unconcerned but visibly paler and sicker, trying to maintain normalcy, privately worried",
+      "alliances_shown": [
+        "Perrin",
+        "Ingtar"
+      ]
+    },
+    {
+      "character": "Verin",
+      "whereabouts": "riding at the head of the column with Ingtar",
+      "notable_actions": "examines Mat two or three times daily and tries Healing on him, rides ahead wanting even faster pace, dismounts to speak with Urien, questions Urien intensely about Rhuidean and the Wise Ones, steps close to Urien when he becomes evasive, obliterates the Aes Sedai symbol Urien drew, muses about the Wheel and the Dark One, commands soldiers to hurry with unusual sharpness",
+      "demeanor": "absorbed in thoughts about Rand, intensely curious about Aiel prophecies and Rhuidean, urgent, commanding when roused, troubled by implications",
+      "alliances_shown": [
+        "Ingtar"
+      ]
+    },
+    {
+      "character": "Rand",
+      "whereabouts": "not present; somewhere ahead of the column",
+      "notable_actions": "none; only mentioned",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Uno",
+      "whereabouts": "riding with the column, scouting",
+      "notable_actions": "spots the Aiel in the rocks, reports to Ingtar, watches the mountains cautiously, mutters about 'crazy bloody Aiel' after Urien leaves",
+      "demeanor": "alert, experienced, disgusted at being spotted by Urien",
+      "alliances_shown": [
+        "Ingtar"
+      ]
+    },
+    {
+      "character": "Masema",
+      "whereabouts": "riding with the column",
+      "notable_actions": "immediately lowers lance and charges at Urien when he appears, stops only when Ingtar orders it, growls afterward that they should have left the Aiel for the ravens",
+      "demeanor": "aggressive, violent, hostile toward the Aiel",
+      "alliances_shown": [
+        "Ingtar"
+      ]
+    },
+    {
+      "character": "Urien",
+      "whereabouts": "in the rocks of Kinslayer's Dagger, then steps onto the trail to meet the column",
+      "notable_actions": "deliberately reveals himself to Uno, steps into the path of the column, introduces himself formally, offers to fight ('dance'), greets Verin as a Wise One, answers questions about Rhuidean and Aiel prophecy while carefully guarding certain secrets, explains he searches for 'He Who Comes With the Dawn,' draws the ancient Aes Sedai symbol in the dirt, walks away into the rocks",
+      "demeanor": "proud, fearless, ready for combat but not seeking it without cause, respectful toward Verin as Aes Sedai/Wise One, disappointed when combat is avoided, wild-eyed when speaking of prophecy fulfillment",
+      "alliances_shown": []
+    },
+    {
+      "character": "Fain",
+      "whereabouts": "ahead of the column with Trollocs and Darkfriends, following 'Shadowkiller'",
+      "notable_actions": "none in this chapter; only mentioned in wolf reports",
+      "demeanor": null,
+      "alliances_shown": []
+    }
+  ],
+  "relationships": [
+    {
+      "character_a": "Perrin",
+      "character_b": "Ingtar",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Ingtar repeatedly questions Perrin about wolf reports; they work together to track the Horn"
+    },
+    {
+      "character_a": "Perrin",
+      "character_b": "Mat",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Friends traveling together; Mat confides his worries about Rand to Perrin"
+    },
+    {
+      "character_a": "Verin",
+      "character_b": "Mat",
+      "relationship_type": "mentor",
+      "directed": true,
+      "description": "Verin examines Mat's deteriorating condition frequently and attempts Healing"
+    },
+    {
+      "character_a": "Verin",
+      "character_b": "Urien",
+      "relationship_type": "other",
+      "directed": false,
+      "description": "Urien initially mistakes Verin for a Wise One and treats her with respect; she intensely questions him about Aiel knowledge"
+    },
+    {
+      "character_a": "Ingtar",
+      "character_b": "Uno",
+      "relationship_type": "ally",
+      "directed": true,
+      "description": "Uno serves under Ingtar as a soldier and scout"
+    },
+    {
+      "character_a": "Ingtar",
+      "character_b": "Masema",
+      "relationship_type": "ally",
+      "directed": true,
+      "description": "Masema serves under Ingtar as a soldier"
+    }
+  ],
+  "_meta": {
+    "book_order": 2,
+    "chapter_number": 28,
+    "chapter_id": 83,
+    "chapter_title": "A New Thread in the Pattern.",
+    "model": "claude-sonnet-4-5",
+    "input_tokens": 16477,
+    "output_tokens": 3822
+  }
+}

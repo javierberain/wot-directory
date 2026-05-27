@@ -1,0 +1,379 @@
+{
+  "characters": [
+    {
+      "name_used_in_text": "Rand",
+      "likely_matches_existing": "Rand al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "conflicted about his power, determined, tries to stay away from Aes Sedai"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Lord Rand",
+          "alias_type": "title",
+          "notes": "used by Hurin"
+        }
+      ],
+      "notes": "Experiences the void and contact with saidin involuntarily when viewing the crystal sphere; seems unable to control the void. Recites part of a verse while entranced."
+    },
+    {
+      "name_used_in_text": "Selene",
+      "likely_matches_existing": "Selene",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Cairhienin",
+        "physical_traits": "young and beautiful",
+        "age": "appears same age as Rand",
+        "filiations": null,
+        "personality": "commanding, regal, manipulative, desires greatness and power"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Lady Selene",
+          "alias_type": "title",
+          "notes": null
+        },
+        {
+          "alias_text": "My Lady",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Denies being Aes Sedai when directly asked. Wants Rand to keep the Horn of Valere and ride away with her. Becomes frightened at the excavation site and urges Rand to leave. Offers to stay by his side forever if he brings the Horn and rides with her."
+    },
+    {
+      "name_used_in_text": "Loial",
+      "likely_matches_existing": "Loial",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "ogier",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "large; walks ahead of his big horse",
+        "age": null,
+        "filiations": "son of Arent son of Halan",
+        "personality": "patient, never complaining, helpful"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "alantin",
+          "alias_type": "title",
+          "notes": "used by Selene"
+        }
+      ],
+      "notes": "Carries the Horn of Valere chest on his horse while he walks. Acts as mediator between Rand and Selene."
+    },
+    {
+      "name_used_in_text": "Hurin",
+      "likely_matches_existing": "Hurin",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienaran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "loyal, practical, deferential"
+      },
+      "factions": [
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "serves as a sniffer"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Lord Rand",
+          "alias_type": "title",
+          "notes": "how he addresses Rand"
+        }
+      ],
+      "notes": "Travels with Rand, Loial, and Selene. Shows concern for practical matters like finding the village and avoiding guards."
+    },
+    {
+      "name_used_in_text": "Mat",
+      "likely_matches_existing": "Matrim Cauthon",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Not present in chapter. Mentioned as the intended recipient of the dagger for Aes Sedai Healing."
+    },
+    {
+      "name_used_in_text": "Fain",
+      "likely_matches_existing": "Padan Fain",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "pursues Rand"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Not present in chapter. Mentioned as pursuing Rand specifically, with Trollocs. Rand believes Fain can find him."
+    },
+    {
+      "name_used_in_text": "Red",
+      "likely_matches_existing": "Red",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "horse",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "bay stallion, large",
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "the bay",
+          "alias_type": "epithet",
+          "notes": null
+        }
+      ],
+      "notes": "Rand's mount. Nearly falls over cliff edge when clay crumbles."
+    },
+    {
+      "name_used_in_text": "Bayle Domon",
+      "likely_matches_existing": "Bayle Domon",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Captain Domon",
+          "alias_type": "title",
+          "notes": "ship captain"
+        }
+      ],
+      "notes": "Not present in chapter. Mentioned in Rand's memory as having spoken of a giant hand holding a crystal sphere on Tremalking."
+    },
+    {
+      "name_used_in_text": "Nynaeve",
+      "likely_matches_existing": "Nynaeve al'Meara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "Women's Circle",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Wisdom"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Not present in chapter. Mentioned in Rand's memory as having broken a broom across a merchant guard's shoulders for telling part of the Prophecies of the Dragon."
+    },
+    {
+      "name_used_in_text": "Egwene",
+      "likely_matches_existing": "Egwene",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Not present in chapter. Mentioned as sometimes wearing a mysterious, knowing smile that Rand finds reminiscent of Selene's expression."
+    },
+    {
+      "name_used_in_text": "Queen Morgase",
+      "likely_matches_existing": "Queen Morgase",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Andoran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "haughty"
+      },
+      "factions": [
+        {
+          "name": "House Trakand",
+          "faction_type": "house",
+          "role": "leader",
+          "notes": "Queen of Andor"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Not present in chapter. Mentioned as a comparison for Selene's regal bearing."
+    }
+  ],
+  "appearances": [
+    {
+      "character": "Rand",
+      "whereabouts": "traveling through Cairhien with companions, passing through mountains (Kinslayer's Dagger) and then hill country; discovers an excavation site with a giant crystal sphere; arrives at the village of Tremonsien",
+      "notable_actions": "keeps group moving through the night; refuses to let Selene see the Horn again; investigates the excavation; experiences involuntary contact with saidin and the void while viewing the crystal sphere; recites a verse while entranced; nearly rides Red over the cliff edge; arrives at the Nine Rings inn",
+      "demeanor": "determined, conflicted, frightened by his loss of control over the void and saidin; curious about the excavation; apologetic to Selene",
+      "alliances_shown": [
+        "Loial",
+        "Hurin",
+        "Selene"
+      ]
+    },
+    {
+      "character": "Selene",
+      "whereabouts": "traveling with Rand's group through Cairhien; at excavation site; arriving at Tremonsien",
+      "notable_actions": "demands to see the Horn of Valere; becomes angry when Rand asks if she is Aes Sedai; regains temper and chats with Loial and Hurin; becomes frightened at excavation and urges Rand to leave; reluctantly agrees to go to village inn; offers to stay with Rand forever if he takes the Horn and rides away with her immediately; turns her back on him when he refuses",
+      "demeanor": "demanding and imperious, then cold and angry, then warmer but still distant with Rand; genuinely frightened at the excavation; desperate and pleading when asking Rand to ride away with her",
+      "alliances_shown": [
+        "Rand"
+      ]
+    },
+    {
+      "character": "Loial",
+      "whereabouts": "traveling through Cairhien with Rand's group; walks ahead of his horse carrying the Horn chest",
+      "notable_actions": "walks or trots tirelessly with the Horn chest on his horse; begins to unstrap the chest at Selene's request but stops at Rand's order; chats with Selene about books; warns Rand that farmers might want to take the Horn; describes Rand's trance at the excavation; helps cover the Horn chest with his blanket",
+      "demeanor": "patient, compliant, helpful; tries to maintain peace between Rand and Selene",
+      "alliances_shown": [
+        "Rand",
+        "Selene",
+        "Hurin"
+      ]
+    },
+    {
+      "character": "Hurin",
+      "whereabouts": "traveling with Rand's group through Cairhien to Tremonsien",
+      "notable_actions": "speaks kindly with Selene after she regains her temper; warns Rand about guards at excavation approaching; suggests heading to the village",
+      "demeanor": "practical, loyal, deferential to Rand",
+      "alliances_shown": [
+        "Rand",
+        "Loial"
+      ]
+    },
+    {
+      "character": "Red",
+      "whereabouts": "carrying Rand through Cairhien",
+      "notable_actions": "shies at Rand's shout; goes to knees when clay crumbles at cliff edge; scrambles to safety; tied to hitching post at the Nine Rings inn",
+      "demeanor": "startled by Rand's behavior",
+      "alliances_shown": [
+        "Rand"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "character_a": "Rand",
+      "character_b": "Selene",
+      "relationship_type": "romantic",
+      "directed": false,
+      "description": "romantic tension; Selene wants to be with Rand and asks him to ride away with her and the Horn; Rand is attracted to her but suspects she might be Aes Sedai and refuses to take the Horn"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Loial",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "traveling companions; Loial carries the Horn for Rand; Loial expresses concern for Rand's increasingly odd behavior"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Hurin",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "traveling companions; Hurin serves Rand and addresses him as 'Lord Rand'"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Red",
+      "relationship_type": "other",
+      "directed": true,
+      "description": "Rand rides Red; trusts the horse not to fall over cliffs"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Mat",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Rand intends to deliver the dagger to Mat for Aes Sedai Healing"
+    },
+    {
+      "character_a": "Fain",
+      "character_b": "Rand",
+      "relationship_type": "enemy",
+      "directed": true,
+      "description": "Fain pursues Rand specifically; can track him; travels with Trollocs"
+    },
+    {
+      "character_a": "Selene",
+      "character_b": "Loial",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "chat about books; Selene calls him 'alantin' and asks him to bring down the Horn chest"
+    },
+    {
+      "character_a": "Selene",
+      "character_b": "Hurin",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Selene speaks kindly to Hurin after regaining her temper"
+    }
+  ],
+  "_meta": {
+    "book_order": 2,
+    "chapter_number": 20,
+    "chapter_id": 75,
+    "chapter_title": "Saidin",
+    "model": "claude-sonnet-4-5",
+    "input_tokens": 15232,
+    "output_tokens": 3825
+  }
+}

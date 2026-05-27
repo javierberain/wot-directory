@@ -1,0 +1,924 @@
+{
+  "characters": [
+    {
+      "name_used_in_text": "Rand al'Thor",
+      "likely_matches_existing": "Rand al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": "young adult",
+        "filiations": "son of Tam al'Thor",
+        "personality": "hesitant but determined; feeling torn between duty and home; prone to nightmares and fear but pushes himself forward"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "boy",
+          "alias_type": "epithet",
+          "notes": "used by Lan"
+        },
+        {
+          "alias_text": "sheepherder",
+          "alias_type": "epithet",
+          "notes": "used by Lan"
+        },
+        {
+          "alias_text": "lad",
+          "alias_type": "epithet",
+          "notes": "used by Tam"
+        }
+      ],
+      "notes": "POV character for this chapter. Experiences vivid nightmares involving the Dark One, a black mountain, and a white city. Preparing to leave Emond's Field with Moiraine and Lan."
+    },
+    {
+      "name_used_in_text": "Tam al'Thor",
+      "likely_matches_existing": "Tam al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "weak from illness",
+        "age": "middle-aged or older",
+        "filiations": "father of Rand al'Thor",
+        "personality": "pragmatic, cautious about Aes Sedai; loving father who worries for his son's safety; experienced with the wider world beyond Two Rivers"
+      },
+      "factions": [
+        {
+          "name": "Village Council",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "member of Emond's Field's governing body"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Tam",
+          "alias_type": "given_name",
+          "notes": null
+        },
+        {
+          "alias_text": "father",
+          "alias_type": "epithet",
+          "notes": "from Rand's perspective"
+        }
+      ],
+      "notes": "Recovering from Trolloc attack injuries. Warns Rand repeatedly to be wary of Aes Sedai and their tricky speech. Gives Rand his sword to keep. Hints at his own experience outside the Two Rivers."
+    },
+    {
+      "name_used_in_text": "Matrim Cauthon",
+      "likely_matches_existing": "Matrim Cauthon",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": "young adult",
+        "filiations": null,
+        "personality": "anxious and fearful about the journey; comments that reality doesn't match the stories"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Mat",
+          "alias_type": "given_name",
+          "notes": null
+        }
+      ],
+      "notes": "Waiting with Rand to leave. Equipped with bow and quiver. Expresses fear and notes this isn't like the gleeman's stories."
+    },
+    {
+      "name_used_in_text": "Moiraine",
+      "likely_matches_existing": "Moiraine",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown (not Two Rivers)",
+        "physical_traits": "carries a vine-carved walking staff",
+        "age": null,
+        "filiations": null,
+        "personality": "commanding, authoritative, skilled storyteller; uses both gentleness and power to achieve her aims"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Aes Sedai of the White Tower"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Aes Sedai",
+          "alias_type": "title",
+          "notes": "her role/station"
+        }
+      ],
+      "notes": "Confronts hostile villagers and delivers powerful story of Manetheren to shame them and win them over. Demonstrates the One Power by creating white flames from her staff. Bonded to Lan as Warder."
+    },
+    {
+      "name_used_in_text": "Lan",
+      "likely_matches_existing": "Lan",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown (not Two Rivers)",
+        "physical_traits": "burly, wears gray-green scale armor",
+        "age": null,
+        "filiations": null,
+        "personality": "impatient, focused on immediate threats and action; protective"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Warder",
+          "alias_type": "title",
+          "notes": "his role as Aes Sedai's bonded protector"
+        },
+        {
+          "alias_text": "Master Lan",
+          "alias_type": "title",
+          "notes": "form of address"
+        }
+      ],
+      "notes": "Bonded Warder to Moiraine. Urgently calls Rand and Mat to leave due to 'trouble' - the confrontation with hostile villagers. Wears scale armor, suggesting preparation for travel or combat."
+    },
+    {
+      "name_used_in_text": "Brandelwyn al'Vere",
+      "likely_matches_existing": "Brandelwyn al'Vere",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "carries a large wooden maul",
+        "age": "middle-aged or older",
+        "filiations": "married to Mistress al'Vere (Marin)",
+        "personality": "protective of his inn and guests; authoritative as Mayor; stands up for what's right"
+      },
+      "factions": [
+        {
+          "name": "Village Council",
+          "faction_type": "other",
+          "role": "leader",
+          "notes": "Mayor of Emond's Field"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Bran",
+          "alias_type": "given_name",
+          "notes": null
+        },
+        {
+          "alias_text": "Mayor",
+          "alias_type": "title",
+          "notes": null
+        },
+        {
+          "alias_text": "Bran al'Vere",
+          "alias_type": "given_name",
+          "notes": "full name"
+        },
+        {
+          "alias_text": "Master al'Vere",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Defends Moiraine against the hostile mob. Reminds villagers of healings she performed. Threatens those who would harm guests in his inn."
+    },
+    {
+      "name_used_in_text": "Marin al'Vere",
+      "likely_matches_existing": "Mistress al'Vere",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": "middle-aged or older",
+        "filiations": "wife of Bran al'Vere",
+        "personality": "caring, maternal; determined to see people fed and cared for; authoritative in her domain"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Marin",
+          "alias_type": "given_name",
+          "notes": null
+        },
+        {
+          "alias_text": "Mistress al'Vere",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Tended to both Rand and Tam while they rested. Kept Rand asleep so Tam could rest. Fed Tam broth and replaced Rand's food tray to keep it warm. Can't be gotten around when her mind is set, according to Bran."
+    },
+    {
+      "name_used_in_text": "Haral Luhhan",
+      "likely_matches_existing": "Haral Luhhan",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "burly, massive fists, thick arms",
+        "age": "middle-aged",
+        "filiations": "husband of Alsbet Luhhan; blacksmith",
+        "personality": "physically intimidating but uses presence rather than violence"
+      },
+      "factions": [
+        {
+          "name": "Village Council",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "member of Emond's Field's governing body"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Haral",
+          "alias_type": "given_name",
+          "notes": null
+        },
+        {
+          "alias_text": "Master Luhhan",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Stands with Bran to defend Moiraine. Uses his physical presence to intimidate the Coplins without direct threats."
+    },
+    {
+      "name_used_in_text": "Hari Coplin",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "sour-faced",
+        "age": null,
+        "filiations": "brother of Darl Coplin; cousin of Bili Congar",
+        "personality": "hostile, leads mob against Moiraine; sour and confrontational"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Hari",
+          "alias_type": "given_name",
+          "notes": null
+        }
+      ],
+      "notes": "Leads the mob confronting Moiraine. Shakes his fist at her and threatens to burn her out. Part of the Coplin family, known troublemakers."
+    },
+    {
+      "name_used_in_text": "Darl Coplin",
+      "likely_matches_existing": "Darl Coplin",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "brother of Hari Coplin; cousin of Bili Congar",
+        "personality": "hostile, part of mob against Moiraine"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Darl",
+          "alias_type": "given_name",
+          "notes": null
+        }
+      ],
+      "notes": "Carries a torch and shouts accusations at Moiraine with his brother. Backs down when confronted by Bran."
+    },
+    {
+      "name_used_in_text": "Bili Congar",
+      "likely_matches_existing": "Bili Congar",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "cousin of the Coplins; related to Daise Congar",
+        "personality": "cowardly, quick to flee when confronted"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Bili",
+          "alias_type": "given_name",
+          "notes": null
+        }
+      ],
+      "notes": "Joins the Coplins in confronting Moiraine but is the first to flee into the crowd when challenged. Disappears before his cousins do."
+    },
+    {
+      "name_used_in_text": "Cenn Buie",
+      "likely_matches_existing": "Cenn Buie",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "old; right arm was injured but healed by Moiraine",
+        "age": "elderly",
+        "filiations": "thatcher by trade",
+        "personality": "uncomfortable with confrontation; grudging but ultimately ashamed; traditional and suspicious of outsiders"
+      },
+      "factions": [
+        {
+          "name": "Village Council",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "member of Emond's Field's governing body"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Cenn",
+          "alias_type": "given_name",
+          "notes": null
+        },
+        {
+          "alias_text": "Master Buie",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Reluctantly part of the confrontation. His arm was healed by Moiraine, which Bran uses to shame him. Looks uncomfortable throughout and sounds ashamed when challenged."
+    },
+    {
+      "name_used_in_text": "Nynaeve al'Meara",
+      "likely_matches_existing": "Nynaeve al'Meara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "Wisdom of Emond's Field",
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Nynaeve",
+          "alias_type": "given_name",
+          "notes": null
+        },
+        {
+          "alias_text": "the Wisdom",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Mentioned by Rand as having said Tam was dying, which led to Moiraine treating him instead."
+    },
+    {
+      "name_used_in_text": "Paet al'Caar",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "medium",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "long-jawed",
+        "age": null,
+        "filiations": "father of Wil; farmer",
+        "personality": "honorable, willing to admit when he's wrong; grateful for Moiraine's healing of his son"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Paet",
+          "alias_type": "given_name",
+          "notes": null
+        }
+      ],
+      "notes": "First to break from the mob and apologize to Moiraine. His son Wil's broken leg was healed by her. May be related to Adan al'Caar from the roster, though the connection is unclear."
+    },
+    {
+      "name_used_in_text": "Wil",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "had a broken leg that was healed",
+        "age": "young (referred to as 'boy')",
+        "filiations": "son of Paet al'Caar",
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Does not appear directly in the chapter but is mentioned as having had his broken leg healed by Moiraine, enabling him to walk."
+    },
+    {
+      "name_used_in_text": "Eward Candwin",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "had a severe back wound that was healed",
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Eward",
+          "alias_type": "given_name",
+          "notes": null
+        }
+      ],
+      "notes": "Does not appear directly but is mentioned by Bran as having had a severe gash down his back healed by Moiraine."
+    },
+    {
+      "name_used_in_text": "Oren Dautry",
+      "likely_matches_existing": "Oren Dautry",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "has sheep stock for sale",
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Oren",
+          "alias_type": "given_name",
+          "notes": null
+        },
+        {
+          "alias_text": "Master Dautry",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Mentioned by Tam as having good sheep stock he might sell."
+    },
+    {
+      "name_used_in_text": "Jon Thane",
+      "likely_matches_existing": "Jon Thane",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "has sheep stock for sale",
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "Village Council",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "member of Emond's Field's governing body"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Jon",
+          "alias_type": "given_name",
+          "notes": null
+        }
+      ],
+      "notes": "Mentioned by Tam as having good sheep stock he might sell."
+    },
+    {
+      "name_used_in_text": "Shai'tan",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": "face that causes pain to think of; wears cloak the color of dried blood",
+        "age": null,
+        "filiations": null,
+        "personality": "malevolent, controlling; voice whispers 'Serve me' in Rand's mind"
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "leader",
+          "notes": "The Dark One, ultimate evil"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "the Dark One",
+          "alias_type": "epithet",
+          "notes": "common name for this entity"
+        },
+        {
+          "alias_text": "Father of Lies",
+          "alias_type": "epithet",
+          "notes": "used by Moiraine in her story"
+        },
+        {
+          "alias_text": "the Shadow",
+          "alias_type": "epithet",
+          "notes": "used to refer to his forces and influence"
+        }
+      ],
+      "notes": "Appears in Rand's nightmare as a terrifying figure trying to compel him to serve. Associated with the black mountain and blood-red cloak. Rand shouts his name in defiance during the dream."
+    },
+    {
+      "name_used_in_text": "Aemon al Caar al Thorin",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Manetheren (historical)",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "son of Caar son of Thorin; husband of Eldrene; King of Manetheren",
+        "personality": "fearless, legendary courage ('Aemon's heart' as compliment for bravery)"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Aemon",
+          "alias_type": "given_name",
+          "notes": null
+        }
+      ],
+      "notes": "Historical figure from Moiraine's tale. King of Manetheren two thousand years ago. Led the defense at the Tarendrelle and died with his army at Aemon's Field (now Emond's Field). His death was felt by his wife Eldrene."
+    },
+    {
+      "name_used_in_text": "Eldrene ay Ellan ay Carlan",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Manetheren (historical)",
+        "physical_traits": "extremely beautiful ('flowers bloomed to make her smile')",
+        "age": null,
+        "filiations": "daughter of Ellan daughter of Carlan; wife of Aemon; Queen of Manetheren",
+        "personality": "beautiful, wise, loving; capable of terrible vengeance when grief-stricken"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Eldrene",
+          "alias_type": "given_name",
+          "notes": null
+        }
+      ],
+      "notes": "Historical figure from Moiraine's tale. Queen of Manetheren. After feeling Aemon die, she drew on the One Power beyond human limits to destroy the Trolloc army and all Dreadlords, but the power consumed her and destroyed the city of Manetheren itself."
+    },
+    {
+      "name_used_in_text": "Ba'alzamon",
+      "likely_matches_existing": "Elan Morin Tedronai",
+      "is_new_character": false,
+      "confidence": "medium",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "leader",
+          "notes": "leader of the Dark One's forces in the Trolloc Wars"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Ba'alzamon",
+          "alias_type": "title",
+          "notes": "means 'Heart of the Dark' in the Old Tongue"
+        },
+        {
+          "alias_text": "Heart of the Dark",
+          "alias_type": "epithet",
+          "notes": "translation of Ba'alzamon"
+        }
+      ],
+      "notes": "Historical figure mentioned in Moiraine's story. His banner led the Trolloc army against Manetheren. Moiraine notes this was an 'ancient name for the Father of Lies,' suggesting this may be another name for the Dark One or a powerful servant. Likely matches Elan Morin Tedronai (Betrayer of Hope) from the roster."
+    }
+  ],
+  "appearances": [
+    {
+      "character": "Rand al'Thor",
+      "whereabouts": "Winespring Inn, Emond's Field; primarily in the room where Tam is recovering; then in the common room watching the confrontation; finally leaving via the kitchen and stableyard",
+      "notable_actions": "Wakes from terrible nightmare involving the Dark One and a black mountain. Checks on Tam and discusses leaving with him. Recounts events to Tam. Watches mob confront Moiraine from inside the inn. Listens to Moiraine's tale of Manetheren. Prepares to leave Emond's Field with Mat, Lan, and Moiraine.",
+      "demeanor": "fearful from nightmares; torn between duty to leave and desire to stay; hesitant but ultimately resolved to go; awed by Moiraine's story",
+      "alliances_shown": [
+        "Tam al'Thor",
+        "Matrim Cauthon",
+        "Lan",
+        "Moiraine"
+      ]
+    },
+    {
+      "character": "Tam al'Thor",
+      "whereabouts": "bed in a room at the Winespring Inn, recovering from injuries",
+      "notable_actions": "Wakes when Rand touches him. Discusses leaving with Rand. Listens to Rand's account of recent events. Questions Moiraine's exact words and warns Rand about Aes Sedai trickery. Gives Rand his sword. Accepts that Rand must leave but wants to follow in a few days.",
+      "demeanor": "weak but clear-minded; concerned for Rand; pragmatic and cautious; frustrated at being bedridden",
+      "alliances_shown": [
+        "Rand al'Thor",
+        "Brandelwyn al'Vere",
+        "Marin al'Vere"
+      ]
+    },
+    {
+      "character": "Matrim Cauthon",
+      "whereabouts": "Winespring Inn common room, waiting to leave with Rand",
+      "notable_actions": "Waits anxiously for Rand. Watches the confrontation outside with Lan. Comments that events aren't like the stories. Follows Lan when called.",
+      "demeanor": "anxious, fearful, impatient; rocking on his heels nervously; glancing toward stairs and windows",
+      "alliances_shown": [
+        "Rand al'Thor",
+        "Lan",
+        "Moiraine"
+      ]
+    },
+    {
+      "character": "Moiraine",
+      "whereabouts": "inn yard facing the hostile mob; later presumably preparing to leave",
+      "notable_actions": "Faces down hostile villagers. Creates white flames from her staff using the One Power. Delivers powerful, emotional tale of Manetheren's history to shame and inspire the villagers. Successfully turns the mob's hostility into shame and support.",
+      "demeanor": "calm and seemingly casual at first despite hostility; commanding when she uses her power; emotional and sorrowful when telling the story; ultimately triumphant",
+      "alliances_shown": [
+        "Brandelwyn al'Vere",
+        "Haral Luhhan",
+        "Lan"
+      ]
+    },
+    {
+      "character": "Lan",
+      "whereabouts": "Winespring Inn, watching the confrontation from inside; then leading Rand and Mat to leave via the back",
+      "notable_actions": "Alerts Rand and Mat to trouble. Watches the mob from the door. Urges the boys to hurry. Leads them through the kitchen toward the stableyard.",
+      "demeanor": "urgent, impatient, focused on immediate threats; growling at delays",
+      "alliances_shown": [
+        "Moiraine",
+        "Rand al'Thor",
+        "Matrim Cauthon"
+      ]
+    },
+    {
+      "character": "Brandelwyn al'Vere",
+      "whereabouts": "inn yard, confronting the mob threatening Moiraine",
+      "notable_actions": "Steps forward with Haral to defend Moiraine. Threatens those who would burn his inn or harm his guests. Shames the mob by reminding them of healings Moiraine performed, naming specific villagers she helped.",
+      "demeanor": "protective, authoritative, angry at the mob's ingratitude",
+      "alliances_shown": [
+        "Moiraine",
+        "Haral Luhhan",
+        "Marin al'Vere"
+      ]
+    },
+    {
+      "character": "Marin al'Vere",
+      "whereabouts": "not directly present in this chapter but her recent actions are described",
+      "notable_actions": "Tended Tam and Rand while they rested. Kept Rand asleep. Fed Tam broth. Replaced food tray for Rand. Undressed and cleaned Tam's clothes.",
+      "demeanor": "caring, determined, maternally protective",
+      "alliances_shown": [
+        "Tam al'Thor",
+        "Rand al'Thor",
+        "Brandelwyn al'Vere"
+      ]
+    },
+    {
+      "character": "Haral Luhhan",
+      "whereabouts": "inn yard, confronting the mob with Bran",
+      "notable_actions": "Steps forward with Bran to defend Moiraine. Physically intimidates Hari Coplin by stretching and cracking his knuckles, causing Hari to back down without direct threats.",
+      "demeanor": "calm but physically menacing; uses his size to intimidate",
+      "alliances_shown": [
+        "Moiraine",
+        "Brandelwyn al'Vere"
+      ]
+    },
+    {
+      "character": "Hari Coplin",
+      "whereabouts": "inn yard, at the front of the mob",
+      "notable_actions": "Leads the mob against Moiraine. Shakes his fist at her. Elbows Cenn to speak. Snatches Darl's torch and threatens to burn Moiraine out. Backs down when confronted by Bran and Haral. Leaves scowling without apology.",
+      "demeanor": "hostile, angry, confrontational; backs down when faced with authority; sour-faced throughout",
+      "alliances_shown": [
+        "Darl Coplin",
+        "Bili Congar"
+      ]
+    },
+    {
+      "character": "Darl Coplin",
+      "whereabouts": "inn yard, with his brother Hari in the mob",
+      "notable_actions": "Carries a torch. Shouts accusations that Moiraine brought the Trollocs. Quickly denies threatening to burn the inn when confronted by Bran. Leaves without apology.",
+      "demeanor": "hostile but quicker to back down than his brother",
+      "alliances_shown": [
+        "Hari Coplin",
+        "Bili Congar"
+      ]
+    },
+    {
+      "character": "Bili Congar",
+      "whereabouts": "inn yard, with the Coplins initially, then hiding in the crowd",
+      "notable_actions": "Weakly echoes threats against Moiraine. Dives into the crowd when Bran confronts them. Disappears before his cousins.",
+      "demeanor": "cowardly, quick to flee when challenged",
+      "alliances_shown": [
+        "Hari Coplin",
+        "Darl Coplin"
+      ]
+    },
+    {
+      "character": "Cenn Buie",
+      "whereabouts": "inn yard, reluctantly with the mob",
+      "notable_actions": "Speaks against Moiraine at Hari's urging but appears uncomfortable. Argues weakly that Aes Sedai bring trouble. Edges away from the Coplins. When reminded his arm was healed by Moiraine, admits he cannot deny what she did and sounds ashamed.",
+      "demeanor": "uncomfortable, reluctant, looking for a way to leave; ultimately ashamed when confronted with his ingratitude",
+      "alliances_shown": [
+        "Village Council members"
+      ]
+    },
+    {
+      "character": "Paet al'Caar",
+      "whereabouts": "inn yard, in the mob, then breaking away",
+      "notable_actions": "First villager to break from the mob. Pushes past the Coplins to speak. Admits shame at being part of the confrontation. Thanks Moiraine for healing his son Wil. Says she can stay as long as she likes. Leaves with a quick bow.",
+      "demeanor": "ashamed, grateful, honorable",
+      "alliances_shown": [
+        "Moiraine",
+        "other villagers who eventually apologize"
+      ]
+    },
+    {
+      "character": "Shai'tan",
+      "whereabouts": "in Rand's nightmare; associated with a black mountain in a desolate land",
+      "notable_actions": "Pursues Rand through the nightmare landscape. Whispers 'Serve me' repeatedly in Rand's mind. Tries to pull Rand toward the black mountain with unseen force. Looms over Rand in a blood-colored cloak with a face too terrible to contemplate.",
+      "demeanor": "menacing, controlling, terrifying; voice is familiar but Rand doesn't want to recognize it",
+      "alliances_shown": []
+    },
+    {
+      "character": "Aemon al Caar al Thorin",
+      "whereabouts": "historical figure from two thousand years ago; died at Aemon's Field (now Emond's Field)",
+      "notable_actions": "Led Manetheren's army from the Field of Bekkar to defend their homeland. Held the Tarendrelle crossing for ten days against overwhelming Trolloc forces. Crossed the river when betrayed and destroyed the bridges. Fought a retreating battle back to Emond's Field. Died with his army when they were finally overwhelmed.",
+      "demeanor": "fearless, determined, tragic",
+      "alliances_shown": [
+        "Eldrene ay Ellan ay Carlan",
+        "people of Manetheren"
+      ]
+    },
+    {
+      "character": "Eldrene ay Ellan ay Carlan",
+      "whereabouts": "historical figure; was in the city of Manetheren while Aemon fought",
+      "notable_actions": "Organized the evacuation of Manetheren's people during the battle. Felt Aemon die through their bond. Drew on the One Power beyond human limits in grief and vengeance. Killed all Dreadlords and enemy generals instantly with fire. Destroyed the Trolloc army. Consumed herself and the entire city of Manetheren in the process.",
+      "demeanor": "beautiful, wise, loving; transformed by grief into terrible vengeance",
+      "alliances_shown": [
+        "Aemon al Caar al Thorin",
+        "people of Manetheren"
+      ]
+    },
+    {
+      "character": "Ba'alzamon",
+      "whereabouts": "historical figure; his banner was at the head of the Trolloc army attacking Manetheren two thousand years ago",
+      "notable_actions": "Led or was represented at the head of the Trolloc host attacking Manetheren. Associated with a light-destroying banner that chilled souls.",
+      "demeanor": "ancient evil, commanding the forces of darkness",
+      "alliances_shown": []
+    }
+  ],
+  "relationships": [
+    {
+      "character_a": "Rand al'Thor",
+      "character_b": "Tam al'Thor",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "father and son; close, loving relationship; Rand promises to return to Tam"
+    },
+    {
+      "character_a": "Rand al'Thor",
+      "character_b": "Matrim Cauthon",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "friends from the Two Rivers who are leaving together"
+    },
+    {
+      "character_a": "Rand al'Thor",
+      "character_b": "Moiraine",
+      "relationship_type": "other",
+      "directed": false,
+      "description": "Moiraine is taking Rand away from Emond's Field for his protection; relationship is wary but necessary"
+    },
+    {
+      "character_a": "Moiraine",
+      "character_b": "Lan",
+      "relationship_type": "warder_bond",
+      "directed": true,
+      "description": "Moiraine holds the Warder bond with Lan; he is bonded to her and will keep few if any secrets from her"
+    },
+    {
+      "character_a": "Brandelwyn al'Vere",
+      "character_b": "Marin al'Vere",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "husband and wife; run the Winespring Inn together"
+    },
+    {
+      "character_a": "Brandelwyn al'Vere",
+      "character_b": "Moiraine",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Bran defends Moiraine as his guest and against threats to his inn"
+    },
+    {
+      "character_a": "Haral Luhhan",
+      "character_b": "Moiraine",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Haral stands with Bran to defend Moiraine against the mob"
+    },
+    {
+      "character_a": "Hari Coplin",
+      "character_b": "Darl Coplin",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "brothers who lead the mob together"
+    },
+    {
+      "character_a": "Hari Coplin",
+      "character_b": "Bili Congar",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "cousins in the mob together"
+    },
+    {
+      "character_a": "Hari Coplin",
+      "character_b": "Moiraine",
+      "relationship_type": "enemy",
+      "directed": false,
+      "description": "Hari leads hostile mob against Moiraine, threatens her"
+    },
+    {
+      "character_a": "Paet al'Caar",
+      "character_b": "Wil",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "father and son"
+    },
+    {
+      "character_a": "Paet al'Caar",
+      "character_b": "Moiraine",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "grateful to Moiraine for healing his son; first to apologize and break from the mob"
+    },
+    {
+      "character_a": "Aemon al Caar al Thorin",
+      "character_b": "Eldrene ay Ellan ay Carlan",
+      "relationship_type": "romantic",
+      "directed": false,
+      "description": "husband and wife, King and Queen of Manetheren; described as having a love that death could not sunder; she felt him die"
+    },
+    {
+      "character_a": "Shai'tan",
+      "character_b": "Rand al'Thor",
+      "relationship_type": "enemy",
+      "directed": true,
+      "description": "the Dark One pursues Rand in his nightmare, trying to compel him to serve"
+    },
+    {
+      "character_a": "Tam al'Thor",
+      "character_b": "Marin al'Vere",
+      "relationship_type": "other",
+      "directed": false,
+      "description": "Marin cares for Tam during his recovery; he acknowledges she's impossible to get around when her mind is set"
+    }
+  ],
+  "_meta": {
+    "book_order": 1,
+    "chapter_number": 9,
+    "chapter_id": 10,
+    "chapter_title": "Tellings of the Wheel",
+    "model": "claude-sonnet-4-5",
+    "input_tokens": 14067,
+    "output_tokens": 10056
+  }
+}

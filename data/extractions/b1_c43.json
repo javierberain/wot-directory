@@ -1,0 +1,675 @@
+{
+  "characters": [
+    {
+      "name_used_in_text": "Loial",
+      "likely_matches_existing": "Loial",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "ogier",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "long eyebrows that can droop to his cheeks, tufted ears, thick fingers",
+        "age": "young for an Ogier (by implication)",
+        "filiations": "son of Arent son of Halan",
+        "personality": "somewhat hasty and impulsive for an Ogier, apologetic, earnest, knowledgeable about history and the Ways"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Loial, son of Arent son of Halan",
+          "alias_type": "given_name",
+          "notes": "full formal name"
+        }
+      ],
+      "notes": "From Stedding Shangtai; reluctantly agrees to guide the party through the Ways despite the edict of the Elders."
+    },
+    {
+      "name_used_in_text": "Moiraine",
+      "likely_matches_existing": "Moiraine",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown (not Two Rivers)",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "commanding, strategic, patient, and careful in her explanations; takes a leadership role in planning"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "Blue Ajah"
+        },
+        {
+          "name": "Blue Ajah",
+          "faction_type": "ajah",
+          "role": "member",
+          "notes": "Explicitly states she is of the Blue Ajah"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Aes Sedai",
+          "alias_type": "title",
+          "notes": "her station"
+        },
+        {
+          "alias_text": "Moiraine Sedai",
+          "alias_type": "title",
+          "notes": "formal address"
+        }
+      ],
+      "notes": "Takes charge of the planning session; heals Rand's wound at the end of the chapter."
+    },
+    {
+      "name_used_in_text": "Rand",
+      "likely_matches_existing": "Rand al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": "young man",
+        "filiations": "son of Tam al'Thor",
+        "personality": "conflicted, protective, anxious; struggles with responsibility and destiny"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Central POV character for much of the chapter; experiences a dream confrontation with Ba'alzamon."
+    },
+    {
+      "name_used_in_text": "Mat",
+      "likely_matches_existing": "Matrim Cauthon",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": "young man",
+        "filiations": null,
+        "personality": "worried, trying to maintain humor despite fear; increasingly dependent on the dagger"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Keeps the dagger from Shadar Logoth under his pillow; shares the dream with Ba'alzamon with Rand."
+    },
+    {
+      "name_used_in_text": "Perrin",
+      "likely_matches_existing": "Perrin Aybara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "yellow eyes",
+        "age": "young man",
+        "filiations": null,
+        "personality": "resigned, weary, internally conflicted; shows disturbing eagerness about hunting along the Blight that frightens him"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "His yellow eyes show a flash of eagerness when discussing hunting along the Blight, which seems to alarm him."
+    },
+    {
+      "name_used_in_text": "Egwene",
+      "likely_matches_existing": "Egwene",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "big dark eyes",
+        "age": "young woman",
+        "filiations": null,
+        "personality": "defiant, determined, refuses to be left behind"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Insists on accompanying the group; becomes angry when Rand mentions Elayne."
+    },
+    {
+      "name_used_in_text": "Nynaeve",
+      "likely_matches_existing": "Nynaeve al'Meara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "practical, matter-of-fact, resigned but determined; challenges Moiraine about herbs"
+      },
+      "factions": [
+        {
+          "name": "Women's Circle",
+          "faction_type": "society",
+          "role": "leader",
+          "notes": "As Wisdom"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Wisdom",
+          "alias_type": "title",
+          "notes": "her role in the Two Rivers"
+        }
+      ],
+      "notes": "Creates the supply list with a steady hand despite her muttering."
+    },
+    {
+      "name_used_in_text": "Lan",
+      "likely_matches_existing": "Lan",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown (not Two Rivers)",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "watchful, tactical, speaks with an iron-cored drawl"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Warder",
+          "alias_type": "title",
+          "notes": "his role"
+        }
+      ],
+      "notes": "Joins the planning session after dark; glances at Mat's dagger from time to time."
+    },
+    {
+      "name_used_in_text": "Master Gill",
+      "likely_matches_existing": "Basel Gill",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Andoran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "helpful, discreet, respectful of privacy despite being the innkeeper"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Innkeeper of The Queen's Blessing; assists with supplies and reports on events outside; does not question their planning."
+    },
+    {
+      "name_used_in_text": "Ba'alzamon",
+      "likely_matches_existing": "Ba'alzamon",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": "eyes and mouth become caverns of flame when he speaks",
+        "age": null,
+        "filiations": null,
+        "personality": "mocking, commanding, attempts to dominate and break Rand's will; claims this confrontation has happened countless times"
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "leader",
+          "notes": "The Dark One or his primary agent"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Father of Lies",
+          "alias_type": "epithet",
+          "notes": "Rand calls him this"
+        },
+        {
+          "alias_text": "the Dark One",
+          "alias_type": "epithet",
+          "notes": "common reference"
+        }
+      ],
+      "notes": "Confronts Rand and Mat in dreams; shows them clay figures representing themselves; claims they have fought countless times across ages."
+    },
+    {
+      "name_used_in_text": "the little cat",
+      "likely_matches_existing": "the small black cat with white feet",
+      "is_new_character": false,
+      "confidence": "medium",
+      "character_type": "other",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": "small, black with white feet",
+        "age": null,
+        "filiations": null,
+        "personality": "languid, affectionate"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "The text calls it 'the little cat' here; it stretches by the hearth and rubs against Moiraine's ankles, purring. This matches the roster entry for the small black cat with white feet."
+    },
+    {
+      "name_used_in_text": "Elder Haman",
+      "likely_matches_existing": "Elder Haman",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "ogier",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": "Elder (senior Ogier)",
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Haman",
+          "alias_type": "given_name",
+          "notes": null
+        }
+      ],
+      "notes": "Mentioned by Loial as someone who would say Loial deserves his troubles for being hasty."
+    },
+    {
+      "name_used_in_text": "Lamgwin",
+      "likely_matches_existing": "Lamgwin",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Andoran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "protective, willing to use force"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Works at The Queen's Blessing; uses his boot to send away someone trying to scratch the Dragon's Fang on the door."
+    },
+    {
+      "name_used_in_text": "Morgase",
+      "likely_matches_existing": "Queen Morgase",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Andoran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "House Trakand",
+          "faction_type": "house",
+          "role": "leader",
+          "notes": "Queen of Andor"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Queen",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Mentioned only in comparison to Moiraine's commanding presence."
+    },
+    {
+      "name_used_in_text": "Elayne",
+      "likely_matches_existing": "Elayne",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Andoran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "House Trakand",
+          "faction_type": "house",
+          "role": "member",
+          "notes": "Daughter-Heir to the throne of Andor"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Daughter-Heir",
+          "alias_type": "title",
+          "notes": "her position"
+        }
+      ],
+      "notes": "Mentioned by Rand to Egwene as the Daughter-Heir; Egwene becomes angry, thinking Rand is not being serious."
+    },
+    {
+      "name_used_in_text": "Min",
+      "likely_matches_existing": "Min",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Baerlon (presumably)",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Mentioned by Egwene; apparently saw something in Baerlon indicating Egwene and Nynaeve are part of the Pattern."
+    },
+    {
+      "name_used_in_text": "Tam",
+      "likely_matches_existing": "Tam al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "father of Rand",
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "Village Council",
+          "faction_type": "society",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "father",
+          "alias_type": "epithet",
+          "notes": "in Rand's thoughts"
+        }
+      ],
+      "notes": "Mentioned in Rand's memories and thoughts; taught Rand the flame and void technique."
+    }
+  ],
+  "appearances": [
+    {
+      "character": "Loial",
+      "whereabouts": "In the library of The Queen's Blessing inn in Caemlyn",
+      "notable_actions": "Explains the history and nature of the Ways at length; describes the Time of Madness, the Ogier Exile, and the gift of the Ways by male Aes Sedai; warns of the dangers (Machin Shin, the Black Wind); reluctantly agrees to guide the group through the Ways to reach the Eye of the World despite the edict of the Elders",
+      "demeanor": "Initially uncomfortable and apologetic about his outburst; hesitant and worried about breaking the edict; eventually resigned to his duty",
+      "alliances_shown": [
+        "Moiraine",
+        "Rand",
+        "Mat",
+        "Perrin",
+        "Egwene",
+        "Nynaeve"
+      ]
+    },
+    {
+      "character": "Moiraine",
+      "whereabouts": "In the library of The Queen's Blessing inn in Caemlyn; later checking on Rand and Mat before dawn",
+      "notable_actions": "Leads the planning session for the journey to the Eye of the World; explains the stakes (the Dark One potentially using the Eye's power); persuades everyone of the necessity; tells them they are part of the Pattern and have a choice but the Pattern will use them regardless; heals Rand's wound at the end of the chapter",
+      "demeanor": "Commanding, authoritative, patient in explanation; her presence described as throne-like when making her crucial speech; calm and deliberate",
+      "alliances_shown": [
+        "Lan",
+        "Loial",
+        "Rand",
+        "Mat",
+        "Perrin",
+        "Egwene",
+        "Nynaeve"
+      ]
+    },
+    {
+      "character": "Rand",
+      "whereabouts": "In the library planning session at The Queen's Blessing; later in his shared room under the eaves; in the dream confrontation with Ba'alzamon",
+      "notable_actions": "Agrees to go to the Eye of the World; paces nervously during planning; tries to convince Egwene to leave for safety; has a dream encounter with Ba'alzamon where he sees three clay figures and destroys them; gets a splinter in his hand that vanishes after he removes it; wakes and washes the wound repeatedly; has Moiraine heal the wound",
+      "demeanor": "Anxious, restless, protective of Egwene; terrified during and after the dream; desperate to deny Ba'alzamon",
+      "alliances_shown": [
+        "Mat",
+        "Perrin",
+        "Egwene",
+        "Moiraine",
+        "Nynaeve",
+        "Loial"
+      ]
+    },
+    {
+      "character": "Mat",
+      "whereabouts": "In the library planning session; later in the shared room under the eaves; in the dream with Ba'alzamon",
+      "notable_actions": "Agrees to go to the Eye of the World; questions why they are so important; has the same dream as Rand, seeing three figures and picking up the one with the dagger that had his face; keeps the dagger from Shadar Logoth under his pillow; tries to sound like his old self when joking about his family",
+      "demeanor": "Worried, fearful, sitting with clenched hands; later terrified after the dream; clutching the dagger for comfort",
+      "alliances_shown": [
+        "Rand",
+        "Perrin",
+        "Moiraine"
+      ]
+    },
+    {
+      "character": "Perrin",
+      "whereabouts": "In the library planning session at The Queen's Blessing",
+      "notable_actions": "Agrees to go to the Eye of the World; shows a brief, disturbing flash of eagerness when mentioning hunting along the Blight, then immediately shudders at his own words",
+      "demeanor": "Resigned, weary, as if he has fought something until he can no longer fight and is waiting for it to finish him; briefly his yellow eyes flash with an alien eagerness",
+      "alliances_shown": [
+        "Rand",
+        "Mat",
+        "Moiraine"
+      ]
+    },
+    {
+      "character": "Egwene",
+      "whereabouts": "In the library planning session at The Queen's Blessing",
+      "notable_actions": "Defies any suggestion that she stay behind; insists she is part of the Pattern according to what Min saw; listens to the planning intently; speaks privately with Rand; becomes angry when Rand mentions Elayne, thinking he is not being serious",
+      "demeanor": "Defiant, determined, softening briefly when thanking Rand for his concern, then angry when he mentions Elayne",
+      "alliances_shown": [
+        "Nynaeve",
+        "Moiraine",
+        "Rand"
+      ]
+    },
+    {
+      "character": "Nynaeve",
+      "whereabouts": "In the library planning session at The Queen's Blessing",
+      "notable_actions": "Initially protests going into the Ways, calling the plan mad; agrees to accompany the group; creates a detailed supply list with steady handwriting; challenges Moiraine about her need for Nynaeve's herbs",
+      "demeanor": "Angry at first, then resigned but determined; muttering under her breath while working; matter-of-fact and practical",
+      "alliances_shown": [
+        "Egwene",
+        "Moiraine",
+        "Rand",
+        "Mat",
+        "Perrin"
+      ]
+    },
+    {
+      "character": "Lan",
+      "whereabouts": "Joins the planning session in the library after dark",
+      "notable_actions": "Contributes to the planning with comments in his characteristic drawl; glances occasionally at Mat's dagger; opens the door for Master Gill each time the innkeeper enters",
+      "demeanor": "Watchful, tactical, measured in speech",
+      "alliances_shown": [
+        "Moiraine",
+        "Rand",
+        "Mat",
+        "Perrin",
+        "Egwene",
+        "Nynaeve",
+        "Loial"
+      ]
+    },
+    {
+      "character": "Master Gill",
+      "whereabouts": "The Queen's Blessing inn, entering the library several times",
+      "notable_actions": "Lights the lamps; brings food personally; reports on events outside (Whitecloaks watching, riot at Inner City gates, someone trying to mark the Dragon's Fang on the door); takes the supply list and payment from Moiraine; promises to wake them before dawn and says they will leave the watchers 'watching an empty box'",
+      "demeanor": "Helpful, discreet, respectful; does not pry into their plans despite his curiosity; knocks and waits even though it is his own inn",
+      "alliances_shown": [
+        "Moiraine",
+        "Rand",
+        "Mat",
+        "Perrin",
+        "Egwene",
+        "Nynaeve",
+        "Lan",
+        "Loial"
+      ]
+    },
+    {
+      "character": "Ba'alzamon",
+      "whereabouts": "In the dream chamber with Rand",
+      "notable_actions": "Confronts Rand in a dream; shows him three clay figures representing Rand, Mat, and Perrin; claims the contest between them has happened countless times across ages; offers Rand power and dominion if he will kneel and serve; reveals the existence of the Black Ajah; laughs mockingly when Rand denies him; the echo of 'die' overwhelms Rand",
+      "demeanor": "Mocking, commanding, supremely confident; eyes and mouth become caverns of flame when he speaks; laughs in rich, rolling peals",
+      "alliances_shown": []
+    },
+    {
+      "character": "the little cat",
+      "whereabouts": "In the library by the fireplace",
+      "notable_actions": "Stretches with claws scratching on the hearthstone; walks over to rub its head against Moiraine's ankles; purrs",
+      "demeanor": "Languid, content, affectionate",
+      "alliances_shown": [
+        "Moiraine"
+      ]
+    },
+    {
+      "character": "Elder Haman",
+      "whereabouts": "Not present; mentioned by Loial",
+      "notable_actions": "None in this chapter",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Lamgwin",
+      "whereabouts": "At The Queen's Blessing inn",
+      "notable_actions": "Sends away with his boot someone trying to scratch the Dragon's Fang on the front door",
+      "demeanor": "Protective, direct",
+      "alliances_shown": [
+        "Master Gill"
+      ]
+    },
+    {
+      "character": "Morgase",
+      "whereabouts": "Not present; mentioned in comparison",
+      "notable_actions": "None in this chapter",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Elayne",
+      "whereabouts": "Not present; mentioned by Rand",
+      "notable_actions": "None in this chapter",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Min",
+      "whereabouts": "Not present; mentioned by Egwene",
+      "notable_actions": "Saw visions in Baerlon indicating Egwene and Nynaeve are part of the Pattern",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Tam",
+      "whereabouts": "Not present; in Rand's memories",
+      "notable_actions": "Taught Rand the flame and void technique (mentioned)",
+      "demeanor": null,
+      "alliances_shown": []
+    }
+  ],
+  "relationships": [
+    {
+      "character_a": "Moiraine",
+      "character_b": "Lan",
+      "relationship_type": "warder_bond",
+      "directed": true,
+      "description": "Moiraine is Aes Sedai, Lan is her Warder; the bond is implicit in their coordinated actions and his deference to her leadership"
+    },
+    {
+      "character_a": "Moiraine",
+      "character_b": "Loial",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Moiraine persuades Loial to guide them through the Ways; they work together in planning"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Mat",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Close friends who share the experience of being hunted by the Dark One; share a room and confide in each other about their shared dreams"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Perrin",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Close friends from the Two Rivers; both targeted by Ba'alzamon"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Egwene",
+      "relationship_type": "romantic",
+      "directed": false,
+      "description": "Romantic interest; Rand tries to protect Egwene by urging her to leave, she refuses and becomes possessive when he mentions Elayne"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Tam",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "Father and son; Rand remembers his father and the life they had; Tam taught him the flame and void"
+    },
+    {
+      "character_a": "Ba'alzamon",
+      "character_b": "Rand",
+      "relationship_type": "enemy",
+      "directed": false,
+      "description": "Ba'alzamon confronts Rand in dreams, trying to dominate and break his will, claiming they have fought across ages"
+    },
+    {
+      "character_a": "Ba'alzamon",
+      "character_b": "Mat",
+      "relationship_type": "enemy",
+      "directed": false,
+      "description": "Ba'alzamon confronts Mat in dreams and knows his face through the dagger"
+    },
+    {
+      "character_a": "Egwene",
+      "character_b": "Nynaeve",
+      "relationship_type": "mentor",
+      "directed": true,
+      "description": "Nynaeve as Wisdom has been a mentor figure to Egwene; they travel together and support each other"
+    },
+    {
+      "character_a": "Master Gill",
+      "character_b": "Moiraine",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Master Gill assists Moiraine's party with supplies, information, and shelter, accepting payment and instructions"
+    },
+    {
+      "character_a": "Master Gill",
+      "character_b": "Lamgwin",
+      "relationship_type": "servant",
+      "directed": true,
+      "description": "Lamgwin works for Master Gill at The Queen's Blessing"
+    }
+  ],
+  "_meta": {
+    "book_order": 1,
+    "chapter_number": 43,
+    "chapter_id": 44,
+    "chapter_title": "Decisions and Apparitions",
+    "model": "claude-sonnet-4-5",
+    "input_tokens": 15347,
+    "output_tokens": 7015
+  }
+}

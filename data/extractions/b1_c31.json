@@ -1,0 +1,310 @@
+{
+  "characters": [
+    {
+      "name_used_in_text": "Rand",
+      "likely_matches_existing": "Rand al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "tall",
+        "age": null,
+        "filiations": "son of Tam al'Thor",
+        "personality": "thoughtful, cautious, carries guilt about his origins, protective of Mat, homesick"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Primary POV character for this chapter. The text shows his internal struggle with identity and homesickness."
+    },
+    {
+      "name_used_in_text": "Mat",
+      "likely_matches_existing": "Matrim Cauthon",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "son of Abell Cauthon",
+        "personality": "increasingly suspicious, paranoid, protective of the ruby dagger, performs juggling tricks"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Shows increasing paranoia and obsessive connection to the Shadar Logoth dagger. His personality is deteriorating."
+    },
+    {
+      "name_used_in_text": "Thom Merrilin",
+      "likely_matches_existing": "Thom Merrilin",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": "tall, skinny, white-haired, lanky",
+        "age": null,
+        "filiations": null,
+        "personality": "gleeman, teacher to Rand"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Does not appear in person; Rand watches for him on the road and uses his instruments. Presumed dead or lost after Whitebridge."
+    },
+    {
+      "name_used_in_text": "Tam",
+      "likely_matches_existing": "Tam al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "father of Rand (adoptive, though Rand doesn't yet fully accept this)",
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "Village Council",
+          "faction_type": "other",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "father",
+          "alias_type": "epithet",
+          "notes": "How Rand thinks of him, though he's struggling with the relationship"
+        }
+      ],
+      "notes": "Only appears in Rand's thoughts and memories, particularly regarding the sword Tam gave him."
+    },
+    {
+      "name_used_in_text": "Master Grinwell",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "sturdy man",
+        "age": null,
+        "filiations": "husband of Mistress Grinwell, father of nine children including Else",
+        "personality": "generous, appreciative of entertainment"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "A farmer who hires Rand and Mat for work and offers them hospitality."
+    },
+    {
+      "name_used_in_text": "Mistress Grinwell",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "yellow hair",
+        "age": null,
+        "filiations": "wife of Master Grinwell, mother of nine children including Else",
+        "personality": "protective of her daughter, watchful, reminds Rand of Mistress al'Vere"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Watches Rand carefully when she suspects her daughter Else is interested in him. Diplomatically arranges for them to leave."
+    },
+    {
+      "name_used_in_text": "Else",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "dark-haired, big-eyed, pretty, long pigtail",
+        "age": "not more than a year younger than Rand and Mat",
+        "filiations": "daughter of Master and Mistress Grinwell, eldest of nine children",
+        "personality": "flirtatious, impudent"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Shows romantic interest in Rand, which causes tension with her mother."
+    },
+    {
+      "name_used_in_text": "Eazil Forney",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "bleary-eyed",
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "A farmer who gives Rand and Mat a ride in his cart after drinking too much at the inn."
+    },
+    {
+      "name_used_in_text": "Perrin",
+      "likely_matches_existing": "Perrin Aybara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "good with people, makes jokes"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Only appears in Rand's thoughts when he wishes Perrin were there to help handle Else's flirtation."
+    }
+  ],
+  "appearances": [
+    {
+      "character": "Rand",
+      "whereabouts": "Traveling the Caemlyn Road from Whitebridge eastward toward Caemlyn, passing through various villages and farms",
+      "notable_actions": "Watches for pursuers on the road; hides from passing riders; works on farms for food and shelter; plays Thom's flute at inns and farms; develops a traveling performer routine with Mat; struggles with homesickness and questions about his identity; at Grinwell's farm plays multiple songs to avoid Mistress Grinwell's scrutiny",
+      "demeanor": "Homesick, melancholy, cautious, increasingly practical about survival, uncomfortable with Else's attention, haunted by questions about his origins",
+      "alliances_shown": [
+        "Mat"
+      ]
+    },
+    {
+      "character": "Mat",
+      "whereabouts": "Traveling the Caemlyn Road with Rand from Whitebridge toward Caemlyn",
+      "notable_actions": "Searches for hiding places in hedgerows; becomes increasingly suspicious of everyone they meet; protects the ruby dagger obsessively; juggles Thom's colored balls for children and inn patrons; attempts to steal eggs and milk a cow (unsuccessfully); teases Rand about Else",
+      "demeanor": "Increasingly paranoid and suspicious, mutters in his sleep, tense around strangers, relaxes slightly around children, obsessive about the dagger",
+      "alliances_shown": [
+        "Rand"
+      ]
+    },
+    {
+      "character": "Thom Merrilin",
+      "whereabouts": "Absent; last seen at Whitebridge, fate unknown",
+      "notable_actions": "None in this chapter; Rand watches for him on the road but never sees him",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Tam",
+      "whereabouts": "Not present; back in the Two Rivers",
+      "notable_actions": "None; exists only in Rand's memories and thoughts about the sword",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Master Grinwell",
+      "whereabouts": "His farm along the Caemlyn Road",
+      "notable_actions": "Hires Rand and Mat to work in his barn; provides them with a meal and lodging; enjoys their evening entertainment; suggests they could stay longer",
+      "demeanor": "Friendly, generous, appreciative, chuckling",
+      "alliances_shown": [
+        "Mistress Grinwell",
+        "Else",
+        "his other children"
+      ]
+    },
+    {
+      "character": "Mistress Grinwell",
+      "whereabouts": "Her farm along the Caemlyn Road",
+      "notable_actions": "Washes Rand and Mat's clothes; provides them with her husband's old clothes; watches Rand carefully when Else shows interest; arranges for them to sleep in Else's room (with Else sleeping elsewhere); suggests they leave early the next morning; gives advice about the next village",
+      "demeanor": "Initially kind and motherly, becomes watchful and protective of her daughter, sharp-eyed, diplomatically firm about their departure",
+      "alliances_shown": [
+        "Master Grinwell",
+        "Else",
+        "her other children"
+      ]
+    },
+    {
+      "character": "Else",
+      "whereabouts": "Grinwell farm along the Caemlyn Road",
+      "notable_actions": "Watches Rand and Mat work in the barn; chews her pigtail; tells Rand she likes tall men; sits cross-legged by the fire during the evening entertainment; sighs and smiles at Rand's flute playing; grimaces when told she'll sleep with her mother; pouts when Rand leaves",
+      "demeanor": "Flirtatious, impudent, romantic, disappointed when thwarted",
+      "alliances_shown": [
+        "Master Grinwell (father)",
+        "Mistress Grinwell (mother)"
+      ]
+    },
+    {
+      "character": "Eazil Forney",
+      "whereabouts": "At an inn in Arien, then traveling east on the road",
+      "notable_actions": "Drinks too much at the inn; gives Rand and Mat a ride five miles east in his cart",
+      "demeanor": "Bleary-eyed from drinking",
+      "alliances_shown": []
+    },
+    {
+      "character": "Perrin",
+      "whereabouts": "Not present; separated from Rand and Mat (location unknown to Rand)",
+      "notable_actions": "None; exists only in Rand's thoughts",
+      "demeanor": null,
+      "alliances_shown": []
+    }
+  ],
+  "relationships": [
+    {
+      "character_a": "Rand",
+      "character_b": "Mat",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Traveling companions fleeing toward Caemlyn together, working together to survive"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Thom Merrilin",
+      "relationship_type": "mentor",
+      "directed": true,
+      "description": "Thom was Rand's teacher in music; Rand carries his instruments and treasures his memory"
+    },
+    {
+      "character_a": "Tam",
+      "character_b": "Rand",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "Father and son (though Rand is struggling with the revelation that he's adopted); Tam gave Rand the heron-marked sword"
+    },
+    {
+      "character_a": "Master Grinwell",
+      "character_b": "Mistress Grinwell",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "Husband and wife, parents of nine children"
+    },
+    {
+      "character_a": "Master Grinwell",
+      "character_b": "Else",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "Father and daughter"
+    },
+    {
+      "character_a": "Mistress Grinwell",
+      "character_b": "Else",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "Mother and daughter; mother is protective when daughter shows interest in Rand"
+    },
+    {
+      "character_a": "Else",
+      "character_b": "Rand",
+      "relationship_type": "romantic",
+      "directed": true,
+      "description": "Else shows romantic interest in Rand, flirting with him and complimenting his music"
+    }
+  ],
+  "_meta": {
+    "book_order": 1,
+    "chapter_number": 31,
+    "chapter_id": 32,
+    "chapter_title": "Play for Your Supper",
+    "model": "claude-sonnet-4-5",
+    "input_tokens": 12731,
+    "output_tokens": 3426
+  }
+}

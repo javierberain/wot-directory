@@ -1,0 +1,666 @@
+{
+  "characters": [
+    {
+      "name_used_in_text": "Master Fitch",
+      "likely_matches_existing": "Master Fitch",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Baerlon",
+        "physical_traits": "plump, wispy hair sticking out in all directions",
+        "age": null,
+        "filiations": "innkeeper of the Stag and Lion",
+        "personality": "talkative, apologetic, pleasant, prone to rambling"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Master Fitch",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Confirmed as a character from the roster. The innkeeper of the Stag and Lion."
+    },
+    {
+      "name_used_in_text": "Moiraine",
+      "likely_matches_existing": "Moiraine",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown (not Two Rivers)",
+        "physical_traits": "slender",
+        "age": null,
+        "filiations": null,
+        "personality": "commanding, cautious, soothing when necessary"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "Aes Sedai"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Mistress Alys",
+          "alias_type": "disguise",
+          "notes": "using a false name to hide her identity as an Aes Sedai"
+        },
+        {
+          "alias_text": "Alys",
+          "alias_type": "disguise",
+          "notes": "short form of her disguise name"
+        }
+      ],
+      "notes": "Using 'Alys' as a disguise in Baerlon to avoid detection."
+    },
+    {
+      "name_used_in_text": "Lan",
+      "likely_matches_existing": "Lan",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown (not Two Rivers)",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "Warder to Moiraine",
+        "personality": "grim, cautious, vigilant, suspicious, protective of Moiraine"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Master Andra",
+          "alias_type": "disguise",
+          "notes": "false name used in Baerlon"
+        },
+        {
+          "alias_text": "Andra",
+          "alias_type": "disguise",
+          "notes": "short form of his disguise name"
+        }
+      ],
+      "notes": "Using 'Andra' as a disguise to match Moiraine's 'Alys'."
+    },
+    {
+      "name_used_in_text": "Rand",
+      "likely_matches_existing": "Rand al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": "young",
+        "filiations": "son of Tam al'Thor",
+        "personality": "thoughtful, troubled by nightmares, conflicted about Aes Sedai"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Experiencing disturbing dreams and visions, including one of Ba'alzamon."
+    },
+    {
+      "name_used_in_text": "Mat",
+      "likely_matches_existing": "Matrim Cauthon",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": "young",
+        "filiations": null,
+        "personality": "talkative, careless about secrets, prone to adding embellishments"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Nearly reveals information about Trollocs to Ara, much to Lan's anger."
+    },
+    {
+      "name_used_in_text": "Perrin",
+      "likely_matches_existing": "Perrin Aybara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "carries an axe",
+        "age": "young",
+        "filiations": "blacksmith",
+        "personality": "loyal, enjoys simple comforts"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": null
+    },
+    {
+      "name_used_in_text": "Thom",
+      "likely_matches_existing": "The Gleeman",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "from Baerlon area",
+        "physical_traits": "mustaches",
+        "age": null,
+        "filiations": "gleeman",
+        "personality": "theatrical, storyteller, somewhat vain about his tales"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Thom Merrilin",
+          "alias_type": "given_name",
+          "notes": "full name revealed in the text"
+        }
+      ],
+      "notes": "Previously known only as 'The Gleeman', now named as Thom Merrilin."
+    },
+    {
+      "name_used_in_text": "Egwene",
+      "likely_matches_existing": "Egwene",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "dark hair, freshly combed",
+        "age": "young",
+        "filiations": null,
+        "personality": "stubborn, currently upset with Rand"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Continuing tension with Rand. She can touch the True Source."
+    },
+    {
+      "name_used_in_text": "Ara",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Baerlon",
+        "physical_traits": "slight, dark-haired",
+        "age": null,
+        "filiations": "bath attendant at the Stag and Lion",
+        "personality": "taciturn at first, then surprisingly talkative about troubles"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Bath attendant who mentions trouble in Ghealdan and Trollocs in Saldaea."
+    },
+    {
+      "name_used_in_text": "Min",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Baerlon (presumably)",
+        "physical_traits": "slender, short dark hair, wears man's shirt and trousers, not much taller than Moiraine",
+        "age": "girl",
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Moiraine seeks her out for a conversation. Ambiguous gender presentation at first glance."
+    },
+    {
+      "name_used_in_text": "Logain",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "false Dragon",
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "false Dragon",
+          "alias_type": "epithet",
+          "notes": "he claims to be the Dragon Reborn"
+        }
+      ],
+      "notes": "Won a battle in Ghealdan against Aes Sedai. Mentioned by Lan and Ba'alzamon."
+    },
+    {
+      "name_used_in_text": "Governor Adan",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "medium",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Baerlon",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "Governor of Baerlon",
+        "personality": "resists pressure from the Children of the Light"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Governor",
+          "alias_type": "title",
+          "notes": null
+        },
+        {
+          "alias_text": "Adan",
+          "alias_type": "given_name",
+          "notes": null
+        }
+      ],
+      "notes": "Does not cooperate with the Whitecloaks. Supports protection of people from false accusations."
+    },
+    {
+      "name_used_in_text": "Ba'alzamon",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": "good-looking, dressed in fine dark clothes, eyes and mouth become flames",
+        "age": "appears in prime of maturity",
+        "filiations": null,
+        "personality": "manipulative, malevolent, claims vast historical influence"
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "leader",
+          "notes": "Claims to be the Dark One or his principal agent"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "the Dark One",
+          "alias_type": "epithet",
+          "notes": "Rand initially thinks of him this way"
+        }
+      ],
+      "notes": "Appears in Rand's dream. Claims responsibility for influencing Lews Therin, sending the Trollocs, and manipulating Artur Hawkwing. May be the Dark One himself or one of the Forsaken."
+    },
+    {
+      "name_used_in_text": "Mari",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Baerlon (presumably)",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "serving woman at the Stag and Lion",
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "One of the women serving the meal."
+    },
+    {
+      "name_used_in_text": "Cinda",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Baerlon (presumably)",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "serving woman at the Stag and Lion",
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "One of the women serving the meal."
+    },
+    {
+      "name_used_in_text": "Avin",
+      "likely_matches_existing": "Avin",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Baerlon (presumably)",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Referenced by Lan as a source of information about the battle in Ghealdan."
+    },
+    {
+      "name_used_in_text": "Davian",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Historical figure mentioned by Ba'alzamon as someone used and consumed by the White Tower. Presumably a false Dragon or powerful channeler."
+    },
+    {
+      "name_used_in_text": "Yurian Stonebow",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Historical figure mentioned by Ba'alzamon as someone used and consumed by the White Tower."
+    },
+    {
+      "name_used_in_text": "Guaire Amalasan",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Historical figure mentioned by Ba'alzamon as someone used and consumed by the White Tower."
+    },
+    {
+      "name_used_in_text": "Raolin Darksbane",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Historical figure mentioned by Ba'alzamon as someone used and consumed by the White Tower."
+    },
+    {
+      "name_used_in_text": "Artur Hawkwing",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "High King (historical)",
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "High King",
+          "alias_type": "title",
+          "notes": "ruled a vast empire"
+        }
+      ],
+      "notes": "Historical High King whom Ba'alzamon claims to have manipulated, causing him to send armies across the ocean and to order Aes Sedai killed."
+    }
+  ],
+  "appearances": [
+    {
+      "character": "Master Fitch",
+      "whereabouts": "the Stag and Lion inn in Baerlon",
+      "notable_actions": "welcomes the party, apologizes for the crowding and limited food, shows them to their rooms and dining area, talks about the difficult winter and wolves",
+      "demeanor": "apologetic, talkative, pleasant, flustered by the crowding",
+      "alliances_shown": [
+        "Moiraine",
+        "Lan"
+      ]
+    },
+    {
+      "character": "Moiraine",
+      "whereabouts": "the Stag and Lion inn in Baerlon",
+      "notable_actions": "arranges lodging, asks Master Fitch about the Children of the Light, seeks out Min for a private conversation, leads the party to a private dining room, questions Lan about news from the common room, decides to stay two nights in Baerlon",
+      "demeanor": "commanding, cautious, soothing when addressing concerns",
+      "alliances_shown": [
+        "Lan",
+        "Min",
+        "Egwene",
+        "Rand",
+        "Mat",
+        "Perrin",
+        "Thom"
+      ]
+    },
+    {
+      "character": "Lan",
+      "whereabouts": "the Stag and Lion inn in Baerlon",
+      "notable_actions": "goes to the common room to gather information, angrily warns Mat and the others about keeping silent regarding Trollocs, checks the door for eavesdroppers, reports news of the battle in Ghealdan and Logain to Moiraine, goes with Thom to the common room",
+      "demeanor": "grim, vigilant, angry at Mat's carelessness, protective of secrecy",
+      "alliances_shown": [
+        "Moiraine"
+      ]
+    },
+    {
+      "character": "Rand",
+      "whereabouts": "the Stag and Lion inn in Baerlon, then in a nightmare/dream vision",
+      "notable_actions": "takes a bath, wants to apologize to Egwene but she rebuffs him, eats dinner, goes to his room and falls asleep, experiences a terrifying dream encounter with Ba'alzamon",
+      "demeanor": "weary from travel, conflicted about Egwene, terrified in the dream, questioning whether to trust Moiraine",
+      "alliances_shown": [
+        "Mat",
+        "Perrin",
+        "Thom"
+      ]
+    },
+    {
+      "character": "Mat",
+      "whereabouts": "the Stag and Lion inn in Baerlon",
+      "notable_actions": "takes a bath, nearly reveals information about Trollocs to Ara, earns Lan's anger, eats dinner",
+      "demeanor": "excited about being in a city, careless with secrets, scratching (presumably from lack of bathing)",
+      "alliances_shown": [
+        "Rand",
+        "Perrin"
+      ]
+    },
+    {
+      "character": "Perrin",
+      "whereabouts": "the Stag and Lion inn in Baerlon",
+      "notable_actions": "takes a bath, enjoys the soak immensely, eats dinner, helps deflect Mat's storytelling",
+      "demeanor": "content, relaxed, enjoying the comforts",
+      "alliances_shown": [
+        "Rand",
+        "Mat"
+      ]
+    },
+    {
+      "character": "Thom",
+      "whereabouts": "the Stag and Lion inn in Baerlon",
+      "notable_actions": "takes a bath, scolds Mat for telling his stories poorly, retrieves his flute and harp, goes to the common room to perform, snores loudly later",
+      "demeanor": "theatrical, protective of his storytelling reputation, indolent in the bath",
+      "alliances_shown": [
+        "Moiraine",
+        "Lan",
+        "Rand",
+        "Mat",
+        "Perrin"
+      ]
+    },
+    {
+      "character": "Egwene",
+      "whereabouts": "the Stag and Lion inn in Baerlon",
+      "notable_actions": "takes a bath, waits in the private dining room, rebuffs Rand's attempt at reconciliation",
+      "demeanor": "freshly bathed and clean, cold toward Rand, stubborn",
+      "alliances_shown": [
+        "Moiraine"
+      ]
+    },
+    {
+      "character": "Ara",
+      "whereabouts": "the Stag and Lion inn, bath chamber",
+      "notable_actions": "assists the men with their baths, mentions troubles in Baerlon and elsewhere, notes their weapons, asks about trouble in the Two Rivers",
+      "demeanor": "taciturn at first, then surprisingly open about regional troubles, wary",
+      "alliances_shown": []
+    },
+    {
+      "character": "Min",
+      "whereabouts": "the Stag and Lion inn, hallway",
+      "notable_actions": "speaks privately with Moiraine, looks at the men sharply, then leaves",
+      "demeanor": "attentive, sharp",
+      "alliances_shown": [
+        "Moiraine"
+      ]
+    },
+    {
+      "character": "Logain",
+      "whereabouts": "Ghealdan (reported)",
+      "notable_actions": "won a battle against forces including possibly Aes Sedai",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Governor Adan",
+      "whereabouts": "Baerlon (mentioned)",
+      "notable_actions": "resists cooperation with the Children of the Light, supports protecting people from false accusations of being Aes Sedai",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Ba'alzamon",
+      "whereabouts": "a stone chamber in Rand's dream",
+      "notable_actions": "confronts Rand in a nightmare, offers him wine (possibly poisoned or tainted), claims vast historical evil deeds, threatens Rand, tortures a rat telekinetically, bends Rand's body painfully",
+      "demeanor": "malevolent, commanding, mocking, eyes and mouth periodically become flames",
+      "alliances_shown": []
+    },
+    {
+      "character": "Mari",
+      "whereabouts": "the Stag and Lion inn, private dining room",
+      "notable_actions": "helps serve the meal",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Cinda",
+      "whereabouts": "the Stag and Lion inn, private dining room",
+      "notable_actions": "helps serve the meal",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Avin",
+      "whereabouts": "mentioned as source of information",
+      "notable_actions": "provided information to Lan about Ghealdan",
+      "demeanor": null,
+      "alliances_shown": []
+    }
+  ],
+  "relationships": [
+    {
+      "character_a": "Moiraine",
+      "character_b": "Lan",
+      "relationship_type": "warder_bond",
+      "directed": true,
+      "description": "Moiraine is the Aes Sedai who holds the Warder bond with Lan"
+    },
+    {
+      "character_a": "Moiraine",
+      "character_b": "Min",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Moiraine seeks out Min for a private conversation, suggesting a prior relationship of trust"
+    },
+    {
+      "character_a": "Moiraine",
+      "character_b": "Master Fitch",
+      "relationship_type": "other",
+      "directed": false,
+      "description": "innkeeper and guest; Moiraine trusts him but notes he talks too much"
+    },
+    {
+      "character_a": "Lan",
+      "character_b": "Mat",
+      "relationship_type": "mentor",
+      "directed": true,
+      "description": "Lan attempts to teach Mat to keep silent about dangerous information"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Egwene",
+      "relationship_type": "romantic",
+      "directed": false,
+      "description": "tension between them; Rand wants to apologize but Egwene rebuffs him"
+    },
+    {
+      "character_a": "Ba'alzamon",
+      "character_b": "Rand",
+      "relationship_type": "enemy",
+      "directed": false,
+      "description": "Ba'alzamon confronts and threatens Rand in a dream, claiming Rand cannot escape him"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Mat",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "friends from the Two Rivers, traveling together"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Perrin",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "friends from the Two Rivers, traveling together"
+    },
+    {
+      "character_a": "Mat",
+      "character_b": "Perrin",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "friends from the Two Rivers, traveling together"
+    },
+    {
+      "character_a": "Thom",
+      "character_b": "Mat",
+      "relationship_type": "mentor",
+      "directed": true,
+      "description": "Thom teaches Mat about storytelling, though Mat often embellishes poorly"
+    }
+  ],
+  "_meta": {
+    "book_order": 1,
+    "chapter_number": 14,
+    "chapter_id": 15,
+    "chapter_title": "The Stag and Lion",
+    "model": "claude-sonnet-4-5",
+    "input_tokens": 13264,
+    "output_tokens": 6510
+  }
+}

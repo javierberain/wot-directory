@@ -1,0 +1,611 @@
+{
+  "characters": [
+    {
+      "name_used_in_text": "Moiraine",
+      "likely_matches_existing": "Moiraine",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "Calm, commanding, mysterious; imparts knowledge and instruction with authority. Protective of her charges but willing to make harsh threats when necessary."
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "Member of the Aes Sedai"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Alys",
+          "alias_type": "disguise",
+          "notes": "False name used in Baerlon to avoid attention"
+        },
+        {
+          "alias_text": "Mistress Alys",
+          "alias_type": "disguise",
+          "notes": "Title form of disguise name"
+        }
+      ],
+      "notes": "Uses disguise name 'Alys' in Baerlon to avoid detection. Continues nightly talks with Egwene about becoming Aes Sedai."
+    },
+    {
+      "name_used_in_text": "Lan",
+      "likely_matches_existing": "Lan",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": "Bonded Warder to Moiraine",
+        "personality": "Stern, vigilant, demanding of discipline and caution. Skilled scout and warrior, protective but harsh in training."
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Andra",
+          "alias_type": "disguise",
+          "notes": "False name used in Baerlon to avoid attention"
+        },
+        {
+          "alias_text": "Master Andra",
+          "alias_type": "disguise",
+          "notes": "Title form of disguise name"
+        }
+      ],
+      "notes": "Uses disguise name 'Andra' in Baerlon. Teaches the boys weapons skills during journey. Scouts constantly ahead and behind group."
+    },
+    {
+      "name_used_in_text": "Rand",
+      "likely_matches_existing": "Rand al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": "young man",
+        "filiations": "Son of Tam al'Thor",
+        "personality": "Curious, uncertain about his place in events, troubled by Moiraine's manipulations. Practices 'flame and void' technique taught by his father."
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Attempts to eavesdrop on Moiraine and Egwene's conversation but nearly gets caught. Growing increasingly conflicted about the journey and Aes Sedai involvement."
+    },
+    {
+      "name_used_in_text": "Egwene",
+      "likely_matches_existing": "Egwene",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": "young woman",
+        "filiations": null,
+        "personality": "Ambitious, eager to become Aes Sedai, defiant of traditional Two Rivers expectations. Brave but sometimes afraid of the path she has chosen."
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Has unbraided her hair in emulation of Aes Sedai customs, causing conflict with Rand. Receives nightly instruction from Moiraine about becoming Aes Sedai and the One Power."
+    },
+    {
+      "name_used_in_text": "Mat",
+      "likely_matches_existing": "Matrim Cauthon",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": "young man",
+        "filiations": "Son of Abell Cauthon",
+        "personality": "Skilled archer and juggler, optimistic about having lost their pursuers, eager for adventure but also homesick."
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Learning to juggle from Thom. Skilled with the bow. Talks about seeing Illian and traveling south."
+    },
+    {
+      "name_used_in_text": "Perrin",
+      "likely_matches_existing": "Perrin Aybara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "Large, strong (apprentice blacksmith)",
+        "age": "young man",
+        "filiations": null,
+        "personality": "Thoughtful, quiet, observant. Growing increasingly withdrawn during the journey."
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Learning to use his great-bladed axe from Lan. Carries Mat's bow for him. Becoming more silent and withdrawn as they travel."
+    },
+    {
+      "name_used_in_text": "Thom",
+      "likely_matches_existing": "The Gleeman",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "from Baerlon area",
+        "physical_traits": "Gray-haired, mustaches",
+        "age": "older",
+        "filiations": null,
+        "personality": "Knowledgeable about prophecies and world events, performs stories and entertainment, somewhat gruff but helpful as a teacher."
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Thom Merrilin",
+          "alias_type": "given_name",
+          "notes": "Full name revealed in this chapter"
+        }
+      ],
+      "notes": "Teaches juggling to Mat and provides entertainment with stories. Reluctant to receive Moiraine's healing. Knowledgeable about the Karaethon Cycle and the Prophecies of the Dragon."
+    },
+    {
+      "name_used_in_text": "Aldieb",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "horse",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "White mare",
+        "age": null,
+        "filiations": "Moiraine's mount",
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Westwind",
+          "alias_type": "epithet",
+          "notes": "Meaning of name in Old Tongue - the wind that brought spring rains"
+        }
+      ],
+      "notes": "Moiraine's white mare, named 'Westwind' in the Old Tongue."
+    },
+    {
+      "name_used_in_text": "Mandarb",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "horse",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "Stallion",
+        "age": null,
+        "filiations": "Lan's mount",
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Blade",
+          "alias_type": "epithet",
+          "notes": "Meaning of name in Old Tongue"
+        }
+      ],
+      "notes": "Lan's stallion, named 'Blade' in the Old Tongue. Used for Lan's extensive scouting."
+    },
+    {
+      "name_used_in_text": "Cloud",
+      "likely_matches_existing": "Cloud",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "horse",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "Gray",
+        "age": null,
+        "filiations": "Rand's mount",
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Rand's horse."
+    },
+    {
+      "name_used_in_text": "Bela",
+      "likely_matches_existing": "Bela",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "horse",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "Mare",
+        "age": null,
+        "filiations": "Egwene's mount",
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Egwene's mount."
+    },
+    {
+      "name_used_in_text": "Avin",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Baerlon (presumably)",
+        "physical_traits": "Wizened face, gap-toothed, wears a battered cloth cap and much-mended cloak and coat",
+        "age": "old",
+        "filiations": "Gatekeeper of Baerlon",
+        "personality": "Talkative, gossipy, eager to please Moiraine for coin. Dislikes the Children of the Light."
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Master Avin",
+          "alias_type": "title",
+          "notes": "Title form of address"
+        }
+      ],
+      "notes": "Gatekeeper at Baerlon who opens gate after hours for Moiraine. Source of news about Children of the Light in Baerlon and the false Dragon in Ghealdan. Paid by Lan to forget their passage."
+    },
+    {
+      "name_used_in_text": "Master Fitch",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Baerlon (presumably)",
+        "physical_traits": "As big around as Master al'Vere, puffs of hair above his ears, wears sparkling white apron",
+        "age": null,
+        "filiations": "Innkeeper of the Stag and Lion",
+        "personality": "Welcoming, talkative, hospitable, genuinely pleased to see Moiraine and Lan return."
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Innkeeper of the Stag and Lion in Baerlon, where the group arrives at chapter's end. Knows Moiraine and Lan by their disguise names (Alys and Andra)."
+    },
+    {
+      "name_used_in_text": "Mutch",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Baerlon (presumably)",
+        "physical_traits": "Wiry",
+        "age": null,
+        "filiations": "Stable worker at the Stag and Lion",
+        "personality": "Surly, initially suspicious of travelers entering by back gate."
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Lead stable hand at the Stag and Lion. Initially objects to the group entering through the back but is overruled by Master Fitch."
+    },
+    {
+      "name_used_in_text": "Nynaeve",
+      "likely_matches_existing": "Nynaeve al'Meara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "Wisdom of Emond's Field",
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Mentioned only - not present. Moiraine hints that Nynaeve is the 'other' woman in Emond's Field with the ability to become Aes Sedai, but tells Egwene her road lies another way."
+    },
+    {
+      "name_used_in_text": "Tam",
+      "likely_matches_existing": "Tam al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "Rand's father",
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Mentioned only - not present. Rand references that Tam taught him the 'flame and void' technique."
+    }
+  ],
+  "appearances": [
+    {
+      "character": "Moiraine",
+      "whereabouts": "Traveling from Taren Ferry to Baerlon via forest paths, avoiding main roads and settlements. Arrives at the Stag and Lion inn in Baerlon by chapter's end.",
+      "notable_actions": "Heals the entire party before they sleep, draining her own strength. Uses disguise name 'Alys' in Baerlon. Conducts nightly instruction sessions with Egwene about becoming Aes Sedai and the One Power. Threatens the boys that she will destroy them herself before letting the Dark One have them. Gathers intelligence from Avin about Children of the Light and the false Dragon in Ghealdan.",
+      "demeanor": "Weary from healing but maintaining composure and authority. Stern when the boys talk of abandoning the journey. Instructive and somewhat philosophical with Egwene.",
+      "alliances_shown": [
+        "Lan",
+        "Egwene",
+        "the Emond's Field group"
+      ]
+    },
+    {
+      "character": "Lan",
+      "whereabouts": "Traveling from Taren Ferry to Baerlon, scouting extensively ahead and behind the group. Arrives at the Stag and Lion in Baerlon.",
+      "notable_actions": "Scouts constantly on Mandarb, covering twice the ground of the others. Sets slow pace to conserve horses, berating anyone who tries to move faster. Begins weapons training for the boys - teaching Mat, Rand, and Perrin to use bow, sword, and axe respectively. Instructs them in the mental discipline of combat. Changes from his color-shifting cloak to an ordinary brown one before entering Baerlon. Uses disguise name 'Andra' in Baerlon. Bribes Avin the gatekeeper. Uses his dagger to open the hidden gate into the Stag and Lion's stableyard.",
+      "demeanor": "Stern, demanding, vigilant. Grumbles about the slow pace but enforces it strictly. Protective but harsh as a teacher.",
+      "alliances_shown": [
+        "Moiraine",
+        "the Emond's Field group"
+      ]
+    },
+    {
+      "character": "Rand",
+      "whereabouts": "Traveling from Taren Ferry to Baerlon, arriving at the Stag and Lion inn by chapter's end.",
+      "notable_actions": "Receives Moiraine's healing reluctantly but is amazed by its effects. Argues with Egwene about her unbraiding her hair and wanting to become Aes Sedai. Attempts to eavesdrop on Moiraine and Egwene's conversation but nearly gets caught and flees. Practices sword forms under Lan's instruction, applying the 'flame and void' technique his father taught him. Achieves precise archery using the flame and void. Questions Thom about the Prophecies of the Dragon and the Stone of Tear. Rides Cloud into Baerlon and is awed by the size of the city.",
+      "demeanor": "Troubled, conflicted about the journey and Moiraine's control. Argumentative with Egwene. Fearful when he nearly gets caught eavesdropping. Awed and somewhat overwhelmed by first sight of a city.",
+      "alliances_shown": [
+        "Mat",
+        "Perrin",
+        "Tam (remembered)",
+        "the group"
+      ]
+    },
+    {
+      "character": "Egwene",
+      "whereabouts": "Traveling from Taren Ferry to Baerlon, arriving at the Stag and Lion inn.",
+      "notable_actions": "Eagerly receives Moiraine's healing. Unbraids her hair in emulation of Aes Sedai, causing conflict with Rand. Has nightly conversations with Moiraine about becoming Aes Sedai, learning about the Five Powers, the Breaking, and Aes Sedai nature. Asks about why Trollocs came to Emond's Field. Expresses fear about the Power changing her and about Trollocs. Rides Bela to Baerlon and is struck silent by the sight of the city. Eagerly anticipates a hot bath.",
+      "demeanor": "Defiant of Two Rivers customs, determined to become Aes Sedai despite her fears. Argumentative with Rand. Eager to learn from Moiraine. Both excited and tremulous about leaving home.",
+      "alliances_shown": [
+        "Moiraine",
+        "the group"
+      ]
+    },
+    {
+      "character": "Mat",
+      "whereabouts": "Traveling from Taren Ferry to Baerlon, arriving at the Stag and Lion.",
+      "notable_actions": "Receives Moiraine's healing with visible fear. Learns juggling from Thom, progressing to four objects. Practices archery under Lan's instruction, demonstrating excellent skill by putting three arrows in a tight cluster at 100 paces. Talks optimistically about having escaped pursuit and seeing the world, mentioning going to Illian. Nearly mentions Aes Sedai in front of Moiraine, stopping himself. Leans forward eagerly to see Baerlon, awed by its size.",
+      "demeanor": "Initially frightened of Moiraine's healing. Optimistic about escape but also homesick and not entirely believing his own words. Eager for adventure. Awed by Baerlon.",
+      "alliances_shown": [
+        "Rand",
+        "Perrin",
+        "Thom",
+        "the group"
+      ]
+    },
+    {
+      "character": "Perrin",
+      "whereabouts": "Traveling from Taren Ferry to Baerlon, arriving at the Stag and Lion.",
+      "notable_actions": "Receives Moiraine's healing with visible fear. Learns to use his great-bladed axe under Lan's instruction, practicing block, parry, and strike exercises. Duplicates Mat's feat of archery. Carries Mat's bow while Mat practices juggling. Speaks in strained voice about returning home. Questions how so many people can live in one place when seeing Baerlon.",
+      "demeanor": "Frightened of Moiraine's healing. Increasingly withdrawn and thoughtful during the journey. Strained when talking about home. Overwhelmed by the sight of Baerlon.",
+      "alliances_shown": [
+        "Rand",
+        "Mat",
+        "the group"
+      ]
+    },
+    {
+      "character": "Thom",
+      "whereabouts": "Traveling from Taren Ferry to Baerlon, arriving at the Stag and Lion.",
+      "notable_actions": "Jerks away from Moiraine's healing attempt but she seizes his head. Scowls throughout healing but looks refreshed after. Teaches Mat juggling each night. Entertains the group with juggling and stories ('Mara and the Three Foolish Kings', stories of Anla the Wise Counselor, 'The Great Hunt of the Horn') - told to avoid loud instruments per Lan's orders. Explains the Karaethon Cycle and Prophecies of the Dragon to Rand, including prophecies about the Stone of Tear. Snorts derisively when Mat calls Baerlon a city.",
+      "demeanor": "Resistant to Moiraine's help but ultimately accepts it. Patient as a teacher. Knowledgeable and willing to explain world events to Rand. Somewhat dismissive of the boys' provincial perspectives.",
+      "alliances_shown": [
+        "the group",
+        "particularly teaching Mat"
+      ]
+    },
+    {
+      "character": "Aldieb",
+      "whereabouts": "Carrying Moiraine from Taren Ferry to Baerlon",
+      "notable_actions": "Carries Moiraine on the journey. Subject to Lan's restrictions on pace like the other horses.",
+      "demeanor": null,
+      "alliances_shown": [
+        "Moiraine"
+      ]
+    },
+    {
+      "character": "Mandarb",
+      "whereabouts": "Carrying Lan on extensive scouting missions around the main group traveling to Baerlon",
+      "notable_actions": "Covers twice as much ground as the other horses, galloping ahead and behind for Lan's scouting. Lan is not sparing with this stallion as he is with the others.",
+      "demeanor": null,
+      "alliances_shown": [
+        "Lan"
+      ]
+    },
+    {
+      "character": "Cloud",
+      "whereabouts": "Carrying Rand from Taren Ferry to Baerlon",
+      "notable_actions": "Carries Rand on the journey. Subject to Lan's slow pace restrictions.",
+      "demeanor": null,
+      "alliances_shown": [
+        "Rand"
+      ]
+    },
+    {
+      "character": "Bela",
+      "whereabouts": "Carrying Egwene from Taren Ferry to Baerlon",
+      "notable_actions": "Carries Egwene on the journey. Subject to Lan's slow pace restrictions.",
+      "demeanor": null,
+      "alliances_shown": [
+        "Egwene"
+      ]
+    },
+    {
+      "character": "Avin",
+      "whereabouts": "At the gate of Baerlon, manning the gate and wall",
+      "notable_actions": "Initially refuses to open the gate after hours, but recognizes Moiraine ('Mistress Alys') and eagerly opens it for her party. Accepts coin from Lan to forget seeing them. Provides extensive information about the Children of the Light being in Baerlon (limiting entry to ten at a time, camping north of town, causing tension with locals). Reports on the false Dragon in Ghealdan, the battle there, and rumors that Aes Sedai may have died fighting him. Mentions the Dragon's Fang being painted on doors and the Governor's efforts to keep peace.",
+      "demeanor": "Obsequious and eager to please Moiraine. Gossipy and talkative. Scornful of the Children of the Light. Anxious about troubles in the region.",
+      "alliances_shown": [
+        "Moiraine",
+        "Lan",
+        "opposed to Children of the Light"
+      ]
+    },
+    {
+      "character": "Master Fitch",
+      "whereabouts": "At the Stag and Lion inn in Baerlon",
+      "notable_actions": "Hurries out to greet Moiraine ('Mistress Alys') and Lan ('Master Andra') warmly. Overrides his stable hand Mutch's objections to the party entering by the back gate. Welcomes them effusively and promises hot meals, warm beds, and hot baths. Comments on having worried about them going 'downcountry' given the troubled times.",
+      "demeanor": "Warm, hospitable, genuinely pleased to see returning guests. Talkative and welcoming.",
+      "alliances_shown": [
+        "Moiraine",
+        "Lan",
+        "the group"
+      ]
+    },
+    {
+      "character": "Mutch",
+      "whereabouts": "In the stableyard of the Stag and Lion inn in Baerlon",
+      "notable_actions": "Objects to the party entering through the back gate, waving his arms and saying they must go to the front. Sullenly knuckles his forehead when overruled by Master Fitch. Directs his two companions to help with the horses.",
+      "demeanor": "Surly, suspicious, resentful of being overruled but obedient to the innkeeper.",
+      "alliances_shown": [
+        "Master Fitch (as employee)"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "character_a": "Moiraine",
+      "character_b": "Lan",
+      "relationship_type": "warder_bond",
+      "directed": true,
+      "description": "Moiraine holds the Warder bond with Lan. He reports to her privately during scouting and defers to her authority while also protecting and advising her."
+    },
+    {
+      "character_a": "Moiraine",
+      "character_b": "Egwene",
+      "relationship_type": "mentor",
+      "directed": true,
+      "description": "Moiraine is instructing Egwene about becoming Aes Sedai, teaching her about the One Power, the Five Powers, the Breaking, and the nature of Aes Sedai in nightly private conversations."
+    },
+    {
+      "character_a": "Lan",
+      "character_b": "Rand",
+      "relationship_type": "mentor",
+      "directed": true,
+      "description": "Lan is teaching Rand sword work, showing him proper forms and the mental discipline of combat."
+    },
+    {
+      "character_a": "Lan",
+      "character_b": "Mat",
+      "relationship_type": "mentor",
+      "directed": true,
+      "description": "Lan is instructing Mat in archery and combat principles, though Mat already shows considerable skill."
+    },
+    {
+      "character_a": "Lan",
+      "character_b": "Perrin",
+      "relationship_type": "mentor",
+      "directed": true,
+      "description": "Lan is teaching Perrin how to use his great-bladed axe in combat, distinct from woodcutting."
+    },
+    {
+      "character_a": "Thom",
+      "character_b": "Mat",
+      "relationship_type": "mentor",
+      "directed": true,
+      "description": "Thom is teaching Mat to juggle, giving lessons each night and watching his practice."
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Egwene",
+      "relationship_type": "rival",
+      "directed": false,
+      "description": "Rand and Egwene have a major argument about her unbraiding her hair and desire to become Aes Sedai. They shout at each other and have barely spoken in two days. Their relationship is strained and contentious."
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Mat",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Close friends from the Two Rivers, traveling together, Mat congratulates Rand on his archery and they share the experience of being away from home."
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Perrin",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Close friends from the Two Rivers, traveling together and sharing the experience of being targeted by the Dark One."
+    },
+    {
+      "character_a": "Mat",
+      "character_b": "Perrin",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Close friends from the Two Rivers, traveling together. Perrin carries Mat's bow while Mat practices juggling."
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Tam",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "Father and son. Rand references that Tam taught him the 'flame and void' technique and daydreams of tending sheep with him."
+    },
+    {
+      "character_a": "Moiraine",
+      "character_b": "Avin",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Avin recognizes Moiraine (as 'Mistress Alys') and is eager to help her, opening the gate after hours and providing information. Previously paid by Lan/Moiraine for discretion."
+    },
+    {
+      "character_a": "Moiraine",
+      "character_b": "Master Fitch",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Master Fitch knows Moiraine (as 'Mistress Alys') and Lan (as 'Master Andra') as returning guests, welcomes them warmly, and provides them with private access and accommodation at his inn."
+    },
+    {
+      "character_a": "Moiraine",
+      "character_b": "Aldieb",
+      "relationship_type": "other",
+      "directed": false,
+      "description": "Moiraine rides Aldieb, her white mare, on the journey."
+    },
+    {
+      "character_a": "Lan",
+      "character_b": "Mandarb",
+      "relationship_type": "other",
+      "directed": false,
+      "description": "Lan rides Mandarb, his stallion, extensively during scouting missions."
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Cloud",
+      "relationship_type": "other",
+      "directed": false,
+      "description": "Rand rides Cloud, his gray horse, on the journey."
+    },
+    {
+      "character_a": "Egwene",
+      "character_b": "Bela",
+      "relationship_type": "other",
+      "directed": false,
+      "description": "Egwene rides Bela, her mare, on the journey."
+    },
+    {
+      "character_a": "Master Fitch",
+      "character_b": "Mutch",
+      "relationship_type": "other",
+      "directed": true,
+      "description": "Master Fitch is Mutch's employer at the Stag and Lion. Fitch overrides Mutch's objections and directs him to care for the horses."
+    }
+  ],
+  "_meta": {
+    "book_order": 1,
+    "chapter_number": 13,
+    "chapter_id": 14,
+    "chapter_title": "Choices",
+    "model": "claude-sonnet-4-5",
+    "input_tokens": 15347,
+    "output_tokens": 7788
+  }
+}

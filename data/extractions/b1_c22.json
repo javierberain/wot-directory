@@ -1,0 +1,329 @@
+{
+  "characters": [
+    {
+      "name_used_in_text": "Perrin",
+      "likely_matches_existing": "Perrin Aybara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "strong, sturdy build",
+        "age": null,
+        "filiations": null,
+        "personality": "deliberate, methodical, careful thinker who weighs options; practical and self-reliant"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Main POV character for this chapter. Shows clear decision-making and planning ability despite being used to others seeing him as slow to think."
+    },
+    {
+      "name_used_in_text": "Egwene",
+      "likely_matches_existing": "Egwene",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "daughter of Brandelwyn al'Vere",
+        "personality": "strong-willed, independent, usually takes charge; doesn't like being told what to do"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Notably defers to Perrin's leadership in this chapter, which surprises him given her usual personality."
+    },
+    {
+      "name_used_in_text": "Bela",
+      "likely_matches_existing": "Bela",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "horse",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "shaggy mare",
+        "age": null,
+        "filiations": null,
+        "personality": "reliable, steady"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "the shaggy mare",
+          "alias_type": "epithet",
+          "notes": null
+        }
+      ],
+      "notes": "Bela carried Egwene across the river and away from the Trollocs."
+    },
+    {
+      "name_used_in_text": "Moiraine",
+      "likely_matches_existing": "Moiraine",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown (not Two Rivers)",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Aes Sedai"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "the Aes Sedai",
+          "alias_type": "title",
+          "notes": null
+        },
+        {
+          "alias_text": "Moiraine Sedai",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Not physically present in the chapter; discussed by Perrin and Egwene who hope she will find them. She promised she could find them if separated."
+    },
+    {
+      "name_used_in_text": "Lan",
+      "likely_matches_existing": "Lan",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown (not Two Rivers)",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "the Warder",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Not physically present; mentioned by Perrin. Previously said the river would be a barrier to Fades and Trollocs. Said there's a good road from Caemlyn."
+    },
+    {
+      "name_used_in_text": "Rand",
+      "likely_matches_existing": "Rand al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "son of Tam al'Thor",
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Not physically present. Egwene expresses hope that he is all right and will be found. Mentioned as having studied Master al'Vere's map with Mat."
+    },
+    {
+      "name_used_in_text": "Mat",
+      "likely_matches_existing": "Matrim Cauthon",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Not physically present. Mentioned as having wanted to run off and hide somewhere. Mentioned as having studied Master al'Vere's map with Rand."
+    },
+    {
+      "name_used_in_text": "Master Luhhan",
+      "likely_matches_existing": "Haral Luhhan",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "husband of Alsbet Luhhan",
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "Village Council",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Village Council of Emond's Field"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Not physically present. Perrin dreams of working at his forge. Makes horseshoes with double crossbar for strength."
+    },
+    {
+      "name_used_in_text": "Mistress Luhhan",
+      "likely_matches_existing": "Alsbet Luhhan",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "wife of Haral Luhhan",
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Not physically present. Perrin recalls her saying 'If wishes were wings, sheep would fly.'"
+    },
+    {
+      "name_used_in_text": "Master al'Vere",
+      "likely_matches_existing": "Brandelwyn al'Vere",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "father of Egwene",
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "Village Council",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Village Council of Emond's Field; Mayor"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Not physically present. Owns an old map that Perrin recalls, though he says it's not too accurate. Rand and Mat mooned over it more than Perrin did."
+    }
+  ],
+  "appearances": [
+    {
+      "character": "Perrin",
+      "whereabouts": "East bank of the Arinelle River, in a small copse of cedar trees, then traveling downriver to find Egwene in a stand of trees with a hemlock",
+      "notable_actions": "Wakes from exhausted sleep under cedar branches; scouts the riverbank cautiously; finds Egwene's trail via hoofprints; reunites with her; proposes a plan to go to Caemlyn rather than Whitebridge to wait for Moiraine; takes leadership role in decision-making; decides they should start moving immediately",
+      "demeanor": "Initially cautious and anxious about Trollocs and Fades; relieved to find Egwene; thoughtful and deliberate in planning; surprisingly confident in taking the lead despite expecting Egwene to take charge; practical and determined",
+      "alliances_shown": [
+        "Egwene",
+        "Moiraine",
+        "Lan",
+        "Rand",
+        "Mat"
+      ]
+    },
+    {
+      "character": "Egwene",
+      "whereabouts": "In a dense stand of trees with a hemlock on the east bank of the Arinelle, where she made camp with a fire",
+      "notable_actions": "Survived the river crossing with Bela's help; made a camp with a fire; nearly attacked Perrin with a club before recognizing him; fed him bread and cheese; deferred to his plan to go to Caemlyn; expressed confidence that Moiraine will find them",
+      "demeanor": "Initially defensive and wary when Perrin enters her camp; relieved to see him alive; concerned for his wet condition; surprisingly willing to follow Perrin's lead rather than challenging him; hopeful about Moiraine finding them",
+      "alliances_shown": [
+        "Perrin",
+        "Moiraine",
+        "Rand",
+        "Mat",
+        "Lan"
+      ]
+    },
+    {
+      "character": "Bela",
+      "whereabouts": "In Egwene's camp in the stand of trees on the east bank of the Arinelle",
+      "notable_actions": "Carried Egwene across the river safely; headed away from the Trollocs and towed Egwene along",
+      "demeanor": null,
+      "alliances_shown": [
+        "Egwene"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "character_a": "Perrin",
+      "character_b": "Egwene",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Close friends and companions from the Two Rivers, separated from their group and now traveling together; Egwene unusually defers to Perrin's leadership"
+    },
+    {
+      "character_a": "Perrin",
+      "character_b": "Moiraine",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Perrin wishes they could do without her but recognizes they need her protection; hopes she will find them as she promised"
+    },
+    {
+      "character_a": "Egwene",
+      "character_b": "Moiraine",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Egwene has confidence that Moiraine Sedai will find them and trusts in her promise"
+    },
+    {
+      "character_a": "Egwene",
+      "character_b": "Bela",
+      "relationship_type": "other",
+      "directed": false,
+      "description": "Bela is Egwene's horse who saved her by swimming across the river with her"
+    },
+    {
+      "character_a": "Perrin",
+      "character_b": "Haral Luhhan",
+      "relationship_type": "mentor",
+      "directed": true,
+      "description": "Master Luhhan is Perrin's master blacksmith; Perrin worked at his forge and dreams of it"
+    },
+    {
+      "character_a": "Egwene",
+      "character_b": "Brandelwyn al'Vere",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "Master al'Vere is Egwene's father"
+    },
+    {
+      "character_a": "Perrin",
+      "character_b": "Rand",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Friends from the Two Rivers, separated and worried about each other"
+    },
+    {
+      "character_a": "Perrin",
+      "character_b": "Mat",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Friends from the Two Rivers, separated"
+    },
+    {
+      "character_a": "Egwene",
+      "character_b": "Rand",
+      "relationship_type": "romantic",
+      "directed": false,
+      "description": "Egwene expresses particular concern for Rand's safety, saying 'Rand has to be all right' first before adding the others"
+    }
+  ],
+  "_meta": {
+    "book_order": 1,
+    "chapter_number": 22,
+    "chapter_id": 23,
+    "chapter_title": "A Path Chosen",
+    "model": "claude-sonnet-4-5",
+    "input_tokens": 9074,
+    "output_tokens": 3387
+  }
+}

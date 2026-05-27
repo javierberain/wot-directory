@@ -1,0 +1,807 @@
+{
+  "characters": [
+    {
+      "name_used_in_text": "Padan Fain",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": "pale, skinny, gangly arms, massive beak of a nose",
+        "age": null,
+        "filiations": null,
+        "personality": "always smiling and laughing as if he knew a joke no one else knew, enjoys being center of attention, strutting around like an under-sized rooster, backslapping without ever getting close, peculiarly distant friendliness"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Padan",
+          "alias_type": "given_name",
+          "notes": null
+        },
+        {
+          "alias_text": "Fain",
+          "alias_type": "given_name",
+          "notes": "surname used alone"
+        },
+        {
+          "alias_text": "Master Fain",
+          "alias_type": "title",
+          "notes": null
+        },
+        {
+          "alias_text": "the peddler",
+          "alias_type": "epithet",
+          "notes": "his occupation"
+        }
+      ],
+      "notes": "Drives a wagon and brings news to Emond's Field every spring for as long as Rand can remember. This chapter is titled 'The Peddler' and centers on his arrival and news. Not on roster."
+    },
+    {
+      "name_used_in_text": "Mistress Ayellin",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Mentioned briefly by Nynaeve as having had a fever that Nynaeve attended to. Minor character but has a proper name and is an individual. Not on roster."
+    },
+    {
+      "name_used_in_text": "Bili Congar",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": "old (referred to as 'Old Bili')",
+        "filiations": "Congar family",
+        "personality": "claims not to believe in Aes Sedai, Darkfriends, or the Dark One, though his actions contradict this"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Old Bili",
+          "alias_type": "nickname",
+          "notes": null
+        },
+        {
+          "alias_text": "Bili",
+          "alias_type": "given_name",
+          "notes": null
+        },
+        {
+          "alias_text": "Master Congar",
+          "alias_type": "title",
+          "notes": "Mat corrects himself to use this form"
+        }
+      ],
+      "notes": "Named the Dark One last spring before his fields got cutworm and his house got yelloweye fever. Related to Wit Congar (both Congars). Not on roster."
+    },
+    {
+      "name_used_in_text": "Rand al'Thor",
+      "likely_matches_existing": "Rand al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": "old enough to marry",
+        "filiations": "son of Tam al'Thor",
+        "personality": "thoughtful, sometimes inarticulate around girls, curious about the world beyond Two Rivers but knows difference between daydreams and reality"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Rand",
+          "alias_type": "given_name",
+          "notes": null
+        }
+      ],
+      "notes": "Main POV character for this chapter. Already on roster."
+    },
+    {
+      "name_used_in_text": "Matrim Cauthon",
+      "likely_matches_existing": "Matrim Cauthon",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": "old enough to be married (according to Nynaeve)",
+        "filiations": null,
+        "personality": "excited by adventure, quick with fancies, curious, sometimes acts foolish"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Mat",
+          "alias_type": "given_name",
+          "notes": null
+        },
+        {
+          "alias_text": "Matrim",
+          "alias_type": "given_name",
+          "notes": "full given name used by Nynaeve when scolding"
+        }
+      ],
+      "notes": "Already on roster as Matrim Cauthon with aliases Mat, Mat Cauthon, Matrim."
+    },
+    {
+      "name_used_in_text": "Perrin Aybara",
+      "likely_matches_existing": "Perrin Aybara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "half a head shorter than Rand, curly-haired, stocky as to seem a man and a half wide, arms and shoulders thick enough to rival Master Luhhan",
+        "age": "old enough to marry",
+        "filiations": "blacksmith's apprentice to Master Luhhan",
+        "personality": "careful, apologetic, slow to anger, sometimes exasperated with Mat's fancies"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Perrin",
+          "alias_type": "given_name",
+          "notes": null
+        }
+      ],
+      "notes": "Already on roster. Saw the Black Rider at twilight yesterday on the edge of the village watching the smithy."
+    },
+    {
+      "name_used_in_text": "Egwene",
+      "likely_matches_existing": "Egwene",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "of a height with Nynaeve, dark coloring, big brown eyes, hair now in a long braid (was in waves with a red ribbon before)",
+        "age": "marriageable age",
+        "filiations": "apprentice to Nynaeve the Wisdom",
+        "personality": "determined, wants to see places beyond the Two Rivers, has a talent for listening to the wind"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Already on roster. Now wears her hair in a braid, signifying she is of marriageable age and will dance the Pole tomorrow. Learning to be a Wisdom under Nynaeve."
+    },
+    {
+      "name_used_in_text": "Nynaeve al'Meara",
+      "likely_matches_existing": "Nynaeve al'Meara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "slender, barely taller than Mat's shoulder, young and pretty, dark braid pulled over her shoulder",
+        "age": "young but established Wisdom",
+        "filiations": "the Wisdom of Emond's Field",
+        "personality": "stern, authoritative despite youth, prone to scolding, carries a stick for discipline, no-nonsense"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Nynaeve",
+          "alias_type": "given_name",
+          "notes": null
+        },
+        {
+          "alias_text": "the Wisdom",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Already on roster. Teaching Egwene to become a Wisdom. Was attending Mistress Ayellin's fever."
+    },
+    {
+      "name_used_in_text": "Tam al'Thor",
+      "likely_matches_existing": "Tam al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "Rand's father, Village Council member",
+        "personality": "composed, steady, believes things that can be sensed can be talked about"
+      },
+      "factions": [
+        {
+          "name": "Village Council",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Council of Emond's Field"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Tam",
+          "alias_type": "given_name",
+          "notes": null
+        }
+      ],
+      "notes": "Already on roster. Appears with the Council to question the peddler."
+    },
+    {
+      "name_used_in_text": "Brandelwyn al'Vere",
+      "likely_matches_existing": "Brandelwyn al'Vere",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "innkeeper of Winespring Inn, Mayor of Emond's Field",
+        "personality": "authoritative, maintains dignity, pragmatic"
+      },
+      "factions": [
+        {
+          "name": "Village Council",
+          "faction_type": "other",
+          "role": "leader",
+          "notes": "Mayor of Emond's Field"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Bran",
+          "alias_type": "given_name",
+          "notes": null
+        },
+        {
+          "alias_text": "Master al'Vere",
+          "alias_type": "title",
+          "notes": null
+        },
+        {
+          "alias_text": "the Mayor",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Already on roster. Leads Council in questioning Fain."
+    },
+    {
+      "name_used_in_text": "Cenn Buie",
+      "likely_matches_existing": "Cenn Buie",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "wrinkled face, gnarled fist",
+        "age": "old (called 'old fool' by others)",
+        "filiations": "thatcher, Village Council member",
+        "personality": "cantankerous, outspoken, sourly skeptical, concerned about bad luck and propriety"
+      },
+      "factions": [
+        {
+          "name": "Village Council",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Council of Emond's Field"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Cenn",
+          "alias_type": "given_name",
+          "notes": null
+        },
+        {
+          "alias_text": "Master Buie",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Already on roster. Very vocal during Fain's news, worried about false Dragon and propriety."
+    },
+    {
+      "name_used_in_text": "Haral Luhhan",
+      "likely_matches_existing": "Haral Luhhan",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "thick arms and shoulders (Perrin's rival his)",
+        "age": null,
+        "filiations": "blacksmith, master to Perrin, Village Council member",
+        "personality": "pragmatic, protective"
+      },
+      "factions": [
+        {
+          "name": "Village Council",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Council of Emond's Field"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Master Luhhan",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Already on roster. Told Perrin he saw shadows but carried his biggest hammer around afterward."
+    },
+    {
+      "name_used_in_text": "Ewin Finngar",
+      "likely_matches_existing": "Ewin Finngar",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": "boy",
+        "filiations": null,
+        "personality": "curious, outspoken"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Ewin",
+          "alias_type": "given_name",
+          "notes": null
+        }
+      ],
+      "notes": "Already on roster. Speaks up about men who channel going mad, gets cuffed by Cenn Buie."
+    },
+    {
+      "name_used_in_text": "Wit Congar",
+      "likely_matches_existing": "Wit Congar",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "related to Bili Congar (Congar family)",
+        "personality": "concerned with domestic matters"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Wit",
+          "alias_type": "given_name",
+          "notes": null
+        }
+      ],
+      "notes": "Already on roster. Protests when Council takes Fain inside because his wife sent him to buy pins."
+    },
+    {
+      "name_used_in_text": "Hu",
+      "likely_matches_existing": "Hu",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "stableman",
+        "personality": "stolid, methodical"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Already on roster. One of two stablemen who tend Fain's horses."
+    },
+    {
+      "name_used_in_text": "Tad",
+      "likely_matches_existing": "Tad",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "stableman",
+        "personality": "stolid, methodical"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Already on roster. One of two stablemen who tend Fain's horses."
+    },
+    {
+      "name_used_in_text": "Moiraine",
+      "likely_matches_existing": "Moiraine",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown (not Two Rivers)",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Lady Moiraine",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Already on roster. Mentioned as having given Perrin a coin. Not physically present in this chapter."
+    },
+    {
+      "name_used_in_text": "Black Rider",
+      "likely_matches_existing": "Black Rider",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": "black-cloaked",
+        "age": null,
+        "filiations": null,
+        "personality": "ominous, watching"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "the rider",
+          "alias_type": "epithet",
+          "notes": null
+        },
+        {
+          "alias_text": "the black-cloaked rider",
+          "alias_type": "epithet",
+          "notes": null
+        }
+      ],
+      "notes": "Already on roster as 'Black Rider' with aliases 'the dark horseman', 'the horseman', 'the rider'. Perrin saw him at twilight yesterday on edge of village watching the smithy. Rand and Mat also saw him previously. Gives people the shivers."
+    },
+    {
+      "name_used_in_text": "Jon Thane",
+      "likely_matches_existing": "Jon Thane",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "Village Council member",
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "Village Council",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Council of Emond's Field"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Already on roster. Part of Council that questions Fain, though not individually active in dialogue."
+    },
+    {
+      "name_used_in_text": "Rowan Hurn",
+      "likely_matches_existing": "Rowan Hurn",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "Village Council member",
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "Village Council",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Council of Emond's Field"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Already on roster. Part of Council that questions Fain, though not individually active in dialogue."
+    },
+    {
+      "name_used_in_text": "Samel Crawe",
+      "likely_matches_existing": "Samel Crawe",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "Village Council member",
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "Village Council",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Council of Emond's Field"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Crawe",
+          "alias_type": "given_name",
+          "notes": "surname used alone by Bran"
+        }
+      ],
+      "notes": "Already on roster. Part of Council that questions Fain, mentioned by name by Bran."
+    }
+  ],
+  "appearances": [
+    {
+      "character": "Padan Fain",
+      "whereabouts": "arrives in Emond's Field in his wagon, stops in front of the Winespring Inn, then is taken inside by the Village Council",
+      "notable_actions": "drives wagon into village, tells news of false Dragon in Ghealdan, war, Aes Sedai marching south, brings excitement and fear to villagers, questioned by Council inside inn",
+      "demeanor": "casual, teasing, enjoying being center of attention, strutting, smiling secretively, making a show of his news",
+      "alliances_shown": [
+        "neutral to all, friendly in distant way"
+      ]
+    },
+    {
+      "character": "Mistress Ayellin",
+      "whereabouts": "not present in chapter, mentioned as having been ill",
+      "notable_actions": "had a fever that broke, was attended by Nynaeve",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Bili Congar",
+      "whereabouts": "not present in chapter, mentioned in conversation",
+      "notable_actions": "named the Dark One last spring, later suffered cutworm in fields and yelloweye fever in house, now throws things at Mat when asked to name the Dark One",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Rand al'Thor",
+      "whereabouts": "in front of the Winespring Inn with Mat and Perrin, then joined by Egwene and Nynaeve",
+      "notable_actions": "listens to Fain's news, discusses false Dragon and Aes Sedai with friends, accidentally shouts and embarrasses himself, talks awkwardly with Egwene about dancing and her becoming a Wisdom",
+      "demeanor": "curious, thoughtful, embarrassed when he shouts, uncomfortable and inarticulate around Egwene, frustrated by miscommunication",
+      "alliances_shown": [
+        "friends with Mat and Perrin",
+        "romantically interested in Egwene"
+      ]
+    },
+    {
+      "character": "Matrim Cauthon",
+      "whereabouts": "in front of the Winespring Inn with Rand and Perrin",
+      "notable_actions": "pulls Rand through crowd to get close to peddler's wagon, excitedly discusses news of false Dragon, tells story about guard's claim that Dragon will save mankind, recounts Bili Congar naming the Dark One, gets scolded by Nynaeve",
+      "demeanor": "excited, laughing, eager for adventure, sometimes foolish",
+      "alliances_shown": [
+        "friends with Rand and Perrin"
+      ]
+    },
+    {
+      "character": "Perrin Aybara",
+      "whereabouts": "in front of the Winespring Inn with Rand and Mat",
+      "notable_actions": "joins friends in crowd, carefully picks path through people apologizing, tells about seeing the Black Rider at twilight yesterday watching the smithy, tells Master Luhhan who looked but saw nothing, worried about war and Aes Sedai",
+      "demeanor": "careful, apologetic, worried, sometimes exasperated with Mat, firm in what he saw",
+      "alliances_shown": [
+        "friends with Rand and Mat",
+        "apprentice to Master Luhhan"
+      ]
+    },
+    {
+      "character": "Egwene",
+      "whereabouts": "arrives with Nynaeve, stands near Rand and his friends in front of the inn",
+      "notable_actions": "watches intently, scolds the boys for spreading frightening tales, shows Rand her braided hair indicating marriageable age, tells Rand about learning to be a Wisdom and wanting to see the world, argues with Rand about daydreams vs reality, agrees to dance with him tomorrow afternoon",
+      "demeanor": "initially disapproving, then playful and smiling, then solemn and earnest, then furious at Rand's words, determined about her ambitions",
+      "alliances_shown": [
+        "apprentice to Nynaeve",
+        "romantically involved with Rand though currently frustrated"
+      ]
+    },
+    {
+      "character": "Nynaeve al'Meara",
+      "whereabouts": "arrives in front of inn with Egwene, then enters the inn to question Fain",
+      "notable_actions": "scolds Mat for taunting Bili Congar about naming the Dark One, criticizes the boys for spreading frightening tales, notices Rand staring at Egwene, says Council asking wrong questions and Women's Circle will find out useful information, goes into inn to question peddler",
+      "demeanor": "stern, angry at the boys' foolishness, authoritative, knowing, practical",
+      "alliances_shown": [
+        "mentor to Egwene",
+        "authority figure to young men"
+      ]
+    },
+    {
+      "character": "Tam al'Thor",
+      "whereabouts": "appears with Village Council, escorts Fain into the inn",
+      "notable_actions": "leads Council out to meet peddler with Master al'Vere, defends Ewin against Cenn's harsh reaction, says anything that can be sensed can be talked about, speaks quietly to Mayor, helps escort Fain into inn for questioning",
+      "demeanor": "composed, steady, protective of youth, pragmatic",
+      "alliances_shown": [
+        "Village Council member",
+        "father to Rand"
+      ]
+    },
+    {
+      "character": "Brandelwyn al'Vere",
+      "whereabouts": "appears with Village Council, escorts Fain into inn",
+      "notable_actions": "leads Council out deliberately, orders Hu and Tad to stable Fain's horses, announces Council will question Fain inside, tells Cenn to act his age, shouts at crowd to go home when they try to follow into inn",
+      "demeanor": "authoritative, dignified, increasingly impatient with crowd, firm in maintaining order",
+      "alliances_shown": [
+        "Village Council leader as Mayor"
+      ]
+    },
+    {
+      "character": "Cenn Buie",
+      "whereabouts": "appears with Village Council, goes into inn with them",
+      "notable_actions": "marches out with Council, smokes pipe showing effort to stay dignified, demands Fain answer if this is false Dragon, argues it's improper to talk of Aes Sedai and such things, cuffs Ewin for speaking up, face turns purple when Tam and Bran criticize him",
+      "demeanor": "cantankerous, worried, indignant about propriety, harsh with Ewin, defensive when criticized",
+      "alliances_shown": [
+        "Village Council member"
+      ]
+    },
+    {
+      "character": "Haral Luhhan",
+      "whereabouts": "appears with Village Council, mentioned at smithy yesterday",
+      "notable_actions": "appears with Council, corrects someone saying Dragon is not the Dark One, looked for rider when Perrin told him but saw nothing, carried biggest hammer around while banking forge-fire (yesterday), mentioned by others in crowd arguments",
+      "demeanor": "pragmatic, protective (carried hammer), somewhat skeptical",
+      "alliances_shown": [
+        "Village Council member",
+        "master to Perrin"
+      ]
+    },
+    {
+      "character": "Ewin Finngar",
+      "whereabouts": "in crowd in front of inn",
+      "notable_actions": "bursts out with knowledge that men who channel go mad and die, gets cuffed by Cenn Buie for speaking up",
+      "demeanor": "excited, curious, outspoken",
+      "alliances_shown": []
+    },
+    {
+      "character": "Wit Congar",
+      "whereabouts": "in crowd in front of inn",
+      "notable_actions": "protests when Council takes Fain away, says his wife sent him to buy pins, hunches shoulders at stares but holds his ground",
+      "demeanor": "insistent, somewhat embarrassed but defiant",
+      "alliances_shown": []
+    },
+    {
+      "character": "Hu",
+      "whereabouts": "at the inn, tending to Fain's horses",
+      "notable_actions": "ordered by Mayor to stable Fain's horses, grunts in reply to questions, methodically removes harness and leads horses away",
+      "demeanor": "stolid, methodical, uncommunicative",
+      "alliances_shown": [
+        "works at Winespring Inn"
+      ]
+    },
+    {
+      "character": "Tad",
+      "whereabouts": "at the inn, tending to Fain's horses",
+      "notable_actions": "ordered by Mayor to stable Fain's horses, grunts in reply to questions, methodically removes harness and leads horses away with Hu",
+      "demeanor": "stolid, methodical, uncommunicative",
+      "alliances_shown": [
+        "works at Winespring Inn"
+      ]
+    },
+    {
+      "character": "Moiraine",
+      "whereabouts": "not present in chapter",
+      "notable_actions": "gave Perrin a coin (mentioned, happened before this chapter)",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Black Rider",
+      "whereabouts": "was on edge of village watching the smithy at twilight yesterday (not present in this chapter's timeframe)",
+      "notable_actions": "watched the smithy, was seen by Perrin, gave Perrin the shivers",
+      "demeanor": "ominous, watching",
+      "alliances_shown": []
+    },
+    {
+      "character": "Jon Thane",
+      "whereabouts": "appears with Village Council, goes into inn",
+      "notable_actions": "part of Council that marches out and questions Fain",
+      "demeanor": "dignified",
+      "alliances_shown": [
+        "Village Council member"
+      ]
+    },
+    {
+      "character": "Rowan Hurn",
+      "whereabouts": "appears with Village Council, goes into inn",
+      "notable_actions": "part of Council that marches out and questions Fain",
+      "demeanor": "dignified",
+      "alliances_shown": [
+        "Village Council member"
+      ]
+    },
+    {
+      "character": "Samel Crawe",
+      "whereabouts": "appears with Village Council, goes into inn",
+      "notable_actions": "part of Council that marches out and questions Fain, told by Bran not to frown at Cenn",
+      "demeanor": "dignified, frowning at Cenn's behavior",
+      "alliances_shown": [
+        "Village Council member"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "character_a": "Rand al'Thor",
+      "character_b": "Tam al'Thor",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "father and son"
+    },
+    {
+      "character_a": "Rand al'Thor",
+      "character_b": "Matrim Cauthon",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "close friends"
+    },
+    {
+      "character_a": "Rand al'Thor",
+      "character_b": "Perrin Aybara",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "close friends"
+    },
+    {
+      "character_a": "Rand al'Thor",
+      "character_b": "Egwene",
+      "relationship_type": "romantic",
+      "directed": false,
+      "description": "romantically interested in each other but awkward; he asked her to dance, she agreed for tomorrow afternoon"
+    },
+    {
+      "character_a": "Matrim Cauthon",
+      "character_b": "Perrin Aybara",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "close friends"
+    },
+    {
+      "character_a": "Nynaeve al'Meara",
+      "character_b": "Egwene",
+      "relationship_type": "mentor",
+      "directed": true,
+      "description": "Nynaeve is teaching Egwene to become a Wisdom, says Egwene has a talent and can learn to listen to the wind"
+    },
+    {
+      "character_a": "Haral Luhhan",
+      "character_b": "Perrin Aybara",
+      "relationship_type": "mentor",
+      "directed": true,
+      "description": "Master Luhhan is the blacksmith and Perrin is his apprentice"
+    },
+    {
+      "character_a": "Bili Congar",
+      "character_b": "Wit Congar",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "both Congars, likely related though exact relationship unclear"
+    }
+  ],
+  "_meta": {
+    "book_order": 1,
+    "chapter_number": 3,
+    "chapter_id": 4,
+    "chapter_title": "The Peddler",
+    "model": "claude-sonnet-4-5",
+    "input_tokens": 11216,
+    "output_tokens": 8387
+  }
+}

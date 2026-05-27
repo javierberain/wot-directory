@@ -1,0 +1,369 @@
+{
+  "characters": [
+    {
+      "name_used_in_text": "Rand al'Thor",
+      "likely_matches_existing": "Rand al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "has grown in the last few years; strong enough to do farm labor",
+        "age": "young adult",
+        "filiations": "son of Tam al'Thor",
+        "personality": "dutiful, loyal to his father, inexperienced but resourceful under pressure"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Rand",
+          "alias_type": "given_name",
+          "notes": null
+        },
+        {
+          "alias_text": "lad",
+          "alias_type": "epithet",
+          "notes": "used by Tam"
+        },
+        {
+          "alias_text": "boy",
+          "alias_type": "epithet",
+          "notes": "used by Tam and Narg"
+        }
+      ],
+      "notes": null
+    },
+    {
+      "name_used_in_text": "Tam al'Thor",
+      "likely_matches_existing": "Tam al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "wounded with fever; physically strong and skilled fighter",
+        "age": "adult, middle-aged or older",
+        "filiations": "father of Rand al'Thor; married to an outlander woman (deceased)",
+        "personality": "protective, cautious, experienced, skilled with a sword"
+      },
+      "factions": [
+        {
+          "name": "Village Council",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "member of the Two Rivers Village Council"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Tam",
+          "alias_type": "given_name",
+          "notes": null
+        },
+        {
+          "alias_text": "father",
+          "alias_type": "epithet",
+          "notes": "used by Rand"
+        }
+      ],
+      "notes": "Owns a heron-marked sword obtained long ago from outside the Two Rivers; has combat experience; wife was an outlander"
+    },
+    {
+      "name_used_in_text": "Bela",
+      "likely_matches_existing": "Bela",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "horse",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "mare; used for farm work and pulling cart",
+        "age": null,
+        "filiations": "owned by Tam and Rand al'Thor",
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Taken by Trollocs; cart destroyed"
+    },
+    {
+      "name_used_in_text": "Narg",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "trolloc",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "wolf muzzle, sunken eyes, flat emotionless yet human eyes, hairy pointed ears, goat hooves, sharp stained teeth, covered in dark fur on hands; wears black mail over leather trousers; carries scythe-curved sword",
+        "age": null,
+        "filiations": null,
+        "personality": "cunning compared to other Trollocs; describes self as 'smart'; uses deception"
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "serves a Myrddraal; part of Trolloc raiding force"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Individual Trolloc who remained behind at the al'Thor farm to ambush returning inhabitants; killed by Rand; notable for speaking the common tongue"
+    },
+    {
+      "name_used_in_text": "Nynaeve al'Meara",
+      "likely_matches_existing": "Nynaeve al'Meara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "skilled healer"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Nynaeve",
+          "alias_type": "given_name",
+          "notes": null
+        },
+        {
+          "alias_text": "the Wisdom",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Mentioned as the healer Rand needs to bring Tam to; does not appear directly in this chapter"
+    },
+    {
+      "name_used_in_text": "Oren Dautry",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "owner of Dautry farm, nearest neighbor to al'Thors",
+        "personality": "shameless borrower; unlikely to leave house after dark"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Master Dautry",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Does not appear directly; mentioned by Rand when considering who might knock at the door; Dautry farm is one hour away"
+    },
+    {
+      "name_used_in_text": "Perrin Aybara",
+      "likely_matches_existing": "Perrin Aybara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Perrin",
+          "alias_type": "given_name",
+          "notes": null
+        }
+      ],
+      "notes": "Only mentioned in passing as someone Rand played quarterstaffs with as children; does not appear directly"
+    },
+    {
+      "name_used_in_text": "Lan",
+      "likely_matches_existing": "Lan",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown (not Two Rivers)",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Only mentioned in passing as someone who wears a sword similar to Tam's; does not appear directly"
+    },
+    {
+      "name_used_in_text": "Jain Farstrider",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Only mentioned as author of 'The Travels of Jain Farstrider,' a book in the al'Thor house; does not appear directly in the chapter"
+    },
+    {
+      "name_used_in_text": "Haral Luhhan",
+      "likely_matches_existing": "Haral Luhhan",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "large chest and arms",
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "Village Council",
+          "faction_type": "other",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Master Luhhan",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Only mentioned for comparison to Narg's size; does not appear directly"
+    }
+  ],
+  "appearances": [
+    {
+      "character": "Rand al'Thor",
+      "whereabouts": "al'Thor farm; woods near the farm; inside the farmhouse",
+      "notable_actions": "Does farm chores (stables Bela, feeds animals, hoes garden, chops wood); flees Trolloc attack; returns to farmhouse to gather supplies; fights and kills Narg the Trolloc; gathers supplies and prepares to transport wounded Tam to Emond's Field",
+      "demeanor": "initially dutiful and weary, then terrified during attack, then determined and resourceful despite fear; experiences shame at fleeing, relief at survival, despair at finding cart destroyed, then renewed determination",
+      "alliances_shown": [
+        "Tam al'Thor"
+      ]
+    },
+    {
+      "character": "Tam al'Thor",
+      "whereabouts": "al'Thor farm initially; woods near farm after fleeing",
+      "notable_actions": "Prepares dinner; locks doors; retrieves and wears heron-marked sword; fights Trollocs during attack; leads Trollocs away from Rand; escapes into woods; becomes wounded and feverish; gives Rand advice about Trollocs",
+      "demeanor": "cautious and protective initially, then fierce fighter during battle, then increasingly weakened and feverish; speaks in hazy, delirious manner when wounded",
+      "alliances_shown": [
+        "Rand al'Thor"
+      ]
+    },
+    {
+      "character": "Bela",
+      "whereabouts": "barn initially, then taken by Trollocs",
+      "notable_actions": "Rubbed down and fed by Rand; disappears during Trolloc attack",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Narg",
+      "whereabouts": "al'Thor farmhouse",
+      "notable_actions": "Remains hidden in farmhouse after other Trollocs leave; attempts to deceive and capture Rand; lunges at Rand when he pretends to surrender; is killed by Rand's sword",
+      "demeanor": "deceptive and cunning, attempting to appear non-threatening while planning ambush; reveals fear when mentioning Myrddraal; becomes snarling and violent when attacking",
+      "alliances_shown": [
+        "Myrddraal",
+        "other Trollocs"
+      ]
+    },
+    {
+      "character": "Nynaeve al'Meara",
+      "whereabouts": "Emond's Field (presumed)",
+      "notable_actions": "None in this chapter; mentioned as destination",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Oren Dautry",
+      "whereabouts": "Dautry farm (presumed)",
+      "notable_actions": "None; only mentioned",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Perrin Aybara",
+      "whereabouts": "not present",
+      "notable_actions": "None; only mentioned in Rand's memory",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Lan",
+      "whereabouts": "not present",
+      "notable_actions": "None; only mentioned for comparison",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Jain Farstrider",
+      "whereabouts": "not present",
+      "notable_actions": "None; only mentioned as author",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Haral Luhhan",
+      "whereabouts": "not present",
+      "notable_actions": "None; only mentioned for comparison",
+      "demeanor": null,
+      "alliances_shown": []
+    }
+  ],
+  "relationships": [
+    {
+      "character_a": "Tam al'Thor",
+      "character_b": "Rand al'Thor",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "father and son; Tam is protective and instructive toward Rand"
+    },
+    {
+      "character_a": "Rand al'Thor",
+      "character_b": "Bela",
+      "relationship_type": "other",
+      "directed": true,
+      "description": "Rand cares for and depends on Bela as their farm horse"
+    },
+    {
+      "character_a": "Narg",
+      "character_b": "Rand al'Thor",
+      "relationship_type": "enemy",
+      "directed": false,
+      "description": "Narg attempts to capture/kill Rand; Rand kills Narg in self-defense"
+    },
+    {
+      "character_a": "Tam al'Thor",
+      "character_b": "Rand al'Thor",
+      "relationship_type": "mentor",
+      "directed": true,
+      "description": "Tam teaches and guides Rand about survival and fighting Trollocs"
+    }
+  ],
+  "_meta": {
+    "book_order": 1,
+    "chapter_number": 5,
+    "chapter_id": 6,
+    "chapter_title": "Winternight",
+    "model": "claude-sonnet-4-5",
+    "input_tokens": 13635,
+    "output_tokens": 3555
+  }
+}

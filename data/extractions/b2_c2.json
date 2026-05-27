@@ -1,0 +1,594 @@
+{
+  "characters": [
+    {
+      "name_used_in_text": "Rand al'Thor",
+      "likely_matches_existing": "Rand al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "tall enough to see over most heads",
+        "age": "young man",
+        "filiations": "raised by Tam al'Thor in the Westwood",
+        "personality": "anxious, fearful of Aes Sedai attention, ready to flee"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "my Lord",
+          "alias_type": "title",
+          "notes": "servants mistakenly call him this due to the 'al' in his name"
+        }
+      ],
+      "notes": "Central POV character. Clearly terrified of the Amyrlin Seat and planning to flee Fal Dara. Wears a heron-mark sword and has new clothes with a dangerous sigil (a serpent with legs, mane, and claws—likely the Dragon). Recognized by roster."
+    },
+    {
+      "name_used_in_text": "the Amyrlin Seat",
+      "likely_matches_existing": "the Amyrlin Seat",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "dark-haired, ageless as all Aes Sedai",
+        "age": "ageless (Aes Sedai)",
+        "filiations": null,
+        "personality": "commanding presence that matches or exceeds Lord Agelmar's authority"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "leader",
+          "notes": "The Amyrlin Seat is the supreme leader of the Aes Sedai"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Mother",
+          "alias_type": "title",
+          "notes": "how Agelmar addresses her"
+        },
+        {
+          "alias_text": "The Watcher of the Seals",
+          "alias_type": "title",
+          "notes": "ceremonial title in the Welcome ritual"
+        },
+        {
+          "alias_text": "The Flame of Tar Valon",
+          "alias_type": "title",
+          "notes": "ceremonial title in the Welcome ritual"
+        }
+      ],
+      "notes": "Arrives at Fal Dara in a palanquin with fourteen Aes Sedai and fourteen Warders. Her gaze makes Rand feel as if he's been touched. Roster lists her but this chapter provides the first detailed appearance."
+    },
+    {
+      "name_used_in_text": "Moiraine",
+      "likely_matches_existing": "Moiraine",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "smooth-skinned but with mature face, knowing eyes",
+        "age": "ageless (Aes Sedai)",
+        "filiations": null,
+        "personality": "manipulative, working behind the scenes without directly speaking to Rand"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "Aes Sedai"
+        },
+        {
+          "name": "Blue Ajah",
+          "faction_type": "ajah",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Moiraine Sedai",
+          "alias_type": "title",
+          "notes": "formal address"
+        }
+      ],
+      "notes": "Not present in this chapter but heavily referenced. She ordered Rand's old clothes removed and new ones provided, including the dangerous Dragon sigil. She won't talk to Rand directly."
+    },
+    {
+      "name_used_in_text": "Agelmar",
+      "likely_matches_existing": "Agelmar",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienaran",
+        "physical_traits": "bluff and square, craggy face, white topknot",
+        "age": "elderly",
+        "filiations": "House Jagad",
+        "personality": "dignified, ceremonious, dutiful"
+      },
+      "factions": [
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "leader",
+          "notes": "Lord of Fal Dara"
+        },
+        {
+          "name": "House Jagad",
+          "faction_type": "house",
+          "role": "leader",
+          "notes": "High Seat of House Jagad, wearing three running red foxes"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Lord Agelmar",
+          "alias_type": "title",
+          "notes": null
+        },
+        {
+          "alias_text": "Lord of Fal Dara",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Presides over the formal Welcome ceremony for the Amyrlin Seat. Orders all gates closed and no horses to leave any stable."
+    },
+    {
+      "name_used_in_text": "Elansu",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienaran",
+        "physical_traits": "sharp-faced woman",
+        "age": "old enough to be Rand's mother",
+        "filiations": null,
+        "personality": "firm, bullying, capable of intimidating most men"
+      },
+      "factions": [
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Shatayan (housekeeper) of the keep"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Elansu Shatayan",
+          "alias_type": "title",
+          "notes": "her formal title"
+        },
+        {
+          "alias_text": "shatayan",
+          "alias_type": "title",
+          "notes": "Shienaran word for housekeeper of a fortress"
+        }
+      ],
+      "notes": "Oversees the removal of Rand's old clothes and replacement with new ones on Moiraine's orders. Commands many servants."
+    },
+    {
+      "name_used_in_text": "Ronan",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienaran",
+        "physical_traits": "age-withered but still tall, snow-white topknot",
+        "age": "elderly",
+        "filiations": null,
+        "personality": "ceremonious, formal"
+      },
+      "factions": [
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Shambayan of the keep, Lord Agelmar's secretary"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "shambayan",
+          "alias_type": "title",
+          "notes": "Shienaran equivalent to major-domo, Elansu's counterpart"
+        }
+      ],
+      "notes": "Performs the ceremonial challenge during the Welcome ritual for the Amyrlin Seat. Bears a staff topped with three red avatine foxes."
+    },
+    {
+      "name_used_in_text": "Tema",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienaran",
+        "physical_traits": "leathery-faced, gray hair sits on head like inverted bowl (no topknot)",
+        "age": "middle-aged to elderly",
+        "filiations": null,
+        "personality": "servile, takes shame seriously, devoted to duty"
+      },
+      "factions": [
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Head groom of the Lord's Stable"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Head groom who mistakenly treats Rand as a lord. Must refuse Rand's request for a horse because of Agelmar's orders closing the stables."
+    },
+    {
+      "name_used_in_text": "Amalisa",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienaran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "Lord Agelmar's sister",
+        "personality": "generous, high-ranking"
+      },
+      "factions": [
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Lord Agelmar's sister"
+        },
+        {
+          "name": "House Jagad",
+          "faction_type": "house",
+          "role": "member",
+          "notes": "Sister to the High Seat"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Lady Amalisa",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Not directly present but credited with gifting Rand new clothes. May have had the Dragon sigil embroidered, or that may have been Moiraine's doing."
+    },
+    {
+      "name_used_in_text": "Mat",
+      "likely_matches_existing": "Matrim Cauthon",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": "young man",
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Shares a room with Rand and Perrin. Not present in this chapter but his clothes are being replaced along with Rand's."
+    },
+    {
+      "name_used_in_text": "Perrin",
+      "likely_matches_existing": "Perrin Aybara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "strong enough to draw Rand's tall bow",
+        "age": "young man",
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Shares a room with Rand and Mat. Not present but his bow is in the room and his clothes are being replaced."
+    },
+    {
+      "name_used_in_text": "Lan",
+      "likely_matches_existing": "Lan",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Malkieri",
+        "physical_traits": "strong enough to draw Rand's tall bow",
+        "age": null,
+        "filiations": null,
+        "personality": "warrior, perceptive"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "Warder"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Not present in this chapter but referenced by Rand regarding the wind on the tower and as capable of drawing Rand's bow. His color-shifting cloak is the model for the other Warders' cloaks."
+    },
+    {
+      "name_used_in_text": "Thom Merrilin",
+      "likely_matches_existing": "Thom Merrilin",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "sharp blue eyes, long white mustaches",
+        "age": "elderly at time of presumed death",
+        "filiations": null,
+        "personality": "brave, self-sacrificing, skilled performer"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Not present; presumed dead. Rand remembers him and possesses his gleeman's cloak, harp, and the flute Thom gave him. Thom faced a Myrddraal to save Rand."
+    },
+    {
+      "name_used_in_text": "Egwene",
+      "likely_matches_existing": "Egwene",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": "young woman",
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Not present but referenced as one of the women the Amyrlin will want to see, going to Tar Valon to train as Aes Sedai."
+    },
+    {
+      "name_used_in_text": "Nynaeve",
+      "likely_matches_existing": "Nynaeve al'Meara",
+      "is_new_character": false,
+      "confidence": "medium",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "Women's Circle",
+          "faction_type": "other",
+          "role": "leader",
+          "notes": "Wisdom of Emond's Field"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Not present but likely the other woman referenced as going to Tar Valon to train. Roster shows her as the Wisdom."
+    },
+    {
+      "name_used_in_text": "Tam al'Thor",
+      "likely_matches_existing": "Tam al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": "elderly",
+        "filiations": "Rand's father (or adoptive father)",
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "Village Council",
+          "faction_type": "other",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Not present. Rand thinks of Tam's Westwood farm where he grew up."
+    },
+    {
+      "name_used_in_text": "Red",
+      "likely_matches_existing": "Red",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "horse",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "tall bay stallion",
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Rand's horse, kept in the Lord's Stable. Rand attempts to have him saddled for escape but is thwarted by Agelmar's orders."
+    },
+    {
+      "name_used_in_text": "Alwyn al'Van",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers (Emond's Field)",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "skilled craftsman"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Not present. The cobbler back in Emond's Field who made Rand's old boots."
+    }
+  ],
+  "appearances": [
+    {
+      "character": "Rand al'Thor",
+      "whereabouts": "Moving through Fal Dara keep from his room to the outer courtyard, then attempting to reach the Lord's Stable",
+      "notable_actions": "Discovers his old clothes being replaced with fine new ones including a cloak with the Dragon sigil; packs his belongings planning to flee; witnesses the Amyrlin Seat's arrival; attempts to get his horse saddled but is blocked by Agelmar's orders closing all gates and stables; realizes he's trapped",
+      "demeanor": "terrified, panicked, desperately trying to escape, hyperaware of danger",
+      "alliances_shown": [
+        "trying to avoid all Aes Sedai"
+      ]
+    },
+    {
+      "character": "the Amyrlin Seat",
+      "whereabouts": "Arrives at Fal Dara keep in a palanquin, enters the outer courtyard",
+      "notable_actions": "Participates in the formal Welcome ceremony; responds to Ronan's ritual questions; accepts Lord Agelmar's hospitality; her gaze sweeps over the assembled crowd including Rand",
+      "demeanor": "commanding, authoritative, ageless and dignified",
+      "alliances_shown": [
+        "White Tower",
+        "fourteen Aes Sedai",
+        "fourteen Warders"
+      ]
+    },
+    {
+      "character": "Agelmar",
+      "whereabouts": "Outer courtyard of Fal Dara",
+      "notable_actions": "Conducts the formal Welcome ceremony for the Amyrlin Seat; offers bread, salt, and welcome; places House Jagad and Fal Dara at her disposal; orders all gates closed and all stables locked down",
+      "demeanor": "ceremonious, formal, respectful, dutiful",
+      "alliances_shown": [
+        "White Tower",
+        "the Amyrlin Seat",
+        "Fal Dara",
+        "House Jagad"
+      ]
+    },
+    {
+      "character": "Elansu",
+      "whereabouts": "Rand's room in the men's apartments",
+      "notable_actions": "Supervises the removal of all of Rand's, Mat's, and Perrin's old clothes and their replacement with new garments; insists on taking everything including boots and smallclothes; refuses to leave until Rand complies",
+      "demeanor": "firm, businesslike, slightly amused by Rand's embarrassment",
+      "alliances_shown": [
+        "serving Moiraine's orders",
+        "serving Lady Amalisa"
+      ]
+    },
+    {
+      "character": "Ronan",
+      "whereabouts": "Outer courtyard of Fal Dara, beside Lord Agelmar",
+      "notable_actions": "Leads the ceremonial Welcome ritual; strikes his staff three times and issues the ritual challenges; bears the staff topped with three red avatine foxes of House Jagad",
+      "demeanor": "ceremonious, formal, dignified",
+      "alliances_shown": [
+        "Lord Agelmar",
+        "Fal Dara"
+      ]
+    },
+    {
+      "character": "Tema",
+      "whereabouts": "Lord's Stable, Fal Dara",
+      "notable_actions": "Greets Rand with excessive bowing; must refuse Rand's request to saddle Red; explains that Lord Agelmar has ordered all gates closed and no horses may leave any stable; expresses shame at being unable to serve",
+      "demeanor": "servile, apologetic, ashamed at his inability to fulfill Rand's request",
+      "alliances_shown": [
+        "serving Lord Agelmar's orders"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "character_a": "Moiraine",
+      "character_b": "Rand al'Thor",
+      "relationship_type": "mentor",
+      "directed": true,
+      "description": "Moiraine orchestrates events around Rand, providing him with fine clothes including one bearing the Dragon sigil, but refuses to speak to him directly. Rand feels she is manipulating him and fears her attention."
+    },
+    {
+      "character_a": "the Amyrlin Seat",
+      "character_b": "Rand al'Thor",
+      "relationship_type": "other",
+      "directed": true,
+      "description": "The Amyrlin has come to Fal Dara specifically to see Rand and his friends. Rand is terrified of her and desperately trying to flee before she can summon him. Her gaze makes him flinch."
+    },
+    {
+      "character_a": "Agelmar",
+      "character_b": "the Amyrlin Seat",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Agelmar shows deep respect and offers full hospitality to the Amyrlin Seat, placing his house and fortress at her disposal. She honors him and his house in return."
+    },
+    {
+      "character_a": "Elansu",
+      "character_b": "Ronan",
+      "relationship_type": "other",
+      "directed": false,
+      "description": "Counterparts in managing Fal Dara keep: Elansu as shatayan (housekeeper) and Ronan as shambayan (major-domo and secretary). Elansu leaves little for Ronan except ceremonies."
+    },
+    {
+      "character_a": "Agelmar",
+      "character_b": "Amalisa",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "Brother and sister. Amalisa is Lord Agelmar's sister."
+    },
+    {
+      "character_a": "Rand al'Thor",
+      "character_b": "Mat",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Friends and roommates sharing quarters in Fal Dara. Both from the Two Rivers."
+    },
+    {
+      "character_a": "Rand al'Thor",
+      "character_b": "Perrin",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Friends and roommates sharing quarters in Fal Dara. Both from the Two Rivers."
+    },
+    {
+      "character_a": "Thom Merrilin",
+      "character_b": "Rand al'Thor",
+      "relationship_type": "mentor",
+      "directed": true,
+      "description": "Thom taught Rand to play the flute and gave him his gleeman's cloak before sacrificing himself facing a Myrddraal to save Rand. Rand carries Thom's possessions and remembers him with grief."
+    },
+    {
+      "character_a": "Tam al'Thor",
+      "character_b": "Rand al'Thor",
+      "relationship_type": "family",
+      "directed": true,
+      "description": "Father (or adoptive father) and son. Rand thinks of Tam's Westwood farm as home."
+    },
+    {
+      "character_a": "Rand al'Thor",
+      "character_b": "Red",
+      "relationship_type": "other",
+      "directed": true,
+      "description": "Rand owns Red, a tall bay stallion kept in the Lord's Stable, and attempts to have him saddled for escape."
+    },
+    {
+      "character_a": "Tema",
+      "character_b": "Rand al'Thor",
+      "relationship_type": "servant",
+      "directed": true,
+      "description": "Tema serves Rand as head groom, though he mistakenly treats Rand as a lord despite Rand's protests."
+    }
+  ],
+  "_meta": {
+    "book_order": 2,
+    "chapter_number": 2,
+    "chapter_id": 57,
+    "chapter_title": "The Welcome",
+    "model": "claude-sonnet-4-5",
+    "input_tokens": 16099,
+    "output_tokens": 6271
+  }
+}

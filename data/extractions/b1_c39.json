@@ -1,0 +1,433 @@
+{
+  "characters": [
+    {
+      "name_used_in_text": "Rand al'Thor",
+      "likely_matches_existing": "Rand al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "tall",
+        "age": null,
+        "filiations": null,
+        "personality": "curious, determined, cautious about being discovered"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "POV character for this chapter."
+    },
+    {
+      "name_used_in_text": "Mat",
+      "likely_matches_existing": "Matrim Cauthon",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "stubborn, fearful, isolating himself"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Hiding in his room, refusing to leave, calls Loial a Trolloc out of fear."
+    },
+    {
+      "name_used_in_text": "Egwene",
+      "likely_matches_existing": "Egwene",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Mentioned as having walked in alive and laughing; not physically present in this chapter."
+    },
+    {
+      "name_used_in_text": "Perrin",
+      "likely_matches_existing": "Perrin Aybara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Mentioned as having walked in alive and laughing; not physically present in this chapter. Also mentioned as having climbed cliffs near the Sand Hills."
+    },
+    {
+      "name_used_in_text": "Master Gill",
+      "likely_matches_existing": "Basel Gill",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Andoran",
+        "physical_traits": "belly that shakes when he chuckles",
+        "age": null,
+        "filiations": null,
+        "personality": "protective of his guests, well-informed about city affairs, loyal to Queen Morgase"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Master Gill",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "The innkeeper of The Queen's Blessing; clearly Basel Gill from context."
+    },
+    {
+      "name_used_in_text": "Nynaeve",
+      "likely_matches_existing": "Nynaeve al'Meara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "Women's Circle",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "The Wisdom of Emond's Field"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Mentioned as someone Mat needs but is not present."
+    },
+    {
+      "name_used_in_text": "Moiraine",
+      "likely_matches_existing": "Moiraine",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown (not Two Rivers)",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Aes Sedai"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Mentioned as someone who could help Mat but is not present."
+    },
+    {
+      "name_used_in_text": "Mother Grubb",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Andoran",
+        "physical_traits": "old woman",
+        "age": "old",
+        "filiations": null,
+        "personality": "herbalist, healer, fortune teller"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "An herbalist living two streets from The Queen's Blessing; described as similar to a Wisdom."
+    },
+    {
+      "name_used_in_text": "Lamgwin",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Andoran",
+        "physical_traits": "bulky, heavy-lidded eyes, moves like a cat despite bulk",
+        "age": null,
+        "filiations": null,
+        "personality": "observant, loyal to Queen Morgase"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "A guard hired by Master Gill to protect The Queen's Blessing; his voice is described as sounding like gravel in a pan."
+    },
+    {
+      "name_used_in_text": "Queen Morgase",
+      "likely_matches_existing": "Queen Morgase",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Andoran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Queen",
+          "alias_type": "title",
+          "notes": null
+        },
+        {
+          "alias_text": "the Queen",
+          "alias_type": "title",
+          "notes": null
+        },
+        {
+          "alias_text": "good Queen Morgase",
+          "alias_type": "epithet",
+          "notes": null
+        }
+      ],
+      "notes": "The Queen of Andor; not physically present but central to the politics of the chapter."
+    },
+    {
+      "name_used_in_text": "Logain",
+      "likely_matches_existing": "Logain",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": "tall, long dark hair curling around broad shoulders",
+        "age": null,
+        "filiations": null,
+        "personality": "kingly bearing, defiant, proud, laughs at the crowd's hatred"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "false Dragon",
+          "alias_type": "epithet",
+          "notes": null
+        },
+        {
+          "alias_text": "the false Dragon",
+          "alias_type": "epithet",
+          "notes": null
+        }
+      ],
+      "notes": "The false Dragon being brought into Caemlyn in a cage; the procession is the major event of the chapter."
+    },
+    {
+      "name_used_in_text": "the beggar",
+      "likely_matches_existing": null,
+      "is_new_character": false,
+      "confidence": "medium",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": "stooped, looks like a pile of filthy rags, dirty cowl, dirty claw of a hand",
+        "age": null,
+        "filiations": null,
+        "personality": "half mad, persistent, searching for Rand and his friends"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "the ragged man",
+          "alias_type": "epithet",
+          "notes": null
+        },
+        {
+          "alias_text": "the filthy man",
+          "alias_type": "epithet",
+          "notes": null
+        }
+      ],
+      "notes": "A beggar who has been asking after Rand and his friends by name; described as half mad. Master Gill mentions him. Likely a Darkfriend. Appears in the crowd and points directly at Rand, causing Rand to flee. This is the same beggar referenced in the roster as having been mentioned before, but no proper name is given in this chapter."
+    },
+    {
+      "name_used_in_text": "Hyam Kinch",
+      "likely_matches_existing": "Hyam Kinch",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Andoran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Mentioned as having talked about strange shapes; not present in this chapter."
+    },
+    {
+      "name_used_in_text": "Lews Therin Kinslayer",
+      "likely_matches_existing": "Lews Therin Telamon",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Lews Therin Kinslayer",
+          "alias_type": "epithet",
+          "notes": null
+        }
+      ],
+      "notes": "Mentioned in Master Gill's jest about strange shapes; not actually present."
+    },
+    {
+      "name_used_in_text": "Loial",
+      "likely_matches_existing": "Loial",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "ogier",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Referred to by Rand as 'that Trolloc you're so friendly with' when speaking to Mat; Mat mistakes him for a Trolloc. Not physically present but clearly known to both."
+    }
+  ],
+  "appearances": [
+    {
+      "character": "Rand al'Thor",
+      "whereabouts": "The Queen's Blessing inn in Caemlyn, then moving through the Inner City streets to watch the procession, finally climbing a wall to view Logain's entry",
+      "notable_actions": "Tries to convince Mat to come see Logain; speaks with Master Gill about the beggar asking after them; leaves the inn and joins the crowd; sees Whitecloaks being jostled; flees when the beggar spots and points at him; searches for a vantage point to see Logain; climbs a wall and watches the procession; falls from the wall after being startled by a girl's voice",
+      "demeanor": "eager, excited about seeing Logain and the procession; anxious when hearing about the beggar; frightened when the beggar points at him; determined to see the spectacle despite obstacles",
+      "alliances_shown": [
+        "supporters of Queen Morgase"
+      ]
+    },
+    {
+      "character": "Mat",
+      "whereabouts": "His room at The Queen's Blessing inn",
+      "notable_actions": "Refuses to leave his room; lies curled up on his bed; calls Loial a Trolloc; will only eat food brought by Rand",
+      "demeanor": "fearful, stubborn, withdrawn, hostile",
+      "alliances_shown": []
+    },
+    {
+      "character": "Master Gill",
+      "whereabouts": "The Queen's Blessing inn",
+      "notable_actions": "Meets Rand at the foot of the stairs; warns him about a beggar asking after him and his friends by name; dismisses rumors about strange shapes as Whitecloak nonsense; advises Rand to leave by the alley; expresses concern about the city's political tensions",
+      "demeanor": "concerned but jovial, protective of his guests, dismissive of wild rumors",
+      "alliances_shown": [
+        "Queen Morgase"
+      ]
+    },
+    {
+      "character": "Mother Grubb",
+      "whereabouts": "Two streets from The Queen's Blessing",
+      "notable_actions": "None in this chapter; mentioned as a potential healer for Mat",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Lamgwin",
+      "whereabouts": "Guarding the mouth of the alley at The Queen's Blessing",
+      "notable_actions": "Stands watch with a spear; warns Rand to watch his back; notes Rand would be useful in a fight",
+      "demeanor": "alert, watchful, apparently disinterested but actually very observant",
+      "alliances_shown": [
+        "Queen Morgase"
+      ]
+    },
+    {
+      "character": "Logain",
+      "whereabouts": "In an iron cage on a wagon being paraded through Caemlyn to the Palace",
+      "notable_actions": "Holds himself upright in the cage; looks over the crowd with a kingly bearing; silences people wherever his gaze falls; laughs at the crowd's hatred as he enters the Palace",
+      "demeanor": "proud, defiant, regal, undefeated despite being caged",
+      "alliances_shown": []
+    },
+    {
+      "character": "the beggar",
+      "whereabouts": "In the crowd watching the procession route",
+      "notable_actions": "Emerges from the crowd; points directly at Rand with a wordless cry; begins to scuttle across the street toward him; causes Rand to flee",
+      "demeanor": "stooped, dirty, determined, unsettling",
+      "alliances_shown": []
+    }
+  ],
+  "relationships": [
+    {
+      "character_a": "Rand al'Thor",
+      "character_b": "Mat",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Close friends from the Two Rivers; Rand tries to help Mat and brings him meals"
+    },
+    {
+      "character_a": "Rand al'Thor",
+      "character_b": "Master Gill",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Master Gill provides shelter and protection to Rand at The Queen's Blessing"
+    },
+    {
+      "character_a": "Master Gill",
+      "character_b": "Lamgwin",
+      "relationship_type": "servant",
+      "directed": true,
+      "description": "Lamgwin is a guard hired by Master Gill to protect the inn"
+    },
+    {
+      "character_a": "the beggar",
+      "character_b": "Rand al'Thor",
+      "relationship_type": "enemy",
+      "directed": true,
+      "description": "The beggar is actively searching for Rand and his friends; Rand fears him as a potential Darkfriend"
+    },
+    {
+      "character_a": "Rand al'Thor",
+      "character_b": "Egwene",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Friends from the Two Rivers; Rand was relieved when she arrived alive"
+    },
+    {
+      "character_a": "Rand al'Thor",
+      "character_b": "Perrin",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Friends from the Two Rivers; Rand was relieved when he arrived alive"
+    }
+  ],
+  "_meta": {
+    "book_order": 1,
+    "chapter_number": 39,
+    "chapter_id": 40,
+    "chapter_title": "Weaving of the Web",
+    "model": "claude-sonnet-4-5",
+    "input_tokens": 13591,
+    "output_tokens": 4316
+  }
+}

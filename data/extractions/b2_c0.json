@@ -1,0 +1,748 @@
+{
+  "characters": [
+    {
+      "name_used_in_text": "Bors",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Tarabon",
+        "physical_traits": "stooped posture (disguise), height disguised by bulky black cloak",
+        "age": null,
+        "filiations": "holds an office symbolized by a golden sun and red shepherd's crook on a white cloak",
+        "personality": "patient, calculating, paranoid, power-hungry, observant"
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "serves Ba'alzamon, has sworn himself to the Dark One"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "the man who called himself Bors",
+          "alias_type": "disguise",
+          "notes": "explicitly stated to be using this name 'at least in this place'"
+        },
+        {
+          "alias_text": "my Lord Bors",
+          "alias_type": "title",
+          "notes": "how the servants address him"
+        }
+      ],
+      "notes": "New character. The white cloak with golden sun and red shepherd's crook suggests he may be a high-ranking member of the Children of the Light using a false name at this meeting. His actual identity is deliberately obscured. He is from or operates in Tarabon."
+    },
+    {
+      "name_used_in_text": "Ba'alzamon",
+      "likely_matches_existing": "Elan Morin Tedronai",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": "horribly burned hands crisscrossed by black fissures with raw red flesh between, wears blood-red robes and blood-red mask, floats in the air",
+        "age": null,
+        "filiations": "one of the Forsaken, possibly the Dark One himself or his chief lieutenant",
+        "personality": "commanding, ruthless, manipulative, mocking"
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "leader",
+          "notes": "leads this gathering of Darkfriends, commands the Myrddraal"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Heart of the Dark",
+          "alias_type": "epithet",
+          "notes": "Trolloc tongue translation of Ba'alzamon"
+        }
+      ],
+      "notes": "Ba'alzamon is an alias already known for Elan Morin Tedronai (the Dark One). The roster lists multiple names including Ba'alzamon as an epithet. This appearance shows him leading a gathering of Darkfriends."
+    },
+    {
+      "name_used_in_text": "the Blacksmith",
+      "likely_matches_existing": "Perrin Aybara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "curly-haired, heavily muscled as a blacksmith, yellow eyes, carries a battle axe with steel half-moon blade balanced by thick spike",
+        "age": "youth",
+        "filiations": "country lad, likely from Two Rivers",
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "the Blacksmith",
+          "alias_type": "epithet",
+          "notes": "name given by Bors in his mind due to the youth's blacksmith-like musculature"
+        }
+      ],
+      "notes": "The yellow eyes and battle axe strongly suggest this is Perrin Aybara. The figure appears as a suspended image, not physically present. Bors mentally names him 'the Blacksmith'."
+    },
+    {
+      "name_used_in_text": "the Swordsman",
+      "likely_matches_existing": "Rand al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "tall, eyes gray or almost blue depending on light, dark reddish hair, carries a heron-mark sword",
+        "age": "youth",
+        "filiations": "villager or farmer, carries a heron-mark blade (sign of a blademaster)",
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "the Swordsman",
+          "alias_type": "epithet",
+          "notes": "name given by Bors in his mind due to the heron-mark blade"
+        },
+        {
+          "alias_text": "the Dragon",
+          "alias_type": "epithet",
+          "notes": "Ba'alzamon states 'There is now one who walks the world...the Dragon' while showing these three figures"
+        }
+      ],
+      "notes": "The description matches Rand al'Thor: tall, gray-blue eyes, dark reddish hair, heron-mark sword, village background. Ba'alzamon identifies him as the one who will become the Dragon. The figure appears as a suspended image."
+    },
+    {
+      "name_used_in_text": "the Trickster",
+      "likely_matches_existing": "Matrim Cauthon",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "brown eyes, hint of a smile, light of mischief in his eyes",
+        "age": "youth",
+        "filiations": "country lad",
+        "personality": "mischievous, prankster"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "the Trickster",
+          "alias_type": "epithet",
+          "notes": "name given by Bors in his mind due to the look of mischief"
+        }
+      ],
+      "notes": "The description of mischief and pranks matches Mat Cauthon's established personality. The figure appears as a suspended image, not physically present. Bors mentally names him 'the Trickster'."
+    },
+    {
+      "name_used_in_text": "the Illianer woman",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Illian",
+        "physical_traits": "wears scarlet dress cut low in bodice, high at hem, golden slippers",
+        "age": null,
+        "filiations": "woman of wealth, perhaps noble blood",
+        "personality": "foolish in drawing attention to herself, eager"
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "attends the Darkfriend gathering, receives orders from Ba'alzamon"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "New character. A Darkfriend from Illian attending the secret meeting. Her clothing marks her clearly as Illianer nobility or wealth."
+    },
+    {
+      "name_used_in_text": "the Domani woman",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Arad Doman",
+        "physical_traits": "swan's neck, lustrous black hair falling in waves below waist, coppery skin, wears creamy high-necked clinging gown, wide golden bracelet with House symbols on left wrist",
+        "age": null,
+        "filiations": "first blood of Arad Doman, wears her own House sigils",
+        "personality": "serene, self-possessed, observant"
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "attends the Darkfriend gathering"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "New character. A Domani noblewoman (bloodborn) attending the Darkfriend gathering. Shows more caution than the Illianer woman."
+    },
+    {
+      "name_used_in_text": "the Shienaran",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienar",
+        "physical_traits": "wears high-collared sky-blue Shienaran coat",
+        "age": null,
+        "filiations": "soldier by carriage and manner",
+        "personality": "wary, alert, eager for violence"
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "attends the Darkfriend gathering, eager to kill the Dragon Reborn"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "New character. A Shienaran soldier attending the Darkfriend meeting. Shows confusion at his orders but acquiesces."
+    },
+    {
+      "name_used_in_text": "the Tinker",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "medium",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": "wears bright green breeches and virulent yellow coat",
+        "age": null,
+        "filiations": "Tinker (Tuatha'an)",
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "attends the Darkfriend gathering"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "New character. A Tinker attending the Darkfriend gathering. Bors considers Tinkers expendable."
+    },
+    {
+      "name_used_in_text": "the Tairen High Lord",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Tear",
+        "physical_traits": "wears silver-worked boots visible under dark robes",
+        "age": null,
+        "filiations": "High Lord of Tear",
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "attends the Darkfriend gathering"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "New character. A High Lord of Tear attending the Darkfriend meeting in disguise."
+    },
+    {
+      "name_used_in_text": "the Andoran Queen's Guard officer",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Andoran",
+        "physical_traits": "wears golden lion-head spurs (mark of high officers in Queen's Guards)",
+        "age": null,
+        "filiations": "high officer in Andoran Queen's Guards",
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "attends the Darkfriend gathering"
+        },
+        {
+          "name": "Queen's Guards",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "high officer based on golden lion-head spurs"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "New character. A high-ranking officer in the Andoran Queen's Guards who is secretly a Darkfriend."
+    },
+    {
+      "name_used_in_text": "the Sea Folk man",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Atha'an Miere (Sea Folk)",
+        "physical_traits": "slender, wears floor-dragging black robe and gray cloak with plain silver pin, six-pointed star tattooed on web between thumb and forefinger of right hand",
+        "age": null,
+        "filiations": "Sea Folk, clan and line marks on left hand",
+        "personality": "shows reluctance when receiving orders"
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "attends the Darkfriend gathering, shows reluctance at his orders"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "New character. A member of the Sea Folk attending the Darkfriend meeting. Appears reluctant about his orders."
+    },
+    {
+      "name_used_in_text": "first Aes Sedai",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": "enveloped in black till nothing shows but her fingers, wears Great Serpent ring on right hand",
+        "age": null,
+        "filiations": "Aes Sedai or woman trained in Tar Valon",
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "attends the Darkfriend gathering"
+        },
+        {
+          "name": "White Tower",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "wears Great Serpent ring indicating Aes Sedai or Tower training"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "New character. An Aes Sedai or Tower-trained woman who is a Darkfriend. Does not acknowledge the other Aes Sedai present."
+    },
+    {
+      "name_used_in_text": "second Aes Sedai",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": "swathed head to toe in black, wears Great Serpent ring",
+        "age": null,
+        "filiations": "Aes Sedai or woman trained in Tar Valon",
+        "personality": "shows shock at her orders"
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "attends the Darkfriend gathering, shows shock at orders"
+        },
+        {
+          "name": "White Tower",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "wears Great Serpent ring indicating Aes Sedai or Tower training"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "New character. Another Aes Sedai or Tower-trained woman who is a Darkfriend. Gives a start of shock when receiving orders."
+    },
+    {
+      "name_used_in_text": "the gray-swathed figure",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "medium",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": "cloaked and hooded in gray, sex indeterminate",
+        "age": null,
+        "filiations": null,
+        "personality": "initially resistant, then acquiescent"
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "attends the Darkfriend gathering, shakes head before falling to knees and nodding vigorously"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "New character. Sex cannot be determined. Shows initial resistance to orders before submitting."
+    },
+    {
+      "name_used_in_text": "the servant",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": "young man, slender, golden-haired, wears tight white breeches and flowing white shirt, moves with disturbing grace, blank/empty/dead eyes",
+        "age": "youth",
+        "filiations": "servant to Ba'alzamon or the Shadow",
+        "personality": "unnaturally knowing, emotionless"
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "serves Ba'alzamon and the gathering, possibly created or controlled"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "New character. One of many identical servants at the gathering. Has disturbing blank eyes and unnatural knowledge. May not be fully human or may be magically controlled."
+    },
+    {
+      "name_used_in_text": "the Myrddraal",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "medium",
+      "character_type": "myrddraal",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": "garbed in black that hangs without ripple, pasty pale eyeless face like a maggot, moves with viper's grace, thin bloodless lips",
+        "age": null,
+        "filiations": "servant of Ba'alzamon and the Shadow",
+        "personality": "servile and cringing before Ba'alzamon, fearsome to others, shows hatred toward the three young men"
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "serves Ba'alzamon, announces his arrival"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Halfman",
+          "alias_type": "epithet",
+          "notes": "term used by Bors and others for Myrddraal"
+        }
+      ],
+      "notes": "An individual Myrddraal serving Ba'alzamon at this gathering. Shows unusual emotion (trembling, hatred) when viewing the three suspended figures."
+    },
+    {
+      "name_used_in_text": "the Trollocs",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "trolloc",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": "head and shoulders taller than tallest man, blend of man and animal - one with heavy pointed beak and feathers instead of hair, one with hooves and hairy muzzle with goat horns, both wear spiked black mail",
+        "age": null,
+        "filiations": "servants of the Shadow",
+        "personality": "servile and cringing before the Myrddraal"
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "serve as guards at the gathering"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Two individual Trollocs guarding the entrance for Ba'alzamon. They bow and kneel to the Myrddraal."
+    }
+  ],
+  "appearances": [
+    {
+      "character": "Bors",
+      "whereabouts": "a chamber in the shadow of Shayol Ghul, then shown to a private room",
+      "notable_actions": "attends secret Darkfriend gathering, observes other attendees, receives orders from Ba'alzamon to return to Tarabon and redouble efforts, watch for three young men, and carry out secret commands regarding Toman Head and the Domani, changes back into white cloak with golden sun and red shepherd's crook",
+      "demeanor": "calculating, paranoid, fearful yet ambitious, disturbed by the servants and Ba'alzamon's power",
+      "alliances_shown": [
+        "The Shadow",
+        "Ba'alzamon"
+      ]
+    },
+    {
+      "character": "Ba'alzamon",
+      "whereabouts": "floats in the air in the chamber in shadow of Shayol Ghul",
+      "notable_actions": "summons and addresses gathered Darkfriends, displays three suspended figures of young men, identifies one as the Dragon who must be turned or killed, gives individual secret orders to each attendee, promises power and immortality to faithful servants, declares the Day of Return is near",
+      "demeanor": "commanding, menacing, mocking, promises great rewards while instilling terror",
+      "alliances_shown": [
+        "The Shadow",
+        "the Myrddraal",
+        "the Trollocs",
+        "all gathered Darkfriends"
+      ]
+    },
+    {
+      "character": "the Blacksmith",
+      "whereabouts": "appears as suspended figure in the chamber",
+      "notable_actions": "displayed by Ba'alzamon as one of three important figures, appears as motionless image",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "the Swordsman",
+      "whereabouts": "appears as suspended figure in the chamber, positioned directly under Ba'alzamon's eye",
+      "notable_actions": "displayed by Ba'alzamon as the Dragon or one who will become the Dragon, appears as motionless image",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "the Trickster",
+      "whereabouts": "appears as suspended figure in the chamber",
+      "notable_actions": "displayed by Ba'alzamon as one of three important figures, appears as motionless image",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "the Illianer woman",
+      "whereabouts": "in the chamber at the Darkfriend gathering",
+      "notable_actions": "stands before gold-and-crimson tapestry drawing attention to herself, receives orders from Ba'alzamon, undergoes convulsion rising on toes as if held by something unseen",
+      "demeanor": "foolish in seeking attention, eager, half frightened and half ecstatic when receiving orders",
+      "alliances_shown": [
+        "The Shadow",
+        "Ba'alzamon"
+      ]
+    },
+    {
+      "character": "the Domani woman",
+      "whereabouts": "in the chamber at the Darkfriend gathering",
+      "notable_actions": "keeps back to stone wall observing everything, receives orders from Ba'alzamon",
+      "demeanor": "serene, self-possessed, cautious",
+      "alliances_shown": [
+        "The Shadow",
+        "Ba'alzamon"
+      ]
+    },
+    {
+      "character": "the Shienaran",
+      "whereabouts": "in the chamber at the Darkfriend gathering",
+      "notable_actions": "observes others warily, asks if they are to kill the Dragon Reborn, receives orders from Ba'alzamon with confusion",
+      "demeanor": "wary, alert, eager for combat, confused by orders received",
+      "alliances_shown": [
+        "The Shadow",
+        "Ba'alzamon"
+      ]
+    },
+    {
+      "character": "the Tinker",
+      "whereabouts": "in the chamber at the Darkfriend gathering",
+      "notable_actions": "attends the meeting",
+      "demeanor": null,
+      "alliances_shown": [
+        "The Shadow"
+      ]
+    },
+    {
+      "character": "the Tairen High Lord",
+      "whereabouts": "in the chamber at the Darkfriend gathering",
+      "notable_actions": "receives orders from Ba'alzamon while disguised in dark robes",
+      "demeanor": null,
+      "alliances_shown": [
+        "The Shadow",
+        "Ba'alzamon"
+      ]
+    },
+    {
+      "character": "the Andoran Queen's Guard officer",
+      "whereabouts": "in the chamber at the Darkfriend gathering",
+      "notable_actions": "attends in disguise",
+      "demeanor": null,
+      "alliances_shown": [
+        "The Shadow"
+      ]
+    },
+    {
+      "character": "the Sea Folk man",
+      "whereabouts": "in the chamber at the Darkfriend gathering",
+      "notable_actions": "receives orders from Ba'alzamon, shows reluctance",
+      "demeanor": "stiff with reluctance while nodding acceptance",
+      "alliances_shown": [
+        "The Shadow",
+        "Ba'alzamon"
+      ]
+    },
+    {
+      "character": "first Aes Sedai",
+      "whereabouts": "in the chamber at the Darkfriend gathering",
+      "notable_actions": "attends the meeting, receives orders from Ba'alzamon",
+      "demeanor": null,
+      "alliances_shown": [
+        "The Shadow",
+        "Ba'alzamon"
+      ]
+    },
+    {
+      "character": "second Aes Sedai",
+      "whereabouts": "in the chamber at the Darkfriend gathering",
+      "notable_actions": "receives orders from Ba'alzamon, gives a start as if shocked",
+      "demeanor": "shocked by orders received",
+      "alliances_shown": [
+        "The Shadow",
+        "Ba'alzamon"
+      ]
+    },
+    {
+      "character": "the gray-swathed figure",
+      "whereabouts": "in the chamber at the Darkfriend gathering",
+      "notable_actions": "speaks softly with the Illianer woman, receives orders from Ba'alzamon, shakes head in refusal before falling to knees and nodding vigorously",
+      "demeanor": "initially resistant, then submissive",
+      "alliances_shown": [
+        "The Shadow",
+        "Ba'alzamon"
+      ]
+    },
+    {
+      "character": "the servant",
+      "whereabouts": "in the chamber and corridors of the meeting place",
+      "notable_actions": "offers wine to attendees, escorts Bors to his room, knows Bors's false name and anticipates his questions",
+      "demeanor": "graceful, smiling, unnaturally knowing, emotionless with dead eyes",
+      "alliances_shown": [
+        "The Shadow",
+        "Ba'alzamon"
+      ]
+    },
+    {
+      "character": "the Myrddraal",
+      "whereabouts": "in the chamber at the entrance",
+      "notable_actions": "enters with Trollocs bowing to it, announces Ba'alzamon's arrival, commands attendees to grovel, trembles before Ba'alzamon, shows hatred toward the three suspended figures",
+      "demeanor": "fearsome and commanding to humans, servile and cringing before Ba'alzamon, hateful toward the three young men",
+      "alliances_shown": [
+        "The Shadow",
+        "Ba'alzamon"
+      ]
+    },
+    {
+      "character": "the Trollocs",
+      "whereabouts": "at the entrance to the chamber",
+      "notable_actions": "flank the doorway, bow and kneel before the Myrddraal, fall to bellies when Ba'alzamon appears",
+      "demeanor": "servile, cringing, subservient",
+      "alliances_shown": [
+        "The Shadow",
+        "the Myrddraal",
+        "Ba'alzamon"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "character_a": "Ba'alzamon",
+      "character_b": "Bors",
+      "relationship_type": "other",
+      "directed": true,
+      "description": "Ba'alzamon commands Bors as master to servant, gives him secret orders regarding Tarabon, Toman Head, and watching for three young men"
+    },
+    {
+      "character_a": "Ba'alzamon",
+      "character_b": "the Myrddraal",
+      "relationship_type": "other",
+      "directed": true,
+      "description": "Ba'alzamon commands the Myrddraal, which trembles and cowers before him despite being fearsome to others"
+    },
+    {
+      "character_a": "the Myrddraal",
+      "character_b": "the Trollocs",
+      "relationship_type": "other",
+      "directed": true,
+      "description": "the Myrddraal commands the Trollocs, which bow and kneel before it"
+    },
+    {
+      "character_a": "Ba'alzamon",
+      "character_b": "the Swordsman",
+      "relationship_type": "enemy",
+      "directed": false,
+      "description": "Ba'alzamon identifies the Swordsman as the one who will become the Dragon and must be turned to his service or killed"
+    },
+    {
+      "character_a": "Ba'alzamon",
+      "character_b": "the Illianer woman",
+      "relationship_type": "other",
+      "directed": true,
+      "description": "Ba'alzamon gives orders to the Illianer woman as part of his network of Darkfriends"
+    },
+    {
+      "character_a": "Ba'alzamon",
+      "character_b": "the Domani woman",
+      "relationship_type": "other",
+      "directed": true,
+      "description": "Ba'alzamon commands the Domani woman as part of his Darkfriend network"
+    },
+    {
+      "character_a": "Ba'alzamon",
+      "character_b": "the Shienaran",
+      "relationship_type": "other",
+      "directed": true,
+      "description": "Ba'alzamon gives orders to the Shienaran soldier as part of his network"
+    },
+    {
+      "character_a": "Ba'alzamon",
+      "character_b": "the Sea Folk man",
+      "relationship_type": "other",
+      "directed": true,
+      "description": "Ba'alzamon commands the Sea Folk man despite his reluctance"
+    },
+    {
+      "character_a": "Ba'alzamon",
+      "character_b": "first Aes Sedai",
+      "relationship_type": "other",
+      "directed": true,
+      "description": "Ba'alzamon commands the Aes Sedai as part of his Darkfriend network"
+    },
+    {
+      "character_a": "Ba'alzamon",
+      "character_b": "second Aes Sedai",
+      "relationship_type": "other",
+      "directed": true,
+      "description": "Ba'alzamon gives shocking orders to the second Aes Sedai"
+    },
+    {
+      "character_a": "the Illianer woman",
+      "character_b": "the gray-swathed figure",
+      "relationship_type": "other",
+      "directed": false,
+      "description": "they speak softly together before Ba'alzamon's appearance"
+    },
+    {
+      "character_a": "the servant",
+      "character_b": "Bors",
+      "relationship_type": "servant",
+      "directed": true,
+      "description": "the servant serves and escorts Bors, showing unnatural knowledge of his thoughts and name"
+    }
+  ],
+  "_meta": {
+    "book_order": 2,
+    "chapter_number": 0,
+    "chapter_id": 55,
+    "chapter_title": "In the Shadow",
+    "model": "claude-sonnet-4-5",
+    "input_tokens": 16473,
+    "output_tokens": 8197
+  }
+}

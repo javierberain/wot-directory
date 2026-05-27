@@ -1,0 +1,532 @@
+{
+  "characters": [
+    {
+      "name_used_in_text": "Lan",
+      "likely_matches_existing": "Lan",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "tall, stony face",
+        "age": null,
+        "filiations": null,
+        "personality": "vigilant, cautious, professional, commanding"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Warder",
+          "alias_type": "title",
+          "notes": "his formal role"
+        }
+      ],
+      "notes": "The text confirms he is the Warder bonded to Moiraine. The warder_bond relationship is recorded separately."
+    },
+    {
+      "name_used_in_text": "Perrin",
+      "likely_matches_existing": "Perrin Aybara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "shaggy-haired",
+        "age": null,
+        "filiations": "apprentice to Haral Luhhan",
+        "personality": "careful, earnest, defensive when teased"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "blacksmith",
+          "alias_type": "epithet",
+          "notes": "Lan addresses him this way"
+        }
+      ],
+      "notes": null
+    },
+    {
+      "name_used_in_text": "Mat",
+      "likely_matches_existing": "Matrim Cauthon",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "son of Abell Cauthon",
+        "personality": "joking, deflects tension with humor, afraid beneath the bravado"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": null
+    },
+    {
+      "name_used_in_text": "Rand",
+      "likely_matches_existing": "Rand al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "son of Tam al'Thor",
+        "personality": "earnest, protective, somewhat impulsive"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Wears a sword given by Tam; feels homesick even before leaving the village."
+    },
+    {
+      "name_used_in_text": "Moiraine",
+      "likely_matches_existing": "Moiraine",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "wears a serpent ring, carries a staff",
+        "age": null,
+        "filiations": null,
+        "personality": "calm, authoritative, enigmatic, speaks of the Pattern"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "Aes Sedai"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Aes Sedai",
+          "alias_type": "title",
+          "notes": "her role in the White Tower"
+        },
+        {
+          "alias_text": "Moiraine Sedai",
+          "alias_type": "title",
+          "notes": "formal address combining name and title"
+        }
+      ],
+      "notes": "Clothed in dark gray divided riding skirt. Her staff shows no sign of charring despite flames Rand saw earlier."
+    },
+    {
+      "name_used_in_text": "Egwene",
+      "likely_matches_existing": "Egwene",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "determined, defiant, eager to see the world, refuses to be left behind"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Insists on joining the journey despite not being initially planned. Wears dark brown cloak."
+    },
+    {
+      "name_used_in_text": "Thom Merrilin",
+      "likely_matches_existing": "The Gleeman",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "from Baerlon area",
+        "physical_traits": "long-limbed",
+        "age": null,
+        "filiations": null,
+        "personality": "shrewd, observant, resourceful, wry humor"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "gleeman",
+          "alias_type": "epithet",
+          "notes": "his profession"
+        },
+        {
+          "alias_text": "Master Merrilin",
+          "alias_type": "title",
+          "notes": "respectful address"
+        }
+      ],
+      "notes": "Was hiding in the hayloft. Insists on traveling to Tar Valon, citing both opportunity and safety. Wears patch-covered cloak, carries flute and harp."
+    },
+    {
+      "name_used_in_text": "Bela",
+      "likely_matches_existing": "Bela",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "horse",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "mare, strong, not as fast as the others but can keep up",
+        "age": null,
+        "filiations": null,
+        "personality": "sleepy, accepts oddities with just a shake of her mane"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Given to Egwene to ride. Not used to a saddle. Rand sometimes rides her bareback."
+    },
+    {
+      "name_used_in_text": "Cloud",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "horse",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "tall gray with black mane and tail, spirited, prances and tosses head",
+        "age": null,
+        "filiations": "belonged to Jon Thane",
+        "personality": "difficult, eager to run, never gives an easy ride"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Racing horse owned by Jon Thane, sold to Lan. Rand ends up riding him."
+    },
+    {
+      "name_used_in_text": "Tam",
+      "likely_matches_existing": "Tam al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "father of Rand al'Thor",
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "Village Council",
+          "faction_type": "other",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Mentioned as believing Moiraine and agreeing that Rand had to go."
+    },
+    {
+      "name_used_in_text": "Jon Thane",
+      "likely_matches_existing": "Jon Thane",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "stout",
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "Village Council",
+          "faction_type": "other",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Leading a patrol; wears old armor. Formerly owned the horse Cloud, sold to Lan. Known for racing Cloud against merchants' horses and never losing."
+    },
+    {
+      "name_used_in_text": "Haral Luhhan",
+      "likely_matches_existing": "Haral Luhhan",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "master blacksmith, Perrin's master",
+        "personality": "stubborn as stone"
+      },
+      "factions": [
+        {
+          "name": "Village Council",
+          "faction_type": "other",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Master Luhhan",
+          "alias_type": "title",
+          "notes": "respectful address"
+        }
+      ],
+      "notes": "Made Perrin's axe two years ago for a wool-buyer's guard who then refused to pay. Gave it to Perrin."
+    },
+    {
+      "name_used_in_text": "Alsbet Luhhan",
+      "likely_matches_existing": "Alsbet Luhhan",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "wife of Haral Luhhan",
+        "personality": "worse than stubborn (per Perrin), fierce"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Mistress Luhhan",
+          "alias_type": "title",
+          "notes": "respectful address"
+        }
+      ],
+      "notes": "Digging through the ruins of her house, hoping the Trollocs come back so she can get her hands on them."
+    },
+    {
+      "name_used_in_text": "Brandelwyn al'Vere",
+      "likely_matches_existing": "Brandelwyn al'Vere",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "Village Council",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Mayor of Emond's Field"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "the Mayor",
+          "alias_type": "title",
+          "notes": "his office"
+        }
+      ],
+      "notes": "Rand asked him questions without revealing the reason for leaving."
+    }
+  ],
+  "appearances": [
+    {
+      "character": "Lan",
+      "whereabouts": "In the stable at the Winespring Inn, then leading the party out of Emond's Field toward the North Road",
+      "notable_actions": "Checks the horses and gear. Questions Perrin about whether he checked for watchers. Instructs the group on weapons and danger. Leads them stealthily through Emond's Field, avoiding patrols. Reacts to the Draghkar sighting and orders the group to the North Road.",
+      "demeanor": "Alert, vigilant, professional, terse, commanding. Shows brief fury when Moiraine allows Egwene to come, but accepts her judgment.",
+      "alliances_shown": [
+        "Moiraine",
+        "Rand",
+        "Mat",
+        "Perrin",
+        "Egwene",
+        "Thom Merrilin"
+      ]
+    },
+    {
+      "character": "Perrin",
+      "whereabouts": "In the stable, then riding with the group leaving Emond's Field",
+      "notable_actions": "Reports that he checked for watchers as Lan instructed. Reveals his axe when questioned. Explains how he got it from Master Luhhan. Admits he didn't think to check the hayloft. Reacts with alarm to mention of wolves.",
+      "demeanor": "Defensive, earnest, somewhat embarrassed when his axe is revealed and when he failed to check the hayloft",
+      "alliances_shown": [
+        "Rand",
+        "Mat",
+        "Lan",
+        "Moiraine"
+      ]
+    },
+    {
+      "character": "Mat",
+      "whereabouts": "In the stable, then riding with the group leaving Emond's Field",
+      "notable_actions": "Teases Rand about the sword and Perrin about the axe. Left a note for his family. Defends the decision not to tell anyone in person.",
+      "demeanor": "Joking to deflect tension, but underlying fear about Aes Sedai and Tar Valon; nervous laughter",
+      "alliances_shown": [
+        "Rand",
+        "Perrin",
+        "Lan",
+        "Moiraine"
+      ]
+    },
+    {
+      "character": "Rand",
+      "whereabouts": "In the stable, then riding with the group leaving Emond's Field on Cloud",
+      "notable_actions": "Wears the sword given by Tam. Reveals he told his father about leaving. Suggests Bela for Egwene. Saddles Bela. Tries to dissuade Egwene from coming. Spots the Draghkar flying across the moon and reports it.",
+      "demeanor": "Protective of Egwene, homesick even before leaving, earnest, somewhat defensive about telling his father",
+      "alliances_shown": [
+        "Tam",
+        "Egwene",
+        "Mat",
+        "Perrin",
+        "Moiraine",
+        "Lan"
+      ]
+    },
+    {
+      "character": "Moiraine",
+      "whereabouts": "At the stable in the Winespring Inn, then leading the party (with Lan) out of Emond's Field",
+      "notable_actions": "Questions Rand about telling his father. Allows Egwene to join despite Lan's objections. Approves Thom's joining. Gives the order to move quickly. Identifies the Draghkar and explains the urgency of reaching Taren Ferry. Gives Thom a sharp look when he speaks of the Age of Legends.",
+      "demeanor": "Calm, authoritative, decisive, speaks of the Pattern with certainty",
+      "alliances_shown": [
+        "Lan",
+        "Rand",
+        "Mat",
+        "Perrin",
+        "Egwene",
+        "Thom Merrilin"
+      ]
+    },
+    {
+      "character": "Egwene",
+      "whereabouts": "Arrives at the stable, then rides Bela with the group leaving Emond's Field",
+      "notable_actions": "Slips into the stable with her bundle. Insists on joining the journey despite objections. Explains how she deduced the plan. Dismisses Rand's warnings about Trollocs as nonsense. Mounts Bela and reassures Rand.",
+      "demeanor": "Defiant, determined, eager to see the world, tolerant and patient with Rand's protectiveness",
+      "alliances_shown": [
+        "Rand",
+        "Mat",
+        "Perrin",
+        "Moiraine"
+      ]
+    },
+    {
+      "character": "Thom Merrilin",
+      "whereabouts": "In the hayloft, then riding with the group leaving Emond's Field",
+      "notable_actions": "Reveals himself from the hayloft. Insists on traveling to Tar Valon. Explains he has no use staying in Emond's Field. Speaks of the Draghkar and the Age of Legends.",
+      "demeanor": "Wry, resourceful, determined to survive, slightly defensive under Lan's scrutiny",
+      "alliances_shown": [
+        "Moiraine",
+        "Lan",
+        "Rand",
+        "Mat",
+        "Perrin",
+        "Egwene"
+      ]
+    },
+    {
+      "character": "Bela",
+      "whereabouts": "In her stall in the stable, then carrying Egwene out of Emond's Field",
+      "notable_actions": "Saddled by Rand. Accepts the saddle with only a shake of her mane despite not being used to one.",
+      "demeanor": "Sleepy, placid, accepting",
+      "alliances_shown": []
+    },
+    {
+      "character": "Cloud",
+      "whereabouts": "In the stable, then carrying Rand out of Emond's Field",
+      "notable_actions": "Prances and tosses head when Rand tries to mount. Described as eager to run.",
+      "demeanor": "Spirited, difficult, restless",
+      "alliances_shown": []
+    },
+    {
+      "character": "Jon Thane",
+      "whereabouts": "Leading a patrol near the Winespring Inn",
+      "notable_actions": "Leads a dozen men on patrol. Peers into the common-room window. Marches the patrol into the night.",
+      "demeanor": "Dutiful, martial in old armor",
+      "alliances_shown": []
+    }
+  ],
+  "relationships": [
+    {
+      "character_a": "Moiraine",
+      "character_b": "Lan",
+      "relationship_type": "warder_bond",
+      "directed": true,
+      "description": "Moiraine is the Aes Sedai who holds the Warder bond; Lan is her Warder. He defers to her judgment even when he disagrees."
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Egwene",
+      "relationship_type": "romantic",
+      "directed": false,
+      "description": "Rand is protective of Egwene and promises to look after her. She smooths his hair affectionately and says they will look after each other."
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Mat",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Childhood friends from the Two Rivers, traveling together"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Perrin",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Childhood friends from the Two Rivers, traveling together"
+    },
+    {
+      "character_a": "Mat",
+      "character_b": "Perrin",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Childhood friends from the Two Rivers, traveling together"
+    },
+    {
+      "character_a": "Perrin",
+      "character_b": "Haral Luhhan",
+      "relationship_type": "mentor",
+      "directed": true,
+      "description": "Haral Luhhan is Perrin's master in blacksmithing; gave Perrin his axe"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Tam",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "Tam is Rand's father; Rand told him about the journey and Tam agreed he had to go"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Bela",
+      "relationship_type": "other",
+      "directed": false,
+      "description": "Rand sometimes rides Bela bareback; familiar with her temperament"
+    },
+    {
+      "character_a": "Egwene",
+      "character_b": "Bela",
+      "relationship_type": "other",
+      "directed": false,
+      "description": "Egwene rides Bela on the journey from Emond's Field"
+    },
+    {
+      "character_a": "Jon Thane",
+      "character_b": "Cloud",
+      "relationship_type": "other",
+      "directed": false,
+      "description": "Cloud belonged to Jon Thane, who raced the horse against merchants and never lost; sold to Lan"
+    },
+    {
+      "character_a": "Haral Luhhan",
+      "character_b": "Alsbet Luhhan",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "Married couple"
+    }
+  ],
+  "_meta": {
+    "book_order": 1,
+    "chapter_number": 10,
+    "chapter_id": 11,
+    "chapter_title": "Leavetaking",
+    "model": "claude-sonnet-4-5",
+    "input_tokens": 10511,
+    "output_tokens": 5394
+  }
+}

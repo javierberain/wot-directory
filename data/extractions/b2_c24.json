@@ -1,0 +1,743 @@
+{
+  "characters": [
+    {
+      "name_used_in_text": "Egwene",
+      "likely_matches_existing": "Egwene",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": "young woman (novice age)",
+        "filiations": "from Emond's Field",
+        "personality": "stubborn, determined, independent, not willing to be treated as a child"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "newly enrolled as a novice"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Now officially enrolled as a novice in the White Tower as of the previous evening."
+    },
+    {
+      "name_used_in_text": "Pedra",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "short, wiry",
+        "age": "a little older than Nynaeve",
+        "filiations": null,
+        "personality": "brisk, curt"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "one of the Accepted"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "An Accepted who woke Egwene and assigned her chores."
+    },
+    {
+      "name_used_in_text": "Elayne",
+      "likely_matches_existing": "Elayne",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Andoran",
+        "physical_traits": "reddish gold hair spilling around her shoulders, blue eyes, very pretty, elegant bearing",
+        "age": "about Egwene's age (young woman)",
+        "filiations": "Daughter-Heir of Andor, House Trakand, daughter of Queen Morgase, sister to Gawyn, half-sister (though she denies it) to Galad",
+        "personality": "dignified, self-possessed, friendly, determined to become Aes Sedai"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "novice"
+        },
+        {
+          "name": "House Trakand",
+          "faction_type": "house",
+          "role": "member",
+          "notes": "Daughter-Heir of Andor"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Daughter-Heir",
+          "alias_type": "title",
+          "notes": "of Andor"
+        },
+        {
+          "alias_text": "Daughter-Heir of Andor",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Assigned to help Egwene as a new novice. Has been in the Tower for a little while before Egwene."
+    },
+    {
+      "name_used_in_text": "Nynaeve",
+      "likely_matches_existing": "Nynaeve al'Meara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "newly raised to Accepted as of yesterday"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "the Wisdom",
+          "alias_type": "title",
+          "notes": "her former role in the Two Rivers"
+        }
+      ],
+      "notes": "Raised to Accepted the day before this chapter. Seems troubled by what she saw in her test."
+    },
+    {
+      "name_used_in_text": "Sheriam",
+      "likely_matches_existing": "Sheriam Sedai",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "strict but not unkind, uses a willow switch to enforce discipline on novices"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "full Aes Sedai, Mistress of Novices"
+        },
+        {
+          "name": "Blue Ajah",
+          "faction_type": "ajah",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Sheriam Sedai",
+          "alias_type": "title",
+          "notes": null
+        },
+        {
+          "alias_text": "Mistress of Novices",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Put Egwene's name in the novice book the evening before. Has theories about culling of channeling ability."
+    },
+    {
+      "name_used_in_text": "Rand",
+      "likely_matches_existing": "Rand al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Rand al'Thor",
+          "alias_type": "given_name",
+          "notes": null
+        }
+      ],
+      "notes": "Not present in this chapter but discussed by multiple characters. Met Elayne in Caemlyn, met Min in Baerlon. Is ta'veren and can channel. Elaida is searching for him."
+    },
+    {
+      "name_used_in_text": "Else Grinwell",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": "daughter of Master and Mistress Grinwell (farmers)",
+        "personality": "lazy, shirks chores, sneaks off to watch Warders practice"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "novice, but Elayne thinks she won't be there long"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Ran away from her father's farm after Rand and Mat visited and put notions of the wider world in her head. Not actually present in this chapter, only mentioned."
+    },
+    {
+      "name_used_in_text": "Mat",
+      "likely_matches_existing": "Matrim Cauthon",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Not present in this chapter. Mentioned as having traveled with Rand to the Grinwell farm."
+    },
+    {
+      "name_used_in_text": "Logain",
+      "likely_matches_existing": "Logain",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "tall and handsome, short of middle years, long dark curling hair",
+        "age": "short of middle years",
+        "filiations": null,
+        "personality": "bitter, sad, shoulders sagging"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "the false Dragon",
+          "alias_type": "epithet",
+          "notes": null
+        }
+      ],
+      "notes": "Has been gentled. Now kept in the White Tower under watch. Appears broken and bitter but not dangerous."
+    },
+    {
+      "name_used_in_text": "Min",
+      "likely_matches_existing": "Min",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Baerlon (presumably)",
+        "physical_traits": "uncommonly pretty, dark hair cut short, wears men's breeches and baggy shirt",
+        "age": "young woman",
+        "filiations": "worked at Master Fitch's inn in Baerlon",
+        "personality": "independent, wears men's clothes by preference, sees visions/auras around people"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Summoned to Tar Valon by Aes Sedai to study her ability to see auras and images around people. Not a novice. Has feelings for Rand."
+    },
+    {
+      "name_used_in_text": "Master Fitch",
+      "likely_matches_existing": "Master Fitch",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Baerlon (presumably)",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "innkeeper in Baerlon",
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Not present. Mentioned as rebuilding his inn in Baerlon after it burned down."
+    },
+    {
+      "name_used_in_text": "Galad",
+      "likely_matches_existing": "Galadedrid Damodred",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Cairhienin (by father) / Andoran (by upbringing)",
+        "physical_traits": "the most handsome man Egwene had ever seen, tall and slim but hard, moves with cat-like grace, dark eyes",
+        "age": "older than Rand",
+        "filiations": "son of Taringail Damodred, half-brother to Elayne and Gawyn",
+        "personality": "will always do what is right no matter who it hurts, lacking in mercy or pity according to Elayne and Min"
+      },
+      "factions": [
+        {
+          "name": "House Damodred",
+          "faction_type": "house",
+          "role": "member",
+          "notes": "by his father Taringail"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Galadedrid",
+          "alias_type": "given_name",
+          "notes": "full formal name"
+        }
+      ],
+      "notes": "Training with Warders in the White Tower. Excellent with a sword, learns quickly. Shows interest in Egwene."
+    },
+    {
+      "name_used_in_text": "Gawyn",
+      "likely_matches_existing": "Gawyn",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Andoran",
+        "physical_traits": "reddish gold hair darkened and curled by sweat",
+        "age": null,
+        "filiations": "son of Queen Morgase, brother to Elayne, half-brother to Galad",
+        "personality": "friendly, good-humored, thoughtful"
+      },
+      "factions": [
+        {
+          "name": "House Trakand",
+          "faction_type": "house",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Training with Warders. Has met Rand and is curious about him. Questioned by Elaida about Rand multiple times."
+    },
+    {
+      "name_used_in_text": "Elaida",
+      "likely_matches_existing": "Elaida",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown (from Tar Valon)",
+        "physical_traits": "handsome rather than beautiful, ageless Aes Sedai look",
+        "age": null,
+        "filiations": "councilor to Queen Morgase in Caemlyn",
+        "personality": "hard, stern, dispensing with silk diplomacy, steel without softness"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "full Aes Sedai"
+        },
+        {
+          "name": "Red Ajah",
+          "faction_type": "ajah",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Elaida Sedai",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Searching for Rand al'Thor. Has questioned Gawyn repeatedly about him. Interrogated Min about Moiraine summoning her and about Rand."
+    },
+    {
+      "name_used_in_text": "Moiraine",
+      "likely_matches_existing": "Moiraine",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown (not Two Rivers)",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "strong, steel under silk"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "full Aes Sedai"
+        },
+        {
+          "name": "Blue Ajah",
+          "faction_type": "ajah",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Moiraine Sedai",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Not present in this chapter but mentioned. Summoned Min to Tar Valon. Min is frustrated waiting for Moiraine to reveal why she was summoned."
+    },
+    {
+      "name_used_in_text": "Anaiya",
+      "likely_matches_existing": "Anaiya",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "full Aes Sedai"
+        },
+        {
+          "name": "Blue Ajah",
+          "faction_type": "ajah",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Not present. Mentioned by Egwene as having said that the greatest feats of the Age of Legends required men and women working together."
+    },
+    {
+      "name_used_in_text": "Queen Morgase",
+      "likely_matches_existing": "Queen Morgase",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Andoran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "mother of Elayne and Gawyn, former wife of Taringail Damodred",
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "House Trakand",
+          "faction_type": "house",
+          "role": "leader",
+          "notes": "Queen of Andor"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Mother",
+          "alias_type": "title",
+          "notes": "how her children address her"
+        },
+        {
+          "alias_text": "Queen",
+          "alias_type": "title",
+          "notes": null
+        },
+        {
+          "alias_text": "the Queen",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Not present. Mentioned as Elaida's employer in Caemlyn and as mother to Elayne and Gawyn."
+    }
+  ],
+  "appearances": [
+    {
+      "character": "Egwene",
+      "whereabouts": "White Tower, Tar Valon - in various halls, a training room, the garden with the stone bridge",
+      "notable_actions": "Follows the Accepted Pedra through the halls. Meets with Elayne who is assigned to help her. Demonstrates her ability to create a ball of light using saidar. Sees the glow around Elayne for the first time. Learns about Tower rules and the difficulties of novice life. Meets Min and Galad. Discusses Rand with multiple people. Flees to her chores when High sounds.",
+      "demeanor": "curious, determined, independent, somewhat defensive about Rand, jealous when other girls show interest in him, initially angry at being treated as a child but beginning to accept the Tower's discipline",
+      "alliances_shown": [
+        "Elayne",
+        "Min"
+      ]
+    },
+    {
+      "character": "Pedra",
+      "whereabouts": "White Tower halls",
+      "notable_actions": "Wakes Egwene early, assigns her to sweep halls, tells her she must help wash dishes after dinner, escorts her to the training room where Elayne waits",
+      "demeanor": "curt, brisk, businesslike",
+      "alliances_shown": []
+    },
+    {
+      "character": "Elayne",
+      "whereabouts": "White Tower - training room, then garden with stone bridge",
+      "notable_actions": "Explains Tower life to Egwene. Demonstrates creating a ball of light and sees the glow around Egwene for the first time. Discusses Rand and his meetings with various people. Takes Egwene to meet Min. Interacts with Galad and Gawyn. Is reprimanded by Elaida for speaking to Aes Sedai unbidden. Runs to chores with Egwene when High sounds.",
+      "demeanor": "friendly, helpful, dignified, determined, angry when publicly rebuked by Elaida but channeling that into determination to become Aes Sedai, disapproving of Galad",
+      "alliances_shown": [
+        "Egwene",
+        "Min"
+      ]
+    },
+    {
+      "character": "Nynaeve",
+      "whereabouts": "White Tower (location not specified)",
+      "notable_actions": "None in this chapter (only briefly mentioned)",
+      "demeanor": "troubled, shadowed eyes, seems to have seen disturbing things in her Accepted test",
+      "alliances_shown": []
+    },
+    {
+      "character": "Sheriam",
+      "whereabouts": "Not present in this chapter",
+      "notable_actions": "Put Egwene's name in the novice book the previous evening. Is mentioned as the source of many Tower rules and theories about channeling.",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Rand",
+      "whereabouts": "Not present (left Shienar, location unknown)",
+      "notable_actions": "None (not present, only discussed)",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Logain",
+      "whereabouts": "White Tower halls and garden",
+      "notable_actions": "Appears suddenly in a hallway where Egwene and Elayne are walking. Expresses bitterness about being watched constantly. Mentions wanting to walk and implies suicidal thoughts. Is led to the garden by an Accepted.",
+      "demeanor": "sad, bitter, broken, shoulders sagging, laughing bitterly at his situation",
+      "alliances_shown": []
+    },
+    {
+      "character": "Min",
+      "whereabouts": "Garden with stone bridge over a stream in the White Tower grounds",
+      "notable_actions": "Sits cross-legged on the bridge wall. Banters with Elayne. Recognizes Egwene from Baerlon. Explains that she was summoned to Tar Valon by Aes Sedai. Discusses her ability to see auras and images around people. Sees things around Egwene (white flame and other things). Makes cryptic statements about what she sees. After Elaida interrogates her, goes in search of a place to cool off.",
+      "demeanor": "friendly, wicked humor, independent, frustrated at being summoned and kept waiting by Moiraine, nervous after being questioned by Elaida",
+      "alliances_shown": [
+        "Egwene",
+        "Elayne"
+      ]
+    },
+    {
+      "character": "Galad",
+      "whereabouts": "Garden, having come from sword practice",
+      "notable_actions": "Approaches with Gawyn, both shirtless and carrying swords after practice. Bows over Egwene's hand. Asks to see Egwene again, suggests walking or picnicking. Bows to Elayne and addresses her as 'Sister.' Strolls away.",
+      "demeanor": "graceful, focused intently on Egwene with his dark eyes, courteous but with an intensity that affects Egwene strongly",
+      "alliances_shown": []
+    },
+    {
+      "character": "Gawyn",
+      "whereabouts": "Garden, having come from sword practice",
+      "notable_actions": "Arrives with Galad. Introduces himself when Egwene is too dazed by Galad to hear. Discusses Rand al'Thor and how Rand has shifted people's lives. Mentions meeting an old farmer who came to Caemlyn because of Rand. Suggests Rand might be ta'veren. Mentions Elaida's interest in Rand and her repeated questioning of him. Leaves when Elaida approaches to avoid a lecture about proper dress.",
+      "demeanor": "good-humored, grinning, thoughtful, curious about Rand, friendly",
+      "alliances_shown": [
+        "Elayne"
+      ]
+    },
+    {
+      "character": "Elaida",
+      "whereabouts": "White Tower garden with stone bridge",
+      "notable_actions": "Crosses the garden wearing her red-fringed shawl. Reprimands Elayne for speaking to her familiarly, insisting that in the Tower Elayne is only a novice. Sends Egwene and Elayne away to their chores, commanding them to run. Orders Elayne to see the Mistress of Novices about speaking unbidden to Aes Sedai. Interrogates Min about being summoned by Moiraine and about Rand al'Thor.",
+      "demeanor": "stern, hard, unreadable face, commanding, dispensing with pleasantries, focused on her purposes",
+      "alliances_shown": []
+    },
+    {
+      "character": "Moiraine",
+      "whereabouts": "Unknown (not present in the chapter)",
+      "notable_actions": "Summoned Min to Tar Valon but has not yet revealed why",
+      "demeanor": null,
+      "alliances_shown": []
+    }
+  ],
+  "relationships": [
+    {
+      "character_a": "Egwene",
+      "character_b": "Elayne",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Become friends immediately, declare they like each other and want to be friends, hug together with Min"
+    },
+    {
+      "character_a": "Egwene",
+      "character_b": "Min",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Become friends, hug together with Elayne, Min knew Egwene slightly from Baerlon"
+    },
+    {
+      "character_a": "Elayne",
+      "character_b": "Min",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Already friends, banter comfortably, hug together with Egwene, Min sees visions about Elayne"
+    },
+    {
+      "character_a": "Elayne",
+      "character_b": "Gawyn",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "Full siblings, children of Queen Morgase"
+    },
+    {
+      "character_a": "Elayne",
+      "character_b": "Galad",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "Half-siblings (same father Taringail Damodred), though Elayne refuses to acknowledge him as brother"
+    },
+    {
+      "character_a": "Gawyn",
+      "character_b": "Galad",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "Half-brothers (same father Taringail Damodred)"
+    },
+    {
+      "character_a": "Elayne",
+      "character_b": "Queen Morgase",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "Mother and daughter, Elayne is the Daughter-Heir"
+    },
+    {
+      "character_a": "Gawyn",
+      "character_b": "Queen Morgase",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "Mother and son"
+    },
+    {
+      "character_a": "Elaida",
+      "character_b": "Queen Morgase",
+      "relationship_type": "servant",
+      "directed": true,
+      "description": "Elaida serves as councilor to the Queen in Caemlyn"
+    },
+    {
+      "character_a": "Elaida",
+      "character_b": "Elayne",
+      "relationship_type": "mentor",
+      "directed": true,
+      "description": "Elaida watched Elayne grow up and made gardens bloom for her in winter, now treats her sternly as a novice in the Tower"
+    },
+    {
+      "character_a": "Egwene",
+      "character_b": "Rand",
+      "relationship_type": "romantic",
+      "directed": false,
+      "description": "Egwene has romantic feelings for Rand though she's jealous of other girls' interest in him, they grew up together"
+    },
+    {
+      "character_a": "Min",
+      "character_b": "Rand",
+      "relationship_type": "romantic",
+      "directed": true,
+      "description": "Min is falling in love with Rand despite having only met him once, doesn't want to but can't help it"
+    },
+    {
+      "character_a": "Elayne",
+      "character_b": "Rand",
+      "relationship_type": "other",
+      "directed": false,
+      "description": "Elayne met Rand when he fell into her garden in Caemlyn, finds herself thinking of him at odd times"
+    },
+    {
+      "character_a": "Galad",
+      "character_b": "Egwene",
+      "relationship_type": "romantic",
+      "directed": true,
+      "description": "Galad shows clear romantic interest in Egwene, asks to see her again"
+    },
+    {
+      "character_a": "Pedra",
+      "character_b": "Egwene",
+      "relationship_type": "mentor",
+      "directed": true,
+      "description": "Pedra is assigned to oversee Egwene's chores and novice duties"
+    },
+    {
+      "character_a": "Elayne",
+      "character_b": "Egwene",
+      "relationship_type": "mentor",
+      "directed": true,
+      "description": "Elayne is assigned to help Egwene as a new novice, teaching her the ways of the Tower"
+    },
+    {
+      "character_a": "Nynaeve",
+      "character_b": "Egwene",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Both from the Two Rivers, both in the White Tower now at different levels"
+    },
+    {
+      "character_a": "Sheriam",
+      "character_b": "Egwene",
+      "relationship_type": "mentor",
+      "directed": true,
+      "description": "Sheriam is Mistress of Novices and enrolled Egwene as a novice"
+    },
+    {
+      "character_a": "Sheriam",
+      "character_b": "Elayne",
+      "relationship_type": "mentor",
+      "directed": true,
+      "description": "Sheriam is Mistress of Novices overseeing Elayne's training"
+    },
+    {
+      "character_a": "Moiraine",
+      "character_b": "Min",
+      "relationship_type": "other",
+      "directed": true,
+      "description": "Moiraine summoned Min to Tar Valon for some purpose not yet revealed"
+    },
+    {
+      "character_a": "Elaida",
+      "character_b": "Rand",
+      "relationship_type": "other",
+      "directed": true,
+      "description": "Elaida is searching for Rand, has ordered a search, questions people about him repeatedly"
+    },
+    {
+      "character_a": "Elaida",
+      "character_b": "Gawyn",
+      "relationship_type": "other",
+      "directed": true,
+      "description": "Elaida has interrogated Gawyn three times about Rand al'Thor since they arrived"
+    }
+  ],
+  "_meta": {
+    "book_order": 2,
+    "chapter_number": 24,
+    "chapter_id": 79,
+    "chapter_title": "New Friends and Old Enemies",
+    "model": "claude-sonnet-4-5",
+    "input_tokens": 18719,
+    "output_tokens": 8085
+  }
+}

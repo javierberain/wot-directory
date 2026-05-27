@@ -1,0 +1,979 @@
+{
+  "characters": [
+    {
+      "name_used_in_text": "Rand",
+      "likely_matches_existing": "Rand al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "increasingly anxious under the weight of strange events; struggles to understand the forces acting on him; protective of his friends"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Narrator and POV character for much of the chapter. Has met Queen Morgase, Elayne, and Gawyn. Remembers Ba'alzamon's dreams and the name Logain as one of the names mentioned, which he almost says aloud but catches himself."
+    },
+    {
+      "name_used_in_text": "Perrin",
+      "likely_matches_existing": "Perrin Aybara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "eyes that glow amber in shadow; bruises on his face",
+        "age": null,
+        "filiations": null,
+        "personality": "deliberate and calm in speech; resigned to something about himself; observant"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "His eyes glow amber in dim light, which disturbs Rand. Shows a strange resignation and calmness. Mentions meeting Tinkers and Whitecloaks. Says he has 'already found his protection' in a resigned tone. Asks Loial about the stedding as havens, suggesting a particular concern."
+    },
+    {
+      "name_used_in_text": "Mat",
+      "likely_matches_existing": "Matrim Cauthon",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "wears a dark scarf wrapped low around his forehead",
+        "age": null,
+        "filiations": null,
+        "personality": "joking and banter-prone when well; resistant to remembering unpleasant experiences"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Appears recovered from his illness but still carries the dagger from Shadar Logoth. Moiraine has cleansed the taint from him but cannot fully separate him from the dagger without killing him. Has memory gaps from Whitebridge onward. Returns to his old swagger and humor once recovered."
+    },
+    {
+      "name_used_in_text": "Nynaeve",
+      "likely_matches_existing": "Nynaeve al'Meara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "Wisdom of Emond's Field",
+        "personality": "protective of the young people from her village; emotional but trying to be strong; sharp-tongued when she feels Moiraine is being unnecessarily frightening"
+      },
+      "factions": [
+        {
+          "name": "Women's Circle",
+          "faction_type": "other",
+          "role": "leader",
+          "notes": "As Wisdom, she leads the Women's Circle of Emond's Field"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "the Wisdom",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Introduced to Loial by Rand. Shows tears of relief when Mat is well. Comforts Egwene when she cries. Scolds Moiraine for frightening the boys with talk of the Dark One."
+    },
+    {
+      "name_used_in_text": "Egwene",
+      "likely_matches_existing": "Egwene",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "emotional under stress; curious about Rand's adventures; perhaps jealous regarding Elayne"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Introduced to Loial by Rand, who notes that he has spoken of her 'a great deal.' Asks in a 'decidedly neutral voice' who Elayne is. Cries when learning about the Dark One's dreams affecting the boys. Mentioned as safe from the Dark One's direct touch by Moiraine."
+    },
+    {
+      "name_used_in_text": "Moiraine",
+      "likely_matches_existing": "Moiraine",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown (not Two Rivers)",
+        "physical_traits": "slight of build but commanding presence",
+        "age": null,
+        "filiations": "Aes Sedai",
+        "personality": "commanding and strategic; shows flashes of anger when her plans are disrupted; thoughtful and calculating; willing to take risks"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "Aes Sedai, but notably NOT of the Red Ajah unlike the other twenty Aes Sedai currently in Caemlyn"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Moiraine Sedai",
+          "alias_type": "title",
+          "notes": null
+        },
+        {
+          "alias_text": "Aes Sedai",
+          "alias_type": "title",
+          "notes": "General title, not unique to her"
+        }
+      ],
+      "notes": "Has healed Mat of the worst of the dagger's taint but cannot fully separate him from it. Sets wards to protect the inn. Reveals that twenty Red Ajah Aes Sedai are in Caemlyn. Learns of the threat to the Eye of the World from multiple sources. Decides they must travel via the Ways to reach the Blight quickly. Shows anger at herself for not asking about the boys' dreams sooner."
+    },
+    {
+      "name_used_in_text": "Lan",
+      "likely_matches_existing": "Lan",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown (not Two Rivers)",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "Warder to Moiraine",
+        "personality": "vigilant; silent and efficient; always watching"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "the Warder",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Appears briefly. Moiraine sends him to ensure they are not taken unaware, and he vanishes silently from the room to stand watch."
+    },
+    {
+      "name_used_in_text": "Loial",
+      "likely_matches_existing": "Loial",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "ogier",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "huge, with bushy eyebrows; an Ogier",
+        "age": "has been away from the stedding for over three years",
+        "filiations": "son of Arent son of Halan; from Stedding Shangtai",
+        "personality": "talkative and enthusiastic about knowledge and stories; likes to provide extensive background; curious about the world; somewhat abashed when told to be brief; eager to witness ta'veren at work"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Loial, son of Arent son of Halan",
+          "alias_type": "given_name",
+          "notes": "Full formal Ogier name"
+        }
+      ],
+      "notes": "Was reading with a small black cat with white feet when the others arrived. Tells of a dying man who came to Stedding Shangtai twenty years ago with a warning about the Eye of the World. Knows the Ways but is very reluctant to use them. Considers three years a short time. Taught the Traveling People (Tinkers) some songs. Has a Talent for the Songs of Growing. Very excited about the concept of ta'veren."
+    },
+    {
+      "name_used_in_text": "Ba'alzamon",
+      "likely_matches_existing": "Ba'alzamon",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "the Dark One; the Shadow",
+        "personality": "manipulative; sows doubt and fear; laughs at his victims' fates"
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "leader",
+          "notes": "The Dark One, Father of Lies"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "the Dark One",
+          "alias_type": "epithet",
+          "notes": null
+        },
+        {
+          "alias_text": "Father of Lies",
+          "alias_type": "epithet",
+          "notes": null
+        },
+        {
+          "alias_text": "Sightblinder",
+          "alias_type": "epithet",
+          "notes": "Aiel name for the Dark One"
+        }
+      ],
+      "notes": "Appears only in the boys' dreams (mentioned in past tense). Has been invading the dreams of Rand, Mat, and Perrin. Told them the Eye of the World would never serve them, and that they could serve him or die. Mentioned names like Davian, Raolin Darksbane, Yurian Stonebow, Guaire Amalasan, and (almost mentioned by Rand) Logain. Said the Amyrlin Seat would try to use them."
+    },
+    {
+      "name_used_in_text": "Master Gill",
+      "likely_matches_existing": "Basel Gill",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Andoran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "innkeeper of The Queen's Blessing",
+        "personality": "enjoys reading and maintains a library at his inn"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Mentioned only. Keeps the library at The Queen's Blessing more for his own enjoyment than for guests."
+    },
+    {
+      "name_used_in_text": "Elaida",
+      "likely_matches_existing": "Elaida",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown (from Tar Valon)",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "Aes Sedai",
+        "personality": "suspicious; wanted to imprison Rand on suspicion alone"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "Aes Sedai"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Elaida Sedai",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Mentioned in past tense. Wanted to throw Rand in prison when he was found in the Palace gardens with Elayne and Gawyn. Loial notes she would not have told the Whitecloaks anything because the Children hate Aes Sedai."
+    },
+    {
+      "name_used_in_text": "Elayne",
+      "likely_matches_existing": "Elayne",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Andoran",
+        "physical_traits": "beautiful",
+        "age": null,
+        "filiations": "daughter of Queen Morgase; Daughter-Heir",
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "House Trakand",
+          "faction_type": "house",
+          "role": "member",
+          "notes": "Daughter-Heir of Andor"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Mentioned by Rand. He met her in the Palace gardens with her brother Gawyn. Rand describes her as beautiful. Egwene asks about her in a neutral voice, suggesting jealousy."
+    },
+    {
+      "name_used_in_text": "Gawyn",
+      "likely_matches_existing": "Gawyn",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Andoran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "son of Queen Morgase; brother of Elayne",
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "House Trakand",
+          "faction_type": "house",
+          "role": "member",
+          "notes": "Prince of Andor"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Mentioned by Rand. Was with Elayne in the Palace gardens when Rand climbed the wall. Rand says Perrin would like him."
+    },
+    {
+      "name_used_in_text": "Queen Morgase",
+      "likely_matches_existing": "Queen Morgase",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Andoran",
+        "physical_traits": "beautiful, radiant",
+        "age": null,
+        "filiations": "Queen of Andor; mother of Elayne and Gawyn",
+        "personality": "just; upholds the law; like queens in stories"
+      },
+      "factions": [
+        {
+          "name": "House Trakand",
+          "faction_type": "house",
+          "role": "leader",
+          "notes": "Queen of Andor, High Seat of House Trakand"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Queen",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Mentioned by Rand. Let him go despite Elaida's suspicions, saying there was no proof he meant harm and she would uphold the law. Rand describes her as beautiful and radiant, like queens in stories."
+    },
+    {
+      "name_used_in_text": "Logain",
+      "likely_matches_existing": "Logain",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "false Dragon",
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "false Dragon",
+          "alias_type": "epithet",
+          "notes": null
+        }
+      ],
+      "notes": "Mentioned. Rand climbed the wall to see him. Rand realizes Logain was one of the names Ba'alzamon mentioned in his dreams, along with Davian, Raolin Darksbane, Yurian Stonebow, and Guaire Amalasan, but he almost stops himself from saying the name aloud. This makes him wonder if Moiraine wants to use one of them as a false Dragon."
+    },
+    {
+      "name_used_in_text": "Thom",
+      "likely_matches_existing": "Thom Merrilin",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "gleeman",
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Mentioned by Mat in reference to Whitebridge, where something happened involving Thom and a Fade. Also recalled by Rand as having said the names Ba'alzamon mentioned were 'dangerous names' and that 'An Aes Sedai never lies, but the truth she speaks may not be the truth you think you hear'—a saying Tam had repeated."
+    },
+    {
+      "name_used_in_text": "Tam",
+      "likely_matches_existing": "Tam al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "Rand's father",
+        "personality": "wise; cautious about Aes Sedai"
+      },
+      "factions": [
+        {
+          "name": "Village Council",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Member of the Emond's Field Village Council"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Mentioned by Rand. Tam had said 'An Aes Sedai never lies, but the truth she speaks may not be the truth you think you hear.'"
+    },
+    {
+      "name_used_in_text": "the small black cat with white feet",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "other",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "small, black with white feet",
+        "age": null,
+        "filiations": null,
+        "personality": "sleepy, comfortable with Loial"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "the cat",
+          "alias_type": "epithet",
+          "notes": null
+        }
+      ],
+      "notes": "Curled up on Loial's stomach while he was reading, then gently set on the floor when Loial stood. Later curled up on the hearth."
+    },
+    {
+      "name_used_in_text": "the Green Man",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "other",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": "guardian of the Eye of the World",
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Mentioned by Moiraine as someone who 'must know of this threat' to the Eye of the World. His mention startles everyone. Apparently a well-known legendary figure."
+    },
+    {
+      "name_used_in_text": "Davian",
+      "likely_matches_existing": "Davian",
+      "is_new_character": false,
+      "confidence": "medium",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "historical figure, possibly a false Dragon",
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Name mentioned by Ba'alzamon in the boys' dreams as someone Tar Valon used. Mat recalls this name. Context suggests these were people used or manipulated by Tar Valon, possibly false Dragons."
+    },
+    {
+      "name_used_in_text": "Raolin Darksbane",
+      "likely_matches_existing": "Raolin Darksbane",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "historical figure",
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Name mentioned by Ba'alzamon in the boys' dreams. Perrin recalls this name."
+    },
+    {
+      "name_used_in_text": "Yurian Stonebow",
+      "likely_matches_existing": "Yurian Stonebow",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "historical figure",
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Name mentioned by Ba'alzamon in the boys' dreams. Rand recalls this name."
+    },
+    {
+      "name_used_in_text": "Guaire Amalasan",
+      "likely_matches_existing": "Guaire Amalasan",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "historical figure, possibly a false Dragon",
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Name mentioned by Ba'alzamon in the boys' dreams. Rand recalls this name."
+    },
+    {
+      "name_used_in_text": "Aginor",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "one of the Forsaken",
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "One of the Forsaken who served the Dark One"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Mentioned by Moiraine as one of the Forsaken. None had a tenth of the Dark One's strength."
+    },
+    {
+      "name_used_in_text": "Lanfear",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "one of the Forsaken",
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "One of the Forsaken who served the Dark One"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Mentioned by Moiraine as one of the Forsaken."
+    },
+    {
+      "name_used_in_text": "Balthamel",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "one of the Forsaken",
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "One of the Forsaken who served the Dark One"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Mentioned by Moiraine as one of the Forsaken."
+    },
+    {
+      "name_used_in_text": "Demandred",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "one of the Forsaken",
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "One of the Forsaken who served the Dark One"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Mentioned by Moiraine as one of the Forsaken."
+    },
+    {
+      "name_used_in_text": "Ishamael",
+      "likely_matches_existing": "Elan Morin Tedronai",
+      "is_new_character": false,
+      "confidence": "medium",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "one of the Forsaken; the Betrayer of Hope",
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "One of the Forsaken who served the Dark One; called the Betrayer of Hope"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "the Betrayer of Hope",
+          "alias_type": "epithet",
+          "notes": null
+        }
+      ],
+      "notes": "Mentioned by Moiraine as one of the Forsaken, the Betrayer of Hope himself. The roster lists 'Elan Morin Tedronai' with the epithet 'Betrayer of Hope,' so these are likely the same person. Ishamael is probably another name for Elan Morin Tedronai."
+    },
+    {
+      "name_used_in_text": "Elder Arent",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "ogier",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": "Elder of Stedding Shangtai; Loial's father",
+        "personality": "traditionalist; insisted Loial learn the songs to trees"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Arent",
+          "alias_type": "given_name",
+          "notes": null
+        }
+      ],
+      "notes": "Mentioned by Loial. One of the Elders who thought Loial odd for wanting to travel. Insisted Loial learn the Songs of Growing because Loial has a scrap of that Talent. Loial's father."
+    },
+    {
+      "name_used_in_text": "the Amyrlin Seat",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "leader of the Aes Sedai; head of the White Tower",
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "leader",
+          "notes": "The Amyrlin Seat is the leader of all Aes Sedai"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Mentioned by Mat as someone Ba'alzamon said would try to use them. This is a title for the leader of the Aes Sedai, not necessarily a specific named individual at this point in the narrative."
+    }
+  ],
+  "appearances": [
+    {
+      "character": "Rand",
+      "whereabouts": "The Queen's Blessing inn in Caemlyn, primarily in the library",
+      "notable_actions": "Leads the Emond's Field group down the back stairs to the library to avoid the common room; introduces Nynaeve, Perrin, and Egwene to Loial; tells of his encounter with Queen Morgase, Elayne, and Gawyn in the Palace gardens; reluctantly reveals the dreams involving Ba'alzamon along with Mat and Perrin; almost mentions the name Logain but catches himself; realizes Moiraine might want to use one of them as a false Dragon",
+      "demeanor": "anxious, subdued, sweating; disturbed by Perrin's glowing eyes; wants no more adventure; relieved to have his friends together again but worried about Mat and the dagger; suspicious and uncertain about Moiraine's intentions",
+      "alliances_shown": [
+        "Perrin",
+        "Mat",
+        "Egwene",
+        "Nynaeve",
+        "Loial",
+        "Moiraine"
+      ]
+    },
+    {
+      "character": "Perrin",
+      "whereabouts": "The Queen's Blessing inn in Caemlyn, library",
+      "notable_actions": "First to speak when they sit down, asking Loial about the stedding as havens; tells of meeting Tinkers and Whitecloaks; reveals the story the Tinkers told about the Aiel and the Eye of the World; brings up Ba'alzamon's name and insists they must tell Moiraine about the dreams; recounts what Ba'alzamon said; mentions being chosen and Ba'alzamon laughing; recalls the name Raolin Darksbane; says he has 'already found his protection' in a resigned tone",
+      "demeanor": "resigned and calm despite everyone else's worry; his face is smooth rather than creased with worry like the others; deliberate in speech; has bruises on his face; strangely calm yellow eyes that glow in shadow",
+      "alliances_shown": [
+        "Rand",
+        "Mat",
+        "Egwene",
+        "Nynaeve",
+        "Moiraine"
+      ]
+    },
+    {
+      "character": "Mat",
+      "whereabouts": "The Queen's Blessing inn in Caemlyn; brought down from upstairs by Moiraine; in the library with the group",
+      "notable_actions": "Appears recovered from his sickness; apologizes for acting oddly and says he doesn't remember much after Whitebridge; still has the dagger tucked in his belt and touches it absentmindedly; joins in the banter and laughter; reveals Ba'alzamon said the Amyrlin Seat would try to use them like she used Davian and other names; recalls some of what Ba'alzamon said in dreams; says he doesn't want Ba'alzamon inside his head again",
+      "demeanor": "hesitant and uncertain at first, with an uneasy look toward Moiraine; returns to his old swagger and grin once reassured; sounds stiff when saying he doesn't want to remember; reluctant but willing to share about the dreams",
+      "alliances_shown": [
+        "Rand",
+        "Perrin",
+        "Moiraine"
+      ]
+    },
+    {
+      "character": "Nynaeve",
+      "whereabouts": "The Queen's Blessing inn in Caemlyn, library",
+      "notable_actions": "Introduced to Loial by Rand; tells Mat that no one blames him for what he did while affected by the dagger; comforts Egwene by putting her arms around her when Egwene cries; scolds Moiraine for frightening the boys with talk of the Dark One",
+      "demeanor": "emotional with tears in her eyes when Mat is well, but smiling; protective of the young people from Emond's Field; sharp-tongued toward Moiraine when she feels the Aes Sedai is being needlessly frightening; looks as if she wants to cry when hearing about the Dark One's influence",
+      "alliances_shown": [
+        "Mat",
+        "Rand",
+        "Perrin",
+        "Egwene"
+      ]
+    },
+    {
+      "character": "Egwene",
+      "whereabouts": "The Queen's Blessing inn in Caemlyn, library",
+      "notable_actions": "Introduced to Loial by Rand; joins in the excited questions to Loial; mentions the Aiel story the Tinkers told; asks in a neutral voice who Elayne is; cries softly when hearing about Ba'alzamon and the Dark One's influence on the boys",
+      "demeanor": "excited at first when meeting Loial and hearing stories; becomes subdued and fearful when learning about the dreams and the Dark One; possibly jealous or concerned about Elayne; emotional and crying by the end, comforted by Nynaeve",
+      "alliances_shown": [
+        "Rand",
+        "Nynaeve",
+        "Perrin",
+        "Mat"
+      ]
+    },
+    {
+      "character": "Moiraine",
+      "whereabouts": "The Queen's Blessing inn in Caemlyn; brings Mat down from upstairs to the library",
+      "notable_actions": "Brings Mat downstairs with her hand on his shoulder, watching him carefully; explains that she has cleansed the taint from Mat but cannot fully separate him from the dagger without killing him; tells Rand the dagger's call has been contained; explains the Dark One's power and how the boys can resist; reveals there are twenty Red Ajah Aes Sedai in Caemlyn; listens to Loial's story about the dying man and the Eye of the World; hears the boys' confession about Ba'alzamon in their dreams; shows anger at herself for not asking about dreams sooner; explains about Dreamwalkers and the Forsaken; decides they must travel via the Ways to reach the Eye of the World quickly; asks Loial if he knows the Ways and can guide them to Fal Dara/Mafal Dadaranell",
+      "demeanor": "careful and watchful of Mat; confident in her healing; serious and strategic when planning; shows a flash of anger when realizing she should have asked about dreams earlier; thoughtful and calculating when hearing multiple warnings about the Eye; dry and somewhat curt when dealing with Loial's verbosity; speaks of being frightened herself by the implications",
+      "alliances_shown": [
+        "Lan",
+        "Mat",
+        "Rand",
+        "Perrin",
+        "Egwene",
+        "Nynaeve",
+        "Loial"
+      ]
+    },
+    {
+      "character": "Lan",
+      "whereabouts": "The Queen's Blessing inn in Caemlyn; briefly in the library before being sent away by Moiraine",
+      "notable_actions": "Escorts Moiraine and Mat downstairs; sent by Moiraine to ensure they are not taken unaware; vanishes from the room silently",
+      "demeanor": "watchful and vigilant as always; silent and efficient",
+      "alliances_shown": [
+        "Moiraine"
+      ]
+    },
+    {
+      "character": "Loial",
+      "whereabouts": "The Queen's Blessing inn in Caemlyn, library",
+      "notable_actions": "Reading on the couch with a cat on his stomach when the group arrives; stands and bows formally when introduced; tells about the stedding and his travels; relates the story of the dying man who came to Stedding Shangtai twenty years ago with a warning about the Eye of the World; taught songs to the Tuatha'an; asks Moiraine about the Eye of the World and whether the Dark One can blind it; shows enthusiasm about ta'veren and the Pattern; is asked by Moiraine if he knows the Ways and can guide them; reluctantly admits he knows the Ways and the path to Mafal Dadaranell but emphatically refuses, saying they will all die or be swallowed by the Shadow if they enter the Ways",
+      "demeanor": "welcoming and formal when greeting the newcomers; takes their gaping at him in stride; glad to talk at length about stedding and his travels; thoughtful when asking about the dying man's tale; brightened by the prospect of observing ta'veren; abashed when told to be brief; becomes emphatic and almost thunderous when refusing to take them into the Ways, showing genuine fear and concern",
+      "alliances_shown": [
+        "Rand",
+        "Moiraine"
+      ]
+    },
+    {
+      "character": "the small black cat with white feet",
+      "whereabouts": "The Queen's Blessing inn library, on Loial's stomach and later on the hearth",
+      "notable_actions": "Curled up and half asleep on Loial's stomach while he reads; gently set on the floor by Loial when he stands; later curled up on the hearth",
+      "demeanor": "sleepy, comfortable, content",
+      "alliances_shown": [
+        "Loial"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "character_a": "Moiraine",
+      "character_b": "Lan",
+      "relationship_type": "warder_bond",
+      "directed": true,
+      "description": "Lan is Moiraine's Warder, bonded to her"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Perrin",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Childhood friends from the Two Rivers, traveling together"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Mat",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Childhood friends from the Two Rivers, relieved to be reunited"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Egwene",
+      "relationship_type": "romantic",
+      "directed": false,
+      "description": "Romantic connection; Loial notes Rand has spoken of Egwene 'a great deal'; Egwene shows possible jealousy about Elayne"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Nynaeve",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Nynaeve is the Wisdom of Rand's village and has been searching for him and the others"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Loial",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "New friends; Rand introduces Loial to his village friends and defends Loial's right to travel with them"
+    },
+    {
+      "character_a": "Perrin",
+      "character_b": "Mat",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Childhood friends from the Two Rivers, shared the Ba'alzamon dreams"
+    },
+    {
+      "character_a": "Perrin",
+      "character_b": "Egwene",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Friends from the Two Rivers, traveled together from Whitebridge"
+    },
+    {
+      "character_a": "Perrin",
+      "character_b": "Nynaeve",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Nynaeve is the Wisdom of Perrin's village and traveled with him from Whitebridge"
+    },
+    {
+      "character_a": "Mat",
+      "character_b": "Egwene",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Friends from the Two Rivers"
+    },
+    {
+      "character_a": "Mat",
+      "character_b": "Nynaeve",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Nynaeve is the Wisdom of Mat's village and is relieved to see him recovered"
+    },
+    {
+      "character_a": "Egwene",
+      "character_b": "Nynaeve",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Both from the Two Rivers Women's Circle; Nynaeve comforts Egwene when she cries"
+    },
+    {
+      "character_a": "Moiraine",
+      "character_b": "Rand",
+      "relationship_type": "mentor",
+      "directed": true,
+      "description": "Moiraine is guiding and protecting Rand, though he is growing suspicious of her intentions"
+    },
+    {
+      "character_a": "Moiraine",
+      "character_b": "Mat",
+      "relationship_type": "mentor",
+      "directed": true,
+      "description": "Moiraine healed Mat from the dagger's taint and is protecting him"
+    },
+    {
+      "character_a": "Moiraine",
+      "character_b": "Perrin",
+      "relationship_type": "mentor",
+      "directed": true,
+      "description": "Moiraine is guiding and protecting Perrin"
+    },
+    {
+      "character_a": "Moiraine",
+      "character_b": "Loial",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Moiraine recruits Loial to guide them through the Ways"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Tam",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "Tam is Rand's father"
+    },
+    {
+      "character_a": "Loial",
+      "character_b": "Elder Arent",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "Elder Arent is Loial's father"
+    },
+    {
+      "character_a": "Elayne",
+      "character_b": "Queen Morgase",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "Elayne is Queen Morgase's daughter"
+    },
+    {
+      "character_a": "Gawyn",
+      "character_b": "Queen Morgase",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "Gawyn is Queen Morgase's son"
+    },
+    {
+      "character_a": "Elayne",
+      "character_b": "Gawyn",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "Siblings"
+    },
+    {
+      "character_a": "Ba'alzamon",
+      "character_b": "Rand",
+      "relationship_type": "enemy",
+      "directed": false,
+      "description": "Ba'alzamon has been invading Rand's dreams and trying to corrupt or use him"
+    },
+    {
+      "character_a": "Ba'alzamon",
+      "character_b": "Mat",
+      "relationship_type": "enemy",
+      "directed": false,
+      "description": "Ba'alzamon has been invading Mat's dreams and trying to corrupt or use him"
+    },
+    {
+      "character_a": "Ba'alzamon",
+      "character_b": "Perrin",
+      "relationship_type": "enemy",
+      "directed": false,
+      "description": "Ba'alzamon has been invading Perrin's dreams and trying to corrupt or use him"
+    }
+  ],
+  "_meta": {
+    "book_order": 1,
+    "chapter_number": 42,
+    "chapter_id": 43,
+    "chapter_title": "Remembrance of Dreams",
+    "model": "claude-sonnet-4-5",
+    "input_tokens": 14949,
+    "output_tokens": 11427
+  }
+}

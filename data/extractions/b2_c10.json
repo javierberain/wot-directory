@@ -1,0 +1,682 @@
+{
+  "characters": [
+    {
+      "name_used_in_text": "Ingtar",
+      "likely_matches_existing": "Ingtar",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienaran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "duty-driven, grim, determined, prone to brooding thoughts on the decline of civilization"
+      },
+      "factions": [
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Lord, commands oathmen"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Lord Ingtar",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": null
+    },
+    {
+      "name_used_in_text": "Rand",
+      "likely_matches_existing": "Rand al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "gray eyes, resembles an Aielman",
+        "age": null,
+        "filiations": null,
+        "personality": "troubled by identity, determined not to be used, seeks to apologize to friends, feels isolated"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Rand al'Thor",
+          "alias_type": "given_name",
+          "notes": null
+        }
+      ],
+      "notes": "Repeatedly noted for his resemblance to Aiel; wears ornate coats which trouble him; uses the void and saidin at one point in the village"
+    },
+    {
+      "name_used_in_text": "Hurin",
+      "likely_matches_existing": "Hurin",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienaran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "nervous, uneasy, diligent in his duties as sniffer"
+      },
+      "factions": [
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "serves as sniffer"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "sniffer",
+          "alias_type": "epithet",
+          "notes": null
+        }
+      ],
+      "notes": "Detects violence, murder, and 'something worse' on the trail"
+    },
+    {
+      "name_used_in_text": "Mat",
+      "likely_matches_existing": "Matrim Cauthon",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "scornful, reluctant, searching for the dagger"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Motivated to find the dagger from Shadar Logoth; hostile toward Rand"
+    },
+    {
+      "name_used_in_text": "Perrin",
+      "likely_matches_existing": "Perrin Aybara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "golden eyes",
+        "age": null,
+        "filiations": null,
+        "personality": "sensitive to smell, uneasy, foreboding"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Golden eyes shine; can smell wrongness; anticipates worse to come"
+    },
+    {
+      "name_used_in_text": "Loial",
+      "likely_matches_existing": "Loial",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "ogier",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "large, broad nose like snout",
+        "age": null,
+        "filiations": "from Stedding Shangtai",
+        "personality": "knowledgeable about history, cheerful when running, thoughtful"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Builder",
+          "alias_type": "epithet",
+          "notes": null
+        }
+      ],
+      "notes": "Explains Shienaran burial customs and history of fallen nations"
+    },
+    {
+      "name_used_in_text": "Uno",
+      "likely_matches_existing": "Uno",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienaran",
+        "physical_traits": "one eye",
+        "age": "older, grizzled veteran",
+        "filiations": null,
+        "personality": "foul-mouthed, experienced, gives good advice, treats everyone equally bluntly"
+      },
+      "factions": [
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "veteran soldier, experienced campaigner"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Has a tongue like a file; been campaigning since before Ingtar was born"
+    },
+    {
+      "name_used_in_text": "Masema",
+      "likely_matches_existing": "Masema",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienaran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "hostile, dislikes Rand due to resemblance to Aiel"
+      },
+      "factions": [
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "soldier"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Served three years at Ankor Dail against the Aiel; stares at Rand with fixed grin and hostility"
+    },
+    {
+      "name_used_in_text": "Ragan",
+      "likely_matches_existing": "Ragan",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienaran",
+        "physical_traits": "arrow scar on cheek",
+        "age": null,
+        "filiations": null,
+        "personality": "dutiful, shaken by what he discovers"
+      },
+      "factions": [
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "soldier"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Scouts ahead, discovers the flayed bodies"
+    },
+    {
+      "name_used_in_text": "Changu",
+      "likely_matches_existing": "Changu",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienaran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Darkfriend who betrayed Fal Dara"
+        },
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "formerly a guard"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Found skinned alive, hanged from tree; believed to have let Darkfriends into Fal Dara"
+    },
+    {
+      "name_used_in_text": "Nidao",
+      "likely_matches_existing": "Nidao",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienaran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Darkfriend who betrayed Fal Dara"
+        },
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "formerly a guard"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Found skinned alive, hanged from tree; believed to have let Darkfriends into Fal Dara"
+    },
+    {
+      "name_used_in_text": "Red",
+      "likely_matches_existing": "Red",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "horse",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "bay stallion",
+        "age": null,
+        "filiations": null,
+        "personality": "skittish, responsive to Rand's unease"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "the bay",
+          "alias_type": "epithet",
+          "notes": null
+        }
+      ],
+      "notes": "Rand's horse"
+    },
+    {
+      "name_used_in_text": "Moiraine",
+      "likely_matches_existing": "Moiraine",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Aes Sedai"
+        },
+        {
+          "name": "Blue Ajah",
+          "faction_type": "ajah",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Moiraine Sedai",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Mentioned as having overseen Rand's packing of ornate coats"
+    },
+    {
+      "name_used_in_text": "Agelmar",
+      "likely_matches_existing": "Agelmar",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "leader",
+          "notes": "Lord of Fal Dara"
+        },
+        {
+          "name": "House Jagad",
+          "faction_type": "house",
+          "role": "leader",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Lord Agelmar",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Mentioned as the lord to whom the oathmen are sworn"
+    },
+    {
+      "name_used_in_text": "the Amyrlin Seat",
+      "likely_matches_existing": "the Amyrlin Seat",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "other",
+          "role": "leader",
+          "notes": "Amyrlin Seat"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Mentioned in context of the oath Ingtar swore to recover the Horn"
+    },
+    {
+      "name_used_in_text": "Lan",
+      "likely_matches_existing": "Lan",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Warder"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Lan Dai Shan",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Mentioned as vouching for Rand's Two Rivers origin"
+    },
+    {
+      "name_used_in_text": "Gawyn",
+      "likely_matches_existing": "Gawyn",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Andoran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "brother to Elayne",
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "House Trakand",
+          "faction_type": "house",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Mentioned as having remarked on Rand's resemblance to Aiel"
+    },
+    {
+      "name_used_in_text": "Elayne",
+      "likely_matches_existing": "Elayne",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Andoran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "House Trakand",
+          "faction_type": "house",
+          "role": "member",
+          "notes": "Daughter-Heir of Andor"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Daughter-Heir of Andor",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Mentioned as Gawyn's sister"
+    },
+    {
+      "name_used_in_text": "Artur Hawkwing",
+      "likely_matches_existing": "Artur Hawkwing",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Historical figure; mentioned in context of victory at field of Talidar"
+    }
+  ],
+  "appearances": [
+    {
+      "character": "Ingtar",
+      "whereabouts": "Leading the hunt for the stolen Horn of Valere, traveling south from Fal Dara through abandoned lands toward the Erinin",
+      "notable_actions": "Sets a hard pace; orders searches of abandoned campsite and village; wrestles with doubts about the decline of civilization; buries Changu and Nidao despite their suspected treachery; examines the crucified Myrddraal",
+      "demeanor": "Grim, driven, obsessed with catching the thieves; becomes brooding and philosophical about the decay of nations; shows brief kindness in burial rites",
+      "alliances_shown": [
+        "Fal Dara",
+        "the Amyrlin Seat",
+        "Agelmar"
+      ]
+    },
+    {
+      "character": "Rand",
+      "whereabouts": "Traveling with Ingtar's party, hunting the Horn thieves",
+      "notable_actions": "Tries to reconcile with Mat and Perrin but is rebuffed; enters a house in the abandoned village and experiences a terrifying vision; uses the void and saidin to break free from the vision; observes the crucified Myrddraal",
+      "demeanor": "Isolated, troubled, frustrated by ornate clothes and others' perceptions of him; terrified during the vision; determined not to be used",
+      "alliances_shown": [
+        "Ingtar's party"
+      ]
+    },
+    {
+      "character": "Hurin",
+      "whereabouts": "Riding with Ingtar's party, tracking the thieves by scent",
+      "notable_actions": "Leads the party on the trail south; detects violence and 'something worse'; becomes increasingly nervous; identifies changes in the trail direction",
+      "demeanor": "Nervous, uneasy, particularly troubled by the wrongness he smells; hunched and trying to hide",
+      "alliances_shown": [
+        "Ingtar's party",
+        "Fal Dara"
+      ]
+    },
+    {
+      "character": "Mat",
+      "whereabouts": "Traveling with Ingtar's party, searching for the dagger",
+      "notable_actions": "Avoids Rand; sneers at Rand's coat; examines burned bone at campsite; searches houses in the village; appears healthy",
+      "demeanor": "Scornful toward Rand, reluctant, driven by need to find the dagger from Shadar Logoth",
+      "alliances_shown": [
+        "Ingtar's party"
+      ]
+    },
+    {
+      "character": "Perrin",
+      "whereabouts": "Traveling with Ingtar's party",
+      "notable_actions": "Avoids Rand but is urged by Mat; uses enhanced smell to detect wrongness; predicts things will be worse; examines the village with foreboding; makes a growling sound at the flayed bodies",
+      "demeanor": "Uneasy, foreboding, sensitive to smells and wrongness; golden eyes shining; reluctant to interact with Rand",
+      "alliances_shown": [
+        "Ingtar's party"
+      ]
+    },
+    {
+      "character": "Loial",
+      "whereabouts": "Traveling with Ingtar's party",
+      "notable_actions": "Enjoys running when dismounted; explains Shienaran burial customs; provides historical context on fallen nations; discusses Aiel culture and the Waste",
+      "demeanor": "Cheerful about running, knowledgeable, helpful in explaining customs and history",
+      "alliances_shown": [
+        "Rand",
+        "Ingtar's party"
+      ]
+    },
+    {
+      "character": "Uno",
+      "whereabouts": "Traveling with Ingtar's party as a veteran soldier",
+      "notable_actions": "Examines tracks and estimates their progress; leads search of village houses; sees a woman in white at a window who vanishes; cuffs Masema for wasting food on Rand",
+      "demeanor": "Blunt, experienced, treats everyone equally regardless of rank; agitated when the woman disappears; gives good advice despite harsh tongue",
+      "alliances_shown": [
+        "Ingtar's party",
+        "Fal Dara"
+      ]
+    },
+    {
+      "character": "Masema",
+      "whereabouts": "Traveling with Ingtar's party",
+      "notable_actions": "Stirs the stew at camp; deliberately spills stew near Rand; stares at Rand with fixed hostile grin; scouts the ferry crossing",
+      "demeanor": "Hostile toward Rand due to his Aiel-like appearance; cold, unfriendly",
+      "alliances_shown": [
+        "Ingtar's party",
+        "Fal Dara"
+      ]
+    },
+    {
+      "character": "Ragan",
+      "whereabouts": "Traveling with Ingtar's party as a scout",
+      "notable_actions": "Scouts the far bank of the Erinin with Masema; discovers the flayed bodies and reports to Ingtar; insists Ingtar must see for himself",
+      "demeanor": "Dutiful, shaken and pale after discovering the bodies, unable to describe what he found",
+      "alliances_shown": [
+        "Ingtar's party",
+        "Fal Dara"
+      ]
+    },
+    {
+      "character": "Changu",
+      "whereabouts": "Found dead, skinned alive and hung from a tree by a river crossing",
+      "notable_actions": "Previously suspected of letting Darkfriends into Fal Dara; murdered by unknown parties",
+      "demeanor": null,
+      "alliances_shown": [
+        "The Shadow (suspected)",
+        "Fal Dara (formerly)"
+      ]
+    },
+    {
+      "character": "Nidao",
+      "whereabouts": "Found dead, skinned alive and hung from a tree by a river crossing",
+      "notable_actions": "Previously suspected of letting Darkfriends into Fal Dara; murdered by unknown parties",
+      "demeanor": null,
+      "alliances_shown": [
+        "The Shadow (suspected)",
+        "Fal Dara (formerly)"
+      ]
+    },
+    {
+      "character": "Red",
+      "whereabouts": "Traveling with Rand",
+      "notable_actions": "Carries Rand on the journey; shies when Rand is uneasy",
+      "demeanor": "Responsive to Rand's emotional state, skittish",
+      "alliances_shown": [
+        "Rand"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "character_a": "Ingtar",
+      "character_b": "Uno",
+      "relationship_type": "mentor",
+      "directed": false,
+      "description": "Uno is an experienced veteran who gives good advice to Ingtar despite his rough tongue; Ingtar respects his experience"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Mat",
+      "relationship_type": "rival",
+      "directed": false,
+      "description": "Mat actively avoids Rand and sneers at him; Rand wants to apologize but Mat refuses contact"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Perrin",
+      "relationship_type": "rival",
+      "directed": false,
+      "description": "Perrin avoids Rand at Mat's urging; Rand wants to reconcile but Perrin keeps distance"
+    },
+    {
+      "character_a": "Masema",
+      "character_b": "Rand",
+      "relationship_type": "enemy",
+      "directed": true,
+      "description": "Masema shows open hostility toward Rand due to his resemblance to Aiel; deliberately spills food and stares with hostile fixed grin"
+    },
+    {
+      "character_a": "Loial",
+      "character_b": "Rand",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Loial remains friendly and helpful to Rand, explaining customs and offering reassurance"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Red",
+      "relationship_type": "other",
+      "directed": false,
+      "description": "Rand owns and rides Red; the horse responds to his emotional state"
+    },
+    {
+      "character_a": "Ingtar",
+      "character_b": "Agelmar",
+      "relationship_type": "servant",
+      "directed": true,
+      "description": "Ingtar is sworn to Lord Agelmar and commands his oathmen"
+    },
+    {
+      "character_a": "Gawyn",
+      "character_b": "Elayne",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "Gawyn is Elayne's brother"
+    }
+  ],
+  "_meta": {
+    "book_order": 2,
+    "chapter_number": 10,
+    "chapter_id": 65,
+    "chapter_title": "The Hunt Begins",
+    "model": "claude-sonnet-4-5",
+    "input_tokens": 23306,
+    "output_tokens": 6449
+  }
+}

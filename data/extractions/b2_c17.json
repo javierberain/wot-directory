@@ -1,0 +1,354 @@
+{
+  "characters": [
+    {
+      "name_used_in_text": "Rand",
+      "likely_matches_existing": "Rand al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "has a heron brand on his palm",
+        "age": null,
+        "filiations": null,
+        "personality": "reluctant to embrace power or legend, protective, conflicted about using saidin"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Lord Rand",
+          "alias_type": "title",
+          "notes": "used by Hurin"
+        }
+      ],
+      "notes": "Chapter centers on his use of the Portal Stone and struggle with saidin"
+    },
+    {
+      "name_used_in_text": "Selene",
+      "likely_matches_existing": "Selene",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Cairhienin",
+        "physical_traits": "pale forehead, dark deep eyes, rides a white mare",
+        "age": "appears to be similar age to Rand, described as 'no older than he'",
+        "filiations": null,
+        "personality": "confident, composed, queenly bearing, persuasive, knowledgeable about Portal Stones"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "my Lady",
+          "alias_type": "title",
+          "notes": "used by Hurin"
+        }
+      ],
+      "notes": "Knows about Portal Stones and the other worlds; guides Rand to use the Stone"
+    },
+    {
+      "name_used_in_text": "Hurin",
+      "likely_matches_existing": "Hurin",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienaran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "loyal, respectful, nervous about violence-sensing ability"
+      },
+      "factions": [
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "serves as a sniffer tracking the Darkfriends"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "the sniffer",
+          "alias_type": "epithet",
+          "notes": "refers to his ability to smell violence"
+        }
+      ],
+      "notes": "Can follow trails by scent of violence; troubled by smelling violence in the mirror world"
+    },
+    {
+      "name_used_in_text": "Loial",
+      "likely_matches_existing": "Loial",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "ogier",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "huge, tall, uses a quarterstaff",
+        "age": null,
+        "filiations": "son of Arent son of Halan",
+        "personality": "cautious, knowledgeable about lore"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "the Ogier",
+          "alias_type": "epithet",
+          "notes": null
+        }
+      ],
+      "notes": "Refers to mirror worlds theory; abandons quarterstaff during escape from grolm"
+    },
+    {
+      "name_used_in_text": "Red",
+      "likely_matches_existing": "Red",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "horse",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "the bay",
+          "alias_type": "epithet",
+          "notes": "from roster"
+        }
+      ],
+      "notes": "Rand's horse; struggles on steep slopes"
+    },
+    {
+      "name_used_in_text": "Egwene",
+      "likely_matches_existing": "Egwene",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Only mentioned in Rand's thoughts at the end; not physically present"
+    },
+    {
+      "name_used_in_text": "Ingtar",
+      "likely_matches_existing": "Ingtar",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienaran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "leading pursuit party"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Only mentioned; not present in chapter. Leading another party tracking the Darkfriends"
+    },
+    {
+      "name_used_in_text": "Mat",
+      "likely_matches_existing": "Matrim Cauthon",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "can lie with a straight face"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Only mentioned in Rand's thoughts; connected to the dagger. Not physically present"
+    },
+    {
+      "name_used_in_text": "Perrin",
+      "likely_matches_existing": "Perrin Aybara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "knows how to talk to girls"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Only mentioned in Rand's thoughts; not physically present"
+    },
+    {
+      "name_used_in_text": "Fain",
+      "likely_matches_existing": "Padan Fain",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "leading Darkfriends with the Horn"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Only mentioned; leading the Darkfriends they are pursuing"
+    }
+  ],
+  "appearances": [
+    {
+      "character": "Rand",
+      "whereabouts": "in the hills/mountains near Kinslayer's Dagger, first in the mirror world then returning to the true world via Portal Stone",
+      "notable_actions": "kills five grolm with his bow using the void; uses the Portal Stone to transport the group back to the true world; embraces saidin through the Stone; decides to wait and watch for the Darkfriends rather than immediately escort Selene home",
+      "demeanor": "conflicted about using saidin, drawn to the power despite its danger; protective of his companions; awkward around Selene",
+      "alliances_shown": [
+        "Hurin",
+        "Loial",
+        "Selene"
+      ]
+    },
+    {
+      "character": "Selene",
+      "whereabouts": "traveling with Rand, Loial, and Hurin through the mirror world and then back to the true world",
+      "notable_actions": "guides Rand to the Portal Stone; instructs him on which symbol to use; persuades him to wait for the Darkfriends rather than escort her home immediately; explains the nature of mirror worlds and reflections",
+      "demeanor": "confident, composed, queenly; shows no fear of the grolm; becomes briefly expressionless when Rand steps back from her, then mocking; flirtatious",
+      "alliances_shown": [
+        "Rand"
+      ]
+    },
+    {
+      "character": "Hurin",
+      "whereabouts": "traveling with Rand, Loial, and Selene",
+      "notable_actions": "prepares to fight grolm with his short sword; reports on the Darkfriend trail; expresses distress about smelling violence in the mirror world; offers to find a camp away from the Portal Stone",
+      "demeanor": "anxious about the grolm; troubled by the nature of the mirror world and smelling violence; loyal and respectful to Rand",
+      "alliances_shown": [
+        "Rand",
+        "Lord Rand"
+      ]
+    },
+    {
+      "character": "Loial",
+      "whereabouts": "traveling with Rand, Hurin, and Selene",
+      "notable_actions": "prepares to fight grolm with his quarterstaff; abandons the staff when climbing becomes difficult; helps haul his horse up steep slopes; discusses mirror world theory",
+      "demeanor": "stunned by the Portal Stone experience; uncertain about the situation but supportive",
+      "alliances_shown": [
+        "Rand"
+      ]
+    },
+    {
+      "character": "Red",
+      "whereabouts": "being ridden by Rand through mountains and transported via Portal Stone",
+      "notable_actions": "slips and slides on rocky terrain multiple times during the climb",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Egwene",
+      "whereabouts": "not present; only in Rand's thoughts",
+      "notable_actions": "none; only mentioned as contrast to Selene",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Ingtar",
+      "whereabouts": "presumably still pursuing the Darkfriends in the true world",
+      "notable_actions": "none in this chapter; only mentioned",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Mat",
+      "whereabouts": "not present; only in Rand's thoughts",
+      "notable_actions": "none; mentioned in context of needing the dagger",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Perrin",
+      "whereabouts": "not present; only in Rand's thoughts",
+      "notable_actions": "none; mentioned in context of talking to girls",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Fain",
+      "whereabouts": "somewhere ahead in either the mirror world or true world with the Horn",
+      "notable_actions": "none in this chapter; only mentioned as their quarry",
+      "demeanor": null,
+      "alliances_shown": []
+    }
+  ],
+  "relationships": [
+    {
+      "character_a": "Rand",
+      "character_b": "Hurin",
+      "relationship_type": "other",
+      "directed": false,
+      "description": "Hurin serves Rand loyally, addressing him as 'Lord Rand'; Rand relies on Hurin's tracking ability"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Loial",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "close companions traveling together; Loial provides knowledge and support"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Selene",
+      "relationship_type": "romantic",
+      "directed": false,
+      "description": "Rand is attracted to Selene and considers kissing her but holds back; Selene seems to encourage and guide him while also being somewhat flirtatious"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Egwene",
+      "relationship_type": "romantic",
+      "directed": false,
+      "description": "Rand compares Selene to Egwene in his thoughts, suggesting ongoing feelings or connection"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Mat",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Rand is motivated to recover the dagger to save Mat's life; wishes Mat were present"
+    }
+  ],
+  "_meta": {
+    "book_order": 2,
+    "chapter_number": 17,
+    "chapter_id": 72,
+    "chapter_title": "Choices",
+    "model": "claude-sonnet-4-5",
+    "input_tokens": 15999,
+    "output_tokens": 3439
+  }
+}

@@ -1,0 +1,530 @@
+{
+  "characters": [
+    {
+      "name_used_in_text": "Perrin",
+      "likely_matches_existing": "Perrin Aybara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "large enough that a thick wool cloak fits him well",
+        "age": "young man",
+        "filiations": null,
+        "personality": "worries constantly, feels responsible for others' safety, uncomfortable with attention from girls, protective, anxious to reach safety"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Perrin's wolf connection is deepening; he can now sense wolves' thoughts more clearly and even push them out of his head. He dreams of Ba'alzamon and experiences a dream attack where a raven pierces his eye."
+    },
+    {
+      "name_used_in_text": "Elyas",
+      "likely_matches_existing": "Elyas Machera",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": "bearded, wears strange skin clothes and fur hat, has yellow wolf-eyes, moves with lazy grace like a wolf, radiates danger",
+        "age": "older, mentions 'at my age'",
+        "filiations": null,
+        "personality": "laconic, follows instincts or 'feelings,' comfortable with wolves, distrustful of Aes Sedai, sardonic sense of humor"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Elyas refuses to leave the Tuatha'an despite Perrin's urging, saying 'something tells him' to wait. He is uncomfortable with the Way of the Leaf but respects the Tuatha'an enough to participate in their ceremonies. He knows the farewell ritual response unexpectedly well."
+    },
+    {
+      "name_used_in_text": "Egwene",
+      "likely_matches_existing": "Egwene",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": "young woman",
+        "filiations": null,
+        "personality": "spirited, enjoys dancing and new experiences, somewhat fatalistic about danger, defends her choices, independent"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Egwene is learning the Tuatha'an dances and spending time with Aram and Ila. She wears blue beads given by Aram and has a sprig with red leaves in her hair. Aram tried to convince her to stay with the Traveling People but she refused. She is still interested in reaching Tar Valon to become Aes Sedai."
+    },
+    {
+      "name_used_in_text": "Raen",
+      "likely_matches_existing": "Raen",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": "adult",
+        "filiations": "husband to Ila, grandfather to Aram",
+        "personality": "hospitable, friendly to Elyas despite wariness, observant of omens in the sky, ceremonial"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Mahdi",
+          "alias_type": "title",
+          "notes": "Already known from roster as 'Seeker'"
+        },
+        {
+          "alias_text": "Seeker",
+          "alias_type": "title",
+          "notes": "His role among the Tuatha'an"
+        }
+      ],
+      "notes": "Raen decides to change the caravan's direction, going east, possibly to find an Ogier stedding. He notices something ominous about the day and keeps looking at the sky. He performs the farewell ceremony."
+    },
+    {
+      "name_used_in_text": "Ila",
+      "likely_matches_existing": "Ila",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": "adult",
+        "filiations": "wife to Raen, grandmother to Aram",
+        "personality": "kind but wary, uncomfortable with violence, feeds guests well despite personal reservations, gives advice to Egwene"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Ila gave Perrin a thick green wool cloak but looked sadly at his axe. She spent time giving Egwene 'advice on being a woman.' She is relieved when Aram does not succeed in convincing Egwene to stay, and she scolds Aram sharply when he argues with Egwene."
+    },
+    {
+      "name_used_in_text": "Aram",
+      "likely_matches_existing": "Aram",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": "handsome, young",
+        "age": "young man",
+        "filiations": "grandson to Raen and Ila",
+        "personality": "attracted to Egwene, persistent, becomes sullen when rejected"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Aram gave Egwene a string of blue beads. He watches Egwene dance with 'a hot, hungry gaze.' He tries to convince Egwene to stay with the Traveling People, argues with her when she refuses, then storms off and abandons the farewell ceremony. Perrin calls him 'young Master Aram' and 'that long-legged fellow.'"
+    },
+    {
+      "name_used_in_text": "Bela",
+      "likely_matches_existing": "Bela",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "horse",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": "mare, shaggy",
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Bela is brought to the travelers by a Tinker for the journey. Egwene rides her when they leave the Tuatha'an camp."
+    },
+    {
+      "name_used_in_text": "Ba'alzamon",
+      "likely_matches_existing": "Ba'alzamon",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": "flames dance where his eyes should be",
+        "age": null,
+        "filiations": null,
+        "personality": "threatening, claims ownership over those he marks, commands fire"
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "leader",
+          "notes": "Associated with the Dark One"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "the Dark One",
+          "alias_type": "epithet",
+          "notes": "Wolves refer to him as this in their thoughts"
+        }
+      ],
+      "notes": "Ba'alzamon appears in Perrin's dream, kills a wolf with fire, and sends a raven to pierce Perrin's eye, marking him. The wolves sense him and communicate about 'Fire eyes. Pain. Heartfang. Death.' Perrin thinks of him as the Dark One during the wolves' communication."
+    },
+    {
+      "name_used_in_text": "Dapple",
+      "likely_matches_existing": "Dapple",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "wolf",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "impatient to end the slow travel, leader figure among the wolves, determined"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Dapple is impatient with the slow pace and wants to end the journey south. She is clearly a dominant wolf that Hopper defers to completely."
+    },
+    {
+      "name_used_in_text": "Wind",
+      "likely_matches_existing": "Wind",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "wolf",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "impatient, dislikes poor hunting, sometimes doubts the mission but wary around Dapple and Hopper"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Wind is impatient and despises living on field mice. He sometimes thinks Burn was right about leaving human troubles to humans, but is cautious about such thoughts around Dapple and Hopper."
+    },
+    {
+      "name_used_in_text": "Hopper",
+      "likely_matches_existing": "Hopper",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "wolf",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": "scarred and grizzled",
+        "age": "old, experienced",
+        "filiations": null,
+        "personality": "impassive, experienced fighter, completely devoted to Dapple, wise with years of guile"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Hopper is described as a scarred, grizzled fighter with the knowledge of years. He cares nothing for humans but is completely devoted to protecting Dapple. His entire purpose is defending her."
+    },
+    {
+      "name_used_in_text": "Alsbet Luhhan",
+      "likely_matches_existing": "Alsbet Luhhan",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "wife to Haral Luhhan",
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Mistress Luhhan",
+          "alias_type": "title",
+          "notes": "How she is addressed"
+        }
+      ],
+      "notes": "Alsbet Luhhan appears only in Perrin's dream, in her kitchen. In the dream she continues cooking and goes about domestic tasks while Ba'alzamon attacks, seemingly oblivious to the supernatural events."
+    },
+    {
+      "name_used_in_text": "Burn",
+      "likely_matches_existing": "Burn",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "wolf",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Burn is mentioned only in Wind's thoughts as having believed they should leave human troubles to humans. Burn is not present in this chapter."
+    }
+  ],
+  "appearances": [
+    {
+      "character": "Perrin",
+      "whereabouts": "traveling with the Tuatha'an caravan, then leaving with Elyas and Egwene",
+      "notable_actions": "frets about staying with the Tuatha'an, worries about bringing danger to them, wears his axe prominently despite Tinker discomfort, watches dancing women and blushes, keeps eye on Aram's interest in Egwene, experiences a dream attack from Ba'alzamon where a raven pierces his eye, learns he can push wolves out of his head, walks beside Bela as they depart",
+      "demeanor": "anxious, worried, frustrated with the delay, uncomfortable with female attention, protective, tense",
+      "alliances_shown": [
+        "Elyas",
+        "Egwene",
+        "the wolves"
+      ]
+    },
+    {
+      "character": "Elyas",
+      "whereabouts": "traveling with the Tuatha'an, then leaving with Perrin and Egwene",
+      "notable_actions": "refuses to leave despite Perrin's urging, says 'something' tells him to wait, walks rather than rides, lounges and eats pie, eventually announces it is time to leave at dawn after sensing the wolves' alarm, performs the Tuatha'an farewell ceremony unexpectedly well, leads the group away, laughs at Perrin and Egwene's banter",
+      "demeanor": "relaxed but watchful, sardonic, follows his instincts, uncomfortable around the Tuatha'an despite being friendly",
+      "alliances_shown": [
+        "Perrin",
+        "Egwene",
+        "the wolves",
+        "Raen"
+      ]
+    },
+    {
+      "character": "Egwene",
+      "whereabouts": "traveling with the Tuatha'an, learning their dances, then leaving with Perrin and Elyas",
+      "notable_actions": "spends time with Ila talking, dances with Aram, learns the Tuatha'an women's dance, wears beads and flowers Aram gave her, refuses Aram's plea to stay with the Traveling People, gathers her belongings quickly when told to leave, says goodbye to the Tuatha'an, rides Bela, defends her choices to Perrin",
+      "demeanor": "enjoying herself, defiant of Perrin's criticism, determined, independent",
+      "alliances_shown": [
+        "Ila",
+        "Aram (but refuses his request)",
+        "Perrin",
+        "Elyas"
+      ]
+    },
+    {
+      "character": "Raen",
+      "whereabouts": "in the Tuatha'an camp, seeing off the travelers",
+      "notable_actions": "comes out of his wagon at dawn, studies the sky anxiously, decides to change the caravan's direction to go east toward the Spine of the World and possibly an Ogier stedding, tries to convince Elyas to stay for breakfast, wakes the entire camp for farewells, performs the formal farewell ceremony, accompanies them to the edge of the trees, warns Elyas to take care",
+      "demeanor": "hospitable but uneasy, sensing something wrong with the day, concerned for Elyas's safety",
+      "alliances_shown": [
+        "Elyas (calls him 'my old friend')",
+        "Ila",
+        "the Tuatha'an"
+      ]
+    },
+    {
+      "character": "Ila",
+      "whereabouts": "in the Tuatha'an camp, seeing off the travelers",
+      "notable_actions": "gave Perrin a thick green wool cloak, looked sadly at his axe, spent time giving Egwene advice on being a woman, appears when Raen calls, adds arguments for them to stay but stiffly, gives regretful looks at Egwene, rescues Egwene from Aram's pleading with sharp words to her grandson, watches Aram storm off with hesitation about calling him back",
+      "demeanor": "kind but reserved, wary of violence, relieved to see them go (especially Elyas), maternal toward Egwene but glad she's leaving (to protect Aram)",
+      "alliances_shown": [
+        "Raen",
+        "Egwene",
+        "the Tuatha'an",
+        "Aram (her grandson)"
+      ]
+    },
+    {
+      "character": "Aram",
+      "whereabouts": "in the Tuatha'an camp during farewells",
+      "notable_actions": "gave Egwene blue beads, watches Egwene dance with hot hungry gaze, draws Egwene aside to plead with her (presumably to stay), argues when she refuses, shows triumph to Perrin over his closeness to Egwene, storms away from the farewell ceremony when Ila scolds him",
+      "demeanor": "infatuated with Egwene, pleading then argumentative, sullen and upset when rejected, triumphant toward Perrin",
+      "alliances_shown": [
+        "Egwene (romantic interest)",
+        "the Tuatha'an"
+      ]
+    },
+    {
+      "character": "Bela",
+      "whereabouts": "with the Tuatha'an, then traveling with Perrin, Egwene, and Elyas",
+      "notable_actions": "brought by a Tinker to the travelers, carries Egwene as they leave",
+      "demeanor": null,
+      "alliances_shown": [
+        "Egwene (rider)"
+      ]
+    },
+    {
+      "character": "Ba'alzamon",
+      "whereabouts": "appears in Perrin's dream",
+      "notable_actions": "enters Alsbet Luhhan's kitchen in Perrin's dream, burns a wolf to ash with fire from its body, forces Perrin back with heat from his face, tells Perrin he cannot run or hide, threatens that the Eye of the World will consume him, marks Perrin as his, sends a raven to pierce Perrin's left eye",
+      "demeanor": "threatening, commanding, confident of his power, claiming ownership",
+      "alliances_shown": [
+        "The Shadow"
+      ]
+    },
+    {
+      "character": "Dapple",
+      "whereabouts": "near the Tuatha'an camp, scouting ahead when they leave",
+      "notable_actions": "stays away from the camp but Perrin senses her, grows impatient with every sunset, communicates with Elyas and Perrin about Ba'alzamon/Dark One, greets Elyas with dignity when they leave, ranges out ahead scouting",
+      "demeanor": "impatient, determined, dignified",
+      "alliances_shown": [
+        "Elyas",
+        "Perrin",
+        "Wind",
+        "Hopper"
+      ]
+    },
+    {
+      "character": "Wind",
+      "whereabouts": "near the Tuatha'an camp, scouting ahead when they leave",
+      "notable_actions": "stays away from the camp, feels impatient and despises living on field mice, has doubts about the mission but keeps them cautious around Dapple and Hopper, communicates about Ba'alzamon, greets Elyas with dignity, ranges out ahead scouting",
+      "demeanor": "impatient, cautious, resentful of poor hunting",
+      "alliances_shown": [
+        "Elyas",
+        "Perrin",
+        "Dapple",
+        "Hopper"
+      ]
+    },
+    {
+      "character": "Hopper",
+      "whereabouts": "near the Tuatha'an camp, scouting ahead when they leave",
+      "notable_actions": "stays near but away from camp, waits as Dapple waits, communicates about Ba'alzamon, greets Elyas with dignity, ranges out ahead scouting",
+      "demeanor": "impassive, completely devoted to Dapple, watchful",
+      "alliances_shown": [
+        "Dapple (absolute devotion)",
+        "Elyas",
+        "Perrin",
+        "Wind"
+      ]
+    },
+    {
+      "character": "Alsbet Luhhan",
+      "whereabouts": "in Perrin's dream, in her kitchen",
+      "notable_actions": "cooks, stirs a pot, checks her bread in the oven, ignores the supernatural events happening around her",
+      "demeanor": "oblivious to the horror, domestic, calm",
+      "alliances_shown": []
+    },
+    {
+      "character": "Burn",
+      "whereabouts": "not present; mentioned only in Wind's thoughts",
+      "notable_actions": "none in this chapter",
+      "demeanor": null,
+      "alliances_shown": []
+    }
+  ],
+  "relationships": [
+    {
+      "character_a": "Raen",
+      "character_b": "Ila",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "husband and wife"
+    },
+    {
+      "character_a": "Raen",
+      "character_b": "Aram",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "grandfather and grandson"
+    },
+    {
+      "character_a": "Ila",
+      "character_b": "Aram",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "grandmother and grandson"
+    },
+    {
+      "character_a": "Raen",
+      "character_b": "Elyas",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Raen calls Elyas 'my old friend' and has known him for some time; they have mutual respect despite differences"
+    },
+    {
+      "character_a": "Aram",
+      "character_b": "Egwene",
+      "relationship_type": "romantic",
+      "directed": true,
+      "description": "Aram is infatuated with Egwene, gave her gifts, tried to convince her to stay with the Tuatha'an"
+    },
+    {
+      "character_a": "Ila",
+      "character_b": "Egwene",
+      "relationship_type": "mentor",
+      "directed": true,
+      "description": "Ila gave Egwene advice on being a woman"
+    },
+    {
+      "character_a": "Perrin",
+      "character_b": "Egwene",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "traveling companions, friends from home, some friction over her choices but loyal to each other"
+    },
+    {
+      "character_a": "Perrin",
+      "character_b": "Elyas",
+      "relationship_type": "mentor",
+      "directed": true,
+      "description": "Elyas is teaching Perrin about his wolf connection and guiding him"
+    },
+    {
+      "character_a": "Elyas",
+      "character_b": "Dapple",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Elyas and Dapple communicate and work together; the wolf defers to Elyas's desire to help the humans"
+    },
+    {
+      "character_a": "Elyas",
+      "character_b": "Wind",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Elyas and Wind communicate and travel together"
+    },
+    {
+      "character_a": "Elyas",
+      "character_b": "Hopper",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Elyas and Hopper communicate and travel together"
+    },
+    {
+      "character_a": "Perrin",
+      "character_b": "Dapple",
+      "relationship_type": "other",
+      "directed": false,
+      "description": "Perrin can sense Dapple's thoughts and emotions; developing wolf-bond"
+    },
+    {
+      "character_a": "Perrin",
+      "character_b": "Wind",
+      "relationship_type": "other",
+      "directed": false,
+      "description": "Perrin can sense Wind's thoughts and emotions; developing wolf-bond"
+    },
+    {
+      "character_a": "Perrin",
+      "character_b": "Hopper",
+      "relationship_type": "other",
+      "directed": false,
+      "description": "Perrin can sense Hopper's thoughts and emotions; developing wolf-bond"
+    },
+    {
+      "character_a": "Dapple",
+      "character_b": "Hopper",
+      "relationship_type": "other",
+      "directed": false,
+      "description": "Hopper is completely devoted to Dapple and will defend her with his life; pack relationship"
+    },
+    {
+      "character_a": "Ba'alzamon",
+      "character_b": "Perrin",
+      "relationship_type": "enemy",
+      "directed": false,
+      "description": "Ba'alzamon invades Perrin's dreams, attacks him, and claims to mark him as his; Perrin fears him"
+    },
+    {
+      "character_a": "Aram",
+      "character_b": "Perrin",
+      "relationship_type": "rival",
+      "directed": false,
+      "description": "Aram shows triumph toward Perrin regarding his closeness to Egwene; unspoken rivalry"
+    },
+    {
+      "character_a": "Alsbet Luhhan",
+      "character_b": "Perrin",
+      "relationship_type": "other",
+      "directed": false,
+      "description": "Alsbet appears in Perrin's dream in her kitchen; presumably someone he knows from home though their exact relationship is unclear from this chapter"
+    }
+  ],
+  "_meta": {
+    "book_order": 1,
+    "chapter_number": 27,
+    "chapter_id": 28,
+    "chapter_title": "Shelter From the Storm",
+    "model": "claude-sonnet-4-5",
+    "input_tokens": 13446,
+    "output_tokens": 6445
+  }
+}

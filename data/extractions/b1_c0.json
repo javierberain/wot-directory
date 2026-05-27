@@ -1,0 +1,153 @@
+{
+  "characters": [
+    {
+      "name_used_in_text": "Lews Therin Telamon",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "Tall man just into his middle years, handsome once, hair already more white than brown, face lined by strain and worry, dark eyes that had seen too much",
+        "age": "middle years",
+        "filiations": "Husband of Ilyena Sunhair, father to multiple children (all deceased)",
+        "personality": "Once proud and confident in his abilities, believing men could match the Creator; now shattered by grief and guilt over killing his own family while mad"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Dragon",
+          "alias_type": "epithet",
+          "notes": "Name given by men, referenced by prophecy"
+        },
+        {
+          "alias_text": "Kinslayer",
+          "alias_type": "epithet",
+          "notes": "Name given after this day for killing his family"
+        },
+        {
+          "alias_text": "Lord of the Morning",
+          "alias_type": "title",
+          "notes": "Used by Elan Morin when addressing him"
+        },
+        {
+          "alias_text": "Prince of the Morning",
+          "alias_type": "title",
+          "notes": "From the prophecies"
+        },
+        {
+          "alias_text": "Lord of the Dawn",
+          "alias_type": "title",
+          "notes": "From the prophecies"
+        }
+      ],
+      "notes": "Wore the Ring of Tamyrlin, sat in the High Seat, summoned the Nine Rods of Dominion, stood first among the Servants. Used saidin (male half of the True Source) which has been tainted by the Shadow's counterstroke. In his madness from the taint, killed his wife Ilyena and all his family. Creates Dragonmount by drawing too much of the One Power and immolating himself."
+    },
+    {
+      "name_used_in_text": "Elan Morin Tedronai",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "Not so tall as Lews Therin, clothed all in black except for snow-white lace at throat and silverwork on turned-down tops of thigh-high boots",
+        "age": null,
+        "filiations": null,
+        "personality": "Arrogant, cruel, scornful, embraces the name Betrayer of Hope that was meant to revile him; serves Shai'tan (the Great Lord of the Dark)"
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Serves Shai'tan (the Great Lord of the Dark), follows 'a different power now'"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Betrayer of Hope",
+          "alias_type": "epithet",
+          "notes": "Name given by men, which he embraces"
+        }
+      ],
+      "notes": "Was once among those who could Heal but was never very skilled at it; now follows a different power and can perform Shai'tan's healing. Has fought Lews Therin across many turnings of the Wheel. Claims the war has lasted since the beginning of time. Was humbled by Lews Therin in the Hall of Servants and defeated at the Gates of Paaran Disen."
+    },
+    {
+      "name_used_in_text": "Ilyena Sunhair",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "Golden-haired beauty",
+        "age": null,
+        "filiations": "Wife of Lews Therin Telamon",
+        "personality": "Enjoyed conversation, would ask many questions"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Ilyena",
+          "alias_type": "given_name",
+          "notes": "Shortened form used by Lews Therin"
+        }
+      ],
+      "notes": "Already dead at the start of the chapter, killed by Lews Therin in his madness. Her body lies in the palace."
+    }
+  ],
+  "appearances": [
+    {
+      "character": "Lews Therin Telamon",
+      "whereabouts": "Wandering the ruined palace, then travels to a flat empty land by a river where he creates Dragonmount",
+      "notable_actions": "Wanders the palace in madness calling for Ilyena, unaware he killed her and everyone he loved; is 'healed' by Elan Morin which restores his sanity and memory; realizes what he has done; travels away from the palace; draws deeply on saidin and immolates himself, creating a mountain",
+      "demeanor": "Initially mad and unaware, speaking nonsense about guests and singing; after healing, transitions to grief-stricken horror and suicidal despair",
+      "alliances_shown": [
+        "Once stood first among the Servants",
+        "Led the Hundred Companions in attack on the Great Lord of the Dark"
+      ]
+    },
+    {
+      "character": "Elan Morin Tedronai",
+      "whereabouts": "Appears in the palace via Traveling (air rippling and solidifying), later appears on the island after Dragonmount is created",
+      "notable_actions": "Comes to confront Lews Therin; performs dark healing to restore Lews Therin's sanity so he will know his defeat; taunts him about killing his own family; offers to have the Great Lord bring Ilyena back if Lews Therin serves him; appears on the island after the mountain is created and vows their conflict continues",
+      "demeanor": "Scornful, arrogant, cruel, fastidious (avoiding the dead bodies), taking satisfaction in Lews Therin's suffering",
+      "alliances_shown": [
+        "Serves Shai'tan/the Great Lord of the Dark"
+      ]
+    },
+    {
+      "character": "Ilyena Sunhair",
+      "whereabouts": "Body lies dead in the palace",
+      "notable_actions": "None (already dead); her body shifts when the floor shakes",
+      "demeanor": null,
+      "alliances_shown": []
+    }
+  ],
+  "relationships": [
+    {
+      "character_a": "Lews Therin Telamon",
+      "character_b": "Ilyena Sunhair",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "Husband and wife; Lews Therin killed her in his madness from the taint"
+    },
+    {
+      "character_a": "Lews Therin Telamon",
+      "character_b": "Elan Morin Tedronai",
+      "relationship_type": "enemy",
+      "directed": false,
+      "description": "Ancient enemies who have fought across many turnings of the Wheel; Lews Therin humbled Elan Morin in the Hall of Servants and defeated him at the Gates of Paaran Disen"
+    }
+  ],
+  "_meta": {
+    "book_order": 1,
+    "chapter_number": 0,
+    "chapter_id": 1,
+    "chapter_title": "Dragonmount",
+    "model": "claude-sonnet-4-5",
+    "input_tokens": 6233,
+    "output_tokens": 1880
+  }
+}

@@ -1,0 +1,569 @@
+{
+  "characters": [
+    {
+      "name_used_in_text": "Egwene",
+      "likely_matches_existing": "Egwene",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "Initially eager for adventure but now understands its dangers and unpleasantness; determined to help Rand; thoughtful about the responsibilities of Aes Sedai; conflicted about marriage and her feelings for Rand"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "Novice"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Wearing a gold-embroidered green silk dress (dress divided for riding). Riding Bela. Feels the attraction of saidar strongly, though resists it in the Ways."
+    },
+    {
+      "name_used_in_text": "Elayne",
+      "likely_matches_existing": "Elayne",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Andoran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "Daughter-Heir of Andor",
+        "personality": "Seeks real excitement, which her mother (the Queen) would prevent; diplomatic (offering both stick and honey); educated (by Elaida) about the Ways; playfully flirtatious about Rand"
+      },
+      "factions": [
+        {
+          "name": "House Trakand",
+          "faction_type": "house",
+          "role": "member",
+          "notes": "Daughter-Heir of Andor"
+        },
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "Novice or trainee"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Daughter-Heir",
+          "alias_type": "title",
+          "notes": "Formal title"
+        }
+      ],
+      "notes": "Wearing blue dress slashed with cream (divided for riding). Riding a bay mare with an arched neck. Taught by Elaida about the Ways; knowledgeable about royal protocol."
+    },
+    {
+      "name_used_in_text": "Nynaeve",
+      "likely_matches_existing": "Nynaeve al'Meara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "Commanding, purposeful, sharp-voiced when stressed; protective of the others; mistrustful of Aes Sedai (including Moiraine); determined to help Rand and the boys"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "In training (Accepted or novice)"
+        },
+        {
+          "name": "Women's Circle",
+          "faction_type": "society",
+          "role": "member",
+          "notes": "Former Wisdom of Emond's Field"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Wisdom",
+          "alias_type": "title",
+          "notes": "Former title from Two Rivers"
+        }
+      ],
+      "notes": "Wearing gray silk dress with thread-of-gold work and pearled flowers (divided for riding). Riding a gray mare. Takes the lead in the escape; attempts to pass as Aes Sedai using her Serpent ring. Wears a Serpent ring."
+    },
+    {
+      "name_used_in_text": "Min",
+      "likely_matches_existing": "Min",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Baerlon (presumably)",
+        "physical_traits": "Short hair",
+        "age": null,
+        "filiations": null,
+        "personality": "Practical; good-humored and treats the escape as a game (or pretends to); willing to serve as the 'servant' for the ruse; conflicted about risking herself for Rand"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Dressed as a boy: breeches, baggy man's shirt, boy's brown cloak and coat, wide-brimmed hat over short hair. Riding a tall dust-colored gelding. Carries four sets of saddlebags with warm clothes and food. Mutters 'The Light burn you, Rand al'Thor.'"
+    },
+    {
+      "name_used_in_text": "Liandrin",
+      "likely_matches_existing": "Liandrin",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Taraboner",
+        "physical_traits": "Honey-colored braids",
+        "age": null,
+        "filiations": null,
+        "personality": "Furious when the plan is disrupted; cold, imperious, impatient; secretive about the route through the Ways; dismissive of Moiraine's knowledge; self-assured about her ability to handle the Black Wind"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "Aes Sedai"
+        },
+        {
+          "name": "Red Ajah",
+          "faction_type": "ajah",
+          "role": "member",
+          "notes": null
+        },
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Serving the Shadow, as previously established in roster"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Liandrin Sedai",
+          "alias_type": "title",
+          "notes": "Formal address"
+        }
+      ],
+      "notes": "Riding a dark, glossy mare with a pack horse. Brings pole-lanterns. Holds a large key to the ironwork fence around the Waygate. Has a parchment with the route through the Ways. Leads them into the Ways and toward Toman Head."
+    },
+    {
+      "name_used_in_text": "Bela",
+      "likely_matches_existing": "Bela",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "horse",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "Shaggy",
+        "age": null,
+        "filiations": null,
+        "personality": "Restive from too much time in a stable"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "the shaggy mare",
+          "alias_type": "epithet",
+          "notes": null
+        }
+      ],
+      "notes": "Egwene's horse. Kept in the South Stable of the White Tower. Whickers softly to Egwene."
+    },
+    {
+      "name_used_in_text": "Takima",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "Long, smooth black hair; aged-ivory skin",
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "Aes Sedai"
+        },
+        {
+          "name": "Brown Ajah",
+          "faction_type": "ajah",
+          "role": "member",
+          "notes": "Teaches history of the White Tower and Aes Sedai"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Teaches history of the White Tower and Aes Sedai. Can recognize her pupils at a hundred paces. Seen in the Tower corridor listening to a woman in rough farm clothes."
+    },
+    {
+      "name_used_in_text": "Irella",
+      "likely_matches_existing": "Irella",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "Lanky; has a permanent frown",
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "One of the Accepted"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "One of the Accepted. Seen hauling the novice Else by the ear through the Tower."
+    },
+    {
+      "name_used_in_text": "Else",
+      "likely_matches_existing": "Else",
+      "is_new_character": false,
+      "confidence": "medium",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "Red-faced (in this scene, from being hauled by the ear)",
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "Novice"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "A novice being hauled by the ear by Irella in the Tower. The roster lists both 'Else' and 'Else Grinwell' as White Tower members; context suggests this is one of them, but cannot definitively say which."
+    },
+    {
+      "name_used_in_text": "Rand",
+      "likely_matches_existing": "Rand al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "Stubborn as a mule, wrongheaded to a fault, but gentle; gets into trouble that forces others to act like heroes"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Rand al'Thor",
+          "alias_type": "given_name",
+          "notes": null
+        }
+      ],
+      "notes": "Not present in this chapter, but frequently discussed. The women are traveling to help him. Egwene is conflicted about marrying him, fearing he may go mad or die. Min curses him. Elayne finds him interesting."
+    },
+    {
+      "name_used_in_text": "Moiraine",
+      "likely_matches_existing": "Moiraine",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown (not Two Rivers)",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "Aes Sedai"
+        },
+        {
+          "name": "Blue Ajah",
+          "faction_type": "ajah",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Moiraine Sedai",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Not present in this chapter. Mentioned by Egwene as having said the Black Wind could not be killed or hurt. Liandrin dismisses her knowledge. Nynaeve says if Moiraine can work with Liandrin, so can they."
+    },
+    {
+      "name_used_in_text": "Elaida",
+      "likely_matches_existing": "Elaida",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown (from Tar Valon)",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "Aes Sedai"
+        },
+        {
+          "name": "Red Ajah",
+          "faction_type": "ajah",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Elaida Sedai",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Not present in this chapter. Mentioned as having taught Elayne about the Ways and about the rules of nature not holding there. Elayne references her mother's (Queen Morgase's) opinions on marriage."
+    },
+    {
+      "name_used_in_text": "the stableman",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "Gray in his beard; pleasant-looking",
+        "age": "Older (gray beard)",
+        "filiations": null,
+        "personality": "Cautious, grumbles but obeys under pressure"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "Groom at the South Stable"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "groom",
+          "alias_type": "epithet",
+          "notes": null
+        }
+      ],
+      "notes": "Works at the South Stable of the White Tower. Chews a straw. Initially questions Nynaeve but is told by her that Liandrin had made arrangements. Accepts a coin from Elayne for his trouble."
+    }
+  ],
+  "appearances": [
+    {
+      "character": "Egwene",
+      "whereabouts": "Traveling from the White Tower through Tar Valon to the Ogier grove, then entering the Ways via a Waygate, then traveling within the Ways for approximately two days toward Toman Head",
+      "notable_actions": "Dresses in fine clothes to appear as a petitioner; helps Nynaeve with buttons; rides Bela; enters the Waygate too quickly and nearly causes Bela to fall; travels through the Ways with the group; discusses Rand and marriage with Min and Elayne; sleeps fitfully with bad dreams in the Ways; feels the attraction of saidar but resists it in the Ways",
+      "demeanor": "Nervous and watchful during the escape from the Tower; embarrassed after rushing through the Waygate; weary and worn down by the oppressive darkness of the Ways; conflicted and sad when discussing Rand and the possibility of his madness or death",
+      "alliances_shown": [
+        "Nynaeve",
+        "Elayne",
+        "Min",
+        "Liandrin (reluctantly)"
+      ]
+    },
+    {
+      "character": "Elayne",
+      "whereabouts": "Traveling from the White Tower through Tar Valon to the Ogier grove, then entering the Ways, then traveling within the Ways toward Toman Head",
+      "notable_actions": "Dresses in fine blue dress slashed with cream; apologizes to Liandrin for overhearing the plan; gives a coin to the stableman with courteous words; discusses the Ways using knowledge from Elaida; discusses Rand with Egwene and Min; helps with camp tasks in the Ways",
+      "demeanor": "Excited about having a real adventure; diplomatic and courteous; nervous about the Ways but trying to stay positive; playful and teasing when discussing Rand",
+      "alliances_shown": [
+        "Egwene",
+        "Nynaeve",
+        "Min",
+        "Liandrin (reluctantly)"
+      ]
+    },
+    {
+      "character": "Nynaeve",
+      "whereabouts": "Traveling from the White Tower through Tar Valon to the Ogier grove, then entering the Ways, then traveling within the Ways toward Toman Head",
+      "notable_actions": "Takes the lead during the escape; dresses in gray silk with gold work; walks purposefully through the Tower; attempts to pass as Aes Sedai to the stableman using her Serpent ring; insists on handing out and lighting the pole-lanterns before entering the Ways; asks Liandrin about the parchment showing the route; tries to keep spirits up; voices concerns about the structure of the Ways",
+      "demeanor": "Commanding and purposeful; sharp-voiced when stressed; protective of the group; mistrustful of Liandrin and Moiraine but willing to work with them to help Rand and the boys; shows moments of humor to ease tension",
+      "alliances_shown": [
+        "Egwene",
+        "Elayne",
+        "Min",
+        "Liandrin (reluctantly)"
+      ]
+    },
+    {
+      "character": "Min",
+      "whereabouts": "Traveling from the White Tower through Tar Valon to the Ogier grove, then entering the Ways, then traveling within the Ways toward Toman Head",
+      "notable_actions": "Dresses as a boy to serve as the group's 'servant'; carries four sets of saddlebags with supplies; helps find her horse and Elayne's in the stable; takes the lead line of Liandrin's pack horse; discusses the Pattern and Rand with Egwene and Elayne; mutters a curse at Rand",
+      "demeanor": "Treats the escape as a game or pretends to; practical and good-humored at first; becomes more uncertain and fearful in the Ways; conflicted about risking herself for Rand; wry and sardonic when discussing fate",
+      "alliances_shown": [
+        "Egwene",
+        "Nynaeve",
+        "Elayne",
+        "Liandrin (reluctantly)"
+      ]
+    },
+    {
+      "character": "Liandrin",
+      "whereabouts": "Leading the group from the Ogier grove in Tar Valon through the Ways toward Toman Head",
+      "notable_actions": "Arrives on a dark mare with a pack horse carrying pole-lanterns; reacts with fury when she discovers four women instead of two; unlocks the ironwork fence around the Waygate with a large key; opens the Waygate; leads the group through the Ways using a parchment with the route; compares Guidings to her parchment; pushes the group hard with little rest; dismisses Moiraine's knowledge; claims she can deal with the Black Wind; rations food; does not share her parchment or explain the route",
+      "demeanor": "Furious and imperious when plans change; cold and impatient; secretive and dismissive of questions; unaffected by tiredness or the oppressive dark; confident in her own abilities; smiles unpleasantly when threatening or manipulating",
+      "alliances_shown": [
+        "The Shadow (working to lead the women into a trap or to Toman Head for her own purposes)"
+      ]
+    },
+    {
+      "character": "Bela",
+      "whereabouts": "In the South Stable of the White Tower, then ridden through Tar Valon and into the Ways",
+      "notable_actions": "Whickers softly to Egwene; is restive from too much stable time; leaps forward when Egwene digs in her heels; stumbles in the darkness after passing through the Waygate but does not fall or injure herself; carries Egwene through the Ways",
+      "demeanor": "Restive and eager to move after being stabled; slightly stumbling but unharmed",
+      "alliances_shown": [
+        "Egwene (owner/rider)"
+      ]
+    },
+    {
+      "character": "Takima",
+      "whereabouts": "In a corridor of the White Tower",
+      "notable_actions": "Walks down a corridor listening to a woman in rough farm clothes and a patched cloak",
+      "demeanor": "Engaged in her duties as a teacher and Aes Sedai",
+      "alliances_shown": []
+    },
+    {
+      "character": "Irella",
+      "whereabouts": "In a side hall of the White Tower",
+      "notable_actions": "Hurries past the group while hauling the novice Else by the ear",
+      "demeanor": "Stern, frowning, disciplining a novice",
+      "alliances_shown": []
+    },
+    {
+      "character": "Else",
+      "whereabouts": "In a side hall of the White Tower",
+      "notable_actions": "Being hauled by the ear by Irella",
+      "demeanor": "Red-faced, presumably in trouble",
+      "alliances_shown": []
+    },
+    {
+      "character": "the stableman",
+      "whereabouts": "At the South Stable of the White Tower",
+      "notable_actions": "Chews a straw; questions Nynaeve about the horses; is told by Nynaeve that Liandrin made arrangements and that he was told to keep quiet; saddles the horses (Bela, Nynaeve's gray mare); mutters to himself; accepts a coin from Elayne",
+      "demeanor": "Initially cautious and questioning; becomes compliant under Nynaeve's pressure; grumbles quietly",
+      "alliances_shown": []
+    }
+  ],
+  "relationships": [
+    {
+      "character_a": "Egwene",
+      "character_b": "Nynaeve",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Close friends and companions from the Two Rivers; Nynaeve is protective and takes the lead, Egwene follows and trusts her"
+    },
+    {
+      "character_a": "Egwene",
+      "character_b": "Elayne",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Friends and companions in the White Tower; travel together to help Rand"
+    },
+    {
+      "character_a": "Egwene",
+      "character_b": "Min",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Friends and companions; Min joins the journey to help Rand despite her reservations"
+    },
+    {
+      "character_a": "Egwene",
+      "character_b": "Rand",
+      "relationship_type": "romantic",
+      "directed": false,
+      "description": "Egwene has deep, conflicted feelings for Rand; worries about his potential madness and death; uncertain about marriage but clearly cares for him deeply"
+    },
+    {
+      "character_a": "Egwene",
+      "character_b": "Bela",
+      "relationship_type": "other",
+      "directed": false,
+      "description": "Egwene is Bela's owner and rider; Bela whickers softly to her in recognition"
+    },
+    {
+      "character_a": "Nynaeve",
+      "character_b": "Liandrin",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Uneasy alliance; Nynaeve mistrusts Liandrin but works with her to help Rand and the boys; willing to cooperate if Moiraine can"
+    },
+    {
+      "character_a": "Elayne",
+      "character_b": "Rand",
+      "relationship_type": "romantic",
+      "directed": true,
+      "description": "Elayne finds Rand interesting and hints she might pursue him if Egwene does not; playfully teasing about marriage"
+    },
+    {
+      "character_a": "Min",
+      "character_b": "Rand",
+      "relationship_type": "romantic",
+      "directed": true,
+      "description": "Min is conflicted about Rand; curses him for forcing her into danger but is clearly drawn to help him; uncertain about her feelings"
+    },
+    {
+      "character_a": "Liandrin",
+      "character_b": "Moiraine",
+      "relationship_type": "rival",
+      "directed": true,
+      "description": "Liandrin dismisses Moiraine's knowledge and claims Moiraine does not know as much as she thinks"
+    },
+    {
+      "character_a": "Elayne",
+      "character_b": "Elaida",
+      "relationship_type": "mentor",
+      "directed": true,
+      "description": "Elaida taught Elayne about the Ways and other subjects"
+    },
+    {
+      "character_a": "Irella",
+      "character_b": "Else",
+      "relationship_type": "other",
+      "directed": true,
+      "description": "Irella (an Accepted) disciplines Else (a novice) by hauling her by the ear"
+    }
+  ],
+  "_meta": {
+    "book_order": 2,
+    "chapter_number": 39,
+    "chapter_id": 94,
+    "chapter_title": "Flight from the White Tower",
+    "model": "claude-sonnet-4-5",
+    "input_tokens": 21449,
+    "output_tokens": 6571
+  }
+}

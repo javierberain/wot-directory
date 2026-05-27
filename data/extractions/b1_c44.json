@@ -1,0 +1,715 @@
+{
+  "characters": [
+    {
+      "name_used_in_text": "Moiraine",
+      "likely_matches_existing": "Moiraine",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "calm, decisive, authoritative, protective"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "Aes Sedai"
+        },
+        {
+          "name": "Blue Ajah",
+          "faction_type": "ajah",
+          "role": "member",
+          "notes": "Reference to Sheriam Sedai of the Blue Ajah suggests Moiraine's affiliation"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Aes Sedai",
+          "alias_type": "title",
+          "notes": "Used repeatedly by Master Gill and others"
+        }
+      ],
+      "notes": "Moiraine uses her staff to open the Waygate and demonstrates power throughout."
+    },
+    {
+      "name_used_in_text": "Lan",
+      "likely_matches_existing": "Lan",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "stoic, protective, confident, pragmatic"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "the Warder",
+          "alias_type": "title",
+          "notes": "Repeatedly referred to as the Warder"
+        }
+      ],
+      "notes": "Lan is Moiraine's Warder, rides Mandarb, leads the group through the Waygate first."
+    },
+    {
+      "name_used_in_text": "Rand",
+      "likely_matches_existing": "Rand al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "observant, anxious in the Ways, seeks calm through sword forms"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "POV character for much of this chapter. Rides a bay horse named Red, borrowed from Master Gill."
+    },
+    {
+      "name_used_in_text": "Mat",
+      "likely_matches_existing": "Matrim Cauthon",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "nervous, complaining, stays close to Rand"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Mat is anxious and stays close to Rand, worried about Perrin acting strange. Rides a dun-colored horse."
+    },
+    {
+      "name_used_in_text": "Perrin",
+      "likely_matches_existing": "Perrin Aybara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "calm, but noted as acting strange by Mat"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Mat observes Perrin is acting strangely. Perrin is leading the pack horse at one point."
+    },
+    {
+      "name_used_in_text": "Egwene",
+      "likely_matches_existing": "Egwene",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "determined but shows fear in the Ways"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Rides Bela. Appears frightened in the Ways but continues on."
+    },
+    {
+      "name_used_in_text": "Nynaeve",
+      "likely_matches_existing": "Nynaeve al'Meara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "practical, complains about smells"
+      },
+      "factions": [
+        {
+          "name": "Women's Circle",
+          "faction_type": "other",
+          "role": "leader",
+          "notes": "She is the Wisdom"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Rides a long-legged mare. Complains about smells in the alleys."
+    },
+    {
+      "name_used_in_text": "Loial",
+      "likely_matches_existing": "Loial",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "ogier",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "very tall, tufted ears, head brushes ceiling in cellar",
+        "age": null,
+        "filiations": "son of Arent son of Halan",
+        "personality": "scholarly, fearful of the Ways, angry about destruction of trees, dutiful"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "the Ogier",
+          "alias_type": "epithet",
+          "notes": "Frequently referred to as the Ogier"
+        }
+      ],
+      "notes": "Loial guides the group through the Ways. Shows anger at the destruction of the grove that once stood where the cellar is now. Rides a huge horse."
+    },
+    {
+      "name_used_in_text": "Master Gill",
+      "likely_matches_existing": "Basel Gill",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Andoran",
+        "physical_traits": "round face",
+        "age": null,
+        "filiations": null,
+        "personality": "helpful, loyal to the Queen, jovial"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "the innkeeper",
+          "alias_type": "epithet",
+          "notes": "Frequently called the innkeeper"
+        }
+      ],
+      "notes": "Master Gill helps the party leave secretly from The Queen's Blessing, lending Rand a bay horse named Red."
+    },
+    {
+      "name_used_in_text": "Ramey",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "leathery-skinned, face like one of the horses",
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "the head groom",
+          "alias_type": "epithet",
+          "notes": "Identified as head groom"
+        }
+      ],
+      "notes": "Head groom at The Queen's Blessing who helps open the secret door."
+    },
+    {
+      "name_used_in_text": "Sheriam Sedai",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "medium",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "Aes Sedai"
+        },
+        {
+          "name": "Blue Ajah",
+          "faction_type": "ajah",
+          "role": "member",
+          "notes": "Explicitly stated as of the Blue Ajah"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Sheriam",
+          "alias_type": "given_name",
+          "notes": null
+        }
+      ],
+      "notes": "Mentioned by Moiraine as someone Master Gill can contact in Tar Valon if he needs help."
+    },
+    {
+      "name_used_in_text": "Lamgwin",
+      "likely_matches_existing": "Lamgwin",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Andoran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Mentioned by Rand as having told them about the Whitecloaks watching the inn."
+    },
+    {
+      "name_used_in_text": "Mandarb",
+      "likely_matches_existing": "Mandarb",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "horse",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "black stallion, warhorse",
+        "age": null,
+        "filiations": null,
+        "personality": "arrogant, ignores everyone but Lan"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Lan's horse. Described as standing arrogantly and ignoring everyone but Lan."
+    },
+    {
+      "name_used_in_text": "Aldieb",
+      "likely_matches_existing": "Aldieb",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "horse",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "affectionate toward Moiraine"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Moiraine's horse. Stretches nose out to nuzzle Moiraine's hand."
+    },
+    {
+      "name_used_in_text": "Red",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "horse",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "bay, tall and deep of chest, almost the color of Rand's hair",
+        "age": null,
+        "filiations": null,
+        "personality": "lacks the fire that Cloud had, nervous in the Ways"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "The bay horse Master Gill lends to Rand. Named Red."
+    },
+    {
+      "name_used_in_text": "Bela",
+      "likely_matches_existing": "Bela",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "horse",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Egwene's horse."
+    },
+    {
+      "name_used_in_text": "Cloud",
+      "likely_matches_existing": "Cloud",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "horse",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "gray",
+        "age": null,
+        "filiations": null,
+        "personality": "had fire in his step"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Mentioned in comparison to Red. Presumably Rand's previous horse."
+    },
+    {
+      "name_used_in_text": "Tam",
+      "likely_matches_existing": "Tam al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "Rand's father",
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "Village Council",
+          "faction_type": "other",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Mentioned by Rand when thinking about the void and sword teaching. Not physically present but important to Rand's state of mind."
+    }
+  ],
+  "appearances": [
+    {
+      "character": "Moiraine",
+      "whereabouts": "Leads the party from The Queen's Blessing through Caemlyn streets to a cellar with a Waygate, then into the Ways",
+      "notable_actions": "Uses her staff to open the rusty lock on the cellar doors, creates a glowing ball of light, opens the Waygate by manipulating the Avendesora leaf, closes the Waygate behind the party, directs the group to hurry",
+      "demeanor": "calm, authoritative, decisive, purposeful",
+      "alliances_shown": [
+        "Lan",
+        "Loial",
+        "Rand",
+        "Mat",
+        "Perrin",
+        "Egwene",
+        "Nynaeve",
+        "Master Gill"
+      ]
+    },
+    {
+      "character": "Lan",
+      "whereabouts": "Travels from The Queen's Blessing with the party, enters the Ways first, rides beside Loial through the Ways",
+      "notable_actions": "Leads the way through the darkness, closes the cellar doors after entering, distributes food at midday, encourages Loial not to surrender before being beaten",
+      "demeanor": "stoic, confident, protective, pragmatic",
+      "alliances_shown": [
+        "Moiraine",
+        "Loial",
+        "Rand",
+        "Mat",
+        "Perrin",
+        "Egwene",
+        "Nynaeve"
+      ]
+    },
+    {
+      "character": "Rand",
+      "whereabouts": "Travels from The Queen's Blessing through Caemlyn to the cellar, enters the Ways, travels on bridges and ramps",
+      "notable_actions": "Observes the journey, leads the pack horse at first, lights lanterns, enters the Waygate, grips his sword repeatedly for comfort, seeks the void, eats while riding",
+      "demeanor": "anxious, observant, seeking calm through meditation, worried about the oppressive darkness",
+      "alliances_shown": [
+        "Moiraine",
+        "Lan",
+        "Mat",
+        "Perrin",
+        "Egwene",
+        "Nynaeve",
+        "Loial"
+      ]
+    },
+    {
+      "character": "Mat",
+      "whereabouts": "Travels with the party from The Queen's Blessing through Caemlyn into the Ways",
+      "notable_actions": "Stays close to Rand, expresses worry about Perrin acting strange, grumbles about taking horses indoors, moves slowly through the Waygate as if through jelly, eats while riding",
+      "demeanor": "nervous, worried, complaining, seeking reassurance from Rand",
+      "alliances_shown": [
+        "Rand",
+        "Perrin",
+        "Moiraine",
+        "Lan",
+        "Egwene",
+        "Nynaeve",
+        "Loial"
+      ]
+    },
+    {
+      "character": "Perrin",
+      "whereabouts": "Travels with the party from The Queen's Blessing into the Ways, leads the pack horse at midday",
+      "notable_actions": "Travels almost as calmly as the Warder, leads the pack horse, presses close to others in the darkness",
+      "demeanor": "calm on the surface but noted as acting strange by Mat, seeks comfort from human contact in the Ways",
+      "alliances_shown": [
+        "Rand",
+        "Mat",
+        "Egwene",
+        "Nynaeve",
+        "Moiraine",
+        "Lan",
+        "Loial"
+      ]
+    },
+    {
+      "character": "Egwene",
+      "whereabouts": "Travels from The Queen's Blessing through Caemlyn into the Ways, rides Bela in the middle of the column",
+      "notable_actions": "Goes straight to Bela in the stable, enters the Ways, presses close to Rand in the darkness, gives Rand a wide-eyed look",
+      "demeanor": "anxious, looks as if she wishes she could rethink her decision to come, frightened by the darkness",
+      "alliances_shown": [
+        "Rand",
+        "Nynaeve",
+        "Mat",
+        "Perrin",
+        "Moiraine",
+        "Lan",
+        "Loial"
+      ]
+    },
+    {
+      "character": "Nynaeve",
+      "whereabouts": "Travels from The Queen's Blessing through Caemlyn into the Ways, rides in the middle of the column",
+      "notable_actions": "Goes to her long-legged mare in the stable, complains about smells in the alleys, enters the Ways, presses close to others in the darkness",
+      "demeanor": "practical, complaining about the smells, anxious in the Ways",
+      "alliances_shown": [
+        "Egwene",
+        "Rand",
+        "Mat",
+        "Perrin",
+        "Moiraine",
+        "Lan",
+        "Loial"
+      ]
+    },
+    {
+      "character": "Loial",
+      "whereabouts": "Travels from The Queen's Blessing through Caemlyn to the cellar, leads the party through the Ways reading Guidings",
+      "notable_actions": "Feels the direction to the Waygate, stumbles in the dark stableyard, grumbles about moving in darkness, offers to pull the lock off, expresses anger at the destruction of trees, reads Ogier script on the Guidings, leads the group across bridges and up ramps, discovers a broken bridge ahead",
+      "demeanor": "anxious, angry about the lost grove, fearful of the Ways, dutiful in guiding despite fear",
+      "alliances_shown": [
+        "Moiraine",
+        "Lan",
+        "Rand",
+        "Mat",
+        "Perrin",
+        "Egwene",
+        "Nynaeve"
+      ]
+    },
+    {
+      "character": "Master Gill",
+      "whereabouts": "At The Queen's Blessing, leads the party through the kitchen to the stableyard",
+      "notable_actions": "Soothes the cook, leads them across the stableyard, lends Rand the bay horse Red, confers with the head groom, explains the hidden door, laughs about having an inn without rats, wishes them well, expresses loyalty to the Queen and Tar Valon",
+      "demeanor": "helpful, jovial, loyal, supportive",
+      "alliances_shown": [
+        "Moiraine",
+        "Lan",
+        "Rand",
+        "Mat",
+        "Perrin",
+        "Egwene",
+        "Nynaeve",
+        "Loial"
+      ]
+    },
+    {
+      "character": "Ramey",
+      "whereabouts": "In the stable at The Queen's Blessing",
+      "notable_actions": "Knuckles his forehead to Master Gill, confirms the way is clear, manipulates hidden latches to open the secret door, hops impatiently waiting to close the door again",
+      "demeanor": "dutiful, efficient, impatient to close the secret door",
+      "alliances_shown": [
+        "Master Gill",
+        "Moiraine"
+      ]
+    },
+    {
+      "character": "Sheriam Sedai",
+      "whereabouts": "Not present; in Tar Valon",
+      "notable_actions": "None in this chapter",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Lamgwin",
+      "whereabouts": "Not present in this chapter",
+      "notable_actions": "Previously informed them about Whitecloaks watching the inn",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Mandarb",
+      "whereabouts": "With Lan throughout, from The Queen's Blessing into the Ways",
+      "notable_actions": "Stands arrogantly in the stable, ignores everyone but Lan, enters the Waygate first with Lan, balks briefly at the shimmering surface, takes comfort from other horses in the Ways",
+      "demeanor": "arrogant, loyal to Lan, somewhat nervous in the Ways",
+      "alliances_shown": [
+        "Lan"
+      ]
+    },
+    {
+      "character": "Aldieb",
+      "whereabouts": "With Moiraine throughout, from The Queen's Blessing into the Ways",
+      "notable_actions": "Stretches nose to nuzzle Moiraine's hand, steps delicately down the cellar ramp behind Moiraine, follows Moiraine through the Waygate",
+      "demeanor": "affectionate toward Moiraine, gentle",
+      "alliances_shown": [
+        "Moiraine"
+      ]
+    },
+    {
+      "character": "Red",
+      "whereabouts": "With Rand throughout, from The Queen's Blessing into the Ways",
+      "notable_actions": "Is led by Rand, dislikes the ramp into the cellar, leaps through the Waygate nearly knocking Rand down, whickers softly in the darkness",
+      "demeanor": "nervous, skittish, uncomfortable in the Ways",
+      "alliances_shown": [
+        "Rand"
+      ]
+    },
+    {
+      "character": "Bela",
+      "whereabouts": "With Egwene throughout, from The Queen's Blessing into the Ways",
+      "notable_actions": "Egwene goes straight to her in the stable, carries Egwene through the journey",
+      "demeanor": null,
+      "alliances_shown": [
+        "Egwene"
+      ]
+    },
+    {
+      "character": "Cloud",
+      "whereabouts": "Not present; mentioned in comparison",
+      "notable_actions": "None; used as a point of comparison for Red's temperament",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Tam",
+      "whereabouts": "Not present; exists in Rand's memories",
+      "notable_actions": "None; Rand remembers his teaching about the void and sword forms",
+      "demeanor": null,
+      "alliances_shown": []
+    }
+  ],
+  "relationships": [
+    {
+      "character_a": "Moiraine",
+      "character_b": "Lan",
+      "relationship_type": "warder_bond",
+      "directed": true,
+      "description": "Moiraine is the Aes Sedai who holds the Warder bond with Lan"
+    },
+    {
+      "character_a": "Moiraine",
+      "character_b": "Loial",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Moiraine relies on Loial to guide them through the Ways; Loial defers to her authority"
+    },
+    {
+      "character_a": "Moiraine",
+      "character_b": "Master Gill",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Master Gill helps Moiraine and her party escape secretly from Caemlyn"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Mat",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Close friends from the Two Rivers; Mat stays close to Rand and seeks reassurance from him"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Perrin",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Friends from the Two Rivers; Rand is aware that Perrin is acting strangely"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Egwene",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Friends from the Two Rivers; they press close together for comfort in the Ways"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Tam",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "Tam is Rand's father; Rand remembers his teaching to find calm"
+    },
+    {
+      "character_a": "Mat",
+      "character_b": "Perrin",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Friends from the Two Rivers; Mat is worried about Perrin acting strange"
+    },
+    {
+      "character_a": "Egwene",
+      "character_b": "Nynaeve",
+      "relationship_type": "mentor",
+      "directed": true,
+      "description": "Nynaeve has been Egwene's mentor as Wisdom; they travel together"
+    },
+    {
+      "character_a": "Lan",
+      "character_b": "Mandarb",
+      "relationship_type": "other",
+      "directed": false,
+      "description": "Lan's warhorse; Mandarb ignores everyone but Lan and is loyal to him"
+    },
+    {
+      "character_a": "Moiraine",
+      "character_b": "Aldieb",
+      "relationship_type": "other",
+      "directed": false,
+      "description": "Moiraine's horse; Aldieb shows affection by nuzzling Moiraine's hand"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Red",
+      "relationship_type": "other",
+      "directed": false,
+      "description": "Red is the horse Master Gill lends to Rand for the journey"
+    },
+    {
+      "character_a": "Egwene",
+      "character_b": "Bela",
+      "relationship_type": "other",
+      "directed": false,
+      "description": "Bela is Egwene's horse"
+    },
+    {
+      "character_a": "Master Gill",
+      "character_b": "Ramey",
+      "relationship_type": "servant",
+      "directed": true,
+      "description": "Ramey is the head groom who serves Master Gill at The Queen's Blessing"
+    },
+    {
+      "character_a": "Moiraine",
+      "character_b": "Sheriam Sedai",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Both are Aes Sedai of the Blue Ajah; Moiraine directs Master Gill to contact Sheriam if needed"
+    }
+  ],
+  "_meta": {
+    "book_order": 1,
+    "chapter_number": 44,
+    "chapter_id": 45,
+    "chapter_title": "The Dark Along the Ways",
+    "model": "claude-sonnet-4-5",
+    "input_tokens": 15710,
+    "output_tokens": 7087
+  }
+}

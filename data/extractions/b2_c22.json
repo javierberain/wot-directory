@@ -1,0 +1,600 @@
+{
+  "characters": [
+    {
+      "name_used_in_text": "Moiraine",
+      "likely_matches_existing": "Moiraine",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "dedicated to her battle, strategic, can feel jealousy though she rarely has before, methodical in seeking information"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "Aes Sedai of the Blue Ajah"
+        },
+        {
+          "name": "Blue Ajah",
+          "faction_type": "ajah",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [],
+      "notes": null
+    },
+    {
+      "name_used_in_text": "Lan",
+      "likely_matches_existing": "Lan",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Malkieri",
+        "physical_traits": "large, square hands",
+        "age": null,
+        "filiations": "Warder bonded to Moiraine",
+        "personality": "fiercely loyal, maintains emotional walls, believes in death as reality, devoted to his private war in the Blight"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "As Warder to Moiraine"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Lan Gaidin",
+          "alias_type": "title",
+          "notes": "Gaidin is the term for Warder"
+        }
+      ],
+      "notes": "The chapter reveals Moiraine has arranged for his bond to pass to Myrelle upon her death, and potentially to a third unnamed Aes Sedai after that. There are hints about Nynaeve's influence on him."
+    },
+    {
+      "name_used_in_text": "Adeleas",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Arafellin (lives in Arafel)",
+        "physical_traits": "white hair gathered at nape of neck, smooth ageless face showing long years, slender and graceful with straight back",
+        "age": "very old, equally aged with Vandene",
+        "filiations": "Sister to Vandene, both in voluntary retreat together for many years",
+        "personality": "scholarly, focused on history and research, claims Brown Ajah knowledge"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "Brown Ajah"
+        },
+        {
+          "name": "Brown Ajah",
+          "faction_type": "ajah",
+          "role": "member",
+          "notes": "Scholar focused on writing history since the Breaking"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Sister",
+          "alias_type": "title",
+          "notes": "Used by other Aes Sedai"
+        }
+      ],
+      "notes": "Lives in retreat with her sister Vandene in Tifan's Well, a small farming village in Arafel. Working on writing history of the world."
+    },
+    {
+      "name_used_in_text": "Vandene",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Arafellin (lives in Arafel)",
+        "physical_traits": "white hair gathered at nape of neck, smooth ageless face showing long years, slender and graceful with straight back, almost identical to her sister",
+        "age": "very old, equally aged with Adeleas",
+        "filiations": "Sister to Adeleas, both in voluntary retreat together for many years",
+        "personality": "scholarly but still maintains Green Ajah awareness, perceptive about people and relationships, knowledgeable in history"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "Green Ajah, though studied so long with Brown sister that she has much historical knowledge"
+        },
+        {
+          "name": "Green Ajah",
+          "faction_type": "ajah",
+          "role": "member",
+          "notes": "Though in retreat studying history"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Sister",
+          "alias_type": "title",
+          "notes": "Used by other Aes Sedai"
+        }
+      ],
+      "notes": "Lives in retreat with her sister Adeleas in Tifan's Well, a small farming village in Arafel. Working on writing history of the world."
+    },
+    {
+      "name_used_in_text": "Jaem",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "gray-haired, bony arms, all bone and tendon, looks as hard as old roots",
+        "age": "elderly, equally aged with Adeleas and Vandene",
+        "filiations": "Warder to Adeleas and/or Vandene, the only Warder remaining to them",
+        "personality": "dutiful, still remembers his warrior skills despite years as gardener and handyman"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "As Warder to Adeleas and/or Vandene"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Gaidin",
+          "alias_type": "title",
+          "notes": "Term for Warder"
+        }
+      ],
+      "notes": "The one remaining Warder to the two sisters. Works as gardener and handyman but practices sword skills when reminded of his warrior past."
+    },
+    {
+      "name_used_in_text": "Myrelle",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": "Has three Gaidin (Warders)",
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "Green Ajah"
+        },
+        {
+          "name": "Green Ajah",
+          "faction_type": "ajah",
+          "role": "member",
+          "notes": "Has three Warders"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Moiraine has arranged for Lan's bond to pass to Myrelle upon Moiraine's death. Myrelle has promised to pass the bond to another who suits Lan better. Does not appear directly in this chapter but is discussed."
+    },
+    {
+      "name_used_in_text": "Rand",
+      "likely_matches_existing": "Rand al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": "young",
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Discussed but does not appear. Moiraine and Lan discuss how Lan trained him to act like a Border lord before meeting the Amyrlin."
+    },
+    {
+      "name_used_in_text": "Nynaeve",
+      "likely_matches_existing": "Nynaeve al'Meara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": "young woman",
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Mentioned but does not appear. Moiraine reflects on Nynaeve's influence on Lan, putting cracks in his emotional walls and changing his loyalties."
+    },
+    {
+      "name_used_in_text": "Draghkar",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "other",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "too-tall appearance like a man wrapped in cloak, gaunt-cheeked, pale, large black eyes, puckered red-lipped mouth with sharp teeth, white hands tipped with claws, bat-like wings",
+        "age": null,
+        "filiations": "Shadowspawn creature",
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Shadowspawn creature"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "An individual Shadowspawn creature that attacks Moiraine in the garden. It was warded, suggesting Black Ajah involvement. Killed by Lan and Jaem."
+    },
+    {
+      "name_used_in_text": "Anaiya",
+      "likely_matches_existing": "Anaiya",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Mentioned in passing as having Healed Lan when he brought Moiraine to her after a desperate ride. Does not appear in this chapter."
+    },
+    {
+      "name_used_in_text": "Logain",
+      "likely_matches_existing": "Logain",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "false Dragon",
+          "alias_type": "epithet",
+          "notes": "One of two recent men who could channel"
+        }
+      ],
+      "notes": "Mentioned but does not appear. Discussed as one of two recent false Dragons who could channel."
+    },
+    {
+      "name_used_in_text": "Mazrim Taim",
+      "likely_matches_existing": "Mazrim Taim",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Saldaean",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "false Dragon",
+          "alias_type": "epithet",
+          "notes": "Can channel, Aes Sedai have not yet captured him"
+        }
+      ],
+      "notes": "Mentioned but does not appear. Vandene discusses him as a potential sign of the Last Battle approaching."
+    },
+    {
+      "name_used_in_text": "Lanfear",
+      "likely_matches_existing": "Lanfear",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": "Linked to Lews Therin Telamon historically",
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "One of the Forsaken"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Daughter of the Night",
+          "alias_type": "epithet",
+          "notes": "One of her titles"
+        }
+      ],
+      "notes": "Discussed but does not appear. Moiraine asks about her connection to the Dragon."
+    },
+    {
+      "name_used_in_text": "Lews Therin Telamon",
+      "likely_matches_existing": "Lews Therin Telamon",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": "Linked to Lanfear historically",
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Dragon",
+          "alias_type": "epithet",
+          "notes": "His title in the Age of Legends"
+        }
+      ],
+      "notes": "Discussed but does not appear. Mentioned in connection with Lanfear."
+    },
+    {
+      "name_used_in_text": "Amyrlin",
+      "likely_matches_existing": "the Amyrlin Seat",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "leader",
+          "notes": "The Amyrlin Seat, leader of all Aes Sedai"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "the Amyrlin",
+          "alias_type": "title",
+          "notes": "Short form of title"
+        }
+      ],
+      "notes": "Mentioned but does not appear. Lan brought Rand to her at Fal Dara."
+    },
+    {
+      "name_used_in_text": "Mordeth",
+      "likely_matches_existing": "Mordeth",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Aridhol (historical)",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "Councilor who began the corruption of Shadar Logoth",
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Discussed but does not appear. Mentioned in Vandene's explanation of Shadar Logoth."
+    },
+    {
+      "name_used_in_text": "Yurian Stonebow",
+      "likely_matches_existing": "Yurian Stonebow",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "false Dragon",
+          "alias_type": "epithet",
+          "notes": "Rose from ashes of Trolloc Wars"
+        }
+      ],
+      "notes": "Mentioned but does not appear. Discussed as historical false Dragon closest to Shadar Logoth in history."
+    }
+  ],
+  "appearances": [
+    {
+      "character": "Moiraine",
+      "whereabouts": "At the house of Adeleas and Vandene in Tifan's Well, Arafel; in the study and then the garden",
+      "notable_actions": "Searches through books and manuscripts for answers about the Dragon, the Horn, and related matters; questions Vandene about the Prophecies, Toman Head, Shadar Logoth, and Lanfear; discusses Lan's bond and arranges for it to pass to Myrelle upon her death; is attacked by a Draghkar in the garden but saved by Lan and Jaem; concludes the Draghkar was warded by the Black Ajah; decides to leave immediately",
+      "demeanor": "troubled, frustrated at not finding answers, contemplative about her long relationship with Lan, briefly jealous when thinking of Nynaeve's influence on Lan, methodical in her questioning",
+      "alliances_shown": [
+        "Lan",
+        "Vandene",
+        "Adeleas",
+        "the White Tower",
+        "Blue Ajah"
+      ]
+    },
+    {
+      "character": "Lan",
+      "whereabouts": "At the house of Adeleas and Vandene in Tifan's Well; initially in the barn practicing sword forms, then returning to the house, then in the garden",
+      "notable_actions": "Practices sword forms with Jaem while angry; returns toward the house; saves Moiraine from the Draghkar by driving his sword through it along with Jaem; discusses the bond with Moiraine and his training of Rand; learns Moiraine has arranged for his bond to pass to Myrelle and potentially another; prepares to leave with Moiraine",
+      "demeanor": "angry and off-balance during conversation with Moiraine, defensive about the bond, devoted and protective when saving her from the Draghkar, maintaining emotional walls but showing cracks",
+      "alliances_shown": [
+        "Moiraine",
+        "Jaem",
+        "the Emond's Field folk including Rand and Nynaeve"
+      ]
+    },
+    {
+      "character": "Vandene",
+      "whereabouts": "At her house in Tifan's Well, Arafel",
+      "notable_actions": "Brings tea to Moiraine; answers Moiraine's questions about the Prophecies, the Horn of Valere, Toman Head, Shadar Logoth, and the Forsaken; advises Moiraine about Lan; responds to the Draghkar attack with a lantern; uses the One Power to restore Moiraine's strength after the attack; Heals Jaem's shoulder; agrees to send Moiraine's letters to the White Tower",
+      "demeanor": "helpful, scholarly, perceptive about relationships, concerned for Moiraine's welfare",
+      "alliances_shown": [
+        "Moiraine",
+        "Adeleas",
+        "Jaem",
+        "the White Tower"
+      ]
+    },
+    {
+      "character": "Adeleas",
+      "whereabouts": "At her house in Tifan's Well, Arafel",
+      "notable_actions": "Brings a lantern when the Draghkar is killed; examines the creature; discusses how it could have come so close without being sensed; sends Jaem to meet the villagers; agrees to hide the Draghkar and send Moiraine's letters",
+      "demeanor": "scholarly, analytical, treating the Draghkar as a puzzle to solve",
+      "alliances_shown": [
+        "Vandene",
+        "Jaem",
+        "Moiraine",
+        "the White Tower"
+      ]
+    },
+    {
+      "character": "Jaem",
+      "whereabouts": "At the house in Tifan's Well; practicing in the barn, then responding to the Draghkar attack in the garden",
+      "notable_actions": "Practices sword forms with Lan; helps kill the Draghkar by driving his sword through it alongside Lan; is knocked to his knees by the creature's wing; has his shoulder tended by Vandene; goes to meet the villagers and tell them nothing is wrong",
+      "demeanor": "dutiful, still skilled with the sword despite his age, muttering but accepting help",
+      "alliances_shown": [
+        "Adeleas",
+        "Vandene",
+        "Lan",
+        "Moiraine"
+      ]
+    },
+    {
+      "character": "Draghkar",
+      "whereabouts": "In the garden of the house in Tifan's Well",
+      "notable_actions": "Appears in the garden and attempts to use its croon to enthrall Moiraine; tries to drain her soul with its kiss; fights Lan and Jaem when they intervene; is killed by their swords driven through its breast; topples into a flower bed",
+      "demeanor": "predatory, using its supernatural abilities to enthrall victims",
+      "alliances_shown": [
+        "The Shadow",
+        "Black Ajah (implied by the warding)"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "character_a": "Moiraine",
+      "character_b": "Lan",
+      "relationship_type": "warder_bond",
+      "directed": true,
+      "description": "Moiraine holds Lan's Warder bond; they have been companions for nearly twenty years; she has arranged for the bond to pass to Myrelle upon her death"
+    },
+    {
+      "character_a": "Adeleas",
+      "character_b": "Vandene",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "Sisters who have lived in voluntary retreat together for many years, studying and planning to write a history of the world"
+    },
+    {
+      "character_a": "Adeleas",
+      "character_b": "Jaem",
+      "relationship_type": "warder_bond",
+      "directed": true,
+      "description": "Jaem is the remaining Warder to Adeleas and/or Vandene (the text suggests shared between the sisters)"
+    },
+    {
+      "character_a": "Vandene",
+      "character_b": "Jaem",
+      "relationship_type": "warder_bond",
+      "directed": true,
+      "description": "Jaem is the remaining Warder to Vandene and/or Adeleas (the text suggests shared between the sisters)"
+    },
+    {
+      "character_a": "Moiraine",
+      "character_b": "Vandene",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Fellow Aes Sedai; Vandene provides information and hospitality to Moiraine in her research"
+    },
+    {
+      "character_a": "Moiraine",
+      "character_b": "Adeleas",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Fellow Aes Sedai; Adeleas provides access to her extensive library and knowledge"
+    },
+    {
+      "character_a": "Lan",
+      "character_b": "Jaem",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Fellow Warders who practice sword forms together and fight the Draghkar together"
+    },
+    {
+      "character_a": "Lan",
+      "character_b": "Nynaeve",
+      "relationship_type": "romantic",
+      "directed": false,
+      "description": "Moiraine observes that Nynaeve has put cracks in Lan's emotional walls and changed his loyalties, comparing it to a bride having captured his eyes though he is blind to it"
+    },
+    {
+      "character_a": "Moiraine",
+      "character_b": "Myrelle",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Moiraine has arranged for Lan's bond to pass to Myrelle upon Moiraine's death; Myrelle has agreed to this arrangement"
+    },
+    {
+      "character_a": "Lan",
+      "character_b": "Rand",
+      "relationship_type": "mentor",
+      "directed": true,
+      "description": "Lan trained Rand to speak and act as a Border lord and soldier before meeting the Amyrlin"
+    },
+    {
+      "character_a": "Lanfear",
+      "character_b": "Lews Therin Telamon",
+      "relationship_type": "romantic",
+      "directed": false,
+      "description": "Historically linked; Vandene mentions Lanfear was connected to the Dragon, Lews Therin Telamon"
+    }
+  ],
+  "_meta": {
+    "book_order": 2,
+    "chapter_number": 22,
+    "chapter_id": 77,
+    "chapter_title": "Watchers",
+    "model": "claude-sonnet-4-5",
+    "input_tokens": 19197,
+    "output_tokens": 6399
+  }
+}

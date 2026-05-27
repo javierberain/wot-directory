@@ -1,0 +1,751 @@
+{
+  "characters": [
+    {
+      "name_used_in_text": "Brandelwyn al'Vere",
+      "likely_matches_existing": "Brandelwyn al'Vere",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "bluff voice, thick forefinger",
+        "age": null,
+        "filiations": "innkeeper, owns the inn",
+        "personality": "practical, authoritative, skilled brewer"
+      },
+      "factions": [
+        {
+          "name": "Village Council",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Mayor of Emond's Field"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Bran",
+          "alias_type": "given_name",
+          "notes": null
+        },
+        {
+          "alias_text": "Master al'Vere",
+          "alias_type": "title",
+          "notes": null
+        },
+        {
+          "alias_text": "Mayor",
+          "alias_type": "title",
+          "notes": "Village position"
+        }
+      ],
+      "notes": "Makes his own ale, keeps books and stones boards, maintains polished canister for tabac on mantel"
+    },
+    {
+      "name_used_in_text": "Tam al'Thor",
+      "likely_matches_existing": "Tam al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "Rand's father, farmer",
+        "personality": "measured, thoughtful, respected by Village Council"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Tam",
+          "alias_type": "given_name",
+          "notes": null
+        }
+      ],
+      "notes": "Speaking to Village Council in low voice, emphasizing points; the men lean forward to listen"
+    },
+    {
+      "name_used_in_text": "Rand al'Thor",
+      "likely_matches_existing": "Rand al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "tall (Moiraine barely comes up to his chest), feels ungainly",
+        "age": "young man",
+        "filiations": "Tam's son",
+        "personality": "curious, polite, susceptible to being enchanted by Moiraine"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Rand",
+          "alias_type": "given_name",
+          "notes": null
+        }
+      ],
+      "notes": "Feels watched by raven, experiences anger at it; stunned by silver coin value"
+    },
+    {
+      "name_used_in_text": "Matrim Cauthon",
+      "likely_matches_existing": "Matrim Cauthon",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": "young man",
+        "filiations": null,
+        "personality": "prankster, mischievous, impulsive; gets in trouble with schemes"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Mat",
+          "alias_type": "given_name",
+          "notes": null
+        },
+        {
+          "alias_text": "Mat Cauthon",
+          "alias_type": "given_name",
+          "notes": null
+        },
+        {
+          "alias_text": "Matrim",
+          "alias_type": "given_name",
+          "notes": null
+        }
+      ],
+      "notes": "Covered Luhhan's dogs with flour as prank on Adan, Ewin, and Dag; avoiding Master Luhhan's wrath"
+    },
+    {
+      "name_used_in_text": "Scratch",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "other",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "yellow cat",
+        "age": null,
+        "filiations": "the inn's cat",
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Crouches atop cask with eyes closed and tail wrapped around feet"
+    },
+    {
+      "name_used_in_text": "Cenn Buie",
+      "likely_matches_existing": "Cenn Buie",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": "old enough to be Nynaeve's grandfather",
+        "filiations": null,
+        "personality": "reluctant, contrarian (nods more reluctantly than others at meeting)"
+      },
+      "factions": [
+        {
+          "name": "Village Council",
+          "faction_type": "other",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Cenn",
+          "alias_type": "given_name",
+          "notes": null
+        },
+        {
+          "alias_text": "Master Buie",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Called Nynaeve a child last year and she thumped him with her stick"
+    },
+    {
+      "name_used_in_text": "Haral Luhhan",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "arms as big as most men's legs, roped with heavy muscle; wears long leather apron",
+        "age": null,
+        "filiations": "blacksmith, married to Alsbet Luhhan",
+        "personality": "stern, concerned about village matters"
+      },
+      "factions": [
+        {
+          "name": "Village Council",
+          "faction_type": "other",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Master Luhhan",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Frowns at Rand and Mat, likely suspects Mat of flour prank on his dogs; chased from house by wife with broom"
+    },
+    {
+      "name_used_in_text": "Jon Thane",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "the miller",
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "Village Council",
+          "faction_type": "other",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Glances at boys as they enter common room"
+    },
+    {
+      "name_used_in_text": "Mistress al'Vere",
+      "likely_matches_existing": "Mistress al'Vere",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "slender, thick braid of graying hair pulled over one shoulder",
+        "age": "middle-aged (graying hair)",
+        "filiations": "married to Bran al'Vere, innkeeper's wife",
+        "personality": "motherly, warm, nurturing to young men; skilled cook"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "One of the few married women who never tries to matchmaker with Tam; famous for crusty bread and honeycakes; easily the best cook in Emond's Field"
+    },
+    {
+      "name_used_in_text": "Ewin Finngar",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "pudgy face",
+        "age": "fourteen",
+        "filiations": null,
+        "personality": "eager, excitable, younger boy following older ones"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Ewin",
+          "alias_type": "given_name",
+          "notes": null
+        }
+      ],
+      "notes": "Several years younger than Rand and Mat; victim of Mat's ghost hound prank"
+    },
+    {
+      "name_used_in_text": "Nynaeve al'Meara",
+      "likely_matches_existing": "Nynaeve al'Meara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": "young (but old enough to be Wisdom)",
+        "filiations": "the Wisdom of Emond's Field",
+        "personality": "quick temper, flares up easily but doesn't stay angry long; thumped Cenn with her stick"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Nynaeve",
+          "alias_type": "given_name",
+          "notes": null
+        },
+        {
+          "alias_text": "the Wisdom",
+          "alias_type": "title",
+          "notes": "Village healer and advisor"
+        }
+      ],
+      "notes": "Called 'child' by Moiraine; answered Moiraine's questions like she'd bitten a green sweetberry; stared unfriendly after her"
+    },
+    {
+      "name_used_in_text": "Moiraine",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown (not Two Rivers)",
+        "physical_traits": "barely tall enough to come up to Rand's chest, large dark eyes with hint of knowing/maturity, dark hair in soft ringlets (unbraided), ageless appearance",
+        "age": "ageless - appears young but eyes suggest older",
+        "filiations": "claims to be student of history, collector of old stories; accompanied by Lan",
+        "personality": "graceful, commanding presence, mysterious, knowledgeable about the Pattern and Wheel"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "the Lady Moiraine",
+          "alias_type": "title",
+          "notes": "used by villagers"
+        },
+        {
+          "alias_text": "Lady Moiraine",
+          "alias_type": "title",
+          "notes": "formal address"
+        }
+      ],
+      "notes": "Wears sky-blue velvet cloak with silver embroidery, blue dress slashed with cream, heavy gold necklace, gold chain in hair supporting blue stone on forehead, wide belt of woven gold, gold ring shaped like serpent biting tail (Great Serpent); gives silver coins to boys; asks questions about villagers' ages and residences; insists on being called just 'Moiraine'; seems to glide rather than walk"
+    },
+    {
+      "name_used_in_text": "Lan",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown (not Two Rivers)",
+        "physical_traits": "tall, hair long and gray at temples held back by narrow leather headband, face made from stony planes and angles, weathered but unlined despite gray hair, cold blue eyes",
+        "age": "mature (gray at temples)",
+        "filiations": "accompanies Moiraine, appears to be in her service",
+        "personality": "wolf-like movements, intimidating presence, deferential to Moiraine"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Wears sword, clothes dark grayish green, cloak shifts through shades of gray/green/brown and seems to fade/disappear; moves like a wolf; gives youths weighing look with cold eyes; Ewin speculates he might be a Warder; his cloak appears to change colors"
+    },
+    {
+      "name_used_in_text": "Rowan Hurn",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "Village Council",
+          "faction_type": "other",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Joins Council meeting in common room"
+    },
+    {
+      "name_used_in_text": "Samel Crawe",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "Village Council",
+          "faction_type": "other",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Joins Council meeting in common room"
+    },
+    {
+      "name_used_in_text": "Alsbet Luhhan",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "almost as strong as her blacksmith husband",
+        "age": null,
+        "filiations": "married to Haral Luhhan",
+        "personality": "worse temper than her husband, chased husband and dogs out with broom"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Mistress Luhhan",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Her house got flour all over it when Luhhan's dogs ran inside after Mat's prank; left door open"
+    },
+    {
+      "name_used_in_text": "Adan al'Caar",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": "young (has 'snot-nosed friends')",
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Adan",
+          "alias_type": "given_name",
+          "notes": null
+        }
+      ],
+      "notes": "Victim of Mat's ghost hound prank story"
+    },
+    {
+      "name_used_in_text": "Dag Coplin",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": "young (Ewin's age group)",
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Dag",
+          "alias_type": "given_name",
+          "notes": null
+        }
+      ],
+      "notes": "Victim of Mat's ghost hound prank; flour-covered dogs ran near his house"
+    },
+    {
+      "name_used_in_text": "Bela",
+      "likely_matches_existing": "Bela",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "horse",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": "cart horse for al'Thor farm",
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Cart taken away by Hu or Tad"
+    },
+    {
+      "name_used_in_text": "Hu",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "stableman at the inn",
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "One of two stablemen who might have taken Bela and cart"
+    },
+    {
+      "name_used_in_text": "Tad",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "stableman at the inn",
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "One of two stablemen who might have taken Bela and cart"
+    },
+    {
+      "name_used_in_text": "Egwene",
+      "likely_matches_existing": "Egwene",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "has secrets, wears secretive smiles"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Not present in chapter but referenced in comparison to Moiraine's smile"
+    }
+  ],
+  "appearances": [
+    {
+      "character": "Brandelwyn al'Vere",
+      "whereabouts": "common room of the inn",
+      "notable_actions": "filling mugs with ale; speaking to Village Council in low voice with emphasis, tapping forefinger into palm; all Council members nod in agreement",
+      "demeanor": "serious, authoritative during Council meeting",
+      "alliances_shown": [
+        "Village Council members",
+        "Tam al'Thor"
+      ]
+    },
+    {
+      "character": "Tam al'Thor",
+      "whereabouts": "common room of the inn, in front of fireplace",
+      "notable_actions": "filling pipe with tabac from mantel; speaking to Village Council in low voice while they lean forward intently",
+      "demeanor": "measured, serious; others listening intently suggests authority",
+      "alliances_shown": [
+        "Village Council",
+        "Bran al'Vere"
+      ]
+    },
+    {
+      "character": "Rand al'Thor",
+      "whereabouts": "moving between cart, inn cellar, and village Green",
+      "notable_actions": "carrying barrels to cellar with Mat; eating honeycakes; throwing stones at raven; receiving silver coin from Moiraine; questioning Moiraine about her purpose",
+      "demeanor": "curious, polite, enchanted by Moiraine, nervous about being watched, awkward around Moiraine",
+      "alliances_shown": [
+        "Mat Cauthon",
+        "Ewin Finngar",
+        "Tam al'Thor"
+      ]
+    },
+    {
+      "character": "Matrim Cauthon",
+      "whereabouts": "moving between cart, inn cellar, and village Green",
+      "notable_actions": "carrying barrels; avoiding Master Luhhan; telling Ewin about strangers; throwing stones at raven; receiving silver coin from Moiraine; decides not to spend coin",
+      "demeanor": "anxious about Luhhan, excited about strangers and Festival, foolishly grinning at Moiraine",
+      "alliances_shown": [
+        "Rand al'Thor",
+        "Ewin Finngar"
+      ]
+    },
+    {
+      "character": "Scratch",
+      "whereabouts": "atop cask in common room",
+      "notable_actions": "crouching with eyes closed, tail wrapped around feet",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Cenn Buie",
+      "whereabouts": "common room in front of fireplace",
+      "notable_actions": "sitting with Village Council, nodding more reluctantly than others at Bran's words",
+      "demeanor": "reluctant, contrarian",
+      "alliances_shown": [
+        "Village Council"
+      ]
+    },
+    {
+      "character": "Haral Luhhan",
+      "whereabouts": "common room in front of fireplace",
+      "notable_actions": "frowning at Rand and Mat; tamping pipe; attending Village Council meeting",
+      "demeanor": "stern, suspicious (toward Mat), impatient",
+      "alliances_shown": [
+        "Village Council"
+      ]
+    },
+    {
+      "character": "Jon Thane",
+      "whereabouts": "common room in front of fireplace",
+      "notable_actions": "glancing at boys; attending Village Council meeting",
+      "demeanor": null,
+      "alliances_shown": [
+        "Village Council"
+      ]
+    },
+    {
+      "character": "Mistress al'Vere",
+      "whereabouts": "moving between kitchen and common room",
+      "notable_actions": "bringing tray of fresh bread, pickles, cheese to Council; offering honeycakes to boys; baking",
+      "demeanor": "motherly, warm, bustling",
+      "alliances_shown": [
+        "Bran al'Vere",
+        "Village Council",
+        "Rand and Mat"
+      ]
+    },
+    {
+      "character": "Ewin Finngar",
+      "whereabouts": "moving around village, joins Rand and Mat",
+      "notable_actions": "rushing to tell about strangers; receiving silver coin from Moiraine; inviting Moiraine to his house; hearing about ghost hound prank",
+      "demeanor": "eager, excited, face shining with news; anguished indecision about coin",
+      "alliances_shown": [
+        "Rand al'Thor",
+        "Matrim Cauthon"
+      ]
+    },
+    {
+      "character": "Nynaeve al'Meara",
+      "whereabouts": "elsewhere in village (not present in scenes)",
+      "notable_actions": "earlier gave directions to Moiraine, called 'child' by her; answered Moiraine's herb questions tersely; stared unfriendly after Moiraine",
+      "demeanor": "angry, hostile toward Moiraine",
+      "alliances_shown": []
+    },
+    {
+      "character": "Moiraine",
+      "whereabouts": "village Green area, heading toward Wagon Bridge",
+      "notable_actions": "speaking about raven being vile; introducing herself to boys; asking their names; giving silver coins; speaking cryptically about Wheel of Time and Pattern; asking questions about villagers; claiming to study old stories",
+      "demeanor": "graceful, commanding, mysterious, amused by boys, distant when discussing the Pattern",
+      "alliances_shown": [
+        "Lan"
+      ]
+    },
+    {
+      "character": "Lan",
+      "whereabouts": "near inn, following Moiraine toward Wagon Bridge",
+      "notable_actions": "standing near inn front; following Moiraine; giving boys cold, weighing look; speaking to Moiraine",
+      "demeanor": "wolf-like, cold, watchful, protective of Moiraine",
+      "alliances_shown": [
+        "Moiraine"
+      ]
+    },
+    {
+      "character": "Rowan Hurn",
+      "whereabouts": "common room in front of fireplace",
+      "notable_actions": "joining Village Council meeting",
+      "demeanor": null,
+      "alliances_shown": [
+        "Village Council"
+      ]
+    },
+    {
+      "character": "Samel Crawe",
+      "whereabouts": "common room in front of fireplace",
+      "notable_actions": "joining Village Council meeting",
+      "demeanor": null,
+      "alliances_shown": [
+        "Village Council"
+      ]
+    },
+    {
+      "character": "Alsbet Luhhan",
+      "whereabouts": "her house (earlier, not in current scenes)",
+      "notable_actions": "chased husband and dogs out of house with broom after flour incident",
+      "demeanor": "angry",
+      "alliances_shown": [
+        "Haral Luhhan"
+      ]
+    },
+    {
+      "character": "Bela",
+      "whereabouts": "taken to inn stables",
+      "notable_actions": "cart taken away by stablemen",
+      "demeanor": null,
+      "alliances_shown": []
+    }
+  ],
+  "relationships": [
+    {
+      "character_a": "Bran al'Vere",
+      "character_b": "Mistress al'Vere",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "husband and wife; she is the innkeeper's wife"
+    },
+    {
+      "character_a": "Tam al'Thor",
+      "character_b": "Rand al'Thor",
+      "relationship_type": "family",
+      "directed": true,
+      "description": "father and son"
+    },
+    {
+      "character_a": "Haral Luhhan",
+      "character_b": "Alsbet Luhhan",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "husband and wife"
+    },
+    {
+      "character_a": "Rand al'Thor",
+      "character_b": "Matrim Cauthon",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "close friends working together, sharing experiences"
+    },
+    {
+      "character_a": "Moiraine",
+      "character_b": "Lan",
+      "relationship_type": "other",
+      "directed": true,
+      "description": "Lan appears to serve/protect Moiraine; he defers to her, does what she says, follows her protectively"
+    },
+    {
+      "character_a": "Moiraine",
+      "character_b": "Nynaeve al'Meara",
+      "relationship_type": "rival",
+      "directed": false,
+      "description": "tension after Moiraine called Nynaeve 'child'; Nynaeve answered tersely and stared unfriendly"
+    },
+    {
+      "character_a": "Matrim Cauthon",
+      "character_b": "Haral Luhhan",
+      "relationship_type": "other",
+      "directed": true,
+      "description": "Mat suspects Luhhan knows he pranked the dogs; Luhhan frowns at Mat; Mat avoids him"
+    },
+    {
+      "character_a": "Rand al'Thor",
+      "character_b": "Bela",
+      "relationship_type": "other",
+      "directed": true,
+      "description": "Rand uses Bela to pull cart from farm to inn"
+    }
+  ],
+  "_meta": {
+    "book_order": 1,
+    "chapter_number": 2,
+    "chapter_id": 3,
+    "chapter_title": "Strangers",
+    "model": "claude-sonnet-4-5",
+    "input_tokens": 10293,
+    "output_tokens": 7292
+  }
+}

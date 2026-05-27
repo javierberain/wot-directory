@@ -1,0 +1,78 @@
+{
+  "characters": [
+    {
+      "name_used_in_text": "Rand al'Thor",
+      "likely_matches_existing": "Rand al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Dragon Reborn",
+          "alias_type": "epithet",
+          "notes": "The banner he rides under; his prophesied title"
+        },
+        {
+          "alias_text": "the man whose face had been seen in the sky",
+          "alias_type": "epithet",
+          "notes": "How the tales describe him after events at Falme"
+        }
+      ],
+      "notes": "This chapter is an epilogue describing the spread of stories after the events at Falme. Rand is referenced as leading the column and having his face seen in the sky."
+    },
+    {
+      "name_used_in_text": "Artur Hawkwing",
+      "likely_matches_existing": "Artur Hawkwing",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Referenced in the spreading tales about armies returned from the grave or thrown back into the sea"
+    }
+  ],
+  "appearances": [
+    {
+      "character": "Rand al'Thor",
+      "whereabouts": "Leading a column riding from Almoth Plain toward the mountains, toward the dawn",
+      "notable_actions": "Rides at the head of the column under the banner of the Dragon Reborn; his face was seen in the sky above Falme",
+      "demeanor": null,
+      "alliances_shown": [
+        "the hundred (or thousand) who ride with him",
+        "those who proclaim themselves for the Dragon"
+      ]
+    },
+    {
+      "character": "Artur Hawkwing",
+      "whereabouts": "Subject of conflicting tales and speculation",
+      "notable_actions": "Referenced in contradictory stories: some say his armies were thrown back into the sea, others say the column IS his returned armies",
+      "demeanor": null,
+      "alliances_shown": []
+    }
+  ],
+  "relationships": [],
+  "_meta": {
+    "book_order": 2,
+    "chapter_number": 50,
+    "chapter_id": 105,
+    "chapter_title": "After",
+    "model": "claude-sonnet-4-5",
+    "input_tokens": 14768,
+    "output_tokens": 688
+  }
+}

@@ -1,0 +1,805 @@
+{
+  "characters": [
+    {
+      "name_used_in_text": "Rand",
+      "likely_matches_existing": "Rand al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "determined, burdened by his identity as the Dragon Reborn, struggling with saidin and the danger it represents"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Lord Rand",
+          "alias_type": "title",
+          "notes": "used by Hurin and others treating him as nobility"
+        }
+      ],
+      "notes": "Rand channels saidin in this chapter to fight Machin Shin, feeling the struggle between power and destruction. Barthanes delivers Fain's message to him."
+    },
+    {
+      "name_used_in_text": "Hurin",
+      "likely_matches_existing": "Hurin",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienaran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "loyal, cautious, observant, uncomfortable with Cairhienin deceit"
+      },
+      "factions": [
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "serves as a sniffer tracking the Darkfriends"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "sniffer",
+          "alias_type": "epithet",
+          "notes": "his role as one who can smell violence"
+        }
+      ],
+      "notes": null
+    },
+    {
+      "name_used_in_text": "Mat",
+      "likely_matches_existing": "Matrim Cauthon",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "hollow-cheeked, prominent cheekbones, wasting away",
+        "age": null,
+        "filiations": null,
+        "personality": "reluctant, grumbling, increasingly desperate due to illness from the dagger's absence"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Mat's physical condition is deteriorating despite Verin's Healing; Verin says he has only a few weeks left. He is searching for the dagger that was taken with the Horn."
+    },
+    {
+      "name_used_in_text": "Loial",
+      "likely_matches_existing": "Loial",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "ogier",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "very tall, must stoop in low-ceilinged corridors",
+        "age": null,
+        "filiations": "son of Arent son of Halan",
+        "personality": "loyal, anxious about propriety and getting into trouble, committed friend despite fear"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Builder",
+          "alias_type": "epithet",
+          "notes": "Hurin addresses him as Builder, referring to his Ogier nature"
+        }
+      ],
+      "notes": "Loial is able to sense the Waygate and closes it by finding the Avendesora leaf, saving the group from Machin Shin."
+    },
+    {
+      "name_used_in_text": "Verin",
+      "likely_matches_existing": "Verin Mathwin",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "plump",
+        "age": null,
+        "filiations": null,
+        "personality": "calculating, firm, authoritative, insistent on following the Horn to Toman Head"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "Aes Sedai of the Brown Ajah"
+        },
+        {
+          "name": "Brown Ajah",
+          "faction_type": "ajah",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Verin Sedai",
+          "alias_type": "title",
+          "notes": null
+        },
+        {
+          "alias_text": "Aes Sedai",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Verin references writings in Fal Dara's dungeons that connect events to Toman Head. She insists the group must travel the Ways via Stedding Tsofu. She reveals Mat has only a few weeks to live."
+    },
+    {
+      "name_used_in_text": "Ingtar",
+      "likely_matches_existing": "Ingtar",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienaran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "House Shinowa",
+        "personality": "despairing, deeply invested in recovering the Horn, feeling lost at its apparent escape"
+      },
+      "factions": [
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Shienaran lord leading the hunt for the Horn"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Lord Ingtar",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Ingtar feels utterly lost at the prospect of the Horn being taken through the Ways. He thinks he is lost if the Horn is not recovered."
+    },
+    {
+      "name_used_in_text": "Perrin",
+      "likely_matches_existing": "Perrin Aybara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "yellow eyes",
+        "age": null,
+        "filiations": null,
+        "personality": "steady, protective, thoughtful, loyal to his friends"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Perrin is reading 'The Travels of Jain Farstrider' and agrees to accompany Rand to Toman Head to keep Mat out of trouble."
+    },
+    {
+      "name_used_in_text": "Barthanes",
+      "likely_matches_existing": "Barthanes",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Cairhienin",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "House Damodred",
+        "personality": "cunning, playing the Great Game, willing to carry messages from Darkfriends due to 'certain claims'"
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Barthanes admits a Lugarder (Fain) has 'certain claims' on him he cannot ignore, suggesting Darkfriend connections"
+        },
+        {
+          "name": "House Damodred",
+          "faction_type": "house",
+          "role": "leader",
+          "notes": "Cairhienin noble house"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Lord Barthanes",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Barthanes delivers Fain's message to Rand, revealing Fain's location at Toman Head. The Waygate is located in his manor's walled garden."
+    },
+    {
+      "name_used_in_text": "Padan Fain",
+      "likely_matches_existing": "Padan Fain",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "obsessive, vengeful, mad, pursuing Rand with relentless determination"
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Darkfriend pursuing the Horn and Rand"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Fain",
+          "alias_type": "given_name",
+          "notes": null
+        },
+        {
+          "alias_text": "a Lugarder",
+          "alias_type": "epithet",
+          "notes": "Barthanes describes him as from Lugard"
+        }
+      ],
+      "notes": "Fain has taken the Horn through a Waygate to Toman Head and left a message threatening Rand's loved ones and people if he does not follow. He used Trollocs to guard the Horn and somehow had Machin Shin stationed at the Waygate as a guard."
+    },
+    {
+      "name_used_in_text": "Uno",
+      "likely_matches_existing": "Uno",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienaran",
+        "physical_traits": "one-eyed",
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Shienaran soldier"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "the one-eyed man",
+          "alias_type": "epithet",
+          "notes": null
+        }
+      ],
+      "notes": "Uno takes the Shienaran soldiers back to their inn in the Foregate after the visit to Barthanes's manor."
+    },
+    {
+      "name_used_in_text": "Mistress Tiedra",
+      "likely_matches_existing": "Mistress Tiedra",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Cairhienin",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Tiedra",
+          "alias_type": "given_name",
+          "notes": null
+        }
+      ],
+      "notes": "Innkeeper of The Great Tree; charges heavily but provides good service."
+    },
+    {
+      "name_used_in_text": "Red",
+      "likely_matches_existing": "Red",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "horse",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "bay",
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "the bay",
+          "alias_type": "epithet",
+          "notes": null
+        }
+      ],
+      "notes": "Rand's horse. Rand says he will ride Red to death if necessary to reach Toman Head."
+    },
+    {
+      "name_used_in_text": "Galldrian",
+      "likely_matches_existing": "Galldrian su Riatin Rie",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Cairhienin",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "House Riatin",
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "House Riatin",
+          "faction_type": "house",
+          "role": "leader",
+          "notes": "King of Cairhien"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Loial mentions that Galldrian stopped paying the Ogier stonemasons, causing them to leave."
+    },
+    {
+      "name_used_in_text": "Tam",
+      "likely_matches_existing": "Tam al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "Village Council",
+          "faction_type": "other",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Rand worries about Fain's threat against his father and Emond's Field."
+    },
+    {
+      "name_used_in_text": "Egwene",
+      "likely_matches_existing": "Egwene",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "novice or accepted in training"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Rand takes comfort that Egwene is safe in the White Tower, away from Fain's threats."
+    },
+    {
+      "name_used_in_text": "Selene",
+      "likely_matches_existing": "Selene",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Cairhienin",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Lady Selene",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Rand briefly wonders if the message is from Selene, but it is not."
+    },
+    {
+      "name_used_in_text": "Elder Haman",
+      "likely_matches_existing": "Elder Haman",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "ogier",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Haman",
+          "alias_type": "given_name",
+          "notes": null
+        }
+      ],
+      "notes": "Loial mentions Elder Haman would speak to him severely for his rash behavior."
+    },
+    {
+      "name_used_in_text": "Machin Shin",
+      "likely_matches_existing": "Machin Shin",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "other",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "pitch-black, oozing darkness with thousand insane voices",
+        "age": null,
+        "filiations": null,
+        "personality": "essence of madness and cruelty, calls Rand's name specifically"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "the Black Wind",
+          "alias_type": "epithet",
+          "notes": null
+        }
+      ],
+      "notes": "Machin Shin attempts to leave the Ways through the Waygate at Barthanes's manor, apparently stationed there as a guard. It calls Rand's name repeatedly. Rand drives it back using saidin."
+    },
+    {
+      "name_used_in_text": "Jain Farstrider",
+      "likely_matches_existing": "Jain Farstrider",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Perrin is reading 'The Travels of Jain Farstrider' when the group returns."
+    },
+    {
+      "name_used_in_text": "Avendesora",
+      "likely_matches_existing": "Avendesora",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "other",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "trefoil leaf carved in stone",
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "the Tree of Life",
+          "alias_type": "epithet",
+          "notes": null
+        }
+      ],
+      "notes": "The Avendesora leaf is the key to opening and closing Waygates. Loial finds and replaces it to close the Waygate."
+    }
+  ],
+  "appearances": [
+    {
+      "character": "Rand",
+      "whereabouts": "Barthanes's manor, then the walled garden with the Waygate, then back to The Great Tree inn",
+      "notable_actions": "Opens the Waygate, battles Machin Shin with saidin and drives it back, receives Fain's message from Barthanes, declares his intention to ride to Toman Head at first light",
+      "demeanor": "determined, strained by channeling, increasingly desperate about the threats to his loved ones",
+      "alliances_shown": [
+        "Hurin",
+        "Loial",
+        "Mat",
+        "Verin",
+        "Ingtar",
+        "Perrin"
+      ]
+    },
+    {
+      "character": "Hurin",
+      "whereabouts": "Barthanes's manor, the walled garden, The Great Tree inn",
+      "notable_actions": "Tracks the Darkfriends to the Waygate, reports the findings to Rand, assists in the investigation, later withdraws to drink ale while Verin takes charge",
+      "demeanor": "cautious, uncomfortable with Cairhienin duplicity, frightened by Machin Shin, respectful of Rand as a lord",
+      "alliances_shown": [
+        "Rand",
+        "Loial",
+        "Verin",
+        "Ingtar"
+      ]
+    },
+    {
+      "character": "Mat",
+      "whereabouts": "Barthanes's manor, The Great Tree inn",
+      "notable_actions": "Acts as messenger between Rand and Verin, grumbles about pretending to be a servant, declares he will continue to Toman Head to retrieve the dagger",
+      "demeanor": "grumpy, sarcastic, desperate, physically deteriorating (hollow-cheeked, wasting away)",
+      "alliances_shown": [
+        "Rand",
+        "Verin",
+        "Perrin",
+        "Loial"
+      ]
+    },
+    {
+      "character": "Loial",
+      "whereabouts": "Barthanes's manor, the walled garden, The Great Tree inn",
+      "notable_actions": "Senses the Waygate, helps Rand over the wall, finds and replaces the Avendesora leaf to close the Waygate and stop Machin Shin, commits to accompanying Rand to Toman Head",
+      "demeanor": "anxious about getting in trouble, frightened by Machin Shin, loyal and committed to his friends despite fear",
+      "alliances_shown": [
+        "Rand",
+        "Hurin",
+        "Mat",
+        "Perrin",
+        "Verin"
+      ]
+    },
+    {
+      "character": "Verin",
+      "whereabouts": "Barthanes's manor, The Great Tree inn",
+      "notable_actions": "Questions the group about their findings, reveals writings from Fal Dara's dungeons connecting events to Toman Head, insists the group travel the Ways via Stedding Tsofu, reveals Mat's deteriorating condition, organizes the departure for first light",
+      "demeanor": "firm, authoritative, calculating, implacable in her determination to pursue the Horn",
+      "alliances_shown": [
+        "Rand",
+        "Ingtar",
+        "Mat",
+        "Loial",
+        "Perrin",
+        "Hurin"
+      ]
+    },
+    {
+      "character": "Ingtar",
+      "whereabouts": "Barthanes's manor, The Great Tree inn",
+      "notable_actions": "Initially skeptical of Fain's message being genuine, expresses despair at losing the Horn, eventually agrees to follow Verin's plan to use the Ways from Stedding Tsofu",
+      "demeanor": "despairing, feeling lost, desperate to recover the Horn, volatile (bangs fist against wall)",
+      "alliances_shown": [
+        "Verin",
+        "Rand",
+        "Uno",
+        "the Shienaran soldiers"
+      ]
+    },
+    {
+      "character": "Perrin",
+      "whereabouts": "The Great Tree inn private dining room",
+      "notable_actions": "Reading when the group returns, agrees to accompany Rand to Toman Head to keep Mat out of trouble",
+      "demeanor": "steady, supportive, loyal, thoughtful",
+      "alliances_shown": [
+        "Rand",
+        "Mat",
+        "Loial",
+        "Verin"
+      ]
+    },
+    {
+      "character": "Barthanes",
+      "whereabouts": "His manor in Cairhien",
+      "notable_actions": "Hosts the gathering, delivers Fain's message to Rand despite his reservations, reveals Fain is a Lugarder who has 'certain claims' on him",
+      "demeanor": "calculating, playing the Great Game, seemingly shocked at his own directness when questioning Rand",
+      "alliances_shown": [
+        "Fain (unwillingly, through 'certain claims')"
+      ]
+    },
+    {
+      "character": "Padan Fain",
+      "whereabouts": "Has departed through the Waygate, heading to Toman Head",
+      "notable_actions": "Left message with Barthanes for Rand, threatening to hound Rand's loved ones and people if he does not follow, stationed Machin Shin as a guard at the Waygate, carries the Horn and Mat's dagger with Trolloc guards",
+      "demeanor": "mad, obsessive, vengeful, playing a complex game to draw Rand after him",
+      "alliances_shown": [
+        "Trollocs",
+        "Barthanes (through coercion)"
+      ]
+    },
+    {
+      "character": "Uno",
+      "whereabouts": "Barthanes's manor, then back to the soldiers' inn in the Foregate",
+      "notable_actions": "Takes the Shienaran soldiers back to their inn after a word from Ingtar",
+      "demeanor": null,
+      "alliances_shown": [
+        "Ingtar",
+        "the Shienaran soldiers"
+      ]
+    },
+    {
+      "character": "Mistress Tiedra",
+      "whereabouts": "The Great Tree inn",
+      "notable_actions": "Provides hospitality and good service at her inn",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Red",
+      "whereabouts": "Outside Barthanes's manor, ridden back to The Great Tree",
+      "notable_actions": "Serves as Rand's mount",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Galldrian",
+      "whereabouts": "Not present, mentioned only",
+      "notable_actions": "Stopped paying the Ogier stonemasons, causing them to leave",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Tam",
+      "whereabouts": "Not present, in Emond's Field",
+      "notable_actions": "None in this chapter, mentioned in Rand's thoughts as one threatened by Fain",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Egwene",
+      "whereabouts": "Not present, at the White Tower",
+      "notable_actions": "None in this chapter, mentioned in Rand's thoughts as someone he worries about",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Selene",
+      "whereabouts": "Not present, mentioned only",
+      "notable_actions": "None in this chapter, Rand briefly wonders if message is from her",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Elder Haman",
+      "whereabouts": "Not present, mentioned only",
+      "notable_actions": "None in this chapter, mentioned by Loial as someone who would disapprove of his rash actions",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Machin Shin",
+      "whereabouts": "Within the Ways at the Waygate in Barthanes's walled garden",
+      "notable_actions": "Attempts to emerge from the Waygate when Rand opens it, calling Rand's name repeatedly, is driven back by Rand's channeling of saidin",
+      "demeanor": "malevolent, insane, specifically hunting for Rand ('Al'Thor' repeated in its voices)",
+      "alliances_shown": []
+    },
+    {
+      "character": "Jain Farstrider",
+      "whereabouts": "Not present, subject of book Perrin is reading",
+      "notable_actions": "None, historical figure",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Avendesora",
+      "whereabouts": "Carved as a leaf on the Waygate in Barthanes's garden",
+      "notable_actions": "The trefoil leaf serves as the mechanism to open and close the Waygate",
+      "demeanor": null,
+      "alliances_shown": []
+    }
+  ],
+  "relationships": [
+    {
+      "character_a": "Rand",
+      "character_b": "Hurin",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Hurin serves Rand loyally, tracks for him, and treats him as a lord despite his discomfort with formality"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Loial",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Close friends; Loial commits to following Rand to Toman Head despite the dangers, says he likes Rand regardless of him being ta'veren"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Mat",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Longtime friends from the Two Rivers, though their relationship is strained by Mat's illness and Rand's changes; Rand is desperate to save Mat by recovering the dagger"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Perrin",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Friends from the Two Rivers; Perrin agrees to accompany Rand to Toman Head"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Verin",
+      "relationship_type": "other",
+      "directed": false,
+      "description": "Tense relationship; Rand insists there is 'nothing' between him and any Aes Sedai, but must work with Verin to recover the Horn and save Mat"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Padan Fain",
+      "relationship_type": "enemy",
+      "directed": false,
+      "description": "Fain is obsessively pursuing Rand, has laid a trap for him at Toman Head, and threatens to harm Rand's loved ones if he does not follow"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Tam",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "Father and son (adoptive); Rand worries about Fain's threats against Tam"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Egwene",
+      "relationship_type": "romantic",
+      "directed": false,
+      "description": "Rand cares deeply for Egwene and worries about Fain's threats, though takes some comfort she is safe at the White Tower"
+    },
+    {
+      "character_a": "Verin",
+      "character_b": "Ingtar",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Verin directs Ingtar and the Shienaran forces in pursuit of the Horn"
+    },
+    {
+      "character_a": "Mat",
+      "character_b": "Perrin",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Friends from the Two Rivers; Perrin jokes about keeping Mat out of trouble"
+    },
+    {
+      "character_a": "Barthanes",
+      "character_b": "Padan Fain",
+      "relationship_type": "other",
+      "directed": true,
+      "description": "Fain has 'certain claims' on Barthanes that force him to carry messages, suggesting Darkfriend connections or coercion"
+    },
+    {
+      "character_a": "Ingtar",
+      "character_b": "Uno",
+      "relationship_type": "ally",
+      "directed": true,
+      "description": "Ingtar commands Uno and the Shienaran soldiers"
+    },
+    {
+      "character_a": "Loial",
+      "character_b": "Elder Haman",
+      "relationship_type": "other",
+      "directed": true,
+      "description": "Elder Haman is an authority figure Loial fears would disapprove of his rash actions"
+    }
+  ],
+  "_meta": {
+    "book_order": 2,
+    "chapter_number": 33,
+    "chapter_id": 88,
+    "chapter_title": "A Message from the Dark",
+    "model": "claude-sonnet-4-5",
+    "input_tokens": 21802,
+    "output_tokens": 8051
+  }
+}

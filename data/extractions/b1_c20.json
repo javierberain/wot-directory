@@ -1,0 +1,573 @@
+{
+  "characters": [
+    {
+      "name_used_in_text": "Lan",
+      "likely_matches_existing": "Lan",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "commanding, protective"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "the Warder",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": null
+    },
+    {
+      "name_used_in_text": "Moiraine",
+      "likely_matches_existing": "Moiraine",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "authoritative, knowledgeable about danger"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "Aes Sedai"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Moiraine Sedai",
+          "alias_type": "title",
+          "notes": null
+        },
+        {
+          "alias_text": "the Aes Sedai",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": null
+    },
+    {
+      "name_used_in_text": "Rand",
+      "likely_matches_existing": "Rand al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "protective, concerned about Egwene"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": null
+    },
+    {
+      "name_used_in_text": "Egwene",
+      "likely_matches_existing": "Egwene",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": null
+    },
+    {
+      "name_used_in_text": "Thom",
+      "likely_matches_existing": "The Gleeman",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "from Baerlon area",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "resourceful, quick-thinking, storytelling"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Thom Merrilin",
+          "alias_type": "given_name",
+          "notes": null
+        },
+        {
+          "alias_text": "the gleeman",
+          "alias_type": "epithet",
+          "notes": null
+        }
+      ],
+      "notes": "Full name Thom Merrilin revealed in this chapter"
+    },
+    {
+      "name_used_in_text": "Mat",
+      "likely_matches_existing": "Matrim Cauthon",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "impulsive, quick to react"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": null
+    },
+    {
+      "name_used_in_text": "Perrin",
+      "likely_matches_existing": "Perrin Aybara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "big, shaggy curls",
+        "age": null,
+        "filiations": null,
+        "personality": "deliberate, careful thinker, prefers to think things through"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": null
+    },
+    {
+      "name_used_in_text": "Nynaeve",
+      "likely_matches_existing": "Nynaeve al'Meara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "Women's Circle",
+          "faction_type": "society",
+          "role": "leader",
+          "notes": "Wisdom of Emond's Field"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": null
+    },
+    {
+      "name_used_in_text": "Aldieb",
+      "likely_matches_existing": "Aldieb",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "horse",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Moiraine's horse"
+    },
+    {
+      "name_used_in_text": "Mandarb",
+      "likely_matches_existing": "Mandarb",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "horse",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Lan's horse"
+    },
+    {
+      "name_used_in_text": "Cloud",
+      "likely_matches_existing": "Cloud",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "horse",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "gray",
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "the gray",
+          "alias_type": "epithet",
+          "notes": null
+        }
+      ],
+      "notes": "Rand's horse"
+    },
+    {
+      "name_used_in_text": "Bela",
+      "likely_matches_existing": "Bela",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "horse",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "the mare",
+          "alias_type": "epithet",
+          "notes": null
+        }
+      ],
+      "notes": "Egwene's horse"
+    },
+    {
+      "name_used_in_text": "Mashadar",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "other",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "silvery-gray fog with tendrils, vast",
+        "age": null,
+        "filiations": null,
+        "personality": "mindless, senses food, dangerous"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "The evil of Shadar Logoth, described as unseeing, unthinking, moving like a worm through the city. Not a traditional creature but a distinct supernatural entity that acts."
+    },
+    {
+      "name_used_in_text": "Mordeth",
+      "likely_matches_existing": "Mordeth",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Aridhol (historical)",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "frightening, dangerous"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Referenced as a danger; frightened Perrin worse than Trollocs"
+    },
+    {
+      "name_used_in_text": "Bayle Domon",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "stocky, round face but not soft, long hair to shoulders, beard that leaves upper lip bare",
+        "age": null,
+        "filiations": null,
+        "personality": "reasonable but pragmatic, fast-talking"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Captain Domon",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Captain and owner of the trader boat Spray. Speaks very fast with words running together."
+    },
+    {
+      "name_used_in_text": "Floran Gelb",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "narrow-faced, bruise on forehead",
+        "age": null,
+        "filiations": null,
+        "personality": "deceptive, lazy, quick to blame others"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Gelb",
+          "alias_type": "given_name",
+          "notes": null
+        }
+      ],
+      "notes": "Crewman on the Spray. Failed to secure the boom and fell asleep on watch. Falsely accused Rand of being a Darkfriend."
+    },
+    {
+      "name_used_in_text": "Tam",
+      "likely_matches_existing": "Tam al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Referenced by Rand in memory regarding the sword with bronze heron"
+    }
+  ],
+  "appearances": [
+    {
+      "character": "Lan",
+      "whereabouts": "Leading the group out of Shadar Logoth initially, then separated from Rand, Mat, Thom, Perrin, and Egwene",
+      "notable_actions": "Led the group out of the white stone building, gave quiet commands to stay close, rode ahead with Moiraine",
+      "demeanor": "commanding, calm under pressure",
+      "alliances_shown": [
+        "Moiraine"
+      ]
+    },
+    {
+      "character": "Moiraine",
+      "whereabouts": "With Lan initially, then separated from the others by Mashadar",
+      "notable_actions": "Warned the group about Mashadar, explained its nature and danger, instructed them to head for the river following the red star, promised to find them again",
+      "demeanor": "knowledgeable, authoritative, concerned but controlled",
+      "alliances_shown": [
+        "Lan"
+      ]
+    },
+    {
+      "character": "Rand",
+      "whereabouts": "Separated from Moiraine and Lan by Mashadar, then rides through Shadar Logoth, encounters Trollocs and Fades, eventually boards the Spray",
+      "notable_actions": "Fights off Trolloc with sword, nearly falls to Trolloc on the boat, watches companions disappear in different directions, worries about Egwene, trades his silver coin for passage",
+      "demeanor": "anxious, protective of Egwene, fearful but determined, guilt-ridden at the end",
+      "alliances_shown": [
+        "Mat",
+        "Thom",
+        "Egwene"
+      ]
+    },
+    {
+      "character": "Egwene",
+      "whereabouts": "Initially with the group, then separated when Trollocs attack; rides with Perrin, falls into the Arinelle River",
+      "notable_actions": "Tries to keep Bela quiet, asks about rejoining Moiraine, rides with Perrin, falls into river with him",
+      "demeanor": "nervous, concerned about the others",
+      "alliances_shown": [
+        "Perrin",
+        "Rand"
+      ]
+    },
+    {
+      "character": "Thom",
+      "whereabouts": "Separated with Rand and Mat, encounters Trollocs, reaches the Spray",
+      "notable_actions": "Kills two Trollocs with thrown knives, drives off a third, tells elaborate false story to Captain Domon about treasure hunting in Aridhol, negotiates passage",
+      "demeanor": "resourceful, quick-thinking, storytelling and deceptive when needed, protective of the boys",
+      "alliances_shown": [
+        "Rand",
+        "Mat"
+      ]
+    },
+    {
+      "character": "Mat",
+      "whereabouts": "With Rand and Thom after separation, fights Trollocs, boards the Spray",
+      "notable_actions": "Nearly attacks Rand by mistake, shoots Trollocs with bow, trades his silver coin for passage",
+      "demeanor": "nervous, jumpy, relieved to escape",
+      "alliances_shown": [
+        "Rand",
+        "Thom"
+      ]
+    },
+    {
+      "character": "Perrin",
+      "whereabouts": "Separated from others, encounters Egwene at a gateway, falls into the Arinelle River",
+      "notable_actions": "Studies the gateway carefully before approaching, meets Egwene, rides with her, falls into river, swims across alone, loses his companions",
+      "demeanor": "deliberate, careful, self-reflective about being slow but thorough, increasingly worried and cold",
+      "alliances_shown": [
+        "Egwene"
+      ]
+    },
+    {
+      "character": "Nynaeve",
+      "whereabouts": "With the initial group before separation by Mashadar",
+      "notable_actions": "Asks Moiraine what Mashadar is",
+      "demeanor": "concerned, questioning",
+      "alliances_shown": []
+    },
+    {
+      "character": "Aldieb",
+      "whereabouts": "With Moiraine in Shadar Logoth",
+      "notable_actions": "Shifts uneasily near Mashadar",
+      "demeanor": "nervous around the fog",
+      "alliances_shown": []
+    },
+    {
+      "character": "Mandarb",
+      "whereabouts": "With Lan in Shadar Logoth",
+      "notable_actions": "Shifts uneasily near Mashadar",
+      "demeanor": "nervous around the fog",
+      "alliances_shown": []
+    },
+    {
+      "character": "Cloud",
+      "whereabouts": "Carrying Rand through Shadar Logoth and to the Spray",
+      "notable_actions": "Runs from Trollocs, tries to back away from Mashadar, screams and falls into river (or off bluff)",
+      "demeanor": "frightened, skittish, responsive to danger",
+      "alliances_shown": []
+    },
+    {
+      "character": "Bela",
+      "whereabouts": "Carrying Egwene, falls behind during chase",
+      "notable_actions": "Falls behind the faster horses during Trolloc pursuit, falls into river",
+      "demeanor": "slower than other horses, struggling",
+      "alliances_shown": []
+    },
+    {
+      "character": "Mashadar",
+      "whereabouts": "Throughout Shadar Logoth streets",
+      "notable_actions": "Blocks streets with silver-gray fog, separates the group, extends tendrils toward people, kills Trollocs and a Fade by touching them",
+      "demeanor": "mindless but sensing, relentless, deadly",
+      "alliances_shown": []
+    },
+    {
+      "character": "Mordeth",
+      "whereabouts": "Referenced as being in Shadar Logoth",
+      "notable_actions": "None directly; mentioned as a source of fear",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Bayle Domon",
+      "whereabouts": "On the Spray on the Arinelle River",
+      "notable_actions": "Wakes when Rand lands on him, confronts Gelb about the boom, questions the newcomers, tells of his winter in Saldaea and Trolloc attacks, accepts payment for passage to Whitebridge",
+      "demeanor": "gruff but reasonable, concerned about Trollocs following him, pragmatic",
+      "alliances_shown": []
+    },
+    {
+      "character": "Floran Gelb",
+      "whereabouts": "On the Spray",
+      "notable_actions": "Fell asleep on watch, failed to secure the boom, falsely accuses Rand of being a Darkfriend in league with Trollocs, begs for mercy",
+      "demeanor": "deceptive, cowardly, self-serving",
+      "alliances_shown": []
+    },
+    {
+      "character": "Tam",
+      "whereabouts": "Not present; exists only in Rand's memory",
+      "notable_actions": "None; remembered for having given Rand the sword",
+      "demeanor": null,
+      "alliances_shown": []
+    }
+  ],
+  "relationships": [
+    {
+      "character_a": "Moiraine",
+      "character_b": "Lan",
+      "relationship_type": "warder_bond",
+      "directed": true,
+      "description": "Moiraine is Aes Sedai; Lan is her Warder. They travel and work together closely."
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Egwene",
+      "relationship_type": "romantic",
+      "directed": false,
+      "description": "Rand is deeply concerned about Egwene's safety, feels he promised to take care of her, and expresses guilt at being separated from her."
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Mat",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Travel together, nearly fight by accident, support each other through dangers."
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Thom",
+      "relationship_type": "mentor",
+      "directed": true,
+      "description": "Thom protects and guides Rand, negotiates on his behalf, offers comfort about Egwene."
+    },
+    {
+      "character_a": "Perrin",
+      "character_b": "Egwene",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Travel together after being separated from others, support each other fleeing Trollocs."
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Tam",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "Tam is Rand's father; Rand thinks of him when considering trading the sword Tam gave him."
+    },
+    {
+      "character_a": "Bayle Domon",
+      "character_b": "Floran Gelb",
+      "relationship_type": "other",
+      "directed": true,
+      "description": "Captain Domon is Gelb's employer and captain; he threatens to put Gelb off the ship for sleeping on watch."
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Cloud",
+      "relationship_type": "other",
+      "directed": false,
+      "description": "Rand rides Cloud, his horse."
+    },
+    {
+      "character_a": "Egwene",
+      "character_b": "Bela",
+      "relationship_type": "other",
+      "directed": false,
+      "description": "Egwene rides Bela, her horse."
+    }
+  ],
+  "_meta": {
+    "book_order": 1,
+    "chapter_number": 20,
+    "chapter_id": 21,
+    "chapter_title": "Dust on the Wind",
+    "model": "claude-sonnet-4-5",
+    "input_tokens": 16695,
+    "output_tokens": 5480
+  }
+}

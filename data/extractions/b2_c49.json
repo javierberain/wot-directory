@@ -1,0 +1,747 @@
+{
+  "characters": [
+    {
+      "name_used_in_text": "Rand",
+      "likely_matches_existing": "Rand al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "heron branded on both palms, wounded on left side",
+        "age": null,
+        "filiations": null,
+        "personality": "conflicted, reluctant to accept his destiny as the Dragon Reborn"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Lews Therin",
+          "alias_type": "epithet",
+          "notes": "called by this name by Ba'alzamon and Artur Hawkwing"
+        },
+        {
+          "alias_text": "Dragon",
+          "alias_type": "epithet",
+          "notes": null
+        },
+        {
+          "alias_text": "Dragon Reborn",
+          "alias_type": "epithet",
+          "notes": null
+        },
+        {
+          "alias_text": "Lord Dragon",
+          "alias_type": "title",
+          "notes": "how Masema addresses him"
+        }
+      ],
+      "notes": "Recovering from severe wounds; has heron brands on both palms now; fought Ba'alzamon in the sky above Falme; reluctant to accept role as Dragon Reborn"
+    },
+    {
+      "name_used_in_text": "Min",
+      "likely_matches_existing": "Min",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Baerlon (presumably)",
+        "physical_traits": "wearing skirts (unusual for her)",
+        "age": null,
+        "filiations": null,
+        "personality": "protective, caring, uncertain"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Stayed with Rand while he recovered; helped rescue Egwene with Nynaeve and Elayne"
+    },
+    {
+      "name_used_in_text": "Egwene",
+      "likely_matches_existing": "Egwene",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "returning to training"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Freed from the Seanchan; left for Tar Valon before Rand woke up"
+    },
+    {
+      "name_used_in_text": "Nynaeve",
+      "likely_matches_existing": "Nynaeve al'Meara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "returning to training"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Helped rescue Egwene; may have done something to keep Rand alive though claims she was too frightened to light a candle; left for Tar Valon"
+    },
+    {
+      "name_used_in_text": "Elayne",
+      "likely_matches_existing": "Elayne",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Andoran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": null
+        },
+        {
+          "name": "House Trakand",
+          "faction_type": "house",
+          "role": "member",
+          "notes": "Daughter-Heir"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Helped rescue Egwene; left for Tar Valon"
+    },
+    {
+      "name_used_in_text": "Mat",
+      "likely_matches_existing": "Matrim Cauthon",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Blew the Horn of Valere; left for Tar Valon for Aes Sedai treatment of the dagger"
+    },
+    {
+      "name_used_in_text": "Hurin",
+      "likely_matches_existing": "Hurin",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienaran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "loyal, reluctant to leave Rand"
+      },
+      "factions": [
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "sniffer"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Didn't want to leave Rand but went to Tar Valon with the others"
+    },
+    {
+      "name_used_in_text": "Verin",
+      "likely_matches_existing": "Verin Mathwin",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": null
+        },
+        {
+          "name": "Brown Ajah",
+          "faction_type": "ajah",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Tried Healing on Rand but it didn't work properly; left for Tar Valon; Moiraine claims she acted on her own, not sent by Moiraine"
+    },
+    {
+      "name_used_in_text": "Moiraine",
+      "likely_matches_existing": "Moiraine",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown (not Two Rivers)",
+        "physical_traits": "all in blue",
+        "age": null,
+        "filiations": null,
+        "personality": "serene, persistent, controlling"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": null
+        },
+        {
+          "name": "Blue Ajah",
+          "faction_type": "ajah",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Has been working on Toman Head and in Falme; failed to rescue two sisters before Seanchan took them; possesses knowledge of Padan Fain's transformation"
+    },
+    {
+      "name_used_in_text": "Padan Fain",
+      "likely_matches_existing": "Padan Fain",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "evil blend of Darkfriend and Mordeth"
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "transformed by encounter with Mordeth"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Fain",
+          "alias_type": "given_name",
+          "notes": null
+        }
+      ],
+      "notes": "Threatened Emond's Field if Rand didn't face him; whereabouts unknown; transformed by Mordeth in Shadar Logoth into something worse than either Darkfriend or Mordeth alone"
+    },
+    {
+      "name_used_in_text": "Mordeth",
+      "likely_matches_existing": "Mordeth",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Aridhol (historical)",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "vile in fighting Shadow, attempted to consume Fain's soul"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Merged with Padan Fain in Shadar Logoth"
+    },
+    {
+      "name_used_in_text": "Ba'alzamon",
+      "likely_matches_existing": "Elan Morin Tedronai",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": "face like solid flame",
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "leader",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "the Dark One",
+          "alias_type": "epithet",
+          "notes": "Moiraine notes he appeared in sky but is not actually the Dark One"
+        }
+      ],
+      "notes": "Fought Rand in the sky above Falme; Rand believes he killed him; Moiraine says Dark One not slain so easily"
+    },
+    {
+      "name_used_in_text": "Artur Hawkwing",
+      "likely_matches_existing": "Artur Hawkwing",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Called Rand 'Lews Therin'; presumably summoned by Horn of Valere"
+    },
+    {
+      "name_used_in_text": "Lews Therin",
+      "likely_matches_existing": "Lews Therin Telamon",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Dragon",
+          "alias_type": "epithet",
+          "notes": null
+        }
+      ],
+      "notes": "Name used by Ba'alzamon and Artur Hawkwing to refer to Rand"
+    },
+    {
+      "name_used_in_text": "Loial",
+      "likely_matches_existing": "Loial",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "ogier",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "large, tufted ears",
+        "age": null,
+        "filiations": null,
+        "personality": "loyal, friendly, devoted to friendship"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Reading 'To Sail Beyond the Sunset'; stayed with Rand"
+    },
+    {
+      "name_used_in_text": "Perrin",
+      "likely_matches_existing": "Perrin Aybara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "resigned to fate, accepting of being ta'veren"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Stayed with Rand; accepts being woven tightly in Pattern"
+    },
+    {
+      "name_used_in_text": "Lan",
+      "likely_matches_existing": "Lan",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown (not Two Rivers)",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "Warder"
+        },
+        {
+          "name": "Malkier",
+          "faction_type": "other",
+          "role": "leader",
+          "notes": "King of Malkier"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Warder",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Sharpening his belt knife; gave Rand a careful look and nod"
+    },
+    {
+      "name_used_in_text": "Uno",
+      "likely_matches_existing": "Uno",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienaran",
+        "physical_traits": "one-eyed",
+        "age": null,
+        "filiations": null,
+        "personality": "loyal, devoted"
+      },
+      "factions": [
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Leads Shienarans in pledging to Rand; believes their oaths are broken and they are free to swear to Dragon"
+    },
+    {
+      "name_used_in_text": "Ingtar",
+      "likely_matches_existing": "Ingtar",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienaran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "former Darkfriend"
+        },
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Died; Rand says he died well so the others could escape with the Horn; Rand hopes he found the Light again"
+    },
+    {
+      "name_used_in_text": "Lord Agelmar",
+      "likely_matches_existing": "Agelmar",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "leader",
+          "notes": null
+        },
+        {
+          "name": "House Jagad",
+          "faction_type": "house",
+          "role": "leader",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Mentioned; Shienarans' former lord"
+    },
+    {
+      "name_used_in_text": "Masema",
+      "likely_matches_existing": "Masema",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienaran",
+        "physical_traits": "dark eyes",
+        "age": null,
+        "filiations": null,
+        "personality": "fervent, zealous, transformed from hating Rand to worshipping him"
+      },
+      "factions": [
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Previously hated Rand; now sees him as Lord Dragon with religious fervor after witnessing the battle in the sky"
+    },
+    {
+      "name_used_in_text": "Tam",
+      "likely_matches_existing": "Tam al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "Village Council",
+          "faction_type": "other",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Mentioned; Rand reluctantly lets go of hope that Tam is his real father but still loves him"
+    }
+  ],
+  "appearances": [
+    {
+      "character": "Rand",
+      "whereabouts": "five days east of Falme, in camp with companions",
+      "notable_actions": "Wakes after five days unconscious; discovers heron brands on both palms; learns of events at Falme; sees the Dragon banner flying; refuses to hide anymore and accepts his role; receives pledge from Shienarans",
+      "demeanor": "conflicted, angry at Moiraine, reluctant to accept destiny, bitter about Egwene leaving, ultimately resigned and accepting",
+      "alliances_shown": [
+        "Min",
+        "Loial",
+        "Perrin",
+        "Lan",
+        "Moiraine",
+        "Shienarans"
+      ]
+    },
+    {
+      "character": "Min",
+      "whereabouts": "at camp, sitting with Rand",
+      "notable_actions": "Watches over Rand as he recovers; explains what happened; helped rescue Egwene with Nynaeve and Elayne; supports Rand physically and emotionally; protective of him",
+      "demeanor": "uncertain, protective, caring, troubled, blushing when discussing Egwene's departure",
+      "alliances_shown": [
+        "Rand",
+        "Nynaeve",
+        "Elayne"
+      ]
+    },
+    {
+      "character": "Moiraine",
+      "whereabouts": "at camp with Rand and companions",
+      "notable_actions": "Reveals information about Fain's transformation; explains events at Falme; shows Rand the drawing of his battle; reveals broken seals; urges Rand to accept his role; insists Pattern weaves around him",
+      "demeanor": "serene, calm, persistent, knowledgeable, controlling",
+      "alliances_shown": [
+        "Rand",
+        "Lan"
+      ]
+    },
+    {
+      "character": "Loial",
+      "whereabouts": "at camp, reading",
+      "notable_actions": "Reading 'To Sail Beyond the Sunset'; affirms his friendship with Rand despite him being ta'veren",
+      "demeanor": "loyal, friendly, uncertain about Rand's reaction but hopeful",
+      "alliances_shown": [
+        "Rand",
+        "Perrin"
+      ]
+    },
+    {
+      "character": "Perrin",
+      "whereabouts": "at camp, staring into fire",
+      "notable_actions": "Affirms he's staying with Rand; acknowledges the Wheel weaves them tightly in the Pattern",
+      "demeanor": "resigned, accepting, contemplative",
+      "alliances_shown": [
+        "Rand",
+        "Loial"
+      ]
+    },
+    {
+      "character": "Lan",
+      "whereabouts": "at camp under a tree",
+      "notable_actions": "Sharpening his belt knife; gives Rand a careful look and nod",
+      "demeanor": "watchful, assessing, approving",
+      "alliances_shown": [
+        "Moiraine",
+        "Rand"
+      ]
+    },
+    {
+      "character": "Uno",
+      "whereabouts": "at camp with other Shienarans",
+      "notable_actions": "Leads Shienarans in kneeling and pledging to Rand; offers their oaths since they believe Dragon breaks all bonds",
+      "demeanor": "respectful, devoted, loyal",
+      "alliances_shown": [
+        "Masema",
+        "other Shienarans",
+        "Rand"
+      ]
+    },
+    {
+      "character": "Masema",
+      "whereabouts": "at camp with other Shienarans",
+      "notable_actions": "Pledges himself to Rand as 'Lord Dragon'; declares he saw Rand battle the Dark One",
+      "demeanor": "fervent, zealous, worshipful, transformed from previous hatred",
+      "alliances_shown": [
+        "Uno",
+        "Rand"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "character_a": "Rand",
+      "character_b": "Min",
+      "relationship_type": "romantic",
+      "directed": false,
+      "description": "Min stayed to care for Rand during his recovery; holds his hand; protective of him; uncertain feelings between them"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Egwene",
+      "relationship_type": "romantic",
+      "directed": false,
+      "description": "Rand hurt that Egwene left before he woke; Min blushes when he asks about Egwene"
+    },
+    {
+      "character_a": "Moiraine",
+      "character_b": "Rand",
+      "relationship_type": "mentor",
+      "directed": true,
+      "description": "Moiraine continues to guide and manipulate Rand toward accepting his role as Dragon Reborn; Rand resents her influence"
+    },
+    {
+      "character_a": "Moiraine",
+      "character_b": "Lan",
+      "relationship_type": "warder_bond",
+      "directed": true,
+      "description": "Lan is Moiraine's Warder"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Loial",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Loial affirms friendship with Rand despite understanding how ta'veren he is"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Perrin",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Perrin stays with Rand; both from Emond's Field; accept being woven together in Pattern"
+    },
+    {
+      "character_a": "Uno",
+      "character_b": "Rand",
+      "relationship_type": "servant",
+      "directed": true,
+      "description": "Uno leads Shienarans in pledging service to Rand as Dragon Reborn"
+    },
+    {
+      "character_a": "Masema",
+      "character_b": "Rand",
+      "relationship_type": "servant",
+      "directed": true,
+      "description": "Masema pledges himself to Rand with religious fervor, transformed from previous hatred"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Tam",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "Rand reluctantly accepts Tam is not his biological father but still considers him father and loves him"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Ba'alzamon",
+      "relationship_type": "enemy",
+      "directed": false,
+      "description": "Fought in the sky above Falme; Rand believes he killed Ba'alzamon but Moiraine doubts it"
+    },
+    {
+      "character_a": "Min",
+      "character_b": "Nynaeve",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Together rescued Egwene from Seanchan"
+    },
+    {
+      "character_a": "Min",
+      "character_b": "Elayne",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Together rescued Egwene from Seanchan"
+    },
+    {
+      "character_a": "Nynaeve",
+      "character_b": "Elayne",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Together rescued Egwene from Seanchan"
+    }
+  ],
+  "_meta": {
+    "book_order": 2,
+    "chapter_number": 49,
+    "chapter_id": 104,
+    "chapter_title": "What Was Meant to Be",
+    "model": "claude-sonnet-4-5",
+    "input_tokens": 17914,
+    "output_tokens": 6861
+  }
+}

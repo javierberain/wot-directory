@@ -1,0 +1,798 @@
+{
+  "characters": [
+    {
+      "name_used_in_text": "Egwene",
+      "likely_matches_existing": "Egwene",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": "young woman",
+        "filiations": null,
+        "personality": "eager to learn, worried about Rand, determined"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "child",
+          "alias_type": "epithet",
+          "notes": "used by Aes Sedai addressing her"
+        }
+      ],
+      "notes": "Traveling with the Amyrlin Seat to Tar Valon for training."
+    },
+    {
+      "name_used_in_text": "Nynaeve",
+      "likely_matches_existing": "Nynaeve al'Meara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "stubborn, resistant to instruction, proud"
+      },
+      "factions": [
+        {
+          "name": "Women's Circle",
+          "faction_type": "other",
+          "role": "leader",
+          "notes": "Wisdom of Emond's Field"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "the Wisdom",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Traveling with Egwene to Tar Valon; has channeled before as a wilder."
+    },
+    {
+      "name_used_in_text": "the Amyrlin Seat",
+      "likely_matches_existing": "the Amyrlin Seat",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "commanding, impatient, urgent about business in Tar Valon"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "leader",
+          "notes": "Amyrlin Seat, the highest authority in the White Tower"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Mother",
+          "alias_type": "title",
+          "notes": "form of address for the Amyrlin Seat"
+        },
+        {
+          "alias_text": "the Amyrlin",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Wounded by an arrow attempt on her life in Fal Dara; traveling to Tar Valon by ship."
+    },
+    {
+      "name_used_in_text": "Moiraine",
+      "likely_matches_existing": "Moiraine",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "secretive, does not explain things unnecessarily"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": null
+        },
+        {
+          "name": "Blue Ajah",
+          "faction_type": "ajah",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Moiraine Sedai",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Gone two days before the party leaves Medo, along with Lan; Amyrlin is angry about this disappearance."
+    },
+    {
+      "name_used_in_text": "Lan",
+      "likely_matches_existing": "Lan",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Malkieri",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "watchful, protective, distant"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "Warder to Moiraine"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Warder",
+          "alias_type": "title",
+          "notes": null
+        },
+        {
+          "alias_text": "the Warder",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Left with Moiraine two days ago; had attempted to speak with Nynaeve, ending in an argument."
+    },
+    {
+      "name_used_in_text": "Rand",
+      "likely_matches_existing": "Rand al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "tall",
+        "age": "young man",
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Not present in this chapter but the focus of Egwene's worry and dreams; may be with Ingtar's party hunting the Horn."
+    },
+    {
+      "name_used_in_text": "Agelmar",
+      "likely_matches_existing": "Agelmar",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienaran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "concerned for the Amyrlin's safety, dutiful"
+      },
+      "factions": [
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "leader",
+          "notes": "Lord of Fal Dara"
+        },
+        {
+          "name": "House Jagad",
+          "faction_type": "house",
+          "role": "leader",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Lord Agelmar",
+          "alias_type": "title",
+          "notes": null
+        },
+        {
+          "alias_text": "my son",
+          "alias_type": "epithet",
+          "notes": "form of address used by the Amyrlin"
+        }
+      ],
+      "notes": "Protests the Amyrlin's departure after the assassination attempt."
+    },
+    {
+      "name_used_in_text": "Leane",
+      "likely_matches_existing": "Leane",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": null
+        },
+        {
+          "name": "Blue Ajah",
+          "faction_type": "ajah",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Keeper",
+          "alias_type": "title",
+          "notes": null
+        },
+        {
+          "alias_text": "Keeper of the Chronicles",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Rides beside the Amyrlin's palanquin with her staff."
+    },
+    {
+      "name_used_in_text": "Bela",
+      "likely_matches_existing": "Bela",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "horse",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "shaggy",
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "the shaggy mare",
+          "alias_type": "epithet",
+          "notes": null
+        }
+      ],
+      "notes": "Egwene's horse traveling with the Aes Sedai."
+    },
+    {
+      "name_used_in_text": "Ingtar",
+      "likely_matches_existing": "Ingtar",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienaran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Lord Ingtar",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "On a quest with Rand and others, possibly following the Horn of Valere."
+    },
+    {
+      "name_used_in_text": "Verin Mathwin",
+      "likely_matches_existing": "Verin Mathwin",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": "plump, square-faced, graying hair, dark eyes, ink smudge on nose",
+        "age": "middle-aged or older",
+        "filiations": null,
+        "personality": "absent-minded but knowledgeable, patient teacher"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": null
+        },
+        {
+          "name": "Brown Ajah",
+          "faction_type": "ajah",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Verin Sedai",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Teaches Egwene and Nynaeve about channeling; vanishes like Moiraine and Liandrin without a word, leaving her Warder Tomas worried."
+    },
+    {
+      "name_used_in_text": "Perrin",
+      "likely_matches_existing": "Perrin Aybara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": "young man",
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Not present but mentioned by Alanna as an interest."
+    },
+    {
+      "name_used_in_text": "Mat",
+      "likely_matches_existing": "Matrim Cauthon",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": "young man",
+        "filiations": null,
+        "personality": "has the look of trouble"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Not present but mentioned by Anaiya and Alanna."
+    },
+    {
+      "name_used_in_text": "Alviarin",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "medium",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "cool and businesslike as a merchant, sharp in criticisms"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Teaches Egwene and Nynaeve at night; Ajah affiliation not specified."
+    },
+    {
+      "name_used_in_text": "Alanna Mosvani",
+      "likely_matches_existing": "Alanna Mosvani",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "laughing, spends time talking about the world and men"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": null
+        },
+        {
+          "name": "Green Ajah",
+          "faction_type": "ajah",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Teaches Egwene and Nynaeve; shows too much interest in Rand, Perrin, and Mat, especially Rand."
+    },
+    {
+      "name_used_in_text": "Liandrin",
+      "likely_matches_existing": "Liandrin",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Taraboner",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "sharp, suspicious, questions like an interrogation"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": null
+        },
+        {
+          "name": "Red Ajah",
+          "faction_type": "ajah",
+          "role": "member",
+          "notes": null
+        },
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "roster indicates she is a darkfriend"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Only Aes Sedai wearing her shawl; teaches little and questions Egwene and Nynaeve about the boys; Nynaeve throws her out. Vanishes after Moiraine, before reaching Medo."
+    },
+    {
+      "name_used_in_text": "Anaiya",
+      "likely_matches_existing": "Anaiya",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "seems like a woman from home, motherly, practical"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": null
+        },
+        {
+          "name": "Blue Ajah",
+          "faction_type": "ajah",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Anaiya Sedai",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Supervises loading at Medo docks; Egwene can picture her baking in a kitchen; listens to Egwene's dream about Rand being in danger."
+    },
+    {
+      "name_used_in_text": "Tomas",
+      "likely_matches_existing": "Tomas",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "worried over Verin"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "Warder to Verin"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Verin's Warder, left behind when she vanished; chewing nails with worry."
+    },
+    {
+      "name_used_in_text": "Sheriam",
+      "likely_matches_existing": "Sheriam Sedai",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "Mistress of Novices"
+        },
+        {
+          "name": "Blue Ajah",
+          "faction_type": "ajah",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Mistress of Novices at the White Tower; Egwene and Nynaeve are to be turned over to her."
+    }
+  ],
+  "appearances": [
+    {
+      "character": "Egwene",
+      "whereabouts": "traveling from Fal Dara to Medo, then boarding a ship on the River Mora bound for Tar Valon",
+      "notable_actions": "worries about Rand; receives lessons in channeling from Verin; has a prophetic dream about Rand in danger; discusses her dream with Anaiya; boards the River Queen",
+      "demeanor": "worried, eager, increasingly anxious about Rand's safety",
+      "alliances_shown": [
+        "Nynaeve",
+        "the Amyrlin Seat",
+        "Aes Sedai"
+      ]
+    },
+    {
+      "character": "Nynaeve",
+      "whereabouts": "traveling with Egwene and the Aes Sedai to Tar Valon; forced onto a boat by Anaiya",
+      "notable_actions": "receives lessons in channeling from Verin; resists the lessons and feels like a blackthorn bush; accidentally sets blankets on fire when she finally touches the Power; argues with Lan; is bundled onto the River Queen by Anaiya",
+      "demeanor": "resistant, stubborn, frightened after burning the blankets though denying it, tense",
+      "alliances_shown": [
+        "Egwene",
+        "Lan (complicated)"
+      ]
+    },
+    {
+      "character": "the Amyrlin Seat",
+      "whereabouts": "traveling from Fal Dara to Medo in a palanquin, then boarding ship for Tar Valon",
+      "notable_actions": "survives an assassination attempt (arrow wound in her sleeve); refuses Agelmar's pleas to delay departure; insists on leaving Fal Dara immediately despite the danger; boards her ship and demands departure within an hour; is furious at Moiraine, Liandrin, and Verin for disappearing",
+      "demeanor": "commanding, urgent, impatient, angry at the vanished Aes Sedai",
+      "alliances_shown": [
+        "Aes Sedai",
+        "Lord Agelmar"
+      ]
+    },
+    {
+      "character": "Moiraine",
+      "whereabouts": "vanished from the column two days before reaching Medo",
+      "notable_actions": "left without informing the Amyrlin; took Lan with her; previously gave Egwene lessons in channeling",
+      "demeanor": "absent, secretive",
+      "alliances_shown": [
+        "Lan",
+        "Blue Ajah"
+      ]
+    },
+    {
+      "character": "Lan",
+      "whereabouts": "vanished with Moiraine two days before reaching Medo",
+      "notable_actions": "came once to speak with Nynaeve, resulting in an argument that made Nynaeve cry; left with Moiraine",
+      "demeanor": "watchful, troubled about Nynaeve",
+      "alliances_shown": [
+        "Moiraine",
+        "Nynaeve (complicated)"
+      ]
+    },
+    {
+      "character": "Agelmar",
+      "whereabouts": "Fal Dara, seeing the Amyrlin off",
+      "notable_actions": "protests the Amyrlin's departure after the assassination attempt; offers her a farewell cup; promises to find the bowman",
+      "demeanor": "concerned, dutiful, dissatisfied with the Amyrlin's decision to leave",
+      "alliances_shown": [
+        "the Amyrlin Seat",
+        "Fal Dara"
+      ]
+    },
+    {
+      "character": "Leane",
+      "whereabouts": "traveling with the Amyrlin from Fal Dara to Medo",
+      "notable_actions": "rides beside the Amyrlin's palanquin carrying her staff",
+      "demeanor": "dutiful, formal",
+      "alliances_shown": [
+        "the Amyrlin Seat",
+        "Blue Ajah"
+      ]
+    },
+    {
+      "character": "Bela",
+      "whereabouts": "traveling with the column, ridden by Egwene",
+      "notable_actions": "carries Egwene from Fal Dara to Medo",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Verin Mathwin",
+      "whereabouts": "with the column until disappearing before Medo",
+      "notable_actions": "teaches Egwene and Nynaeve about channeling; guides Egwene through exercises to touch the Source; instructs Nynaeve, who accidentally sets blankets on fire; warns them about the dangers of uncontrolled channeling; vanishes without a word before reaching Medo",
+      "demeanor": "vague yet knowledgeable, patient, thoughtful, suddenly absent",
+      "alliances_shown": [
+        "White Tower",
+        "Brown Ajah"
+      ]
+    },
+    {
+      "character": "Alviarin",
+      "whereabouts": "traveling with the Aes Sedai column",
+      "notable_actions": "teaches Egwene and Nynaeve at night; businesslike and sharp in criticism",
+      "demeanor": "cool, businesslike, sharp",
+      "alliances_shown": [
+        "White Tower"
+      ]
+    },
+    {
+      "character": "Alanna Mosvani",
+      "whereabouts": "traveling with the Aes Sedai column",
+      "notable_actions": "teaches Egwene and Nynaeve; talks about the world and men; shows interest in Rand, Perrin, and Mat",
+      "demeanor": "laughing, friendly, curious about the boys",
+      "alliances_shown": [
+        "White Tower",
+        "Green Ajah"
+      ]
+    },
+    {
+      "character": "Liandrin",
+      "whereabouts": "with the column initially, then vanished before Medo",
+      "notable_actions": "teaches little; questions Egwene and Nynaeve suspiciously about the three boys; is thrown out by Nynaeve; vanishes after Moiraine",
+      "demeanor": "suspicious, interrogating, cold",
+      "alliances_shown": [
+        "White Tower",
+        "Red Ajah"
+      ]
+    },
+    {
+      "character": "Anaiya",
+      "whereabouts": "at Medo docks supervising the loading",
+      "notable_actions": "supervises loading of horses and supplies; bundles Nynaeve onto a boat; listens to Egwene's dream about Rand being in danger; suggests Egwene may be a Dreamer; promises to discuss it more on the River Queen",
+      "demeanor": "practical, motherly, thoughtful when considering Egwene's dream",
+      "alliances_shown": [
+        "White Tower",
+        "Blue Ajah"
+      ]
+    },
+    {
+      "character": "Tomas",
+      "whereabouts": "with the column, left behind when Verin vanished",
+      "notable_actions": "worries over Verin's disappearance",
+      "demeanor": "worried, chewing nails",
+      "alliances_shown": [
+        "Verin Mathwin"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "character_a": "Moiraine",
+      "character_b": "Lan",
+      "relationship_type": "warder_bond",
+      "directed": true,
+      "description": "Moiraine holds the Warder bond with Lan; they left together"
+    },
+    {
+      "character_a": "Verin Mathwin",
+      "character_b": "Tomas",
+      "relationship_type": "warder_bond",
+      "directed": true,
+      "description": "Verin holds the Warder bond with Tomas; she left without him"
+    },
+    {
+      "character_a": "Egwene",
+      "character_b": "Nynaeve",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "friends from Emond's Field, traveling together to Tar Valon to become Aes Sedai"
+    },
+    {
+      "character_a": "Egwene",
+      "character_b": "Rand",
+      "relationship_type": "romantic",
+      "directed": false,
+      "description": "Egwene worries constantly about Rand and dreams of him; considers him her young man"
+    },
+    {
+      "character_a": "Nynaeve",
+      "character_b": "Lan",
+      "relationship_type": "romantic",
+      "directed": false,
+      "description": "complicated relationship; Lan came to speak with Nynaeve, ending in an argument that made her cry; he stood watching her tent afterward"
+    },
+    {
+      "character_a": "the Amyrlin Seat",
+      "character_b": "Agelmar",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "the Amyrlin addresses him as 'my son' but overrules his concerns about her safety"
+    },
+    {
+      "character_a": "the Amyrlin Seat",
+      "character_b": "Moiraine",
+      "relationship_type": "other",
+      "directed": false,
+      "description": "the Amyrlin is furious at Moiraine for vanishing without a word"
+    },
+    {
+      "character_a": "the Amyrlin Seat",
+      "character_b": "Leane",
+      "relationship_type": "other",
+      "directed": false,
+      "description": "Leane is the Amyrlin's Keeper of the Chronicles and rides beside her palanquin"
+    },
+    {
+      "character_a": "Verin Mathwin",
+      "character_b": "Egwene",
+      "relationship_type": "mentor",
+      "directed": true,
+      "description": "Verin teaches Egwene about channeling and the dangers of uncontrolled use"
+    },
+    {
+      "character_a": "Verin Mathwin",
+      "character_b": "Nynaeve",
+      "relationship_type": "mentor",
+      "directed": true,
+      "description": "Verin teaches Nynaeve about channeling despite Nynaeve's resistance"
+    },
+    {
+      "character_a": "Anaiya",
+      "character_b": "Egwene",
+      "relationship_type": "mentor",
+      "directed": true,
+      "description": "Anaiya listens to Egwene's concerns and suggests she may be a Dreamer, promising further training"
+    },
+    {
+      "character_a": "Egwene",
+      "character_b": "Bela",
+      "relationship_type": "other",
+      "directed": false,
+      "description": "Bela is Egwene's horse"
+    }
+  ],
+  "_meta": {
+    "book_order": 2,
+    "chapter_number": 12,
+    "chapter_id": 67,
+    "chapter_title": "Woven in the Pattern",
+    "model": "claude-sonnet-4-5",
+    "input_tokens": 19736,
+    "output_tokens": 7484
+  }
+}

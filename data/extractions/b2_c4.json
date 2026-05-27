@@ -1,0 +1,775 @@
+{
+  "characters": [
+    {
+      "name_used_in_text": "Moiraine",
+      "likely_matches_existing": "Moiraine",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Cairhienin",
+        "physical_traits": "slender, not tall, smooth-cheeked, dark eyes, dark hair hanging in waves to shoulders",
+        "age": "appears younger than she is due to Aes Sedai agelessness",
+        "filiations": "grew up in the Royal Palace of Cairhien",
+        "personality": "commanding grace, calm presence, careful, strategic"
+      },
+      "factions": [
+        {
+          "name": "Blue Ajah",
+          "faction_type": "ajah",
+          "role": "member",
+          "notes": "wears blue-fringed shawl"
+        },
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "Aes Sedai"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Daughter",
+          "alias_type": "title",
+          "notes": "used by the Amyrlin when addressing her"
+        },
+        {
+          "alias_text": "Sister",
+          "alias_type": "title",
+          "notes": "used among Aes Sedai"
+        },
+        {
+          "alias_text": "Moiraine Sedai",
+          "alias_type": "title",
+          "notes": "formal address"
+        }
+      ],
+      "notes": "Uses a blue stone on a chain as a focus for channeling; has been away from Tar Valon for a long time"
+    },
+    {
+      "name_used_in_text": "the Amyrlin Seat",
+      "likely_matches_existing": "the Amyrlin Seat",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Tairen",
+        "physical_traits": "medium height, handsome rather than beautiful, strong face, clear blue eyes",
+        "age": "mature, at least ten years in office",
+        "filiations": "born to a simple fisherman's family in Tear, grew up in the Maule (Tear's port district)",
+        "personality": "strong-willed, strategic, under great pressure, able to inspire both fear and respect"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "leader",
+          "notes": "the Amyrlin Seat, leader of all Aes Sedai"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Mother",
+          "alias_type": "title",
+          "notes": "how Aes Sedai address the Amyrlin"
+        },
+        {
+          "alias_text": "Siuan Sanche",
+          "alias_type": "given_name",
+          "notes": "birth name, rarely used since elevation"
+        },
+        {
+          "alias_text": "Siuan",
+          "alias_type": "given_name",
+          "notes": "used by Moiraine as old friend"
+        }
+      ],
+      "notes": "Has been raised from the Hall ten years ago; came from Blue Ajah; old friend of Moiraine from novice days"
+    },
+    {
+      "name_used_in_text": "Anaiya",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "dark-haired, blunt face, taller than Moiraine, smile gives her only beauty",
+        "age": null,
+        "filiations": null,
+        "personality": "open, honest, accepting of everyone, warm, sees to the heart of things"
+      },
+      "factions": [
+        {
+          "name": "Blue Ajah",
+          "faction_type": "ajah",
+          "role": "member",
+          "notes": "wears blue-fringed shawl"
+        },
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "Aes Sedai, sits in the Hall of the Tower"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Sister",
+          "alias_type": "title",
+          "notes": "used among Aes Sedai"
+        }
+      ],
+      "notes": "Friend of Moiraine; deals well in White Tower politics despite her openness"
+    },
+    {
+      "name_used_in_text": "Liandrin",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Taraboner",
+        "physical_traits": "fair-haired, young-seeming and young, pretty, doll's face, small petulant mouth, dark brows and eyes, pale honey braids brushing shoulders, taller than Moiraine by less than a hand",
+        "age": "young",
+        "filiations": null,
+        "personality": "petulant, cold, dissatisfied, hostile toward men, makes few friends"
+      },
+      "factions": [
+        {
+          "name": "Red Ajah",
+          "faction_type": "ajah",
+          "role": "member",
+          "notes": "wears red-fringed shawl"
+        },
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "Aes Sedai"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Sister",
+          "alias_type": "title",
+          "notes": "used among Aes Sedai"
+        }
+      ],
+      "notes": "Unexpectedly friendly to Amalisa, which is out of character; Moiraine suspicious of her motives"
+    },
+    {
+      "name_used_in_text": "Amalisa",
+      "likely_matches_existing": "Amalisa",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienaran",
+        "physical_traits": "short, middle years, dark mature beauty, strength in face similar to her brother Agelmar",
+        "age": "middle years",
+        "filiations": "sister of Lord Agelmar of Fal Dara; calls King Easar 'Little Uncle' (Magami)",
+        "personality": "strong-willed, renowned, a match for her warrior brother"
+      },
+      "factions": [
+        {
+          "name": "House Jagad",
+          "faction_type": "house",
+          "role": "member",
+          "notes": "noble house of Fal Dara"
+        },
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Lady of Fal Dara"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Lady Amalisa",
+          "alias_type": "title",
+          "notes": "formal address"
+        },
+        {
+          "alias_text": "Sister",
+          "alias_type": "title",
+          "notes": "honorific used by Moiraine"
+        }
+      ],
+      "notes": "Has never been to Tar Valon; honored to be called Sister by Aes Sedai"
+    },
+    {
+      "name_used_in_text": "Egwene",
+      "likely_matches_existing": "Egwene",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": "young, village girl",
+        "filiations": "from the Two Rivers",
+        "personality": "shows initiative, potentially strong-willed"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "As strong in the Power as Elayne; spotted briefly in hallway with a stooped figure carrying bundles; Moiraine thinks she could sit in the Amyrlin Seat one day if she learns to control her initiative"
+    },
+    {
+      "name_used_in_text": "Nynaeve",
+      "likely_matches_existing": "Nynaeve al'Meara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": "young, little more than a girl",
+        "filiations": "was Wisdom of her village despite her youth",
+        "personality": "exasperated by men but likes them; chosen as Wisdom at young age shows her character"
+      },
+      "factions": [
+        {
+          "name": "Women's Circle",
+          "faction_type": "other",
+          "role": "leader",
+          "notes": "was the Wisdom"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Wisdom",
+          "alias_type": "title",
+          "notes": "her former role"
+        }
+      ],
+      "notes": "Potentially stronger in the Power than any in Tar Valon; currently does not have conscious control"
+    },
+    {
+      "name_used_in_text": "Leane",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "tall as most men, willowy, graceful, still beautiful, coppery skin, short dark hair",
+        "age": "mature",
+        "filiations": null,
+        "personality": "brisk, clipped and quick speech that never changes with emotion"
+      },
+      "factions": [
+        {
+          "name": "Blue Ajah",
+          "faction_type": "ajah",
+          "role": "member",
+          "notes": "sits in the Hall representing Blue Ajah"
+        },
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "leader",
+          "notes": "Keeper of the Chronicles"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Keeper of the Chronicles",
+          "alias_type": "title",
+          "notes": "her office"
+        },
+        {
+          "alias_text": "Keeper",
+          "alias_type": "title",
+          "notes": "shortened form"
+        }
+      ],
+      "notes": "Wears blue stole as Keeper; was novice with the Amyrlin (Siuan)"
+    },
+    {
+      "name_used_in_text": "Verin Mathwin",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "plump",
+        "age": null,
+        "filiations": null,
+        "personality": "scholarly, focused on seeking knowledge, may not be fully aware of surroundings"
+      },
+      "factions": [
+        {
+          "name": "Brown Ajah",
+          "faction_type": "ajah",
+          "role": "member",
+          "notes": "concerned with seeking knowledge"
+        },
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "Aes Sedai"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Sister",
+          "alias_type": "title",
+          "notes": "used among Aes Sedai"
+        }
+      ],
+      "notes": "Sitting cross-legged studying flowers, making notes and sketches"
+    },
+    {
+      "name_used_in_text": "Serafelle",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "scholarly, focused on seeking knowledge"
+      },
+      "factions": [
+        {
+          "name": "Brown Ajah",
+          "faction_type": "ajah",
+          "role": "member",
+          "notes": "concerned with seeking knowledge"
+        },
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "Aes Sedai"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Intently reading an old book with worn, faded leather cover"
+    },
+    {
+      "name_used_in_text": "Carlinya",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "pale skin, slender",
+        "age": null,
+        "filiations": null,
+        "personality": "cold of manner"
+      },
+      "factions": [
+        {
+          "name": "White Ajah",
+          "faction_type": "ajah",
+          "role": "member",
+          "notes": "wears white fringe on shawl"
+        },
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "Aes Sedai"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Sister",
+          "alias_type": "title",
+          "notes": "used among Aes Sedai"
+        }
+      ],
+      "notes": "Stood and stared at Moiraine without expression"
+    },
+    {
+      "name_used_in_text": "Alanna Mosvani",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "dark",
+        "age": null,
+        "filiations": null,
+        "personality": "fiery"
+      },
+      "factions": [
+        {
+          "name": "Green Ajah",
+          "faction_type": "ajah",
+          "role": "member",
+          "notes": "wears green fringe"
+        },
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "Aes Sedai"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Alanna",
+          "alias_type": "given_name",
+          "notes": null
+        }
+      ],
+      "notes": "Sharply snugged her shawl around her; opposite of Carlinya in every way"
+    },
+    {
+      "name_used_in_text": "Elaida",
+      "likely_matches_existing": "Elaida",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "from Tar Valon",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "was Aes Sedai councilor to Queen Morgase",
+        "personality": "strong-willed, treats non-Aes Sedai as pieces on a stones board, has the Foretelling sometimes"
+      },
+      "factions": [
+        {
+          "name": "Red Ajah",
+          "faction_type": "ajah",
+          "role": "member",
+          "notes": "implied by context and her focus on dangerous men"
+        },
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "Aes Sedai"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Elaida Sedai",
+          "alias_type": "title",
+          "notes": "formal address"
+        }
+      ],
+      "notes": "Came to Tar Valon with Elayne and Gawyn; sent message about Moiraine meddling with a ta'veren youth; has the Foretelling"
+    },
+    {
+      "name_used_in_text": "Elayne",
+      "likely_matches_existing": "Elayne",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Andoran",
+        "physical_traits": null,
+        "age": "young",
+        "filiations": "Daughter-Heir of Andor, daughter of Queen Morgase, sister of Gawyn",
+        "personality": "has great potential in the Power, does not lean toward Red Ajah thinking"
+      },
+      "factions": [
+        {
+          "name": "House Trakand",
+          "faction_type": "house",
+          "role": "member",
+          "notes": "royal house of Andor"
+        },
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "in training"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Daughter-Heir",
+          "alias_type": "title",
+          "notes": "her formal title"
+        },
+        {
+          "alias_text": "Lady Elayne",
+          "alias_type": "title",
+          "notes": "formal address"
+        }
+      ],
+      "notes": "Born with the spark; could be the most powerful Aes Sedai in a thousand years; came to Tar Valon with Gawyn and Elaida"
+    },
+    {
+      "name_used_in_text": "Gawyn",
+      "likely_matches_existing": "Gawyn",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Andoran",
+        "physical_traits": null,
+        "age": "young",
+        "filiations": "son of Queen Morgase, brother of Elayne",
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "House Trakand",
+          "faction_type": "house",
+          "role": "member",
+          "notes": "royal house of Andor"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Lord Gawyn",
+          "alias_type": "title",
+          "notes": "formal address"
+        }
+      ],
+      "notes": "Came to Tar Valon with Elayne for training"
+    },
+    {
+      "name_used_in_text": "Logain",
+      "likely_matches_existing": "Logain",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "false Dragon",
+          "alias_type": "epithet",
+          "notes": "claimed to be the Dragon Reborn"
+        }
+      ],
+      "notes": "The last false Dragon before the current three; all but tore Ghealdan apart; now in Tar Valon, gentled"
+    },
+    {
+      "name_used_in_text": "Basel Gill",
+      "likely_matches_existing": "Basel Gill",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Andoran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "innkeeper in Caemlyn",
+        "personality": "thinks much of Aes Sedai"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Master Gill",
+          "alias_type": "title",
+          "notes": "formal address"
+        }
+      ],
+      "notes": "Answered Elaida's questions to her satisfaction; Elaida spoke well of him"
+    },
+    {
+      "name_used_in_text": "Maigan",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "Blue Ajah",
+          "faction_type": "ajah",
+          "role": "member",
+          "notes": "traveled with the Amyrlin"
+        },
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "Aes Sedai"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "One of the Blue sisters who accompanied the Amyrlin; nearly prevented from coming by Hall vote"
+    }
+  ],
+  "appearances": [
+    {
+      "character": "Moiraine",
+      "whereabouts": "in her rooms in the women's apartments of Fal Dara, then summoned to audience with the Amyrlin",
+      "notable_actions": "adjusting her shawl for the audience; greeted Anaiya and Liandrin; walked to the Amyrlin's chamber; discussed with the Amyrlin the trouble in the Hall, the young women with potential (Egwene and Nynaeve), and their secret plans; touched the leather pouch at her waist multiple times",
+      "demeanor": "outwardly calm and controlled, but internally anxious and calculating; maintains composure even when threatened with retreat under Red Ajah custody",
+      "alliances_shown": [
+        "Anaiya",
+        "the Amyrlin Seat (Siuan)"
+      ]
+    },
+    {
+      "character": "the Amyrlin Seat",
+      "whereabouts": "in her chamber in Fal Dara, seated behind a table with the ornate golden cube",
+      "notable_actions": "received Moiraine; explained the political situation in the Hall; revealed the proposals against Moiraine; channeled to create privacy ward; embraced Moiraine as old friend; revealed their secret planning that could result in stilling if discovered",
+      "demeanor": "strained, tense, under great pressure; eyes strained and new tightness to mouth; becomes warmer and more vulnerable when alone with Moiraine",
+      "alliances_shown": [
+        "Moiraine",
+        "Leane"
+      ]
+    },
+    {
+      "character": "Anaiya",
+      "whereabouts": "escorting Moiraine to the Amyrlin, walking through halls of Fal Dara",
+      "notable_actions": "knocked on Moiraine's door; walked with her to the Amyrlin's chamber; chatted pleasantly; shared news of the world (false Dragons, Andor, Great Hunt, Sea Folk, Aiel, Almoth Plain); smiled and ruffled small boys' heads",
+      "demeanor": "warm, friendly, open, conversational",
+      "alliances_shown": [
+        "Moiraine"
+      ]
+    },
+    {
+      "character": "Liandrin",
+      "whereabouts": "escorting Moiraine to the Amyrlin, walking through halls of Fal Dara",
+      "notable_actions": "knocked insistently on Moiraine's door; tried to look into Moiraine's warded room; walked stiffly as a guard; spoke coldly about false Dragons; suddenly became friendly with Amalisa (out of character); opened door to anteroom with anger",
+      "demeanor": "cold, petulant, dissatisfied, then unexpectedly warm to Amalisa, then angry again",
+      "alliances_shown": []
+    },
+    {
+      "character": "Amalisa",
+      "whereabouts": "in the hallways of Fal Dara",
+      "notable_actions": "met the Aes Sedai in a hallway junction; curtsied deeply; conversed with them; invited Liandrin to join her and her ladies in her private garden",
+      "demeanor": "respectful, honored, gracious, strong",
+      "alliances_shown": []
+    },
+    {
+      "character": "Egwene",
+      "whereabouts": "briefly seen in a side hall, disappearing around a corner",
+      "notable_actions": "disappeared hurriedly around a corner with a stooped figure carrying bundles following her",
+      "demeanor": "hurried, showing initiative",
+      "alliances_shown": []
+    },
+    {
+      "character": "Leane",
+      "whereabouts": "in the anteroom and briefly in the Amyrlin's chamber",
+      "notable_actions": "appeared without her gilt-flamed staff; summoned Moiraine; stood quietly watching during the audience; was surprised when dismissed so the Amyrlin could speak with Moiraine alone",
+      "demeanor": "brisk, professional, surprised when dismissed",
+      "alliances_shown": [
+        "the Amyrlin Seat"
+      ]
+    },
+    {
+      "character": "Verin Mathwin",
+      "whereabouts": "in the anteroom to the Amyrlin's chamber",
+      "notable_actions": "sitting cross-legged beneath an arrowslit, holding a blossom up to light, making notes and sketches in a book",
+      "demeanor": "absorbed in scholarly work, seemingly unaware of surroundings",
+      "alliances_shown": []
+    },
+    {
+      "character": "Serafelle",
+      "whereabouts": "in the anteroom to the Amyrlin's chamber",
+      "notable_actions": "intently reading an old book with worn leather cover, handling tattered pages carefully",
+      "demeanor": "absorbed in reading, oblivious to surroundings",
+      "alliances_shown": []
+    },
+    {
+      "character": "Carlinya",
+      "whereabouts": "in the anteroom to the Amyrlin's chamber",
+      "notable_actions": "turned to look at Moiraine; stared without speaking or expression",
+      "demeanor": "cold, expressionless",
+      "alliances_shown": []
+    },
+    {
+      "character": "Alanna Mosvani",
+      "whereabouts": "in the anteroom to the Amyrlin's chamber",
+      "notable_actions": "turned to look at Moiraine; stared without expression; sharply snugged her shawl around her",
+      "demeanor": "tense, unwelcoming",
+      "alliances_shown": []
+    }
+  ],
+  "relationships": [
+    {
+      "character_a": "Moiraine",
+      "character_b": "the Amyrlin Seat",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "old friends from novice days, secretly planning something that could get them both stilled; deep trust and shared purpose"
+    },
+    {
+      "character_a": "Moiraine",
+      "character_b": "Anaiya",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "friends and allies within the Blue Ajah"
+    },
+    {
+      "character_a": "Moiraine",
+      "character_b": "Liandrin",
+      "relationship_type": "rival",
+      "directed": false,
+      "description": "tension and suspicion; Liandrin of the Red Ajah, Moiraine suspicious of her motives"
+    },
+    {
+      "character_a": "the Amyrlin Seat",
+      "character_b": "Leane",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Keeper to Amyrlin; old friends from novice days though Leane now always formal"
+    },
+    {
+      "character_a": "Elaida",
+      "character_b": "Moiraine",
+      "relationship_type": "rival",
+      "directed": false,
+      "description": "Elaida reported Moiraine to the Hall for meddling with a dangerous ta'veren youth; political opposition"
+    },
+    {
+      "character_a": "Elayne",
+      "character_b": "Queen Morgase",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "mother and daughter; Elayne is Daughter-Heir"
+    },
+    {
+      "character_a": "Elayne",
+      "character_b": "Gawyn",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "sister and brother"
+    },
+    {
+      "character_a": "Gawyn",
+      "character_b": "Queen Morgase",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "mother and son"
+    },
+    {
+      "character_a": "Amalisa",
+      "character_b": "Agelmar",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "sister and brother; Amalisa is said to be a match for the renowned fighter Agelmar"
+    }
+  ],
+  "_meta": {
+    "book_order": 2,
+    "chapter_number": 4,
+    "chapter_id": 59,
+    "chapter_title": "Summoned",
+    "model": "claude-sonnet-4-5",
+    "input_tokens": 19269,
+    "output_tokens": 7635
+  }
+}

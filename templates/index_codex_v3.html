@@ -1,0 +1,1396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Pattern &mdash; A Wheel of Time Character Directory</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Spectral:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <!-- Cytoscape is vendored locally in /static so the app has no
+     hard dependency on a CDN. -->
+  <script src="{{ url_for('static', filename='cytoscape.min.js') }}"></script>
+  <style>
+    :root {
+      --ink: #1c1814;
+      --parchment: #ece3d2;
+      --parchment-deep: #ddd0b6;
+      --gold: #9a7b3f;
+      --gold-bright: #c39a4d;
+      --crimson: #6e2230;
+      --shadow: rgba(28, 24, 20, 0.18);
+      --line: rgba(28, 24, 20, 0.16);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background:
+        radial-gradient(ellipse at 20% 0%, #f2ead9, transparent 60%),
+        var(--parchment);
+      color: var(--ink);
+      font-family: 'Spectral', serif;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+      z-index: 1;
+    }
+
+    header {
+      text-align: center;
+      padding: 3rem 1rem 1.5rem;
+      border-bottom: 1px solid var(--line);
+      position: relative;
+      z-index: 2;
+    }
+
+    header .wheel {
+      width: 46px;
+      height: 46px;
+      margin: 0 auto 0.8rem;
+      border: 1.5px solid var(--gold);
+      border-radius: 50%;
+      position: relative;
+    }
+
+    header .wheel::before,
+    header .wheel::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      margin: auto;
+      background: var(--gold);
+    }
+
+    header .wheel::before {
+      width: 1.5px;
+      height: 100%;
+    }
+
+    header .wheel::after {
+      width: 100%;
+      height: 1.5px;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      letter-spacing: 0.02em;
+    }
+
+    .tagline {
+      font-style: italic;
+      color: var(--gold);
+      font-size: 0.95rem;
+      margin-top: 0.2rem;
+    }
+
+    .layout {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .panel {
+      background: rgba(255, 252, 244, 0.55);
+      border: 1px solid var(--line);
+      box-shadow: 0 2px 14px var(--shadow);
+    }
+
+    .panel-head {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      padding: 0.7rem 1.1rem;
+      border-bottom: 1px solid var(--line);
+      letter-spacing: 0.03em;
+    }
+
+    .panel-body {
+      padding: 1.1rem;
+    }
+
+    /* search */
+    .profile-search-panel {
+      margin-bottom: 1.2rem;
+      background: rgba(154, 123, 63, 0.06);
+      border: 1px solid var(--line);
+    }
+
+    .profile-search-panel .panel-head {
+      font-size: 1.15rem;
+    }
+
+    .profile-search-panel .panel-body {
+      padding: 0.9rem;
+    }
+
+    .search-box {
+      width: 100%;
+      padding: 0.7rem 0.9rem;
+      background: var(--parchment);
+      border: 1px solid var(--gold);
+      font-family: 'Spectral', serif;
+      font-size: 1rem;
+      color: var(--ink);
+    }
+
+    .search-box:focus {
+      outline: 2px solid var(--gold-bright);
+    }
+
+    .result {
+      padding: 0.55rem 0.7rem;
+      cursor: pointer;
+      border-bottom: 1px solid var(--line);
+      transition: background 0.15s, padding-left 0.15s;
+    }
+
+    .result:hover {
+      background: var(--parchment-deep);
+      padding-left: 1rem;
+    }
+
+    .result .name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+    }
+
+    .result .meta {
+      font-size: 0.8rem;
+      color: var(--gold);
+      font-style: italic;
+    }
+
+    .book-pick {
+      width: 100%;
+      margin-top: 1.2rem;
+    }
+
+    select {
+      width: 100%;
+      padding: 0.5rem;
+      background: var(--parchment);
+      border: 1px solid var(--gold);
+      font-family: 'Spectral', serif;
+      color: var(--ink);
+      margin-top: 0.3rem;
+    }
+
+    label {
+      font-size: 0.85rem;
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    /* tabs */
+    .tabs {
+      display: flex;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .tab {
+      padding: 0.6rem 1.1rem;
+      cursor: pointer;
+      font-size: 0.95rem;
+      font-style: italic;
+      color: var(--gold);
+      border-bottom: 2px solid transparent;
+    }
+
+    .tab.active {
+      color: var(--ink);
+      border-bottom-color: var(--crimson);
+    }
+
+    /* profile */
+    .profile-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      color: var(--crimson);
+      line-height: 1.1;
+    }
+
+    .alias-row {
+      margin: 0.6rem 0 1.2rem;
+    }
+
+    .chip {
+      display: inline-block;
+      font-size: 0.78rem;
+      padding: 0.15rem 0.6rem;
+      margin: 0.15rem 0.2rem 0.15rem 0;
+      border: 1px solid var(--gold);
+      border-radius: 2px;
+      background: var(--parchment);
+    }
+
+    .chip.disguise {
+      border-color: var(--crimson);
+      color: var(--crimson);
+      font-weight: 600;
+    }
+
+    .chip.species {
+      border-color: var(--ink);
+      background: var(--parchment-deep);
+      font-variant: small-caps;
+      letter-spacing: 0.06em;
+    }
+
+    .chip.faction {
+      cursor: pointer;
+      border-color: var(--gold-bright);
+    }
+
+    .chip.faction:hover {
+      background: var(--parchment-deep);
+    }
+
+    .chip.faction.leader {
+      border-color: var(--crimson);
+      color: var(--crimson);
+      font-weight: 600;
+    }
+
+    .personality {
+      margin: 0.4rem 0 0.8rem;
+      padding: 0.5rem 0.8rem;
+      background: rgba(154, 123, 63, 0.08);
+      border-left: 3px solid var(--gold);
+      font-size: 0.92rem;
+    }
+
+    .demeanor {
+      font-style: italic;
+      color: var(--crimson);
+      font-size: 0.85rem;
+      margin: 0.15rem 0;
+    }
+
+    /* codex profile */
+    .codex-profile {
+      max-width: 920px;
+    }
+
+    .profile-kicker {
+      color: var(--gold);
+      font-style: italic;
+      margin-top: 0.2rem;
+      letter-spacing: 0.02em;
+    }
+
+    .profile-summary {
+      margin: 1rem 0 1.2rem;
+      padding: 0.75rem 0.95rem;
+      background: rgba(154, 123, 63, 0.08);
+      border-left: 3px solid var(--gold);
+      font-size: 0.98rem;
+    }
+
+    .codex-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem 1.4rem;
+      margin-top: 1rem;
+    }
+
+    @media (max-width: 760px) {
+      .codex-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .codex-card {
+      padding: 0.85rem 0.95rem;
+      background: rgba(255, 252, 244, 0.35);
+      border: 1px solid var(--line);
+    }
+
+    .codex-card.wide {
+      grid-column: 1 / -1;
+    }
+
+    .codex-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      color: var(--crimson);
+      margin-bottom: 0.4rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .codex-list {
+      list-style: none;
+    }
+
+    .codex-list li {
+      padding: 0.25rem 0;
+      border-bottom: 1px dotted var(--line);
+    }
+
+    .codex-label {
+      display: inline-block;
+      min-width: 5.8rem;
+      color: var(--gold);
+      font-style: italic;
+    }
+
+    .alias-group {
+      margin: 0.45rem 0;
+    }
+
+    .alias-group-title {
+      color: var(--gold);
+      font-size: 0.82rem;
+      font-style: italic;
+      margin-bottom: 0.15rem;
+    }
+
+    .thread-card {
+      padding: 0.75rem 0;
+      border-bottom: 1px dotted var(--line);
+    }
+
+    .thread-card .ch {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.08rem;
+    }
+
+    .action-text {
+      margin-top: 0.15rem;
+    }
+
+    .thread-tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem 0.9rem;
+      align-items: end;
+      margin: 0.35rem 0 0.9rem;
+      padding: 0.65rem 0.75rem;
+      background: rgba(154, 123, 63, 0.07);
+      border: 1px solid var(--line);
+    }
+
+    .thread-tools label {
+      display: block;
+      margin-bottom: 0.12rem;
+    }
+
+    .thread-tools select {
+      min-width: 155px;
+      margin-top: 0;
+    }
+
+    .thread-count {
+      margin-left: auto;
+      padding-bottom: 0.35rem;
+    }
+
+    @media (max-width: 760px) {
+      .thread-tools {
+        display: block;
+      }
+
+      .thread-tools>div {
+        margin-bottom: 0.55rem;
+      }
+
+      .thread-count {
+        margin-left: 0;
+        padding-bottom: 0;
+      }
+    }
+
+    .graph-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin: 0.4rem 0 0.8rem;
+      font-size: 0.85rem;
+    }
+
+    .graph-controls select {
+      width: auto;
+      margin: 0;
+      padding: 0.3rem 0.5rem;
+    }
+
+    .traits {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 0.4rem 1rem;
+      margin: 1rem 0;
+    }
+
+    .traits dt {
+      font-style: italic;
+      color: var(--gold);
+      font-size: 0.9rem;
+    }
+
+    .traits dd {
+      font-size: 0.95rem;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      margin: 1.6rem 0 0.6rem;
+      padding-bottom: 0.2rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .appearance {
+      padding: 0.7rem 0;
+      border-bottom: 1px dotted var(--line);
+    }
+
+    .appearance .where {
+      font-size: 0.82rem;
+      color: var(--gold);
+      font-style: italic;
+    }
+
+    .appearance .ch {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+    }
+
+    .rel-item {
+      padding: 0.55rem 0.4rem;
+      border-bottom: 1px dotted var(--line);
+      cursor: pointer;
+      transition: background 0.15s, padding-left 0.15s;
+    }
+
+    .rel-item:hover {
+      background: rgba(154, 123, 63, 0.05);
+      padding-left: 0.3rem;
+    }
+
+    .rel-item:hover .rel-name {
+      color: var(--crimson);
+    }
+
+    .rel-main {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+    }
+
+    .rel-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--ink);
+      transition: color 0.15s;
+    }
+
+    .rel-badge {
+      font-family: 'Spectral', serif;
+      font-style: normal;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 0.72rem;
+      color: var(--gold);
+      border: 1px solid rgba(154, 123, 63, 0.25);
+      background: rgba(255, 252, 244, 0.45);
+      padding: 0.15rem 0.55rem;
+      border-radius: 3px;
+      white-space: nowrap;
+      letter-spacing: 0.05em;
+      transition: all 0.2s ease;
+    }
+
+    .rel-item:hover .rel-badge {
+      border-color: var(--gold);
+      background: rgba(154, 123, 63, 0.1);
+    }
+
+    .rel-badge.leader,
+    .rel-badge.disguise {
+      border-color: rgba(110, 34, 48, 0.3);
+      color: var(--crimson);
+      background: rgba(110, 34, 48, 0.04);
+    }
+
+    .rel-item:hover .rel-badge.leader,
+    .rel-item:hover .rel-badge.disguise {
+      border-color: var(--crimson);
+      background: rgba(110, 34, 48, 0.08);
+    }
+
+    .rel-desc {
+      font-size: 0.86rem;
+      color: var(--ink);
+      opacity: 0.8;
+      margin-top: 0.18rem;
+      padding-left: 0.1rem;
+      line-height: 1.4;
+    }
+
+    /* Known Names structured subsections styling */
+    .alias-subsections {
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+      margin-top: 0.4rem;
+    }
+
+    .alias-subsection {
+      margin-bottom: 0.1rem;
+    }
+
+    .alias-subtitle {
+      font-family: 'Spectral', serif;
+      font-size: 0.76rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: var(--gold);
+      letter-spacing: 0.07em;
+      margin-bottom: 0.35rem;
+      border-bottom: 1px solid rgba(154, 123, 63, 0.22);
+      padding-bottom: 0.15rem;
+    }
+
+    .alias-sub-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .alias-sub-item {
+      padding: 0.35rem 0.2rem;
+      border-bottom: 1px dotted var(--line);
+      transition: background 0.15s;
+    }
+
+    .alias-sub-item:last-child {
+      border-bottom: none;
+    }
+
+    .alias-sub-item:hover {
+      background: rgba(154, 123, 63, 0.03);
+    }
+
+    .alias-sub-item:hover .alias-sub-name {
+      color: var(--crimson);
+    }
+
+    .alias-sub-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.12rem;
+      font-weight: 500;
+      color: var(--ink);
+      transition: color 0.15s;
+    }
+
+    @media (max-width: 480px) {
+      .rel-main {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.2rem;
+      }
+
+      .rel-badge {
+        align-self: flex-start;
+      }
+    }
+
+    #graph {
+      width: 100%;
+      height: 560px;
+      background: rgba(255, 252, 244, 0.4);
+      border: 1px solid var(--line);
+    }
+
+    .empty {
+      text-align: center;
+      font-style: italic;
+      color: var(--gold);
+      padding: 3rem 1rem;
+    }
+
+    .hint {
+      font-size: 0.8rem;
+      color: var(--gold);
+      font-style: italic;
+    }
+
+    /* Accordion sections */
+    .accordion-card {
+      grid-column: 1 / -1;
+      border: 1px solid var(--line);
+      background: rgba(255, 252, 244, 0.35);
+    }
+
+    .accordion-toggle {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 0.95rem;
+      cursor: pointer;
+      user-select: none;
+      border: none;
+      background: none;
+      width: 100%;
+      text-align: left;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      color: var(--crimson);
+      transition: background 0.15s;
+    }
+
+    .accordion-toggle:hover {
+      background: rgba(154, 123, 63, 0.05);
+    }
+
+    .accordion-chevron {
+      font-size: 0.85rem;
+      color: var(--gold);
+      transition: transform 0.25s ease;
+      display: inline-block;
+      margin-left: 0.5rem;
+    }
+
+    .accordion-card.open .accordion-chevron {
+      transform: rotate(180deg);
+    }
+
+    .accordion-body {
+      display: none;
+      padding: 0.85rem 0.95rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .accordion-card.open .accordion-body {
+      display: block;
+    }
+
+    /* Nested Chapter Picker styling inside Chapter Cast tab */
+    .chapter-picker-container {
+      background: rgba(154, 123, 63, 0.05);
+      border-bottom: 1px solid var(--line);
+      padding: 1.1rem;
+      margin: -1.1rem -1.1rem 1.1rem -1.1rem;
+    }
+
+    .book-pick-inline {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .book-pick-inline>div {
+      flex: 1;
+    }
+
+    .book-pick-inline label {
+      display: block;
+      margin-bottom: 0.22rem;
+      font-style: italic;
+      font-size: 0.85rem;
+      color: var(--gold);
+    }
+
+    .book-pick-inline select {
+      width: 100%;
+      margin-top: 0;
+    }
+
+    @media (max-width: 600px) {
+      .book-pick-inline {
+        flex-direction: column;
+        gap: 0.8rem;
+        align-items: stretch;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="wheel"></div>
+    <h1>The Pattern</h1>
+    <div class="tagline">a directory of souls woven through the Wheel of Time</div>
+  </header>
+
+  <div class="layout">
+
+    <!-- Tabbed main view -->
+    <main class="panel">
+      <div class="tabs">
+        <div class="tab active" data-tab="profile">Profile</div>
+        <div class="tab" data-tab="chapter">Chapter Cast</div>
+        <div class="tab" data-tab="graph">The Web</div>
+      </div>
+
+      <div class="panel-body">
+        <div id="tab-profile">
+          <div class="profile-search-panel">
+            <div class="panel-head">Seek a Name</div>
+            <div class="panel-body">
+              <input class="search-box" id="search" type="text" placeholder="Rand, Moiraine, the Dragon&hellip;"
+                autocomplete="off">
+              <div id="results"></div>
+              <div class="book-pick">
+                <label for="faction-select">Or browse by faction</label>
+                <select id="faction-select">
+                  <option value="">— select faction —</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div id="profile-content">
+            <div class="empty">Search for a character to read their thread
+              in the Pattern.</div>
+          </div>
+        </div>
+        <div id="tab-chapter" style="display:none;">
+          <div class="chapter-picker-container">
+            <div class="book-pick-inline">
+              <div>
+                <label for="book-select">Browse by book</label>
+                <select id="book-select">
+                  <option value="">&mdash; select &mdash;</option>
+                </select>
+              </div>
+              <div>
+                <label for="chapter-select">Then a chapter</label>
+                <select id="chapter-select">
+                  <option value="">&mdash; select &mdash;</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div id="chapter-cast-content">
+            <div class="empty">Choose a book and chapter to see who walks
+              its pages.</div>
+          </div>
+        </div>
+        <div id="tab-graph" style="display:none;">
+          <p class="hint">Showing every known relationship. Pick a chapter
+            on the left to narrow the web to that chapter's cast.</p>
+          <div class="graph-controls">
+            <label for="colour-by">Colour nodes by</label>
+            <select id="colour-by">
+              <option value="default">relationship hue (default)</option>
+              <option value="faction">faction</option>
+              <option value="character_type">species</option>
+            </select>
+            <span id="graph-legend" class="hint"></span>
+          </div>
+          <div id="graph"></div>
+        </div>
+      </div>
+    </main>
+
+  </div>
+
+  <script>
+    const $ = s => document.querySelector(s);
+
+    // ---------- accordion ----------
+    function toggleAccordion(id) {
+      const card = document.getElementById(id);
+      if (!card) return;
+      const isOpen = card.classList.toggle('open');
+      const btn = card.querySelector('.accordion-toggle');
+      if (btn) btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    }
+
+    // ---------- tab switching ----------
+    document.querySelectorAll('.tab').forEach(tab => {
+      tab.onclick = () => {
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        ['profile', 'chapter', 'graph'].forEach(name => {
+          $('#tab-' + name).style.display =
+            (name === tab.dataset.tab) ? 'block' : 'none';
+        });
+        if (tab.dataset.tab === 'graph') loadGraph();
+      };
+    });
+    function showTab(name) {
+      document.querySelector(`.tab[data-tab="${name}"]`).click();
+    }
+
+    // ---------- search ----------
+    let searchTimer;
+    $('#search').addEventListener('input', e => {
+      clearTimeout(searchTimer);
+      const q = e.target.value.trim();
+      if (!q) { $('#results').innerHTML = ''; return; }
+      searchTimer = setTimeout(() => runSearch(q), 200);
+    });
+    async function runSearch(q) {
+      const res = await fetch('/api/search?q=' + encodeURIComponent(q));
+      const data = await res.json();
+      if (!data.length) {
+        $('#results').innerHTML =
+          '<div class="hint" style="padding:0.6rem;">No souls found.</div>';
+        return;
+      }
+      $('#results').innerHTML = data.map(c => `
+    <div class="result" onclick="selectCharacter(${c.character_id})">
+      <div class="name">${escapeHtml(c.display_name || c.primary_name)}</div>
+      <div class="meta">${c.nationality || 'origin unknown'}</div>
+    </div>`).join('');
+    }
+
+    function selectCharacter(cid) {
+      $('#search').value = '';
+      $('#results').innerHTML = '';
+      loadCharacter(cid);
+    }
+
+    // ---------- character profile ----------
+    function escapeAttr(s) {
+      return (s || '').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+    }
+
+    function escapeHtml(s) {
+      return (s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    async function loadCharacter(cid) {
+      const res = await fetch('/api/character/' + cid);
+      const d = await res.json();
+      if (d.error) return;
+      const c = d.character;
+
+      const cleanType = value => (value || '').replace('_', ' ');
+      const humanType = cleanType(c.character_type || 'human');
+
+      function groupAliases(aliases) {
+        if (!aliases || !aliases.length) return '';
+
+        const groups = {
+          primary_name: { label: 'Primary Name', items: [] },
+          titles: { label: 'Titles', items: [] },
+          disguises: { label: 'Disguises', items: [] }
+        };
+
+        aliases.forEach(a => {
+          const type = a.alias_type;
+          if (type === 'primary' || type === 'given_name') {
+            groups.primary_name.items.push(a);
+          } else if (type === 'title' || type === 'nickname' || type === 'epithet') {
+            groups.titles.items.push(a);
+          } else if (type === 'disguise') {
+            groups.disguises.items.push(a);
+          } else {
+            groups.titles.items.push(a);
+          }
+        });
+
+        const order = ['primary_name', 'titles', 'disguises'];
+        let html = '<div class="alias-subsections">';
+
+        order.forEach(key => {
+          const g = groups[key];
+          if (g.items.length) {
+            html += `
+          <div class="alias-subsection">
+            <h4 class="alias-subtitle">${escapeHtml(g.label)}</h4>
+            <div class="alias-sub-list">
+              ${g.items.map(a => `
+                <div class="alias-sub-item">
+                  <span class="alias-sub-name">${escapeHtml(a.alias_text)}</span>
+                  ${a.notes ? `<div class="rel-desc">${escapeHtml(a.notes)}</div>` : ''}
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        `;
+          }
+        });
+
+        html += '</div>';
+        return html;
+      }
+
+      function factionSubtitle(factions) {
+        if (!factions || !factions.length) return '';
+        const leader = factions.find(f => f.role === 'leader');
+        const main = leader || factions[0];
+        return `${main.role === 'leader' ? 'Leader of' : 'Affiliated with'} ${main.name}`;
+      }
+
+      function uniqueBooks(appearances) {
+        const seen = new Map();
+        (appearances || []).forEach(a => {
+          if (!seen.has(a.series_order)) {
+            seen.set(a.series_order, a.book_title || `Book ${a.series_order}`);
+          }
+        });
+        return [...seen.entries()].sort((a, b) => Number(a[0]) - Number(b[0]));
+      }
+
+      function chaptersForBook(appearances, selectedBook) {
+        const seen = new Map();
+        (appearances || [])
+          .filter(a => !selectedBook || String(a.series_order) === String(selectedBook))
+          .forEach(a => {
+            const key = `${a.series_order}-${a.chapter_number}`;
+            if (!seen.has(key)) {
+              seen.set(key, {
+                series_order: a.series_order,
+                chapter_number: a.chapter_number,
+                chapter_title: a.chapter_title
+              });
+            }
+          });
+        return [...seen.values()].sort((a, b) =>
+          Number(a.series_order) - Number(b.series_order) ||
+          Number(a.chapter_number) - Number(b.chapter_number));
+      }
+
+      function renderThreadCards(appearances) {
+        if (!appearances.length) {
+          return '<p class="hint">No appearances match these filters.</p>';
+        }
+        return appearances.map(a => `
+      <div class="thread-card">
+        <div class="ch">Bk ${a.series_order}, Ch ${a.chapter_number}
+          &mdash; ${escapeHtml(a.chapter_title)}</div>
+        ${a.whereabouts ? `<div class="where">${escapeHtml(a.whereabouts)}</div>` : ''}
+        ${a.demeanor ? `<div class="demeanor">&ldquo;${escapeHtml(a.demeanor)}&rdquo;</div>` : ''}
+        ${a.notable_actions ? `<div class="action-text">${escapeHtml(a.notable_actions)}</div>` : ''}
+      </div>`).join('');
+      }
+
+      window.filterCharacterThread = function (cid) {
+        const all = window.CHARACTER_THREADS?.[cid] || [];
+        const bookSel = document.getElementById(`thread-book-${cid}`);
+        const chapterSel = document.getElementById(`thread-chapter-${cid}`);
+        const bookValue = bookSel ? bookSel.value : '';
+        let chapterValue = chapterSel ? chapterSel.value : '';
+
+        if (chapterSel && chapterSel.dataset.bookValue !== bookValue) {
+          const chapters = chaptersForBook(all, bookValue);
+          chapterSel.innerHTML = '<option value="">All chapters</option>' + chapters.map(ch => {
+            const label = ch.chapter_number === 0 ? 'Prologue' : `Ch ${ch.chapter_number}`;
+            return `<option value="${ch.series_order}-${ch.chapter_number}">${label}: ${escapeHtml(ch.chapter_title)}</option>`;
+          }).join('');
+          chapterSel.dataset.bookValue = bookValue;
+          chapterValue = '';
+        }
+
+        const filtered = all.filter(a => {
+          const bookOk = !bookValue || String(a.series_order) === bookValue;
+          const chapterOk = !chapterValue || `${a.series_order}-${a.chapter_number}` === chapterValue;
+          return bookOk && chapterOk;
+        });
+
+        const list = document.getElementById(`thread-list-${cid}`);
+        const count = document.getElementById(`thread-count-${cid}`);
+        if (list) list.innerHTML = renderThreadCards(filtered);
+        if (count) {
+          count.textContent = `${filtered.length} of ${all.length} appearance${all.length === 1 ? '' : 's'}`;
+        }
+      }
+
+      const speciesChip = (c.character_type && c.character_type !== 'human')
+        ? `<span class="chip species">${humanType}</span>`
+        : '';
+
+      const subtitleParts = [];
+      if (c.nationality) subtitleParts.push(c.nationality);
+      if (c.character_type && c.character_type !== 'human') subtitleParts.push(humanType);
+      const facSub = factionSubtitle(d.factions || []);
+      if (facSub) subtitleParts.push(facSub);
+      const subtitle = subtitleParts.length ? subtitleParts.join(' · ') : 'thread recorded in the Pattern';
+
+      const knownNames = groupAliases(d.aliases);
+
+      const natureRows = [
+        ['Nature', humanType],
+        ['Origin', c.nationality],
+        ['Age', c.age],
+        ['Kinship', c.filiations]
+      ].filter(([_, v]) => v)
+        .map(([k, v]) => `<li><span class="codex-label">${k}</span>${escapeHtml(v)}</li>`).join('');
+
+      const appearanceBlock = c.physical_traits
+        ? `<p>${escapeHtml(c.physical_traits)}</p>`
+        : '<p class="hint">No physical description recorded yet.</p>';
+
+      const essenceBlock = c.personality
+        ? `<div class="profile-summary"><strong>Essence.</strong> ${escapeHtml(c.personality)}</div>`
+        : '';
+
+      const factionRows = (d.factions || []).length
+        ? (d.factions || []).map(f => `
+        <div class="rel-item" onclick="loadFaction(${f.faction_id})">
+          <div class="rel-main">
+            <span class="rel-name">${escapeHtml(f.name)}</span>
+            <span class="rel-badge ${f.role === 'leader' ? 'leader' : ''}">
+              ${escapeHtml(f.faction_type || 'faction')}${f.role === 'leader' ? ' · leader' : ''}
+            </span>
+          </div>
+          ${f.notes ? `<div class="rel-desc">${escapeHtml(f.notes)}</div>` : ''}
+        </div>`).join('')
+        : '<p class="hint">No faction allegiance recorded yet.</p>';
+
+      window.CHARACTER_THREADS = window.CHARACTER_THREADS || {};
+      window.CHARACTER_THREADS[cid] = d.appearances || [];
+
+      const booksForThread = uniqueBooks(d.appearances || []);
+      const threadControls = d.appearances.length
+        ? `<div class="thread-tools">
+        <div>
+          <label for="thread-book-${cid}">Book</label>
+          <select id="thread-book-${cid}" onchange="filterCharacterThread(${cid})">
+            <option value="">All books</option>
+            ${booksForThread.map(([order, title]) =>
+          `<option value="${order}">Bk ${order}: ${escapeHtml(title)}</option>`
+        ).join('')}
+          </select>
+        </div>
+        <div>
+          <label for="thread-chapter-${cid}">Chapter</label>
+          <select id="thread-chapter-${cid}" data-book-value="" onchange="filterCharacterThread(${cid})">
+            <option value="">All chapters</option>
+            ${chaptersForBook(d.appearances || [], '').map(ch => {
+          const label = ch.chapter_number === 0 ? 'Prologue' : `Ch ${ch.chapter_number}`;
+          return `<option value="${ch.series_order}-${ch.chapter_number}">Bk ${ch.series_order}, ${label}: ${escapeHtml(ch.chapter_title)}</option>`;
+        }).join('')}
+          </select>
+        </div>
+        <div id="thread-count-${cid}" class="hint thread-count">
+          ${d.appearances.length} appearance${d.appearances.length === 1 ? '' : 's'}
+        </div>
+      </div>`
+        : '';
+
+      const appearances = d.appearances.length
+        ? `<div id="thread-list-${cid}">${renderThreadCards(d.appearances)}</div>`
+        : '<p class="hint">No chapter appearances recorded yet.</p>';
+
+      const rels = d.relationships.length
+        ? d.relationships.map(r => `
+        <div class="rel-item" onclick="loadCharacter(${r.other_id})">
+          <div class="rel-main">
+            <span class="rel-name">${escapeHtml(r.other_name)}</span>
+            <span class="rel-badge">${escapeHtml(r.type.replace('_', ' '))}</span>
+          </div>
+          ${r.description ? `<div class="rel-desc">${escapeHtml(r.description)}</div>` : ''}
+        </div>`).join('')
+        : '<p class="hint">No relationships recorded yet.</p>';
+
+      $('#profile-content').innerHTML = `
+    <article class="codex-profile">
+      <div class="profile-name">${escapeHtml(c.display_name || c.primary_name)} ${speciesChip}</div>
+      <div class="profile-kicker">${escapeHtml(subtitle)}</div>
+      ${c.description ? `<p style="font-style:italic;">${escapeHtml(c.description)}</p>` : ''}
+      ${essenceBlock}
+
+      <div class="codex-grid">
+        <section class="codex-card">
+          <div class="codex-heading">Known Names</div>
+          ${knownNames || '<p class="hint">No alternate names recorded yet.</p>'}
+        </section>
+
+        <section class="codex-card">
+          <div class="codex-heading">Nature</div>
+          ${natureRows ? `<ul class="codex-list">${natureRows}</ul>` : '<p class="hint">No stable traits recorded yet.</p>'}
+        </section>
+
+        <section class="codex-card">
+          <div class="codex-heading">Appearance</div>
+          ${appearanceBlock}
+        </section>
+
+        <section class="codex-card">
+          <div class="codex-heading">Allegiances</div>
+          ${factionRows}
+        </section>
+
+        <section class="codex-card accordion-card" id="accordion-thread">
+          <button class="accordion-toggle" onclick="toggleAccordion('accordion-thread')" aria-expanded="false">
+            Thread Through the Pattern
+            <span class="accordion-chevron">&#9660;</span>
+          </button>
+          <div class="accordion-body">
+            ${threadControls}
+            ${appearances}
+          </div>
+        </section>
+
+        <section class="codex-card accordion-card" id="accordion-bonds">
+          <button class="accordion-toggle" onclick="toggleAccordion('accordion-bonds')" aria-expanded="false">
+            Bonds &amp; Enmities
+            <span class="accordion-chevron">&#9660;</span>
+          </button>
+          <div class="accordion-body">
+            ${rels}
+          </div>
+        </section>
+      </div>
+    </article>
+  `;
+      showTab('profile');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // ---------- faction view ----------
+    async function loadFaction(fid) {
+      const res = await fetch('/api/faction/' + fid);
+      const d = await res.json();
+      if (d.error) return;
+      const f = d.faction;
+      const members = d.members.length
+        ? d.members.map(m => `
+        <div class="rel-item" onclick="loadCharacter(${m.character_id})">
+          <div class="rel-main">
+            <span class="rel-name">${escapeHtml(m.primary_name)}</span>
+            <span class="rel-badge ${m.role === 'leader' ? 'leader' : ''}">${escapeHtml(m.role)}</span>
+          </div>
+          ${m.notes ? `<div class="rel-desc">${escapeHtml(m.notes)}</div>` : ''}
+        </div>`).join('')
+        : '<p class="hint">No members recorded yet.</p>';
+      $('#profile-content').innerHTML = `
+    <div class="profile-name">${f.name}</div>
+    <p class="hint">faction type: ${f.faction_type}</p>
+    ${f.description ? `<p style="font-style:italic;">${f.description}</p>` : ''}
+    <div class="section-title">Members</div>
+    ${members}
+  `;
+      showTab('profile');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // ---------- books & chapters ----------
+    let BOOKS = [];
+    async function loadBooks() {
+      BOOKS = await (await fetch('/api/books')).json();
+      $('#book-select').innerHTML = '<option value="">&mdash; select &mdash;</option>'
+        + BOOKS.map(b =>
+          `<option value="${b.book_id}">Bk ${b.series_order}: ${b.title}</option>`
+        ).join('');
+    }
+    $('#book-select').addEventListener('change', e => {
+      const book = BOOKS.find(b => b.book_id == e.target.value);
+      const sel = $('#chapter-select');
+      if (!book) { sel.innerHTML = '<option value="">&mdash;</option>'; return; }
+      sel.innerHTML = '<option value="">&mdash; select &mdash;</option>'
+        + book.chapters.map(c => {
+          const n = c.chapter_number === 0 ? 'Prologue'
+            : 'Ch ' + c.chapter_number;
+          const mark = c.extracted ? '' : '  (not yet read)';
+          return `<option value="${c.chapter_id}">${n}: ${c.title}${mark}</option>`;
+        }).join('');
+    });
+    $('#chapter-select').addEventListener('change', e => {
+      if (e.target.value) loadChapter(e.target.value);
+    });
+
+    async function loadChapter(chid) {
+      const d = await (await fetch('/api/chapter/' + chid)).json();
+      if (d.error) return;
+      const ch = d.chapter;
+      const cast = d.characters.length
+        ? d.characters.map(c => `
+        <div class="appearance">
+          <div class="ch" style="cursor:pointer;"
+               onclick="loadCharacter(${c.character_id})">${c.primary_name}
+            ${c.name_used && c.name_used !== c.primary_name
+            ? `<span class="where">(as &ldquo;${c.name_used}&rdquo;)</span>` : ''}
+          </div>
+          ${c.whereabouts ? `<div class="where">${c.whereabouts}</div>` : ''}
+          ${c.demeanor ? `<div class="demeanor">&ldquo;${c.demeanor}&rdquo;</div>` : ''}
+          <div>${c.notable_actions || ''}</div>
+        </div>`).join('')
+        : '<p class="hint">This chapter has not been read into the directory yet.</p>';
+
+      $('#chapter-cast-content').innerHTML = `
+    <div class="profile-name" style="font-size:1.7rem;">
+      ${ch.book_title}</div>
+    <div class="section-title">
+      ${ch.chapter_number === 0 ? 'Prologue' : 'Chapter ' + ch.chapter_number}
+      &mdash; ${ch.title}</div>
+    ${cast}`;
+      showTab('chapter');
+    }
+
+    // ---------- network graph ----------
+    let cy;
+
+    // Stable colour per arbitrary string (faction name, species, ...).
+    // We sample a curated palette by hashing so the same name keeps the
+    // same hue across reloads, instead of going through every shade.
+    const PALETTE = [
+      '#6e2230', '#3f7a4f', '#3f5f7a', '#9a7b3f', '#a8517a', '#b5702a',
+      '#6a6a55', '#4a6071', '#7a3f5f', '#5a7a3f', '#7a5a3f', '#3f7a7a',
+    ];
+    function hashColor(key) {
+      if (!key) return '#8a8170';
+      let h = 0;
+      for (let i = 0; i < key.length; i++) h = (h * 31 + key.charCodeAt(i)) | 0;
+      return PALETTE[Math.abs(h) % PALETTE.length];
+    }
+
+    // Pick the "primary" faction for colouring: prefer ajah/house/order/clan
+    // over the catch-all 'other'. Returns {key, label} or null.
+    const FAC_PRIORITY = ['ajah', 'house', 'order', 'clan', 'society', 'other'];
+    function primaryFaction(node) {
+      const facs = node.factions || [];
+      if (!facs.length) return null;
+      const sorted = [...facs].sort((a, b) =>
+        FAC_PRIORITY.indexOf(a.faction_type) - FAC_PRIORITY.indexOf(b.faction_type));
+      return { key: sorted[0].name, label: sorted[0].name };
+    }
+
+    function nodeColor(node, mode) {
+      if (mode === 'faction') {
+        const pf = primaryFaction(node);
+        return pf ? hashColor(pf.key) : '#bfae8a';   // muted for unaffiliated
+      }
+      if (mode === 'character_type') {
+        return hashColor(node.character_type || 'human');
+      }
+      return '#6e2230';   // default crimson
+    }
+
+    function buildLegend(nodes, mode) {
+      if (mode === 'default') return '';
+      const seen = new Map();
+      for (const n of nodes) {
+        let key;
+        if (mode === 'faction') {
+          const pf = primaryFaction(n);
+          key = pf ? pf.label : 'unaffiliated';
+        } else {
+          key = n.character_type || 'human';
+        }
+        if (!seen.has(key)) {
+          seen.set(key, mode === 'faction' && key === 'unaffiliated'
+            ? '#bfae8a' : hashColor(key));
+        }
+      }
+      return [...seen.entries()].slice(0, 12).map(([k, c]) =>
+        `<span style="display:inline-block;width:0.7rem;height:0.7rem;`
+        + `background:${c};margin:0 0.25rem 0 0.6rem;vertical-align:middle;"></span>`
+        + k).join('');
+    }
+
+    async function loadGraph() {
+      const chId = $('#chapter-select').value;
+      const url = chId ? '/api/graph?chapter=' + chId : '/api/graph';
+      const d = await (await fetch(url)).json();
+
+      if (!d.nodes.length) {
+        $('#graph').innerHTML =
+          '<div class="empty">No characters to weave yet.</div>';
+        $('#graph-legend').innerHTML = '';
+        return;
+      }
+
+      const relColor = {
+        ally: '#3f7a4f', enemy: '#6e2230', family: '#9a7b3f',
+        mentor: '#3f5f7a', romantic: '#a8517a', rival: '#b5702a',
+        servant: '#6a6a55', warder_bond: '#4a6071', other: '#8a8170'
+      };
+      const mode = $('#colour-by').value;
+
+      const elements = [
+        ...d.nodes.map(n => ({
+          data: {
+            id: 'c' + n.id, label: n.label,
+            color: nodeColor(n, mode),
+            size: 18 + Math.min(n.appearances * 3, 40),
+          }
+        })),
+        ...d.edges.map(e => ({
+          data: {
+            source: 'c' + e.source, target: 'c' + e.target,
+            color: relColor[e.type] || relColor.other,
+            label: e.type.replace('_', ' '),
+            directed: e.directed
+          }
+        }))
+      ];
+
+      $('#graph-legend').innerHTML = buildLegend(d.nodes, mode);
+
+      if (cy) cy.destroy();
+      cy = cytoscape({
+        container: $('#graph'),
+        elements,
+        style: [
+          {
+            selector: 'node', style: {
+              'label': 'data(label)', 'width': 'data(size)',
+              'height': 'data(size)', 'background-color': 'data(color)',
+              'color': '#1c1814', 'font-family': 'Spectral, serif',
+              'font-size': '11px', 'text-margin-y': '-4px',
+              'border-width': 1, 'border-color': '#9a7b3f'
+            }
+          },
+          {
+            selector: 'edge', style: {
+              'width': 1.5, 'line-color': 'data(color)',
+              'curve-style': 'bezier', 'opacity': 0.7,
+              'target-arrow-color': 'data(color)'
+            }
+          },
+          {
+            selector: 'edge[directed = 1]', style: {
+              'target-arrow-shape': 'triangle'
+            }
+          }
+        ],
+        layout: { name: 'cose', animate: true, padding: 30 }
+      });
+      cy.on('tap', 'node', evt => {
+        const id = evt.target.id().slice(1);
+        loadCharacter(parseInt(id));
+      });
+    }
+
+    $('#colour-by').addEventListener('change', loadGraph);
+
+    let FACTIONS = [];
+
+    async function loadFactions() {
+      FACTIONS = await (await fetch('/api/factions')).json();
+
+      $('#faction-select').innerHTML =
+        '<option value="">— select faction —</option>' +
+        FACTIONS.map(f =>
+          `<option value="${f.faction_id}">${escapeHtml(f.name)}</option>`
+        ).join('');
+    }
+
+    $('#faction-select').addEventListener('change', e => {
+      if (e.target.value) {
+        loadFaction(e.target.value);
+        // reset dropdown back to placeholder
+        e.target.value = '';
+      }
+    });
+    loadBooks();
+    loadFactions();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,597 @@
+{
+  "characters": [
+    {
+      "name_used_in_text": "Thom Merrilin",
+      "likely_matches_existing": "Thom Merrilin",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "from Baerlon area",
+        "physical_traits": "right leg does not bend well",
+        "age": "old (self-described)",
+        "filiations": null,
+        "personality": "skilled in the Great Game, protective of those he cares for, vengeful when wronged"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Thom is in Cairhien performing at Barthanes's manor. Dena is murdered. He kills two assassins, learns Barthanes is dead, and flees Cairhien."
+    },
+    {
+      "name_used_in_text": "Dena",
+      "likely_matches_existing": "Dena",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Cairhienin",
+        "physical_traits": null,
+        "age": "young (girl)",
+        "filiations": null,
+        "personality": "eager to perform, loyal to Thom"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Dena is murdered with her throat cut in Thom's room, killed by assassins seeking information about Rand al'Thor."
+    },
+    {
+      "name_used_in_text": "Zera",
+      "likely_matches_existing": "Zera",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "innkeeper of The Bunch of Grapes",
+        "personality": "practical, experienced with violence, maternal toward Thom"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "the innkeeper",
+          "alias_type": "epithet",
+          "notes": "used to describe her role"
+        }
+      ],
+      "notes": "Zera helps Thom after Dena's murder, urging him to flee Cairhien."
+    },
+    {
+      "name_used_in_text": "Padan Fain",
+      "likely_matches_existing": "Padan Fain",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": "worn, none-too-clean clothing as disguise",
+        "age": null,
+        "filiations": null,
+        "personality": "patient, manipulative, vengeful, megalomaniacal"
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Commands Darkfriends and Trollocs"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Fain arrives at Falme with the Horn of Valere and the ruby dagger. He presents them to High Lord Turak, claiming his family served Artur Hawkwing. His obsession with Rand al'Thor drives his plans."
+    },
+    {
+      "name_used_in_text": "Turak",
+      "likely_matches_existing": "Turak",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Seanchan",
+        "physical_traits": "shaven head, long fingernails, wears blue silk robe brocaded with blossoms, scent of roses",
+        "age": null,
+        "filiations": "twelfth in line of succession to the Crystal Throne",
+        "personality": "calm, calculating, wary of political intrigue, values entertainment and amusement"
+      },
+      "factions": [
+        {
+          "name": "Seanchan",
+          "faction_type": "other",
+          "role": "leader",
+          "notes": "High Lord commanding Seanchan forces on Toman Head"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "High Lord Turak",
+          "alias_type": "title",
+          "notes": null
+        },
+        {
+          "alias_text": "High Lord",
+          "alias_type": "title",
+          "notes": null
+        },
+        {
+          "alias_text": "the High Lord",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Turak receives the Horn of Valere from Fain, explaining he will not sound it himself to avoid appearing a threat to the Empress. He plans to present it to the Empress in Seanchan."
+    },
+    {
+      "name_used_in_text": "Huan",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Seanchan",
+        "physical_traits": "yellow hair (pale hair), half his head shaven, other half in a long braid",
+        "age": null,
+        "filiations": "born and raised in the House of Aladon for eleven generations",
+        "personality": "loyal, protective of Turak's dignity, stern"
+      },
+      "factions": [
+        {
+          "name": "Seanchan",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Serves High Lord Turak directly"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "the man with the braid",
+          "alias_type": "epithet",
+          "notes": "used repeatedly in the text"
+        },
+        {
+          "alias_text": "the yellow-haired man",
+          "alias_type": "epithet",
+          "notes": "used to describe him"
+        }
+      ],
+      "notes": "Huan is Turak's close servant or bodyguard. He strikes Fain for addressing Turak improperly. Fain plans to kill him."
+    },
+    {
+      "name_used_in_text": "Barthanes",
+      "likely_matches_existing": "Barthanes",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Cairhienin",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "House Damodred",
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "member",
+          "notes": null
+        },
+        {
+          "name": "House Damodred",
+          "faction_type": "house",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Lord Barthanes",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Barthanes is found dead, torn to pieces in his bedchamber, his head on a spike over the fireplace. His death is discussed but he does not appear alive in this chapter."
+    },
+    {
+      "name_used_in_text": "Galldrian",
+      "likely_matches_existing": "Galldrian su Riatin Rie",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Cairhienin",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "King of Cairhien",
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "House Riatin",
+          "faction_type": "house",
+          "role": "leader",
+          "notes": "King of Cairhien"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "King",
+          "alias_type": "title",
+          "notes": "referred to as the King"
+        }
+      ],
+      "notes": "Galldrian's men (not Barthanes's) were the assassins who killed Dena and attempted to capture Thom."
+    },
+    {
+      "name_used_in_text": "Rand al'Thor",
+      "likely_matches_existing": "Rand al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "tall, young, wears a blademaster's sword",
+        "age": "young",
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Andoran lord",
+          "alias_type": "epithet",
+          "notes": "how some in Cairhien describe him"
+        },
+        {
+          "alias_text": "Rand",
+          "alias_type": "given_name",
+          "notes": null
+        }
+      ],
+      "notes": "Rand is the focus of intense interest in Cairhien, with multiple Houses seeking information about him. Fain tells Turak that Rand leads Darkfriends and Trollocs, which is a lie to turn Turak against him."
+    },
+    {
+      "name_used_in_text": "Ella",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "medium",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Cairhienin",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "works at The Bunch of Grapes",
+        "personality": "described as a fool by Zera"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Ella told Zera about Barthanes's men asking after Thom. Mentioned only briefly."
+    },
+    {
+      "name_used_in_text": "Artur Hawkwing",
+      "likely_matches_existing": "Artur Hawkwing",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": "historical",
+        "filiations": "High King (historical)",
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Artur Paendrag Tanreall",
+          "alias_type": "given_name",
+          "notes": null
+        },
+        {
+          "alias_text": "High King",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Artur Hawkwing is referenced extensively by Fain in his fabricated story to Turak about serving Hawkwing's bloodline."
+    },
+    {
+      "name_used_in_text": "Luthair",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Seanchan (historical)",
+        "physical_traits": null,
+        "age": "historical",
+        "filiations": "son of Artur Hawkwing",
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Luthair was Artur Hawkwing's son who was sent across the Aryth Ocean with armies. His banner flies over Turak's headquarters in Falme."
+    },
+    {
+      "name_used_in_text": "Tuon",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Seanchan",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "second daughter of the Empress, currently favored heir",
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "Seanchan",
+          "faction_type": "other",
+          "role": "leader",
+          "notes": "Favored heir to the Crystal Throne"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Tuon is mentioned by Turak as the Empress's currently favored heir. He does not wish to appear a threat to her."
+    },
+    {
+      "name_used_in_text": "the Empress",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Seanchan",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "ruler of Seanchan Empire",
+        "personality": "encourages competition among her heirs, has Listeners and Seekers"
+      },
+      "factions": [
+        {
+          "name": "Seanchan",
+          "faction_type": "other",
+          "role": "leader",
+          "notes": "Empress of Seanchan, sits the Crystal Throne"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "The Empress rules Seanchan from the Court of the Nine Moons in Seandar. Turak plans to present the Horn of Valere to her."
+    },
+    {
+      "name_used_in_text": "Loial",
+      "likely_matches_existing": "Loial",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "ogier",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Ogier",
+          "alias_type": "epithet",
+          "notes": "species descriptor used as identifier"
+        }
+      ],
+      "notes": "Loial is mentioned by the assassin as having been seen with Rand visiting Thom. He does not appear in this chapter but is discussed."
+    }
+  ],
+  "appearances": [
+    {
+      "character": "Thom Merrilin",
+      "whereabouts": "Cairhien (Foregate), The Bunch of Grapes inn, then fleeing",
+      "notable_actions": "Returns to his room after performing at Barthanes's manor, discovers Dena murdered, kills two assassins (one with House Riatin connections), learns from Zera that Barthanes is dead and the granaries are burning, decides to flee Cairhien",
+      "demeanor": "Devastated by Dena's death, numb, vengeful, determined. Initially despondent but becomes purposeful and dangerous by chapter's end",
+      "alliances_shown": [
+        "Dena (romantic/protective)",
+        "Zera (friendly/professional)",
+        "opposed to Galldrian and those who killed Dena"
+      ]
+    },
+    {
+      "character": "Dena",
+      "whereabouts": "Thom's room at The Bunch of Grapes, Cairhien",
+      "notable_actions": "Found murdered with her throat cut, killed by assassins seeking information about Rand al'Thor",
+      "demeanor": "Dead",
+      "alliances_shown": [
+        "Thom Merrilin (romantic/loyal)"
+      ]
+    },
+    {
+      "character": "Zera",
+      "whereabouts": "The Bunch of Grapes inn, Cairhien",
+      "notable_actions": "Warns Thom about Barthanes's men, discovers the assassins' bodies and Dena's corpse, urges Thom to flee Cairhien, reveals the dead assassin works for House Riatin/Galldrian, takes Thom's coin purse to arrange Dena's burial and cover for him",
+      "demeanor": "Practical, shocked by Dena's death but keeping composure, protective of Thom",
+      "alliances_shown": [
+        "Thom Merrilin (friendly, helpful)"
+      ]
+    },
+    {
+      "character": "Padan Fain",
+      "whereabouts": "Traveling to Falme, then in Falme presenting the Horn to Turak",
+      "notable_actions": "Leads Darkfriends and Trollocs via the Ways to Toman Head, kills a woman for her horse, enters Falme, presents the Horn of Valere and the ruby dagger to High Lord Turak, fabricates a story about his family serving Artur Hawkwing, warns Turak about Rand al'Thor and Trollocs pursuing him, is invited to amuse Turak with tales and possibly be presented to the Empress",
+      "demeanor": "Confident, manipulative, patient on the surface but seething with impatience and vengefulness inside, calculating",
+      "alliances_shown": [
+        "Commands Darkfriends and Trollocs",
+        "Cultivating relationship with Turak"
+      ]
+    },
+    {
+      "character": "Turak",
+      "whereabouts": "His headquarters in Falme",
+      "notable_actions": "Receives Fain and the Horn of Valere, opens the chest, examines the Horn and dagger, explains why he will not sound the Horn (political reasons involving succession), decides to present it to the Empress, orders watch for Rand al'Thor and Trollocs, considers taking Fain to Seanchan",
+      "demeanor": "Calm, placid, calculating, cautious about court politics, somewhat amused by Fain's story",
+      "alliances_shown": [
+        "Loyal to the Empress",
+        "Commands Seanchan forces",
+        "Served by Huan"
+      ]
+    },
+    {
+      "character": "Huan",
+      "whereabouts": "Turak's headquarters in Falme, attending Turak",
+      "notable_actions": "Serves Turak, searches Fain, accompanies Fain and the soldiers presenting the chest, strikes Fain for speaking improperly to Turak, lectures Fain on proper behavior, dismisses Fain into the street with a coin",
+      "demeanor": "Stern, protective of Turak's dignity, loyal, disciplined",
+      "alliances_shown": [
+        "Serves High Lord Turak"
+      ]
+    },
+    {
+      "character": "Galldrian",
+      "whereabouts": "Presumably Cairhien (royal palace)",
+      "notable_actions": "Sent assassins (who killed Dena) to question Thom about Rand al'Thor. Setting fires to the granaries (implied by context)",
+      "demeanor": "Not directly shown, but actions indicate he is playing the Great Game ruthlessly",
+      "alliances_shown": [
+        "House Riatin",
+        "opposed to those interested in Rand al'Thor"
+      ]
+    },
+    {
+      "character": "Rand al'Thor",
+      "whereabouts": "Left Cairhien (went to The Great Tree inn, now gone with friends and Aes Sedai)",
+      "notable_actions": "Visited Thom with Loial at The Bunch of Grapes. Is the focus of intense interest from multiple Cairhienin Houses. Fain falsely accuses him to Turak of leading Darkfriends and Trollocs",
+      "demeanor": "Not present in chapter",
+      "alliances_shown": [
+        "Thom Merrilin (friendly)",
+        "Loial (friendly)",
+        "Aes Sedai (traveling with)"
+      ]
+    },
+    {
+      "character": "Artur Hawkwing",
+      "whereabouts": "Historical figure, deceased",
+      "notable_actions": "Referenced extensively in Fain's fabricated story to Turak",
+      "demeanor": "Not present (historical)",
+      "alliances_shown": []
+    },
+    {
+      "character": "Luthair",
+      "whereabouts": "Historical figure, sent across the ocean by Artur Hawkwing",
+      "notable_actions": "His banner (with slight variation) flies over Turak's headquarters",
+      "demeanor": "Not present (historical)",
+      "alliances_shown": []
+    },
+    {
+      "character": "Tuon",
+      "whereabouts": "Seanchan (mentioned only)",
+      "notable_actions": "None in this chapter; mentioned as the Empress's favored heir",
+      "demeanor": "Not present",
+      "alliances_shown": []
+    },
+    {
+      "character": "the Empress",
+      "whereabouts": "Seanchan, Court of the Nine Moons in Seandar",
+      "notable_actions": "None directly; her authority and systems (Listeners, Seekers) are described. Turak intends to present the Horn to her",
+      "demeanor": "Not present",
+      "alliances_shown": [
+        "Rules Seanchan",
+        "Commands Listeners and Seekers for Truth"
+      ]
+    },
+    {
+      "character": "Loial",
+      "whereabouts": "With Rand (left Cairhien)",
+      "notable_actions": "Mentioned as having visited Thom with Rand",
+      "demeanor": "Not present",
+      "alliances_shown": [
+        "Rand al'Thor"
+      ]
+    },
+    {
+      "character": "Barthanes",
+      "whereabouts": "Dead in his manor in Cairhien",
+      "notable_actions": "Hosted Thom at his manor the previous night, found dead (torn to pieces, head on spike) in the morning",
+      "demeanor": "Dead",
+      "alliances_shown": []
+    },
+    {
+      "character": "Ella",
+      "whereabouts": "The Bunch of Grapes inn",
+      "notable_actions": "Reported to Zera that Barthanes's men were asking after Thom",
+      "demeanor": "Described as foolish by Zera",
+      "alliances_shown": []
+    }
+  ],
+  "relationships": [
+    {
+      "character_a": "Thom Merrilin",
+      "character_b": "Dena",
+      "relationship_type": "romantic",
+      "directed": false,
+      "description": "Thom loved Dena deeply and was planning to let her perform publicly for the first time. Her murder devastates him."
+    },
+    {
+      "character_a": "Thom Merrilin",
+      "character_b": "Zera",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Zera is the innkeeper who helps Thom after Dena's murder, urging him to flee and arranging burial."
+    },
+    {
+      "character_a": "Padan Fain",
+      "character_b": "Turak",
+      "relationship_type": "servant",
+      "directed": true,
+      "description": "Fain presents himself as a servant bringing treasure to Turak, seeking to gain access and influence."
+    },
+    {
+      "character_a": "Huan",
+      "character_b": "Turak",
+      "relationship_type": "servant",
+      "directed": true,
+      "description": "Huan serves Turak closely, protecting his dignity and managing his affairs."
+    },
+    {
+      "character_a": "Turak",
+      "character_b": "the Empress",
+      "relationship_type": "family",
+      "directed": true,
+      "description": "Turak is twelfth in line of succession to the Empress and plans to present the Horn to her."
+    },
+    {
+      "character_a": "Padan Fain",
+      "character_b": "Rand al'Thor",
+      "relationship_type": "enemy",
+      "directed": true,
+      "description": "Fain is obsessed with killing Rand, blaming him for his suffering, and lies to Turak to turn him against Rand."
+    },
+    {
+      "character_a": "Thom Merrilin",
+      "character_b": "Rand al'Thor",
+      "relationship_type": "mentor",
+      "directed": true,
+      "description": "Thom has been advising and protecting Rand, though he left The Great Tree to find Rand already gone."
+    },
+    {
+      "character_a": "Galldrian",
+      "character_b": "Thom Merrilin",
+      "relationship_type": "enemy",
+      "directed": true,
+      "description": "Galldrian's assassins killed Dena and tried to capture Thom for information about Rand."
+    },
+    {
+      "character_a": "Luthair",
+      "character_b": "Artur Hawkwing",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "Luthair was Artur Hawkwing's son, sent across the ocean with armies that became the Seanchan."
+    }
+  ],
+  "_meta": {
+    "book_order": 2,
+    "chapter_number": 34,
+    "chapter_id": 89,
+    "chapter_title": "The Wheel Weaves",
+    "model": "claude-sonnet-4-5",
+    "input_tokens": 21739,
+    "output_tokens": 6448
+  }
+}

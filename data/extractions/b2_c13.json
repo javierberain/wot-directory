@@ -1,0 +1,394 @@
+{
+  "characters": [
+    {
+      "name_used_in_text": "Rand",
+      "likely_matches_existing": "Rand al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "dutiful, afraid of his own power, uncomfortable with authority"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Lord Rand",
+          "alias_type": "title",
+          "notes": "used by Hurin, though Rand resists it"
+        }
+      ],
+      "notes": "Rand is struggling with the realization that he may have channeled and brought them to this strange world. He feels the weight of duty despite his fear."
+    },
+    {
+      "name_used_in_text": "Loial",
+      "likely_matches_existing": "Loial",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "ogier",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "massive head, long eyebrows, tufted ears, big round eyes",
+        "age": null,
+        "filiations": "son of Arent son of Halan",
+        "personality": "scholarly, knowledgeable about old books and lore"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Loial provides crucial information about the Stones from a fragment of an old book, explaining they may have been used in the Age of Legends."
+    },
+    {
+      "name_used_in_text": "Hurin",
+      "likely_matches_existing": "Hurin",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienaran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "married to Melia, has children",
+        "personality": "loyal, needs authority to feel secure"
+      },
+      "factions": [
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "serving as a sniffer"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "sniffer",
+          "alias_type": "epithet",
+          "notes": "his role/ability"
+        }
+      ],
+      "notes": "Hurin's confidence depends on believing Rand is a lord who will set things right. He can still smell the Darkfriends' trail even in this strange world."
+    },
+    {
+      "name_used_in_text": "Ingtar",
+      "likely_matches_existing": "Ingtar",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienaran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "Fal Dara",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "leading the group searching for the Horn"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Lord Ingtar",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Not physically present in this chapter but mentioned as the leader they became separated from."
+    },
+    {
+      "name_used_in_text": "Mat",
+      "likely_matches_existing": "Matrim Cauthon",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Not physically present but mentioned as needing the dagger to survive."
+    },
+    {
+      "name_used_in_text": "Perrin",
+      "likely_matches_existing": "Perrin Aybara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Not physically present but mentioned as part of the group they were separated from."
+    },
+    {
+      "name_used_in_text": "Moiraine",
+      "likely_matches_existing": "Moiraine",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "other",
+          "role": "member",
+          "notes": null
+        },
+        {
+          "name": "Blue Ajah",
+          "faction_type": "ajah",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Not present but Rand wonders if this could be her doing."
+    },
+    {
+      "name_used_in_text": "Lan",
+      "likely_matches_existing": "Lan",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "as Warder"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Not present but Rand thinks of him as an example of confidence and duty."
+    },
+    {
+      "name_used_in_text": "Fain",
+      "likely_matches_existing": "Padan Fain",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Not present but his trail is detectable by Hurin, and they are pursuing him for the Horn."
+    },
+    {
+      "name_used_in_text": "Thom Merrilin",
+      "likely_matches_existing": "Thom Merrilin",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "from Baerlon area",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Thom",
+          "alias_type": "given_name",
+          "notes": null
+        }
+      ],
+      "notes": "Not present but his cloak is bundled behind Rand's saddle."
+    },
+    {
+      "name_used_in_text": "Red",
+      "likely_matches_existing": "Red",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "horse",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "stallion, bay",
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Rand's horse."
+    },
+    {
+      "name_used_in_text": "Melia",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Shienaran",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "Hurin's wife, mother of his children",
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Not present but mentioned by Hurin as his wife who would grieve if he didn't return."
+    },
+    {
+      "name_used_in_text": "the Amyrlin",
+      "likely_matches_existing": "the Amyrlin Seat",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "other",
+          "role": "leader",
+          "notes": "the Amyrlin Seat"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Not present but mentioned as having told them about the importance of the Horn."
+    },
+    {
+      "name_used_in_text": "Artur Hawkwing",
+      "likely_matches_existing": "Artur Hawkwing",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Not present but his monument is mentioned as a landmark."
+    }
+  ],
+  "appearances": [
+    {
+      "character": "Rand",
+      "whereabouts": "wakes in a transformed hollow with a large Stone, later travels south following the Darkfriends' trail",
+      "notable_actions": "attempts to use the Stone to return them to their own world by channeling, fails painfully; decides to pursue the Darkfriends instead; takes on the mantle of leadership despite his discomfort",
+      "demeanor": "afraid, guilty, determined to do his duty despite his fear of channeling",
+      "alliances_shown": [
+        "Loial",
+        "Hurin"
+      ]
+    },
+    {
+      "character": "Loial",
+      "whereabouts": "in the strange hollow with Rand and Hurin, travels south with them",
+      "notable_actions": "identifies the Stone from a fragment of an old book; explains that Aes Sedai from the Age of Legends used the Stones with the One Power; questions how they will return without the Power",
+      "demeanor": "scholarly, worried, doubtful but supportive",
+      "alliances_shown": [
+        "Rand",
+        "Hurin"
+      ]
+    },
+    {
+      "character": "Hurin",
+      "whereabouts": "in the strange hollow with Rand and Loial, travels south tracking the Darkfriends",
+      "notable_actions": "detects the Darkfriends' trail even in this strange world; pleads with Rand to get them home for his wife's sake; places complete trust in Rand as a lord",
+      "demeanor": "frightened initially, then increasingly confident as he trusts in Lord Rand",
+      "alliances_shown": [
+        "Rand",
+        "Loial"
+      ]
+    },
+    {
+      "character": "Red",
+      "whereabouts": "with Rand in the strange world",
+      "notable_actions": "carries Rand as they pursue the trail south",
+      "demeanor": "nervous from the disorienting landscape",
+      "alliances_shown": [
+        "Rand"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "character_a": "Rand",
+      "character_b": "Hurin",
+      "relationship_type": "other",
+      "directed": true,
+      "description": "Hurin sees Rand as his lord and places complete faith in him to set things right and return them home"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Loial",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "companions trying to survive and return from this strange world together"
+    },
+    {
+      "character_a": "Hurin",
+      "character_b": "Melia",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "husband and wife; Hurin is deeply concerned about her grief if he cannot return"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Red",
+      "relationship_type": "other",
+      "directed": false,
+      "description": "rider and mount"
+    }
+  ],
+  "_meta": {
+    "book_order": 2,
+    "chapter_number": 13,
+    "chapter_id": 68,
+    "chapter_title": "From Stone to Stone",
+    "model": "claude-sonnet-4-5",
+    "input_tokens": 15716,
+    "output_tokens": 3531
+  }
+}

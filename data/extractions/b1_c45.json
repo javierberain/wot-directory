@@ -1,0 +1,559 @@
+{
+  "characters": [
+    {
+      "name_used_in_text": "Loial",
+      "likely_matches_existing": "Loial",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "ogier",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "large, drooping eyebrows",
+        "age": null,
+        "filiations": "son of Arent son of Halan",
+        "personality": "nervous about the Ways, regretful about leaving chance to visit his stedding, methodical in reading Ogier script"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Acts as guide through the Ways using his ability to read Ogier script on the Guidings"
+    },
+    {
+      "name_used_in_text": "Rand",
+      "likely_matches_existing": "Rand al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "protective, brave when others need him"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": null
+    },
+    {
+      "name_used_in_text": "Nynaeve",
+      "likely_matches_existing": "Nynaeve al'Meara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "skeptical of Moiraine's decisions, protective of the group"
+      },
+      "factions": [
+        {
+          "name": "Women's Circle",
+          "faction_type": "other",
+          "role": "leader",
+          "notes": "Wisdom of Emond's Field"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": null
+    },
+    {
+      "name_used_in_text": "Moiraine",
+      "likely_matches_existing": "Moiraine",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown (not Two Rivers)",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "calm under pressure, methodical, protective through caution"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "Aes Sedai"
+        },
+        {
+          "name": "Blue Ajah",
+          "faction_type": "ajah",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Aes Sedai",
+          "alias_type": "title",
+          "notes": "Referred to as 'the Aes Sedai' throughout"
+        }
+      ],
+      "notes": null
+    },
+    {
+      "name_used_in_text": "Lan",
+      "likely_matches_existing": "Lan",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown (not Two Rivers)",
+        "physical_traits": "hard planes of his face",
+        "age": null,
+        "filiations": null,
+        "personality": "ever-vigilant, tireless, protective"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Warder",
+          "alias_type": "title",
+          "notes": "Frequently referred to as 'the Warder'"
+        }
+      ],
+      "notes": null
+    },
+    {
+      "name_used_in_text": "Mat",
+      "likely_matches_existing": "Matrim Cauthon",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "impulsive, quick to violence when frightened"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Shows rash behavior shooting arrow into darkness; teases others about romantic interests"
+    },
+    {
+      "name_used_in_text": "Perrin",
+      "likely_matches_existing": "Perrin Aybara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "eyes that seem to gather light and glow golden",
+        "age": null,
+        "filiations": null,
+        "personality": "determined, worried (tapping thumbs together)"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Eyes described as glowing golden like a wolf at bay; teases Egwene about Aram"
+    },
+    {
+      "name_used_in_text": "Egwene",
+      "likely_matches_existing": "Egwene",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "sensitive about romantic matters, brave when necessary"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Becomes jealous/curious about Rand talking to Min; embarrassed about Aram"
+    },
+    {
+      "name_used_in_text": "Red",
+      "likely_matches_existing": "Red",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "horse",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": "bay colored",
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "the bay",
+          "alias_type": "epithet",
+          "notes": "Referred to as 'the bay' multiple times"
+        }
+      ],
+      "notes": "Rand's horse"
+    },
+    {
+      "name_used_in_text": "Bela",
+      "likely_matches_existing": "Bela",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "horse",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": "shaggy mare",
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "the shaggy mare",
+          "alias_type": "epithet",
+          "notes": null
+        }
+      ],
+      "notes": "Egwene's horse"
+    },
+    {
+      "name_used_in_text": "Aldieb",
+      "likely_matches_existing": "Aldieb",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "horse",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": "white mare",
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Moiraine's horse"
+    },
+    {
+      "name_used_in_text": "Mandarb",
+      "likely_matches_existing": "Mandarb",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "horse",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": "warhorse trained for battle",
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Lan's warhorse"
+    },
+    {
+      "name_used_in_text": "Thom Merrilin",
+      "likely_matches_existing": "Thom Merrilin",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Thom",
+          "alias_type": "given_name",
+          "notes": null
+        }
+      ],
+      "notes": "Does not appear in this chapter but is discussed; Moiraine believes he is still alive despite the Fade encounter in Whitebridge"
+    },
+    {
+      "name_used_in_text": "Min",
+      "likely_matches_existing": "Min",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Baerlon (presumably)",
+        "physical_traits": "dresses like a boy, hair as short as a man's",
+        "age": "nearly as old as Nynaeve",
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Does not appear in chapter but is discussed; has ability to see visions about people's fates"
+    },
+    {
+      "name_used_in_text": "Aram",
+      "likely_matches_existing": "Aram",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "one of the Traveling People",
+        "personality": "dances like a bird"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Does not appear in chapter but is discussed; Egwene is embarrassed when he is mentioned"
+    },
+    {
+      "name_used_in_text": "Else",
+      "likely_matches_existing": "Else",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "Farmer Grinwell's daughter",
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Does not appear in chapter but is mentioned in teasing conversation"
+    },
+    {
+      "name_used_in_text": "Agelmar",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "associated with Fal Dara",
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Does not appear in chapter; Moiraine says he must send men to wall up the broken Waygate"
+    },
+    {
+      "name_used_in_text": "Machin Shin",
+      "likely_matches_existing": null,
+      "is_new_character": true,
+      "confidence": "high",
+      "character_type": "other",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": "manifests as a wind with voices, invisible but felt",
+        "age": "ancient, possibly from Time of Madness or War of the Shadow",
+        "filiations": null,
+        "personality": "malevolent, hungers for pain and living things, drives people mad"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "the Black Wind",
+          "alias_type": "epithet",
+          "notes": "Primary name used"
+        }
+      ],
+      "notes": "A creature or phenomenon of the Ways that steals souls; whispers promises of torture; described as possibly a parasite of the Ways or born of corruption"
+    }
+  ],
+  "appearances": [
+    {
+      "character": "Loial",
+      "whereabouts": "Traveling through the Ways with the group, serving as guide",
+      "notable_actions": "Reads Ogier script on Guidings to navigate; expresses regret about not going to Stedding Shangtai; identifies Machin Shin; leads desperate flight to the Waygate",
+      "demeanor": "Nervous, fearful about the Ways and their decay, regretful about missing his home",
+      "alliances_shown": [
+        "Moiraine",
+        "Rand",
+        "the entire traveling party"
+      ]
+    },
+    {
+      "character": "Rand",
+      "whereabouts": "Traveling through the Ways with the group",
+      "notable_actions": "Observes the broken bridge and abyss; promises to show Loial Emond's Field after this is over; comforts Egwene when she's frightened; slaps Bela to send Egwene through the Waygate ahead of Machin Shin",
+      "demeanor": "Protective, especially toward Egwene; frightened by the Ways and Machin Shin but trying to be brave",
+      "alliances_shown": [
+        "Egwene",
+        "Loial",
+        "Perrin",
+        "Mat"
+      ]
+    },
+    {
+      "character": "Nynaeve",
+      "whereabouts": "Traveling through the Ways with the group",
+      "notable_actions": "Questions Moiraine about setting wards; demands to know what Machin Shin is; helps set up camp and make tea",
+      "demeanor": "Skeptical of Moiraine, protective, frightened by Machin Shin",
+      "alliances_shown": [
+        "Egwene",
+        "the Two Rivers folk"
+      ]
+    },
+    {
+      "character": "Moiraine",
+      "whereabouts": "Leading the group through the Ways toward Fal Dara",
+      "notable_actions": "Explains the taint in the Ways; tells the group Thom is likely alive; checks for traps before each bridge; uses corrupted flame to cut through the Waygate when the key is missing; holds back Machin Shin with her staff",
+      "demeanor": "Calm and methodical despite danger; urgent about reaching their destination; weary after using the Power",
+      "alliances_shown": [
+        "Lan",
+        "the entire party"
+      ]
+    },
+    {
+      "character": "Lan",
+      "whereabouts": "Traveling through the Ways with the group, often scouting",
+      "notable_actions": "Detects someone or something following them; discovers the Trollocs trapped in stone; charges Mandarb through the Waygate to break it open; remains vigilant throughout",
+      "demeanor": "Alert, protective, ready for combat at any moment; shows subtle relief when Moiraine emerges safely",
+      "alliances_shown": [
+        "Moiraine"
+      ]
+    },
+    {
+      "character": "Mat",
+      "whereabouts": "Traveling through the Ways with the group",
+      "notable_actions": "Rashly shoots an arrow into the darkness; teases Rand about Min and Else; retches at sight of trapped Trollocs; can feel Machin Shin approaching",
+      "demeanor": "Impulsive, frightened, trying to cover fear with bravado and teasing",
+      "alliances_shown": [
+        "Rand",
+        "Perrin"
+      ]
+    },
+    {
+      "character": "Perrin",
+      "whereabouts": "Traveling through the Ways with the group",
+      "notable_actions": "Speaks of needing a way out; teases Egwene about Aram; helps set up camp; taps thumbs together worriedly",
+      "demeanor": "Determined but worried; eyes glow golden like a wolf at bay",
+      "alliances_shown": [
+        "Rand",
+        "Mat"
+      ]
+    },
+    {
+      "character": "Egwene",
+      "whereabouts": "Traveling through the Ways with the group",
+      "notable_actions": "Helps set up camp and make tea; clings to Rand when frightened; becomes jealous/curious about Min; embarrassed about Aram; hears Machin Shin's whispers",
+      "demeanor": "Frightened but trying to be brave; emotionally vulnerable; sensitive about romantic matters",
+      "alliances_shown": [
+        "Nynaeve",
+        "Rand"
+      ]
+    },
+    {
+      "character": "Red",
+      "whereabouts": "In the Ways, being ridden by Rand",
+      "notable_actions": "Carries Rand through the Ways; stumbles when exiting the Waygate due to momentum change; joins the other horses calmly",
+      "demeanor": "Nervous in the Ways but generally steady",
+      "alliances_shown": []
+    },
+    {
+      "character": "Bela",
+      "whereabouts": "In the Ways, being ridden by Egwene",
+      "notable_actions": "Carries Egwene through the Ways; Rand slaps her to send her through the Waygate quickly",
+      "demeanor": "Steady, responsive",
+      "alliances_shown": []
+    },
+    {
+      "character": "Aldieb",
+      "whereabouts": "In the Ways, being ridden by Moiraine",
+      "notable_actions": "Carries Moiraine; shows fear when backing out of the Waygate, eyes rolling",
+      "demeanor": "Frightened, especially near the end",
+      "alliances_shown": []
+    },
+    {
+      "character": "Mandarb",
+      "whereabouts": "In the Ways, being ridden by Lan",
+      "notable_actions": "Charges the Waygate on Lan's command, using his shoulder to topple the stone like in battle training",
+      "demeanor": "Battle-ready, well-trained, responsive to Lan",
+      "alliances_shown": []
+    },
+    {
+      "character": "Machin Shin",
+      "whereabouts": "In the Ways, pursuing the group",
+      "notable_actions": "Pursues the party through the Ways; whispers promises of torture and pain; tries to pass through the Waygate but is blocked; screams in agony when Moiraine attacks it with her staff",
+      "demeanor": "Malevolent, hungry, filled with rage and frustration",
+      "alliances_shown": []
+    }
+  ],
+  "relationships": [
+    {
+      "character_a": "Moiraine",
+      "character_b": "Lan",
+      "relationship_type": "warder_bond",
+      "directed": true,
+      "description": "Aes Sedai and Warder bond; Lan is intensely protective of Moiraine and she relies on his martial skills"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Egwene",
+      "relationship_type": "romantic",
+      "directed": false,
+      "description": "Romantic interest; Egwene becomes jealous when Min is mentioned; Rand is protective of her and they comfort each other"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Mat",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Close friends from Emond's Field who tease each other"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Perrin",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Close friends from Emond's Field who support each other"
+    },
+    {
+      "character_a": "Rand",
+      "character_b": "Loial",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Growing friendship; Rand promises to visit Loial's stedding after their quest"
+    },
+    {
+      "character_a": "Egwene",
+      "character_b": "Nynaeve",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Close bond; they comfort each other physically when frightened"
+    },
+    {
+      "character_a": "Nynaeve",
+      "character_b": "Moiraine",
+      "relationship_type": "rival",
+      "directed": false,
+      "description": "Tension; Nynaeve challenges Moiraine's decisions and grinds her teeth at Moiraine's calm responses"
+    },
+    {
+      "character_a": "Moiraine",
+      "character_b": "Loial",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Moiraine relies on Loial's knowledge of the Ways to guide them"
+    },
+    {
+      "character_a": "Lan",
+      "character_b": "Mandarb",
+      "relationship_type": "other",
+      "directed": false,
+      "description": "Warrior and warhorse; trained together for battle, move as one unit"
+    }
+  ],
+  "_meta": {
+    "book_order": 1,
+    "chapter_number": 45,
+    "chapter_id": 46,
+    "chapter_title": "What Follows in Shadow",
+    "model": "claude-sonnet-4-5",
+    "input_tokens": 16613,
+    "output_tokens": 5636
+  }
+}

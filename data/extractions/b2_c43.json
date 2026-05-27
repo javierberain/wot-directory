@@ -1,0 +1,359 @@
+{
+  "characters": [
+    {
+      "name_used_in_text": "Min",
+      "likely_matches_existing": "Min",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Baerlon",
+        "physical_traits": "wearing a Seanchan dress (described as a change from her usual breeches)",
+        "age": "young woman",
+        "filiations": null,
+        "personality": "feels helpless and useless when unable to help directly; prone to tears when overwhelmed; loyal to her friends"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Known character from roster. She can read auras and see visions around people."
+    },
+    {
+      "name_used_in_text": "Egwene",
+      "likely_matches_existing": "Egwene",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": "young woman",
+        "filiations": null,
+        "personality": "stubborn"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "In training as a novice"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Known character from roster. Currently held prisoner by the Seanchan as a damane. Being tortured/trained to be sent to Seanchan mainland. Has ability to find ore."
+    },
+    {
+      "name_used_in_text": "Nynaeve",
+      "likely_matches_existing": "Nynaeve al'Meara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "wearing a farm woman's fleece coat and a Serpent ring on a cord around her neck (also wears a heavy gold man's ring)",
+        "age": "young woman",
+        "filiations": null,
+        "personality": "confident and purposeful; takes charge of situations; believes in using brains over brawn; determined"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "Accepted, not yet Aes Sedai but wears the Serpent ring"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Known character from roster. Has not yet earned the right to wear the ring openly as full Aes Sedai but possesses one. Planning to rescue Egwene."
+    },
+    {
+      "name_used_in_text": "Elayne",
+      "likely_matches_existing": "Elayne",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Andoran",
+        "physical_traits": "wearing a farm woman's fleece coat; described as looking like a child by Domon",
+        "age": "young woman",
+        "filiations": "Daughter-Heir of Andor",
+        "personality": "eager; reacts defensively when treated as a child"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "In training, not yet Aes Sedai"
+        },
+        {
+          "name": "House Trakand",
+          "faction_type": "house",
+          "role": "member",
+          "notes": "Daughter-Heir of Andor"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Known character from roster. Training at the White Tower. Wishes Rand were present with his sword."
+    },
+    {
+      "name_used_in_text": "Bayle Domon",
+      "likely_matches_existing": "Bayle Domon",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Illian or similar (based on speech patterns)",
+        "physical_traits": "bearded with bare upper lip; looks and sounds like a bear according to Min",
+        "age": "middle-aged",
+        "filiations": "captain of the ship Spray",
+        "personality": "wary but ultimately willing to help; pragmatic; values his own survival; tells stories to Seanchan lords"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Captain",
+          "alias_type": "title",
+          "notes": "Ship captain"
+        },
+        {
+          "alias_text": "Captain Domon",
+          "alias_type": "title",
+          "notes": "Full title with surname"
+        }
+      ],
+      "notes": "Known character from roster. Captain of the ship Spray. Being forced to entertain High Lord Turak with tales. Willing to help the women escape if they can protect against damane."
+    },
+    {
+      "name_used_in_text": "Turak",
+      "likely_matches_existing": "Turak",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Seanchan",
+        "physical_traits": "looks soft but is hard as iron",
+        "age": null,
+        "filiations": null,
+        "personality": "coldhearted; demands entertainment from Domon"
+      },
+      "factions": [
+        {
+          "name": "Seanchan",
+          "faction_type": "other",
+          "role": "leader",
+          "notes": "High Lord, a high-ranking Seanchan noble"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "High Lord Turak",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Known character from roster. Summoning Domon regularly to tell him stories. Has power of life and death over Domon."
+    },
+    {
+      "name_used_in_text": "Ryma",
+      "likely_matches_existing": "Ryma",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": null,
+        "physical_traits": "pretty, slender",
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "order",
+          "role": "member",
+          "notes": "Yellow Ajah, now captured and made damane"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Pura",
+          "alias_type": "nickname",
+          "notes": "Name given by Seanchan after capture (from roster)"
+        }
+      ],
+      "notes": "Known character from roster. Aes Sedai of the Yellow Ajah captured by Seanchan. Domon witnessed her capture along with her Warder. Now collared as a damane. Screamed her own name when being captured."
+    },
+    {
+      "name_used_in_text": "Rand",
+      "likely_matches_existing": "Rand al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "carries a sword",
+        "age": "young man",
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Known character from roster. Mentioned by Elayne as someone she wishes were present. Not physically present in this chapter."
+    }
+  ],
+  "appearances": [
+    {
+      "character": "Min",
+      "whereabouts": "Starts in hallway outside room where Egwene is being tortured, flees to the street, meets Nynaeve and Elayne, goes with them to the Three Plum Blossoms inn to meet Domon",
+      "notable_actions": "Runs from Egwene's screams in tears; meets Nynaeve and Elayne on the street; warns them about the danger of damane; takes them to meet Captain Domon; explains the situation with Egwene; participates in negotiating passage on Domon's ship",
+      "demeanor": "Distraught, weeping, feeling helpless and cowardly at the start; becomes hopeful when reunited with friends; anxious during negotiations with Domon",
+      "alliances_shown": [
+        "Egwene",
+        "Nynaeve",
+        "Elayne"
+      ]
+    },
+    {
+      "character": "Egwene",
+      "whereabouts": "In a room in a Seanchan building being tortured/trained as a damane",
+      "notable_actions": "Screams while being tortured or trained; mentioned as having ability to find ore which makes her valuable to the Seanchan; will be sent back to Seanchan mainland in a few days",
+      "demeanor": "In extreme pain, screaming (offstage)",
+      "alliances_shown": [
+        "Min",
+        "Nynaeve",
+        "Elayne"
+      ]
+    },
+    {
+      "character": "Nynaeve",
+      "whereabouts": "Walking the streets of Falme with Elayne, then meeting Min, then going to the Three Plum Blossoms inn",
+      "notable_actions": "Meets Min on the street; suggests getting a ship to escape; negotiates with Captain Domon; reveals her Serpent ring to prove she is of the White Tower; takes charge of planning the escape; shows confidence and determination throughout",
+      "demeanor": "Initially worried but trying to hide it; becomes purposeful and confident when taking charge; shows nervousness only momentarily when dealing with Domon",
+      "alliances_shown": [
+        "Min",
+        "Elayne",
+        "Egwene"
+      ]
+    },
+    {
+      "character": "Elayne",
+      "whereabouts": "Walking the streets of Falme with Nynaeve, then meeting Min, then going to the Three Plum Blossoms inn",
+      "notable_actions": "Travels with Nynaeve; meets Min; participates in meeting with Domon; wishes Rand were present; comments on Nynaeve's risk-taking; reacts defensively when Domon treats her as a child",
+      "demeanor": "Worried initially; hopeful after meeting Min; becomes indignant when treated as a child by Domon",
+      "alliances_shown": [
+        "Min",
+        "Nynaeve",
+        "Egwene",
+        "Rand"
+      ]
+    },
+    {
+      "character": "Bayle Domon",
+      "whereabouts": "At his usual table in the corner of the Three Plum Blossoms inn common room",
+      "notable_actions": "Drinks wine while waiting; meets with Min and her friends; tells the story of witnessing Ryma's capture; initially reluctant but eventually agrees to provide passage and be ready to sail on short notice; warns the women about the dangers they face",
+      "demeanor": "Gloomy and frustrated about his situation with Turak; wary and cautious when discussing escape plans; becomes more hopeful but still anxious when Nynaeve shows her Serpent ring",
+      "alliances_shown": [
+        "Min",
+        "Nynaeve",
+        "Elayne"
+      ]
+    },
+    {
+      "character": "Turak",
+      "whereabouts": "Not present; mentioned as being elsewhere in Falme, summoning Domon periodically",
+      "notable_actions": "Summons Domon every few days to tell stories; bought Domon's cargo; holds power over whether Domon lives or dies",
+      "demeanor": "Not present, but described as appearing soft while actually being hard and coldhearted",
+      "alliances_shown": []
+    },
+    {
+      "character": "Ryma",
+      "whereabouts": "Held prisoner as a damane somewhere in Falme",
+      "notable_actions": "Was captured by Seanchan in an ambush along with her Warder (who died fighting); was collared; screamed her own name during capture; mentioned as one of two Aes Sedai prisoners",
+      "demeanor": "Not directly shown in this chapter; described in past events as initially confident then horrified when cut off from the Source",
+      "alliances_shown": []
+    },
+    {
+      "character": "Rand",
+      "whereabouts": "Unknown, not in Falme",
+      "notable_actions": "None in this chapter; mentioned only",
+      "demeanor": "Not present",
+      "alliances_shown": [
+        "Elayne"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "character_a": "Min",
+      "character_b": "Egwene",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Close friends; Min is desperately trying to find a way to rescue Egwene from captivity"
+    },
+    {
+      "character_a": "Min",
+      "character_b": "Nynaeve",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Friends and allies working together to rescue Egwene; Min feels hopeful when Nynaeve arrives"
+    },
+    {
+      "character_a": "Min",
+      "character_b": "Elayne",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Friends and allies working together to rescue Egwene"
+    },
+    {
+      "character_a": "Nynaeve",
+      "character_b": "Egwene",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Friends from the Two Rivers; Nynaeve has come to Falme to rescue Egwene"
+    },
+    {
+      "character_a": "Elayne",
+      "character_b": "Egwene",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Friends from the White Tower; Elayne has come to help rescue Egwene"
+    },
+    {
+      "character_a": "Nynaeve",
+      "character_b": "Elayne",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Traveling companions working together; Nynaeve is the more senior and experienced of the two"
+    },
+    {
+      "character_a": "Min",
+      "character_b": "Bayle Domon",
+      "relationship_type": "other",
+      "directed": false,
+      "description": "Min has been cultivating Domon as a potential means of escape, listening to his stories and trying to convince him to sail"
+    },
+    {
+      "character_a": "Turak",
+      "character_b": "Bayle Domon",
+      "relationship_type": "other",
+      "directed": true,
+      "description": "Turak has power over Domon, summoning him to tell stories and holding his life in his hands"
+    },
+    {
+      "character_a": "Elayne",
+      "character_b": "Rand",
+      "relationship_type": "romantic",
+      "directed": false,
+      "description": "Elayne wishes Rand were present and blushes when the others look at her after saying so, suggesting romantic feelings"
+    }
+  ],
+  "_meta": {
+    "book_order": 2,
+    "chapter_number": 43,
+    "chapter_id": 98,
+    "chapter_title": "A Plan",
+    "model": "claude-sonnet-4-5",
+    "input_tokens": 18890,
+    "output_tokens": 4029
+  }
+}

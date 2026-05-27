@@ -1,0 +1,1024 @@
+{
+  "characters": [
+    {
+      "name_used_in_text": "Rand al'Thor",
+      "likely_matches_existing": "Rand al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "long legs",
+        "age": "young",
+        "filiations": "son of Tam al'Thor and Kari al'Thor",
+        "personality": "stubborn, defiant of authority, fearful of his power and what it means, protective of Egwene"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "This chapter reveals Rand's ability to channel the One Power (saidin). He killed Aginor and believes he killed the Dark One (Ba'alzamon). He is terrified of going mad and being gentled. The chapter establishes him as the Dragon Reborn, though this is not explicitly stated to most characters."
+    },
+    {
+      "name_used_in_text": "Aginor",
+      "likely_matches_existing": "Aginor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": "ancient (from the Age of Legends)",
+        "filiations": "one of the Forsaken",
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "One of the Forsaken, close behind Lews Therin and Ishamael in power during the Age of Legends"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Forsaken",
+          "alias_type": "epithet",
+          "notes": "title for the Dark One's most powerful servants"
+        }
+      ],
+      "notes": "Dies in this chapter, burned to ashes by Rand's use of the One Power. Only his remains appear."
+    },
+    {
+      "name_used_in_text": "Egwene",
+      "likely_matches_existing": "Egwene",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "slender, pretty, big eyes",
+        "age": "young",
+        "filiations": null,
+        "personality": "compassionate, conflicted about Rand's power but ultimately accepting"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Shows initial fear/reluctance toward Rand after learning he can channel, but embraces him and says she doesn't care. Has flowers and brown oak leaves in her hair from being under the oak tree."
+    },
+    {
+      "name_used_in_text": "Nynaeve",
+      "likely_matches_existing": "Nynaeve al'Meara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "long braid decorated with white morningstars",
+        "age": "young but appears older in her eyes",
+        "filiations": null,
+        "personality": "wise beyond her years, accepting but regretful of painful truths, protective"
+      },
+      "factions": [
+        {
+          "name": "Women's Circle",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Village Wisdom of Emond's Field"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "the Wisdom",
+          "alias_type": "title",
+          "notes": "her role in the Two Rivers"
+        }
+      ],
+      "notes": "Her eyes are described as 'old, ancient in her young face.' She tells Rand he is still Rand al'Thor but too dangerous. She is aware of what he can do."
+    },
+    {
+      "name_used_in_text": "Moiraine",
+      "likely_matches_existing": "Moiraine",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown (not Two Rivers)",
+        "physical_traits": "pale face, dark circles under eyes from injury/illness",
+        "age": null,
+        "filiations": null,
+        "personality": "authoritative, calculating, pragmatic about the Pattern and ta'veren, patient teacher"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Aes Sedai"
+        },
+        {
+          "name": "Blue Ajah",
+          "faction_type": "ajah",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Aes Sedai",
+          "alias_type": "title",
+          "notes": null
+        },
+        {
+          "alias_text": "Moiraine Sedai",
+          "alias_type": "title",
+          "notes": null
+        }
+      ],
+      "notes": "Was injured fighting Aginor. Explains that she held him only briefly before he turned his attention to Rand. She knows Rand can channel and reveals her suspicions about him being ta'veren and possibly the Dragon Reborn."
+    },
+    {
+      "name_used_in_text": "Lan",
+      "likely_matches_existing": "Lan",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown (not Two Rivers)",
+        "physical_traits": "hard appearance, bandage around temples, stiff-backed walking from injury",
+        "age": null,
+        "filiations": "Warder to Moiraine",
+        "personality": "stoic, gruff but caring, unfazed by Rand's channeling ability"
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "Warder bonded to Moiraine"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Warder",
+          "alias_type": "title",
+          "notes": "his role as Moiraine's bonded Warder"
+        }
+      ],
+      "notes": "Knows about Rand's ability to channel. His behavior toward Rand does not change despite this knowledge. Led the others into the cavern while Rand was away."
+    },
+    {
+      "name_used_in_text": "Loial",
+      "likely_matches_existing": "Loial",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "ogier",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": "large, strong enough to carry a heavy gold chest unaided, wide mouth, twitching ears",
+        "age": null,
+        "filiations": "son of Arent son of Halan",
+        "personality": "enthusiastic about books and knowledge, humorous about the dangers of traveling with ta'veren, kind"
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "the Ogier",
+          "alias_type": "epithet",
+          "notes": null
+        }
+      ],
+      "notes": "Carries the gold chest containing the Horn of Valere. Can read the Old Tongue. His ears twitch when he's nervous or excited."
+    },
+    {
+      "name_used_in_text": "Mat",
+      "likely_matches_existing": "Matrim Cauthon",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": "young",
+        "filiations": null,
+        "personality": "impulsive, loyal to his friends, quick to joke"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Carries fragments of the broken seal from the Dark One's prison. Wanted to search for Rand but was prevented by Moiraine and the women."
+    },
+    {
+      "name_used_in_text": "Perrin",
+      "likely_matches_existing": "Perrin Aybara",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": "yellow wolf eyes (irises all yellow now, no longer glowing but permanent)",
+        "age": "young",
+        "filiations": null,
+        "personality": "wants to go home, concerned for Rand, loyal"
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "His eyes are now fully yellow (the irises), a permanent change from his connection to wolves. Carries the banner of the Dragon. Expresses strong desire to go home."
+    },
+    {
+      "name_used_in_text": "Tam al'Thor",
+      "likely_matches_existing": "Tam al'Thor",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "father figure to Rand (adoptive father, though Rand doesn't fully know this yet)",
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "Village Council",
+          "faction_type": "other",
+          "role": "member",
+          "notes": null
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "father",
+          "alias_type": "epithet",
+          "notes": "how Rand thinks of him"
+        }
+      ],
+      "notes": "Mentioned only in Rand's memory when he recognizes the heron-mark blade. Rand remembers 'Tam. My father.'"
+    },
+    {
+      "name_used_in_text": "Kari al'Thor",
+      "likely_matches_existing": "Kari",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Two Rivers",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "Rand's mother (birth mother)",
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Rand has a traumatic memory/vision of her during his confrontation with Ba'alzamon, which makes him cry when recounting it. He emphasizes 'My mother!' The text suggests this is a revelation to him about his true parentage."
+    },
+    {
+      "name_used_in_text": "Ba'alzamon",
+      "likely_matches_existing": "Ba'alzamon",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": "manipulative, uses lies and visions to control"
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "leader",
+          "notes": "Called the Dark One by characters, though the text suggests ambiguity about his true identity"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "the Dark One",
+          "alias_type": "epithet",
+          "notes": "what characters call him, though there is ambiguity"
+        },
+        {
+          "alias_text": "Shai'tan",
+          "alias_type": "epithet",
+          "notes": "the true name of the Dark One"
+        },
+        {
+          "alias_text": "Father of Lies",
+          "alias_type": "epithet",
+          "notes": null
+        }
+      ],
+      "notes": "Rand believes he killed Ba'alzamon by burning him with the One Power after severing a black cord. Moiraine insists on still calling him the Dark One or Ba'alzamon. In Rand's memory, Ba'alzamon showed him visions and spoke of using him, naming false Dragons."
+    },
+    {
+      "name_used_in_text": "Balthamel",
+      "likely_matches_existing": "Balthamel",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": "ancient (from the Age of Legends)",
+        "filiations": "one of the Forsaken",
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "One of the Forsaken, freed with Aginor"
+        }
+      ],
+      "aliases_observed": [
+        {
+          "alias_text": "Forsaken",
+          "alias_type": "epithet",
+          "notes": null
+        }
+      ],
+      "notes": "Mentioned as dead along with Aginor. Moiraine explains that he and Aginor were trapped near the surface of the Dark One's prison and freed when it weakened."
+    },
+    {
+      "name_used_in_text": "Lews Therin Telamon",
+      "likely_matches_existing": "Lews Therin Telamon",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": "historical (Age of Legends)",
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Dragon",
+          "alias_type": "epithet",
+          "notes": null
+        },
+        {
+          "alias_text": "Kinslayer",
+          "alias_type": "epithet",
+          "notes": null
+        },
+        {
+          "alias_text": "Lord of the Morning",
+          "alias_type": "title",
+          "notes": "when he led forces of light against the Shadow"
+        }
+      ],
+      "notes": "His banner is one of the items found in the Eye of the World. Moiraine mentions he was close to Ishamael and Aginor in power during the Age of Legends."
+    },
+    {
+      "name_used_in_text": "Bela",
+      "likely_matches_existing": "Bela",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "horse",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": "shaggy mare",
+        "age": null,
+        "filiations": "carried Egwene",
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Moiraine reveals that at Watch Hill, Rand had already cleansed Bela of tiredness using saidin without knowing it, because he feared Egwene would be left behind. This was one of Moiraine's clues about Rand's ability."
+    },
+    {
+      "name_used_in_text": "Mandarb",
+      "likely_matches_existing": "Mandarb",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "horse",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "Lan's horse",
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Blade",
+          "alias_type": "epithet",
+          "notes": "translation of Mandarb"
+        }
+      ],
+      "notes": "Mentioned in comparison to Bela's speed after Rand enhanced her."
+    },
+    {
+      "name_used_in_text": "the Green Man",
+      "likely_matches_existing": "the Green Man",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "other",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Dead and buried under the great oak. His death means the Blight is now killing what he made. The oak is dying, leaves falling."
+    },
+    {
+      "name_used_in_text": "Thom",
+      "likely_matches_existing": "Thom Merrilin",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Mentioned by Rand in memory: 'Thom said men who have been gentled die because they stop wanting to live.'"
+    },
+    {
+      "name_used_in_text": "Raolin Darksbane",
+      "likely_matches_existing": "Raolin Darksbane",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": "historical",
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Named by Ba'alzamon in Rand's memory as a false Dragon used by Tar Valon."
+    },
+    {
+      "name_used_in_text": "Guaire Amalasan",
+      "likely_matches_existing": "Guaire Amalasan",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": "historical",
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Named by Ba'alzamon in Rand's memory as a false Dragon used by Tar Valon."
+    },
+    {
+      "name_used_in_text": "Yurian Stonebow",
+      "likely_matches_existing": "Yurian Stonebow",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": "historical",
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Named by Ba'alzamon in Rand's memory as a false Dragon."
+    },
+    {
+      "name_used_in_text": "Davian",
+      "likely_matches_existing": "Davian",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": "historical",
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Named by Ba'alzamon in Rand's memory as a false Dragon."
+    },
+    {
+      "name_used_in_text": "Logain",
+      "likely_matches_existing": "Logain",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "false Dragon",
+          "alias_type": "epithet",
+          "notes": null
+        }
+      ],
+      "notes": "Named by Rand as the hardest name to say among the false Dragons. Nynaeve goes pale and Egwene gasps when he mentions this name."
+    },
+    {
+      "name_used_in_text": "Aemon",
+      "likely_matches_existing": "Aemon al Caar al Thorin",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Manetheren (historical)",
+        "physical_traits": null,
+        "age": "historical",
+        "filiations": null,
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Mentioned by Moiraine: 'Manetheren blood was always stubborn, and more so after Aemon died and Eldrene's heart was shattered.'"
+    },
+    {
+      "name_used_in_text": "Eldrene",
+      "likely_matches_existing": "Eldrene ay Ellan ay Carlan",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "Manetheren (historical)",
+        "physical_traits": null,
+        "age": "historical",
+        "filiations": "connected to Aemon",
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [],
+      "notes": "Mentioned by Moiraine in connection with the stubbornness of Manetheren blood after Aemon's death broke her heart."
+    },
+    {
+      "name_used_in_text": "Ishamael",
+      "likely_matches_existing": "Elan Morin Tedronai",
+      "is_new_character": false,
+      "confidence": "medium",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": "ancient (Age of Legends)",
+        "filiations": "Forsaken",
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "The Shadow",
+          "faction_type": "other",
+          "role": "member",
+          "notes": "One of the most powerful Forsaken"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Mentioned by Moiraine as being close in power to Lews Therin and Aginor in the Age of Legends. The roster shows Elan Morin Tedronai with the epithet 'Betrayer of Hope,' which is likely Ishamael's true name."
+    },
+    {
+      "name_used_in_text": "Elder Haman",
+      "likely_matches_existing": "Elder Haman",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "ogier",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "elder at Stedding Shangtai",
+        "personality": null
+      },
+      "factions": [],
+      "aliases_observed": [
+        {
+          "alias_text": "Haman",
+          "alias_type": "given_name",
+          "notes": null
+        }
+      ],
+      "notes": "Mentioned by Loial as someone he would confess everything to if things become more interesting."
+    },
+    {
+      "name_used_in_text": "the Amyrlin Seat",
+      "likely_matches_existing": "the Amyrlin Seat",
+      "is_new_character": false,
+      "confidence": "high",
+      "character_type": "human",
+      "stable_traits": {
+        "nationality": "unknown",
+        "physical_traits": null,
+        "age": null,
+        "filiations": "leader of the White Tower",
+        "personality": null
+      },
+      "factions": [
+        {
+          "name": "White Tower",
+          "faction_type": "other",
+          "role": "leader",
+          "notes": "The Amyrlin Seat is the leader of all Aes Sedai"
+        }
+      ],
+      "aliases_observed": [],
+      "notes": "Mentioned by Rand when he recalls Ba'alzamon saying Tar Valon and the Amyrlin Seat would try to use him."
+    }
+  ],
+  "appearances": [
+    {
+      "character": "Rand al'Thor",
+      "whereabouts": "At the Eye of the World; on the hilltop where Aginor died, then down the slope to the clearing with the great oak marking the Green Man's grave",
+      "notable_actions": "Awakens from using the One Power; realizes he killed Aginor and believes he killed Ba'alzamon; struggles with fever, pain, and disorientation; reunites with his friends; lies about what happened to him; learns about the Horn of Valere, the broken seal, and the Dragon's banner; confronts Moiraine about being gentled; refuses to be used as a tool",
+      "demeanor": "Initially disoriented and struggling with physical pain; transitions to relief at finding Egwene safe; becomes terrified and defensive when discussing his ability to channel; angry and defiant when Moiraine explains his situation; fearful of his friends' reactions",
+      "alliances_shown": [
+        "Egwene",
+        "Mat",
+        "Perrin",
+        "Nynaeve",
+        "Moiraine",
+        "Lan",
+        "Loial"
+      ]
+    },
+    {
+      "character": "Aginor",
+      "whereabouts": "Dead on the hilltop, reduced to oily ashes and burned cloth fragments",
+      "notable_actions": "Was killed by Rand using the One Power; his remains are found scattered on the stone",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Egwene",
+      "whereabouts": "In the clearing beneath the great oak, at the Green Man's grave",
+      "notable_actions": "Kneels beneath the oak with flowers and leaves in her hair; initially pulls away from Rand when he touches her, then embraces him and says she doesn't care about his ability; supports Moiraine's decision to examine what was in the Eye first",
+      "demeanor": "Frightened, with big eyes; conflicted between fear of Rand's power and her feelings for him; ultimately compassionate and accepting despite her fear",
+      "alliances_shown": [
+        "Rand",
+        "Nynaeve",
+        "Moiraine"
+      ]
+    },
+    {
+      "character": "Nynaeve",
+      "whereabouts": "In the clearing beneath the great oak, tending to Moiraine",
+      "notable_actions": "Supports Moiraine physically; wears flowers in her braid; explains what happened while Rand was gone; tells Rand he is still himself but dangerous; helps Moiraine examine the artifacts from the Eye",
+      "demeanor": "Sad and regretful but accepting; shows ancient wisdom in her young face; troubled by the situation but dutiful",
+      "alliances_shown": [
+        "Moiraine",
+        "Egwene",
+        "Rand"
+      ]
+    },
+    {
+      "character": "Moiraine",
+      "whereabouts": "In the clearing, lying down with her head pillowed on folded cloaks, being tended by Nynaeve and Egwene",
+      "notable_actions": "Explains what happened with Aginor; reveals her suspicions about Rand; discusses his use of saidin and the possibility of controlling it; examines the broken seal, the Horn of Valere, and the Dragon's banner; refuses to discuss gentling Rand; insists on calling Ba'alzamon the Dark One; decides they will leave early the next day",
+      "demeanor": "Weakened and injured but mentally sharp and commanding; irritable about her physical state; patient but firm in explaining things to Rand; authoritative in her decisions",
+      "alliances_shown": [
+        "Lan",
+        "Nynaeve",
+        "Egwene",
+        "Rand"
+      ]
+    },
+    {
+      "character": "Lan",
+      "whereabouts": "In the clearing; came from the cavern where the Eye was",
+      "notable_actions": "Led the others into the cavern to investigate while Rand was away; wears a bandage around his temples; tests the heartstone with his best steel knife from Tear, which breaks; helps unfold the Dragon's banner; treats Rand the same as always despite knowing he can channel",
+      "demeanor": "Hard as ever but somewhat worse for wear; gruffly affectionate toward Rand; stoic about his injuries; matter-of-fact",
+      "alliances_shown": [
+        "Moiraine",
+        "Rand",
+        "the group"
+      ]
+    },
+    {
+      "character": "Loial",
+      "whereabouts": "In the clearing; came from the cavern",
+      "notable_actions": "Carries the heavy gold chest containing the Horn of Valere; reads the Old Tongue inscription on the Horn; helps unfold the Dragon's banner; jokes about the dangers of traveling with ta'veren; expresses relief at seeing Rand alive",
+      "demeanor": "Enthusiastic and talkative; ears twitching nervously; good-humored despite the danger; warm and friendly toward Rand",
+      "alliances_shown": [
+        "Rand",
+        "the group"
+      ]
+    },
+    {
+      "character": "Mat",
+      "whereabouts": "In the clearing; came from the cavern",
+      "notable_actions": "Carries fragments of the broken seal; wanted to search for Rand but was prevented by Moiraine and the women; shows the heartstone fragment to the others; drops it when told what it is",
+      "demeanor": "Defensive about not searching for Rand; laughing and joking; shocked when he learns about the seal",
+      "alliances_shown": [
+        "Rand",
+        "Perrin",
+        "Loial"
+      ]
+    },
+    {
+      "character": "Perrin",
+      "whereabouts": "In the clearing; came from the cavern",
+      "notable_actions": "Carries the bundled Dragon's banner; wanted to search for Rand; shows reluctance to reveal the banner; expresses strong desire to go home",
+      "demeanor": "Relieved to see Rand alive; weary of adventure; homesick; his yellow wolf eyes glow briefly when the seal is revealed",
+      "alliances_shown": [
+        "Rand",
+        "Mat",
+        "Loial"
+      ]
+    },
+    {
+      "character": "Tam al'Thor",
+      "whereabouts": "Not present; in Rand's memory",
+      "notable_actions": "None in this chapter",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Kari al'Thor",
+      "whereabouts": "Not present; in Rand's traumatic memory from his confrontation with Ba'alzamon",
+      "notable_actions": "Was shown to Rand by Ba'alzamon in a vision or memory",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Ba'alzamon",
+      "whereabouts": "Not physically present; mentioned in Rand's memories and discussion",
+      "notable_actions": "Was killed (or believes to have been killed) by Rand, who burned him and severed a black cord; showed Rand visions including Kari al'Thor; spoke of false Dragons being used by Tar Valon",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Balthamel",
+      "whereabouts": "Not present; mentioned as dead",
+      "notable_actions": "None in this chapter",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Lews Therin Telamon",
+      "whereabouts": "Not present; historical figure whose banner is found",
+      "notable_actions": "None in this chapter",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Bela",
+      "whereabouts": "Not present in this scene; mentioned in Moiraine's explanation",
+      "notable_actions": "Was cleansed of tiredness by Rand's unconscious use of saidin at Watch Hill",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Mandarb",
+      "whereabouts": "Not present in this scene; mentioned in comparison",
+      "notable_actions": "None in this chapter",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "the Green Man",
+      "whereabouts": "Dead and buried under the great oak in the clearing",
+      "notable_actions": "His death has allowed the Blight to begin killing what he made; the oak is dying",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Thom",
+      "whereabouts": "Not present; mentioned in Rand's memory",
+      "notable_actions": "None in this chapter",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Raolin Darksbane",
+      "whereabouts": "Not present; mentioned in Rand's memory of Ba'alzamon's words",
+      "notable_actions": "None in this chapter",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Guaire Amalasan",
+      "whereabouts": "Not present; mentioned in Rand's memory of Ba'alzamon's words",
+      "notable_actions": "None in this chapter",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Yurian Stonebow",
+      "whereabouts": "Not present; mentioned in Rand's memory of Ba'alzamon's words",
+      "notable_actions": "None in this chapter",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Davian",
+      "whereabouts": "Not present; mentioned in Rand's memory of Ba'alzamon's words",
+      "notable_actions": "None in this chapter",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Logain",
+      "whereabouts": "Not present; mentioned in Rand's memory of Ba'alzamon's words",
+      "notable_actions": "None in this chapter",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Aemon",
+      "whereabouts": "Not present; mentioned by Moiraine as historical figure",
+      "notable_actions": "None in this chapter",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Eldrene",
+      "whereabouts": "Not present; mentioned by Moiraine as historical figure",
+      "notable_actions": "None in this chapter",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Ishamael",
+      "whereabouts": "Not present; mentioned by Moiraine",
+      "notable_actions": "None in this chapter",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "Elder Haman",
+      "whereabouts": "Not present; at Stedding Shangtai; mentioned by Loial",
+      "notable_actions": "None in this chapter",
+      "demeanor": null,
+      "alliances_shown": []
+    },
+    {
+      "character": "the Amyrlin Seat",
+      "whereabouts": "Not present; at Tar Valon presumably; mentioned in Rand's recollection",
+      "notable_actions": "None in this chapter",
+      "demeanor": null,
+      "alliances_shown": []
+    }
+  ],
+  "relationships": [
+    {
+      "character_a": "Moiraine",
+      "character_b": "Lan",
+      "relationship_type": "warder_bond",
+      "directed": true,
+      "description": "Moiraine is the Aes Sedai who holds the Warder bond with Lan"
+    },
+    {
+      "character_a": "Rand al'Thor",
+      "character_b": "Egwene",
+      "relationship_type": "romantic",
+      "directed": false,
+      "description": "Romantic connection, though Egwene shows fear of Rand's ability to channel before overcoming it and embracing him"
+    },
+    {
+      "character_a": "Rand al'Thor",
+      "character_b": "Tam al'Thor",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "Adoptive father-son relationship; Rand thinks of Tam as his father"
+    },
+    {
+      "character_a": "Rand al'Thor",
+      "character_b": "Kari al'Thor",
+      "relationship_type": "family",
+      "directed": false,
+      "description": "Birth mother revealed through Ba'alzamon's vision; Rand emphasizes 'My mother!'"
+    },
+    {
+      "character_a": "Rand al'Thor",
+      "character_b": "Mat",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Close friends from the Two Rivers; Mat wanted to search for Rand"
+    },
+    {
+      "character_a": "Rand al'Thor",
+      "character_b": "Perrin",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Close friends from the Two Rivers; Perrin wanted to search for Rand"
+    },
+    {
+      "character_a": "Rand al'Thor",
+      "character_b": "Moiraine",
+      "relationship_type": "mentor",
+      "directed": true,
+      "description": "Moiraine attempts to guide and teach Rand about his abilities, though he resists being used"
+    },
+    {
+      "character_a": "Rand al'Thor",
+      "character_b": "Nynaeve",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Nynaeve accepts Rand but recognizes he is dangerous"
+    },
+    {
+      "character_a": "Rand al'Thor",
+      "character_b": "Lan",
+      "relationship_type": "mentor",
+      "directed": true,
+      "description": "Lan has been teaching Rand the sword; treats him the same despite knowing he can channel"
+    },
+    {
+      "character_a": "Rand al'Thor",
+      "character_b": "Loial",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Friends who have traveled together; Loial wanted to search for Rand"
+    },
+    {
+      "character_a": "Rand al'Thor",
+      "character_b": "Ba'alzamon",
+      "relationship_type": "enemy",
+      "directed": false,
+      "description": "Rand believes he killed Ba'alzamon in their confrontation"
+    },
+    {
+      "character_a": "Rand al'Thor",
+      "character_b": "Aginor",
+      "relationship_type": "enemy",
+      "directed": false,
+      "description": "Rand killed Aginor using the One Power"
+    },
+    {
+      "character_a": "Mat",
+      "character_b": "Perrin",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Close friends from the Two Rivers traveling together"
+    },
+    {
+      "character_a": "Moiraine",
+      "character_b": "Nynaeve",
+      "relationship_type": "ally",
+      "directed": false,
+      "description": "Nynaeve tends to Moiraine's injuries and defers to her decisions"
+    },
+    {
+      "character_a": "Moiraine",
+      "character_b": "Egwene",
+      "relationship_type": "mentor",
+      "directed": true,
+      "description": "Moiraine is guiding Egwene, who will become something important"
+    },
+    {
+      "character_a": "Aemon",
+      "character_b": "Eldrene",
+      "relationship_type": "romantic",
+      "directed": false,
+      "description": "Historical connection; Eldrene's heart was shattered when Aemon died"
+    },
+    {
+      "character_a": "Rand al'Thor",
+      "character_b": "Bela",
+      "relationship_type": "other",
+      "directed": false,
+      "description": "Rand unconsciously used the One Power to cleanse Bela of tiredness because he feared Egwene (who rode her) would be left behind"
+    },
+    {
+      "character_a": "Egwene",
+      "character_b": "Bela",
+      "relationship_type": "other",
+      "directed": false,
+      "description": "Egwene rode Bela during their flight from the Trollocs"
+    },
+    {
+      "character_a": "Lan",
+      "character_b": "Mandarb",
+      "relationship_type": "other",
+      "directed": false,
+      "description": "Mandarb is Lan's horse"
+    }
+  ],
+  "_meta": {
+    "book_order": 1,
+    "chapter_number": 52,
+    "chapter_id": 53,
+    "chapter_title": "There Is Neither Beginning Nor End",
+    "model": "claude-sonnet-4-5",
+    "input_tokens": 14807,
+    "output_tokens": 10913
+  }
+}
