@@ -27,6 +27,8 @@ import re
 import shutil
 import sqlite3
 import sys
+from dotenv import load_dotenv 
+load_dotenv()
 
 # ── norm() copied verbatim from reconcile.py ─────────────────────────────────
 # Keep in sync if reconcile.py ever changes its implementation.

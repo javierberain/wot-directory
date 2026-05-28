@@ -24,6 +24,7 @@ import re
 import sqlite3
 import sys
 import zipfile
+import html  
 
 from bs4 import BeautifulSoup
 
@@ -66,8 +67,14 @@ def find_opf_and_spine(zf):
         if iid and href:
             items[iid.group(1)] = href.group(1)
 
-    spine = [items[m] for m in re.findall(r'<itemref idref="(.*?)"', opf)
-             if m in items]
+    spine = []
+    for m in re.findall(r'<itemref idref="(.*?)"', opf):
+        if m not in items:
+            continue
+        href = items[m]
+        if opf_dir and not href.startswith(opf_dir):
+            href = f"{opf_dir}/{href}"
+        spine.append(href)
     return opf_dir, spine
 
 
@@ -90,7 +97,7 @@ def parse_ncx(zf, opf_dir):
     for m in re.finditer(
         r"<navPoint[^>]*>.*?<text>(.*?)</text>.*?src=\"(.*?)\"", ncx, re.S
     ):
-        label = re.sub(r"\s+", " ", m.group(1)).strip()
+        label = html.unescape(re.sub(r"\s+", " ", m.group(1))).strip()
         href = m.group(2).split("#")[0]
         if opf_dir and not href.startswith(opf_dir):
             href = f"{opf_dir}/{href}"

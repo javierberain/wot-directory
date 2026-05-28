@@ -28,7 +28,7 @@ import sys
 # ── Paths (same conventions as reconcile.py / hygiene_audit.py) ──────────────
 DB_PATH  = os.path.join(os.path.dirname(__file__), "..", "db", "wot.db")
 BAK_PATH = os.path.join(os.path.dirname(__file__), "..", "db",
-                         "wot.db.pre-deletions-auto.bak")
+                         "wot.db.pre-deletions-auto-book3.bak")
 
 
 # ── Target list ───────────────────────────────────────────────────────────────
@@ -40,7 +40,7 @@ BAK_PATH = os.path.join(os.path.dirname(__file__), "..", "db",
 #
 # Do NOT add ids to this list without running that command first and
 # confirming the character has no legitimate dependent data worth keeping.
-TARGET_IDS = [302]
+TARGET_IDS = [188, 277, 279, 292, 323, 324, 340, 346, 360, 381, 385, 408]
 
 
 # ── Formatting helpers (ASCII-only for Windows cp1252 console safety) ─────────

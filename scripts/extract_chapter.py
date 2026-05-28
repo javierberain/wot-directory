@@ -22,8 +22,9 @@ import os
 import sqlite3
 import sys
 import time
-
 import anthropic
+from dotenv import load_dotenv 
+load_dotenv()
 
 DB_PATH = os.path.join(os.path.dirname(__file__), "..", "db", "wot.db")
 OUT_DIR = os.path.join(os.path.dirname(__file__), "..", "data", "extractions")
