@@ -14,6 +14,8 @@ Usage:
     python scripts/hygiene_audit.py --with-llm   # add advisory LLM suggestions for
                                                  # ambiguous rows (requires
                                                  # ANTHROPIC_API_KEY)
+    python scripts/hygiene_audit.py --db PATH    # audit a specific snapshot file;
+                                                 # omit to default to db/wot.db
 
 Run after ingesting each book.  The wordlists and allow-lists near the top of
 this file are the primary knobs to tune between runs.  They are intentionally
@@ -707,7 +709,18 @@ def main():
         help="Print a complete read-only dossier for one character and exit. "
              "Skips the full audit and the backup step.",
     )
+    ap.add_argument(
+        "--db", metavar="PATH",
+        help="Path to the SQLite database file to audit. "
+             "Defaults to db/wot.db (the live ingestion database).",
+    )
     args = ap.parse_args()
+
+    # ── Resolve DB/BAK paths from --db if given ───────────────────────────────
+    if args.db is not None:
+        global DB_PATH, BAK_PATH
+        DB_PATH = args.db
+        BAK_PATH = args.db + ".pre-hygiene.bak"
 
     # ── Detail mode: read-only dossier for one character, then exit ───────────
     # Intentionally placed before the --with-llm check and the backup step.

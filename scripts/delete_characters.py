@@ -16,8 +16,11 @@ to see exactly what each character_id owns before committing to removal.
 
 Usage:
     python scripts/delete_characters.py
+    python scripts/delete_characters.py --db PATH  # target a specific database file;
+                                                    # omit to default to db/wot.db
 """
 
+import argparse
 import os
 import pathlib
 import shutil
@@ -40,7 +43,11 @@ BAK_PATH = os.path.join(os.path.dirname(__file__), "..", "db",
 #
 # Do NOT add ids to this list without running that command first and
 # confirming the character has no legitimate dependent data worth keeping.
-TARGET_IDS = [188, 277, 279, 292, 323, 324, 340, 346, 360, 381, 385, 408]
+# Book-1 cleanup: two confirmed non-individual rows verified against chapter text.
+#   135  "the raven"                          (Ch34; no 'raven' in text, no real figure)
+#   152  "the small black cat with white feet" (Ch42-43; background prop, no individual action)
+# The other four B-flags (83, 108, 125, 159) were verified as REAL characters and KEPT.
+TARGET_IDS = [135, 152]
 
 
 # ── Formatting helpers (ASCII-only for Windows cp1252 console safety) ─────────
@@ -275,6 +282,22 @@ def verify_deleted(conn):
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 def main():
+    ap = argparse.ArgumentParser(
+        description="Delete confirmed-bogus character rows from the WoT database.",
+    )
+    ap.add_argument(
+        "--db", metavar="PATH",
+        help="Path to the SQLite database file. "
+             "Defaults to db/wot.db (the live ingestion database).",
+    )
+    args = ap.parse_args()
+
+    # ── Resolve DB/BAK paths from --db if given ───────────────────────────────
+    if args.db is not None:
+        global DB_PATH, BAK_PATH
+        DB_PATH = args.db
+        BAK_PATH = args.db + ".pre-deletions-auto.bak"
+
     print()
     print(_SEP2)
     print("  WoT CHARACTER DIRECTORY -- DELETE CHARACTERS")

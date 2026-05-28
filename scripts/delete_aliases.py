@@ -24,8 +24,11 @@ character rows themselves.
 
 Usage:
     python scripts/delete_aliases.py
+    python scripts/delete_aliases.py --db PATH  # target a specific database file;
+                                                # omit to default to db/wot.db
 """
 
+import argparse
 import os
 import pathlib
 import shutil
@@ -49,23 +52,17 @@ BAK_PATH = os.path.join(os.path.dirname(__file__), "..", "db",
 # Do NOT add ids to this list without first re-running hygiene_audit.py
 # and confirming the alias still appears in Check A's flagged list.
 TARGET_ALIAS_IDS = [
-    817,  # "Aes Sedai"      on character_id=199  "Anaiya"
-    890,  # "Aes Sedai"      on character_id=14   "Egwene"
-    738,  # "Aes Sedai"      on character_id=25   "Moiraine"
-    889,  # "Aes Sedai"      on character_id=11   "Nynaeve al'Meara"
-    959,  # "Captain"        on character_id=418  "Captain Canin"
-    972,  # "Captain"        on character_id=423  "Captain Derne"
-    918,  # "Captain"        on character_id=389  "Chin Ellisor"
-    833,  # "Captain"        on character_id=371  "Huan Mallia"
-    870,  # "captain"        on character_id=386  "Jaim Adarra"
-    757,  # "child"          on character_id=14   "Egwene"
-    770,  # "child"          on character_id=11   "Nynaeve al'Meara"
-    769,  # "Daughter"       on character_id=14   "Egwene"
-    840,  # "Lady"           on character_id=25   "Moiraine"
-    775,  # "Mother"         on character_id=107  "Queen Morgase"
-    762,  # "Mother"         on character_id=159  "Siuan Sanche"
-    974,  # "the innkeeper"  on character_id=424  "Jurah Haret"
-    746,  # "the innkeeper"  on character_id=328  "Master Harod"
+    311,  # "Aes Sedai"     on character_id=129  "Elaida"
+    116,  # "Aes Sedai"     on character_id=25   "Moiraine"
+    146,  # "child"         on character_id=14   "Egwene"
+    365,  # "King"          on character_id=168  "al'Akir Mandragoran"
+    309,  # "Mother"        on character_id=107  "Queen Morgase"
+    305,  # "my Lady"       on character_id=130  "Elayne"
+    306,  # "my Lord"       on character_id=131  "Gawyn"
+    233,  # "Queen"         on character_id=107  "Queen Morgase"
+    372,  # "Queen"         on character_id=172  "el'Leanna"
+    342,  # "the innkeeper" on character_id=136  "Basel Gill"
+    270,  # "the Queen"     on character_id=107  "Queen Morgase"
 ]
 
 
@@ -196,6 +193,22 @@ def verify_deleted(conn):
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 def main():
+    ap = argparse.ArgumentParser(
+        description="Delete confirmed-generic alias rows from the WoT database.",
+    )
+    ap.add_argument(
+        "--db", metavar="PATH",
+        help="Path to the SQLite database file. "
+             "Defaults to db/wot.db (the live ingestion database).",
+    )
+    args = ap.parse_args()
+
+    # ── Resolve DB/BAK paths from --db if given ───────────────────────────────
+    if args.db is not None:
+        global DB_PATH, BAK_PATH
+        DB_PATH = args.db
+        BAK_PATH = args.db + ".pre-alias-deletions.bak"
+
     print()
     print(_SEP2)
     print("  WoT CHARACTER DIRECTORY -- DELETE ALIASES")
