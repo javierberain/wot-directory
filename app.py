@@ -9,7 +9,16 @@ Endpoints:
   GET  /api/books             list of books with their chapters
   GET  /api/chapter/<id>      characters featured in one chapter
   GET  /api/faction/<id>      a faction's metadata + member list
+  GET  /api/factions          all factions
   GET  /api/graph             relationship graph (optionally ?chapter=ID)
+
+All data endpoints accept ?book=N to select the spoiler boundary.  Missing,
+non-numeric, or unavailable values collapse to the EARLIEST available book
+(never the latest), so the guard fails closed by design.
+
+wot.db is the ingestion target for book-4 work and is never served.  Each
+wot_bookN.db is a frozen snapshot of the directory after book N was cleaned;
+data from later books is physically absent from earlier snapshots.
 
 Run:
     python app.py
@@ -20,29 +29,102 @@ import sqlite3
 
 from flask import Flask, g, jsonify, render_template, request
 
-DB_PATH = os.path.join(os.path.dirname(__file__), "db", "wot.db")
+_DB_DIR = os.path.join(os.path.dirname(__file__), "db")
+
+# Snapshot files served by the web app.  Register a new entry here once
+# book N is fully cleaned and snapshotted to db/wot_bookN.db.
+# wot.db is intentionally absent — it is the ingestion target, not a snapshot.
+BOOKS_DB = {
+    1: os.path.join(_DB_DIR, "wot_book1.db"),
+    2: os.path.join(_DB_DIR, "wot_book2.db"),
+    3: os.path.join(_DB_DIR, "wot_book3.db"),
+}
+
+# Only books whose snapshot file actually exists on disk can be served.
+# This list is computed once at startup so a missing file can never be served.
+AVAILABLE_BOOKS = sorted(n for n, path in BOOKS_DB.items() if os.path.exists(path))
+
+
+def _load_available_books_info():
+    """Return [{series_order, title}] for every available boundary.
+
+    Queries the largest snapshot so all book titles are reachable in one
+    connection.  Result is used to populate the global spoiler selector in
+    the HTML template without a round-trip fetch.
+    """
+    if not AVAILABLE_BOOKS:
+        return []
+    db_path = BOOKS_DB[max(AVAILABLE_BOOKS)]
+    titles = {}
+    try:
+        conn = sqlite3.connect(db_path)
+        for row in conn.execute("SELECT series_order, title FROM books"):
+            if row[0] in AVAILABLE_BOOKS:
+                titles[row[0]] = row[1]
+        conn.close()
+    except Exception:
+        pass
+    return [
+        {"series_order": n, "title": titles.get(n, f"Book {n}")}
+        for n in AVAILABLE_BOOKS
+    ]
+
+
+# Cached at startup; passed to the template so the selector renders without
+# needing to know its own boundary before it has been chosen.
+AVAILABLE_BOOKS_INFO = _load_available_books_info()
 
 app = Flask(__name__)
 
 
+def selected_book():
+    """Return the validated book number from ?book=N.
+
+    Fails closed: anything missing, non-numeric, or not in AVAILABLE_BOOKS
+    collapses to the EARLIEST available book, never the latest.
+    """
+    try:
+        n = int(request.args.get("book", 0))
+    except (ValueError, TypeError):
+        n = 0
+    if not AVAILABLE_BOOKS or n not in AVAILABLE_BOOKS:
+        return AVAILABLE_BOOKS[0] if AVAILABLE_BOOKS else None
+    return n
+
+
 def db():
-    if "db" not in g:
-        g.db = sqlite3.connect(DB_PATH)
-        g.db.row_factory = sqlite3.Row
-        g.db.execute("PRAGMA foreign_keys = ON")
-    return g.db
+    """Return the cached SQLite connection for the currently selected book boundary.
+
+    Connections are cached per-book on Flask's g using _db_{N} attributes so
+    that a single request can theoretically open multiple boundaries (the
+    teardown closes all of them).  In practice each request uses one boundary.
+    """
+    book = selected_book()
+    if book is None:
+        raise RuntimeError("No snapshot database files are available.")
+    attr = f"_db_{book}"
+    if not hasattr(g, attr):
+        conn = sqlite3.connect(BOOKS_DB[book])
+        conn.row_factory = sqlite3.Row
+        conn.execute("PRAGMA foreign_keys = ON")
+        setattr(g, attr, conn)
+    return getattr(g, attr)
 
 
 @app.teardown_appcontext
 def close_db(exc):
-    conn = g.pop("db", None)
-    if conn is not None:
-        conn.close()
+    for book in AVAILABLE_BOOKS:
+        conn = getattr(g, f"_db_{book}", None)
+        if conn is not None:
+            conn.close()
 
 
 @app.route("/")
 def index():
-    return render_template("index_codex_v3.html")
+    return render_template(
+        "index_codex_v3.html",
+        available_books_info=AVAILABLE_BOOKS_INFO,
+    )
 
 
 @app.route("/api/search")
@@ -52,7 +134,7 @@ def search():
         return jsonify([])
 
     rows = db().execute("""
-        SELECT DISTINCT 
+        SELECT DISTINCT
             c.character_id,
             c.primary_name,
             c.display_name,
@@ -134,6 +216,7 @@ def character(cid):
         "factions": [dict(f) for f in factions],
     })
 
+
 @app.route("/api/factions")
 def factions():
     rows = db().execute("""
@@ -143,7 +226,8 @@ def factions():
     """).fetchall()
 
     return jsonify([dict(r) for r in rows])
-    
+
+
 @app.route("/api/faction/<int:fid>")
 def faction(fid):
     conn = db()
@@ -293,7 +377,9 @@ def graph():
 
 
 if __name__ == "__main__":
-    if not os.path.exists(DB_PATH):
-        print(f"Database not found at {DB_PATH}.")
-        print("Run the parser first:  python scripts/parse_epub.py ...")
+    if not AVAILABLE_BOOKS:
+        print("Warning: no snapshot database files found in db/.")
+        print("Expected: db/wot_book1.db, db/wot_book2.db, ...")
+        print("Snapshot a finished book first:  cp db/wot.db db/wot_bookN.db")
+        print("Then register the new file in BOOKS_DB at the top of app.py.")
     app.run(debug=True, port=5000)

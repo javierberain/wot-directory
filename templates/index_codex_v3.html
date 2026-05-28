@@ -721,6 +721,40 @@
         align-items: stretch;
       }
     }
+
+    /* Global spoiler-boundary selector — lives in the header, above all tabs */
+    .spoiler-guard {
+      margin: 1.4rem auto 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.75rem 1.4rem;
+      border: 1px solid rgba(154, 123, 63, 0.35);
+      background: rgba(154, 123, 63, 0.06);
+      max-width: 360px;
+    }
+
+    .spoiler-guard label {
+      font-size: 0.9rem;
+      font-style: italic;
+      color: var(--gold);
+      margin: 0;
+    }
+
+    .spoiler-guard select {
+      width: 100%;
+      margin-top: 0;
+    }
+
+    .spoiler-note {
+      font-size: 0.77rem;
+      color: var(--gold);
+      font-style: italic;
+      opacity: 0.75;
+      text-align: center;
+      line-height: 1.35;
+    }
   </style>
 </head>
 
@@ -730,6 +764,13 @@
     <div class="wheel"></div>
     <h1>The Pattern</h1>
     <div class="tagline">a directory of souls woven through the Wheel of Time</div>
+    <div class="spoiler-guard">
+      <label for="boundary-select">How far have you read?</label>
+      <select id="boundary-select">
+        <option value="">— choose —</option>
+      </select>
+      <span class="spoiler-note">Only characters and content up to this book will appear.</span>
+    </div>
   </header>
 
   <div class="layout">
@@ -807,6 +848,34 @@
   <script>
     const $ = s => document.querySelector(s);
 
+    // ---------- spoiler guard ----------
+    // AVAILABLE_BOOKS_INFO is injected by Flask at render time so the selector
+    // can be populated without a fetch (avoids needing a boundary before knowing
+    // which boundaries exist).  selectedBook defaults to the earliest available
+    // book and is never persisted — it resets to the earliest on every visit.
+    const AVAILABLE_BOOKS_INFO = {{ available_books_info | tojson }};
+    let selectedBook = AVAILABLE_BOOKS_INFO.length ? AVAILABLE_BOOKS_INFO[0].series_order : 1;
+
+    function bookParam() { return 'book=' + selectedBook; }
+
+    function onBookBoundaryChange(n) {
+      selectedBook = n;
+      // Clear every view so no stale higher-book data can linger on screen.
+      $('#search').value = '';
+      $('#results').innerHTML = '';
+      $('#profile-content').innerHTML =
+        '<div class="empty">Search for a character to read their thread in the Pattern.</div>';
+      $('#chapter-cast-content').innerHTML =
+        '<div class="empty">Choose a book and chapter to see who walks its pages.</div>';
+      $('#book-select').value = '';
+      $('#chapter-select').innerHTML = '<option value="">&mdash; select &mdash;</option>';
+      loadBooks();
+      loadFactions();
+      // Refresh the graph immediately if that tab is currently active.
+      const active = document.querySelector('.tab.active');
+      if (active && active.dataset.tab === 'graph') loadGraph();
+    }
+
     // ---------- accordion ----------
     function toggleAccordion(id) {
       const card = document.getElementById(id);
@@ -841,7 +910,7 @@
       searchTimer = setTimeout(() => runSearch(q), 200);
     });
     async function runSearch(q) {
-      const res = await fetch('/api/search?q=' + encodeURIComponent(q));
+      const res = await fetch('/api/search?q=' + encodeURIComponent(q) + '&' + bookParam());
       const data = await res.json();
       if (!data.length) {
         $('#results').innerHTML =
@@ -872,7 +941,7 @@
     }
 
     async function loadCharacter(cid) {
-      const res = await fetch('/api/character/' + cid);
+      const res = await fetch('/api/character/' + cid + '?' + bookParam());
       const d = await res.json();
       if (d.error) return;
       const c = d.character;
@@ -1154,7 +1223,7 @@
 
     // ---------- faction view ----------
     async function loadFaction(fid) {
-      const res = await fetch('/api/faction/' + fid);
+      const res = await fetch('/api/faction/' + fid + '?' + bookParam());
       const d = await res.json();
       if (d.error) return;
       const f = d.faction;
@@ -1182,7 +1251,7 @@
     // ---------- books & chapters ----------
     let BOOKS = [];
     async function loadBooks() {
-      BOOKS = await (await fetch('/api/books')).json();
+      BOOKS = await (await fetch('/api/books?' + bookParam())).json();
       $('#book-select').innerHTML = '<option value="">&mdash; select &mdash;</option>'
         + BOOKS.map(b =>
           `<option value="${b.book_id}">Bk ${b.series_order}: ${b.title}</option>`
@@ -1205,7 +1274,7 @@
     });
 
     async function loadChapter(chid) {
-      const d = await (await fetch('/api/chapter/' + chid)).json();
+      const d = await (await fetch('/api/chapter/' + chid + '?' + bookParam())).json();
       if (d.error) return;
       const ch = d.chapter;
       const cast = d.characters.length
@@ -1295,7 +1364,7 @@
 
     async function loadGraph() {
       const chId = $('#chapter-select').value;
-      const url = chId ? '/api/graph?chapter=' + chId : '/api/graph';
+      const url = chId ? '/api/graph?chapter=' + chId + '&' + bookParam() : '/api/graph?' + bookParam();
       const d = await (await fetch(url)).json();
 
       if (!d.nodes.length) {
@@ -1372,7 +1441,7 @@
     let FACTIONS = [];
 
     async function loadFactions() {
-      FACTIONS = await (await fetch('/api/factions')).json();
+      FACTIONS = await (await fetch('/api/factions?' + bookParam())).json();
 
       $('#faction-select').innerHTML =
         '<option value="">— select faction —</option>' +
@@ -1388,6 +1457,22 @@
         e.target.value = '';
       }
     });
+    // Populate and wire the global boundary selector.
+    (function () {
+      const sel = $('#boundary-select');
+      AVAILABLE_BOOKS_INFO.forEach(b => {
+        const opt = document.createElement('option');
+        opt.value = b.series_order;
+        opt.textContent = 'Through Bk ' + b.series_order + ': ' + b.title;
+        sel.appendChild(opt);
+      });
+      if (AVAILABLE_BOOKS_INFO.length) sel.value = AVAILABLE_BOOKS_INFO[0].series_order;
+      sel.addEventListener('change', e => {
+        const v = parseInt(e.target.value, 10);
+        if (!isNaN(v)) onBookBoundaryChange(v);
+      });
+    })();
+
     loadBooks();
     loadFactions();
   </script>
