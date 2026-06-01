@@ -23,13 +23,31 @@ Phase 2 — RESOLVE (API, dry-run by default)
     non-placeholder nationality.
 
 Usage:
+    # Two-phase workflow (review before committing):
     python scripts/resolve_origins.py --db PATH --ids 26,138,163
-    python scripts/resolve_origins.py --db PATH --ids 26,138,163 --gather-only
+        → dry-run: calls API, prints results, writes proposals JSON
+    python scripts/resolve_origins.py --db PATH --commit-from-proposals data/origins_proposals_<db>.json
+        → applies proposals without a second API call
+
+    # One-shot workflow (gather + resolve + write in one step):
     python scripts/resolve_origins.py --db PATH --ids 26,138,163 --commit
 
+    # Gather only (no API):
+    python scripts/resolve_origins.py --db PATH --ids 26,138,163 --gather-only
+
     --db defaults to db/wot.db when omitted.
+    --book SERIES_ORDER restricts the gather to a single book's chapters
+        (e.g. --book 3 limits to The Dragon Reborn's text only).  Without
+        this flag, all chapters in the database are searched.  Useful for
+        per-book DBs where prior books' text has already been resolved and
+        re-running on them would just re-derive previously-considered
+        evidence.
     --gather-only stops after Phase 1 (no API calls, no DB writes).
     --commit writes resolved nationalities to the database (dry-run otherwise).
+    --commit-from-proposals PATH reads a saved dry-run proposals file and
+        applies it without calling the API; requires --db.
+    --allow-db-mismatch overrides the db_file validation in --commit-from-proposals.
+    --commit and --commit-from-proposals are mutually exclusive.
     --commit and --gather-only are mutually exclusive.
 
 Safety envelope
@@ -68,6 +86,9 @@ CSV_PATH = os.path.join(os.path.dirname(__file__), "..", "data",
 
 # Model: same string as extract_chapter.py and hygiene_audit.py.
 MODEL = "claude-sonnet-4-5"
+
+# Proposals file schema version — increment if the schema changes.
+SCRIPT_VERSION = "1.0"
 
 # Passage context window (characters on each side of a regex match).
 PASSAGE_WINDOW = 200
@@ -325,11 +346,18 @@ _SEP  = "-" * 60
 _SEP2 = "=" * 60
 
 
-def run_gather(conn, ids, db_path):
+def run_gather(conn, ids, db_path, book_series_order=None):
     """Phase 1: gather passages for all requested character_ids.
 
     Fetches all chapters once up front (avoids a per-character full-table scan),
     then calls gather_character for each requested id.
+
+    If `book_series_order` is supplied, only chapters whose books.series_order
+    matches are searched.  This is the right behaviour for per-book DBs where
+    earlier-book text has already been processed in a prior resolver pass —
+    re-sending it to the API just reproduces previous (often-rejected)
+    proposals.  When omitted, every chapter in the DB is searched (the
+    original behaviour).
 
     Writes the bundle to data/origins_gather_<dbstem>.json and prints a
     summary table to stdout.  Returns (bundle, chapter_texts) where
@@ -341,23 +369,54 @@ def run_gather(conn, ids, db_path):
     out_path = pathlib.Path(DATA_DIR) / f"origins_gather_{db_stem}.json"
     pathlib.Path(DATA_DIR).mkdir(parents=True, exist_ok=True)
 
+    # ── Validate book_series_order if supplied ────────────────────────────────
+    book_scope_label = "all books"
+    if book_series_order is not None:
+        book_row = conn.execute(
+            "SELECT book_id, title FROM books WHERE series_order = ?",
+            (book_series_order,),
+        ).fetchone()
+        if not book_row:
+            sys.exit(
+                f"ERROR: --book {book_series_order} not found in this database. "
+                f"Available books: " +
+                ", ".join(
+                    f"{r['series_order']} ({r['title']!r})"
+                    for r in conn.execute(
+                        "SELECT series_order, title FROM books ORDER BY series_order"
+                    ).fetchall()
+                )
+            )
+        book_scope_label = f"Bk{book_series_order} {book_row['title']!r} only"
+
     print()
     print(_SEP2)
     print("  PHASE 1 — GATHER")
-    print(f"  {len(ids)} character(s)  |  searching all chapter full_texts")
+    print(f"  {len(ids)} character(s)  |  scope: {book_scope_label}")
     print(f"  Database: {pathlib.Path(db_path).resolve()}")
     print(_SEP2)
     print()
 
-    # ── Pre-fetch all chapters once ───────────────────────────────────────────
+    # ── Pre-fetch chapters once (respecting --book filter if supplied) ────────
     # Reused by every gather_character call and retained for verify_evidence.
-    all_chapters = conn.execute(
-        "SELECT ch.chapter_id, ch.chapter_number, ch.title, ch.full_text, "
-        "       b.series_order, b.title AS book_title "
-        "FROM chapters ch "
-        "JOIN books b ON b.book_id = ch.book_id "
-        "ORDER BY b.series_order, ch.chapter_number",
-    ).fetchall()
+    if book_series_order is None:
+        all_chapters = conn.execute(
+            "SELECT ch.chapter_id, ch.chapter_number, ch.title, ch.full_text, "
+            "       b.series_order, b.title AS book_title "
+            "FROM chapters ch "
+            "JOIN books b ON b.book_id = ch.book_id "
+            "ORDER BY b.series_order, ch.chapter_number",
+        ).fetchall()
+    else:
+        all_chapters = conn.execute(
+            "SELECT ch.chapter_id, ch.chapter_number, ch.title, ch.full_text, "
+            "       b.series_order, b.title AS book_title "
+            "FROM chapters ch "
+            "JOIN books b ON b.book_id = ch.book_id "
+            "WHERE b.series_order = ? "
+            "ORDER BY b.series_order, ch.chapter_number",
+            (book_series_order,),
+        ).fetchall()
 
     # Build the source-text map used by verify_evidence in Phase 2.
     chapter_texts = {
@@ -366,10 +425,12 @@ def run_gather(conn, ids, db_path):
     }
 
     bundle = {
-        "db":        str(pathlib.Path(db_path).resolve()),
-        "db_stem":   db_stem,
-        "generated": datetime.now(timezone.utc).isoformat(),
-        "characters": {},
+        "db":           str(pathlib.Path(db_path).resolve()),
+        "db_stem":      db_stem,
+        "generated":    datetime.now(timezone.utc).isoformat(),
+        "book_scope":   book_series_order,
+        "scope_label":  book_scope_label,
+        "characters":   {},
     }
 
     gathered = []
@@ -435,23 +496,40 @@ These are every occurrence of this character's names in the book text.
 
 YOUR TASK
 Using ONLY the passages above, determine this character's nationality, people,
-or homeland.  You may derive it from:
-  - An explicit statement  ("he was Malkieri", "the Andoran woman", etc.)
-  - A clear title-based implication  ("crownless King of the Malkieri" => Malkieri)
-  - Institutional context supported by the passages (e.g. faction membership
-    that reliably implies an origin)
+or homeland.  You may assign an origin ONLY when the passages contain:
+  - An explicit statement of homeland or people
+    ("he was Malkieri", "the Andoran woman", "born in Shienar", etc.)
+  - A title that directly names a homeland or people
+    ("crownless King of the Malkieri" => Malkieri,
+     "Defender of the Dragonwall" => Cairhienin, etc.)
+
+You must NOT infer origin from:
+  - Faction or organisation membership (being a Forsaken, a Whitecloak, an
+    Aes Sedai, a Warder, etc. does not establish a homeland)
+  - An office, rank, or role ("Captain-General", "Amyrlin", "Lord", etc.)
+  - Merely being present in, travelling through, or ruling a location
+
+Special case — Ogier characters: their origin is their STEDDING
+(e.g. "Stedding Shangtai"), never the bare word "Ogier" (that is their
+species, not their homeland).  If the stedding is not stated in the passages,
+return not_stated.
+
+If none of the allowed bases apply, you MUST return nationality=null,
+basis="not_stated".
 
 Rules you must follow:
-  - Ground every answer in a QUOTED PHRASE taken VERBATIM from the passages above.
+  - The "evidence" field must be an EXACT VERBATIM substring copied
+    character-for-character directly from the passages above.  Do NOT
+    paraphrase, reconstruct, or summarise.  If you cannot find a verbatim
+    phrase that supports the origin, you MUST return not_stated instead.
   - Do NOT use any knowledge from outside the supplied passages.
-  - If the passages do not establish origin, set nationality to null and
-    basis to "not_stated".
   - Keep the nationality label SHORT — 1 to 4 words
-    (e.g. "Malkieri", "Two Rivers", "Andoran", "Aiel", "Cairhienin").
+    (e.g. "Malkieri", "Two Rivers", "Andoran", "Aiel", "Cairhienin",
+     "Stedding Shangtai").
 
-Return ONLY a single JSON object with exactly these four keys — no prose, no
+Return ONLY a single JSON object with exactly these three keys — no prose, no
 markdown fences:
-{{"nationality": "<short label or null>", "evidence": "<exact verbatim quoted phrase, or empty string>", "basis": "explicit|title|institutional|not_stated"}}
+{{"nationality": "<short label or null>", "evidence": "<exact verbatim phrase, or empty string>", "basis": "explicit|title|not_stated"}}
 """
 
 
@@ -609,9 +687,11 @@ def run_resolve(bundle, chapter_texts, db_path, dry_run=True):
             print("    → KEPT EXISTING  (nationality is not a placeholder)")
             print()
             results.append({
-                "character_id": cid, "primary_name": pn,
-                "nationality": cur,  "basis": "—",
-                "evidence": "",      "action": "kept_existing",
+                "character_id":      cid,  "primary_name":       pn,
+                "nationality":       cur,  "basis":              "—",
+                "evidence":          "",   "action":             "kept_existing",
+                "error_msg":         None, "downgraded":         False,
+                "current_nationality": cur,
             })
             continue
 
@@ -620,9 +700,11 @@ def run_resolve(bundle, chapter_texts, db_path, dry_run=True):
             print("    → NO PASSAGES FOUND  (recording as not_stated; no API call)")
             print()
             results.append({
-                "character_id": cid, "primary_name": pn,
-                "nationality": None, "basis": "not_stated",
-                "evidence": "",      "action": "no_passages",
+                "character_id":      cid,  "primary_name":       pn,
+                "nationality":       None, "basis":              "not_stated",
+                "evidence":          "",   "action":             "no_passages",
+                "error_msg":         None, "downgraded":         False,
+                "current_nationality": cur,
             })
             continue
 
@@ -650,10 +732,11 @@ def run_resolve(bundle, chapter_texts, db_path, dry_run=True):
             # summary as ERROR rather than silently vanishing.  Errored
             # characters are never written to the DB or the CSV.
             results.append({
-                "character_id": cid,    "primary_name": pn,
-                "nationality":  None,   "basis":        "—",
-                "evidence":     "",     "action":       "error",
-                "error_msg":    err_msg,
+                "character_id":      cid,      "primary_name":       pn,
+                "nationality":       None,     "basis":              "—",
+                "evidence":          "",       "action":             "error",
+                "error_msg":         err_msg,  "downgraded":         False,
+                "current_nationality": cur,
             })
             continue
 
@@ -663,9 +746,11 @@ def run_resolve(bundle, chapter_texts, db_path, dry_run=True):
 
         # ── Evidence verification ─────────────────────────────────────────────
         # Guards against the model fabricating a citation not in the source text.
+        downgraded = False
         if nationality and not verify_evidence(
             evidence, char_data["distinct_chapter_ids"], chapter_texts
         ):
+            downgraded  = True
             print(f"\n    DOWNGRADED: evidence phrase not found in source chapter "
                   f"text (fabrication guard)")
             print(f"    Returned evidence was: {evidence!r}")
@@ -683,9 +768,11 @@ def run_resolve(bundle, chapter_texts, db_path, dry_run=True):
 
         action = "would_write" if nationality else "not_stated"
         results.append({
-            "character_id": cid, "primary_name": pn,
-            "nationality": nationality, "basis": basis,
-            "evidence": evidence,       "action": action,
+            "character_id":      cid,        "primary_name":       pn,
+            "nationality":       nationality, "basis":              basis,
+            "evidence":          evidence,    "action":             action,
+            "error_msg":         None,        "downgraded":         downgraded,
+            "current_nationality": cur,
         })
         print()
 
@@ -769,6 +856,7 @@ def run_resolve(bundle, chapter_texts, db_path, dry_run=True):
     if dry_run:
         print("  Dry-run complete.  Re-run with --commit to write to the database.")
         print()
+        write_proposals(db_path, results)
 
     return results
 
@@ -810,6 +898,198 @@ def append_resolved_csv(db_path, results):
     print(f"CSV record appended: {csv_out}")
 
 
+# ── Proposal persistence ──────────────────────────────────────────────────────
+
+def write_proposals(db_path, results):
+    """Write the dry-run result set to data/origins_proposals_<dbstem>.json.
+
+    Called at the end of every dry-run so the exact API responses can be
+    reviewed and then applied via --commit-from-proposals without a second
+    API call.  Overwrites any prior proposals file for this database.
+
+    Schema (schema_version=1):
+      {
+        "schema_version": 1,
+        "generated_at_iso": "<ISO 8601 UTC>",
+        "db_file": "<absolute path used during dry-run>",
+        "script_version": "<SCRIPT_VERSION constant>",
+        "results": [ { per-character result dict }, ... ]
+      }
+
+    Each result dict carries: character_id, primary_name, nationality, basis,
+    evidence, action, error_msg, downgraded, current_nationality.
+    """
+    db_stem  = pathlib.Path(db_path).stem
+    out_path = pathlib.Path(DATA_DIR) / f"origins_proposals_{db_stem}.json"
+    pathlib.Path(DATA_DIR).mkdir(parents=True, exist_ok=True)
+
+    payload = {
+        "schema_version":   1,
+        "generated_at_iso": datetime.now(timezone.utc).isoformat(),
+        "db_file":          str(pathlib.Path(db_path).resolve()),
+        "script_version":   SCRIPT_VERSION,
+        "results": [
+            {
+                "character_id":       r["character_id"],
+                "primary_name":       r["primary_name"],
+                "nationality":        r["nationality"],
+                "basis":              r["basis"],
+                "evidence":           r["evidence"],
+                "action":             r["action"],
+                "error_msg":          r.get("error_msg"),
+                "downgraded":         r.get("downgraded", False),
+                "current_nationality": r.get("current_nationality"),
+            }
+            for r in results
+        ],
+    }
+
+    with open(out_path, "w", encoding="utf-8") as f:
+        json.dump(payload, f, indent=2, ensure_ascii=False)
+    print(f"  Proposals written to: {out_path}")
+    return out_path
+
+
+def commit_from_proposals(proposals_path, db_path, allow_db_mismatch=False):
+    """Apply a saved dry-run proposals file to the target database.
+
+    Does NOT call the API.  For each result with action=='would_write',
+    re-reads the CURRENT nationality from the target database (the JSON's
+    current_nationality is a snapshot from dry-run time and must not be
+    trusted), then writes only if the value is still a placeholder.
+
+    Appends written results to data/origins_resolved.csv, same as the
+    existing --commit path.
+    """
+    # ── Read and validate proposals file ──────────────────────────────────────
+    p = pathlib.Path(proposals_path).resolve()
+    if not p.exists():
+        sys.exit(f"\nERROR: proposals file not found: {p}")
+
+    try:
+        with open(p, "r", encoding="utf-8") as f:
+            proposals = json.load(f)
+    except json.JSONDecodeError as exc:
+        sys.exit(f"\nERROR: proposals file is not valid JSON: {exc}")
+
+    schema_version = proposals.get("schema_version")
+    if schema_version != 1:
+        sys.exit(
+            f"\nERROR: unrecognised proposals schema_version={schema_version!r}.  "
+            f"This script supports only version 1."
+        )
+
+    # ── db_file validation ────────────────────────────────────────────────────
+    proposals_db = proposals.get("db_file", "")
+    target_db    = str(pathlib.Path(db_path).resolve())
+    if proposals_db != target_db:
+        mismatch_detail = (
+            f"  proposals db_file : {proposals_db}\n"
+            f"  --db target       : {target_db}"
+        )
+        if not allow_db_mismatch:
+            sys.exit(
+                f"\nERROR: db_file in proposals does not match --db.\n"
+                f"{mismatch_detail}\n"
+                f"  Pass --allow-db-mismatch to override (e.g. if the database\n"
+                f"  was moved or renamed since the dry-run was run)."
+            )
+        print(f"WARNING: db_file mismatch (--allow-db-mismatch set):\n"
+              f"{mismatch_detail}")
+
+    # ── Filter to writable results ────────────────────────────────────────────
+    all_results = proposals.get("results", [])
+    writable    = [r for r in all_results if r.get("action") == "would_write"]
+    generated   = proposals.get("generated_at_iso", "(unknown)")
+
+    print()
+    print(_SEP2)
+    print("  PHASE 2 — COMMIT FROM PROPOSALS  (no API calls)")
+    print(f"  Proposals file : {p}")
+    print(f"  Generated at   : {generated}")
+    print(f"  Total results  : {len(all_results)}")
+    print(f"  Would-write    : {len(writable)}")
+    print(f"  Target db      : {target_db}")
+    print(_SEP2)
+    print()
+
+    if not writable:
+        print("  Nothing to write — no would_write entries in proposals.")
+        return
+
+    # ── Backup + write ────────────────────────────────────────────────────────
+    take_backup(db_path)
+    print()
+
+    conn          = open_db_rw(db_path)
+    written_results = []
+    try:
+        written = 0
+        for r in writable:
+            cid = r["character_id"]
+            pn  = r["primary_name"]
+            nat = r["nationality"]
+
+            # Re-read the CURRENT nationality — the JSON snapshot is stale.
+            row = conn.execute(
+                "SELECT nationality FROM characters WHERE character_id = ?",
+                (cid,),
+            ).fetchone()
+
+            if row is None:
+                print(f"  WARN: character_id={cid}  \"{pn}\"  "
+                      f"not found in DB — skipped")
+                continue
+
+            if not is_placeholder(row["nationality"]):
+                print(f"  ALREADY HAS REAL VALUE: character_id={cid}  "
+                      f"\"{pn}\"  current={row['nationality']!r}  "
+                      f"proposed={nat!r}  — skipped")
+                continue
+
+            old = row["nationality"]
+            conn.execute(
+                "UPDATE characters SET nationality = ? WHERE character_id = ?",
+                (nat, cid),
+            )
+            print(f"  WRITTEN: character_id={cid}  \"{pn}\"  "
+                  f"{old!r}  →  {nat!r}")
+            written_results.append(dict(r, action="write"))
+            written += 1
+
+        conn.commit()
+    except Exception as exc:
+        conn.rollback()
+        conn.close()
+        sys.exit(
+            f"\nERROR during write: {exc}\n"
+            f"All changes rolled back.  Database is unchanged."
+        )
+    conn.close()
+
+    print(f"\n  {written} nationality value(s) written.")
+
+    # ── Append to cross-book CSV record ───────────────────────────────────────
+    if written_results:
+        append_resolved_csv(db_path, written_results)
+
+    # ── Summary ───────────────────────────────────────────────────────────────
+    print()
+    print(_SEP)
+    print("  COMMIT-FROM-PROPOSALS SUMMARY")
+    print(_SEP)
+    print(f"  {'ID':>6}  {'Name':<30}  {'Nationality':<22}  {'Basis':<15}  Action")
+    print(_SEP)
+    written_ids = {r["character_id"] for r in written_results}
+    for r in writable:
+        nat_label    = r["nationality"] or "(not_stated)"
+        action_label = "write" if r["character_id"] in written_ids else "skipped"
+        print(f"  {r['character_id']:>6}  {r['primary_name']:<30}  "
+              f"{nat_label:<22}  {r['basis']:<15}  {action_label}")
+    print(_SEP)
+    print()
+
+
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 def main():
@@ -822,8 +1102,17 @@ def main():
              "Defaults to db/wot.db.",
     )
     ap.add_argument(
-        "--ids", required=True, metavar="ID[,ID,...]",
-        help="Comma-separated character_ids to process, e.g. --ids 26,138,163.",
+        "--ids", metavar="ID[,ID,...]", default=None,
+        help="Comma-separated character_ids to process.  Required for dry-run "
+             "and --gather-only / --commit.  Not used with --commit-from-proposals.",
+    )
+    ap.add_argument(
+        "--book", metavar="SERIES_ORDER", type=int, default=None,
+        help="Restrict gather to a single book's chapters (e.g. --book 3 "
+             "limits to The Dragon Reborn's text only).  Without this flag, "
+             "all chapters in the database are searched.  Useful for per-book "
+             "DBs where earlier books' text was already processed in a prior "
+             "resolver pass.",
     )
     ap.add_argument(
         "--gather-only", action="store_true",
@@ -835,16 +1124,55 @@ def main():
         help="Write resolved nationalities to the database.  Without --commit "
              "the resolve phase is a dry-run that prints proposed changes only.",
     )
+    ap.add_argument(
+        "--commit-from-proposals", metavar="PATH", dest="commit_from_proposals",
+        help="Read a saved dry-run proposals JSON and apply the would_write "
+             "entries to the database WITHOUT calling the API.  Requires --db.",
+    )
+    ap.add_argument(
+        "--allow-db-mismatch", action="store_true", dest="allow_db_mismatch",
+        help="When using --commit-from-proposals, allow the db_file recorded "
+             "in the proposals to differ from --db (e.g. if the database was "
+             "moved since the dry-run).",
+    )
     args = ap.parse_args()
 
-    # ── Mutual-exclusion guard ────────────────────────────────────────────────
+    # ── Mutual-exclusion guards ───────────────────────────────────────────────
     if args.commit and args.gather_only:
         sys.exit("ERROR: --commit and --gather-only cannot be used together.")
+    if args.commit and args.commit_from_proposals:
+        sys.exit(
+            "ERROR: --commit and --commit-from-proposals cannot be used together."
+        )
+    if args.gather_only and args.commit_from_proposals:
+        sys.exit(
+            "ERROR: --gather-only and --commit-from-proposals cannot be used together."
+        )
 
     # ── Resolve DB path ───────────────────────────────────────────────────────
     db_path = args.db if args.db is not None else DB_PATH
 
-    # ── Parse --ids ───────────────────────────────────────────────────────────
+    # ── --commit-from-proposals path (no gather, no API) ─────────────────────
+    if args.commit_from_proposals:
+        if args.db is None:
+            sys.exit(
+                "ERROR: --commit-from-proposals requires --db so we know which "
+                "database to write to.  The proposals file's db_file is used only "
+                "for validation, not as the implicit target."
+            )
+        commit_from_proposals(
+            args.commit_from_proposals,
+            db_path,
+            allow_db_mismatch=args.allow_db_mismatch,
+        )
+        return
+
+    # ── --ids is required for every non-commit-from-proposals mode ───────────
+    if args.ids is None:
+        sys.exit(
+            "ERROR: --ids is required.  Provide comma-separated character_ids, "
+            "e.g. --ids 26,138,163."
+        )
     try:
         ids = [int(x.strip()) for x in args.ids.split(",") if x.strip()]
     except ValueError:
@@ -856,14 +1184,14 @@ def main():
 
     # ── Phase 1: GATHER ───────────────────────────────────────────────────────
     conn                  = open_db_ro(db_path)
-    bundle, chapter_texts = run_gather(conn, ids, db_path)
+    bundle, chapter_texts = run_gather(conn, ids, db_path, book_series_order=args.book)
     conn.close()
 
     if args.gather_only:
         print("--gather-only set: stopping after Phase 1.  No API calls made.")
         return
 
-    # ── Phase 2: RESOLVE ──────────────────────────────────────────────────────
+    # ── Phase 2: RESOLVE (dry-run writes proposals; --commit writes DB) ───────
     run_resolve(bundle, chapter_texts, db_path, dry_run=not args.commit)
 
 

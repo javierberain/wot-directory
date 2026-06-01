@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "generated_at_iso": "2026-05-31T11:10:30.108837+00:00",
+  "db_file": "C:\\Users\\javie\\OneDrive\\Documents\\Dev_projects\\wot-directory\\db\\wot_book2.db",
+  "script_version": "1.0",
+  "results": [
+    {
+      "character_id": 92,
+      "primary_name": "Bayle Domon",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": "unknown"
+    },
+    {
+      "character_id": 297,
+      "primary_name": "Alar",
+      "nationality": null,
+      "basis": "—",
+      "evidence": "",
+      "action": "error",
+      "error_msg": "Expecting ',' delimiter: line 1 column 60 (char 59)",
+      "downgraded": false,
+      "current_nationality": null
+    },
+    {
+      "character_id": 295,
+      "primary_name": "Juin",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": true,
+      "current_nationality": null
+    }
+  ]
+}

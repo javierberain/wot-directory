@@ -1,0 +1,823 @@
+{
+  "schema_version": 1,
+  "generated_at_iso": "2026-06-01T16:16:36.784692+00:00",
+  "db_file": "C:\\Users\\javie\\OneDrive\\Documents\\Dev_projects\\wot-directory\\db\\wot_book3.db",
+  "script_version": "1.0",
+  "results": [
+    {
+      "character_id": 77,
+      "primary_name": "Bornhald",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": "unknown"
+    },
+    {
+      "character_id": 95,
+      "primary_name": "Elyas Machera",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": "unknown"
+    },
+    {
+      "character_id": 110,
+      "primary_name": "Byar",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": "unknown"
+    },
+    {
+      "character_id": 111,
+      "primary_name": "Dain",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": "unknown"
+    },
+    {
+      "character_id": 129,
+      "primary_name": "Elaida",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": null
+    },
+    {
+      "character_id": 158,
+      "primary_name": "Elder Arent",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": null
+    },
+    {
+      "character_id": 161,
+      "primary_name": "Sheriam Sedai",
+      "nationality": "Saldaea",
+      "basis": "explicit",
+      "evidence": "The Mistress of Novices was a slightly plump woman, with the high cheekbones that were common in Saldaea.",
+      "action": "would_write",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": "unknown",
+      "manual_edits": [
+        {
+          "edited_at": "2026-06-01T16:24:49.137601+00:00",
+          "field": "nationality",
+          "from": "Saldaean",
+          "to": "Saldaea",
+          "rationale": "Style: place name not demonym per new compound-hierarchy convention."
+        }
+      ]
+    },
+    {
+      "character_id": 199,
+      "primary_name": "Anaiya",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": "unknown"
+    },
+    {
+      "character_id": 201,
+      "primary_name": "Leane",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": "unknown"
+    },
+    {
+      "character_id": 202,
+      "primary_name": "Verin Mathwin",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": "unknown"
+    },
+    {
+      "character_id": 203,
+      "primary_name": "Serafelle",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": "unknown"
+    },
+    {
+      "character_id": 205,
+      "primary_name": "Alanna Mosvani",
+      "nationality": "Arafel",
+      "basis": "explicit",
+      "evidence": "Alanna is Arafellin. They have strange ideas about honor and debts in Arafel.",
+      "action": "would_write",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": "unknown",
+      "manual_edits": [
+        {
+          "edited_at": "2026-06-01T16:24:49.137791+00:00",
+          "field": "nationality",
+          "from": "Arafellin",
+          "to": "Arafel",
+          "rationale": "Style: place name not demonym per new compound-hierarchy convention."
+        }
+      ]
+    },
+    {
+      "character_id": 207,
+      "primary_name": "Pedron Niall",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": "unknown"
+    },
+    {
+      "character_id": 208,
+      "primary_name": "Einor Saren",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": "unknown"
+    },
+    {
+      "character_id": 209,
+      "primary_name": "Jaichim Carridin",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": "unknown"
+    },
+    {
+      "character_id": 210,
+      "primary_name": "Eamon Valda",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": "unknown"
+    },
+    {
+      "character_id": 227,
+      "primary_name": "Alviarin",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": "unknown"
+    },
+    {
+      "character_id": 245,
+      "primary_name": "Jaem",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": null
+    },
+    {
+      "character_id": 246,
+      "primary_name": "Myrelle",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": "unknown"
+    },
+    {
+      "character_id": 255,
+      "primary_name": "Else Grinwell",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": "unknown"
+    },
+    {
+      "character_id": 265,
+      "primary_name": "Aludra",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": "unknown"
+    },
+    {
+      "character_id": 266,
+      "primary_name": "Tammuz",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": "unknown"
+    },
+    {
+      "character_id": 271,
+      "primary_name": "Jeral",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": "unknown"
+    },
+    {
+      "character_id": 316,
+      "primary_name": "Sharbon",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": null
+    },
+    {
+      "character_id": 322,
+      "primary_name": "the white-haired man",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": null
+    },
+    {
+      "character_id": 335,
+      "primary_name": "the strange man",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": "unknown"
+    },
+    {
+      "character_id": 336,
+      "primary_name": "Faolain",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": null
+    },
+    {
+      "character_id": 337,
+      "primary_name": "Theodrin",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": null
+    },
+    {
+      "character_id": 338,
+      "primary_name": "Marris",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": null
+    },
+    {
+      "character_id": 339,
+      "primary_name": "apple-cheeked Accepted",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": null
+    },
+    {
+      "character_id": 341,
+      "primary_name": "pale-haired novice",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": null
+    },
+    {
+      "character_id": 343,
+      "primary_name": "Coulin",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": null
+    },
+    {
+      "character_id": 345,
+      "primary_name": "Brendas",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": null
+    },
+    {
+      "character_id": 350,
+      "primary_name": "Joiya",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": null
+    },
+    {
+      "character_id": 352,
+      "primary_name": "Beldeine",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": null
+    },
+    {
+      "character_id": 353,
+      "primary_name": "Gyldan",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": null
+    },
+    {
+      "character_id": 354,
+      "primary_name": "Hammar",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": null
+    },
+    {
+      "character_id": 355,
+      "primary_name": "Jearom",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": null
+    },
+    {
+      "character_id": 356,
+      "primary_name": "Amico Nagoyin",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": "unknown"
+    },
+    {
+      "character_id": 357,
+      "primary_name": "Rianna",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": "unknown"
+    },
+    {
+      "character_id": 358,
+      "primary_name": "Chesmal Emry",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": "unknown"
+    },
+    {
+      "character_id": 359,
+      "primary_name": "Marillin Gemalphin",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": null
+    },
+    {
+      "character_id": 361,
+      "primary_name": "Joiya Byir",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": "unknown"
+    },
+    {
+      "character_id": 362,
+      "primary_name": "Silvie",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": "unknown"
+    },
+    {
+      "character_id": 363,
+      "primary_name": "Laras",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": null
+    },
+    {
+      "character_id": 365,
+      "primary_name": "Mada",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": null
+    },
+    {
+      "character_id": 366,
+      "primary_name": "Saal",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": null
+    },
+    {
+      "character_id": 372,
+      "primary_name": "Sanor",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": "unknown"
+    },
+    {
+      "character_id": 373,
+      "primary_name": "Vasa",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": "unknown"
+    },
+    {
+      "character_id": 374,
+      "primary_name": "the dockmaster",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": "unknown"
+    },
+    {
+      "character_id": 375,
+      "primary_name": "Samon",
+      "nationality": "Tear",
+      "basis": "title",
+      "evidence": "High Lord Samon",
+      "action": "would_write",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": null,
+      "manual_edits": [
+        {
+          "edited_at": "2026-06-01T16:24:49.137968+00:00",
+          "field": "nationality",
+          "from": "Tairen",
+          "to": "Tear",
+          "rationale": "Style: place name not demonym. Note: 'High Lord Samon' is Be'lal's disguise persona; per book-3 reader perspective, Samon is presented as a High Lord of Tear so 'Tear' is the book-3-view origin."
+        }
+      ]
+    },
+    {
+      "character_id": 377,
+      "primary_name": "Orban",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": "unknown"
+    },
+    {
+      "character_id": 378,
+      "primary_name": "Gann",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": "unknown"
+    },
+    {
+      "character_id": 386,
+      "primary_name": "Jaim Adarra",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": null
+    },
+    {
+      "character_id": 390,
+      "primary_name": "Bennae",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": "unknown"
+    },
+    {
+      "character_id": 397,
+      "primary_name": "Adden",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": null
+    },
+    {
+      "character_id": 398,
+      "primary_name": "Coke",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": null
+    },
+    {
+      "character_id": 407,
+      "primary_name": "Jeral Florry",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": null
+    },
+    {
+      "character_id": 410,
+      "primary_name": "Adine",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": null
+    },
+    {
+      "character_id": 411,
+      "primary_name": "the dark-eyed girl",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": null
+    },
+    {
+      "character_id": 414,
+      "primary_name": "Lord Gaebril",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": "unknown"
+    },
+    {
+      "character_id": 415,
+      "primary_name": "Comar",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": "unknown"
+    },
+    {
+      "character_id": 418,
+      "primary_name": "Captain Canin",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": null
+    },
+    {
+      "character_id": 423,
+      "primary_name": "Captain Derne",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": null
+    },
+    {
+      "character_id": 427,
+      "primary_name": "Jalanda",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": null
+    },
+    {
+      "character_id": 428,
+      "primary_name": "Moilin",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": null
+    },
+    {
+      "character_id": 432,
+      "primary_name": "Ravhin",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": null
+    },
+    {
+      "character_id": 434,
+      "primary_name": "Boanne",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": null
+    },
+    {
+      "character_id": 435,
+      "primary_name": "the man in dark velvets",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": null
+    },
+    {
+      "character_id": 436,
+      "primary_name": "the beautiful woman",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": null
+    },
+    {
+      "character_id": 437,
+      "primary_name": "the scar-faced man",
+      "nationality": null,
+      "basis": "not_stated",
+      "evidence": "",
+      "action": "not_stated",
+      "error_msg": null,
+      "downgraded": false,
+      "current_nationality": "unknown"
+    }
+  ],
+  "manual_edit_log": [
+    {
+      "edited_at": "2026-06-01T16:24:49.138148+00:00",
+      "edits_count": 3,
+      "note": "Style normalization: demonyms -> place names per new compound-hierarchy convention. Samon: accepted Tairen->Tear per book-3 reader view of the disguise persona."
+    }
+  ]
+}
