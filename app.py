@@ -16,9 +16,9 @@ All data endpoints accept ?book=N to select the spoiler boundary.  Missing,
 non-numeric, or unavailable values collapse to the EARLIEST available book
 (never the latest), so the guard fails closed by design.
 
-wot.db is the ingestion target for book-4 work and is never served.  Each
-wot_bookN.db is a frozen snapshot of the directory after book N was cleaned;
-data from later books is physically absent from earlier snapshots.
+Private db/wot*.db files are ingestion/cleanup artifacts and are never served.
+The public website reads sanitized public_db/wot_bookN.db snapshots generated
+by scripts/export_public_dbs.py.
 
 Run:
     python app.py
@@ -29,20 +29,37 @@ import sqlite3
 
 from flask import Flask, g, jsonify, render_template, request
 
-_DB_DIR = os.path.join(os.path.dirname(__file__), "db")
+_PUBLIC_DB_DIR = os.path.join(os.path.dirname(__file__), "public_db")
+_EXPORT_COMMAND = "python scripts/export_public_dbs.py"
 
-# Snapshot files served by the web app.  Register a new entry here once
-# book N is fully cleaned and snapshotted to db/wot_bookN.db.
-# wot.db is intentionally absent — it is the ingestion target, not a snapshot.
+# Sanitized snapshot files served by the web app. Register a new entry here
+# once book N is fully cleaned, snapshotted, and exported to public_db/.
 BOOKS_DB = {
-    1: os.path.join(_DB_DIR, "wot_book1.db"),
-    2: os.path.join(_DB_DIR, "wot_book2.db"),
-    3: os.path.join(_DB_DIR, "wot_book3.db"),
+    1: os.path.join(_PUBLIC_DB_DIR, "wot_book1.db"),
+    2: os.path.join(_PUBLIC_DB_DIR, "wot_book2.db"),
+    3: os.path.join(_PUBLIC_DB_DIR, "wot_book3.db"),
 }
 
-# Only books whose snapshot file actually exists on disk can be served.
+# Only books whose public snapshot file actually exists on disk can be served.
 # This list is computed once at startup so a missing file can never be served.
 AVAILABLE_BOOKS = sorted(n for n, path in BOOKS_DB.items() if os.path.exists(path))
+MISSING_PUBLIC_DBS = [
+    path for path in BOOKS_DB.values()
+    if not os.path.exists(path)
+]
+
+
+def _missing_public_db_message():
+    missing = "\n".join(f"  - {path}" for path in MISSING_PUBLIC_DBS)
+    return (
+        "Missing expected sanitized public database snapshot(s):\n"
+        f"{missing}\n"
+        f"Run `{_EXPORT_COMMAND}` from the project root to regenerate them."
+    )
+
+
+if MISSING_PUBLIC_DBS:
+    raise RuntimeError(_missing_public_db_message())
 
 
 def _load_available_books_info():
@@ -104,7 +121,14 @@ def db():
         raise RuntimeError("No snapshot database files are available.")
     attr = f"_db_{book}"
     if not hasattr(g, attr):
-        conn = sqlite3.connect(BOOKS_DB[book])
+        db_path = BOOKS_DB[book]
+        if not os.path.exists(db_path):
+            raise RuntimeError(
+                "Sanitized public database snapshot is missing at runtime:\n"
+                f"  - {db_path}\n"
+                f"Run `{_EXPORT_COMMAND}` from the project root to regenerate it."
+            )
+        conn = sqlite3.connect(db_path)
         conn.row_factory = sqlite3.Row
         conn.execute("PRAGMA foreign_keys = ON")
         setattr(g, attr, conn)
@@ -378,9 +402,8 @@ def graph():
 
 if __name__ == "__main__":
     if not AVAILABLE_BOOKS:
-        print("Warning: no snapshot database files found in db/.")
-        print("Expected: db/wot_book1.db, db/wot_book2.db, ...")
-        print("Snapshot a finished book first:  cp db/wot.db db/wot_bookN.db")
-        print("Then register the new file in BOOKS_DB at the top of app.py.")
+        print("Warning: no sanitized public snapshot database files found in public_db/.")
+        print("Expected: public_db/wot_book1.db, public_db/wot_book2.db, ...")
+        print(f"Run: {_EXPORT_COMMAND}")
     debug = os.environ.get("FLASK_DEBUG", "").lower() in {"1", "true", "yes", "on"}
     app.run(debug=debug, port=5000)
