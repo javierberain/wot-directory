@@ -56,9 +56,12 @@ shown differently in the UI.
 - **`characters.character_type`** is the species (`human`, `ogier`,
   `trolloc`, `myrddraal`, `horse`, `wolf`, `other`). Default `human`.
   This used to be wrongly stuffed into the free-text `nationality`
-  field, which now only ever holds an in-world human nationality
-  (Andoran, Cairhienin, Aiel, Two Rivers…). See Design Decisions for
-  why this exact set of values matters and where it must be kept in sync.
+  field, which now only ever holds an in-world origin label in the
+  canonical style (`Andor`, `Cairhien`, `Aiel`, `Two Rivers, Andor`,
+  `Stedding Shangtai`, `Maule, Tear`, …). See **Nationality
+  conventions** under Design Decisions for the style rules, and the
+  notes below on why the `character_type` value set must be kept in
+  sync across three files.
 - **`characters.personality`** is a stable disposition — Mat as
   reluctant and gambling-prone, Nynaeve as stubborn. Enriched the same
   way as other stable traits: filled when empty, never overwritten.
@@ -162,6 +165,73 @@ reconciler silently coerces to `other`, losing data without any error.
 A mismatch between the validator and the schema raises a constraint
 violation at commit time and aborts the reconcile run. Update all three
 together, or not at all.
+
+### Nationality conventions
+
+The `characters.nationality` field follows a strict style so it stays
+filterable and matches across rows. The rules:
+
+- **Place names, not demonyms.** `Andor` not `Andoran`. `Cairhien` not
+  `Cairhienin`. `Tear` not `Tairen`. `Saldaea` not `Saldaean`. The
+  reason is consistency: every demonym maps to exactly one place name,
+  but a free choice of either form across rows breaks grouping ("show
+  me all Andor people" misses everyone labelled `Andoran`).
+- **Compound hierarchy for sub-national locations.** When the text
+  identifies a character with a specific village or district, the value
+  becomes `Village, Region, Nation` (`Emond's Field, Two Rivers,
+  Andor`) or `District, Nation` (`Maule, Tear`). Two Rivers villagers
+  identified only at the regional level become `Two Rivers, Andor`.
+  Bare town names get expanded with the nation
+  (`Baerlon, Andor`, `Whitebridge, Andor`, `Lugard, Murandy`).
+- **No parentheticals, no hedges.** No `(presumably)`, no
+  `(historical)`, no `(from context)`, no `(by father) / (by
+  upbringing)`. If the textual evidence is too weak to assert an
+  origin, the field is NULL. If the evidence is strong enough to assert
+  it, no hedge is needed.
+- **Peoples vs places.** For groups whose identity is itself the
+  origin, the bare group name is canonical: `Aiel`, `Tuatha'an`,
+  `Atha'an Miere` (the Sea Folk's own name for themselves). For Ogier,
+  origin is their stedding: `Stedding Shangtai`, `Stedding Tsofu`.
+  Never `Ogier` as a nationality — that's the species, captured
+  separately in `character_type`.
+- **Historical-place epithets are kept.** Characters identified by
+  text as "X of Y" (Buad of Albhain, Rosel of Essam) retain `Y` as
+  their origin even when `Y` is a destroyed nation, an Age of Legends
+  location, or a place not on the current map. The text-named place
+  is the canonical answer.
+
+These rules were established over the course of cleaning books one
+through three. Every deviation from this style across the corpus was
+normalized in a single audit pass (see `data/origins_scrubbed.csv`
+for the per-row audit trail).
+
+### Disguise / true-identity architecture
+
+Some characters appear in book three under one identity that is later
+revealed to be a disguise for a known character (Lord Brend is
+Sammael; Samon is Be'lal; Ba'alzamon is Ishamael / Elan Morin
+Tedronai). The directory keeps **the disguise and the true identity as
+separate character rows**, because at the per-book spoiler boundary
+they *are* different entities from the reader's perspective. A book-3
+reader who meets Lord Brend in Illian and Sammael through Min's
+vision is having two distinct encounters; collapsing them into one row
+in `wot_book3.db` would erase that distinction.
+
+Two consequences follow:
+
+- **Cross-aliases between the rows are deleted.** If the Sammael row
+  carries `Lord Brend` as an alias, a profile lookup on Sammael
+  reveals the disguise. The `Lord Brend` alias lives only on its own
+  row. Same for `Samon` on Be'lal, `Ba'alzamon` etc. on Elan Morin
+  Tedronai. These cross-aliases are treated as spoiler-leaks and
+  removed.
+- **In-world confusion that the text preserves is kept.** Where
+  mortals genuinely conflate the figures (Ba'alzamon's mortals calling
+  him "the Dark One"), those aliases stay on the row the mortals see,
+  because the confusion is canon. The cleanup rule is: cross-aliases
+  going *from true-identity row to disguise row* are spoiler-leaks
+  (delete); cross-aliases going *from disguise row to true-identity
+  name* are in-world deception artifacts (keep).
 
 ### Groups are never characters
 
@@ -323,6 +393,36 @@ surface, recorded here so the reasoning is not lost:
   deliberately kept as separate rows because they are separate entities
   in series canon. Collapsing them would corrupt every later book.
 
+### Book two identity rulings
+
+- **Origin pass via manual extraction and the API resolver.** Fifteen
+  origins were resolved during book two cleanup: eight forward-carried
+  from book one's resolved-origins CSV (Lan, Loial, Moiraine, Padan
+  Fain, Agelmar, the Tinkers, Logain, Elder Haman), four resolved by
+  manual text extraction (Bayle Domon → Illian; Alar, Juin →
+  Stedding Tsofu; Moiraine → Cairhien from "Royal Palace of Cairhien"
+  in Bk2 Ch4), and three by the API resolver (Erith → Stedding Tsofu;
+  Padan Fain → Lugard, Murandy; Siuan Sanche → Tear).
+- **Leane was not Tairen.** The resolver initially proposed `Tairen`
+  for Leane on the basis of an institutional citation that actually
+  referred to Siuan Sanche. The proposal was rejected and Leane left
+  at NULL. The general rule: institutional or rank-based citations
+  ("the Amyrlin Seat said…") are never personal origin evidence even
+  when the speaker has a nationality, because the institution can be
+  held by anyone.
+- **Whitecloaks left unresolved.** Whitecloaks have an order
+  membership but no consistent textual origin. Faction membership
+  doesn't establish nationality (rule from the resolver prompt and the
+  Nationality conventions section), so Whitecloak rows whose origins
+  the text doesn't state are left NULL.
+- **Three character restorations from the live ingestion DB.** Three
+  characters that the book-one hygiene audit had deleted ("the
+  scar-faced man", "the weaselly man", "the Amyrlin Seat") turned out
+  to be real recurring characters. They were restored from the live
+  ingestion DB into the book-two snapshot. The Amyrlin restoration
+  then revealed she was the same character as Siuan Sanche, so the
+  two rows were merged.
+
 ### Book three identity rulings
 
 - **Short-name merges.** "Jaret Byar" (book three prologue) merged into
@@ -354,6 +454,43 @@ surface, recorded here so the reasoning is not lost:
   the LLM advisory flagged for removal were kept after checking the
   text: "the woman with the dagger" (a real book-one Darkfriend) and the
   book-three "merchant woman" (a real figure the advisory missed).
+- **Structural-duplicate merges.** Four character merges folded
+  duplicate rows into their canonical counterparts: `Else` (cid 115)
+  → `Else Grinwell` (cid 255); `First of Mayene` (cid 429) →
+  `Berelain` (cid 433); `the caged Aiel` (cid 380) → `Gaul` (cid
+  382); `Shai'tan` (cid 53) → `the Dark One` (cid 176). The
+  Shai'tan / the Dark One merge required a prior `character_type`
+  fix on Shai'tan (`human` → `other`) so the merge tool's
+  cross-type safety check would pass. The remaining `Lews Therin
+  Telamon / Rand al'Thor`, `Mandarb (horse) / Zarine Bashere (Faile)`,
+  and `the Dark One / Elan Morin Tedronai` alias overlaps were
+  examined and **deliberately preserved** — they reflect real
+  in-world phenomena (past-life identity, Old Tongue dual-naming,
+  Ba'alzamon impersonation).
+- **Forsaken disguise alias purge.** Five aliases were deleted from
+  Forsaken true-identity rows that revealed their book-3 disguise
+  personas: `Lord Brend` from Sammael, `Samon` and `High Lord Samon`
+  from Be'lal, plus two earlier alias deletes from the same cleanup batch
+  (`Shai'tan` from Elan Morin Tedronai as a separate spoiler-leak;
+  a weaselly-man alias misattributed to Padan Fain). The disguise rows
+  themselves (Lord Brend cid 409, Samon cid 375) are kept as separate
+  characters — see Disguise / true-identity architecture under
+  Design Decisions.
+- **The Accepted stub.** Character cid 342 with `primary_name =
+  "Accepted"` was a rank-as-character extraction artifact: a single
+  Bk3 Ch15 walk-on of an unnamed Accepted hurrying along a White
+  Tower corridor. Row deleted along with its 3 dependents (one alias,
+  one appearance, one White Tower faction membership). Egwene retains
+  `Accepted` as a legitimate alias on her own row.
+- **Origin pass.** Eighteen origins were resolved on book three:
+  fifteen forward-carried from books one and two, three derived from
+  the `resolve_origins.py` API run on book-three-only text (Sheriam
+  Sedai → Saldaea via narrator-voice physical description; Alanna
+  Mosvani → Arafel via direct dialogue; Samon → Tear via the High
+  Lord title, which under the disguise architecture is the book-3
+  reader's view). The resolver was run with `--book 3` to avoid
+  re-deriving origins from books one and two text that had already
+  been processed.
 
 ## Setup
 
@@ -616,6 +753,235 @@ deleting a primary alias would leave its character unreachable by its
 canonical name. Aliases are a leaf table — nothing has a foreign key
 pointing at `alias_id` — so deletion is a single statement, not a
 cascade. Character rows are never modified.
+
+### restore_character.py
+
+A **cross-database restore** tool. Pulls a character (plus their
+aliases, appearances, relationships, and faction memberships) from one
+DB into another, preserving the character's per-book identity. Used
+when a cleanup pass on book N's snapshot accidentally deleted a row
+that turns out to be a real character — restore it from an earlier
+snapshot rather than re-running the extraction.
+
+```bash
+python scripts/restore_character.py \
+    --source db/wot_book2.db --target db/wot_book3.db \
+    --primary-name "the scar-faced man"
+```
+
+The script:
+
+1. Looks up the character in `--source` by exact `primary_name` match.
+   Errors out if not found, or if `--target` already has a row with
+   that primary name (use a merge tool for that).
+2. Writes a backup to `<target>.pre-restore-<safe-name>.bak`.
+3. Inserts a new character row into `--target` with a fresh
+   `character_id` (the source's id is not preserved — the target's
+   id space is its own).
+4. Reinserts all aliases, appearances, relationships, and faction
+   memberships, remapping `character_id` to the new id and matching
+   chapters by `(series_order, chapter_number)` so the appearances
+   land on the correct book-3 chapter rows.
+5. Reports a per-table count of restored rows.
+
+Two limitations worth knowing:
+
+- **The "already present" check is by `primary_name` only.** A
+  character with the same alias on a different primary-name row will
+  not be caught and the restore will succeed, creating two rows that
+  share an alias. The structural-duplicate scan
+  (see Database Maintenance) will surface this afterwards.
+- **`first_chapter_id`** is copied from source, which is fine when
+  source and target share a chapter id space (per-book snapshots are
+  built from the same ingestion DB) but breaks otherwise. Verify after
+  restore for non-snapshot targets.
+
+### merge_characters.py
+
+A **structural-duplicate merger**. Folds a duplicate character row
+into a canonical row, transferring aliases, appearances, relationships,
+and faction memberships with sensible deduplication. Used when the
+hygiene audit or a structural-duplicate scan finds two rows that are
+the same character (e.g. `Else` (cid 115) and `Else Grinwell` (cid
+255), or a B-row plus its named equivalent).
+
+```bash
+python scripts/merge_characters.py \
+    --target db/wot_book3.db \
+    --canonical "Else Grinwell" --duplicate "Else" \
+    --commit
+```
+
+Dry-run by default; `--commit` required to write. The script:
+
+1. **Refuses to merge across `character_type` boundaries.** Folding a
+   `human` row into an `other` row (or vice versa) is almost always a
+   sign that one row's type is wrong; the script fails closed so the
+   type can be corrected first. Update the duplicate's type with a
+   one-off SQL UPDATE, then retry the merge.
+2. Prints a full merge plan: which character-row fields will be
+   filled from the duplicate (only NULL/empty fields on the canonical
+   get filled; conflicts keep the canonical value), which aliases
+   will be inserted vs skipped (existing alias text on the canonical
+   is a skip), which appearances will be reassigned vs marked as
+   conflicts (canonical already has that chapter), which relationships
+   will be reassigned vs treated as dup-edges or self-loops, which
+   faction memberships will be reassigned vs deduplicated.
+3. On `--commit`, writes a backup
+   (`<db>.pre-merge-<canonical-safe-name>.bak`), runs every change in
+   a single transaction, then re-queries to verify counts match the
+   plan. Any mismatch rolls back.
+4. The duplicate row is deleted at the end. Its `character_id` is
+   gone; any external reference to it would be orphaned (none in this
+   codebase).
+
+Conflict semantics in plain terms:
+
+- **character row fields:** canonical wins. Duplicate's values are
+  only used to fill what canonical lacks.
+- **aliases:** union by text. No alias is added twice.
+- **appearances:** at most one row per `(character_id, chapter_id)`
+  is allowed by the schema, so a chapter that both rows appeared in
+  becomes a **conflict** — the duplicate's appearance row is deleted
+  rather than reassigned. The canonical's appearance is treated as
+  authoritative.
+- **relationships:** edges where canonical was already one party get
+  collapsed to avoid self-loops; edges where both rows already had the
+  same other-party get deduplicated as dup-edges.
+- **factions:** canonical's memberships win; duplicate memberships on
+  the same faction are deleted, distinct ones are reassigned.
+
+After a merge, the canonical's `first_chapter_id` is **not**
+recomputed. If the duplicate carried an earlier first chapter, the
+canonical's pointer is now stale relative to its appearances. This is
+a known minor inconsistency; in practice the UI falls back to the
+appearances table for chapter lookups so it doesn't surface to users.
+
+### carry_forward_origins.py
+
+A **forward-only origin propagator**. Reads an `origins_resolved.csv`
+audit file (see Audit-trail CSVs below) and writes the resolved
+nationality into a later-book snapshot DB for every character whose
+nationality there is still a placeholder. The point is that origins
+established in book 1 by extraction or audit should flow into the
+book 2 and book 3 snapshots without re-deriving them.
+
+```bash
+python scripts/carry_forward_origins.py \
+    --target db/wot_book3.db \
+    --from-csv data/origins_resolved.csv \
+    --commit
+```
+
+The "forward-only" rule is important: the script **never overwrites
+an existing non-placeholder value** in the target. A character whose
+book-3 nationality was already resolved by direct extraction is
+untouched; only placeholder rows (NULL, `unknown`, etc.) are
+considered. This preserves the per-book spoiler boundary — origins
+only flow from earlier books into later ones, never the other way.
+
+Dry-run by default; `--commit` writes. A backup is created
+(`<target>.pre-carry-forward.bak`) before any write. Each successful
+write is appended to the target's `origins_resolved.csv` audit row
+with the source DB recorded so the propagation chain is traceable.
+
+### resolve_origins.py
+
+A **two-phase origin resolver** for characters whose `nationality` is
+still a placeholder (`NULL`, `unknown`, etc.). The pipeline reads
+chapter text directly — no API call is needed for the gather phase —
+and uses Claude to derive nationality only when there is a text
+mention to derive from. Used after a book's ingestion is otherwise
+clean to recover origins the initial extraction missed.
+
+```bash
+# Phase 1: gather text passages for the candidate characters (free, no API)
+python scripts/resolve_origins.py --db db/wot_book3.db --book 3 \
+    --gather-only --ids 161,205,375,...
+
+# Phase 2 dry-run: API resolves, writes proposals JSON, no DB writes
+python scripts/resolve_origins.py --db db/wot_book3.db --book 3 \
+    --ids 161,205,375,...
+
+# Phase 2 commit: applies proposals, optionally after manual editing
+python scripts/resolve_origins.py --db db/wot_book3.db \
+    --commit-from-proposals data/origins_proposals_wot_book3.json
+```
+
+**Phase 1 — gather.** For each candidate `character_id`, the script
+runs a whole-word regex search (`\b<name>\b`, case-insensitive)
+across every chapter's `full_text`, using both the character's
+`primary_name` and every alias. Matches collect ~200 characters of
+surrounding context. The result is written to
+`data/origins_gather_<dbstem>.json` along with a summary table
+flagging noisy short names (e.g. "Jak" matches inside other words
+even with word boundaries on some patterns) and zero-match characters.
+No API calls.
+
+**Phase 2 — resolve.** For each character with gathered passages, the
+script sends the passages plus the character's name and titles to
+Claude with a strict prompt: derive nationality **only** from explicit
+origin statements or direct origin-naming titles in the supplied
+passages, never from rank, faction, or location-of-presence. The
+returned JSON `{nationality, evidence, basis}` is **verified by
+checking that the evidence phrase appears verbatim in the source
+chapter text**, not just in the windowed passage block (this catches
+fabricated citations and windowing false negatives). Verified
+proposals are written to `data/origins_proposals_<dbstem>.json` in
+dry-run mode; only `--commit` writes to the database.
+
+**Two-phase split lets you review before paying.** Common workflow:
+gather-only first to see what was found, then resolve-dry-run to get
+proposals, then hand-edit the proposals JSON for style or judgment
+calls (e.g. demonym → place name normalisations), then
+`--commit-from-proposals` to apply. The proposals file records every
+manual edit in its own `manual_edits` audit field so the hand-tuning
+is traceable.
+
+**The `--book SERIES_ORDER` flag** restricts the gather phase to a
+single book's chapters. For per-book DBs this is the right setting:
+earlier books' text was already processed in the previous resolver
+pass, and re-sending it just re-derives previously considered (and
+often rejected) proposals. Without `--book`, every chapter in the DB
+is searched — useful for the live ingestion DB where the full corpus
+should be in scope.
+
+**Safety envelope.** Dry-run by default; `--commit` required to
+write. Backup written (`<db>.pre-origins.bak`) before the first DB
+write. Only fills placeholder / NULL nationality; **never overwrites
+a real value** — the re-check happens inside the commit transaction,
+not just at gather time. Reads `chapters.full_text` only; never reads
+`data/extractions/*.json`. Does not use the appearances table —
+presence in a chapter is determined solely by text search, so
+characters whose appearance rows were missed by the original
+extraction are still considered.
+
+### Audit-trail CSVs
+
+Two append-only CSVs record every nationality write made by these
+tools, indexed by character and the target DB:
+
+- **`data/origins_resolved.csv`** — canonical record of resolved
+  origins. One row per (db_file, character_id) successful resolution,
+  with the resolved nationality, evidence phrase, and basis
+  (`explicit`, `title`). Written by `resolve_origins.py` on
+  `--commit` and by `carry_forward_origins.py` on each successful
+  propagation. This is the audit source for what `is in` the DB and
+  why.
+- **`data/origins_scrubbed.csv`** — audit trail of cleanup writes.
+  One row per write that **changed an existing value** (style
+  normalisation, hedge strip, scrub to NULL, structural-duplicate
+  fix). Written by hand-built batch scripts and one-off cleanup
+  passes. Columns: `db_file`, `character_id`, `primary_name`,
+  `old_value`, `new_value`, `rationale`. The `rationale` field is
+  free-text and should explain *why* the change was made (e.g.
+  "Phase 1 demonym normalization: place name not demonym per
+  compound-hierarchy convention.").
+
+The two CSVs deliberately serve different purposes. Resolved is "this
+is the canonical answer." Scrubbed is "we changed this from X to Y
+for these reasons." Together they reconstruct the full edit history
+without needing per-row DB triggers or a separate audit table.
 
 ## Adding the next book
 

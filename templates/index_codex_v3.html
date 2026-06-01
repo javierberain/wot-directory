@@ -755,6 +755,32 @@
       text-align: center;
       line-height: 1.35;
     }
+
+    .legal-footer {
+      max-width: 980px;
+      margin: 0 auto 1.5rem;
+      padding: 0.9rem 1.5rem;
+      position: relative;
+      z-index: 2;
+      color: rgba(28, 24, 20, 0.68);
+      font-size: 0.78rem;
+      line-height: 1.45;
+      text-align: center;
+    }
+
+    .legal-footer p {
+      padding-top: 0.85rem;
+      border-top: 1px solid var(--line);
+      background: rgba(255, 252, 244, 0.22);
+    }
+
+    @media (max-width: 600px) {
+      .legal-footer {
+        margin-bottom: 1rem;
+        padding: 0.75rem 1rem;
+        font-size: 0.74rem;
+      }
+    }
   </style>
 </head>
 
@@ -763,7 +789,7 @@
   <header>
     <div class="wheel"></div>
     <h1>The Pattern</h1>
-    <div class="tagline">a directory of souls woven through the Wheel of Time</div>
+    <div class="tagline">an unofficial directory of souls woven through the Wheel of Time</div>
     <div class="spoiler-guard">
       <label for="boundary-select">How far have you read?</label>
       <select id="boundary-select">
@@ -844,6 +870,12 @@
     </main>
 
   </div>
+
+  <footer class="legal-footer" aria-label="Legal disclaimer">
+    <p>The Pattern is an unofficial fan-made project for personal and educational use. The Wheel of Time and related
+      characters, places, concepts, and terminology are the property of their respective rights holders. This project is
+      not affiliated with, endorsed by, or sponsored by those rights holders.</p>
+  </footer>
 
   <script>
     const $ = s => document.querySelector(s);
