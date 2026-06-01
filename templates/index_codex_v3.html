@@ -950,9 +950,9 @@
         return;
       }
       $('#results').innerHTML = data.map(c => `
-    <div class="result" onclick="selectCharacter(${c.character_id})">
+    <div class="result" onclick="selectCharacter(${safeNumber(c.character_id)})">
       <div class="name">${escapeHtml(c.display_name || c.primary_name)}</div>
-      <div class="meta">${c.nationality || 'origin unknown'}</div>
+      <div class="meta">${escapeHtml(c.nationality || 'origin unknown')}</div>
     </div>`).join('');
     }
 
@@ -964,7 +964,8 @@
 
     // ---------- character profile ----------
     function escapeAttr(s) {
-      return (s || '').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+      return (s || '').replace(/&/g, '&amp;').replace(/"/g, '&quot;')
+        .replace(/</g, '&lt;').replace(/>/g, '&gt;');
     }
 
     function escapeHtml(s) {
@@ -972,7 +973,13 @@
         .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
     }
 
+    function safeNumber(value) {
+      const n = Number(value);
+      return Number.isFinite(n) ? n : 0;
+    }
+
     async function loadCharacter(cid) {
+      cid = safeNumber(cid);
       const res = await fetch('/api/character/' + cid + '?' + bookParam());
       const d = await res.json();
       if (d.error) return;
@@ -1071,7 +1078,7 @@
         }
         return appearances.map(a => `
       <div class="thread-card">
-        <div class="ch">Bk ${a.series_order}, Ch ${a.chapter_number}
+        <div class="ch">Bk ${escapeHtml(String(a.series_order))}, Ch ${escapeHtml(String(a.chapter_number))}
           &mdash; ${escapeHtml(a.chapter_title)}</div>
         ${a.whereabouts ? `<div class="where">${escapeHtml(a.whereabouts)}</div>` : ''}
         ${a.demeanor ? `<div class="demeanor">&ldquo;${escapeHtml(a.demeanor)}&rdquo;</div>` : ''}
@@ -1090,7 +1097,7 @@
           const chapters = chaptersForBook(all, bookValue);
           chapterSel.innerHTML = '<option value="">All chapters</option>' + chapters.map(ch => {
             const label = ch.chapter_number === 0 ? 'Prologue' : `Ch ${ch.chapter_number}`;
-            return `<option value="${ch.series_order}-${ch.chapter_number}">${label}: ${escapeHtml(ch.chapter_title)}</option>`;
+            return `<option value="${escapeAttr(String(ch.series_order))}-${escapeAttr(String(ch.chapter_number))}">${escapeHtml(label)}: ${escapeHtml(ch.chapter_title)}</option>`;
           }).join('');
           chapterSel.dataset.bookValue = bookValue;
           chapterValue = '';
@@ -1111,7 +1118,7 @@
       }
 
       const speciesChip = (c.character_type && c.character_type !== 'human')
-        ? `<span class="chip species">${humanType}</span>`
+        ? `<span class="chip species">${escapeHtml(humanType)}</span>`
         : '';
 
       const subtitleParts = [];
@@ -1141,7 +1148,7 @@
 
       const factionRows = (d.factions || []).length
         ? (d.factions || []).map(f => `
-        <div class="rel-item" onclick="loadFaction(${f.faction_id})">
+        <div class="rel-item" onclick="loadFaction(${safeNumber(f.faction_id)})">
           <div class="rel-main">
             <span class="rel-name">${escapeHtml(f.name)}</span>
             <span class="rel-badge ${f.role === 'leader' ? 'leader' : ''}">
@@ -1163,7 +1170,7 @@
           <select id="thread-book-${cid}" onchange="filterCharacterThread(${cid})">
             <option value="">All books</option>
             ${booksForThread.map(([order, title]) =>
-          `<option value="${order}">Bk ${order}: ${escapeHtml(title)}</option>`
+          `<option value="${escapeAttr(String(order))}">Bk ${escapeHtml(String(order))}: ${escapeHtml(title)}</option>`
         ).join('')}
           </select>
         </div>
@@ -1173,7 +1180,7 @@
             <option value="">All chapters</option>
             ${chaptersForBook(d.appearances || [], '').map(ch => {
           const label = ch.chapter_number === 0 ? 'Prologue' : `Ch ${ch.chapter_number}`;
-          return `<option value="${ch.series_order}-${ch.chapter_number}">Bk ${ch.series_order}, ${label}: ${escapeHtml(ch.chapter_title)}</option>`;
+          return `<option value="${escapeAttr(String(ch.series_order))}-${escapeAttr(String(ch.chapter_number))}">Bk ${escapeHtml(String(ch.series_order))}, ${escapeHtml(label)}: ${escapeHtml(ch.chapter_title)}</option>`;
         }).join('')}
           </select>
         </div>
@@ -1189,7 +1196,7 @@
 
       const rels = d.relationships.length
         ? d.relationships.map(r => `
-        <div class="rel-item" onclick="loadCharacter(${r.other_id})">
+        <div class="rel-item" onclick="loadCharacter(${safeNumber(r.other_id)})">
           <div class="rel-main">
             <span class="rel-name">${escapeHtml(r.other_name)}</span>
             <span class="rel-badge">${escapeHtml(r.type.replace('_', ' '))}</span>
@@ -1255,13 +1262,14 @@
 
     // ---------- faction view ----------
     async function loadFaction(fid) {
+      fid = safeNumber(fid);
       const res = await fetch('/api/faction/' + fid + '?' + bookParam());
       const d = await res.json();
       if (d.error) return;
       const f = d.faction;
       const members = d.members.length
         ? d.members.map(m => `
-        <div class="rel-item" onclick="loadCharacter(${m.character_id})">
+        <div class="rel-item" onclick="loadCharacter(${safeNumber(m.character_id)})">
           <div class="rel-main">
             <span class="rel-name">${escapeHtml(m.primary_name)}</span>
             <span class="rel-badge ${m.role === 'leader' ? 'leader' : ''}">${escapeHtml(m.role)}</span>
@@ -1270,9 +1278,9 @@
         </div>`).join('')
         : '<p class="hint">No members recorded yet.</p>';
       $('#profile-content').innerHTML = `
-    <div class="profile-name">${f.name}</div>
-    <p class="hint">faction type: ${f.faction_type}</p>
-    ${f.description ? `<p style="font-style:italic;">${f.description}</p>` : ''}
+    <div class="profile-name">${escapeHtml(f.name)}</div>
+    <p class="hint">faction type: ${escapeHtml(f.faction_type)}</p>
+    ${f.description ? `<p style="font-style:italic;">${escapeHtml(f.description)}</p>` : ''}
     <div class="section-title">Members</div>
     ${members}
   `;
@@ -1286,7 +1294,7 @@
       BOOKS = await (await fetch('/api/books?' + bookParam())).json();
       $('#book-select').innerHTML = '<option value="">&mdash; select &mdash;</option>'
         + BOOKS.map(b =>
-          `<option value="${b.book_id}">Bk ${b.series_order}: ${b.title}</option>`
+          `<option value="${escapeAttr(String(b.book_id))}">Bk ${escapeHtml(String(b.series_order))}: ${escapeHtml(b.title)}</option>`
         ).join('');
     }
     $('#book-select').addEventListener('change', e => {
@@ -1298,7 +1306,7 @@
           const n = c.chapter_number === 0 ? 'Prologue'
             : 'Ch ' + c.chapter_number;
           const mark = c.extracted ? '' : '  (not yet read)';
-          return `<option value="${c.chapter_id}">${n}: ${c.title}${mark}</option>`;
+          return `<option value="${escapeAttr(String(c.chapter_id))}">${escapeHtml(n)}: ${escapeHtml(c.title)}${mark}</option>`;
         }).join('');
     });
     $('#chapter-select').addEventListener('change', e => {
@@ -1306,6 +1314,7 @@
     });
 
     async function loadChapter(chid) {
+      chid = safeNumber(chid);
       const d = await (await fetch('/api/chapter/' + chid + '?' + bookParam())).json();
       if (d.error) return;
       const ch = d.chapter;
@@ -1313,22 +1322,22 @@
         ? d.characters.map(c => `
         <div class="appearance">
           <div class="ch" style="cursor:pointer;"
-               onclick="loadCharacter(${c.character_id})">${c.primary_name}
+               onclick="loadCharacter(${safeNumber(c.character_id)})">${escapeHtml(c.primary_name)}
             ${c.name_used && c.name_used !== c.primary_name
-            ? `<span class="where">(as &ldquo;${c.name_used}&rdquo;)</span>` : ''}
+            ? `<span class="where">(as &ldquo;${escapeHtml(c.name_used)}&rdquo;)</span>` : ''}
           </div>
-          ${c.whereabouts ? `<div class="where">${c.whereabouts}</div>` : ''}
-          ${c.demeanor ? `<div class="demeanor">&ldquo;${c.demeanor}&rdquo;</div>` : ''}
-          <div>${c.notable_actions || ''}</div>
+          ${c.whereabouts ? `<div class="where">${escapeHtml(c.whereabouts)}</div>` : ''}
+          ${c.demeanor ? `<div class="demeanor">&ldquo;${escapeHtml(c.demeanor)}&rdquo;</div>` : ''}
+          <div>${escapeHtml(c.notable_actions || '')}</div>
         </div>`).join('')
         : '<p class="hint">This chapter has not been read into the directory yet.</p>';
 
       $('#chapter-cast-content').innerHTML = `
     <div class="profile-name" style="font-size:1.7rem;">
-      ${ch.book_title}</div>
+      ${escapeHtml(ch.book_title)}</div>
     <div class="section-title">
-      ${ch.chapter_number === 0 ? 'Prologue' : 'Chapter ' + ch.chapter_number}
-      &mdash; ${ch.title}</div>
+      ${escapeHtml(ch.chapter_number === 0 ? 'Prologue' : 'Chapter ' + ch.chapter_number)}
+      &mdash; ${escapeHtml(ch.title)}</div>
     ${cast}`;
       showTab('chapter');
     }
@@ -1391,7 +1400,7 @@
       return [...seen.entries()].slice(0, 12).map(([k, c]) =>
         `<span style="display:inline-block;width:0.7rem;height:0.7rem;`
         + `background:${c};margin:0 0.25rem 0 0.6rem;vertical-align:middle;"></span>`
-        + k).join('');
+        + escapeHtml(k)).join('');
     }
 
     async function loadGraph() {
@@ -1478,7 +1487,7 @@
       $('#faction-select').innerHTML =
         '<option value="">— select faction —</option>' +
         FACTIONS.map(f =>
-          `<option value="${f.faction_id}">${escapeHtml(f.name)}</option>`
+          `<option value="${escapeAttr(String(f.faction_id))}">${escapeHtml(f.name)}</option>`
         ).join('');
     }
 

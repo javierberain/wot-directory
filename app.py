@@ -382,4 +382,5 @@ if __name__ == "__main__":
         print("Expected: db/wot_book1.db, db/wot_book2.db, ...")
         print("Snapshot a finished book first:  cp db/wot.db db/wot_bookN.db")
         print("Then register the new file in BOOKS_DB at the top of app.py.")
-    app.run(debug=True, port=5000)
+    debug = os.environ.get("FLASK_DEBUG", "").lower() in {"1", "true", "yes", "on"}
+    app.run(debug=debug, port=5000)
