@@ -99,8 +99,16 @@ class Roster:
         return self.exact.get(norm(name))
 
     def token_candidates(self, name):
-        """{cid: score} for known names in a token-subset relationship with
-        `name`, where at least one shared token is distinctive."""
+        """{cid: (distinctive_shared_count, score)} for known names in a
+        token-subset relationship with `name`.
+
+        A SINGLE shared distinctive token (a bare surname or given name) is NOT
+        a reliable match in either direction: "Dannil Lewin" vs the ancestral
+        "Lewin", or "Adan" vs "Governor Adan", are different people who merely
+        share a name. resolve_existing() therefore only auto-accepts when >=2
+        distinctive tokens are shared, or when the LLM pointer corroborates a
+        single-token candidate. The count is returned so it can make that call.
+        """
         toks = frozenset(norm(name).split())
         if not toks:
             return {}
@@ -110,11 +118,12 @@ class Roster:
                 continue
             if toks <= atoks or atoks <= toks:
                 shared = toks & atoks
-                if not any(_distinctive(t) for t in shared):
+                d = sum(1 for t in shared if _distinctive(t))
+                if d == 0:
                     continue
                 score = len(shared) / max(len(toks), len(atoks))
-                if score > cands.get(cid, 0.0):
-                    cands[cid] = score
+                pd, ps = cands.get(cid, (0, 0.0))
+                cands[cid] = (max(pd, d), max(ps, score))
         return cands
 
     def fuzzy(self, name):
@@ -149,18 +158,31 @@ class Roster:
         if cid is not None:
             return cid, "exact", None
 
-        cands = self.token_candidates(name)
-        if len(cands) == 1:
-            return next(iter(cands)), "token_subset", None
-        if len(cands) > 1:
-            return None, "ambiguous", cands
+        cands = self.token_candidates(name)   # cid -> (distinctive_shared, score)
+        strong = {c: v for c, v in cands.items() if v[0] >= 2}
+        weak = {c: v for c, v in cands.items() if v[0] == 1}
 
+        # >=2 shared distinctive tokens is a confident structural match.
+        if len(strong) == 1:
+            return next(iter(strong)), "token_subset", None
+        if len(strong) > 1:
+            return None, "ambiguous", {c: v[1] for c, v in strong.items()}
+
+        # A single shared token only counts if the LLM pointer corroborates it.
         if pointer:
             pcid = self.exact_match(pointer)
-            if pcid is not None and \
-                    self.pointer_similarity(name, pcid) >= POINTER_THRESHOLD:
+            if pcid is not None and (
+                    pcid in cands
+                    or self.pointer_similarity(name, pcid) >= POINTER_THRESHOLD):
                 return pcid, "llm_pointer", None
 
+        # Several different characters share the one token -> human decides.
+        if len(weak) > 1:
+            return None, "ambiguous", {c: v[1] for c, v in weak.items()}
+
+        # A lone single-token candidate with no pointer is not trusted: fall
+        # through so an is_new character is created separately rather than
+        # silently folded into a namesake.
         return None, "none", None
 
 
@@ -343,7 +365,11 @@ def resolve_one(conn, roster, char, data, chapter_id, auto):
 
     cid, method, cands = roster.resolve_existing(name, pointer)
 
-    if method == "ambiguous":
+    # Ambiguous token overlap only blocks when the LLM thinks the character is
+    # EXISTING (we just can't tell which). If the LLM says it's NEW, the shared
+    # token is coincidental (a new "Adine Lewin" vs the ancestral "Lewin") — fall
+    # through and create it rather than parking a brand-new character in review.
+    if method == "ambiguous" and not char.get("is_new_character"):
         names = ", ".join(
             f"{get_primary_name(conn, c)} ({s:.0%})" for c, s in cands.items())
         note = f"'{name}' token-matches multiple characters: {names}."
@@ -353,7 +379,7 @@ def resolve_one(conn, roster, char, data, chapter_id, auto):
 
     # An LLM pointer that pointed somewhere but failed the similarity check is
     # surfaced distinctly (suspicious_llm_match), matching the old behavior.
-    if cid is None and pointer:
+    if cid is None and pointer and not char.get("is_new_character"):
         pcid = roster.exact_match(pointer)
         if pcid is not None:
             score = roster.pointer_similarity(name, pcid)

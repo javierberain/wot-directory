@@ -106,6 +106,18 @@ def test_refine_keeps_more_specific_when_coarser_arrives():
     assert conflict is False
 
 
+def test_refine_region_only_is_not_a_conflict():
+    # The bug behind 189 false conflicts: "Two Rivers" (region, no nation) is a
+    # coarser reference to "Two Rivers, Andor", NOT a different place.
+    val, conflict = dr.refine_nationality("Two Rivers, Andor", "Two Rivers")
+    assert val == "Two Rivers, Andor"
+    assert conflict is False
+    # and the region-first refinement still upgrades
+    val2, c2 = dr.refine_nationality(
+        "Two Rivers", "Emond's Field, Two Rivers, Andor")
+    assert val2 == "Emond's Field, Two Rivers, Andor" and c2 is False
+
+
 def test_refine_flags_conflict_on_different_nation():
     val, conflict = dr.refine_nationality("Andor", "Tear")
     assert val == "Andor"

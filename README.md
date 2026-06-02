@@ -6,9 +6,12 @@ and an interactive relationship graph. You feed it one chapter at a
 time and the directory grows.
 
 Live at [thepatternofweaves.com](https://thepatternofweaves.com).
-Books one through three (*The Eye of the World*, *The Great Hunt*,
-*The Dragon Reborn*) are fully ingested, reviewed, and cleaned. Book
-four (*The Shadow Rising*) is next.
+Books one through four (*The Eye of the World*, *The Great Hunt*,
+*The Dragon Reborn*, *The Shadow Rising*) are fully ingested, reviewed,
+and cleaned. Book four was the first ingested on the hardened pipeline
+(see **Pipeline hardening** below) — it produced zero placeholder,
+collective, or generic-alias rows. Book five (*The Fires of Heaven*)
+is next.
 
 ## Pipeline hardening (2026)
 
@@ -1197,6 +1200,18 @@ for these reasons." Together they reconstruct the full edit history
 without needing per-row DB triggers or a separate audit table.
 
 ## Adding the next book
+
+> **Build book N on the cleaned `db/wot_book(N-1).db` snapshot, NOT on
+> `db/wot.db`.** This is the hard-won convention: the per-book manual rulings
+> and audits are applied to the *snapshots*, so `db/wot.db` accumulates the
+> *raw, un-cleaned* post-reconcile state and is best treated as scratch for the
+> current extraction run. Building book 4 by `cp db/wot.db` (as the old steps
+> below did) silently regresses every earlier-book cleanup. Instead: create the
+> new snapshot from the previous one, copy the parsed chapter rows into it
+> (preserving `chapter_id`s), and reconcile onto it. Extraction JSON in
+> `data/extractions/` is reusable for free, so re-reconciling onto the right
+> base costs no API calls. Book 4 was built this way; books 1–3 are the legacy
+> path.
 
 ```bash
 # 1. back up first

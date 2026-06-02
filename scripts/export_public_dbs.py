@@ -31,7 +31,7 @@ import sys
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 DEFAULT_INPUT_DIR = ROOT / "db"
 DEFAULT_OUTPUT_DIR = ROOT / "public_db"
-SNAPSHOTS = ("wot_book1.db", "wot_book2.db", "wot_book3.db")
+SNAPSHOTS = ("wot_book1.db", "wot_book2.db", "wot_book3.db", "wot_book4.db")
 
 
 PUBLIC_SCHEMA = """

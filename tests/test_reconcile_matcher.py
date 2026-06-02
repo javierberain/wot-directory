@@ -34,20 +34,35 @@ def test_exact_match():
     assert r.resolve_existing("Byar") == (1, "exact", None)
 
 
-def test_short_name_resolves_to_full_via_token_subset():
-    # Existing row known only as "Byar"; chapter introduces "Jaret Byar".
-    r = make_roster([(10, "byar")])
-    cid, method, _ = r.resolve_existing("Jaret Byar")
-    assert (cid, method) == (10, "token_subset")
+def test_two_shared_tokens_auto_accept():
+    # >=2 shared distinctive tokens is a confident structural match.
+    r = make_roster([(50, "lord captain geofram bornhald")])
+    cid, method, _ = r.resolve_existing("Geofram Bornhald")
+    assert (cid, method) == (50, "token_subset")
 
 
-def test_given_name_resolves_to_full_name():
-    r = make_roster([(20, "else grinwell")])
-    cid, method, _ = r.resolve_existing("Else")
-    assert (cid, method) == (20, "token_subset")
+def test_single_shared_token_needs_pointer():
+    # "Byar" alone shares one token with "Jaret Byar": only a match if the
+    # LLM pointer corroborates; otherwise not trusted (would be created new).
+    r = make_roster([(10, "jaret byar")])
+    assert r.resolve_existing("Byar")[1] == "none"
+    cid, method, _ = r.resolve_existing("Byar", pointer="Jaret Byar")
+    assert cid == 10 and method == "llm_pointer"
 
 
-def test_shared_surname_is_ambiguous_not_a_guess():
+def test_surname_superset_not_over_merged():
+    # The bug this fixes: a newcomer with a fuller name must NOT fold into a
+    # mononym namesake on a single shared surname token.
+    r = make_roster([(480, "lewin")])           # ancestral Aiel "Lewin"
+    assert r.resolve_existing("Dannil Lewin")[1] == "none"   # Two Rivers family
+    # And the safe direction is equally guarded: "Adan" must not fold into
+    # "Governor Adan" on one shared token.
+    r2 = make_roster([(60, "governor adan")])
+    assert r2.resolve_existing("Adan")[1] == "none"
+
+
+def test_shared_surname_multiple_is_ambiguous():
+    # Several different characters share the one token -> human decides.
     r = make_roster([(40, "tam al'thor"), (41, "rand al'thor")])
     cid, method, cands = r.resolve_existing("al'Thor")
     assert cid is None and method == "ambiguous"

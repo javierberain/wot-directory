@@ -288,9 +288,9 @@ def normalize_nationality(value):
 
 
 def _origin_keys(canonical):
-    """Lower-cased component list of a canonical origin, general-to-specific
-    reversed: returns the list as written (specific..general)."""
-    return [norm(p) for p in canonical.split(",") if p.strip()]
+    """Lower-cased component set of a canonical origin (the compound
+    "Village, Region, Nation" pieces)."""
+    return {norm(p) for p in canonical.split(",") if p.strip()}
 
 
 def refine_nationality(current, incoming):
@@ -299,16 +299,20 @@ def refine_nationality(current, incoming):
     Origin is a 'refine toward most specific' trait, not fill-once. Returns
     (value_to_store, is_conflict):
 
-      * current unresolved            -> (normalized incoming, False)   [fill]
-      * incoming unresolved           -> (current as-is, False)         [no-op]
-      * incoming strictly more specific within the same nation
-        (current's components are a suffix of incoming's)
-                                      -> (normalized incoming, False)   [upgrade]
-      * incoming coarser/equal        -> (normalized current, False)    [keep]
-      * different nation/tail         -> (normalized current, True)     [CONFLICT]
+      * current unresolved   -> (normalized incoming, False)   [fill]
+      * incoming unresolved  -> (current as-is, False)         [no-op]
+      * the two share ANY component (same place at different granularity, e.g.
+        "Two Rivers, Andor" vs "Two Rivers" vs "Andor", or a finer
+        "Emond's Field, Two Rivers, Andor") -> keep whichever has MORE
+        components (more specific); current wins ties.            [refine/keep]
+      * no shared component (genuinely different places, "Andor" vs "Tear")
+                             -> (normalized current, True)      [CONFLICT]
 
-    The conflict flag tells the reconciler to keep the current value and queue
-    the divergence for human review instead of silently overwriting.
+    Sharing a component is the robust test: coarsening can drop either the
+    nation end ("...Andor" -> "Two Rivers") or the region end
+    ("Two Rivers, Andor" -> "Andor"), so a positional suffix/prefix check
+    misfires; component overlap does not. The conflict flag tells the
+    reconciler to keep the current value and queue the divergence for review.
     """
     inc = normalize_nationality(incoming)
     if inc is None:
@@ -320,11 +324,9 @@ def refine_nationality(current, incoming):
     ck, ik = _origin_keys(cur), _origin_keys(inc)
     if ck == ik:
         return cur, False
-    if len(ik) > len(ck) and ik[-len(ck):] == ck:   # current is suffix of inc
-        return inc, False                            # incoming is finer
-    if len(ck) > len(ik) and ck[-len(ik):] == ik:   # incoming is suffix of cur
-        return cur, False                            # current is finer; keep
-    return cur, True                                 # different nation: conflict
+    if ck & ik:                                  # same place, different detail
+        return (inc if len(ik) > len(ck) else cur), False
+    return cur, True                             # no overlap: real conflict
 
 
 if __name__ == "__main__":   # pragma: no cover

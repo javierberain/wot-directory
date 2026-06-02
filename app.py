@@ -38,6 +38,7 @@ BOOKS_DB = {
     1: os.path.join(_PUBLIC_DB_DIR, "wot_book1.db"),
     2: os.path.join(_PUBLIC_DB_DIR, "wot_book2.db"),
     3: os.path.join(_PUBLIC_DB_DIR, "wot_book3.db"),
+    4: os.path.join(_PUBLIC_DB_DIR, "wot_book4.db"),
 }
 
 # Only books whose public snapshot file actually exists on disk can be served.
