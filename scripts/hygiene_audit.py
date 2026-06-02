@@ -29,13 +29,23 @@ import re
 import shutil
 import sqlite3
 import sys
-from dotenv import load_dotenv 
+from dotenv import load_dotenv
 load_dotenv()
 
-# ── norm() copied verbatim from reconcile.py ─────────────────────────────────
-# Keep in sync if reconcile.py ever changes its implementation.
-def norm(name):
-    return " ".join(name.lower().replace("’", "'").split())
+# Shared validation/normalization rules. norm(), the wordlists, and the
+# classification predicates all live in directory_rules so this read-only
+# auditor and the reconciler's write-time gate apply IDENTICAL logic — no more
+# "keep these copies in sync" discipline.
+from directory_rules import (
+    norm,
+    GENERIC_ALIAS_EXACT,
+    PRIMARY_NAME_ALLOWLIST,
+    PLACEHOLDER_TAIL_WORDS,
+    ROLE_NOUN_EXACT,
+    is_placeholder_name,
+    is_title_or_group_name,
+    is_collective_name,
+)
 
 
 # ── Paths (same conventions as reconcile.py) ──────────────────────────────────
@@ -44,118 +54,13 @@ BAK_PATH = os.path.join(os.path.dirname(__file__), "..", "db",
                          "wot.db.pre-hygiene.bak")
 
 # Model used for the optional LLM advisory pass (same as extract_chapter.py).
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
-# ── Editable constants ────────────────────────────────────────────────────────
-# Everything below this line is designed to be tuned between book runs.
-# All string values should be entered in lower-case (they are compared against
-# already-normalised database fields).
-
-# CHECK A ── aliases whose ENTIRE normalised text is a generic form of address.
-# Only exact full-string equality is tested; substring matches are NOT flagged.
-# "Verin Sedai" has alias_norm "verin sedai" → not in this set → spared.
-GENERIC_ALIAS_EXACT = {
-    "sister",
-    "sisters",
-    "aes sedai",
-    "king",
-    "queen",
-    "the king",
-    "the queen",
-    "lord",
-    "lady",
-    "my lord",
-    "my lady",
-    "captain",
-    "eldest",
-    "mother",
-    "child",
-    "daughter",
-    "son",
-    "my son",
-    "the innkeeper",
-}
-
-# CHECK B ── primary_name allow-list.
-# Normalised "the ..." names that are CORRECT and must never be flagged.
-# Add entries here as the series introduces new legitimate named entities.
-PRIMARY_NAME_ALLOWLIST = {
-    norm(n) for n in [
-        "the Creator",
-        "the Dark One",
-        "the Green Man",
-        "the Dragon",
-        "the Dragon Reborn",
-        "the Great Lord",
-        "the Great Lord of the Dark",
-        "the Eye of the World",
-        "the Forsaken",
-        "the Wheel",
-        "the Pattern",
-        "the True Source",
-    ]
-}
-
-# CHECK B2 ── if the LAST WORD of a normalised primary_name is in this set,
-# the name is treated as a descriptor placeholder for an unnamed walk-on.
-# e.g. "the weaselly MAN", "the young serving WOMAN", "a random STRANGER".
-PLACEHOLDER_TAIL_WORDS = {
-    "man",
-    "woman",
-    "boy",
-    "girl",
-    "child",
-    "maid",
-    "groom",
-    "wench",
-    "wife",
-    "husband",
-    "soldier",
-    "guard",
-    "guardsman",
-    "person",
-    "figure",
-    "stranger",
-    "servant",
-    "attendant",
-    "worker",
-    "fellow",
-    "youth",
-    "elder",
-}
-
-# CHECK B2 ── if the entire name (after stripping a leading "the ") EXACTLY
-# matches one of these role-nouns, it is a walk-on placeholder.
-ROLE_NOUN_EXACT = {
-    "stableman",
-    "innkeeper",
-    "groom",
-    "peddler",
-    "farmwife",
-    "farmhand",
-    "serving girl",
-    "serving woman",
-    "serving man",
-    "guardsman",
-    "merchant",
-    "farmer",
-    "clerk",
-    "cook",
-    "washerwoman",
-    "herbalist",
-    "seamstress",
-    "blacksmith",
-    "fletcher",
-    "armorer",
-    "gleeman",         # role-noun; proper names (Thom) are caught by allowlist
-    "wisdom",          # role-noun; Nynaeve etc. resolved via alias matching
-    "mayor",
-    "stableboy",
-    "shepherd",
-    "captain",
-    "lieutenant",
-    "general",
-}
+# ── Tuning knobs ──────────────────────────────────────────────────────────────
+# The wordlists and allow-list that used to live here (GENERIC_ALIAS_EXACT,
+# PRIMARY_NAME_ALLOWLIST, PLACEHOLDER_TAIL_WORDS, ROLE_NOUN_EXACT) now live in
+# scripts/directory_rules.py so the auditor and the reconciler share one
+# source of truth. Tune them there.
 
 # Dependency count above which a ⚠ marker is printed for B/C rows.
 # Raise this number if you want fewer warnings.
@@ -246,41 +151,24 @@ def dep_counts(conn, character_id):
 
 # ── Classification predicates ─────────────────────────────────────────────────
 
-def _is_b2(nn):
-    """True if the normalised primary_name looks like a descriptor placeholder."""
-    # "the woman WITH THE dagger", "the man WITH A sword", etc.
-    if " with " in nn:
-        return True
-    words = nn.split()
-    if not words:
-        return False
-    # Ends with a person-noun → "the weaselly MAN", "the Domani WOMAN"
-    if words[-1] in PLACEHOLDER_TAIL_WORDS:
-        return True
-    # Entire name (minus optional leading "the ") is a bare role-noun
-    bare = nn[4:] if nn.startswith("the ") else nn
-    if bare in ROLE_NOUN_EXACT:
-        return True
-    return False
+# These three predicates now delegate to directory_rules so the auditor's
+# Check B2 / B1 / C classify rows identically to the reconciler's write-time
+# gate. The shared functions take a raw primary_name (they normalise
+# internally) and apply the PRIMARY_NAME_ALLOWLIST themselves.
+
+def _is_b2(name):
+    """Check B2 — descriptor placeholder for an unnamed walk-on."""
+    return is_placeholder_name(name)
 
 
-def _is_b1(nn):
-    """True if the normalised primary_name looks like a title or group name."""
-    # Starts with "the " and was not allowlisted or caught as a B2 placeholder
-    return nn.startswith("the ")
+def _is_b1(name):
+    """Check B1 — 'the ...' title/group name (allow-list + B2 already excluded)."""
+    return is_title_or_group_name(name)
 
 
-def _is_c(character_type, nn):
-    """True if this row looks like a collective or species label, not an individual."""
-    if character_type in ("trolloc", "myrddraal"):
-        # Species word appears inside the character's own name
-        # → "Trolloc", "boar-snouted Trolloc", "the Myrddraal"
-        if character_type in nn or (character_type + "s") in nn:
-            return True
-        # Generic article prefix → "the Fade", "a Myrddraal"
-        if nn.startswith("the ") or nn.startswith("a "):
-            return True
-    return False
+def _is_c(character_type, name):
+    """Check C — collective/species label rather than a named individual."""
+    return is_collective_name(name, character_type)
 
 
 # ── The three checks ──────────────────────────────────────────────────────────

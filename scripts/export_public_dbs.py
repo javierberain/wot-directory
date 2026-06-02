@@ -90,6 +90,16 @@ CREATE TABLE appearances (
 CREATE INDEX idx_app_chapter ON appearances(chapter_id);
 CREATE INDEX idx_app_char ON appearances(character_id);
 
+CREATE TABLE mentions (
+    character_id  INTEGER NOT NULL REFERENCES characters(character_id),
+    chapter_id    INTEGER NOT NULL REFERENCES chapters(chapter_id),
+    name_used     TEXT,
+    context       TEXT,
+    UNIQUE (character_id, chapter_id)
+);
+CREATE INDEX idx_mention_chapter ON mentions(chapter_id);
+CREATE INDEX idx_mention_char ON mentions(character_id);
+
 CREATE TABLE relationships (
     character_a        INTEGER NOT NULL REFERENCES characters(character_id),
     character_b        INTEGER NOT NULL REFERENCES characters(character_id),
@@ -126,6 +136,7 @@ PUBLIC_TABLES = (
     "characters",
     "aliases",
     "appearances",
+    "mentions",
     "relationships",
     "factions",
     "character_factions",
@@ -180,6 +191,14 @@ COPY_STATEMENTS = (
             character_id, chapter_id, name_used, whereabouts,
             notable_actions, alliances_shown, demeanor
         FROM private.appearances
+        """,
+    ),
+    (
+        "mentions",
+        """
+        INSERT INTO mentions (character_id, chapter_id, name_used, context)
+        SELECT character_id, chapter_id, name_used, context
+        FROM private.mentions
         """,
     ),
     (

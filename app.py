@@ -201,6 +201,17 @@ def character(cid):
         ORDER BY b.series_order, ch.chapter_number
     """, (cid,)).fetchall()
 
+    # Chapters where the character is referenced but not present (offstage).
+    mentions = conn.execute("""
+        SELECT b.series_order, b.title AS book_title,
+               ch.chapter_number, ch.title AS chapter_title, mn.context
+        FROM mentions mn
+        JOIN chapters ch ON ch.chapter_id = mn.chapter_id
+        JOIN books b ON b.book_id = ch.book_id
+        WHERE mn.character_id = ?
+        ORDER BY b.series_order, ch.chapter_number
+    """, (cid,)).fetchall()
+
     factions = conn.execute("""
         SELECT f.faction_id, f.name, f.faction_type,
                cf.role, cf.notes
@@ -236,6 +247,7 @@ def character(cid):
         "character": dict(char),
         "aliases": [dict(a) for a in aliases],
         "appearances": [dict(a) for a in appearances],
+        "mentions": [dict(m) for m in mentions],
         "relationships": rel_out,
         "factions": [dict(f) for f in factions],
     })

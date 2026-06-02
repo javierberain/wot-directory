@@ -10,6 +10,7 @@ books/
 *.epub
 data/extractions/
 data/origins_*
+data/mention_gaps_*
 data/*.bak
 data/extractions*.json
 data/extractions*.csv

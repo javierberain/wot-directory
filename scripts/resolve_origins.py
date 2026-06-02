@@ -85,7 +85,7 @@ CSV_PATH = os.path.join(os.path.dirname(__file__), "..", "data",
                          "origins_resolved.csv")
 
 # Model: same string as extract_chapter.py and hygiene_audit.py.
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-6"
 
 # Proposals file schema version — increment if the schema changes.
 SCRIPT_VERSION = "1.0"

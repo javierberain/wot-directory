@@ -2,20 +2,33 @@
 """
 reconcile.py - Review an extraction JSON file and commit it to the database.
 
-This is the careful step. The extractor produced raw JSON; this script
-matches the extracted characters against the existing roster, decides
-what to auto-commit and what to flag for human review, and writes the
-appearances and relationships.
+This is the careful step. The extractor produced raw JSON; this script matches
+the extracted characters against the existing roster, decides what to
+auto-commit and what to flag for human review, and writes the appearances and
+relationships.
 
-Matching strategy, in order:
+Matching strategy, in order (see the Roster class):
   1. Exact match on a known alias (normalized).
-  2. The LLM's own "likely_matches_existing" pointer, if it resolves.
-  3. Fuzzy match (difflib) above a threshold -> flagged, not auto-merged.
-  4. Genuinely new + high confidence -> create a new character.
-  5. Anything ambiguous -> parked in review_queue, not committed.
+  2. Token-subset match — one name's tokens are a subset of a known alias's
+     (catches "Byar"->"Jaret Byar", "Else"->"Else Grinwell"). Unambiguous only;
+     two candidate characters route to review instead of guessing.
+  3. The LLM's own "likely_matches_existing" pointer, verified by similarity.
+  4. Genuinely new + passes the write-time gates -> create a new character.
+  5. Anything ambiguous / rejected -> parked in review_queue, NOT committed.
+
+What changed from the book 1-3 version (the "fix at origin" work):
+  * Validation/normalization is now shared with the auditor via
+    directory_rules: placeholder/collective/title names are NOT created (they
+    are queued for a human), generic aliases are NOT written, nationality is
+    normalized (place-not-demonym, no hedges) and REFINED toward the most
+    specific value instead of being filled once and frozen.
+  * Appearances are never silently dropped: when a character can't be
+    resolved, the review item carries the character's appearance dict and the
+    relationships involving it, so resolve_review.py can recover the full data
+    without re-reading the extraction JSON by hand.
 
 Usage:
-    python reconcile.py --book 1 --chapter 4            # interactive review
+    python reconcile.py --book 1 --chapter 4            # commit/queue
     python reconcile.py --book 1 --chapter 4 --auto     # commit confident items
     python reconcile.py --review                        # list the review queue
 """
@@ -25,39 +38,133 @@ import json
 import os
 import sqlite3
 import sys
+from collections import defaultdict
+
+from directory_rules import (
+    norm,
+    coerce_char_type,
+    coerce_faction_type,
+    is_generic_alias,
+    normalize_nationality,
+    refine_nationality,
+    rejection_reason,
+)
 
 DB_PATH = os.path.join(os.path.dirname(__file__), "..", "db", "wot.db")
 OUT_DIR = os.path.join(os.path.dirname(__file__), "..", "data", "extractions")
-FUZZY_THRESHOLD = 0.86   # difflib ratio above which we suggest a match
-POINTER_THRESHOLD = 0.6  # minimum similarity to trust an LLM pointer (lower
-                          # than FUZZY_THRESHOLD because we only need to rule
-                          # out completely unrelated names, not confirm a merge)
+
+FUZZY_THRESHOLD = 0.86   # difflib ratio above which we *suggest* (not auto-merge)
+POINTER_THRESHOLD = 0.6  # min similarity to trust an LLM pointer
+
+# Tokens that don't distinguish individuals, so a token-subset match resting
+# only on them is not trustworthy ("Lord Captain" ⊂ many names). Mirrors the
+# spirit of directory_rules generic aliases, at the token level.
+TOKEN_STOPWORDS = {
+    "the", "a", "an", "of", "and", "my", "son", "daughter", "mother",
+    "father", "lord", "lady", "sir", "master", "mistress", "captain",
+    "high", "lady's", "lord's", "aes", "sedai",
+}
 
 
-def norm(name):
-    return " ".join(name.lower().replace("’", "'").split())
+def _distinctive(token):
+    """A token worth matching on: not a stopword and not a single letter."""
+    return len(token) >= 2 and token not in TOKEN_STOPWORDS
 
 
-def load_alias_index(conn):
-    """Return {normalized_alias: character_id} for all known names."""
-    idx = {}
-    for cid, atext in conn.execute(
-        "SELECT character_id, alias_norm FROM aliases"
-    ):
-        idx[atext] = cid
-    return idx
+# ── The matcher ───────────────────────────────────────────────────────────────
+
+class Roster:
+    """The known-character index, with exact / token-subset / fuzzy matching.
+
+    Pure matching only — no DB writes, no create/queue side effects — so
+    backfill_appearances.py can reuse resolve_existing() to add rows against an
+    already-cleaned snapshot without risking new creates or merges.
+    """
+
+    def __init__(self, conn):
+        self.exact = {}                      # alias_norm -> cid
+        self.entries = []                    # (alias_norm, frozenset(tokens), cid)
+        self.aliases_by_cid = defaultdict(list)
+        for cid, anorm in conn.execute(
+            "SELECT character_id, alias_norm FROM aliases"
+        ):
+            self.exact[anorm] = cid
+            toks = frozenset(anorm.split())
+            self.entries.append((anorm, toks, cid))
+            self.aliases_by_cid[cid].append(anorm)
+
+    # -- individual strategies --
+
+    def exact_match(self, name):
+        return self.exact.get(norm(name))
+
+    def token_candidates(self, name):
+        """{cid: score} for known names in a token-subset relationship with
+        `name`, where at least one shared token is distinctive."""
+        toks = frozenset(norm(name).split())
+        if not toks:
+            return {}
+        cands = {}
+        for _anorm, atoks, cid in self.entries:
+            if not atoks:
+                continue
+            if toks <= atoks or atoks <= toks:
+                shared = toks & atoks
+                if not any(_distinctive(t) for t in shared):
+                    continue
+                score = len(shared) / max(len(toks), len(atoks))
+                if score > cands.get(cid, 0.0):
+                    cands[cid] = score
+        return cands
+
+    def fuzzy(self, name):
+        """(cid, score) of the best difflib match over all aliases."""
+        n = norm(name)
+        best_id, best = None, 0.0
+        for anorm, _toks, cid in self.entries:
+            r = difflib.SequenceMatcher(None, n, anorm).ratio()
+            if r > best:
+                best_id, best = cid, r
+        return best_id, best
+
+    def pointer_similarity(self, name, cid):
+        n = norm(name)
+        return max(
+            (difflib.SequenceMatcher(None, n, a).ratio()
+             for a in self.aliases_by_cid.get(cid, [])),
+            default=0.0,
+        )
+
+    # -- composed, side-effect-free resolution to an EXISTING row --
+
+    def resolve_existing(self, name, pointer=None):
+        """Resolve `name` to an existing character_id without creating anything.
+
+        Returns (cid, method, candidates):
+          ("exact"/"token_subset"/"llm_pointer", cid)  - confident match
+          (None, "ambiguous", {cid: score, ...})       - >1 token candidate
+          (None, "none", None)                         - no confident match
+        """
+        cid = self.exact_match(name)
+        if cid is not None:
+            return cid, "exact", None
+
+        cands = self.token_candidates(name)
+        if len(cands) == 1:
+            return next(iter(cands)), "token_subset", None
+        if len(cands) > 1:
+            return None, "ambiguous", cands
+
+        if pointer:
+            pcid = self.exact_match(pointer)
+            if pcid is not None and \
+                    self.pointer_similarity(name, pcid) >= POINTER_THRESHOLD:
+                return pcid, "llm_pointer", None
+
+        return None, "none", None
 
 
-def fuzzy_lookup(name, alias_index):
-    """Return (character_id, score) for the best fuzzy match, or (None, 0)."""
-    best_id, best_score = None, 0.0
-    n = norm(name)
-    for alias_norm, cid in alias_index.items():
-        score = difflib.SequenceMatcher(None, n, alias_norm).ratio()
-        if score > best_score:
-            best_id, best_score = cid, score
-    return best_id, best_score
-
+# ── Write helpers ─────────────────────────────────────────────────────────────
 
 def get_primary_name(conn, cid):
     r = conn.execute(
@@ -66,54 +173,12 @@ def get_primary_name(conn, cid):
     return r[0] if r else None
 
 
-VALID_CHAR_TYPES = {
-    "human", "ogier", "trolloc", "myrddraal", "horse", "wolf", "other",
-}
-VALID_FACTION_TYPES = {
-    "ajah", "order", "house", "clan", "society", "other",
-}
-
-
-def coerce_char_type(value):
-    """Sanitize the LLM's character_type. Defaults to 'human'."""
-    v = (value or "human").strip().lower()
-    return v if v in VALID_CHAR_TYPES else "other"
-
-
-def coerce_faction_type(value):
-    v = (value or "other").strip().lower()
-    return v if v in VALID_FACTION_TYPES else "other"
-
-
-def create_character(conn, char):
-    """Insert a new character + its aliases. Returns the new character_id."""
-    st = char.get("stable_traits", {}) or {}
-    primary = char.get("name_used_in_text", "").strip()
-    ctype = coerce_char_type(char.get("character_type"))
-    cur = conn.execute(
-        """INSERT INTO characters
-           (primary_name, character_type, nationality, physical_traits, age,
-            filiations, personality)
-           VALUES (?, ?, ?, ?, ?, ?, ?)""",
-        (primary, ctype, st.get("nationality"), st.get("physical_traits"),
-         st.get("age"), st.get("filiations"), st.get("personality")),
-    )
-    cid = cur.lastrowid
-    # Primary name as its own alias row.
-    conn.execute(
-        "INSERT OR IGNORE INTO aliases "
-        "(character_id, alias_text, alias_norm, alias_type, is_primary) "
-        "VALUES (?, ?, ?, 'primary', 1)",
-        (cid, primary, norm(primary)),
-    )
-    add_aliases(conn, cid, char.get("aliases_observed", []))
-    return cid
-
-
 def add_aliases(conn, cid, aliases):
+    """Insert aliases, skipping generic forms of address (they pollute the
+    matcher index — the delete_aliases.py workload, now prevented at write)."""
     for a in aliases or []:
         text = (a.get("alias_text") or "").strip()
-        if not text:
+        if not text or is_generic_alias(text):
             continue
         conn.execute(
             "INSERT OR IGNORE INTO aliases "
@@ -124,33 +189,78 @@ def add_aliases(conn, cid, aliases):
         )
 
 
-def enrich_character(conn, cid, char):
-    """Fill in any stable trait that is currently empty."""
+def create_character(conn, char):
+    """Insert a new character + its aliases. Returns the new character_id.
+    Nationality is normalized on the way in, so a placeholder becomes NULL
+    (never the literal 'unknown') and a demonym becomes a place name."""
     st = char.get("stable_traits", {}) or {}
-    cols = {
-        "nationality": st.get("nationality"),
-        "physical_traits": st.get("physical_traits"),
-        "age": st.get("age"),
-        "filiations": st.get("filiations"),
-        "personality": st.get("personality"),
-    }
-    for col, val in cols.items():
+    primary = char.get("name_used_in_text", "").strip()
+    ctype = coerce_char_type(char.get("character_type"))
+    cur = conn.execute(
+        """INSERT INTO characters
+           (primary_name, character_type, nationality, physical_traits, age,
+            filiations, personality)
+           VALUES (?, ?, ?, ?, ?, ?, ?)""",
+        (primary, ctype, normalize_nationality(st.get("nationality")),
+         st.get("physical_traits"), st.get("age"), st.get("filiations"),
+         st.get("personality")),
+    )
+    cid = cur.lastrowid
+    conn.execute(
+        "INSERT OR IGNORE INTO aliases "
+        "(character_id, alias_text, alias_norm, alias_type, is_primary) "
+        "VALUES (?, ?, ?, 'primary', 1)",
+        (cid, primary, norm(primary)),
+    )
+    add_aliases(conn, cid, char.get("aliases_observed", []))
+    return cid
+
+
+def enrich_character(conn, cid, char, chapter_id):
+    """Fill empty stable traits; REFINE nationality (coarse->fine, conflict to
+    review) instead of the old fill-once COALESCE. Returns a list of review
+    payloads to queue (origin conflicts), so the caller owns all queueing."""
+    st = char.get("stable_traits", {}) or {}
+    reviews = []
+
+    # nationality: refine toward the most specific value
+    incoming_nat = st.get("nationality")
+    if incoming_nat:
+        cur_nat = conn.execute(
+            "SELECT nationality FROM characters WHERE character_id = ?", (cid,)
+        ).fetchone()[0]
+        new_nat, conflict = refine_nationality(cur_nat, incoming_nat)
+        if conflict:
+            reviews.append((
+                "origin_conflict",
+                f"Origin conflict on '{get_primary_name(conn, cid)}': have "
+                f"'{cur_nat}', chapter suggests "
+                f"'{normalize_nationality(incoming_nat)}'. Kept existing.",
+            ))
+        elif new_nat != cur_nat:
+            conn.execute(
+                "UPDATE characters SET nationality = ?, "
+                "updated_at = datetime('now') WHERE character_id = ?",
+                (new_nat, cid),
+            )
+
+    # other stable traits keep fill-once-if-empty semantics
+    for col in ("physical_traits", "age", "filiations", "personality"):
+        val = st.get(col)
         if val:
             conn.execute(
                 f"UPDATE characters SET {col} = COALESCE({col}, ?), "
                 f"updated_at = datetime('now') WHERE character_id = ?",
                 (val, cid),
             )
+
     add_aliases(conn, cid, char.get("aliases_observed", []))
+    return reviews
 
 
 def reconcile_factions(conn, cid, char, chapter_id):
-    """Match each LLM-reported faction by name, create new ones, write join rows.
-
-    Same generous-matching spirit as character reconciliation: lookup by
-    normalized name, create on miss. Idempotent: re-running on the same
-    chapter does not duplicate rows.
-    """
+    """Match each LLM-reported faction by name, create new ones, write joins.
+    Idempotent: re-running a chapter does not duplicate rows."""
     for fac in char.get("factions", []) or []:
         name = (fac.get("name") or "").strip()
         if not name:
@@ -169,16 +279,12 @@ def reconcile_factions(conn, cid, char, chapter_id):
                 (name, nnorm, ftype),
             )
             fid = cur.lastrowid
-
         role = (fac.get("role") or "member").strip().lower() or "member"
-        notes = fac.get("notes")
-        # INSERT OR IGNORE so re-running a chapter doesn't blow up;
-        # then upgrade 'member' -> 'leader' if the LLM now says leader.
         conn.execute(
             "INSERT OR IGNORE INTO character_factions "
             "(character_id, faction_id, role, first_chapter_id, notes) "
             "VALUES (?, ?, ?, ?, ?)",
-            (cid, fid, role, chapter_id, notes),
+            (cid, fid, role, chapter_id, fac.get("notes")),
         )
         if role == "leader":
             conn.execute(
@@ -188,13 +294,127 @@ def reconcile_factions(conn, cid, char, chapter_id):
             )
 
 
-def queue_review(conn, chapter_id, kind, payload, note):
+# ── Review queue (now carries appearance + relationships) ─────────────────────
+
+def _appearance_for(data, name):
+    nn = norm(name)
+    for a in data.get("appearances", []):
+        if norm(a.get("character")) == nn:
+            return a
+    return None
+
+
+def _relationships_for(data, name):
+    nn = norm(name)
+    return [r for r in data.get("relationships", [])
+            if norm(r.get("character_a")) == nn
+            or norm(r.get("character_b")) == nn]
+
+
+def queue_review(conn, chapter_id, kind, char, note, data):
+    """Park an item in the review queue with a SELF-RECOVERING payload: the
+    character dict PLUS its appearance dict and the relationships involving it.
+    resolve_review.py replays these on resolution, so no appearance is lost and
+    no per-book cleanup script needs to re-read the extraction JSON."""
+    name = (char.get("name_used_in_text") or "").strip()
+    payload = {
+        "character": char,
+        "appearance": _appearance_for(data, name),
+        "relationships": _relationships_for(data, name),
+    }
     conn.execute(
         "INSERT INTO review_queue (chapter_id, kind, payload, note) "
         "VALUES (?, ?, ?, ?)",
         (chapter_id, kind, json.dumps(payload, ensure_ascii=False), note),
     )
 
+
+# ── Per-character resolution ──────────────────────────────────────────────────
+
+def resolve_one(conn, roster, char, data, chapter_id, auto):
+    """Resolve one extracted character to a cid, creating/queueing as needed.
+    Returns the cid if the character is committed (existing or newly created),
+    or None if it was parked in review."""
+    name = char.get("name_used_in_text", "").strip()
+    if not name:
+        return None
+    conf = char.get("confidence", "low")
+    pointer = char.get("likely_matches_existing")
+
+    cid, method, cands = roster.resolve_existing(name, pointer)
+
+    if method == "ambiguous":
+        names = ", ".join(
+            f"{get_primary_name(conn, c)} ({s:.0%})" for c, s in cands.items())
+        note = f"'{name}' token-matches multiple characters: {names}."
+        print(f"  [REVIEW] ambiguous_character: {note}")
+        queue_review(conn, chapter_id, "ambiguous_character", char, note, data)
+        return None
+
+    # An LLM pointer that pointed somewhere but failed the similarity check is
+    # surfaced distinctly (suspicious_llm_match), matching the old behavior.
+    if cid is None and pointer:
+        pcid = roster.exact_match(pointer)
+        if pcid is not None:
+            score = roster.pointer_similarity(name, pcid)
+            note = (f"LLM pointer rejected: '{name}' -> "
+                    f"'{get_primary_name(conn, pcid)}' but similarity "
+                    f"{score:.0%} < {POINTER_THRESHOLD:.0%}.")
+            print(f"  [REVIEW] suspicious_llm_match: {note}")
+            queue_review(conn, chapter_id, "suspicious_llm_match",
+                         char, note, data)
+            return None
+
+    if cid is not None:
+        print(f"  [{method}] '{name}' -> {get_primary_name(conn, cid)}")
+        for kind, note in enrich_character(conn, cid, char, chapter_id):
+            print(f"  [REVIEW] {kind}: {note}")
+            queue_review(conn, chapter_id, kind, char, note, data)
+        return cid
+
+    # ── not matched to any existing row ──────────────────────────────────────
+    if char.get("is_new_character"):
+        reason = rejection_reason(name, coerce_char_type(
+            char.get("character_type")))
+        if reason is not None:
+            kind = f"rejected_{reason}"
+            note = (f"'{name}' looks like a {reason} name, not an individual; "
+                    f"not created. Supply the proper name or dismiss.")
+            print(f"  [REVIEW] {kind}: {note}")
+            queue_review(conn, chapter_id, kind, char, note, data)
+            return None
+
+        fid, score = roster.fuzzy(name)
+        if fid and score >= FUZZY_THRESHOLD:
+            note = (f"LLM says new, but '{name}' is {score:.0%} similar to "
+                    f"'{get_primary_name(conn, fid)}'.")
+            if auto and conf == "high":
+                cid = create_character(conn, char)
+                print(f"  [new*] '{name}' created (despite {score:.0%} "
+                      f"similarity - review later)")
+                queue_review(conn, chapter_id, "possible_duplicate",
+                             char, note, data)
+                return cid
+            print(f"  [REVIEW] possible_duplicate: {note}")
+            queue_review(conn, chapter_id, "possible_duplicate",
+                         char, note, data)
+            return None
+
+        cid = create_character(conn, char)
+        print(f"  [new] '{name}' created as a new character")
+        return cid
+
+    # claimed not-new but unresolved
+    fid, score = roster.fuzzy(name)
+    suggestion = (f" closest: '{get_primary_name(conn, fid)}' ({score:.0%})"
+                  if fid else "")
+    print(f"  [REVIEW] ambiguous_character: '{name}' unresolved.{suggestion}")
+    queue_review(conn, chapter_id, "ambiguous_character", char,
+                 f"Unresolved.{suggestion}", data)
+    return None
+
+
+# ── Main reconcile ────────────────────────────────────────────────────────────
 
 def reconcile(book_order, chapter_number, auto=False):
     path = os.path.join(OUT_DIR, f"b{book_order}_c{chapter_number}.json")
@@ -206,103 +426,29 @@ def reconcile(book_order, chapter_number, auto=False):
     chapter_id = data["_meta"]["chapter_id"]
     conn = sqlite3.connect(DB_PATH)
     conn.execute("PRAGMA foreign_keys = ON")
-    alias_index = load_alias_index(conn)
+    roster = Roster(conn)
 
-    # name_used_in_text -> resolved character_id
-    resolved = {}
+    resolved = {}   # name_used_in_text -> cid
 
     print(f"\n=== Reconciling book {book_order} chapter {chapter_number}: "
           f"{data['_meta']['chapter_title']} ===\n")
 
     for char in data.get("characters", []):
-        name = char.get("name_used_in_text", "").strip()
-        if not name:
-            continue
-        conf = char.get("confidence", "low")
-        cid = None
-
-        # 1. exact alias match
-        if norm(name) in alias_index:
-            cid = alias_index[norm(name)]
-            print(f"  [match] '{name}' -> {get_primary_name(conn, cid)}")
-            enrich_character(conn, cid, char)
-
-        # 2. the LLM's pointer, verified by name similarity
-        elif char.get("likely_matches_existing"):
-            ptr = norm(char["likely_matches_existing"])
-            if ptr in alias_index:
-                cid_candidate = alias_index[ptr]
-                # Collect every normalized alias that belongs to the target.
-                target_aliases = [
-                    a for a, aid in alias_index.items()
-                    if aid == cid_candidate
-                ]
-                name_norm = norm(name)
-                best_score = max(
-                    (difflib.SequenceMatcher(None, name_norm, a).ratio()
-                     for a in target_aliases),
-                    default=0.0,
-                )
-                if best_score >= POINTER_THRESHOLD:
-                    cid = cid_candidate
-                    print(f"  [llm-match] '{name}' -> "
-                          f"{get_primary_name(conn, cid)}")
-                    enrich_character(conn, cid, char)
-                else:
-                    primary = get_primary_name(conn, cid_candidate)
-                    note = (
-                        f"LLM pointer rejected: incoming name '{name}' was "
-                        f"pointed at '{primary}' but best alias similarity "
-                        f"is {best_score:.0%} (threshold {POINTER_THRESHOLD:.0%}). "
-                        f"Verify manually."
-                    )
-                    print(f"  [REVIEW] suspicious_llm_match: {note}")
-                    queue_review(conn, chapter_id, "suspicious_llm_match",
-                                 char, note)
-                    continue  # do not fall through to step 3/4
-
-        # 3. new character claimed
-        if cid is None and char.get("is_new_character"):
-            fid, score = fuzzy_lookup(name, alias_index)
-            if fid and score >= FUZZY_THRESHOLD:
-                # Looks new to the LLM but is close to an existing name.
-                note = (f"LLM says new, but '{name}' is {score:.0%} similar "
-                        f"to '{get_primary_name(conn, fid)}'.")
-                if auto and conf == "high":
-                    cid = create_character(conn, char)
-                    print(f"  [new*] '{name}' created (despite {score:.0%} "
-                          f"similarity - review later)")
-                    queue_review(conn, chapter_id, "possible_duplicate",
-                                 char, note)
-                else:
-                    print(f"  [REVIEW] '{name}' - {note}")
-                    queue_review(conn, chapter_id, "possible_duplicate",
-                                 char, note)
-            else:
-                cid = create_character(conn, char)
-                print(f"  [new] '{name}' created as a new character")
-
-        # 4. unresolved and not claimed new -> review
+        cid = resolve_one(conn, roster, char, data, chapter_id, auto)
         if cid is None:
-            fid, score = fuzzy_lookup(name, alias_index)
-            suggestion = (f" closest: '{get_primary_name(conn, fid)}' "
-                          f"({score:.0%})" if fid else "")
-            print(f"  [REVIEW] '{name}' could not be resolved.{suggestion}")
-            queue_review(conn, chapter_id, "ambiguous_character", char,
-                         f"Unresolved.{suggestion}")
             continue
-
+        name = char.get("name_used_in_text", "").strip()
         resolved[name] = cid
         reconcile_factions(conn, cid, char, chapter_id)
+        roster = Roster(conn)   # refresh so later chars see new rows/aliases
 
-        # refresh index so later characters in the same chapter see new ones
-        alias_index = load_alias_index(conn)
-
-    # ----- appearances -----
+    # ----- appearances ----- (carried in review payloads when unresolved)
     app_count = 0
+    dropped_apps = 0
     for app in data.get("appearances", []):
-        cid = resolved.get(app.get("character", "").strip())
+        cid = resolved.get((app.get("character") or "").strip())
         if cid is None:
+            dropped_apps += 1
             continue
         alliances = app.get("alliances_shown") or []
         conn.execute(
@@ -310,10 +456,9 @@ def reconcile(book_order, chapter_number, auto=False):
                (character_id, chapter_id, name_used, whereabouts,
                 notable_actions, alliances_shown, demeanor)
                VALUES (?, ?, ?, ?, ?, ?, ?)""",
-            (cid, chapter_id, app.get("character"),
-             app.get("whereabouts"), app.get("notable_actions"),
-             ", ".join(alliances) if alliances else None,
-             app.get("demeanor")),
+            (cid, chapter_id, app.get("character"), app.get("whereabouts"),
+             app.get("notable_actions"),
+             ", ".join(alliances) if alliances else None, app.get("demeanor")),
         )
         app_count += 1
         conn.execute(
@@ -325,12 +470,11 @@ def reconcile(book_order, chapter_number, auto=False):
     # ----- relationships -----
     rel_count = 0
     for rel in data.get("relationships", []):
-        a = resolved.get(rel.get("character_a", "").strip())
-        b = resolved.get(rel.get("character_b", "").strip())
+        a = resolved.get((rel.get("character_a") or "").strip())
+        b = resolved.get((rel.get("character_b") or "").strip())
         if a is None or b is None or a == b:
             continue
-
-        lo, hi = sorted((a, b))   # stable ordering for undirected edges
+        lo, hi = sorted((a, b))
         conn.execute(
             """INSERT OR IGNORE INTO relationships
                (character_a, character_b, relationship_type, directed,
@@ -344,6 +488,31 @@ def reconcile(book_order, chapter_number, auto=False):
         )
         rel_count += 1
 
+    # ----- mentions ----- (referenced-but-absent characters)
+    # Resolve ONLY against rows that exist (roster) or were resolved/created in
+    # this chapter. Never create a character from a mere mention.
+    mention_count = 0
+    for m in data.get("mentions", []):
+        name = (m.get("character") or "").strip()
+        if not name:
+            continue
+        cid = resolved.get(name)
+        if cid is None:
+            cid, method, _ = roster.resolve_existing(name)
+            if cid is None:
+                continue   # unknown character only mentioned in passing — skip
+        # Don't double-record: a character present this chapter (has an
+        # appearance) is not also a mention.
+        if conn.execute(
+            "SELECT 1 FROM appearances WHERE character_id = ? AND chapter_id = ?",
+            (cid, chapter_id)).fetchone():
+            continue
+        conn.execute(
+            "INSERT OR IGNORE INTO mentions "
+            "(character_id, chapter_id, name_used, context) VALUES (?, ?, ?, ?)",
+            (cid, chapter_id, name, m.get("context")))
+        mention_count += 1
+
     conn.execute("UPDATE chapters SET extracted = 1 WHERE chapter_id = ?",
                  (chapter_id,))
     conn.commit()
@@ -351,7 +520,11 @@ def reconcile(book_order, chapter_number, auto=False):
     pending = conn.execute(
         "SELECT COUNT(*) FROM review_queue WHERE resolved = 0"
     ).fetchone()[0]
-    print(f"\nCommitted: {app_count} appearances, {rel_count} relationships.")
+    print(f"\nCommitted: {app_count} appearances, {mention_count} mentions, "
+          f"{rel_count} relationships.")
+    if dropped_apps:
+        print(f"{dropped_apps} appearance(s) belong to unresolved characters "
+              f"-- carried in their review-queue payloads, not lost.")
     print(f"Review queue now holds {pending} unresolved item(s).")
     if pending:
         print("Run  python reconcile.py --review  to see them.")
@@ -371,8 +544,8 @@ def show_review_queue():
     for rid, kind, note, ch in rows:
         print(f"  #{rid}  [{kind}]  chapter_id={ch}")
         print(f"       {note}\n")
-    print("Resolve items by editing the database directly, then set "
-          "resolved = 1.")
+    print("Resolve with  python reconcile.py --review  then "
+          "scripts/resolve_review.py, or edit the database directly.")
     conn.close()
 
 

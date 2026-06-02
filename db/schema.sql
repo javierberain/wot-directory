@@ -97,6 +97,24 @@ CREATE TABLE IF NOT EXISTS appearances (
 CREATE INDEX IF NOT EXISTS idx_app_chapter ON appearances(chapter_id);
 CREATE INDEX IF NOT EXISTS idx_app_char    ON appearances(character_id);
 
+-- ----- Mentions ----------------------------------------------
+-- A character REFERENCED in a chapter but not physically present/acting
+-- (e.g. a protagonist discussed by others while offstage). Kept separate
+-- from appearances so "appears in" means present-and-acting, while the
+-- directory can still show "also mentioned in". Populated from the
+-- extractor's `mentions` list; never the same (character, chapter) as an
+-- appearance.
+CREATE TABLE IF NOT EXISTS mentions (
+    mention_id   INTEGER PRIMARY KEY,
+    character_id INTEGER NOT NULL REFERENCES characters(character_id),
+    chapter_id   INTEGER NOT NULL REFERENCES chapters(chapter_id),
+    name_used    TEXT,            -- which name the text used here
+    context      TEXT,            -- why/how they were referenced this chapter
+    UNIQUE (character_id, chapter_id)
+);
+CREATE INDEX IF NOT EXISTS idx_mention_chapter ON mentions(chapter_id);
+CREATE INDEX IF NOT EXISTS idx_mention_char    ON mentions(character_id);
+
 -- ----- Relationships -----------------------------------------
 -- Character-to-character edges. For the network graph.
 -- For undirected types (ally, family) store one row; the app treats
