@@ -53,6 +53,11 @@ _RETRY_BASE_DELAY = 5
 _RETRY_MAX_DELAY = 60
 _RETRYABLE_STATUSES = {429, 529}
 
+# Batch path configuration (used only when --batch is set).
+_BATCH_POLL_INTERVAL = 30      # seconds between status polls
+_BATCH_MAX_WAIT = 2 * 60 * 60  # soft cap; batch SLA is 24h but a blocking
+                               # script should not wait that long silently
+
 # Enum value sets. character_type / faction_type come from directory_rules so
 # the prompt, the tool schema, and the reconciler's validators can never
 # disagree. alias / relationship types are listed here.
@@ -326,38 +331,129 @@ def get_chapter(conn, book_order, chapter_number):
     """, (book_order, chapter_number)).fetchone()
 
 
-def _call_api(client, tool, user_msg):
-    """Forced tool call with prompt-cached system+tool. Retries transient
-    errors with backoff (outer loop on top of the SDK's own retries)."""
+def build_request_params(tool, user_msg):
+    """The single source of truth for the request. Both the synchronous path
+    and the batch path build their request from this, so they are guaranteed
+    to send the same thing. Returns exactly the kwargs for
+    client.messages.create; the batch path wraps this dict as a request's
+    "params" field. cache_control is kept for both paths (best-effort in
+    batch)."""
+    return {
+        "model": MODEL,
+        "max_tokens": 16000,
+        "system": [{"type": "text", "text": SYSTEM_PROMPT,
+                    "cache_control": {"type": "ephemeral"}}],
+        "tools": [tool],
+        "tool_choice": {"type": "tool", "name": tool["name"]},
+        "messages": [{"role": "user", "content": user_msg}],
+    }
+
+
+def _with_retries(fn, label="API"):
+    """Run fn() and retry transient 429/529 + connection errors with backoff
+    (outer loop on top of the SDK's own retries). Returns fn()'s result."""
     last_exc = None
     for attempt in range(1, _API_MAX_ATTEMPTS + 1):
         try:
-            return client.messages.create(
-                model=MODEL,
-                max_tokens=16000,
-                system=[{"type": "text", "text": SYSTEM_PROMPT,
-                         "cache_control": {"type": "ephemeral"}}],
-                tools=[tool],
-                tool_choice={"type": "tool", "name": tool["name"]},
-                messages=[{"role": "user", "content": user_msg}],
-            )
+            return fn()
         except anthropic.APIStatusError as exc:
             if exc.status_code not in _RETRYABLE_STATUSES:
                 raise
             last_exc = exc
-            label = f"HTTP {exc.status_code}"
+            why = f"HTTP {exc.status_code}"
         except anthropic.APIConnectionError as exc:
             last_exc = exc
-            label = "connection error"
+            why = "connection error"
         if attempt == _API_MAX_ATTEMPTS:
             raise last_exc
         delay = min(_RETRY_BASE_DELAY * (2 ** (attempt - 1)), _RETRY_MAX_DELAY)
-        print(f"  API {label}, attempt {attempt}/{_API_MAX_ATTEMPTS}, "
+        print(f"  {label} {why}, attempt {attempt}/{_API_MAX_ATTEMPTS}, "
               f"waiting {delay}s...")
         time.sleep(delay)
 
 
-def extract(book_order, chapter_number, do_print=False, db_path=None):
+def _call_api(client, params):
+    """Synchronous forced tool call with prompt-cached system+tool. Retries
+    transient errors with backoff (outer loop on top of the SDK's own
+    retries)."""
+    return _with_retries(lambda: client.messages.create(**params))
+
+
+def _call_api_batch(client, params, custom_id,
+                    poll_interval=_BATCH_POLL_INTERVAL,
+                    max_wait=_BATCH_MAX_WAIT):
+    """Submit one request as a Message Batch, poll to completion, and return
+    the resulting Message object (same shape as client.messages.create)."""
+    # 1. Submit (transient-retry-wrapped; a submission can hit 429/529 too).
+    batch = _with_retries(
+        lambda: client.messages.batches.create(
+            requests=[{"custom_id": custom_id, "params": params}]),
+        label="batch submit")
+
+    # 2. Record the id immediately, before any polling, so an interrupted run
+    #    leaves the id in the terminal.
+    print(f"  batch submitted: id={batch.id}  custom_id={custom_id}")
+
+    # 3. Poll until processing ends (or we exceed the soft cap).
+    started = time.monotonic()
+    while batch.processing_status != "ended":
+        elapsed = time.monotonic() - started
+        if elapsed > max_wait:
+            raise TimeoutError(
+                f"batch {batch.id} (custom_id {custom_id}) still "
+                f"'{batch.processing_status}' after {int(elapsed)}s "
+                f"(max_wait {max_wait}s). It may still finish; retrieve it "
+                f"later by id {batch.id}.")
+        print(f"  batch {batch.id}: {batch.processing_status}  "
+              f"counts={batch.request_counts}")
+        time.sleep(poll_interval)
+        batch = _with_retries(
+            lambda: client.messages.batches.retrieve(batch.id),
+            label="batch poll")
+    print(f"  batch {batch.id}: ended  counts={batch.request_counts}")
+
+    # 4. Retrieve and match on custom_id (results are unordered).
+    for entry in client.messages.batches.results(batch.id):
+        if entry.custom_id != custom_id:
+            continue
+        # 5. Branch on the per-request result type.
+        result_type = entry.result.type
+        if result_type == "succeeded":
+            message = entry.result.message
+            # Carry the batch id alongside the Message so extract() can record
+            # it in _meta. The Message's own .id is the message id, not the
+            # batch id.
+            message._batch_id = batch.id
+            return message
+        if result_type == "errored":
+            # In anthropic 0.104.1 entry.result.error is an ErrorResponse
+            # whose own .type is always "error"; the discriminating error type
+            # and message are nested one level deeper on .error.
+            err = entry.result.error.error
+            if getattr(err, "type", None) == "invalid_request_error":
+                raise ValueError(
+                    f"batch {batch.id} request {custom_id} was rejected as "
+                    f"invalid_request_error (malformed body, not retryable): "
+                    f"{err.message}")
+            raise RuntimeError(
+                f"batch {batch.id} request {custom_id} errored "
+                f"({getattr(err, 'type', 'unknown')}, retryable - re-run the "
+                f"chapter): {getattr(err, 'message', err)}")
+        if result_type in ("canceled", "expired"):
+            raise RuntimeError(
+                f"batch {batch.id} request {custom_id} {result_type} before "
+                f"producing a result; re-run the chapter.")
+        raise RuntimeError(
+            f"batch {batch.id} request {custom_id} returned unexpected result "
+            f"type '{result_type}'.")
+
+    # 6. No entry matched our custom_id.
+    raise RuntimeError(
+        f"batch {batch.id} returned no result for custom_id {custom_id}.")
+
+
+def extract(book_order, chapter_number, do_print=False, db_path=None,
+            use_batch=False, poll_interval=_BATCH_POLL_INTERVAL):
     if not os.environ.get("ANTHROPIC_API_KEY"):
         sys.exit("Set the ANTHROPIC_API_KEY environment variable first.")
 
@@ -378,10 +474,19 @@ def extract(book_order, chapter_number, do_print=False, db_path=None):
 
     client = anthropic.Anthropic(max_retries=_SDK_MAX_RETRIES)
     tool = build_tool()
+    params = build_request_params(tool, user_msg)
+    custom_id = f"b{book_order}_c{chapter_number}"
     print(f"Calling {MODEL} for book {book_order} ch {chapter_number} "
-          f"'{ch_title}' ({len(full_text.split())} words)...")
+          f"'{ch_title}' ({len(full_text.split())} words)"
+          f"{' via batch API' if use_batch else ''}...")
 
-    resp = _call_api(client, tool, user_msg)
+    if use_batch:
+        resp = _call_api_batch(client, params, custom_id,
+                               poll_interval=poll_interval)
+        batch_id = getattr(resp, "_batch_id", None)
+    else:
+        resp = _call_api(client, params)
+        batch_id = None
 
     # Pull the single forced tool call. No code-fence stripping needed.
     tool_block = next((b for b in resp.content if b.type == "tool_use"), None)
@@ -400,6 +505,8 @@ def extract(book_order, chapter_number, do_print=False, db_path=None):
         "chapter_id": chapter_id,
         "chapter_title": ch_title,
         "model": MODEL,
+        "via": "batch" if use_batch else "sync",
+        "batch_id": batch_id,
         "input_tokens": resp.usage.input_tokens,
         "output_tokens": resp.usage.output_tokens,
         "cache_read_input_tokens":
@@ -436,8 +543,14 @@ def main():
     ap.add_argument("--db", help="target database (default: db/wot.db)")
     ap.add_argument("--print", action="store_true", dest="do_print",
                     help="also print the JSON to stdout")
+    ap.add_argument("--batch", action="store_true", dest="use_batch",
+                    help="extract via the Message Batches API (async, 50%% "
+                         "token price) instead of a synchronous call")
+    ap.add_argument("--poll-interval", type=int, default=_BATCH_POLL_INTERVAL,
+                    help="seconds between batch status polls (with --batch)")
     args = ap.parse_args()
-    extract(args.book, args.chapter, args.do_print, db_path=args.db)
+    extract(args.book, args.chapter, args.do_print, db_path=args.db,
+            use_batch=args.use_batch, poll_interval=args.poll_interval)
 
 
 if __name__ == "__main__":

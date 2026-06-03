@@ -68,6 +68,12 @@ def main():
                     help="skip chapters already marked extracted")
     ap.add_argument("--db", help="override working DB (default: "
                     "db/wot_book{N}.db)")
+    ap.add_argument("--batch", action="store_true", dest="use_batch",
+                    help="extract via the Message Batches API (async, ~50%% "
+                         "token price) instead of synchronous calls")
+    ap.add_argument("--poll-interval", type=int, default=None,
+                    help="seconds between batch status polls; forwarded to "
+                         "extract_chapter only with --batch")
     args = ap.parse_args()
 
     db = args.db or working_db(args.book)
@@ -90,9 +96,14 @@ def main():
 
         print(f"\n{'='*60}\nChapter {num}: {title}\n{'='*60}")
 
-        ok = run([sys.executable, os.path.join(HERE, "extract_chapter.py"),
-                  "--book", str(args.book), "--chapter", str(num),
-                  "--db", db])
+        ext_cmd = [sys.executable, os.path.join(HERE, "extract_chapter.py"),
+                   "--book", str(args.book), "--chapter", str(num),
+                   "--db", db]
+        if args.use_batch:
+            ext_cmd.append("--batch")
+            if args.poll_interval is not None:
+                ext_cmd += ["--poll-interval", str(args.poll_interval)]
+        ok = run(ext_cmd)
         if not ok:
             print(f"  extraction failed for chapter {num}, stopping.")
             sys.exit(1)
