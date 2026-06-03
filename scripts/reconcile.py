@@ -51,6 +51,7 @@ from directory_rules import (
     is_ajah,
     is_black_ajah,
     ajah_conflict,
+    classify_origin,
 )
 
 DB_PATH = os.path.join(os.path.dirname(__file__), "..", "db", "wot.db")
@@ -221,12 +222,16 @@ def create_character(conn, char):
     st = char.get("stable_traits", {}) or {}
     primary = char.get("name_used_in_text", "").strip()
     ctype = coerce_char_type(char.get("character_type"))
+    # Normalized geographic origin if known; else a deterministic taxonomy
+    # category (Shadow for Shadowspawn, Time for cosmic entities); else NULL.
+    origin = normalize_nationality(st.get("nationality")) \
+        or classify_origin(primary, ctype)
     cur = conn.execute(
         """INSERT INTO characters
            (primary_name, character_type, nationality, physical_traits, age,
             filiations, personality)
            VALUES (?, ?, ?, ?, ?, ?, ?)""",
-        (primary, ctype, normalize_nationality(st.get("nationality")),
+        (primary, ctype, origin,
          st.get("physical_traits"), st.get("age"), st.get("filiations"),
          st.get("personality")),
     )

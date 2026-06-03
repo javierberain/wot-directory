@@ -114,19 +114,29 @@ CHARACTER TYPE (species, not nationality):
 - "nationality" is a SEPARATE field for humans only. Do NOT put a species in
   nationality.
 
-NATIONALITY CONVENTIONS (when you state an origin):
-- Use PLACE NAMES, not demonyms: "Andor" not "Andoran", "Cairhien" not
-  "Cairhienin", "Tear" not "Tairen".
-- When the text pins a character to a village/district, use the compound
-  hierarchy "Village, Region, Nation" (e.g. "Emond's Field, Two Rivers,
-  Andor") or "District, Nation" (e.g. "Maule, Tear").
-- For peoples whose identity IS their origin, use the bare group name: "Aiel",
-  "Tuatha'an", "Atha'an Miere". For Ogier, the stedding ("Stedding Shangtai").
-- NO hedges or parentheticals ("(presumably)", "(from context)"). If the text
-  is too weak to assert an origin, leave nationality null. Never write
-  "unknown" — use null.
-- Faction/rank/title is NOT origin. "The Amyrlin Seat said..." is not evidence
-  of the speaker's nationality.
+ORIGIN (the "nationality" field — it is broader than geography):
+Choose the single most appropriate category:
+- GEOGRAPHIC (preferred when known). Use PLACE NAMES, not demonyms ("Andor" not
+  "Andoran", "Tear" not "Tairen"). When the text pins a character to a
+  village/district, use the FULL compound hierarchy "Village, Region, Nation"
+  ("Emond's Field, Two Rivers, Andor") or "District, Nation" ("Maule, Tear").
+  ALWAYS include the nation — write "Two Rivers, Andor", never bare
+  "Two Rivers".
+- STEDDING for Ogier: the named stedding ("Stedding Shangtai"). Never the
+  species ("Ogier") as origin.
+- PEOPLES whose identity IS their origin: the bare group name ("Aiel",
+  "Tuatha'an", "Atha'an Miere").
+- "Age of Legends" for figures of the Age of Legends — the Forsaken/Chosen
+  (Lanfear, Asmodean, Sammael, Rahvin, Moghedien, Be'lal, Demandred, ...),
+  Lews Therin Telamon, and other Age-of-Legends figures the text identifies.
+- "Shadow" for Shadow-created beings (Trollocs, Myrddraal, Draghkar, and other
+  Shadowspawn).
+- "Time" for cosmic / metaphysical, non-geographic entities (the Creator, the
+  Dark One, Machin Shin, Mashadar).
+- null when no reasonable origin can be inferred. NO hedges or parentheticals;
+  NEVER write "unknown", "not stated", or "n/a" — use null.
+Faction/rank/title is NOT origin. "The Amyrlin Seat said..." is not evidence of
+the speaker's origin.
 
 WHAT IS NOT A CHARACTER:
 - A group, mass, army, or collective is NEVER a character — not "Trollocs",
@@ -136,6 +146,11 @@ WHAT IS NOT A CHARACTER:
   in the notable_actions/demeanor of the named characters present.
 - A creature that is named or acts as a distinct individual IS a character
   (Narg the Trolloc; Bela the horse).
+- A named OBJECT, VEHICLE, or PLACE is NEVER a character, even with a proper
+  name: a ship (the Spray), a city/region/fortress (Mafal Dadaranell, Tar
+  Valon), a sword/ter'angreal/artifact (Callandor, the Horn of Valere,
+  Avendesora). Only named, individually-ACTING beings get character rows;
+  mention objects/places in the actions/whereabouts of the beings instead.
 
 PRESENT vs MENTIONED (this is important):
 - "characters" + "appearances" are for characters who are PRESENT and acting in
@@ -149,6 +164,12 @@ PRESENT vs MENTIONED (this is important):
 FACTIONS, WARDER BOND, PERSONALITY vs DEMEANOR:
 - Faction membership (Ajah, order, House, clan, society) goes in "factions"
   with a faction_type and a role ("member"/"leader").
+- A sister belongs to exactly ONE public Ajah. The BLACK AJAH is a covert,
+  OVERLAPPING faction: if the text reveals a sister is Black Ajah, list BOTH her
+  public Ajah AND a separate "Black Ajah" faction (faction_type "ajah") — e.g.
+  factions: [{"name":"Green Ajah",...}, {"name":"Black Ajah",...}]. Never write
+  "formerly Green Ajah" and never replace her public Ajah. Do NOT also add a
+  generic "the Shadow" faction for her — Black Ajah already conveys that.
 - The Aes Sedai/Warder bond is a relationship with relationship_type
   "warder_bond", directed=true, character_a = the Aes Sedai, character_b = the
   Warder. One row per bonded pair.

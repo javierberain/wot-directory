@@ -22,3 +22,4 @@ db/*.db
 *.db-shm
 db/wot_backup.db
 db/wot_clean_book1.db
+.claude/

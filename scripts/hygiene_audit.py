@@ -23,6 +23,7 @@ kept together and clearly labelled so they are easy to find and edit.
 """
 
 import argparse
+import difflib
 import os
 import pathlib
 import re
@@ -253,6 +254,86 @@ def check_c(conn):
                 "character_type": r["character_type"],
                 "apps": apps, "rels": rels, "facs": facs,
             })
+    return flagged
+
+
+def check_d(conn):
+    """Identity collisions: an alias whose normalised text equals a DIFFERENT
+    character's primary_name. Surfaces disguise reveals and mononym/full-name
+    duplicates for a human merge decision. Bucketed by alias_type."""
+    prim = {}
+    for r in conn.execute("SELECT character_id, primary_name FROM characters"):
+        prim[norm(r["primary_name"])] = (r["character_id"], r["primary_name"])
+    flagged = []
+    for r in conn.execute(
+        "SELECT a.character_id, a.alias_text, a.alias_norm, a.alias_type, "
+        "c.primary_name FROM aliases a "
+        "JOIN characters c ON c.character_id = a.character_id "
+        "WHERE a.is_primary = 0"
+    ):
+        tgt = prim.get(r["alias_norm"])
+        if tgt and tgt[0] != r["character_id"]:
+            bucket = {"disguise": "disguise", "given_name": "possible-duplicate",
+                      "title": "title"}.get(r["alias_type"], r["alias_type"])
+            flagged.append({
+                "owner_id": r["character_id"], "owner": r["primary_name"],
+                "alias": r["alias_text"], "alias_type": r["alias_type"],
+                "other_id": tgt[0], "other": tgt[1], "bucket": bucket,
+            })
+    flagged.sort(key=lambda x: (x["bucket"], x["owner"]))
+    return flagged
+
+
+def check_e(conn, threshold=0.88):
+    """Fuzzy near-duplicate primary names (e.g. 'Ravhin'/'Rahvin'), excluding
+    pairs already linked by an alias (one name is an alias of the other)."""
+    chars = conn.execute(
+        "SELECT character_id, primary_name FROM characters").fetchall()
+    by_norm = {norm(c["primary_name"]): (c["character_id"], c["primary_name"])
+               for c in chars}
+    # alias norms per character, to skip already-linked pairs
+    owned = {}
+    for r in conn.execute("SELECT character_id, alias_norm FROM aliases"):
+        owned.setdefault(r["character_id"], set()).add(r["alias_norm"])
+    names = list(by_norm.keys())
+    seen, flagged = set(), []
+    for n in names:
+        for m in difflib.get_close_matches(n, names, n=4, cutoff=threshold):
+            if m == n:
+                continue
+            a, b = by_norm[n], by_norm[m]
+            key = tuple(sorted((a[0], b[0])))
+            if key in seen:
+                continue
+            # skip if one is already an alias of the other
+            if m in owned.get(a[0], ()) or n in owned.get(b[0], ()):
+                continue
+            seen.add(key)
+            ratio = difflib.SequenceMatcher(None, n, m).ratio()
+            flagged.append({"a_id": a[0], "a": a[1], "b_id": b[0], "b": b[1],
+                            "ratio": ratio})
+    flagged.sort(key=lambda x: -x["ratio"])
+    return flagged
+
+
+def check_f(conn):
+    """Non-character candidates: character_type 'other' rows with NO
+    appearances, mentions, relationships, or factions — the empty-shell shape of
+    a mis-extracted object/place/ship (Spray, Mafal Dadaranell). Advisory only."""
+    flagged = []
+    for r in conn.execute(
+        "SELECT character_id, primary_name FROM characters "
+        "WHERE character_type = 'other' ORDER BY primary_name"
+    ):
+        if norm(r["primary_name"]) in PRIMARY_NAME_ALLOWLIST:
+            continue   # the Creator / the Dark One etc. are legit entities
+        cid = r["character_id"]
+        apps, rels, facs = dep_counts(conn, cid)
+        mens = conn.execute(
+            "SELECT COUNT(*) FROM mentions WHERE character_id = ?", (cid,)
+        ).fetchone()[0]
+        if apps == 0 and rels == 0 and facs == 0 and mens == 0:
+            flagged.append({"character_id": cid, "primary_name": r["primary_name"]})
     return flagged
 
 
@@ -719,6 +800,52 @@ def main():
         print("  (none found)")
         print()
 
+    # ── Check D ───────────────────────────────────────────────────────────────
+    d_rows = check_d(conn)
+    _header("CHECK D: IDENTITY COLLISIONS (alias == another primary_name) ")
+    print("An alias that equals a different character's primary name. Disguise")
+    print("reveals and mononym/full-name duplicates surface here for a human")
+    print("merge decision (the matcher deliberately does not auto-merge these).")
+    print()
+    if d_rows:
+        for r in d_rows:
+            print(f"  [{r['bucket']}] \"{r['alias']}\" [{r['alias_type']}] on "
+                  f"cid={r['owner_id']} \"{r['owner']}\"  ==  primary of "
+                  f"cid={r['other_id']} \"{r['other']}\"")
+        print()
+    else:
+        print("  (none found)")
+        print()
+
+    # ── Check E ───────────────────────────────────────────────────────────────
+    e_rows = check_e(conn)
+    _header("CHECK E: FUZZY NEAR-DUPLICATE PRIMARY NAMES ")
+    print("Pairs of primary names that are >=88% similar and not already linked")
+    print("by an alias (catches misspellings like 'Ravhin'/'Rahvin').")
+    print()
+    if e_rows:
+        for r in e_rows:
+            print(f"  {r['ratio']:.0%}  cid={r['a_id']} \"{r['a']}\"  ~  "
+                  f"cid={r['b_id']} \"{r['b']}\"")
+        print()
+    else:
+        print("  (none found)")
+        print()
+
+    # ── Check F ───────────────────────────────────────────────────────────────
+    f_rows = check_f(conn)
+    _header("CHECK F: NON-CHARACTER CANDIDATES ")
+    print("character_type 'other' rows with no appearances/mentions/relationships/")
+    print("factions — the empty-shell shape of a mis-extracted object/place/ship.")
+    print()
+    if f_rows:
+        for r in f_rows:
+            print(f"  cid={r['character_id']}  \"{r['primary_name']}\"")
+        print()
+    else:
+        print("  (none found)")
+        print()
+
     # ── LLM advisory ──────────────────────────────────────────────────────────
     if args.with_llm:
         # Ambiguous = B2 rows (walk-on placeholders: could be meaningful)
@@ -767,6 +894,9 @@ def main():
     print(f"  Check B1 - title/group names:        {len(b1_rows):4d} flagged")
     print(f"  Check B2 - placeholder names:        {len(b2_rows):4d} flagged")
     print(f"  Check C  - non-individual rows:      {len(c_rows):4d} flagged")
+    print(f"  Check D  - identity collisions:      {len(d_rows):4d} flagged")
+    print(f"  Check E  - fuzzy near-duplicates:    {len(e_rows):4d} flagged")
+    print(f"  Check F  - non-character candidates: {len(f_rows):4d} flagged")
     print(f"  Unique characters to review (B+C):   {unique_chars:4d}")
     print()
     print("  Action: review the above and edit wot.db directly.")

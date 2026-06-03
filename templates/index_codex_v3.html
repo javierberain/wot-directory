@@ -1205,6 +1205,26 @@
         </div>`).join('')
         : '<p class="hint">No relationships recorded yet.</p>';
 
+      // "Mentioned in" — chapters where the character is referenced but not
+      // present. Empty for books without mention data (pre-book-4); the card is
+      // omitted entirely in that case.
+      const mentionsCard = (d.mentions && d.mentions.length) ? `
+        <section class="codex-card accordion-card" id="accordion-mentions">
+          <button class="accordion-toggle" onclick="toggleAccordion('accordion-mentions')" aria-expanded="false">
+            Mentioned Offstage
+            <span class="accordion-chevron">&#9660;</span>
+          </button>
+          <div class="accordion-body">
+            <p class="hint">${d.mentions.length} chapter${d.mentions.length === 1 ? '' : 's'} where this character is referenced but not present.</p>
+            ${d.mentions.map(m => `
+        <div class="thread-card">
+          <div class="ch">Bk ${escapeHtml(String(m.series_order))}, Ch ${escapeHtml(String(m.chapter_number))}
+            &mdash; ${escapeHtml(m.chapter_title)}</div>
+          ${m.context ? `<div class="action-text">${escapeHtml(m.context)}</div>` : ''}
+        </div>`).join('')}
+          </div>
+        </section>` : '';
+
       $('#profile-content').innerHTML = `
     <article class="codex-profile">
       <div class="profile-name">${escapeHtml(c.display_name || c.primary_name)} ${speciesChip}</div>
@@ -1243,6 +1263,8 @@
             ${appearances}
           </div>
         </section>
+
+        ${mentionsCard}
 
         <section class="codex-card accordion-card" id="accordion-bonds">
           <button class="accordion-toggle" onclick="toggleAccordion('accordion-bonds')" aria-expanded="false">

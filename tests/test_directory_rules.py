@@ -85,6 +85,27 @@ def test_normalize_strips_placeholders_and_demonyms():
         == "Emond's Field, Two Rivers, Andor"
 
 
+# ── Origin: region -> nation completion + taxonomy ────────────────────────────
+
+def test_region_completes_to_nation():
+    assert dr.normalize_nationality("Two Rivers") == "Two Rivers, Andor"
+    assert dr.normalize_nationality("Emond's Field") \
+        == "Emond's Field, Two Rivers, Andor"
+    assert dr.normalize_nationality("Maule") == "Maule, Tear"
+    # already-complete values are unchanged (idempotent)
+    assert dr.normalize_nationality("Two Rivers, Andor") == "Two Rivers, Andor"
+    assert dr.normalize_nationality("Emond's Field, Two Rivers, Andor") \
+        == "Emond's Field, Two Rivers, Andor"
+
+
+def test_classify_origin():
+    assert dr.classify_origin("Narg", "trolloc") == "Shadow"
+    assert dr.classify_origin("a Myrddraal", "myrddraal") == "Shadow"
+    assert dr.classify_origin("the Dark One", "other") == "Time"
+    assert dr.classify_origin("Machin Shin", "other") == "Time"
+    assert dr.classify_origin("Rand al'Thor", "human") is None
+
+
 # ── Nationality: coarse -> fine refinement ────────────────────────────────────
 
 def test_refine_fills_unresolved_including_legacy_unknown():

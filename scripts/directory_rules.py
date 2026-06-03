@@ -247,6 +247,23 @@ _DEMONYM_TO_PLACE = {
     "tar valoner": "Tar Valon",
 }
 
+# Sub-national region -> its immediate parent in the compound hierarchy.
+# Used to auto-complete a too-coarse origin to the canonical
+# "Village, Region, Nation" form: "Two Rivers" -> "Two Rivers, Andor",
+# "Emond's Field" -> "Emond's Field, Two Rivers, Andor". The chain is followed
+# until the nation is reached, so the dataset never carries a bare region again.
+_REGION_PARENT = {
+    "emond's field": "Two Rivers",
+    "watch hill": "Two Rivers",
+    "taren ferry": "Two Rivers",
+    "deven ride": "Two Rivers",
+    "two rivers": "Andor",
+    "baerlon": "Andor",
+    "whitebridge": "Andor",
+    "maule": "Tear",
+    "lugard": "Murandy",
+}
+
 # Peoples whose own name IS their origin — kept as the bare canonical group
 # name, never converted. Maps a few common variants to the canonical form.
 _PEOPLE_CANONICAL = {
@@ -275,6 +292,24 @@ def _normalize_component(part):
     return part
 
 
+def _complete_region_tail(parts):
+    """Append missing parent regions/nation so a bare/partial region becomes the
+    full compound form. "Two Rivers" -> "Two Rivers, Andor"; "Emond's Field" ->
+    "Emond's Field, Two Rivers, Andor". No-op once the nation is present."""
+    if not parts:
+        return parts
+    out = list(parts)
+    seen = {norm(p) for p in out}
+    # follow the chain off the current last (most-general) component
+    while True:
+        parent = _REGION_PARENT.get(norm(out[-1]))
+        if not parent or norm(parent) in seen:
+            break
+        out.append(parent)
+        seen.add(norm(parent))
+    return out
+
+
 def normalize_nationality(value):
     """Apply the README nationality conventions. Returns the canonical string,
     or None for a placeholder/empty/hedge-only value (so it is stored as NULL
@@ -285,6 +320,7 @@ def normalize_nationality(value):
     parts = [p for p in parts if p]
     if not parts:
         return None
+    parts = _complete_region_tail(parts)
     return ", ".join(parts)
 
 
@@ -328,6 +364,27 @@ def refine_nationality(current, incoming):
     if ck & ik:                                  # same place, different detail
         return (inc if len(ik) > len(ck) else cur), False
     return cur, True                             # no overlap: real conflict
+
+
+# ── Origin taxonomy (deterministic categories) ────────────────────────────────
+# The Origin field is broader than geography: it may be a metaphysical or
+# Shadow category. Only the categories derivable from local structured data are
+# assigned here; Age of Legends (Forsaken etc.) and geographic origins need the
+# LLM / text and are NOT guessed.
+_TIME_ENTITIES = {"the creator", "the dark one", "machin shin", "mashadar"}
+
+
+def classify_origin(name, char_type):
+    """Return a taxonomy Origin category derivable from name + character_type,
+    or None. Used as a write-time fallback when no geographic origin is known:
+      - trolloc / myrddraal (Shadowspawn species) -> "Shadow"
+      - known cosmic/metaphysical entities         -> "Time"
+    Age of Legends and geographic origins are left to the extractor/text."""
+    if char_type in ("trolloc", "myrddraal"):
+        return "Shadow"
+    if norm(name) in _TIME_ENTITIES:
+        return "Time"
+    return None
 
 
 # ── Ajah / Black Ajah faction rules ───────────────────────────────────────────
