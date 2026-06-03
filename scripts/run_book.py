@@ -21,12 +21,19 @@ import sqlite3
 import subprocess
 import sys
 
-DB_PATH = os.path.join(os.path.dirname(__file__), "..", "db", "wot.db")
 HERE = os.path.dirname(__file__)
+DB_DIR = os.path.join(HERE, "..", "db")
 
 
-def chapters_for(book_order, lo, hi):
-    conn = sqlite3.connect(DB_PATH)
+def working_db(book_order):
+    """The per-book snapshot is the working DB (snapshot-as-working-DB model).
+    Book N is parsed, reconciled, and cleaned in db/wot_book{N}.db — never the
+    legacy scratch db/wot.db."""
+    return os.path.join(DB_DIR, f"wot_book{book_order}.db")
+
+
+def chapters_for(book_order, lo, hi, db_path):
+    conn = sqlite3.connect(db_path)
     rows = conn.execute("""
         SELECT ch.chapter_number, ch.title, ch.extracted
         FROM chapters ch JOIN books b ON b.book_id = ch.book_id
@@ -59,13 +66,22 @@ def main():
                     help="commit confident items, no pause")
     ap.add_argument("--skip-extracted", action="store_true", default=True,
                     help="skip chapters already marked extracted")
+    ap.add_argument("--db", help="override working DB (default: "
+                    "db/wot_book{N}.db)")
     args = ap.parse_args()
 
-    chapters = chapters_for(args.book, args.lo, args.hi)
-    if not chapters:
-        sys.exit("No chapters match. Did you run parse_epub.py?")
+    db = args.db or working_db(args.book)
+    if not os.path.exists(db):
+        sys.exit(f"Working DB not found: {db}\n"
+                 f"Seed it first:  python scripts/start_book.py --book "
+                 f"{args.book} --epub \"<file>\" --title \"<title>\"")
 
-    print(f"Book {args.book}: {len(chapters)} chapter(s) in range.\n")
+    chapters = chapters_for(args.book, args.lo, args.hi, db)
+    if not chapters:
+        sys.exit("No chapters match. Did you run start_book.py?")
+
+    print(f"Book {args.book}: {len(chapters)} chapter(s) in range. "
+          f"Working DB: {db}\n")
 
     for num, title, extracted in chapters:
         if extracted and args.skip_extracted:
@@ -75,7 +91,8 @@ def main():
         print(f"\n{'='*60}\nChapter {num}: {title}\n{'='*60}")
 
         ok = run([sys.executable, os.path.join(HERE, "extract_chapter.py"),
-                  "--book", str(args.book), "--chapter", str(num)])
+                  "--book", str(args.book), "--chapter", str(num),
+                  "--db", db])
         if not ok:
             print(f"  extraction failed for chapter {num}, stopping.")
             sys.exit(1)
@@ -90,7 +107,8 @@ def main():
                 continue
 
         rec_cmd = [sys.executable, os.path.join(HERE, "reconcile.py"),
-                   "--book", str(args.book), "--chapter", str(num)]
+                   "--book", str(args.book), "--chapter", str(num),
+                   "--db", db]
         if args.auto:
             rec_cmd.append("--auto")
         run(rec_cmd)

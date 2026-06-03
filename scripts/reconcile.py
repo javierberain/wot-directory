@@ -465,7 +465,7 @@ def resolve_one(conn, roster, char, data, chapter_id, auto):
 
 # ── Main reconcile ────────────────────────────────────────────────────────────
 
-def reconcile(book_order, chapter_number, auto=False):
+def reconcile(book_order, chapter_number, auto=False, db_path=None):
     path = os.path.join(OUT_DIR, f"b{book_order}_c{chapter_number}.json")
     if not os.path.exists(path):
         sys.exit(f"No extraction file at {path}. Run extract_chapter.py first.")
@@ -473,7 +473,7 @@ def reconcile(book_order, chapter_number, auto=False):
         data = json.load(f)
 
     chapter_id = data["_meta"]["chapter_id"]
-    conn = sqlite3.connect(DB_PATH)
+    conn = sqlite3.connect(db_path or DB_PATH)
     conn.execute("PRAGMA foreign_keys = ON")
     roster = Roster(conn)
 
@@ -580,8 +580,8 @@ def reconcile(book_order, chapter_number, auto=False):
     conn.close()
 
 
-def show_review_queue():
-    conn = sqlite3.connect(DB_PATH)
+def show_review_queue(db_path=None):
+    conn = sqlite3.connect(db_path or DB_PATH)
     rows = conn.execute(
         "SELECT review_id, kind, note, chapter_id FROM review_queue "
         "WHERE resolved = 0 ORDER BY review_id"
@@ -606,14 +606,15 @@ def main():
                     help="auto-commit high-confidence items")
     ap.add_argument("--review", action="store_true",
                     help="list the review queue and exit")
+    ap.add_argument("--db", help="target database (default: db/wot.db)")
     args = ap.parse_args()
 
     if args.review:
-        show_review_queue()
+        show_review_queue(db_path=args.db)
         return
     if args.book is None or args.chapter is None:
         sys.exit("Provide --book and --chapter, or use --review.")
-    reconcile(args.book, args.chapter, args.auto)
+    reconcile(args.book, args.chapter, args.auto, db_path=args.db)
 
 
 if __name__ == "__main__":

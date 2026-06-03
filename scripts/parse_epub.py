@@ -39,15 +39,16 @@ NON_CHAPTER_LABELS = {
 }
 
 
-def get_db():
+def get_db(db_path=None):
     """Open the database, creating it from schema.sql on first run."""
-    first_time = not os.path.exists(DB_PATH)
-    conn = sqlite3.connect(DB_PATH)
+    db_path = db_path or DB_PATH
+    first_time = not os.path.exists(db_path)
+    conn = sqlite3.connect(db_path)
     conn.execute("PRAGMA foreign_keys = ON")
     if first_time:
         with open(SCHEMA_PATH, encoding="utf-8") as f:
             conn.executescript(f.read())
-        print(f"  created new database at {DB_PATH}")
+        print(f"  created new database at {db_path}")
     return conn
 
 
@@ -143,7 +144,7 @@ def html_to_text(raw):
     return "\n".join(lines)
 
 
-def parse_book(epub_path, series_order, title_override=None):
+def parse_book(epub_path, series_order, title_override=None, db_path=None):
     zf = zipfile.ZipFile(epub_path)
     opf_dir, spine = find_opf_and_spine(zf)
     ncx_entries = parse_ncx(zf, opf_dir)
@@ -190,7 +191,7 @@ def parse_book(epub_path, series_order, title_override=None):
         os.path.basename(epub_path))[0]
 
     # Write to the database.
-    conn = get_db()
+    conn = get_db(db_path)
     cur = conn.cursor()
     cur.execute(
         "INSERT OR IGNORE INTO books (series_order, title, source_file) "
@@ -229,11 +230,12 @@ def main():
     ap.add_argument("--order", type=int, required=True,
                     help="series order, e.g. 1 for Eye of the World")
     ap.add_argument("--title", help="override book title")
+    ap.add_argument("--db", help="target database (default: db/wot.db)")
     args = ap.parse_args()
 
     if not os.path.exists(args.epub):
         sys.exit(f"File not found: {args.epub}")
-    parse_book(args.epub, args.order, args.title)
+    parse_book(args.epub, args.order, args.title, db_path=args.db)
 
 
 if __name__ == "__main__":

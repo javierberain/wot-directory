@@ -24,6 +24,7 @@ kept together and clearly labelled so they are easy to find and edit.
 
 import argparse
 import difflib
+import glob
 import os
 import pathlib
 import re
@@ -685,9 +686,21 @@ def main():
     )
     args = ap.parse_args()
 
-    # ── Resolve DB/BAK paths from --db if given ───────────────────────────────
+    # ── Resolve DB/BAK paths ──────────────────────────────────────────────────
+    # With --db, audit that file. Without it, default to the LATEST per-book
+    # snapshot (db/wot_book{max}.db) — the real cleaned data — not the stale
+    # scratch db/wot.db.
+    global DB_PATH, BAK_PATH
+    if args.db is None:
+        snaps = []
+        for p in glob.glob(os.path.join(os.path.dirname(__file__), "..", "db",
+                                        "wot_book*.db")):
+            m = re.match(r"wot_book(\d+)\.db$", os.path.basename(p))
+            if m:
+                snaps.append((int(m.group(1)), p))
+        if snaps:
+            args.db = sorted(snaps)[-1][1]
     if args.db is not None:
-        global DB_PATH, BAK_PATH
         DB_PATH = args.db
         BAK_PATH = args.db + ".pre-hygiene.bak"
 

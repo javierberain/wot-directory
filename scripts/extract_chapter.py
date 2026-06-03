@@ -357,11 +357,11 @@ def _call_api(client, tool, user_msg):
         time.sleep(delay)
 
 
-def extract(book_order, chapter_number, do_print=False):
+def extract(book_order, chapter_number, do_print=False, db_path=None):
     if not os.environ.get("ANTHROPIC_API_KEY"):
         sys.exit("Set the ANTHROPIC_API_KEY environment variable first.")
 
-    conn = sqlite3.connect(DB_PATH)
+    conn = sqlite3.connect(db_path or DB_PATH)
     row = get_chapter(conn, book_order, chapter_number)
     if not row:
         sys.exit(f"Chapter not found: book {book_order}, chapter {chapter_number}")
@@ -433,10 +433,11 @@ def main():
     ap.add_argument("--book", type=int, required=True, help="series order")
     ap.add_argument("--chapter", type=int, required=True,
                     help="chapter number (0 = prologue)")
+    ap.add_argument("--db", help="target database (default: db/wot.db)")
     ap.add_argument("--print", action="store_true", dest="do_print",
                     help="also print the JSON to stdout")
     args = ap.parse_args()
-    extract(args.book, args.chapter, args.do_print)
+    extract(args.book, args.chapter, args.do_print, db_path=args.db)
 
 
 if __name__ == "__main__":

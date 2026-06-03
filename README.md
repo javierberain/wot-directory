@@ -67,7 +67,7 @@ source paths.
 ## How it works
 
 ```
-   EPUB -> parse_epub.py -> private db/wot.db chapters table
+   start_book.py  (seed db/wot_bookN.db from db/wot_book(N-1).db + parse EPUB)
                                   |
                           extract_chapter.py   (calls Claude API)
                                   |
@@ -75,14 +75,18 @@ source paths.
                                   |
                           reconcile.py   (matches names, commits)
                                   |
-                         private db/wot_bookN.db snapshots
+                 private db/wot_bookN.db snapshot   <- the working + cleaned DB
                                   |
-                          export_public_dbs.py
+                          export_public_dbs.py   (auto-discovers wot_book*.db)
                                   |
                          public_db/wot_bookN.db snapshots
                                   |
                               app.py  ->  web UI
 ```
+
+`run_book.py --book N` drives `extract_chapter.py` + `reconcile.py` against
+`db/wot_bookN.db` (the snapshot is the working DB; the old `db/wot.db` scratch
+target is retired — see **The three database layers**).
 
 The design separates **extraction** (the LLM reads a chapter and
 proposes structured data) from **reconciliation** (names are matched
@@ -190,10 +194,8 @@ single Aes Sedai can have several Warders — each pair is its own row.
 
 | File | Role |
 |------|------|
-| `db/wot.db` | Private ingestion target — receives new extractions and reconciliations. **Never served by the web app.** Once book 4 work begins it will contain partial data that is not yet at a clean spoiler boundary. |
-| `db/wot_book1.db` | Private frozen snapshot after book 1 (*The Eye of the World*) was cleaned. Contains books 1 data only. |
-| `db/wot_book2.db` | Private frozen snapshot after book 2 (*The Great Hunt*) was cleaned. Contains books 1–2 data. |
-| `db/wot_book3.db` | Private frozen snapshot after book 3 (*The Dragon Reborn*) was cleaned. Contains books 1–3 data. |
+| `db/wot.db` | **Legacy scratch — no pipeline role.** Historical ingestion target from the books 1–3 era; the scripts no longer write to it. Left in place as an artifact; can be archived. Never served. |
+| `db/wot_bookN.db` | Private **working + cleaned** snapshot for book N (`N`=1,2,3,4,…). Seeded from `db/wot_book(N-1).db` by `start_book.py`; book N is parsed, reconciled, and cleaned here; contains books 1..N data plus raw `chapters.full_text` and `review_queue`. The per-book source of truth. |
 | `public_db/wot_book1.db` | Sanitized production snapshot for the public website through book 1. |
 | `public_db/wot_book2.db` | Sanitized production snapshot for the public website through book 2. |
 | `public_db/wot_book3.db` | Sanitized production snapshot for the public website through book 3. |
@@ -1199,59 +1201,56 @@ is the canonical answer." Scrubbed is "we changed this from X to Y
 for these reasons." Together they reconstruct the full edit history
 without needing per-row DB triggers or a separate audit table.
 
+## The three database layers
+
+The pipeline is **snapshot-based**, with three distinct layers:
+
+| Layer | File | Role |
+|------|------|------|
+| Private snapshot (**source of truth**) | `db/wot_bookN.db` | Book N is parsed, reconciled, and **cleaned** here. Seeded from `db/wot_book(N-1).db` so the cleaned roster carries forward. Contains raw `chapters.full_text`, `review_queue`, and matcher-internal columns. |
+| Public snapshot | `public_db/wot_bookN.db` | Sanitized export of the private snapshot (no `full_text`, no `review_queue`, `source_file` NULL). The only thing the web app reads. |
+| Legacy scratch | `db/wot.db` | **No pipeline role.** Historical artifact from the books 1–3 era; the scripts no longer target it. Can be archived. |
+
+The book-N working DB **is** `db/wot_bookN.db` — the pipeline scripts take
+`--db` (and `run_book.py`/`hygiene_audit.py` derive/discover it), so cleanup is
+never lost to a stale scratch DB. Adding a book is **pure data**: the exporter
+auto-discovers `db/wot_book*.db` and the app auto-discovers
+`public_db/wot_book*.db` — no code edits to register a new book.
+
 ## Adding the next book
 
-> **Build book N on the cleaned `db/wot_book(N-1).db` snapshot, NOT on
-> `db/wot.db`.** This is the hard-won convention: the per-book manual rulings
-> and audits are applied to the *snapshots*, so `db/wot.db` accumulates the
-> *raw, un-cleaned* post-reconcile state and is best treated as scratch for the
-> current extraction run. Building book 4 by `cp db/wot.db` (as the old steps
-> below did) silently regresses every earlier-book cleanup. Instead: create the
-> new snapshot from the previous one, copy the parsed chapter rows into it
-> (preserving `chapter_id`s), and reconcile onto it. Extraction JSON in
-> `data/extractions/` is reusable for free, so re-reconciling onto the right
-> base costs no API calls. Book 4 was built this way; books 1–3 are the legacy
-> path.
-
 ```bash
-# 1. back up first
-cp db/wot.db db/wot.db.pre-book4.bak
+# 1. seed db/wot_book{N}.db from the cleaned db/wot_book{N-1}.db and parse the
+#    EPUB into it (no API calls). Refuses to clobber an existing snapshot.
+python scripts/start_book.py --book 5 \
+    --epub "books/The Fires of Heaven.epub" --title "The Fires of Heaven"
 
-# 2. parse the EPUB into chapter rows (no API calls)
-python scripts/parse_epub.py "The Shadow Rising.epub" --order 4 \
-    --title "The Shadow Rising"
-# check the printed chapter list and count before going further
+# 2. sanity-check the first couple of chapters (targets db/wot_book5.db)
+python scripts/run_book.py --book 5 --from 0 --to 1
+#    inspect: no placeholder/collective rows, no generic aliases, origins
+#    compound + taxonomy-labelled, short/full names matched.
 
-# 3. run a couple of chapters manually to sanity-check matching
-python scripts/run_book.py --book 4 --from 0 --to 1
+# 3. if clean, run the rest unattended
+python scripts/run_book.py --book 5 --from 2 --auto
 
-# 4. if matching looks right, run the rest unattended
-python scripts/run_book.py --book 4 --from 2 --auto
+# 4. work the review queue + post-book audit (both default to the latest
+#    snapshot now — db/wot_book5.db)
+python scripts/reconcile.py --review --db db/wot_book5.db
+python scripts/hygiene_audit.py            # Checks A–F on the latest snapshot
+#    resolve via scripts/resolve_review.py, merge_characters.py, etc.
 
-# 5. work the review queue, then run the hygiene audit + cleanup tools
-python scripts/reconcile.py --review
-python scripts/hygiene_audit.py
-
-# 6. once the book is fully cleaned and the review queue is clear,
-#    snapshot the private database
-cp db/wot.db db/wot_book4.db
-
-# 7. add the new public snapshot mapping in app.py, then export
-#    sanitized public DBs
+# 5. export sanitized public DBs (auto-discovers wot_book5.db) and verify
 python scripts/export_public_dbs.py
 
-# 8. commit app.py and public_db/ updates, then push to main.
-# GitHub Actions will deploy and restart the Lightsail service.
+# 6. commit public_db/ + any code, push to main.
+#    GitHub Actions deploys and restarts the Lightsail service; the app
+#    auto-discovers public_db/wot_book5.db and serves it — no app.py edit.
 ```
 
-The roster carries across books automatically, since extraction always
-reads every character already in the database. Books later than book
-three reuse the same EPUB-layout handling (OPF-in-subdirectory,
-one-file-per-chapter) that the parser was extended to support.
-
-The public website does not serve `db/wot_bookN.db` directly. New book
-boundaries become public only after the private snapshot is exported into
-`public_db/` and the Flask `BOOKS_DB` map points at that sanitized snapshot.
+`start_book.py` is **step 1 of ingesting a book** — don't seed `db/wot_bookN.db`
+until you're ready to ingest it, or the auto-discovering exporter will publish
+an empty book N. The roster, aliases, factions, and mentions carry forward
+automatically because the snapshot is copied from the previous cleaned book.
 
 ## Known Limitations / Future Work
 

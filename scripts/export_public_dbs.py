@@ -24,6 +24,7 @@ from __future__ import annotations
 
 import argparse
 import pathlib
+import re
 import sqlite3
 import sys
 
@@ -31,7 +32,19 @@ import sys
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 DEFAULT_INPUT_DIR = ROOT / "db"
 DEFAULT_OUTPUT_DIR = ROOT / "public_db"
-SNAPSHOTS = ("wot_book1.db", "wot_book2.db", "wot_book3.db", "wot_book4.db")
+_SNAPSHOT_RE = re.compile(r"^wot_book(\d+)\.db$")
+
+
+def discover_snapshots(input_dir: pathlib.Path) -> list[str]:
+    """Every per-book private snapshot in input_dir, ordered by book number.
+    Auto-discovery means adding a book needs no code edit — drop the new
+    db/wot_bookN.db in and it is exported."""
+    found = []
+    for p in input_dir.glob("wot_book*.db"):
+        m = _SNAPSHOT_RE.match(p.name)
+        if m:
+            found.append((int(m.group(1)), p.name))
+    return [name for _, name in sorted(found)]
 
 
 PUBLIC_SCHEMA = """
@@ -410,9 +423,15 @@ def main() -> int:
     print(f"Input : {input_dir}")
     print(f"Output: {output_dir}")
 
+    snapshots = discover_snapshots(input_dir)
+    if not snapshots:
+        print(f"No wot_book*.db snapshots found in {input_dir}")
+        return 1
+    print(f"Snapshots: {', '.join(snapshots)}")
+
     all_errors: list[str] = []
     outputs: list[pathlib.Path] = []
-    for name in SNAPSHOTS:
+    for name in snapshots:
         input_path = input_dir / name
         output_path = output_dir / name
         print(f"\nExporting {input_path.name} -> {output_path}")

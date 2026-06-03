@@ -32,17 +32,24 @@ from flask import Flask, g, jsonify, render_template, request
 _PUBLIC_DB_DIR = os.path.join(os.path.dirname(__file__), "public_db")
 _EXPORT_COMMAND = "python scripts/export_public_dbs.py"
 
-# Sanitized snapshot files served by the web app. Register a new entry here
-# once book N is fully cleaned, snapshotted, and exported to public_db/.
-BOOKS_DB = {
-    1: os.path.join(_PUBLIC_DB_DIR, "wot_book1.db"),
-    2: os.path.join(_PUBLIC_DB_DIR, "wot_book2.db"),
-    3: os.path.join(_PUBLIC_DB_DIR, "wot_book3.db"),
-    4: os.path.join(_PUBLIC_DB_DIR, "wot_book4.db"),
-}
+# Sanitized snapshot files served by the web app, auto-discovered from
+# public_db/wot_book*.db. Exporting a new book's public snapshot is enough to
+# serve it — no code edit needed.
+def _discover_books_db():
+    import glob as _glob
+    import re as _re
+    out = {}
+    for path in _glob.glob(os.path.join(_PUBLIC_DB_DIR, "wot_book*.db")):
+        m = _re.match(r"wot_book(\d+)\.db$", os.path.basename(path))
+        if m:
+            out[int(m.group(1))] = path
+    return out
+
+
+BOOKS_DB = _discover_books_db()
 
 # Only books whose public snapshot file actually exists on disk can be served.
-# This list is computed once at startup so a missing file can never be served.
+# Computed once at startup so a missing file can never be served.
 AVAILABLE_BOOKS = sorted(n for n, path in BOOKS_DB.items() if os.path.exists(path))
 MISSING_PUBLIC_DBS = [
     path for path in BOOKS_DB.values()
