@@ -638,6 +638,29 @@ def do_merge(conn, canonical, duplicate,
         )
         n_app_reassigned = len(reassign_app_ids)
 
+    # ── c2. Mentions ──────────────────────────────────────────────────────────
+    # The mentions table postdates this tool. Same rule as appearances:
+    # at most one mention per (character_id, chapter_id), and a chapter where
+    # the canonical is PRESENT (has an appearance) must not also carry a mention.
+    # Drop duplicate-side mentions that would collide, then reassign the rest.
+    conn.execute(
+        "DELETE FROM mentions WHERE character_id = ? AND chapter_id IN "
+        "(SELECT chapter_id FROM mentions   WHERE character_id = ? "
+        " UNION SELECT chapter_id FROM appearances WHERE character_id = ?)",
+        (dup_id, canonical_id, canonical_id),
+    )
+    n_men_reassigned = conn.execute(
+        "UPDATE mentions SET character_id = ? WHERE character_id = ?",
+        (canonical_id, dup_id),
+    ).rowcount
+    # A reassigned mention may now collide with a canonical appearance moved in
+    # this same merge — present beats mentioned, so drop those.
+    conn.execute(
+        "DELETE FROM mentions WHERE character_id = ? AND chapter_id IN "
+        "(SELECT chapter_id FROM appearances WHERE character_id = ?)",
+        (canonical_id, canonical_id),
+    )
+
     # ── d. Relationships ──────────────────────────────────────────────────────
     # Collect IDs to delete (self-loops + duplicate edges).
     delete_rel_ids = (
@@ -699,6 +722,8 @@ def do_merge(conn, canonical, duplicate,
          "SELECT COUNT(*) FROM aliases WHERE character_id = ?"),
         ("appearances",
          "SELECT COUNT(*) FROM appearances WHERE character_id = ?"),
+        ("mentions",
+         "SELECT COUNT(*) FROM mentions WHERE character_id = ?"),
         ("relationships",
          "SELECT COUNT(*) FROM relationships "
          "WHERE character_a = ? OR character_b = ?"),
@@ -727,6 +752,7 @@ def do_merge(conn, canonical, duplicate,
         "alias_inserted":  n_alias_inserted,
         "app_reassigned":  n_app_reassigned,
         "app_deleted":     len(app_conflicts),
+        "men_reassigned":  n_men_reassigned,
         "rel_reassigned":  n_rel_reassigned,
         "rel_deleted":     len(delete_rel_ids),
         "fac_reassigned":  n_fac_reassigned,

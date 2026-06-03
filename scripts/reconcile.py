@@ -48,6 +48,9 @@ from directory_rules import (
     normalize_nationality,
     refine_nationality,
     rejection_reason,
+    is_ajah,
+    is_black_ajah,
+    ajah_conflict,
 )
 
 DB_PATH = os.path.join(os.path.dirname(__file__), "..", "db", "wot.db")
@@ -289,6 +292,21 @@ def reconcile_factions(conn, cid, char, chapter_id):
             continue
         nnorm = norm(name)
         ftype = coerce_faction_type(fac.get("faction_type"))
+
+        # Ajah mutual-exclusivity: normal Ajahs don't overlap; Black Ajah is the
+        # only Ajah allowed on top of a public one (additive). If this character
+        # already holds a different public Ajah, skip the conflicting incoming
+        # one rather than recording an impossible "Green + Blue".
+        if is_ajah(name, ftype) and not is_black_ajah(name):
+            existing = [r[0] for r in conn.execute(
+                "SELECT f.name FROM character_factions cf "
+                "JOIN factions f ON f.faction_id = cf.faction_id "
+                "WHERE cf.character_id = ? AND f.faction_type = 'ajah'", (cid,))]
+            if ajah_conflict(existing, name):
+                print(f"  [skip] Ajah conflict: '{name}' not added to "
+                      f"{get_primary_name(conn, cid)} (already in {existing})")
+                continue
+
         row = conn.execute(
             "SELECT faction_id FROM factions WHERE name_norm = ?", (nnorm,)
         ).fetchone()

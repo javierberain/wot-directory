@@ -209,7 +209,8 @@ def rejection_reason(name, char_type):
 # resolution. Mirrors resolve_origins.is_placeholder (startswith "unknown")
 # and broadens it.
 _ORIGIN_PLACEHOLDER_PREFIXES = ("unknown", "unclear", "unspecified", "n/a",
-                                "none", "tbd")
+                                "none", "tbd", "not stated", "not known",
+                                "n.a")
 
 
 def is_unresolved_origin(value):
@@ -329,9 +330,47 @@ def refine_nationality(current, incoming):
     return cur, True                             # no overlap: real conflict
 
 
+# ── Ajah / Black Ajah faction rules ───────────────────────────────────────────
+# Normal Ajahs are mutually exclusive (a sister belongs to exactly one public
+# Ajah). The Black Ajah is a COVERT, OVERLAPPING faction: membership is additive
+# on top of the public Ajah, and it is the ONLY Ajah permitted to coexist with
+# another. These helpers let the reconciler enforce that on future imports.
+
+def is_ajah(name, faction_type=None):
+    """True if a faction is an Ajah (public or Black)."""
+    n = norm(name)
+    return faction_type == "ajah" or n == "ajah" or n.endswith(" ajah")
+
+
+def is_black_ajah(name):
+    return norm(name) == "black ajah"
+
+
+def ajah_conflict(existing_ajah_names, incoming_name):
+    """Given the Ajah faction names a character already holds and an incoming
+    Ajah name, return True if adding it would violate mutual exclusivity.
+
+    Black Ajah never conflicts (additive); adding a public Ajah conflicts only
+    if the character already holds a DIFFERENT public Ajah.
+    """
+    if is_black_ajah(incoming_name):
+        return False
+    inc = norm(incoming_name)
+    for ex in existing_ajah_names:
+        if is_black_ajah(ex):
+            continue
+        if norm(ex) != inc:
+            return True
+    return False
+
+
 if __name__ == "__main__":   # pragma: no cover
     # Tiny smoke check so `python scripts/directory_rules.py` is self-verifying.
     assert is_generic_alias("Aes Sedai")
+    assert is_ajah("Green Ajah") and is_black_ajah("Black Ajah")
+    assert ajah_conflict(["Green Ajah"], "Blue Ajah")          # two public -> conflict
+    assert not ajah_conflict(["Green Ajah"], "Black Ajah")     # black is additive
+    assert not ajah_conflict(["Green Ajah", "Black Ajah"], "Green Ajah")
     assert is_generic_alias("the girl")
     assert is_generic_alias("What")
     assert not is_generic_alias("Rand al'Thor")
