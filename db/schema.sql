@@ -176,3 +176,19 @@ CREATE TABLE IF NOT EXISTS review_queue (
     resolved    INTEGER NOT NULL DEFAULT 0,
     created_at  TEXT NOT NULL DEFAULT (datetime('now'))
 );
+
+-- ----- Distinct pairs (Check E suppression) ------------------
+-- Character pairs a human has CONFIRMED are different people, so the hygiene
+-- audit's fuzzy near-duplicate check (Check E) stops re-flagging them on every
+-- pass (mirrors how Check E already skips alias-linked pairs). The
+-- CHECK (cid_low < cid_high) enforces canonical ordering at the storage layer
+-- so lookups are order-independent. Seeded by scripts/seed_distinct_pairs.py;
+-- hygiene_audit.py also creates this table if a pre-existing snapshot lacks it.
+CREATE TABLE IF NOT EXISTS distinct_pairs (
+    cid_low    INTEGER NOT NULL REFERENCES characters(character_id),
+    cid_high   INTEGER NOT NULL REFERENCES characters(character_id),
+    note       TEXT,
+    created_at TEXT NOT NULL DEFAULT (datetime('now')),
+    PRIMARY KEY (cid_low, cid_high),
+    CHECK (cid_low < cid_high)
+);

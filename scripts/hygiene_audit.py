@@ -133,6 +133,35 @@ def take_backup():
     print(f"Backup written:  {bak_path}")
 
 
+def ensure_distinct_pairs_table():
+    """Create the distinct_pairs suppression table if a snapshot predates it.
+
+    open_db() opens strictly read-only (mode=ro), so the create cannot happen
+    there. This uses a SEPARATE writable connection and runs only CREATE TABLE
+    IF NOT EXISTS — an existing table (with data) is untouched; a snapshot that
+    lacks it gains an empty one so check_e can read it. Call this once at
+    startup, before the read-only connection is opened.
+    """
+    db_path = pathlib.Path(DB_PATH).resolve()
+    if not db_path.exists():
+        sys.exit(f"Database not found: {db_path}")
+    conn = sqlite3.connect(db_path)
+    try:
+        conn.execute("""
+            CREATE TABLE IF NOT EXISTS distinct_pairs (
+                cid_low    INTEGER NOT NULL REFERENCES characters(character_id),
+                cid_high   INTEGER NOT NULL REFERENCES characters(character_id),
+                note       TEXT,
+                created_at TEXT NOT NULL DEFAULT (datetime('now')),
+                PRIMARY KEY (cid_low, cid_high),
+                CHECK (cid_low < cid_high)
+            )
+        """)
+        conn.commit()
+    finally:
+        conn.close()
+
+
 def dep_counts(conn, character_id):
     """Return (appearances, relationships, faction_links) for one character."""
     apps = conn.execute(
@@ -287,7 +316,11 @@ def check_d(conn):
 
 def check_e(conn, threshold=0.88):
     """Fuzzy near-duplicate primary names (e.g. 'Ravhin'/'Rahvin'), excluding
-    pairs already linked by an alias (one name is an alias of the other)."""
+    pairs already linked by an alias (one name is an alias of the other) and
+    pairs a human has confirmed distinct via distinct_pairs.
+
+    Returns (flagged, n_suppressed): the flagged list and how many distinct
+    near-duplicate pairs were suppressed via distinct_pairs this run."""
     chars = conn.execute(
         "SELECT character_id, primary_name FROM characters").fetchall()
     by_norm = {norm(c["primary_name"]): (c["character_id"], c["primary_name"])
@@ -296,14 +329,22 @@ def check_e(conn, threshold=0.88):
     owned = {}
     for r in conn.execute("SELECT character_id, alias_norm FROM aliases"):
         owned.setdefault(r["character_id"], set()).add(r["alias_norm"])
+    # Pairs a human has confirmed are different people; never re-flag them.
+    # Stored canonically as (cid_low < cid_high), matching the sorted key below.
+    suppressed = {(r["cid_low"], r["cid_high"]) for r in conn.execute(
+        "SELECT cid_low, cid_high FROM distinct_pairs")}
     names = list(by_norm.keys())
-    seen, flagged = set(), []
+    seen, suppressed_hit, flagged = set(), set(), []
     for n in names:
         for m in difflib.get_close_matches(n, names, n=4, cutoff=threshold):
             if m == n:
                 continue
             a, b = by_norm[n], by_norm[m]
             key = tuple(sorted((a[0], b[0])))
+            # skip pairs confirmed distinct by a human (distinct_pairs)
+            if key in suppressed:
+                suppressed_hit.add(key)
+                continue
             if key in seen:
                 continue
             # skip if one is already an alias of the other
@@ -314,7 +355,7 @@ def check_e(conn, threshold=0.88):
             flagged.append({"a_id": a[0], "a": a[1], "b_id": b[0], "b": b[1],
                             "ratio": ratio})
     flagged.sort(key=lambda x: -x["ratio"])
-    return flagged
+    return flagged, len(suppressed_hit)
 
 
 def check_f(conn):
@@ -719,7 +760,11 @@ def main():
             "Set it with:  export ANTHROPIC_API_KEY=sk-..."
         )
 
-    # ── Step 0: backup ────────────────────────────────────────────────────────
+    # ── Step 0: ensure suppression table, then backup ─────────────────────────
+    # distinct_pairs may be absent on snapshots created before this feature.
+    # Create it (empty) via a separate writable connection BEFORE open_db()'s
+    # strict read-only connection, so check_e can read it. open_db() stays ro.
+    ensure_distinct_pairs_table()
     take_backup()
 
     # ── Open DB in strict read-only mode ──────────────────────────────────────
@@ -831,10 +876,11 @@ def main():
         print()
 
     # ── Check E ───────────────────────────────────────────────────────────────
-    e_rows = check_e(conn)
+    e_rows, e_suppressed = check_e(conn)
     _header("CHECK E: FUZZY NEAR-DUPLICATE PRIMARY NAMES ")
     print("Pairs of primary names that are >=88% similar and not already linked")
     print("by an alias (catches misspellings like 'Ravhin'/'Rahvin').")
+    print(f"({e_suppressed} pair(s) suppressed via distinct_pairs)")
     print()
     if e_rows:
         for r in e_rows:
