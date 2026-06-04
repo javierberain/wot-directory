@@ -1,53 +1,48 @@
 #!/usr/bin/env python3
 """
-delete_characters.py - Permanently remove a fixed list of confirmed-bogus
-character rows and all their dependent data from wot.db.
+delete_characters.py - Permanently remove one or more confirmed-bogus
+character rows and all their dependent data from a WoT snapshot database.
 
 IMPORTANT: This script prints a complete dossier of every row that will be
-deleted, then requires you to type the word DELETE before it touches anything.
-There is no --auto or --force mode. There are no silent deletes.
+deleted. In dry-run mode (the default) it makes no changes and takes no backup.
+With --commit it takes a backup and then requires you to type the word DELETE
+before it touches anything. There is no --auto or --force mode that bypasses
+the typed confirmation; there are no silent deletes.
 
-The target list is hard-coded as TARGET_IDS near the top of this file.
-Do not modify that list without first running:
+Target character_ids are supplied on the command line (there is no hard-coded
+list). Verify each id first with:
 
     python scripts/hygiene_audit.py --detail <character_id>
 
 to see exactly what each character_id owns before committing to removal.
 
 Usage:
-    python scripts/delete_characters.py
-    python scripts/delete_characters.py --db PATH  # target a specific database file;
-                                                    # omit to default to db/wot.db
+    # Preview (dry-run) — no writes, no backup:
+    python scripts/delete_characters.py --id 135 --id 152
+    python scripts/delete_characters.py --ids 135 152
+
+    # Apply, against the latest db/wot_book{N}.db snapshot by default:
+    python scripts/delete_characters.py --ids 135 152 --commit
+
+    # Target a specific database file:
+    python scripts/delete_characters.py --ids 135 152 --db db/wot_book3.db --commit
 """
 
 import argparse
+import glob
 import os
 import pathlib
+import re
 import shutil
 import sqlite3
 import sys
 
 
 # ── Paths (same conventions as reconcile.py / hygiene_audit.py) ──────────────
-DB_PATH  = os.path.join(os.path.dirname(__file__), "..", "db", "wot.db")
-BAK_PATH = os.path.join(os.path.dirname(__file__), "..", "db",
-                         "wot.db.pre-deletions-auto-book3.bak")
-
-
-# ── Target list ───────────────────────────────────────────────────────────────
-# Confirmed non-character rows approved for deletion after hygiene_audit.py
-# review.  These are generic creatures and unnamed crowd-scene placeholders
-# that were incorrectly given character rows by the extractor.
-#
-# Each id was verified with:  python scripts/hygiene_audit.py --detail <id>
-#
-# Do NOT add ids to this list without running that command first and
-# confirming the character has no legitimate dependent data worth keeping.
-# Book-1 cleanup: two confirmed non-individual rows verified against chapter text.
-#   135  "the raven"                          (Ch34; no 'raven' in text, no real figure)
-#   152  "the small black cat with white feet" (Ch42-43; background prop, no individual action)
-# The other four B-flags (83, 108, 125, 159) were verified as REAL characters and KEPT.
-TARGET_IDS = [135, 152]
+# Resolved at runtime in main(): --db wins, otherwise the latest wot_book*.db
+# snapshot. BAK_PATH is derived from the resolved DB, never hard-coded.
+DB_PATH  = None
+BAK_PATH = None
 
 
 # ── Formatting helpers (ASCII-only for Windows cp1252 console safety) ─────────
@@ -61,8 +56,25 @@ def _header(title):
 
 # ── Database helpers ──────────────────────────────────────────────────────────
 
+def discover_latest_db():
+    """Return the path to the latest db/wot_book{N}.db snapshot, or None.
+
+    Mirrors hygiene_audit.py's glob-and-max discovery so all the cleanup tools
+    default to the same database.
+    """
+    snaps = []
+    db_dir = os.path.join(os.path.dirname(__file__), "..", "db")
+    for p in glob.glob(os.path.join(db_dir, "wot_book*.db")):
+        m = re.match(r"wot_book(\d+)\.db$", os.path.basename(p))
+        if m:
+            snaps.append((int(m.group(1)), p))
+    if snaps:
+        return sorted(snaps)[-1][1]
+    return None
+
+
 def open_db():
-    """Open wot.db read-write with foreign-key enforcement on."""
+    """Open the target DB read-write with foreign-key enforcement on."""
     db_path = pathlib.Path(DB_PATH).resolve()
     if not db_path.exists():
         sys.exit(f"Database not found: {db_path}")
@@ -74,7 +86,7 @@ def open_db():
 
 
 def take_backup():
-    """Copy wot.db to wot.db.pre-deletions-auto.bak before any writes."""
+    """Copy the target DB to its derived .pre-deletions.bak before any writes."""
     db_path = pathlib.Path(DB_PATH).resolve()
     bak_path = pathlib.Path(BAK_PATH).resolve()
     if not db_path.exists():
@@ -94,6 +106,19 @@ def take_backup():
 def _placeholders(ids):
     """Return a SQL IN-list placeholder string for a list of ids."""
     return ",".join("?" * len(ids))
+
+
+def _has_distinct_pairs(conn):
+    """True if the distinct_pairs suppression table exists in this DB.
+
+    The table was added additively (hygiene_audit.py creates/seeds it for the
+    Check E near-duplicate suppression). Older snapshots may predate it, so
+    every distinct_pairs access below is guarded by this check.
+    """
+    return conn.execute(
+        "SELECT 1 FROM sqlite_master "
+        "WHERE type='table' AND name='distinct_pairs'"
+    ).fetchone() is not None
 
 
 def print_dossier(conn, cid):
@@ -181,16 +206,28 @@ def print_dossier(conn, cid):
         print(f"      faction_id={f['faction_id']}  "
               f"\"{f['faction_name']}\"  role={f['role']}")
 
+    # -- distinct_pairs (Check E suppression; FK on cid_low AND cid_high) --
+    if _has_distinct_pairs(conn):
+        pairs = conn.execute("""
+            SELECT cid_low, cid_high, note
+              FROM distinct_pairs
+             WHERE cid_low = ? OR cid_high = ?
+             ORDER BY cid_low, cid_high
+        """, (cid, cid)).fetchall()
+        print(f"    distinct_pairs ({len(pairs)}):")
+        for p in pairs:
+            note = f"  note: {p['note']}" if p["note"] else ""
+            print(f"      ({p['cid_low']}, {p['cid_high']}){note}")
+
     return True
 
 
-def collect_counts(conn):
-    """Return total rows present across all TARGET_IDS, per table.
+def collect_counts(conn, ids):
+    """Return total rows present across the target ids, per table.
 
     Called before deletion so the counts can be reported as rows deleted.
     """
-    ph = _placeholders(TARGET_IDS)
-    ids = TARGET_IDS
+    ph = _placeholders(ids)
 
     chars = conn.execute(
         f"SELECT COUNT(*) FROM characters WHERE character_id IN ({ph})",
@@ -208,7 +245,7 @@ def collect_counts(conn):
     ).fetchone()[0]
 
     # Relationships: target may sit on either end of the edge.
-    # {ph} appears twice in the query -> pass ids + ids (18 + 18 params).
+    # {ph} appears twice in the query -> pass ids + ids.
     rels = conn.execute(
         f"SELECT COUNT(*) FROM relationships "
         f"WHERE character_a IN ({ph}) OR character_b IN ({ph})",
@@ -220,21 +257,31 @@ def collect_counts(conn):
         ids,
     ).fetchone()[0]
 
-    return chars, aliases, apps, rels, facs
+    # distinct_pairs: target may sit on either FK column (cid_low / cid_high).
+    # {ph} appears twice -> pass ids + ids.
+    if _has_distinct_pairs(conn):
+        dpairs = conn.execute(
+            f"SELECT COUNT(*) FROM distinct_pairs "
+            f"WHERE cid_low IN ({ph}) OR cid_high IN ({ph})",
+            ids + ids,
+        ).fetchone()[0]
+    else:
+        dpairs = 0
+
+    return chars, aliases, apps, rels, facs, dpairs
 
 
 # ── Deletion (called only after explicit confirmation) ────────────────────────
 
-def delete_all(conn):
-    """Delete all TARGET_IDS and their dependents in foreign-key-safe order.
+def delete_all(conn, ids):
+    """Delete all target ids and their dependents in foreign-key-safe order.
 
     Caller is responsible for the surrounding transaction (begin / commit /
     rollback).  Order: join tables and dependents first, characters row last.
     This satisfies all FK constraints with PRAGMA foreign_keys = ON.
     """
-    ph = _placeholders(TARGET_IDS)
-    ids = TARGET_IDS
-    
+    ph = _placeholders(ids)
+
     # 1. character_factions (FK -> characters, FK -> factions)
     n_facs = conn.execute(
         f"DELETE FROM character_factions WHERE character_id IN ({ph})",
@@ -260,22 +307,36 @@ def delete_all(conn):
         ids,
     ).rowcount
 
-    # 5. characters (root row — deleted last)
+    # 5. distinct_pairs (cid_low and cid_high both FK -> characters; no inbound
+    #    FKs, so its order vs the other child tables is irrelevant, but it must
+    #    precede the characters root delete below). This is the FK that caused a
+    #    live "FOREIGN KEY constraint failed" when a targeted character had been
+    #    seeded into a Check E suppression pair.
+    if _has_distinct_pairs(conn):
+        n_dpairs = conn.execute(
+            f"DELETE FROM distinct_pairs "
+            f"WHERE cid_low IN ({ph}) OR cid_high IN ({ph})",
+            ids + ids,
+        ).rowcount
+    else:
+        n_dpairs = 0
+
+    # 6. characters (root row — deleted last)
     n_chars = conn.execute(
         f"DELETE FROM characters WHERE character_id IN ({ph})",
         ids,
     ).rowcount
 
-    return n_chars, n_aliases, n_apps, n_rels, n_facs
+    return n_chars, n_aliases, n_apps, n_rels, n_facs, n_dpairs
 
 
-def verify_deleted(conn):
-    """Return any TARGET_IDS still present in characters after deletion."""
-    ph = _placeholders(TARGET_IDS)
+def verify_deleted(conn, ids):
+    """Return any target ids still present in characters after deletion."""
+    ph = _placeholders(ids)
     return conn.execute(
         f"SELECT character_id, primary_name FROM characters "
         f"WHERE character_id IN ({ph})",
-        TARGET_IDS,
+        ids,
     ).fetchall()
 
 
@@ -286,27 +347,50 @@ def main():
         description="Delete confirmed-bogus character rows from the WoT database.",
     )
     ap.add_argument(
+        "--id", dest="ids_single", action="append", type=int, metavar="ID",
+        help="A character_id to delete. Repeatable: --id 367 --id 410.",
+    )
+    ap.add_argument(
+        "--ids", dest="ids_multi", type=int, nargs="+", metavar="ID",
+        help="One or more character_ids: --ids 367 410.",
+    )
+    ap.add_argument(
         "--db", metavar="PATH",
-        help="Path to the SQLite database file. "
-             "Defaults to db/wot.db (the live ingestion database).",
+        help="Path to the SQLite database file. Defaults to the latest "
+             "db/wot_book{N}.db snapshot.",
+    )
+    ap.add_argument(
+        "--commit", action="store_true",
+        help="Apply the deletion. Without --commit the script is a dry-run: it "
+             "prints the full dossier but makes no changes and takes no backup.",
     )
     args = ap.parse_args()
 
-    # ── Resolve DB/BAK paths from --db if given ───────────────────────────────
-    if args.db is not None:
-        global DB_PATH, BAK_PATH
-        DB_PATH = args.db
-        BAK_PATH = args.db + ".pre-deletions-auto.bak"
+    # ── Gather target ids from --id and --ids (deduped, order preserved) ───────
+    target_ids = []
+    for i in (args.ids_single or []) + (args.ids_multi or []):
+        if i not in target_ids:
+            target_ids.append(i)
+    if not target_ids:
+        ap.error("provide at least one character_id via --id or --ids")
 
+    # ── Resolve DB / BAK paths ────────────────────────────────────────────────
+    global DB_PATH, BAK_PATH
+    db = args.db or discover_latest_db()
+    if db is None:
+        sys.exit("No database given and no db/wot_book*.db snapshot found.\n"
+                 "Pass --db PATH to target a specific database file.")
+    DB_PATH = db
+    BAK_PATH = db + ".pre-deletions.bak"
+
+    mode = "COMMIT" if args.commit else "DRY-RUN"
     print()
     print(_SEP2)
     print("  WoT CHARACTER DIRECTORY -- DELETE CHARACTERS")
-    print(f"  {len(TARGET_IDS)} character_ids targeted for deletion")
+    print(f"  Mode   : {mode}")
+    print(f"  DB     : {pathlib.Path(DB_PATH).resolve()}")
+    print(f"  {len(target_ids)} character_id(s) targeted for deletion")
     print(_SEP2)
-    print()
-
-    # ── Step 0: backup before anything else ───────────────────────────────────
-    take_backup()
     print()
 
     # ── Open DB read-write (PRAGMA foreign_keys already set by open_db) ───────
@@ -315,19 +399,18 @@ def main():
     # ── Step 1: print dossier for every target id ─────────────────────────────
     _header("DOSSIER: ROWS TO BE DELETED ")
     print("Every row listed below, across all five tables, will be")
-    print("permanently removed from the database on confirmation.")
+    print("permanently removed from the database on commit.")
 
     not_found = []
-    for cid in TARGET_IDS:
-        found = print_dossier(conn, cid)
-        if not found:
+    for cid in target_ids:
+        if not print_dossier(conn, cid):
             not_found.append(cid)
 
     print()
 
     # ── Step 2: summary totals ────────────────────────────────────────────────
-    chars_count, aliases_count, apps_count, rels_count, facs_count = \
-        collect_counts(conn)
+    chars_count, aliases_count, apps_count, rels_count, facs_count, \
+        dpairs_count = collect_counts(conn, target_ids)
 
     _header("SUMMARY: WHAT WILL BE DELETED ")
     print(f"  character rows      : {chars_count}")
@@ -335,6 +418,7 @@ def main():
     print(f"  appearances rows    : {apps_count}")
     print(f"  relationships rows  : {rels_count}")
     print(f"  character_factions  : {facs_count}")
+    print(f"  distinct_pairs      : {dpairs_count}")
     if not_found:
         print()
         print(f"  Note: {len(not_found)} target id(s) not found in this "
@@ -346,7 +430,17 @@ def main():
         conn.close()
         return
 
-    # ── Step 3: interactive confirmation ──────────────────────────────────────
+    # ── Dry-run exit: no backup, no writes ────────────────────────────────────
+    if not args.commit:
+        print(_SEP)
+        print("  Dry-run complete. No changes made, no backup taken.")
+        print("  Re-run with --commit to apply the deletion.")
+        conn.close()
+        return
+
+    # ── Commit path: backup, then interactive confirmation ────────────────────
+    take_backup()
+    print()
     print(_SEP)
     print("This operation is PERMANENT. Rows deleted cannot be recovered")
     print("except by restoring the backup written above.")
@@ -369,11 +463,11 @@ def main():
         conn.close()
         return
 
-    # ── Step 4: delete inside a single transaction ────────────────────────────
+    # ── Delete inside a single transaction ────────────────────────────────────
     print()
     print("Deleting...")
     try:
-        deleted = delete_all(conn)
+        deleted = delete_all(conn, target_ids)
         conn.commit()
     except Exception as exc:
         conn.rollback()
@@ -383,8 +477,8 @@ def main():
             f"The backup at {pathlib.Path(BAK_PATH).resolve()} is intact."
         )
 
-    # ── Step 5: verify all target ids are gone ────────────────────────────────
-    still_present = verify_deleted(conn)
+    # ── Verify all target ids are gone ────────────────────────────────────────
+    still_present = verify_deleted(conn, target_ids)
     print()
     if still_present:
         print("WARNING: the following target ids are still present:")
@@ -395,8 +489,8 @@ def main():
     else:
         print("Verified: all target character_ids are gone from the database.")
 
-    # ── Step 6: final row-count report (actual rows deleted) ──────────────────
-    del_chars, del_aliases, del_apps, del_rels, del_facs = deleted
+    # ── Final row-count report (actual rows deleted) ──────────────────────────
+    del_chars, del_aliases, del_apps, del_rels, del_facs, del_dpairs = deleted
     print()
     _header("ROWS DELETED (actual) ")
     print(f"  characters          : {del_chars}")
@@ -404,17 +498,20 @@ def main():
     print(f"  appearances         : {del_apps}")
     print(f"  relationships       : {del_rels}")
     print(f"  character_factions  : {del_facs}")
+    print(f"  distinct_pairs      : {del_dpairs}")
     # Cross-check against the pre-deletion dossier counts.
-    if (del_chars, del_aliases, del_apps, del_rels, del_facs) != \
-       (chars_count, aliases_count, apps_count, rels_count, facs_count):
+    if (del_chars, del_aliases, del_apps, del_rels, del_facs, del_dpairs) != \
+       (chars_count, aliases_count, apps_count, rels_count, facs_count,
+        dpairs_count):
         print()
         print("  NOTE: actual deletions differ from the pre-deletion summary.")
         print(f"  pre-deletion summary was: characters={chars_count}, "
               f"aliases={aliases_count}, appearances={apps_count}, "
-              f"relationships={rels_count}, character_factions={facs_count}")
-        print("  A relationship between two targeted characters is counted")
-        print("  once on deletion but can inflate the pre-deletion summary.")
-        print("  This is expected and not an error.")
+              f"relationships={rels_count}, character_factions={facs_count}, "
+              f"distinct_pairs={dpairs_count}")
+        print("  A relationship or distinct_pair between two targeted characters")
+        print("  is counted once on deletion but can inflate the pre-deletion")
+        print("  summary.  This is expected and not an error.")
 
     conn.close()
 

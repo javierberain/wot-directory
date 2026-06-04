@@ -1,56 +1,41 @@
 #!/usr/bin/env python3
 """
-seed_distinct_pairs.py - one-off seeder for the distinct_pairs suppression
-table read by hygiene_audit.py Check E.
+seed_distinct_pairs.py - seeder for the distinct_pairs suppression table read by
+hygiene_audit.py Check E.
 
-Inserts a fixed list of human-confirmed "these are different people" character
-pairs so Check E (fuzzy near-duplicate primary names) stops re-flagging them on
+distinct_pairs records a human-confirmed "these are different people" character
+pair so Check E (fuzzy near-duplicate primary names) stops re-flagging them on
 every future pass — mirroring how Check E already skips alias-linked pairs.
 
-Each pair is normalised so the smaller character_id is stored as cid_low (the
-table also enforces CHECK (cid_low < cid_high)). Inserts use INSERT OR IGNORE,
-so the script is idempotent: re-running neither errors nor duplicates. A backup
-of the DB is taken first.
+Inserts ONE pair. The two ids are normalised so the smaller becomes cid_low (the
+table also enforces CHECK (cid_low < cid_high)), so the order on the command
+line does not matter. Dry-run by default; pass --commit to write (a backup is
+taken first). Idempotent: re-running with --commit is a no-op via INSERT OR
+IGNORE.
+
+The original 17-pair historical batch (already applied to the live snapshots)
+is preserved in scripts/seed_distinct_pairs_initial.py.
 
 Usage:
-    python scripts/seed_distinct_pairs.py                      # db/wot_book5.db
-    python scripts/seed_distinct_pairs.py --db db/wot_book5.db
+    # preview (dry-run): no writes, no backup
+    python scripts/seed_distinct_pairs.py --cid-low 446 --cid-high 729
+
+    # apply (latest db/wot_book*.db snapshot by default)
+    python scripts/seed_distinct_pairs.py --cid-low 446 --cid-high 729 \
+        --note "Foo vs Bar, distinct" --commit
 """
 import argparse
+import glob
 import os
+import re
 import shutil
 import sqlite3
 import sys
 
 HERE = os.path.dirname(__file__)
-DEFAULT_DB = os.path.join(HERE, "..", "db", "wot_book5.db")
 
-# Confirmed-distinct pairs: (cid_a, cid_b, note). Order within a pair is
-# irrelevant here — the inserter normalises so the smaller id becomes cid_low.
-# NOTE: the empty-shell rows (Dalar 296, Deain 307, Maric 249) are intentionally
-# present ONLY as the other side of a confirmed pair, never seeded on their own.
-PAIRS = [
-    (413, 487, "Coline Andor vs Colline Aiel"),
-    (206, 670, "Maigan (wife of Admer Nem) vs Marigan Ghealdan widow"),
-    (206, 486, "Maigan vs Maigran Aiel sister of Lewin"),
-    (590, 489, "Garan vs Gearan, distinct Aiel"),
-    (595, 498, "Sulin the Maiden vs Sulwin ancestral Tuatha'an leader"),
-    (104, 514, "Wil young Deven Ride cousin vs Wit balding farmer, Bk4Ch32"),
-    (297, 296, "Alar Ogier vs Dalar"),
-    (103, 483, "Aram Tuatha'an vs Garam"),
-    (616, 615, "Bari vs Barit Atha'an Miere"),
-    (223, 497, "Carn vs Charn ancestral Aiel"),
-    (111, 307, "Dain (Bornhald) vs Deain"),
-    (510, 263, "Ihvon Warder vs Ivon Cairhien"),
-    (495, 601, "Jonai ancestral Aiel vs Joni Andor"),
-    (457, 240, "Lian roofmistress vs Lidan Cairhien"),
-    (625, 367, "Maira vs Mara"),
-    (68, 249, "Mari Baerlon serving woman vs Maric vision-child"),
-    (119, 609, "Strom bouncer vs Trom"),
-]
-
-# Same definition as db/schema.sql; created here too so the seeder is
-# self-contained on a snapshot that predates the table.
+# Same definition as db/schema.sql and hygiene_audit.py; created here too so the
+# seeder is self-contained on a snapshot that predates the table.
 CREATE_SQL = """
 CREATE TABLE IF NOT EXISTS distinct_pairs (
     cid_low    INTEGER NOT NULL REFERENCES characters(character_id),
@@ -63,61 +48,122 @@ CREATE TABLE IF NOT EXISTS distinct_pairs (
 """
 
 
+def discover_latest_db():
+    """Return the path to the latest db/wot_book{N}.db snapshot, or None.
+
+    Mirrors hygiene_audit.py's glob-and-max discovery so the cleanup tools
+    default to the same database.
+    """
+    snaps = []
+    db_dir = os.path.join(HERE, "..", "db")
+    for p in glob.glob(os.path.join(db_dir, "wot_book*.db")):
+        m = re.match(r"wot_book(\d+)\.db$", os.path.basename(p))
+        if m:
+            snaps.append((int(m.group(1)), p))
+    if snaps:
+        return sorted(snaps)[-1][1]
+    return None
+
+
+def _char_name(conn, cid):
+    row = conn.execute(
+        "SELECT primary_name FROM characters WHERE character_id = ?", (cid,)
+    ).fetchone()
+    return row[0] if row else None
+
+
 def main():
     ap = argparse.ArgumentParser(
-        description="Seed the distinct_pairs Check E suppression table.")
-    ap.add_argument("--db", default=DEFAULT_DB,
-                    help="SQLite DB to seed (default: db/wot_book5.db)")
+        description="Seed one confirmed-distinct pair into the distinct_pairs "
+                    "Check E suppression table.")
+    ap.add_argument("--cid-low", type=int, required=True,
+                    help="one character_id of the confirmed-distinct pair")
+    ap.add_argument("--cid-high", type=int, required=True,
+                    help="the other character_id (order does not matter; the "
+                         "smaller is stored as cid_low)")
+    ap.add_argument("--note", default=None,
+                    help="short reason the pair is confirmed distinct")
+    ap.add_argument("--db", default=None,
+                    help="SQLite DB to seed (default: latest db/wot_book*.db)")
+    ap.add_argument("--commit", action="store_true",
+                    help="apply the insert. Without --commit this is a dry-run: "
+                         "no writes, no backup.")
     args = ap.parse_args()
 
-    db_path = os.path.abspath(args.db)
+    db = args.db or discover_latest_db()
+    if db is None:
+        sys.exit("No database given and no db/wot_book*.db snapshot found.\n"
+                 "Pass --db PATH to target a specific database file.")
+    db_path = os.path.abspath(db)
     if not os.path.exists(db_path):
         sys.exit(f"Database not found: {db_path}")
 
-    # ── Backup first ──────────────────────────────────────────────────────────
+    if args.cid_low == args.cid_high:
+        sys.exit("--cid-low and --cid-high must differ (a distinct pair is two "
+                 "different characters).")
+    # Normalise so the smaller id is cid_low (the table also enforces this), so
+    # the user can pass them in either order.
+    low, high = sorted((args.cid_low, args.cid_high))
+
+    mode = "COMMIT" if args.commit else "DRY-RUN"
+    print(f"Mode : {mode}")
+    print(f"DB   : {db_path}")
+
+    conn = sqlite3.connect(db_path)
+    conn.execute("PRAGMA foreign_keys = ON")
+    conn.row_factory = sqlite3.Row
+
+    # Both characters must exist (FK + a readable, meaningful confirmation).
+    low_name = _char_name(conn, low)
+    high_name = _char_name(conn, high)
+    missing = [str(c) for c, n in ((low, low_name), (high, high_name))
+               if n is None]
+    if missing:
+        conn.close()
+        sys.exit(f"character_id(s) not found in this DB: {', '.join(missing)} "
+                 f"-- nothing seeded.")
+
+    print(f"  cid_low={low} \"{low_name}\"")
+    print(f"  cid_high={high} \"{high_name}\"")
+    if args.note:
+        print(f"  note={args.note!r}")
+
+    # Does the table exist, and is this exact pair already present?
+    has_table = conn.execute(
+        "SELECT 1 FROM sqlite_master WHERE type='table' "
+        "AND name='distinct_pairs'").fetchone() is not None
+    already = bool(has_table and conn.execute(
+        "SELECT 1 FROM distinct_pairs WHERE cid_low=? AND cid_high=?",
+        (low, high)).fetchone())
+
+    # ── Dry-run: no writes, no backup ─────────────────────────────────────────
+    if not args.commit:
+        print()
+        if already:
+            print("Dry-run: this pair is ALREADY recorded as distinct. "
+                  "Commit would be a no-op.")
+        else:
+            print("Dry-run: would record this pair as distinct. "
+                  "Re-run with --commit to write.")
+        conn.close()
+        return
+
+    # ── Commit: backup, then insert ───────────────────────────────────────────
     bak_path = db_path + ".pre-distinct-seed.bak"
     shutil.copy2(db_path, bak_path)
     print(f"Backup written: {bak_path}")
 
-    conn = sqlite3.connect(db_path)
-    conn.execute("PRAGMA foreign_keys = ON")
     conn.execute(CREATE_SQL)
+    cur = conn.execute(
+        "INSERT OR IGNORE INTO distinct_pairs (cid_low, cid_high, note) "
+        "VALUES (?, ?, ?)", (low, high, args.note))
     conn.commit()
 
-    # Existing character ids, so a pair referencing a missing cid is reported
-    # and skipped rather than crashing on a foreign-key failure.
-    existing = {row[0] for row in conn.execute(
-        "SELECT character_id FROM characters")}
-
-    inserted = already = skipped = 0
-    for a, b, note in PAIRS:
-        missing = [c for c in (a, b) if c not in existing]
-        if missing:
-            print(f"  SKIP   ({a},{b}) {note}"
-                  f"  -- missing character_id(s): "
-                  f"{', '.join(str(m) for m in missing)}")
-            skipped += 1
-            continue
-        low, high = (a, b) if a < b else (b, a)
-        cur = conn.execute(
-            "INSERT OR IGNORE INTO distinct_pairs (cid_low, cid_high, note) "
-            "VALUES (?, ?, ?)", (low, high, note))
-        if cur.rowcount:
-            print(f"  INSERT ({low},{high}) {note}")
-            inserted += 1
-        else:
-            print(f"  exists ({low},{high}) {note}")
-            already += 1
-    conn.commit()
-
-    total = conn.execute(
-        "SELECT COUNT(*) FROM distinct_pairs").fetchone()[0]
+    total = conn.execute("SELECT COUNT(*) FROM distinct_pairs").fetchone()[0]
     conn.close()
 
-    print()
-    print(f"Done. inserted={inserted}  already-present={already}  "
-          f"skipped(missing cid)={skipped}")
-    print(f"distinct_pairs now holds {total} pair(s).")
+    print("  INSERT" if cur.rowcount else "  exists (already recorded)")
+    print(f"Done. distinct_pairs now holds {total} pair(s).")
 
 
 if __name__ == "__main__":

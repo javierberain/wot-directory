@@ -162,6 +162,68 @@ def ensure_distinct_pairs_table():
         conn.close()
 
 
+def ensure_acknowledged_collisions_table():
+    """Create the acknowledged_collisions suppression table if a snapshot
+    predates it.
+
+    Mirrors ensure_distinct_pairs_table(): open_db() is strictly read-only
+    (mode=ro), so this uses a SEPARATE writable connection and runs only CREATE
+    TABLE IF NOT EXISTS — existing data is untouched; an older snapshot gains an
+    empty table so check_d can read it. Call once at startup, before the
+    read-only connection is opened.
+    """
+    db_path = pathlib.Path(DB_PATH).resolve()
+    if not db_path.exists():
+        sys.exit(f"Database not found: {db_path}")
+    conn = sqlite3.connect(db_path)
+    try:
+        conn.execute("""
+            CREATE TABLE IF NOT EXISTS acknowledged_collisions (
+                owner_cid  INTEGER NOT NULL REFERENCES characters(character_id),
+                other_cid  INTEGER NOT NULL REFERENCES characters(character_id),
+                alias_norm TEXT NOT NULL,
+                note       TEXT,
+                created_at TEXT NOT NULL DEFAULT (datetime('now')),
+                PRIMARY KEY (owner_cid, other_cid, alias_norm)
+            )
+        """)
+        conn.commit()
+    finally:
+        conn.close()
+
+
+def ensure_disguise_map_table():
+    """Create the disguise_map registry table if a snapshot predates it.
+
+    Mirrors ensure_distinct_pairs_table() / ensure_acknowledged_collisions_table():
+    open_db() is strictly read-only (mode=ro), so this uses a SEPARATE writable
+    connection and runs only CREATE TABLE IF NOT EXISTS — existing data is
+    untouched; an older snapshot gains an empty table so check_g can read it.
+    Call once at startup, before the read-only connection is opened.
+    """
+    db_path = pathlib.Path(DB_PATH).resolve()
+    if not db_path.exists():
+        sys.exit(f"Database not found: {db_path}")
+    conn = sqlite3.connect(db_path)
+    try:
+        conn.execute("""
+            CREATE TABLE IF NOT EXISTS disguise_map (
+                persona_norm  TEXT    NOT NULL,
+                true_cid      INTEGER NOT NULL REFERENCES characters(character_id),
+                persona_name  TEXT    NOT NULL,
+                true_name     TEXT    NOT NULL,
+                reveal_book   INTEGER NOT NULL,
+                persona_cid   INTEGER,
+                note          TEXT,
+                created_at    TEXT    NOT NULL DEFAULT (datetime('now')),
+                PRIMARY KEY (persona_norm, true_cid)
+            )
+        """)
+        conn.commit()
+    finally:
+        conn.close()
+
+
 def dep_counts(conn, character_id):
     """Return (appearances, relationships, faction_links) for one character."""
     apps = conn.execute(
@@ -290,11 +352,27 @@ def check_c(conn):
 def check_d(conn):
     """Identity collisions: an alias whose normalised text equals a DIFFERENT
     character's primary_name. Surfaces disguise reveals and mononym/full-name
-    duplicates for a human merge decision. Bucketed by alias_type."""
+    duplicates for a human merge decision. Bucketed by alias_type.
+
+    Collisions a human has reviewed and decided to keep are suppressed via the
+    acknowledged_collisions table, keyed to the exact (owner_cid, other_cid,
+    alias_norm) so a genuinely new collision still flags.
+
+    Returns (flagged, n_suppressed): the flagged list and how many collisions
+    were suppressed via acknowledged_collisions this run."""
     prim = {}
     for r in conn.execute("SELECT character_id, primary_name FROM characters"):
         prim[norm(r["primary_name"])] = (r["character_id"], r["primary_name"])
+    # Reviewed-and-kept collisions; keyed to the exact pair + colliding alias so
+    # only that specific collision is silenced, never a new one.
+    acknowledged = {
+        (r["owner_cid"], r["other_cid"], r["alias_norm"])
+        for r in conn.execute(
+            "SELECT owner_cid, other_cid, alias_norm "
+            "FROM acknowledged_collisions")
+    }
     flagged = []
+    n_suppressed = 0
     for r in conn.execute(
         "SELECT a.character_id, a.alias_text, a.alias_norm, a.alias_type, "
         "c.primary_name FROM aliases a "
@@ -303,6 +381,9 @@ def check_d(conn):
     ):
         tgt = prim.get(r["alias_norm"])
         if tgt and tgt[0] != r["character_id"]:
+            if (r["character_id"], tgt[0], r["alias_norm"]) in acknowledged:
+                n_suppressed += 1
+                continue
             bucket = {"disguise": "disguise", "given_name": "possible-duplicate",
                       "title": "title"}.get(r["alias_type"], r["alias_type"])
             flagged.append({
@@ -311,7 +392,7 @@ def check_d(conn):
                 "other_id": tgt[0], "other": tgt[1], "bucket": bucket,
             })
     flagged.sort(key=lambda x: (x["bucket"], x["owner"]))
-    return flagged
+    return flagged, n_suppressed
 
 
 def check_e(conn, threshold=0.88):
@@ -377,6 +458,93 @@ def check_f(conn):
         if apps == 0 and rels == 0 and facs == 0 and mens == 0:
             flagged.append({"character_id": cid, "primary_name": r["primary_name"]})
     return flagged
+
+
+def check_g(conn):
+    """Disguise-map consistency: validate each disguise_map row against this
+    snapshot's reveal state.
+
+    A reveal-disguise persona is a SEPARATE character row BEFORE its reveal book
+    and is MERGED into the true-identity row (persona name kept as an
+    alias_type='disguise' alias) FROM the reveal book onward. For each row this
+    check determines the snapshot's book (max series_order in books) and asserts:
+      - snapshot_book >= reveal_book (should be MERGED): no standalone character
+        row normalises to persona_norm, AND a disguise alias_norm=persona_norm
+        exists on true_cid.
+      - snapshot_book <  reveal_book (should be SEPARATE): a standalone character
+        row normalises to persona_norm, AND no such disguise alias exists on
+        true_cid (it would be a spoiler leak).
+
+    Returns (flagged, n_rows): violations and the total disguise_map row count.
+    Absence of the table (older snapshot) means zero rows, not an error."""
+    has_table = conn.execute(
+        "SELECT 1 FROM sqlite_master WHERE type='table' AND name='disguise_map'"
+    ).fetchone() is not None
+    if not has_table:
+        return [], 0
+
+    rows = conn.execute(
+        "SELECT persona_norm, true_cid, persona_name, true_name, reveal_book, "
+        "persona_cid, note FROM disguise_map "
+        "ORDER BY reveal_book, persona_name").fetchall()
+    if not rows:
+        return [], 0
+
+    snapshot_book = conn.execute(
+        "SELECT MAX(series_order) FROM books").fetchone()[0]
+
+    # primary_name (normalised) -> (cid, primary_name); primary_name is UNIQUE.
+    prim_by_norm = {}
+    for c in conn.execute("SELECT character_id, primary_name FROM characters"):
+        prim_by_norm.setdefault(
+            norm(c["primary_name"]), (c["character_id"], c["primary_name"]))
+
+    flagged = []
+    for r in rows:
+        pnorm = r["persona_norm"]
+        true_cid = r["true_cid"]
+        # A standalone persona row = a character (other than the true identity)
+        # whose primary_name normalises to persona_norm.
+        persona_row = prim_by_norm.get(pnorm)
+        if persona_row is not None and persona_row[0] == true_cid:
+            persona_row = None
+        has_alias = conn.execute(
+            "SELECT 1 FROM aliases WHERE character_id = ? AND alias_norm = ? "
+            "AND alias_type = 'disguise'", (true_cid, pnorm)).fetchone() is not None
+
+        problems = []
+        if snapshot_book is not None and snapshot_book >= r["reveal_book"]:
+            expected = "merged"
+            if persona_row is not None:
+                problems.append(
+                    f"persona still exists as separate row past reveal "
+                    f"(cid={persona_row[0]} \"{persona_row[1]}\")")
+            if not has_alias:
+                problems.append(
+                    f"disguise alias missing on true identity "
+                    f"(cid={true_cid} \"{r['true_name']}\")")
+        else:
+            expected = "separate"
+            if persona_row is None:
+                problems.append(
+                    f"persona row missing before reveal "
+                    f"(expected a separate \"{r['persona_name']}\" row)")
+            if has_alias:
+                problems.append(
+                    f"disguise alias present before reveal (spoiler leak) on "
+                    f"cid={true_cid} \"{r['true_name']}\"")
+
+        if problems:
+            flagged.append({
+                "persona_name":  r["persona_name"],
+                "true_name":     r["true_name"],
+                "true_cid":      true_cid,
+                "reveal_book":   r["reveal_book"],
+                "snapshot_book": snapshot_book,
+                "expected":      expected,
+                "problems":      problems,
+            })
+    return flagged, len(rows)
 
 
 # ── LLM advisory helpers ──────────────────────────────────────────────────────
@@ -760,11 +928,15 @@ def main():
             "Set it with:  export ANTHROPIC_API_KEY=sk-..."
         )
 
-    # ── Step 0: ensure suppression table, then backup ─────────────────────────
-    # distinct_pairs may be absent on snapshots created before this feature.
-    # Create it (empty) via a separate writable connection BEFORE open_db()'s
-    # strict read-only connection, so check_e can read it. open_db() stays ro.
+    # ── Step 0: ensure suppression/registry tables, then backup ───────────────
+    # distinct_pairs (Check E), acknowledged_collisions (Check D), and
+    # disguise_map (Check G) may be absent on snapshots created before those
+    # features. Create them (empty) via a separate writable connection BEFORE
+    # open_db()'s strict read-only connection, so the checks can read them.
+    # open_db() itself stays ro.
     ensure_distinct_pairs_table()
+    ensure_acknowledged_collisions_table()
+    ensure_disguise_map_table()
     take_backup()
 
     # ── Open DB in strict read-only mode ──────────────────────────────────────
@@ -859,11 +1031,12 @@ def main():
         print()
 
     # ── Check D ───────────────────────────────────────────────────────────────
-    d_rows = check_d(conn)
+    d_rows, d_suppressed = check_d(conn)
     _header("CHECK D: IDENTITY COLLISIONS (alias == another primary_name) ")
     print("An alias that equals a different character's primary name. Disguise")
     print("reveals and mononym/full-name duplicates surface here for a human")
     print("merge decision (the matcher deliberately does not auto-merge these).")
+    print(f"({d_suppressed} collision(s) suppressed via acknowledged_collisions)")
     print()
     if d_rows:
         for r in d_rows:
@@ -903,6 +1076,26 @@ def main():
         print()
     else:
         print("  (none found)")
+        print()
+
+    # ── Check G ───────────────────────────────────────────────────────────────
+    g_rows, g_count = check_g(conn)
+    _header("CHECK G: DISGUISE MAP CONSISTENCY ")
+    print("Validates reveal-disguise data: a persona is a SEPARATE row before its")
+    print("reveal book and MERGED (persona kept as a 'disguise' alias on the true")
+    print("identity) from the reveal book on. Flags any snapshot that disagrees.")
+    print(f"({g_count} row(s) in disguise_map)")
+    print()
+    if g_rows:
+        for r in g_rows:
+            print(f"  \"{r['persona_name']}\" -> \"{r['true_name']}\"  "
+                  f"(cid={r['true_cid']}, reveal Bk{r['reveal_book']}; snapshot "
+                  f"Bk{r['snapshot_book']}, expected {r['expected']})")
+            for p in r["problems"]:
+                print(f"      - {p}")
+        print()
+    else:
+        print("  (all consistent)")
         print()
 
     # ── LLM advisory ──────────────────────────────────────────────────────────
@@ -956,6 +1149,7 @@ def main():
     print(f"  Check D  - identity collisions:      {len(d_rows):4d} flagged")
     print(f"  Check E  - fuzzy near-duplicates:    {len(e_rows):4d} flagged")
     print(f"  Check F  - non-character candidates: {len(f_rows):4d} flagged")
+    print(f"  Check G  - disguise map issues:      {len(g_rows):4d} flagged")
     print(f"  Unique characters to review (B+C):   {unique_chars:4d}")
     print()
     print("  Action: review the above and edit wot.db directly.")

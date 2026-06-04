@@ -192,3 +192,46 @@ CREATE TABLE IF NOT EXISTS distinct_pairs (
     PRIMARY KEY (cid_low, cid_high),
     CHECK (cid_low < cid_high)
 );
+
+-- ----- Acknowledged collisions (Check D suppression) ---------
+-- Identity collisions (an alias whose normalised text equals a DIFFERENT
+-- character's primary_name) that a human has reviewed and decided to KEEP --
+-- kept disguise aliases, canonical dual-identity aliases, coincidental
+-- homonyms -- so the hygiene audit's Check D stops re-flagging them on every
+-- pass. Keyed to the exact (owner_cid, other_cid, alias_norm) so a genuinely
+-- new collision still flags. Seeded by scripts/seed_acknowledged_collisions.py;
+-- hygiene_audit.py also creates this table if a pre-existing snapshot lacks it.
+CREATE TABLE IF NOT EXISTS acknowledged_collisions (
+    owner_cid  INTEGER NOT NULL REFERENCES characters(character_id),
+    other_cid  INTEGER NOT NULL REFERENCES characters(character_id),
+    alias_norm TEXT NOT NULL,
+    note       TEXT,
+    created_at TEXT NOT NULL DEFAULT (datetime('now')),
+    PRIMARY KEY (owner_cid, other_cid, alias_norm)
+);
+
+-- ----- Disguise map (Check G registry) -----------------------
+-- Reveal-disguises: a persona whose true identity is a spoiler (Selene IS
+-- Lanfear; Lord Gaebril IS Rahvin). The persona is a SEPARATE character row in
+-- snapshots BEFORE the reveal book, and is MERGED into the true-identity row
+-- FROM the reveal book onward (persona name kept as an alias_type='disguise'
+-- alias). Because of that merge the persona row no longer exists post-reveal,
+-- so the stable key is the persona's normalised name (which survives as the
+-- disguise alias) plus the true-identity cid. persona_cid is informational
+-- only (the row is gone post-reveal) and is therefore NOT FK-enforced.
+-- Covers ONLY villain/spoiler reveal-disguises -- NOT protagonist travel
+-- cover-names (Moiraine's "Alys"), and NOT dual-identity/reincarnation cases
+-- that coexist post-reveal (Rand/Lews Therin), which acknowledged_collisions
+-- handles. Validated by hygiene_audit.py Check G; seeded by
+-- scripts/seed_disguise_map.py; the audit also creates it if a snapshot lacks it.
+CREATE TABLE IF NOT EXISTS disguise_map (
+    persona_norm  TEXT    NOT NULL,
+    true_cid      INTEGER NOT NULL REFERENCES characters(character_id),
+    persona_name  TEXT    NOT NULL,
+    true_name     TEXT    NOT NULL,
+    reveal_book   INTEGER NOT NULL,
+    persona_cid   INTEGER,
+    note          TEXT,
+    created_at    TEXT    NOT NULL DEFAULT (datetime('now')),
+    PRIMARY KEY (persona_norm, true_cid)
+);

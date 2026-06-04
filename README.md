@@ -42,7 +42,9 @@ ideas:
 - **`extract_chapter.py` uses forced tool-use** (structured `input_schema`, no
   code-fence parsing), prompt-caches the static system prompt + tool, runs on
   `claude-sonnet-4-6`, and emits a `mentions` list so referenced-but-absent
-  characters are recorded distinctly from `appearances`.
+  characters are recorded distinctly from `appearances`. It can optionally route
+  the same request through the Message Batches API (`--batch`, ~50% token
+  price); `run_book.py` forwards the flag per chapter.
 
 A read-only `scripts/mention_audit.py` quantifies the gap between who is
 mentioned in the chapter text and who has an `appearances` row; it drove the
@@ -139,6 +141,9 @@ requirements.txt     Python dependencies
 | `factions`           | Ajahs, orders, houses, clans, societies — typed groups        |
 | `character_factions` | join: who belongs to which faction, with `role` (member/leader) |
 | `review_queue`       | private-only extraction items the pipeline was unsure about   |
+| `distinct_pairs`     | character pairs a human confirmed are **different** people; suppresses the hygiene audit's Check E fuzzy near-duplicate flag for them |
+| `acknowledged_collisions` | identity collisions (alias == another character's primary name) a human reviewed and kept; suppresses the hygiene audit's Check D flag for that exact pair+alias |
+| `disguise_map`       | reveal-disguise registry (persona → true identity + reveal book); the hygiene audit's Check G validates the directory's merge/separate state against it per snapshot |
 
 The `aliases` table is what handles the "Mat" vs "Matrim Cauthon"
 problem and the disguise problem. Each alias has an `alias_type`:
@@ -324,31 +329,73 @@ for the per-row audit trail).
 
 ### Disguise / true-identity architecture
 
-Some characters appear in book three under one identity that is later
-revealed to be a disguise for a known character (Lord Brend is
-Sammael; Samon is Be'lal; Ba'alzamon is Ishamael / Elan Morin
-Tedronai). The directory keeps **the disguise and the true identity as
-separate character rows**, because at the per-book spoiler boundary
-they *are* different entities from the reader's perspective. A book-3
-reader who meets Lord Brend in Illian and Sammael through Min's
-vision is having two distinct encounters; collapsing them into one row
-in `wot_book3.db` would erase that distinction.
+Some characters appear under one identity that is later revealed to be
+a disguise for a known character (Selene is Lanfear; Gyldin is
+Moghedien; Lord Brend is Sammael; Samon is Be'lal). The handling is
+**reveal-aware**, keyed to the book in which the text itself makes the
+connection, and it differs from book to book for the same pair.
 
-Two consequences follow:
+The rule:
 
-- **Cross-aliases between the rows are deleted.** If the Sammael row
-  carries `Lord Brend` as an alias, a profile lookup on Sammael
-  reveals the disguise. The `Lord Brend` alias lives only on its own
-  row. Same for `Samon` on Be'lal, `Ba'alzamon` etc. on Elan Morin
-  Tedronai. These cross-aliases are treated as spoiler-leaks and
-  removed.
-- **In-world confusion that the text preserves is kept.** Where
-  mortals genuinely conflate the figures (Ba'alzamon's mortals calling
-  him "the Dark One"), those aliases stay on the row the mortals see,
-  because the confusion is canon. The cleanup rule is: cross-aliases
-  going *from true-identity row to disguise row* are spoiler-leaks
-  (delete); cross-aliases going *from disguise row to true-identity
-  name* are in-world deception artifacts (keep).
+- **Before the reveal book, the disguise is a separate character row.**
+  At the per-book spoiler boundary the two *are* different entities
+  from the reader's perspective, and the later-book snapshots do not
+  exist for that earlier reader. A reader who meets Selene in book 2 is
+  having a genuine encounter with someone they do not know is Lanfear;
+  `wot_book2.db` and `wot_book3.db` keep Selene as her own row.
+- **From the reveal book onward, the disguise is merged into the true
+  identity**, with the disguise name retained as an `alias_type =
+  'disguise'` alias on the true-identity row. By the reveal book the
+  reader knows, so the directory can show the connection.
+
+Determining the reveal book is done **against the book text, never from
+memory**. The reveal is often earlier than intuition suggests:
+
+- **Lord Brend / Sammael** and **Samon / Be'lal** are revealed *in book
+  three itself* (Moiraine names Lord Brend as Sammael; the text states
+  "the High Lord Samon is Be'lal"). So both are merged from book 3
+  onward, not kept separate in book 3. (An earlier draft of this
+  document had the opposite ruling; it was corrected after re-reading
+  the book-3 text.)
+- **Selene / Lanfear** is kept separate through book 3 and merged from
+  book 4, treating the book-3 glossary entry ("Selene: a name used by
+  Lanfear") as out of scope for the narrative spoiler boundary.
+- **Gyldin / Moghedien** is kept separate in book 4 and merged from
+  book 5, where the reader first learns it.
+
+Two further points:
+
+- **The disguise name is kept as a `disguise` alias on the merged row**,
+  not deleted. `Lord Brend`, `Selene`, `Gyldin`, `Marigan` all survive
+  as `disguise`-typed aliases so the directory records the deception
+  rather than erasing it. (This reverses an earlier "delete the
+  cross-alias" rule.)
+- **In-world confusion that the text preserves is kept**, even where it
+  collides with another row's primary name. Mortals calling Ba'alzamon
+  "the Dark One", Rand carrying `Lews Therin Telamon`, Halima carrying
+  `Aran'gar`: these are intentional dual-identity or in-world-deception
+  artifacts. They surface in the hygiene audit's Check D and are
+  suppressed there via the `acknowledged_collisions` table rather than
+  deleted.
+
+Note that Mordeth and Padan Fain, though fused in-world, are kept as
+**separate rows**: Mordeth is a distinct historical entity (counselor
+of Aridhol) with his own existence long before the fusion, parallel to
+keeping the Dark One and Elan Morin Tedronai separate. Fusion of two
+originally-distinct beings is not the same as one being wearing a
+disguise.
+
+This reveal-aware model is **machine-recorded and audited**. Each
+villain/spoiler reveal-disguise (persona → true identity + reveal book)
+is registered in the `disguise_map` table, and the hygiene audit's
+**Check G** verifies, per snapshot, that the directory actually matches:
+merged (persona kept as a `disguise` alias, no standalone row) at/after
+the reveal book, separate (a standalone persona row, no spoiler-leak
+alias) before it. See **Check G registry — `disguise_map`** under
+Database Maintenance Tools for the table and the `seed_disguise_map.py`
+seeder. The registry is scoped to reveal-disguises only; travel
+cover-names and post-reveal dual identities are out of scope (the latter
+go through `acknowledged_collisions`, as above).
 
 ### Groups are never characters
 
@@ -589,10 +636,16 @@ surface, recorded here so the reasoning is not lost:
   personas: `Lord Brend` from Sammael, `Samon` and `High Lord Samon`
   from Be'lal, plus two earlier alias deletes from the same cleanup batch
   (`Shai'tan` from Elan Morin Tedronai as a separate spoiler-leak;
-  a weaselly-man alias misattributed to Padan Fain). The disguise rows
-  themselves (Lord Brend cid 409, Samon cid 375) are kept as separate
-  characters — see Disguise / true-identity architecture under
-  Design Decisions.
+  a weaselly-man alias misattributed to Padan Fain).
+  **(Later reversed — see note below.)** On re-reading the book-3 text,
+  both Lord Brend / Sammael and Samon / Be'lal are revealed *within book
+  three* (Moiraine names them), so the disguise rows were merged into
+  their true identities from book 3 onward rather than kept separate,
+  and the disguise names (`Lord Brend`, `Samon`, `High Lord Samon`) are
+  retained as `disguise`-typed aliases on the merged rows. The original
+  "delete the cross-alias and keep two rows" decision recorded here was
+  superseded; the current rule is in Disguise / true-identity
+  architecture under Design Decisions.
 - **The Accepted stub.** Character cid 342 with `primary_name =
   "Accepted"` was a rank-as-character extraction artifact: a single
   Bk3 Ch15 walk-on of an unnamed Accepted hurrying along a White
@@ -768,6 +821,22 @@ the prompt so the model can match against characters already known.
 The result is written to `data/extractions/b1_c4.json`. It does **not**
 write to the directory tables yet — open that JSON and check it.
 
+**Batch mode.** Add `--batch` to route the *same* request through the Message
+Batches API instead of a synchronous call (async, ~50% token price):
+
+```bash
+python scripts/extract_chapter.py --book 1 --chapter 4 --batch
+python scripts/extract_chapter.py --book 1 --chapter 4 --batch --poll-interval 10
+```
+
+The batch id is printed before polling (so an interrupted run is recoverable), a
+status heartbeat prints on each poll, and the saved JSON records provenance in
+`_meta` (`"via": "batch"` / `"sync"`, plus `"batch_id"`). `--poll-interval N`
+tunes the poll cadence. The synchronous and batch paths build the request from
+one shared builder, so the output JSON is identical in shape and `reconcile.py`
+consumes it unchanged. Without `--batch`, behavior (including the synchronous
+429/529 retry loop) is exactly as before.
+
 ### 3. Reconcile (commit) the extraction
 
 ```bash
@@ -789,12 +858,16 @@ python scripts/reconcile.py --review
 ### 4. Or do a whole book at once
 
 ```bash
-python scripts/run_book.py --book 1            # pauses per chapter
-python scripts/run_book.py --book 1 --auto     # runs straight through
+python scripts/run_book.py --book 1                  # pauses per chapter
+python scripts/run_book.py --book 1 --auto           # runs straight through
+python scripts/run_book.py --book 1 --auto --batch   # extract via Batches API
 ```
 
 It walks chapters in order, so the roster grows naturally and later
-chapters benefit from characters found earlier.
+chapters benefit from characters found earlier. `--batch` (and the optional
+`--poll-interval N`) is forwarded only to the per-chapter `extract_chapter.py`
+call, never to `reconcile.py`; each chapter still extracts, then reconciles to
+completion before the next, so roster carry-forward is unchanged.
 
 ### 5. Run the web app
 
@@ -862,12 +935,17 @@ worth of reconciliation and review-queue work.
 
 ### hygiene_audit.py
 
-A strictly **read-only** auditor. Opens the database with SQLite's `mode=ro`
-URI flag so any write attempt raises immediately at the driver level. It never
-modifies anything — all findings are printed for human review.
+A **read-only** auditor: the audit connection uses SQLite's `mode=ro` URI flag
+so any write attempt raises immediately at the driver level, and no directory
+data is ever modified — all findings are printed for human review. (The only
+writes it makes are structural, not data: on startup it creates the empty
+`distinct_pairs` (Check E), `acknowledged_collisions` (Check D), and
+`disguise_map` (Check G) tables via a *separate* writable connection if a
+snapshot predates them; see the subsections below.) With no `--db`, it audits
+the latest `db/wot_book{N}.db` snapshot.
 
 ```bash
-python scripts/hygiene_audit.py              # run all three checks
+python scripts/hygiene_audit.py              # run all checks (A-F)
 python scripts/hygiene_audit.py --with-llm  # add Claude advisory verdicts
 python scripts/hygiene_audit.py --detail 42 # full dossier for character_id 42
 ```
@@ -887,6 +965,27 @@ python scripts/hygiene_audit.py --detail 42 # full dossier for character_id 42
 - **Check C — non-individual rows.** Trolloc/Myrddraal rows whose name
   contains the species word or starts with a bare article, indicating a
   collective or generic creature label rather than a named individual.
+- **Check D — identity collisions.** An alias whose normalised text equals a
+  *different* character's primary name — surfaces disguise reveals and
+  mononym/full-name duplicates for a human merge decision. Collisions a human
+  has reviewed and decided to keep are **suppressed** via the
+  `acknowledged_collisions` table (see below); the section prints a
+  `(N collision(s) suppressed via acknowledged_collisions)` line.
+- **Check E — fuzzy near-duplicate primary names.** Pairs of primary names
+  that are >=88% similar and not already linked by an alias (catches
+  misspellings like `Ravhin`/`Rahvin`). Pairs a human has confirmed are
+  different people are **suppressed** via the `distinct_pairs` table (see
+  below); the section prints a `(N pair(s) suppressed via distinct_pairs)` line
+  so the suppression is visible.
+- **Check F — non-character candidates.** `character_type = 'other'` rows with
+  no appearances, mentions, relationships, or factions — the empty-shell shape
+  of a mis-extracted object, place, or ship.
+- **Check G — disguise map consistency.** Validates each `disguise_map` row
+  against the snapshot: a reveal-disguise persona must be a SEPARATE character
+  row before its reveal book and MERGED (kept as a `disguise` alias on the true
+  identity) from the reveal book on. Flags a persona row that lingers past the
+  reveal, a missing disguise alias, or a spoiler-leak alias before the reveal
+  (see below). Prints a `(N row(s) in disguise_map)` header line.
 
 A **LIKELY RENAMES** sub-section follows Check B1: any B1 character with more
 than two appearances is almost certainly a real character with a wrong
@@ -907,70 +1006,193 @@ The editable wordlists (`GENERIC_ALIAS_EXACT`, `PLACEHOLDER_TAIL_WORDS`,
 `ROLE_NOUN_EXACT`) and the `PRIMARY_NAME_ALLOWLIST` are grouped at the top of
 the script for easy tuning between book runs.
 
-### delete_characters.py
+#### Check E suppression — `distinct_pairs`
 
-A **report-then-confirm** deletion tool. It never deletes anything without
-first printing exactly what it will remove and waiting for you to type the
-word `DELETE`. There is no `--auto` or `--force` mode.
+Check E otherwise re-flags the same look-alike-but-distinct pairs
+(`Coline`/`Colline`, `Maira`/`Mara`, …) on every run. The `distinct_pairs` table
+records pairs a human has confirmed are different people so they stop being
+flagged — the same way Check E already skips alias-linked pairs. Each row is a
+canonical `(cid_low, cid_high)` pair (a `CHECK (cid_low < cid_high)` enforces
+ordering so lookups are order-independent) plus a short note. The table is
+defined in `db/schema.sql`, and `hygiene_audit.py` creates it on demand (via a
+separate writable connection, before its read-only audit connection opens) so
+existing snapshots gain it without a manual migration.
+
+Record one confirmed-distinct pair with `scripts/seed_distinct_pairs.py`:
 
 ```bash
-python scripts/delete_characters.py
+# dry-run preview (no writes, no backup)
+python scripts/seed_distinct_pairs.py --cid-low 446 --cid-high 729
+
+# apply (latest db/wot_book*.db snapshot by default)
+python scripts/seed_distinct_pairs.py --cid-low 446 --cid-high 729 \
+    --note "Estean vs Estevan, distinct" --commit
 ```
 
-The target list is hard-coded as `TARGET_IDS` near the top of the file —
-the confirmed non-character rows (generic creatures, unnamed crowd-scene
-placeholders) approved for removal in the current cleanup pass. To add
-ids to that list, run `hygiene_audit.py --detail <id>` first and verify
-the character has no legitimate dependent data.
+Dry-run by default (it resolves both ids to their primary_name for a readable
+confirmation line and writes nothing); `--commit` writes after a
+`<db>.pre-distinct-seed.bak` backup. The two ids are normalised so the smaller
+is stored as `cid_low` (so command-line order doesn't matter), the table is
+created if absent, `INSERT OR IGNORE` makes re-runs idempotent, and a missing
+`cid_low`/`cid_high` is reported without inserting. When a character is removed,
+`delete_characters.py` deletes its `distinct_pairs` rows along with its other
+dependents.
 
-**What it does, in order:**
+The original 17-pair historical batch — already applied to the live snapshots
+and carried forward — is preserved in `scripts/seed_distinct_pairs_initial.py`
+so it stays reproducible.
 
-1. Writes a backup to `db/wot.db.pre-deletions-auto.bak` (including WAL
-   sidecar files if present) before touching anything.
-2. Prints a full dossier for each target: the characters row, every aliases
-   row, every appearances row (with book/chapter label), every relationships
-   row (showing the other character's id and name so you can see which real
-   characters lose an edge), and every character_factions row.
-3. Prints a summary: total characters, aliases, appearances, relationships,
-   and character_factions rows to be deleted.
-4. Prompts for confirmation. You must type `DELETE` exactly. Anything else —
-   or a non-interactive stdin — aborts with no changes made.
-5. On confirmation, deletes all rows inside a **single transaction** in
-   foreign-key-safe order: `character_factions` → `appearances` →
-   `relationships` → `aliases` → `characters`. Commits once at the end. Any
-   error rolls back the entire transaction.
-6. Re-queries to confirm all target ids are gone, then prints a final
-   row-count per table.
+#### Check D suppression — `acknowledged_collisions`
 
-`PRAGMA foreign_keys = ON` is set on the connection before any statement
-runs. The script only ever touches the character_ids in `TARGET_IDS` and
-their direct dependents — no other rows are read for modification.
+Check D flags any alias (`is_primary=0`) whose normalised text equals a
+*different* character's primary_name. Many are permanent, already-reviewed
+keeps: kept disguise aliases (`Aran'gar` on Halima Saranov), canonical
+dual-identity aliases (`the Dark One` on Elan Morin Tedronai, `Lews Therin
+Telamon` on Rand al'Thor, `Mandarb` on Zarine Bashere), and coincidental
+homonyms (a mononym `given_name` alias matching an unrelated character's
+primary). Without suppression these re-appear every run — and in every future
+book — forcing pointless re-review.
 
-The `TARGET_IDS` list is edited per book: clear it and repopulate from
-the current book's `hygiene_audit.py` findings before each cleanup run.
-Each run writes its own backup; rename `BAK_PATH` per book (e.g.
-`wot.db.pre-deletions-auto-book3.bak`) if you want to keep prior backups
-from being overwritten.
+The `acknowledged_collisions` table records a reviewed-and-kept collision keyed
+to the exact `(owner_cid, other_cid, alias_norm)` — `owner_cid` is the row
+carrying the alias, `other_cid` the row whose primary_name it matches — so only
+that specific collision is silenced and a genuinely new one still flags. The
+table is defined in `db/schema.sql`, and `hygiene_audit.py` creates it on demand
+(separate writable connection, before its read-only audit connection opens) so
+existing snapshots gain it without a migration. Because `start_book.py` seeds
+book N by copying book N-1's snapshot, acknowledgments **carry forward**: a
+collision acknowledged on book 6 won't re-flag when book 7 is ingested.
+
+Acknowledge one collision with `scripts/seed_acknowledged_collisions.py`:
+
+```bash
+# dry-run preview (no writes, no backup)
+python scripts/seed_acknowledged_collisions.py \
+    --owner-cid 516 --other-cid 410 --alias-norm "Adine"
+
+# apply (latest db/wot_book*.db snapshot by default)
+python scripts/seed_acknowledged_collisions.py \
+    --owner-cid 516 --other-cid 410 --alias-norm "Adine" \
+    --note "coincidental homonym, unrelated characters" --commit
+```
+
+Dry-run by default; `--commit` writes (after a `<db>.pre-collision-ack.bak`
+backup). The alias text is normalised internally (so the raw or normalised form
+both work), `INSERT OR IGNORE` makes re-runs idempotent, and a missing
+`owner_cid`/`other_cid` is reported without inserting.
+
+#### Check G registry — `disguise_map`
+
+A **reveal-disguise** is a persona whose true identity is a spoiler (Selene IS
+Lanfear; Lord Gaebril IS Rahvin). The directory keeps the persona as a SEPARATE
+character row in snapshots *before* the reveal book, and MERGES it into the
+true-identity row *from* the reveal book onward (persona name kept as an
+`alias_type='disguise'` alias — see **Disguise / true-identity architecture**).
+Because of that merge the persona row no longer exists post-reveal, so the
+registry can't foreign-key the persona's `character_id`; the stable key is the
+persona's normalised name (which survives as the disguise alias) plus the stable
+true-identity cid. This registry covers **only** villain/spoiler
+reveal-disguises — not protagonist travel cover-names (Moiraine's "Alys", Lan's
+"Andra", which never had a reveal or a second row), and not dual-identity /
+reincarnation cases that coexist post-reveal (Rand/Lews Therin, Birgitte/Maerion),
+which are handled by `acknowledged_collisions`.
+
+Check G reads `disguise_map` and, for each row, compares this snapshot's book
+(max `series_order`) against `reveal_book`: at/after the reveal it expects the
+persona merged (no standalone persona row, disguise alias present on the true
+identity); before the reveal it expects them separate (a standalone persona row,
+no disguise alias). It flags either direction's violations. The table is defined
+in `db/schema.sql`, `hygiene_audit.py` creates it on demand, and rows carry
+forward across books via `start_book.py`'s snapshot copy.
+
+Register one mapping with `scripts/seed_disguise_map.py`:
+
+```bash
+# dry-run preview (no writes, no backup)
+python scripts/seed_disguise_map.py --persona-norm "Selene" --true-cid 155 \
+    --reveal-book 4 --persona-name "Selene"
+
+# apply (latest db/wot_book*.db snapshot by default)
+python scripts/seed_disguise_map.py --persona-norm "Selene" --true-cid 155 \
+    --reveal-book 4 --persona-name "Selene" \
+    --note "Selene is Lanfear; revealed book 4" --commit
+```
+
+Same conventions as the other seeders: dry-run by default (resolves `--true-cid`
+to its `primary_name` for a readable confirmation line and writes nothing);
+`--commit` writes after a `<db>.pre-disguise-map.bak` backup; `--persona-norm` is
+normalised the same way `alias_norm` is; `true_name` is derived from `true_cid`
+at seed time (the caller doesn't pass it); `INSERT OR IGNORE` keyed on
+`(persona_norm, true_cid)` makes re-runs idempotent; an optional `--persona-cid`
+records the pre-reveal row id for reference (informational, not FK-enforced); and
+a missing `--true-cid` is reported without inserting.
+
+### delete_characters.py
+
+A **dry-run-by-default, then report-and-confirm** deletion tool for confirmed
+non-character rows (generic creatures, unnamed crowd-scene placeholders). It
+never deletes anything without first printing exactly what it will remove; the
+actual write requires both `--commit` and typing the word `DELETE`. There is no
+`--auto`/`--force` bypass of the typed prompt. Verify each id with
+`hygiene_audit.py --detail <id>` first.
+
+```bash
+# preview (dry-run): no writes, no backup
+python scripts/delete_characters.py --ids 135 152
+python scripts/delete_characters.py --id 135 --id 152
+
+# apply, against the latest db/wot_book{N}.db snapshot by default
+python scripts/delete_characters.py --ids 135 152 --commit
+
+# target a specific database file
+python scripts/delete_characters.py --ids 135 152 --db db/wot_book3.db --commit
+```
+
+- **IDs come from the command line** (no hard-coded list): `--id` (repeatable)
+  and/or `--ids` (space-separated). At least one is required; none → a clean
+  argparse error.
+- **Database:** `--db PATH`, or by default the latest `db/wot_book{N}.db`
+  snapshot (same glob-and-max discovery as `hygiene_audit.py`). The backup path
+  is derived from the resolved DB (`<db>.pre-deletions.bak`), not hard-coded.
+- **Dry-run vs commit:** without `--commit` it prints the full dossier and the
+  summary, then stops — no backup, no writes. With `--commit` it writes a backup
+  (including WAL/SHM sidecars), then prompts for the typed `DELETE`.
+
+**What the commit path does, in order:** prints a full dossier per target (the
+characters row plus every dependent row across all tables — aliases,
+appearances, relationships, faction memberships, **and the character's
+`distinct_pairs` suppression rows**); prints a per-table summary; writes the
+backup; prompts for `DELETE`; then deletes everything in a **single
+transaction** in foreign-key-safe order — `character_factions` → `appearances` →
+`relationships` → `aliases` → `distinct_pairs` → `characters`. The
+`distinct_pairs` delete covers both the `cid_low` and `cid_high` FK columns —
+the FK that otherwise raises `FOREIGN KEY constraint failed` when a deleted
+character had been seeded into a Check E suppression pair. It commits once,
+re-queries to verify the ids are gone, and prints an actual-rows-deleted report;
+any error rolls the whole transaction back. A target id not present in the DB is
+reported as `NOT FOUND` and skipped, not fatal.
 
 ### delete_aliases.py
 
-The same **report-then-confirm** pattern as `delete_characters.py`, but
-scoped to individual alias rows rather than whole characters. Use it for
-Check A findings — generic forms of address that pollute the matcher but
-whose underlying character is legitimate and must stay.
+The same **dry-run-by-default, then report-and-confirm** pattern as
+`delete_characters.py`, scoped to individual alias rows rather than whole
+characters. Use it for Check A findings — generic forms of address that pollute
+the matcher but whose underlying character is legitimate and must stay.
 
 ```bash
-python scripts/delete_aliases.py
+python scripts/delete_aliases.py --ids 311 116           # dry-run preview
+python scripts/delete_aliases.py --ids 311 116 --commit  # apply
 ```
 
-The target list is hard-coded as `TARGET_ALIAS_IDS`. The script writes a
-backup, prints a dossier of each alias (its text, type, and the
-character it sits on), and waits for you to type `DELETE`. It **refuses
-to proceed** if any target alias is marked `is_primary = 1`, since
-deleting a primary alias would leave its character unreachable by its
-canonical name. Aliases are a leaf table — nothing has a foreign key
-pointing at `alias_id` — so deletion is a single statement, not a
-cascade. Character rows are never modified.
+Same CLI conventions as `delete_characters.py`: `--id`/`--ids` (at least one
+required), `--db` defaulting to the latest snapshot, a derived backup path
+(`<db>.pre-alias-deletions.bak`), and a dry-run/`--commit` split with the typed
+`DELETE` gate on commit. It **refuses to proceed** (in either mode) if any
+target alias is marked `is_primary = 1`, since deleting a primary alias would
+leave its character unreachable by its canonical name. Aliases are a leaf table
+— nothing has a foreign key pointing at `alias_id` — so deletion is a single
+statement, not a cascade. Character rows are never modified. NOT-FOUND ids are
+reported and skipped.
 
 ### restore_character.py
 
@@ -1056,7 +1278,10 @@ Dry-run by default; `--commit` required to write. The script:
 Conflict semantics in plain terms:
 
 - **character row fields:** canonical wins. Duplicate's values are
-  only used to fill what canonical lacks.
+  only used to fill what canonical lacks. The one exception is
+  `first_chapter_id`, which takes the **earlier** anchor of the two by
+  reading order (see below), since the canonical inherits the
+  duplicate's appearances.
 - **aliases:** union by text. No alias is added twice.
 - **appearances:** at most one row per `(character_id, chapter_id)`
   is allowed by the schema, so a chapter that both rows appeared in
@@ -1067,13 +1292,37 @@ Conflict semantics in plain terms:
   collapsed to avoid self-loops; edges where both rows already had the
   same other-party get deduplicated as dup-edges.
 - **factions:** canonical's memberships win; duplicate memberships on
-  the same faction are deleted, distinct ones are reassigned.
+  the same faction are deleted, distinct ones are reassigned. When a
+  shared membership is deduplicated, the kept row's `first_chapter_id`
+  is moved to the earlier of the two anchors.
 
-After a merge, the canonical's `first_chapter_id` is **not**
-recomputed. If the duplicate carried an earlier first chapter, the
-canonical's pointer is now stale relative to its appearances. This is
-a known minor inconsistency; in practice the UI falls back to the
-appearances table for chapter lookups so it doesn't surface to users.
+The duplicate's former primary_name is added to the canonical as an alias. Its
+`alias_type` defaults to `epithet`; pass `--duplicate-alias-type
+{given_name|title|nickname|disguise|epithet}` to set it directly — e.g.
+`--duplicate-alias-type disguise` for a disguise-into-true-identity fold, which
+avoids a manual fix afterward. The flag only affects that one inserted row; an
+alias already present on the canonical is skipped regardless.
+
+Undirected relationship edges are **canonicalised before reassignment**: an edge
+the duplicate holds to some party X stored as `(X, dup)` is correctly recognised
+as a duplicate of a canonical edge stored as `(canonical, X)` of the same type,
+so it is discarded rather than reassigned into a `UNIQUE constraint failed`
+abort. A discarded self-loop (an edge between the duplicate and the canonical)
+is also accounted for in the post-merge count verification, so a correct merge
+reports no false discrepancy.
+
+After a merge, the canonical's `first_chapter_id` is set to the **earliest
+anchor across both rows**, since the canonical inherits the duplicate's
+appearances. "Earliest" is resolved by reading order (`books.series_order`, then
+`chapters.chapter_number`) via a JOIN — *not* by comparing the opaque
+`chapter_id` integers, which are not in reading order. A NULL anchor loses to a
+real one. The same rule applies to a **shared faction membership**: when both
+rows belong to a faction, the kept canonical membership's `first_chapter_id` is
+moved to the duplicate's anchor if that is earlier, before the duplicate's
+membership row is dropped. Both moves are shown in the dossier (an `EARLIER`
+line for the character row, and an updated `DUPLICATE` faction line) in dry-run
+and on commit, and they change column values only, so post-merge count
+verification is unaffected.
 
 ### carry_forward_origins.py
 

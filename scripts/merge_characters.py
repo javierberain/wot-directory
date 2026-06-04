@@ -20,8 +20,12 @@ Merge behaviour by table
   appearances     : reassigned to canonical unless canonical already has an
                     appearance in the same chapter (conflict → discard duplicate's).
   relationships   : reassigned to canonical; self-loops (other party == canonical)
-                    are detected and discarded.  For undirected edges, both storage
-                    orderings are checked when looking for a conflict.
+                    are detected and discarded.  Dup-edge detection mirrors the
+                    UNIQUE (character_a, character_b, relationship_type) constraint,
+                    which ignores `directed`: an existing canonical edge to the
+                    same party of the same type is a dup-edge in EITHER column
+                    order (undirected) regardless of its `directed` flag.
+                    Undirected reassigns are stored in sorted-id column order.
   character_factions: reassigned to canonical; duplicate if canonical already has
                     the same faction_id (unique PK constraint: one row per character
                     per faction).
@@ -100,7 +104,9 @@ def is_placeholder(value):
 # These are the mutable fields on the characters row that the merge plan
 # considers.  character_id, primary_name, created_at, updated_at are excluded:
 # they are never touched during a merge.  character_type is handled separately
-# (HALT on mismatch).
+# (HALT on mismatch), and first_chapter_id is handled separately too
+# (build_first_chapter_plan: the EARLIEST anchor across both rows by reading
+# order — "canonical value wins" would wrongly keep a later anchor).
 _TRAIT_FIELDS = [
     "nationality",
     "physical_traits",
@@ -109,7 +115,6 @@ _TRAIT_FIELDS = [
     "associations",
     "personality",
     "description",
-    "first_chapter_id",
 ]
 
 # ── Database helpers ──────────────────────────────────────────────────────────
@@ -158,6 +163,31 @@ def find_character(conn, name, label):
             f"(primary_name should be UNIQUE — investigate the database)."
         )
     return rows[0]
+
+
+# ── Reading-order helpers ─────────────────────────────────────────────────────
+
+def _reading_order(conn, chapter_id):
+    """Return (series_order, chapter_number) for a chapter_id, or None.
+
+    first_chapter_id is an opaque row id; reading order is books.series_order
+    then chapters.chapter_number — NOT the integer chapter_id (ids are not in
+    reading order: a book-6 row can have a lower id than a book-1 row). Returns
+    None for a NULL or unresolvable id so callers can treat it as 'no value'.
+    """
+    if chapter_id is None:
+        return None
+    row = conn.execute(
+        "SELECT b.series_order, ch.chapter_number "
+        "FROM chapters ch JOIN books b ON b.book_id = ch.book_id "
+        "WHERE ch.chapter_id = ?", (chapter_id,)).fetchone()
+    return (row["series_order"], row["chapter_number"]) if row else None
+
+
+def _chapter_label(conn, chapter_id):
+    """'BkX ChY' for a chapter_id, or '(none)' for NULL/unresolvable."""
+    o = _reading_order(conn, chapter_id)
+    return f"Bk{o[0]} Ch{o[1]}" if o is not None else "(none)"
 
 
 # ── Plan builders (pure computation — no writes) ──────────────────────────────
@@ -216,10 +246,40 @@ def build_trait_plan(canonical, duplicate):
     return plan
 
 
-def build_alias_plan(conn, canonical_id, dup_id, dup_primary_name):
+def build_first_chapter_plan(conn, canonical, duplicate):
+    """Decide the canonical's post-merge first_chapter_id.
+
+    After the merge the canonical inherits the duplicate's appearances, so its
+    anchor must be the EARLIEST first_chapter across both rows in READING ORDER
+    (books.series_order, then chapters.chapter_number) — not "canonical value
+    wins", and not an integer chapter_id compare. A NULL anchor loses to a real
+    one. Returns a dict: action 'update'|'keep', new_cid, can_label, dup_label.
+    """
+    can_cid = canonical["first_chapter_id"]
+    dup_cid = duplicate["first_chapter_id"]
+    can_order = _reading_order(conn, can_cid)
+    dup_order = _reading_order(conn, dup_cid)
+    # Duplicate strictly earlier, or canonical has no anchor and duplicate does.
+    dup_earlier = dup_order is not None and (
+        can_order is None or dup_order < can_order)
+    return {
+        "action":    "update" if dup_earlier else "keep",
+        "new_cid":   dup_cid if dup_earlier else can_cid,
+        "can_label": _chapter_label(conn, can_cid),
+        "dup_label": _chapter_label(conn, dup_cid),
+    }
+
+
+def build_alias_plan(conn, canonical_id, dup_id, dup_primary_name,
+                     dup_alias_type="epithet"):
     """Build the alias merge plan.
 
     Returns (inserts, skipped) where each is a list of dicts.
+
+    dup_alias_type sets the alias_type used for the duplicate's former
+    primary_name when it is inserted as an alias on the canonical (default
+    'epithet'). It only affects that inserted row; aliases already present on
+    the canonical are skipped regardless.
     """
     # Canonical's existing alias norms.
     can_alias_rows = conn.execute(
@@ -253,11 +313,13 @@ def build_alias_plan(conn, canonical_id, dup_id, dup_primary_name):
         else:
             seen_norms.add(norm)
             # Preserve the original alias_type and metadata, but never
-            # carry over is_primary=1 — the canonical's own primary is already set.
+            # carry over is_primary=1 — the canonical's own primary is already
+            # set. The duplicate's former primary alias (alias_type 'primary')
+            # is the "former primary_name" row, so it takes dup_alias_type.
             inserts.append({
                 "alias_text":      a["alias_text"],
                 "alias_norm":      norm,
-                "alias_type":      a["alias_type"] if a["alias_type"] != "primary" else "epithet",
+                "alias_type":      a["alias_type"] if a["alias_type"] != "primary" else dup_alias_type,
                 "is_primary":      0,
                 "notes":           a["notes"],
                 "first_chapter_id": a["first_chapter_id"],
@@ -273,7 +335,7 @@ def build_alias_plan(conn, canonical_id, dup_id, dup_primary_name):
         skipped.append({
             "alias_text": dup_primary_name,
             "alias_norm": dup_pname_norm,
-            "alias_type": "epithet",
+            "alias_type": dup_alias_type,
             "reason":     "already present on canonical (matches dup primary name)",
         })
     else:
@@ -281,7 +343,7 @@ def build_alias_plan(conn, canonical_id, dup_id, dup_primary_name):
         inserts.append({
             "alias_text":      dup_primary_name,
             "alias_norm":      dup_pname_norm,
-            "alias_type":      "epithet",
+            "alias_type":      dup_alias_type,
             "is_primary":      0,
             "notes":           "former primary_name (added by merge_characters.py)",
             "first_chapter_id": None,
@@ -380,27 +442,37 @@ def build_relationship_plan(conn, canonical_id, dup_id):
             continue
 
         # Check if canonical already has an equivalent edge to other_id.
+        # Dup-edge detection must mirror the table's UNIQUE constraint
+        # (character_a, character_b, relationship_type), which does NOT include
+        # `directed`. So we never filter on `directed` here: any existing edge
+        # that would occupy the same (a, b, type) slot the reassign produces is
+        # a dup-edge to discard — otherwise the UPDATE below raises
+        # "UNIQUE constraint failed".
         if directed:
-            # Directed: preserve side.  canonical takes dup's position.
+            # Directed: the write preserves the duplicate's column position
+            # (character_a = source), so check that exact ordered pair.
             if r["dup_side"] == "a":
                 dup_query = (
                     "SELECT relationship_id FROM relationships "
                     "WHERE character_a = ? AND character_b = ? "
-                    "AND relationship_type = ? AND directed = 1",
+                    "AND relationship_type = ?",
                     (canonical_id, other_id, rel_type),
                 )
             else:
                 dup_query = (
                     "SELECT relationship_id FROM relationships "
                     "WHERE character_a = ? AND character_b = ? "
-                    "AND relationship_type = ? AND directed = 1",
+                    "AND relationship_type = ?",
                     (other_id, canonical_id, rel_type),
                 )
         else:
-            # Undirected: check both orderings.
+            # Undirected: an undirected edge has no canonical column order and
+            # the reassign below stores it sorted, so it is already-present if
+            # canonical has an edge to this party of the same type in EITHER
+            # column order, whatever that edge's `directed` flag.
             dup_query = (
                 "SELECT relationship_id FROM relationships "
-                "WHERE relationship_type = ? AND directed = 0 "
+                "WHERE relationship_type = ? "
                 "AND ((character_a = ? AND character_b = ?) "
                 "     OR (character_a = ? AND character_b = ?))",
                 (rel_type, canonical_id, other_id, other_id, canonical_id),
@@ -419,12 +491,18 @@ def build_relationship_plan(conn, canonical_id, dup_id):
 def build_faction_plan(conn, canonical_id, dup_id):
     """Build the character_factions merge plan.
 
-    Returns (reassign, duplicates) where each is a list of dicts.
+    Returns (reassign, duplicates) where each is a list of dicts. For a
+    duplicate (shared) faction, if the duplicate membership's first_chapter is
+    earlier than the canonical membership's (reading order), the dict carries
+    anchor_update=True + new_fch/new_label so do_merge moves the kept canonical
+    membership's anchor earlier before dropping the duplicate row.
     """
-    can_factions = {
-        r["faction_id"]
+    # faction_id -> canonical membership's first_chapter_id.
+    can_membership = {
+        r["faction_id"]: r["first_chapter_id"]
         for r in conn.execute(
-            "SELECT faction_id FROM character_factions WHERE character_id = ?",
+            "SELECT faction_id, first_chapter_id "
+            "FROM character_factions WHERE character_id = ?",
             (canonical_id,),
         ).fetchall()
     }
@@ -442,10 +520,21 @@ def build_faction_plan(conn, canonical_id, dup_id):
     reassign   = []
     duplicates = []
     for cf in dup_factions:
-        if cf["faction_id"] in can_factions:
-            duplicates.append(dict(cf))
+        d = dict(cf)
+        if cf["faction_id"] in can_membership:
+            can_fch = can_membership[cf["faction_id"]]
+            dup_fch = cf["first_chapter_id"]
+            can_order = _reading_order(conn, can_fch)
+            dup_order = _reading_order(conn, dup_fch)
+            dup_earlier = dup_order is not None and (
+                can_order is None or dup_order < can_order)
+            d["anchor_update"] = bool(dup_earlier)
+            d["new_fch"]   = dup_fch if dup_earlier else can_fch
+            d["can_label"] = _chapter_label(conn, can_fch)
+            d["new_label"] = _chapter_label(conn, d["new_fch"])
+            duplicates.append(d)
         else:
-            reassign.append(dict(cf))
+            reassign.append(d)
 
     return reassign, duplicates
 
@@ -453,7 +542,7 @@ def build_faction_plan(conn, canonical_id, dup_id):
 # ── Dossier printing ──────────────────────────────────────────────────────────
 
 def print_dossier(canonical, duplicate,
-                  trait_plan,
+                  trait_plan, first_chapter_plan,
                   alias_inserts, alias_skipped,
                   app_reassign, app_conflicts,
                   rel_reassign, self_loops, dup_edges,
@@ -478,9 +567,19 @@ def print_dossier(canonical, duplicate,
             if p["note"]:
                 print(f"    {p['note'].strip()}")
         elif p["action"] == "fill":
-            print(f"    canonical : {p['can_value']!r}  →  {p['dup_value']!r}  (from duplicate)")
+            print(f"    canonical : {p['can_value']!r}  ->  {p['dup_value']!r}  (from duplicate)")
         else:
             print(f"    both NULL / placeholder — unchanged")
+
+    # first_chapter_id is decided by reading order, not "canonical wins".
+    fcp = first_chapter_plan
+    if fcp["action"] == "update":
+        print(f"\n  EARLIER    first_chapter_id")
+        print(f"    {fcp['can_label']}  ->  {fcp['dup_label']}  "
+              f"(earlier, from duplicate)")
+    else:
+        print(f"\n  KEEP       first_chapter_id")
+        print(f"    {fcp['can_label']}  (canonical already earliest)")
 
     _header(f"ALIAS MERGE PLAN  (insert {len(alias_inserts)}, skip {len(alias_skipped)})")
     if alias_inserts:
@@ -539,12 +638,19 @@ def print_dossier(canonical, duplicate,
     if fac_dups:
         print()
         for cf in fac_dups:
-            print(f"  DUPLICATE  \"{cf['faction_name']}\"  [{cf['faction_type']}]  "
-                  f"— canonical already a member")
+            if cf.get("anchor_update"):
+                print(f"  DUPLICATE  \"{cf['faction_name']}\"  [{cf['faction_type']}]"
+                      f"  — keeping canonical membership, updating first_chapter "
+                      f"to {cf['new_label']} (earlier, from duplicate)")
+            else:
+                print(f"  DUPLICATE  \"{cf['faction_name']}\"  [{cf['faction_type']}]  "
+                      f"— canonical already a member")
 
     _header("SUMMARY")
     print(f"\n  Character row fills      : "
           f"{sum(1 for p in trait_plan if p['action'] == 'fill')}")
+    print(f"  first_chapter moved      : "
+          f"{1 if first_chapter_plan['action'] == 'update' else 0}")
     print(f"  Alias inserts            : {len(alias_inserts)}")
     print(f"  Alias skipped            : {len(alias_skipped)}")
     print(f"  Appearance reassigns     : {len(app_reassign)}")
@@ -554,12 +660,14 @@ def print_dossier(canonical, duplicate,
     print(f"  Relationship dup-edges   : {len(dup_edges)}")
     print(f"  Faction reassigns        : {len(fac_reassign)}")
     print(f"  Faction duplicates       : {len(fac_dups)}")
+    print(f"  Faction anchors moved    : "
+          f"{sum(1 for cf in fac_dups if cf.get('anchor_update'))}")
 
 
 # ── Commit ────────────────────────────────────────────────────────────────────
 
 def do_merge(conn, canonical, duplicate,
-             trait_plan,
+             trait_plan, first_chapter_plan,
              alias_inserts,
              app_reassign, app_conflicts,
              rel_reassign, self_loops, dup_edges,
@@ -581,6 +689,16 @@ def do_merge(conn, canonical, duplicate,
             f"UPDATE characters SET {set_clause} WHERE character_id = ?",
             values,
         )
+
+    # ── a2. first_chapter_id: set the canonical to the EARLIEST anchor across
+    #        both rows (reading order). Column update only; no row-count change.
+    n_first_chapter_updated = 0
+    if first_chapter_plan["action"] == "update":
+        conn.execute(
+            "UPDATE characters SET first_chapter_id = ? WHERE character_id = ?",
+            (first_chapter_plan["new_cid"], canonical_id),
+        )
+        n_first_chapter_updated = 1
 
     # ── b. INSERT new aliases on canonical, then DELETE all of duplicate's ──────
     # INSERT the non-duplicate aliases first (plan was computed before any
@@ -679,7 +797,20 @@ def do_merge(conn, canonical, duplicate,
     # directed semantics (character_a is the edge source) are preserved.
     n_rel_reassigned = 0
     for r in rel_reassign:
-        if r["dup_side"] == "a":
+        if not r["directed"]:
+            # Undirected: store in canonical (sorted-id) column order so the
+            # result is deterministic and cannot land in the opposite order of
+            # an existing canonical edge (which the order-sensitive UNIQUE would
+            # then permit as a redundant duplicate, or collide with). Detection
+            # above guarantees no same-(pair, type) edge exists in either order,
+            # so this UPDATE cannot trip the UNIQUE constraint.
+            lo, hi = sorted((canonical_id, r["other_id"]))
+            conn.execute(
+                "UPDATE relationships SET character_a = ?, character_b = ? "
+                "WHERE relationship_id = ?",
+                (lo, hi, r["relationship_id"]),
+            )
+        elif r["dup_side"] == "a":
             conn.execute(
                 "UPDATE relationships SET character_a = ? "
                 "WHERE relationship_id = ?",
@@ -694,6 +825,19 @@ def do_merge(conn, canonical, duplicate,
         n_rel_reassigned += 1
 
     # ── e. character_factions ─────────────────────────────────────────────────
+    # For factions both rows belong to, move the kept canonical membership's
+    # anchor to the earlier first_chapter (reading order) BEFORE dropping the
+    # duplicate's membership row. Column update only — no row-count change.
+    n_fac_anchor_updates = 0
+    for cf in fac_dups:
+        if cf.get("anchor_update"):
+            conn.execute(
+                "UPDATE character_factions SET first_chapter_id = ? "
+                "WHERE character_id = ? AND faction_id = ?",
+                (cf["new_fch"], canonical_id, cf["faction_id"]),
+            )
+            n_fac_anchor_updates += 1
+
     # Delete duplicate memberships (canonical already has that faction).
     if fac_dups:
         dup_faction_ids = [cf["faction_id"] for cf in fac_dups]
@@ -714,6 +858,24 @@ def do_merge(conn, canonical, duplicate,
         )
         n_fac_reassigned = len(fac_reassign)
 
+    # ── e2. distinct_pairs (Check E suppression) ──────────────────────────────
+    # cid_low and cid_high both FK -> characters. A suppression pair recording
+    # that the duplicate is a different person from someone else is moot once
+    # the duplicate is folded into the canonical, so drop any pair referencing
+    # the duplicate before deleting its character row — otherwise the DELETE in
+    # step g fails the FK. Guarded: the table is additive (hygiene_audit.py /
+    # seed_distinct_pairs.py) and may be absent on older snapshots.
+    has_dpairs = conn.execute(
+        "SELECT 1 FROM sqlite_master "
+        "WHERE type='table' AND name='distinct_pairs'"
+    ).fetchone() is not None
+    n_dpairs_deleted = 0
+    if has_dpairs:
+        n_dpairs_deleted = conn.execute(
+            "DELETE FROM distinct_pairs WHERE cid_low = ? OR cid_high = ?",
+            (dup_id, dup_id),
+        ).rowcount
+
     # ── f. Orphan check ───────────────────────────────────────────────────────
     # Every dependent table must now have zero rows pointing at dup_id.
     # If any remain, we have a bug — rollback before deleting the character row.
@@ -730,11 +892,15 @@ def do_merge(conn, canonical, duplicate,
         ("character_factions",
          "SELECT COUNT(*) FROM character_factions WHERE character_id = ?"),
     ]
+    if has_dpairs:
+        orphan_checks.append(
+            ("distinct_pairs",
+             "SELECT COUNT(*) FROM distinct_pairs "
+             "WHERE cid_low = ? OR cid_high = ?"))
     for table, sql in orphan_checks:
-        if "character_a" in sql:
-            count = conn.execute(sql, (dup_id, dup_id)).fetchone()[0]
-        else:
-            count = conn.execute(sql, (dup_id,)).fetchone()[0]
+        # Bind dup_id once per '?' placeholder (two for the OR-of-two-columns
+        # checks, one otherwise).
+        count = conn.execute(sql, (dup_id,) * sql.count("?")).fetchone()[0]
         if count > 0:
             raise RuntimeError(
                 f"Orphan check FAILED: {table} still has {count} row(s) "
@@ -757,6 +923,9 @@ def do_merge(conn, canonical, duplicate,
         "rel_deleted":     len(delete_rel_ids),
         "fac_reassigned":  n_fac_reassigned,
         "fac_deleted":     len(fac_dups),
+        "fac_anchor_updates": n_fac_anchor_updates,
+        "first_chapter_updated": n_first_chapter_updated,
+        "dpairs_deleted":  n_dpairs_deleted,
     }
 
 
@@ -828,6 +997,13 @@ def main():
         help="primary_name of the row to FOLD IN and then DELETE.",
     )
     ap.add_argument(
+        "--duplicate-alias-type", default="epithet",
+        choices=["given_name", "title", "nickname", "disguise", "epithet"],
+        help="alias_type for the duplicate's former primary_name when added as "
+             "an alias on the canonical (default: epithet). Use 'disguise' for "
+             "disguise-into-true-identity merges.",
+    )
+    ap.add_argument(
         "--commit", action="store_true",
         help=(
             "Apply the merge to --target.  Without --commit the script is a "
@@ -875,8 +1051,11 @@ def main():
 
     # ── Step 3–7: build all plan objects ─────────────────────────────────────
     trait_plan                      = build_trait_plan(canonical, duplicate)
+    first_chapter_plan              = build_first_chapter_plan(
+        conn, canonical, duplicate)
     alias_inserts, alias_skipped    = build_alias_plan(
-        conn, canonical_id, dup_id, duplicate["primary_name"]
+        conn, canonical_id, dup_id, duplicate["primary_name"],
+        args.duplicate_alias_type
     )
     app_reassign, app_conflicts     = build_appearance_plan(conn, canonical_id, dup_id)
     rel_reassign, self_loops, dup_edges = build_relationship_plan(
@@ -887,7 +1066,7 @@ def main():
     # ── Step 8: print full dossier ────────────────────────────────────────────
     print_dossier(
         canonical, duplicate,
-        trait_plan,
+        trait_plan, first_chapter_plan,
         alias_inserts, alias_skipped,
         app_reassign, app_conflicts,
         rel_reassign, self_loops, dup_edges,
@@ -926,15 +1105,18 @@ def main():
     ).fetchone()[0]
 
     # Expected post-merge counts.
+    # Self-loops (duplicate edges whose other end is the canonical) are already
+    # part of pre_can_rels — they involve the canonical — and are deleted by the
+    # merge, so subtract them or verify_merge reports a false discrepancy.
     exp_aliases = pre_can_aliases + len(alias_inserts)
     exp_apps    = pre_can_apps    + len(app_reassign)
-    exp_rels    = pre_can_rels    + len(rel_reassign)
+    exp_rels    = pre_can_rels    + len(rel_reassign) - len(self_loops)
     exp_facs    = pre_can_facs    + len(fac_reassign)
 
     try:
         counts = do_merge(
             conn, canonical, duplicate,
-            trait_plan,
+            trait_plan, first_chapter_plan,
             alias_inserts,
             app_reassign, app_conflicts,
             rel_reassign, self_loops, dup_edges,
@@ -967,6 +1149,7 @@ def main():
           f"(cid={dup_id}) folded into "
           f"{canonical['primary_name']!r}  (cid={canonical_id})")
     print(f"  character row fills     : {counts['fills']}")
+    print(f"  first_chapter moved     : {counts['first_chapter_updated']}")
     print(f"  aliases inserted        : {counts['alias_inserted']}")
     print(f"  appearances reassigned  : {counts['app_reassigned']}")
     print(f"  appearances deleted     : {counts['app_deleted']}")
@@ -974,6 +1157,8 @@ def main():
     print(f"  relationships deleted   : {counts['rel_deleted']}")
     print(f"  factions reassigned     : {counts['fac_reassigned']}")
     print(f"  factions deleted        : {counts['fac_deleted']}")
+    print(f"  faction anchors moved   : {counts['fac_anchor_updates']}")
+    print(f"  distinct_pairs deleted  : {counts['dpairs_deleted']}")
     print(f"\n  Canonical now has:")
     print(f"    {exp_aliases} aliases, {exp_apps} appearances, "
           f"{exp_rels} relationships, {exp_facs} faction memberships")
