@@ -370,7 +370,7 @@ def build_request_params(tool, user_msg):
     batch)."""
     return {
         "model": MODEL,
-        "max_tokens": 16000,
+        "max_tokens": 36000,
         "system": [{"type": "text", "text": SYSTEM_PROMPT,
                     "cache_control": {"type": "ephemeral"}}],
         "tools": [tool],
@@ -562,6 +562,13 @@ def extract(book_order, chapter_number, do_print=False, db_path=None,
     if tool_block is None:
         sys.exit("Model did not return the expected tool call. "
                  f"stop_reason={resp.stop_reason}")
+    if resp.stop_reason == "max_tokens":
+        sys.exit(
+            f"TRUNCATED: model hit max_tokens ({params['max_tokens']}) for "
+            f"book {book_order} ch {chapter_number} before finishing the tool "
+            f"call. The extraction is incomplete (characters present, later "
+            f"sections empty) and was NOT saved. Raise max_tokens in "
+            f"build_request_params and re-run, or split this chapter.")
     data = dict(tool_block.input)
     data.setdefault("characters", [])
     data.setdefault("appearances", [])
