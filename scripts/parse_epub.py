@@ -118,8 +118,15 @@ def classify(label):
     if low.startswith("prologue"):
         title = label.split(None, 1)[1].strip() if " " in label else "Prologue"
         return ("prologue", 0, title)
-    # Numbered chapter: "4      The Gleeman"  (separator is non-breaking space)
-    m = re.match(r"^(\d+)[\s\u00a0]+(.*)$", label)
+    # Numbered chapter, two navMap label styles seen across the source EPUBs:
+    #   "4      The Gleeman"        bare number + whitespace/nbsp separator
+    #                               (older split-HTML EPUBs, books 1-6)
+    #   "Chapter 1: High Chasaline" "Chapter" word + number + colon separator
+    #                               (Calibre EPUBs, e.g. book 7)
+    # The optional "Chapter " prefix and the ":" separator make this a strict
+    # superset of the old pattern, so the old-style labels still match
+    # identically.
+    m = re.match(r"(?i)^(?:chapter[\s\u00a0]+)?(\d+)[\s\u00a0:]+(.*)$", label)
     if m:
         return ("chapter", int(m.group(1)), m.group(2).strip())
     return None

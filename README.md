@@ -816,10 +816,16 @@ python scripts/extract_chapter.py --book 1 --chapter 4
 This calls the Claude API. The `ANTHROPIC_API_KEY` is loaded from a
 `.env` file in the project root via `python-dotenv` (listed in
 `requirements.txt`), so it does not need to be exported into the shell
-each session. It feeds the current character roster into
-the prompt so the model can match against characters already known.
+each session. It reads the per-book working snapshot — `db/wot_book{N}.db`
+by default, derived from `--book` (pass `--db` to override). It never falls
+back to the retired `db/wot.db`; if the snapshot does not exist it exits and
+tells you to seed it with `start_book.py`. It feeds the current character
+roster into the prompt so the model can match against characters already known.
 The result is written to `data/extractions/b1_c4.json`. It does **not**
-write to the directory tables yet — open that JSON and check it.
+write to the directory tables yet — open that JSON and check it. The JSON's
+`_meta` block records the model, token usage (input/output and cache
+read/creation), and `roster_size` — how many characters were in the roster for
+this call (used by `roster_cost_report.py`; see Known Limitations).
 
 **Batch mode.** Add `--batch` to route the *same* request through the Message
 Batches API instead of a synchronous call (async, ~50% token price):
@@ -1517,7 +1523,22 @@ automatically because the snapshot is copied from the previous cleaned book.
   but the per-call prompt cost is climbing; beyond a few more books a
   relevance-based subset (characters seen in recent chapters, or
   characters confirmed to appear in the current book) will be needed
-  instead of the full roster.
+  instead of the full roster. To drive that decision with data rather
+  than guesswork, each extraction records `roster_size` in its JSON
+  `_meta`, and a **read-only** report summarizes the trend per book:
+
+  ```bash
+  python scripts/roster_cost_report.py --book 6
+  ```
+
+  It prints the chapter count, median/total `input_tokens`, median/total
+  `cache_read_input_tokens` (cached vs paid full price), the start/end
+  `roster_size`, and a climbing-trend flag comparing the first half of
+  the book's chapters against the second (threshold tunable via
+  `CLIMB_THRESHOLD` at the top of the script). It runs for any `--book`,
+  so later books can be compared against earlier ones. The script writes
+  nothing. `roster_size` shows **"not recorded"** for books extracted
+  before the field was added (books 1–6); books 7 onward populate it.
 - **Deployment target is Amazon Lightsail.** Lightsail was chosen
   because it provides a persistent disk, which lets SQLite work without
   any modification to the data layer. A serverless or ephemeral host

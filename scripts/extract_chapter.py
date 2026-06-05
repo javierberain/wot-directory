@@ -36,22 +36,41 @@ import sys
 import time
 
 import anthropic
+import httpx
 from dotenv import load_dotenv
 
 from directory_rules import VALID_CHAR_TYPES, VALID_FACTION_TYPES
 
 load_dotenv()
 
-DB_PATH = os.path.join(os.path.dirname(__file__), "..", "db", "wot.db")
+DB_DIR = os.path.join(os.path.dirname(__file__), "..", "db")
 OUT_DIR = os.path.join(os.path.dirname(__file__), "..", "data", "extractions")
 MODEL = "claude-sonnet-4-6"   # current Sonnet: capable + cost-sensible per chapter
 
-# Retry configuration (two layers, as before).
-_SDK_MAX_RETRIES = 5
-_API_MAX_ATTEMPTS = 5
+# Request timeout. messages.create is non-streaming; a big chapter (the ~19.5k
+# word prologue) plus the full roster is ~65k input tokens and can run well over
+# a minute server-side. Give it a generous 10-minute read window so a slow-but-
+# successful call is not cut off (and then wrongly retried, re-billing it).
+_REQUEST_TIMEOUT = httpx.Timeout(600.0, connect=10.0)   # 10 min read
+
+# Retry configuration — ONE layer only, and billing-safe.
+# The SDK's OWN auto-retry is DISABLED (max_retries=0): it blindly re-fires the
+# request on a read timeout / transport error even when the call already reached
+# the model and was billed. All retry decisions are made here instead, and only
+# for errors that definitely did NOT reach the model (see _with_retries).
+_SDK_MAX_RETRIES = 0
+_API_MAX_ATTEMPTS = 3          # tight cap; applies only to safe-retryable cases
 _RETRY_BASE_DELAY = 5
 _RETRY_MAX_DELAY = 60
-_RETRYABLE_STATUSES = {429, 529}
+_RETRYABLE_STATUSES = {429, 529}   # request rejected (rate limit/overloaded), not billed
+
+# Shown when a call's outcome is unknown (sent but no clean response). We do NOT
+# retry these, because the model may have run and been billed already.
+_UNKNOWN_OUTCOME_MSG = (
+    "The request was SENT but its outcome is unknown — the model may have "
+    "completed and been BILLED. NOT retrying, to avoid duplicate charges. "
+    "Check the Anthropic console (Usage / Logs) for this call before re-running "
+    "this chapter; if it produced output, the chapter just needs reconciling.")
 
 # Batch path configuration (used only when --batch is set).
 _BATCH_POLL_INTERVAL = 30      # seconds between status polls
@@ -300,7 +319,10 @@ def build_tool():
 
 
 def get_roster(conn):
-    """Known characters with aliases + factions, for the prompt."""
+    """Known characters with aliases + factions, for the prompt.
+
+    Returns (roster_str, roster_size) where roster_size is the number of
+    character rows in the roster (len of the SELECT result)."""
     rows = conn.execute(
         "SELECT character_id, primary_name, character_type, nationality "
         "FROM characters ORDER BY primary_name").fetchall()
@@ -319,8 +341,16 @@ def get_roster(conn):
             f"- {pname} | type: {ctype or 'human'} | "
             f"nationality: {nat or 'unknown'} | factions: {fac_str} | "
             f"also known as: {alias_str}")
-    return "\n".join(roster) if roster else \
+    roster_str = "\n".join(roster) if roster else \
         "(roster is empty - this is the first chapter)"
+    return roster_str, len(rows)
+
+
+def working_db(book_order):
+    """The per-book snapshot is the working DB (same convention as run_book.py's
+    working_db()). Book N is read from db/wot_book{N}.db — never the retired
+    db/wot.db scratch DB."""
+    return os.path.join(DB_DIR, f"wot_book{book_order}.db")
 
 
 def get_chapter(conn, book_order, chapter_number):
@@ -349,21 +379,54 @@ def build_request_params(tool, user_msg):
     }
 
 
-def _with_retries(fn, label="API"):
-    """Run fn() and retry transient 429/529 + connection errors with backoff
-    (outer loop on top of the SDK's own retries). Returns fn()'s result."""
+def _is_connect_establishment_error(exc):
+    """True only for a definitive connection-ESTABLISHMENT failure — the request
+    never left the client, so re-firing it cannot double-bill. The SDK wraps the
+    underlying httpx error as the exception's __cause__. Anything else (read
+    error, broken pipe mid-stream) has unknown outcome and is treated as such."""
+    return isinstance(exc.__cause__, (httpx.ConnectError, httpx.ConnectTimeout))
+
+
+def _with_retries(fn, label="API", idempotent=False):
+    """Run fn() with a narrow, BILLING-SAFE retry policy. Returns fn()'s result.
+
+    Always retried (the request did NOT reach / was not processed by the model):
+      - 429 / 529          : rejected (rate limit / overloaded), never billed.
+      - connection-establishment failures : the request never left the client.
+
+    For a NON-idempotent call (idempotent=False, the default — e.g.
+    messages.create) a read/response TIMEOUT (APITimeoutError) or any other
+    post-send transport error is treated as UNKNOWN OUTCOME and raised
+    immediately — never re-fired — because the model may have completed and been
+    billed. For an idempotent call (idempotent=True — e.g. a GET batch poll)
+    those are safe to retry. The SDK's own auto-retry is disabled
+    (max_retries=0) so this is the single retry layer.
+    """
     last_exc = None
     for attempt in range(1, _API_MAX_ATTEMPTS + 1):
         try:
             return fn()
+        except anthropic.APITimeoutError as exc:
+            # Subclass of APIConnectionError, so it MUST be caught first.
+            # Timeout = request was sent; outcome unknown. Do not re-fire.
+            if not idempotent:
+                raise RuntimeError(f"{label}: read/response timeout. "
+                                   f"{_UNKNOWN_OUTCOME_MSG}") from exc
+            last_exc = exc
+            why = "timeout (idempotent GET, safe to retry)"
+        except anthropic.APIConnectionError as exc:
+            # Only a connection-establishment failure is safe to re-fire; any
+            # other transport error after send has unknown outcome.
+            if not idempotent and not _is_connect_establishment_error(exc):
+                raise RuntimeError(f"{label}: connection error after the request "
+                                   f"was sent. {_UNKNOWN_OUTCOME_MSG}") from exc
+            last_exc = exc
+            why = "connection-establishment error"
         except anthropic.APIStatusError as exc:
             if exc.status_code not in _RETRYABLE_STATUSES:
                 raise
             last_exc = exc
-            why = f"HTTP {exc.status_code}"
-        except anthropic.APIConnectionError as exc:
-            last_exc = exc
-            why = "connection error"
+            why = f"HTTP {exc.status_code} (rejected, not billed)"
         if attempt == _API_MAX_ATTEMPTS:
             raise last_exc
         delay = min(_RETRY_BASE_DELAY * (2 ** (attempt - 1)), _RETRY_MAX_DELAY)
@@ -409,7 +472,7 @@ def _call_api_batch(client, params, custom_id,
         time.sleep(poll_interval)
         batch = _with_retries(
             lambda: client.messages.batches.retrieve(batch.id),
-            label="batch poll")
+            label="batch poll", idempotent=True)
     print(f"  batch {batch.id}: ended  counts={batch.request_counts}")
 
     # 4. Retrieve and match on custom_id (results are unordered).
@@ -457,7 +520,12 @@ def extract(book_order, chapter_number, do_print=False, db_path=None,
     if not os.environ.get("ANTHROPIC_API_KEY"):
         sys.exit("Set the ANTHROPIC_API_KEY environment variable first.")
 
-    conn = sqlite3.connect(db_path or DB_PATH)
+    db = db_path or working_db(book_order)
+    if not os.path.exists(db):
+        sys.exit(f"Working DB not found: {db}\n"
+                 f"Seed it first:  python scripts/start_book.py --book "
+                 f"{book_order} --epub \"<file>\" --title \"<title>\"")
+    conn = sqlite3.connect(db)
     row = get_chapter(conn, book_order, chapter_number)
     if not row:
         sys.exit(f"Chapter not found: book {book_order}, chapter {chapter_number}")
@@ -465,14 +533,15 @@ def extract(book_order, chapter_number, do_print=False, db_path=None,
     if extracted:
         print("Note: chapter already marked extracted. Re-running anyway.")
 
-    roster = get_roster(conn)
+    roster, roster_size = get_roster(conn)
     user_msg = (
         f"BOOK: {book_title}\n"
         f"CHAPTER {chapter_number}: {ch_title}\n\n"
         f"=== KNOWN CHARACTER ROSTER ===\n{roster}\n\n"
         f"=== CHAPTER TEXT ===\n{full_text}")
 
-    client = anthropic.Anthropic(max_retries=_SDK_MAX_RETRIES)
+    client = anthropic.Anthropic(max_retries=_SDK_MAX_RETRIES,
+                                 timeout=_REQUEST_TIMEOUT)
     tool = build_tool()
     params = build_request_params(tool, user_msg)
     custom_id = f"b{book_order}_c{chapter_number}"
@@ -513,6 +582,7 @@ def extract(book_order, chapter_number, do_print=False, db_path=None,
             getattr(resp.usage, "cache_read_input_tokens", None),
         "cache_creation_input_tokens":
             getattr(resp.usage, "cache_creation_input_tokens", None),
+        "roster_size": roster_size,
     }
 
     os.makedirs(OUT_DIR, exist_ok=True)
@@ -540,7 +610,7 @@ def main():
     ap.add_argument("--book", type=int, required=True, help="series order")
     ap.add_argument("--chapter", type=int, required=True,
                     help="chapter number (0 = prologue)")
-    ap.add_argument("--db", help="target database (default: db/wot.db)")
+    ap.add_argument("--db", help="target database (default: db/wot_book{N}.db)")
     ap.add_argument("--print", action="store_true", dest="do_print",
                     help="also print the JSON to stdout")
     ap.add_argument("--batch", action="store_true", dest="use_batch",
