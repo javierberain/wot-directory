@@ -1,0 +1,41 @@
+[
+  {
+    "review_id": 103,
+    "action": "merge",
+    "target_cid": 455,
+    "add_alias": [
+      "Marigan",
+      "disguise",
+      "Moghedien's Salidar cover identity; revealed prior book"
+    ],
+    "note": "Marigan is Moghedien (cid 455), already in disguise_map"
+  },
+  {
+    "review_id": 104,
+    "action": "create",
+    "note": "Jaril, one of Marigan/Moghedien's sequestered boys; real minor character"
+  },
+  {
+    "review_id": 119,
+    "action": "merge",
+    "target": "Jaril",
+    "note": "second appearance of Jaril created from #104"
+  },
+  {
+    "review_id": 161,
+    "action": "merge",
+    "target_cid": 1146,
+    "note": "second appearance of Samitsu (cid 1146)"
+  },
+  {
+    "review_id": 151,
+    "action": "merge",
+    "target": "Mili Skane",
+    "add_alias": [
+      "Lady Shiaine",
+      "disguise",
+      "cover identity used with Carridin, Ebou Dar b7"
+    ],
+    "note": "the Darkfriend woman = Mili Skane; fox-faced woman Mat follows in b7.c14"
+  }
+]

@@ -262,6 +262,16 @@ _REGION_PARENT = {
     "whitebridge": "Andor",
     "maule": "Tear",
     "lugard": "Murandy",
+    "Tanchico": "Tarabon",
+    "Amador": "Amadicia",
+    "Ebu Dar": "Altara",
+    "Salidar": "Altara",
+    "Fal Dara": "Shienar",
+    "Fal Moran": "Shienar",
+    "Cachin": "Kandor",
+    "Maradon": "Saldaea",
+    "Jehannah": "Ghealdan",
+    "Caemlyn": "Andor",
 }
 
 # Peoples whose own name IS their origin — kept as the bare canonical group

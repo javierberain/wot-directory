@@ -111,24 +111,32 @@ def classify(label):
     Decide if a navMap label is a real chapter.
     Returns (kind, number, clean_title) or None to skip.
       kind is 'prologue' or 'chapter'.
+      clean_title is None when the navMap label carries no title (a bare
+      "Chapter 7" or "Prologue"); parse_book then recovers the real title from
+      the chapter file's body.
     """
     low = label.lower().strip()
     if low in NON_CHAPTER_LABELS:
         return None
-    if low.startswith("prologue"):
-        title = label.split(None, 1)[1].strip() if " " in label else "Prologue"
-        return ("prologue", 0, title)
-    # Numbered chapter, two navMap label styles seen across the source EPUBs:
-    #   "4      The Gleeman"        bare number + whitespace/nbsp separator
-    #                               (older split-HTML EPUBs, books 1-6)
-    #   "Chapter 1: High Chasaline" "Chapter" word + number + colon separator
-    #                               (Calibre EPUBs, e.g. book 7)
-    # The optional "Chapter " prefix and the ":" separator make this a strict
-    # superset of the old pattern, so the old-style labels still match
-    # identically.
-    m = re.match(r"(?i)^(?:chapter[\s\u00a0]+)?(\d+)[\s\u00a0:]+(.*)$", label)
+    # Prologue, with or without a title in the label:
+    #   "Prologue: Lightnings" -> title "Lightnings"  (titled navMap, book 7)
+    #   "Prologue"             -> title None (recover from the body, book 8)
+    m = re.match(r"(?i)^prologue\b(?:[\s\u00a0:]+(.*))?$", label)
     if m:
-        return ("chapter", int(m.group(1)), m.group(2).strip())
+        title = (m.group(1) or "").strip()
+        return ("prologue", 0, title or None)
+    # Numbered chapter. The title after the number is OPTIONAL, and the pattern
+    # is end-anchored so a number must be the whole token or be followed by a
+    # separator (never glued to letters, so "1st Age" is not a chapter):
+    #   "4      The Gleeman"         bare number + ws/nbsp (books 1-6, split-HTML)
+    #   "Chapter 1: High Chasaline"  "Chapter" + number + ":" (book 7, Calibre)
+    #   "Chapter 1"                  "Chapter" + number, NO title (book 8, Calibre)
+    # This is a strict superset of the previous pattern (which required a
+    # separator + title), so books 1-7 labels still match identically.
+    m = re.match(r"(?i)^(?:chapter[\s\u00a0]+)?(\d+)(?:[\s\u00a0:]+(.*))?$", label)
+    if m:
+        title = (m.group(2) or "").strip()
+        return ("chapter", int(m.group(1)), title or None)
     return None
 
 
@@ -149,6 +157,26 @@ def html_to_text(raw):
             continue
         lines.append(line)
     return "\n".join(lines)
+
+
+def title_from_chapter_html(raw):
+    """Recover a chapter's real title from its HTML body.
+
+    Used only when the navMap label carried no title (e.g. Calibre EPUBs whose
+    navPoints are bare "Chapter N" / "Prologue", such as book 8). These EPUBs
+    put the number in one heading (<h2 class="h2">CHAPTER 1</h2>) and the title
+    in the next (<h2 class="h2b">To Keep the Bargain</h2>). Generically: return
+    the text of the first heading element that is NOT itself a chapter/prologue
+    marker. Returns None if no distinct title heading is found.
+    """
+    soup = BeautifulSoup(raw, "html.parser")
+    marker = re.compile(r"(?i)^(?:chapter\s*\d*|prologue|epilogue|prelude)$")
+    for tag in soup.find_all(["h1", "h2", "h3", "h4", "h5", "h6"]):
+        text = re.sub(r"\s+", " ", tag.get_text(" ")).strip()
+        if not text or marker.match(text):
+            continue
+        return text
+    return None
 
 
 def parse_book(epub_path, series_order, title_override=None, db_path=None):
@@ -183,15 +211,26 @@ def parse_book(epub_path, series_order, title_override=None, db_path=None):
     parsed = []
     for number, clean_title, hrefs in chapters:
         parts = []
+        first_raw = None
         for h in hrefs:
             try:
                 raw = zf.read(h).decode("utf-8", errors="ignore")
             except KeyError:
                 continue
+            if first_raw is None:
+                first_raw = raw
             parts.append(html_to_text(raw))
         body = "\n".join(p for p in parts if p).strip()
         # The first line of body is often the bare "CHAPTER N" header.
         body = re.sub(r"^CHAPTER\s+\d+\s*", "", body, flags=re.I).strip()
+        # When the navMap label had no title (bare "Chapter N" / "Prologue",
+        # e.g. book 8's Calibre EPUB), recover the real title from the chapter
+        # file's body. Books 1-7 always carry a title in the label, so this path
+        # never runs for them.
+        if not clean_title and first_raw is not None:
+            clean_title = title_from_chapter_html(first_raw)
+        if not clean_title:
+            clean_title = "Prologue" if number == 0 else f"Chapter {number}"
         parsed.append((number, clean_title, body))
 
     book_title = title_override or os.path.splitext(
