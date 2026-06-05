@@ -1,0 +1,72 @@
+[
+  {
+    "review_id": 179,
+    "action": "dismiss",
+    "note": "Lews Therin bleed-through; Rand origin stays Emond's Field, Two Rivers, Andor"
+  },
+  {
+    "review_id": 182,
+    "action": "dismiss",
+    "note": "Lews Therin bleed-through; Rand origin stays Emond's Field, Two Rivers, Andor"
+  },
+  {
+    "review_id": 185,
+    "action": "dismiss",
+    "note": "Lews Therin bleed-through; Rand origin stays Emond's Field, Two Rivers, Andor"
+  },
+  {
+    "review_id": 188,
+    "action": "dismiss",
+    "note": "Lews Therin bleed-through; Rand origin stays Emond's Field, Two Rivers, Andor"
+  },
+  {
+    "review_id": 189,
+    "action": "dismiss",
+    "note": "Lews Therin bleed-through; Rand origin stays Emond's Field, Two Rivers, Andor"
+  },
+  {
+    "review_id": 190,
+    "action": "dismiss",
+    "note": "Lews Therin bleed-through; Rand origin stays Emond's Field, Two Rivers, Andor"
+  },
+  {
+    "review_id": 191,
+    "action": "dismiss",
+    "note": "Lews Therin bleed-through; Rand origin stays Emond's Field, Two Rivers, Andor"
+  },
+  {
+    "review_id": 183,
+    "action": "dismiss",
+    "note": "Mezar Kurin keeps Arad Doman; Sea Folk is where he is, not his origin"
+  },
+  {
+    "review_id": 181,
+    "action": "dismiss",
+    "note": "Marli (Seanchan damane, b9) vs Mari (Baerlon serving woman, b1) - distinct"
+  },
+  {
+    "review_id": 184,
+    "action": "dismiss",
+    "note": "Marah (Setalle's daughter) vs Siuan Sanche - coincidental, distinct"
+  },
+  {
+    "review_id": 192,
+    "action": "dismiss",
+    "note": "Nisa (Barmellin's mare, horse) vs Nisao Dachen (Aes Sedai) - distinct"
+  },
+  {
+    "review_id": 180,
+    "action": "create",
+    "note": "Carlon (Tairen, Selande's crowd) - distinct from Carleon"
+  },
+  {
+    "review_id": 186,
+    "action": "create",
+    "note": "Fen, one of Joline's Warders (Saldaea)"
+  },
+  {
+    "review_id": 187,
+    "action": "create",
+    "note": "Blaeric, one of Joline's Warders (Shienar)"
+  }
+]
