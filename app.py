@@ -182,6 +182,25 @@ def search():
     return jsonify([dict(r) for r in rows])
 
 
+@app.route("/api/characters")
+def characters():
+    """Full alphabetical roster for the selected book (powers the Roster tab).
+
+    Book-scoped via db()/selected_book() like every other endpoint. Every
+    character is returned (no filter); each carries an appearances count. All
+    columns are present in the public snapshots, so no re-export is needed.
+    """
+    rows = db().execute("""
+        SELECT c.character_id, c.primary_name, c.display_name,
+               c.nationality, c.character_type,
+               (SELECT COUNT(*) FROM appearances a
+                 WHERE a.character_id = c.character_id) AS appearances
+        FROM characters c
+        ORDER BY COALESCE(c.display_name, c.primary_name) COLLATE NOCASE
+    """).fetchall()
+    return jsonify([dict(r) for r in rows])
+
+
 @app.route("/api/character/<int:cid>")
 def character(cid):
     conn = db()

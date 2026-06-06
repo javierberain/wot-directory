@@ -219,6 +219,58 @@
       border-bottom-color: var(--crimson);
     }
 
+    /* roster (alphabetical character list) */
+    .roster-controls {
+      margin-bottom: 0.8rem;
+    }
+
+    #roster-count {
+      margin: 0.5rem 0 0.2rem;
+    }
+
+    .roster-az {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.15rem 0.35rem;
+      padding: 0.3rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .roster-az a,
+    .roster-az .disabled {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.95rem;
+      width: 1.2rem;
+      text-align: center;
+    }
+
+    .roster-az a {
+      color: var(--crimson);
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .roster-az a:hover {
+      color: var(--gold-bright);
+      text-decoration: underline;
+    }
+
+    .roster-az .disabled {
+      color: var(--line);
+      cursor: default;
+    }
+
+    .roster-letter {
+      font-family: 'Cormorant Garamond', serif;
+      font-variant: small-caps;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+      font-size: 1.1rem;
+      padding: 0.5rem 0.2rem 0.15rem;
+      border-bottom: 1px solid var(--line);
+      margin-top: 0.4rem;
+    }
+
     /* profile */
     .profile-name {
       font-family: 'Cormorant Garamond', serif;
@@ -807,6 +859,7 @@
       <div class="tabs">
         <div class="tab active" data-tab="profile">Profile</div>
         <div class="tab" data-tab="chapter">Chapter Cast</div>
+        <div class="tab" data-tab="roster">Roster</div>
         {# Hidden until the relationship graph is fixed; restore this chip to re-enable "The Web":
         <div class="tab" data-tab="graph">The Web</div> #}
       </div>
@@ -852,6 +905,18 @@
           <div id="chapter-cast-content">
             <div class="empty">Choose a book and chapter to see who walks
               its pages.</div>
+          </div>
+        </div>
+        <div id="tab-roster" style="display:none;">
+          <div class="roster-controls">
+            <input id="roster-filter" class="search-box" type="text"
+                   placeholder="Filter the roster by name&hellip;"
+                   autocomplete="off">
+            <div id="roster-count" class="hint"></div>
+            <div id="roster-az" class="roster-az"></div>
+          </div>
+          <div id="roster-list">
+            <div class="empty">Gathering every soul in the Pattern&hellip;</div>
           </div>
         </div>
         <div id="tab-graph" style="display:none;">
@@ -905,9 +970,10 @@
       $('#chapter-select').innerHTML = '<option value="">&mdash; select &mdash;</option>';
       loadBooks();
       loadFactions();
-      // Refresh the graph immediately if that tab is currently active.
+      // Refresh the active data tab immediately for the new book boundary.
       const active = document.querySelector('.tab.active');
       if (active && active.dataset.tab === 'graph') loadGraph();
+      if (active && active.dataset.tab === 'roster') loadRoster();
     }
 
     // ---------- accordion ----------
@@ -924,16 +990,20 @@
       tab.onclick = () => {
         document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
         tab.classList.add('active');
-        ['profile', 'chapter', 'graph'].forEach(name => {
+        ['profile', 'chapter', 'graph', 'roster'].forEach(name => {
           $('#tab-' + name).style.display =
             (name === tab.dataset.tab) ? 'block' : 'none';
         });
         if (tab.dataset.tab === 'graph') loadGraph();
+        if (tab.dataset.tab === 'roster') loadRoster();
       };
     });
     function showTab(name) {
       document.querySelector(`.tab[data-tab="${name}"]`).click();
     }
+
+    // ---------- roster filter ----------
+    $('#roster-filter').addEventListener('input', e => renderRoster(e.target.value));
 
     // ---------- search ----------
     let searchTimer;
@@ -1364,6 +1434,94 @@
       &mdash; ${escapeHtml(ch.title)}</div>
     ${cast}`;
       showTab('chapter');
+    }
+
+    // ---------- roster (alphabetical character list) ----------
+    let rosterData = [];
+
+    function rosterSortName(c) {
+      return c.display_name || c.primary_name || '';
+    }
+
+    function rosterBucket(c) {
+      const ch = rosterSortName(c).trim().charAt(0).toUpperCase();
+      return (ch >= 'A' && ch <= 'Z') ? ch : '#';
+    }
+
+    async function loadRoster() {
+      try {
+        const res = await fetch('/api/characters?' + bookParam());
+        rosterData = await res.json();
+      } catch (e) {
+        rosterData = [];
+      }
+      $('#roster-filter').value = '';
+      renderRoster('');
+    }
+
+    function renderRoster(filter) {
+      const q = (filter || '').trim().toLowerCase();
+      const rows = q
+        ? rosterData.filter(c => rosterSortName(c).toLowerCase().includes(q))
+        : rosterData;
+
+      $('#roster-count').textContent = q
+        ? `${rows.length} of ${rosterData.length} shown`
+        : `${rosterData.length} ${rosterData.length === 1 ? 'soul' : 'souls'} in this book`;
+
+      if (!rows.length) {
+        $('#roster-az').innerHTML = '';
+        $('#roster-list').innerHTML =
+          '<div class="hint" style="padding:0.6rem;">No souls found.</div>';
+        return;
+      }
+
+      // Group into alphabetical sections (data is already name-sorted server-side).
+      const groups = new Map();
+      for (const c of rows) {
+        const b = rosterBucket(c);
+        if (!groups.has(b)) groups.set(b, []);
+        groups.get(b).push(c);
+      }
+      const letters = [...groups.keys()].sort((a, b) => {
+        if (a === '#') return 1;
+        if (b === '#') return -1;
+        return a < b ? -1 : a > b ? 1 : 0;
+      });
+
+      // A-Z jump bar: present letters are clickable, the rest are dimmed.
+      const present = new Set(letters);
+      const alpha = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+      if (present.has('#')) alpha.push('#');
+      $('#roster-az').innerHTML = alpha.map(L =>
+        present.has(L)
+          ? `<a href="#" onclick="rosterJump('${L}');return false;">${L}</a>`
+          : `<span class="disabled">${L}</span>`
+      ).join('');
+
+      // Sections + rows (rows reuse the search-result markup).
+      $('#roster-list').innerHTML = letters.map(L => {
+        const items = groups.get(L).map(c => {
+          const name = escapeHtml(rosterSortName(c));
+          const species = (c.character_type && c.character_type !== 'human')
+            ? ` <span class="chip species">${escapeHtml(c.character_type)}</span>`
+            : '';
+          const origin = escapeHtml(c.nationality || 'origin unknown');
+          const n = safeNumber(c.appearances);
+          const appears = `appears in ${n} ${n === 1 ? 'chapter' : 'chapters'}`;
+          return `
+        <div class="result" onclick="loadCharacter(${safeNumber(c.character_id)})">
+          <div class="name">${name}${species}</div>
+          <div class="meta">${origin} &middot; ${appears}</div>
+        </div>`;
+        }).join('');
+        return `<div class="roster-letter" id="roster-sec-${L}">${L}</div>${items}`;
+      }).join('');
+    }
+
+    function rosterJump(letter) {
+      const el = document.getElementById('roster-sec-' + letter);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
     // ---------- network graph ----------
