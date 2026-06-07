@@ -6,12 +6,8 @@ and an interactive relationship graph. You feed it one chapter at a
 time and the directory grows.
 
 Live at [thepatternofweaves.com](https://thepatternofweaves.com).
-Books one through four (*The Eye of the World*, *The Great Hunt*,
-*The Dragon Reborn*, *The Shadow Rising*) are fully ingested, reviewed,
-and cleaned. Book four was the first ingested on the hardened pipeline
-(see **Pipeline hardening** below) — it produced zero placeholder,
-collective, or generic-alias rows. Book five (*The Fires of Heaven*)
-is next.
+Books one through nine are fully ingested, reviewed,
+and cleaned.
 
 ## Pipeline hardening (2026)
 
@@ -951,7 +947,7 @@ snapshot predates them; see the subsections below.) With no `--db`, it audits
 the latest `db/wot_book{N}.db` snapshot.
 
 ```bash
-python scripts/hygiene_audit.py              # run all checks (A-F)
+python scripts/hygiene_audit.py              # run all checks (A-I)
 python scripts/hygiene_audit.py --with-llm  # add Claude advisory verdicts
 python scripts/hygiene_audit.py --detail 42 # full dossier for character_id 42
 ```
@@ -992,6 +988,13 @@ python scripts/hygiene_audit.py --detail 42 # full dossier for character_id 42
   identity) from the reveal book on. Flags a persona row that lingers past the
   reveal, a missing disguise alias, or a spoiler-leak alias before the reveal
   (see below). Prints a `(N row(s) in disguise_map)` header line.
+- **Check H — article-only duplicate aliases.** A character carrying both
+  `the X` and a bare `X`; the bare form should collapse into the `the` form
+  (`scripts/cleanup_aliases.py` does this).
+- **Check I — rank-decorated duplicate aliases.** An alias that is just the
+  character's own name wearing rank/article decoration (`Lord Agelmar`,
+  `Verin Sedai`, `Mistress Mathwin`) — redundant with the name and dropped by
+  `scripts/cleanup_aliases.py`.
 
 A **LIKELY RENAMES** sub-section follows Check B1: any B1 character with more
 than two appearances is almost certainly a real character with a wrong

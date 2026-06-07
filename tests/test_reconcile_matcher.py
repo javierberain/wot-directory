@@ -35,10 +35,38 @@ def test_exact_match():
 
 
 def test_two_shared_tokens_auto_accept():
-    # >=2 shared distinctive tokens is a confident structural match.
+    # Confident structural match. "Lord Captain Geofram Bornhald" carries rank
+    # decoration, so "Geofram Bornhald" now resolves via the rank/article-
+    # stripped key (an even more confident exact hit); either confident path is
+    # acceptable as long as it lands on cid 50.
     r = make_roster([(50, "lord captain geofram bornhald")])
     cid, method, _ = r.resolve_existing("Geofram Bornhald")
-    assert (cid, method) == (50, "token_subset")
+    assert cid == 50 and method in ("exact", "token_subset")
+
+    # A genuine token-subset (no rank decoration to strip) still auto-accepts on
+    # >=2 shared distinctive tokens.
+    r2 = make_roster([(51, "geofram bornhald of amador")])
+    cid2, method2, _ = r2.resolve_existing("Geofram Bornhald")
+    assert (cid2, method2) == (51, "token_subset")
+
+
+def test_stripped_key_resolves_rank_decorated():
+    # A rank-decorated mention in chapter text ('Verin Sedai') resolves to Verin
+    # via the stripped key, without a 'verin sedai' alias ever being stored.
+    r = make_roster([(202, "verin mathwin"), (202, "verin")])
+    assert r.resolve_existing("Verin Sedai") == (202, "exact", None)
+    assert r.resolve_existing("Verin Aes Sedai") == (202, "exact", None)
+    # The stripped key matches an alias CORE exactly; it deliberately does NOT
+    # do bare-surname matching ("Mistress Mathwin" -> "mathwin" has no alias
+    # core "mathwin"), which stays the guarded token path's job.
+    assert r.exact_match("Mistress Mathwin") is None
+
+
+def test_stripped_key_ambiguous_does_not_mismatch():
+    # Two different characters whose decorated aliases strip to the same core
+    # ('verin') -> the stripped key is ambiguous and must match neither.
+    r = make_roster([(1, "lord verin"), (2, "master verin")])
+    assert r.exact_match("Verin") is None
 
 
 def test_single_shared_token_needs_pointer():

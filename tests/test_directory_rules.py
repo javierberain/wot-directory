@@ -38,6 +38,65 @@ def test_suspect_alias_is_advisory_only():
     assert not dr.looks_like_suspect_alias("Else")
 
 
+# ── Titles / ranks / descriptors (alias canonicalization) ─────────────────────
+
+def test_strip_titles():
+    assert dr.strip_titles("lord of fal dara") == "of fal dara"
+    assert dr.strip_titles("verin mathwin aes sedai") == "verin mathwin"
+    assert dr.strip_titles("mistress mathwin") == "mathwin"
+    assert dr.strip_titles("the high lady alteima") == "alteima"
+    assert dr.strip_titles("agelmar dai shan") == "agelmar"
+    assert dr.strip_titles("verin sedai") == "verin"
+    # no decoration -> unchanged
+    assert dr.strip_titles("agelmar jagad") == "agelmar jagad"
+
+
+def test_match_key():
+    assert dr.match_key("Verin Sedai") == "verin"
+    assert dr.match_key("Lord Agelmar") == "agelmar"
+    assert dr.match_key("the High Lady Alteima") == "alteima"
+    assert dr.match_key("Agelmar Jagad") == "agelmar jagad"
+
+
+def test_is_rank_decorated_redundant():
+    nts = {"verin", "mathwin"}
+    for bad in ["verin sedai", "verin aes sedai", "verin mathwin aes sedai",
+                "mistress mathwin"]:
+        assert dr.is_rank_decorated_redundant(bad, nts), bad
+    assert dr.is_rank_decorated_redundant("lord agelmar", {"agelmar", "jagad"})
+    assert dr.is_rank_decorated_redundant("agelmar dai shan", {"agelmar", "jagad"})
+    assert dr.is_rank_decorated_redundant("high lady alteima", {"alteima"})
+    # SPARED: positional/singular titles whose residue isn't a name subset
+    assert not dr.is_rank_decorated_redundant("lord of fal dara",
+                                              {"agelmar", "jagad"})
+    assert not dr.is_rank_decorated_redundant("the amyrlin seat",
+                                              {"siuan", "sanche"})
+    # residue empty (pure rank word) is not "redundant" here
+    assert not dr.is_rank_decorated_redundant("mother", {"siuan", "sanche"})
+
+
+def test_is_descriptor_epithet():
+    assert dr.is_descriptor_epithet("stout little verin", {"verin", "mathwin"})
+    assert dr.is_descriptor_epithet("the stout verin", {"verin"})
+    # SPARED: no name token (a real unique epithet)
+    assert not dr.is_descriptor_epithet("the dragon reborn", {"rand", "al'thor"})
+    # SPARED: name but no descriptor adjective
+    assert not dr.is_descriptor_epithet("lord agelmar", {"agelmar", "jagad"})
+    # SPARED: descriptor + extra non-name/non-descriptor word
+    assert not dr.is_descriptor_epithet("stout verin of cairhien",
+                                        {"verin", "mathwin"})
+
+
+def test_is_corrected_misnomer():
+    for note in ["mistakenly called the Amyrlin", "wrongly named",
+                 "incorrectly identified", "called in error",
+                 "not actually her name", "the text corrects this",
+                 "confused with her sister"]:
+        assert dr.is_corrected_misnomer(note), note
+    for note in [None, "", "a title she holds", "her given name"]:
+        assert not dr.is_corrected_misnomer(note), note
+
+
 # ── Placeholder / collective primary names ────────────────────────────────────
 
 def test_placeholder_names():

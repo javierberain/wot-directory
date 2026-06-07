@@ -47,6 +47,8 @@ from directory_rules import (
     is_placeholder_name,
     is_title_or_group_name,
     is_collective_name,
+    strip_titles,
+    is_rank_decorated_redundant,
 )
 
 
@@ -545,6 +547,66 @@ def check_g(conn):
                 "problems":      problems,
             })
     return flagged, len(rows)
+
+
+def check_h(conn):
+    """Article-only duplicate aliases: the same character carries both 'the X'
+    and a bare 'X'. The bare form should collapse into the 'the' form (see
+    cleanup_aliases.py). Read-only; lists the pairs for review."""
+    by_cid = {}          # cid -> {alias_norm: alias_text}
+    primary = {}
+    for r in conn.execute("SELECT character_id, primary_name FROM characters"):
+        primary[r["character_id"]] = r["primary_name"]
+    for r in conn.execute(
+        "SELECT character_id, alias_text, alias_norm FROM aliases"
+    ):
+        by_cid.setdefault(r["character_id"], {})[r["alias_norm"]] = r["alias_text"]
+    flagged = []
+    for cid, norms in by_cid.items():
+        for n, text in norms.items():
+            if n.startswith("the ") and n[4:] in norms:
+                flagged.append({
+                    "character_id": cid,
+                    "primary_name": primary.get(cid, "?"),
+                    "the_form": text,
+                    "bare_form": norms[n[4:]],
+                })
+    flagged.sort(key=lambda x: x["primary_name"])
+    return flagged
+
+
+def check_i(conn):
+    """Rank-decorated duplicate aliases: a droppable alias whose rank/article-
+    stripped core is a subset of the character's own name tokens ('Lord
+    Agelmar', 'Verin Sedai', 'Mistress Mathwin'). Read-only; lists them for
+    review (cleanup_aliases.py auto-drops these)."""
+    name_toks = {}       # cid -> identity token set (primary + given_name cores)
+    primary = {}
+    for r in conn.execute(
+        "SELECT character_id, primary_name FROM characters"
+    ):
+        primary[r["character_id"]] = r["primary_name"]
+    for r in conn.execute(
+        "SELECT character_id, alias_norm FROM aliases "
+        "WHERE alias_type IN ('primary', 'given_name')"
+    ):
+        name_toks.setdefault(r["character_id"], set()).update(
+            strip_titles(r["alias_norm"]).split())
+    flagged = []
+    for r in conn.execute(
+        "SELECT character_id, alias_text, alias_norm, alias_type FROM aliases "
+        "WHERE alias_type IN ('title', 'epithet', 'nickname')"
+    ):
+        nts = name_toks.get(r["character_id"], set())
+        if nts and is_rank_decorated_redundant(r["alias_norm"], nts):
+            flagged.append({
+                "character_id": r["character_id"],
+                "primary_name": primary.get(r["character_id"], "?"),
+                "alias_text": r["alias_text"],
+                "alias_type": r["alias_type"],
+            })
+    flagged.sort(key=lambda x: x["primary_name"])
+    return flagged
 
 
 # ── LLM advisory helpers ──────────────────────────────────────────────────────
@@ -1098,6 +1160,36 @@ def main():
         print("  (all consistent)")
         print()
 
+    # ── Check H ───────────────────────────────────────────────────────────────
+    h_rows = check_h(conn)
+    _header("CHECK H: ARTICLE-ONLY DUPLICATE ALIASES ")
+    print("A character carrying both 'the X' and a bare 'X'. The bare form should")
+    print("collapse into the 'the' form (cleanup_aliases.py does this).")
+    print()
+    if h_rows:
+        for r in h_rows:
+            print(f"  cid={r['character_id']} \"{r['primary_name']}\": "
+                  f"\"{r['the_form']}\"  vs  \"{r['bare_form']}\"")
+        print()
+    else:
+        print("  (none found)")
+        print()
+
+    # ── Check I ───────────────────────────────────────────────────────────────
+    i_rows = check_i(conn)
+    _header("CHECK I: RANK-DECORATED DUPLICATE ALIASES ")
+    print("An alias that is just the character's own name wearing rank/article")
+    print("decoration ('Lord Agelmar', 'Verin Sedai', 'Mistress Mathwin').")
+    print()
+    if i_rows:
+        for r in i_rows:
+            print(f"  cid={r['character_id']} \"{r['primary_name']}\": "
+                  f"\"{r['alias_text']}\" [{r['alias_type']}]")
+        print()
+    else:
+        print("  (none found)")
+        print()
+
     # ── LLM advisory ──────────────────────────────────────────────────────────
     if args.with_llm:
         # Ambiguous = B2 rows (walk-on placeholders: could be meaningful)
@@ -1150,6 +1242,8 @@ def main():
     print(f"  Check E  - fuzzy near-duplicates:    {len(e_rows):4d} flagged")
     print(f"  Check F  - non-character candidates: {len(f_rows):4d} flagged")
     print(f"  Check G  - disguise map issues:      {len(g_rows):4d} flagged")
+    print(f"  Check H  - article-only dup aliases: {len(h_rows):4d} flagged")
+    print(f"  Check I  - rank-decorated dup aliases:{len(i_rows):4d} flagged")
     print(f"  Unique characters to review (B+C):   {unique_chars:4d}")
     print()
     print("  Action: review the above and edit wot.db directly.")

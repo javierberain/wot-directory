@@ -115,6 +115,10 @@ NAME_USED_IN_TEXT MUST BE A PROPER NAME (NEVER A ROLE-NOUN):
   the text mostly refers to them by a role or description. Scan the ENTIRE
   chapter before filling this field; a name that appears once, late, still
   counts.
+- Prefer the FULLEST proper name the chapter supplies: if both a given name and
+  a surname appear (e.g. "Agelmar" and "Agelmar Jagad", "Egwene" and "Egwene
+  al'Vere"), use the full "given + surname" form so the row is created with its
+  canonical name. Put any shorter form in aliases_observed as a "given_name".
 - NEVER use a pure role-noun or descriptor ("the gleeman", "the peddler", "the
   Wisdom", "the innkeeper", "the weaselly man", "a serving woman", "the
   stranger") as name_used_in_text. If a proper name exists, use it and put the
@@ -132,6 +136,15 @@ ALIASES MUST IDENTIFY THE INDIVIDUAL:
 - Do NOT record generic forms of address that could apply to anyone: "boy",
   "lad", "girl", "child", "sister", "my lord", "mistress", "stranger". If a
   word could refer to many people, exclude it.
+- Never record a name the text presents as a MISTAKE that is then corrected
+  (someone calls her by the wrong title/name and is corrected): omit it
+  entirely.
+- Do NOT record descriptive phrases built from adjectives plus the character's
+  own name ("stout little Verin", "old Cenn"): these are description, not names.
+- Do NOT emit rank-decorated variants of a name already given ("Verin Sedai",
+  "Lord Agelmar", "Mistress Mathwin", "Agelmar Dai Shan"): record the bare
+  proper name, and SEPARATELY record only GENUINE titles that are positional or
+  held by one person at a time ("Lord of Fal Dara", "the Amyrlin Seat").
 
 CHARACTER TYPE (species, not nationality):
 - "character_type" is the species of an individual named/acting being.

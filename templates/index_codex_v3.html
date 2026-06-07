@@ -1023,7 +1023,7 @@
       }
       $('#results').innerHTML = data.map(c => `
     <div class="result" onclick="selectCharacter(${safeNumber(c.character_id)})">
-      <div class="name">${escapeHtml(c.display_name || c.primary_name)}</div>
+      <div class="name">${escapeHtml(c.primary_name)}</div>
       <div class="meta">${escapeHtml(c.nationality || 'origin unknown')}</div>
     </div>`).join('');
     }
@@ -1299,7 +1299,7 @@
 
       $('#profile-content').innerHTML = `
     <article class="codex-profile">
-      <div class="profile-name">${escapeHtml(c.display_name || c.primary_name)} ${speciesChip}</div>
+      <div class="profile-name">${escapeHtml(c.primary_name)} ${speciesChip}</div>
       <div class="profile-kicker">${escapeHtml(subtitle)}</div>
       ${c.description ? `<p style="font-style:italic;">${escapeHtml(c.description)}</p>` : ''}
       ${essenceBlock}
@@ -1440,7 +1440,7 @@
     let rosterData = [];
 
     function rosterSortName(c) {
-      return c.display_name || c.primary_name || '';
+      return c.primary_name || '';
     }
 
     function rosterBucket(c) {

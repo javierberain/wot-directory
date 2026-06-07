@@ -169,13 +169,12 @@ def search():
         SELECT DISTINCT
             c.character_id,
             c.primary_name,
-            c.display_name,
             c.nationality,
             c.description
         FROM characters c
         JOIN aliases a ON a.character_id = c.character_id
         WHERE a.alias_norm LIKE ?
-        ORDER BY COALESCE(c.display_name, c.primary_name)
+        ORDER BY c.primary_name
         LIMIT 40
     """, (f"%{q}%",)).fetchall()
 
@@ -191,12 +190,12 @@ def characters():
     columns are present in the public snapshots, so no re-export is needed.
     """
     rows = db().execute("""
-        SELECT c.character_id, c.primary_name, c.display_name,
+        SELECT c.character_id, c.primary_name,
                c.nationality, c.character_type,
                (SELECT COUNT(*) FROM appearances a
                  WHERE a.character_id = c.character_id) AS appearances
         FROM characters c
-        ORDER BY COALESCE(c.display_name, c.primary_name) COLLATE NOCASE
+        ORDER BY c.primary_name COLLATE NOCASE
     """).fetchall()
     return jsonify([dict(r) for r in rows])
 

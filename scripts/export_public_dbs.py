@@ -69,7 +69,6 @@ CREATE TABLE chapters (
 CREATE TABLE characters (
     character_id     INTEGER PRIMARY KEY,
     primary_name     TEXT NOT NULL UNIQUE,
-    display_name     TEXT,
     character_type   TEXT NOT NULL DEFAULT 'human',
     nationality      TEXT,
     physical_traits  TEXT,
@@ -288,19 +287,19 @@ def export_one(input_path: pathlib.Path, output_path: pathlib.Path) -> None:
         conn.executescript(PUBLIC_SCHEMA)
         conn.execute(f"ATTACH DATABASE '{quote_path_for_sqlite(input_path)}' AS private")
 
-        private_character_cols = table_columns(conn, "private.characters")
-        display_name_expr = (
-            "display_name" if "display_name" in private_character_cols else "primary_name"
-        )
+        # display_name was a half-finished experiment and has been retired;
+        # primary_name is the canonical label. Public snapshots no longer carry
+        # the column (older public_db files that still have it are harmless,
+        # since the app no longer reads it).
         conn.execute(
-            f"""
+            """
             INSERT INTO characters (
-                character_id, primary_name, display_name, character_type,
+                character_id, primary_name, character_type,
                 nationality, physical_traits, age, filiations, personality,
                 description
             )
             SELECT
-                character_id, primary_name, {display_name_expr}, character_type,
+                character_id, primary_name, character_type,
                 nationality, physical_traits, age, filiations, personality,
                 description
             FROM private.characters
@@ -357,9 +356,6 @@ def verify_one(input_path: pathlib.Path, output_path: pathlib.Path) -> list[str]
                 errors.append(
                     f"{output_path.name}: books.source_file has non-NULL values"
                 )
-
-        if "display_name" not in table_columns(conn, "characters"):
-            errors.append(f"{output_path.name}: characters.display_name is missing")
 
         for table in PUBLIC_TABLES:
             for column in text_columns(conn, table):

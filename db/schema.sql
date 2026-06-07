@@ -42,6 +42,9 @@ CREATE TABLE IF NOT EXISTS chapters (
 -- from the in-world nationality of a human character. A row whose
 -- character_type is 'creature_collective' stands in for a group
 -- (e.g. "Trollocs"), not a single individual.
+-- NOTE: display_name was a half-finished experiment and has been RETIRED
+-- (migration 003). Use primary_name as the canonical label; primary_name is
+-- promoted to the fullest known proper name as later chapters reveal it.
 CREATE TABLE IF NOT EXISTS characters (
     character_id     INTEGER PRIMARY KEY,
     primary_name     TEXT NOT NULL UNIQUE,

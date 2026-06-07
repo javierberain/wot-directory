@@ -1,0 +1,28 @@
+-- Migration 003: retire the display_name column on characters
+--
+-- display_name was a half-finished experiment (only one row, Egwene, was ever
+-- filled). It is retired in favour of primary_name, which is now promoted to
+-- the fullest known proper name as later chapters reveal it (see reconcile.py
+-- apply_promotion). schema.sql no longer declares the column, so databases
+-- created fresh from schema.sql are unaffected and must NOT run this migration.
+--
+-- BEFORE dropping the column, preserve any differing display_name value as a
+-- given_name alias so apply_promotion can adopt it. scripts/cleanup_aliases.py
+-- does that backfill automatically on --commit; if you are applying this
+-- migration by hand, run the backfill first:
+--
+--     INSERT OR IGNORE INTO aliases
+--         (character_id, alias_text, alias_norm, alias_type, is_primary)
+--     SELECT character_id, display_name,
+--            lower(replace(trim(display_name), '’', '''')),
+--            'given_name', 0
+--       FROM characters
+--      WHERE display_name IS NOT NULL
+--        AND trim(display_name) <> ''
+--        AND lower(display_name) <> lower(primary_name);
+--
+-- Then drop the column. Run once per existing database that still has it;
+-- re-running errors ("no such column"), the intended "already applied" signal:
+--     sqlite3 db/wot_book9.db < db/migrations/003_retire_display_name.sql
+
+ALTER TABLE characters DROP COLUMN display_name;

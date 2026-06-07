@@ -1,0 +1,1370 @@
+character_id,primary_name,alias_text,alias_type,action,rule,note
+1,Lews Therin Telamon,Dragon,epithet,COLLAPSE,article_dup,"Name given by men, referenced by prophecy"
+1,Lews Therin Telamon,Kinslayer,epithet,KEEP,,Name given after this day for killing his family
+1,Lews Therin Telamon,Lews Therin Kinslayer,epithet,KEEP,,
+1,Lews Therin Telamon,the Dragon,epithet,KEEP,,
+1,Lews Therin Telamon,Lord of the Dawn,title,KEEP,,From the prophecies
+1,Lews Therin Telamon,Lord of the Morning,title,KEEP,,Used by Elan Morin when addressing him
+1,Lews Therin Telamon,Prince of the Morning,title,KEEP,,From the prophecies
+2,Elan Morin Tedronai,Ba'alzamon,epithet,KEEP,,
+2,Elan Morin Tedronai,Betrayer of Hope,epithet,COLLAPSE,article_dup,"Name given by men, which he embraces"
+2,Elan Morin Tedronai,Dark One,epithet,COLLAPSE,article_dup,Used by others to refer to him.
+2,Elan Morin Tedronai,Father of Lies,epithet,KEEP,,
+2,Elan Morin Tedronai,Heart of the Dark,epithet,KEEP,,translation of Ba'alzamon
+2,Elan Morin Tedronai,Heartfang,epithet,KEEP,,Wolf name for Ba'alzamon
+2,Elan Morin Tedronai,Ishamael,epithet,KEEP,,
+2,Elan Morin Tedronai,Sightblinder,epithet,KEEP,,Aiel name for the Dark One
+2,Elan Morin Tedronai,the Betrayer of Hope,epithet,KEEP,,
+2,Elan Morin Tedronai,the Dark One,epithet,KEEP,,
+2,Elan Morin Tedronai,Great Lord,title,KEEP,,Servants address him as Great Lord.
+2,Elan Morin Tedronai,Great Lord of the Dark,title,KEEP,,"title associated with the Dark One, but Ba'alzamon speaks as if representing him"
+4,Rand al'Thor,Andoran lord,epithet,KEEP,,how some in Cairhien describe him
+4,Rand al'Thor,Child of the Dragon,epithet,KEEP,,"The Green Man calls Rand this, hinting at his destiny"
+4,Rand al'Thor,Coramoor,epithet,KEEP,,"Sea Folk term for Rand, used in their letters"
+4,Rand al'Thor,countryman,epithet,KEEP,,mocking epithet used by Be'lal
+4,Rand al'Thor,Dragon,epithet,COLLAPSE,article_dup,
+4,Rand al'Thor,Dragon Reborn,epithet,COLLAPSE,article_dup,"Repeatedly referenced, though Rand denies it"
+4,Rand al'Thor,false Dragon,epithet,KEEP,,how Niall and others view him
+4,Rand al'Thor,farmboy,epithet,KEEP,,
+4,Rand al'Thor,He Who Comes With the Dawn,epithet,KEEP,,"Aiel prophecy name, strongly implied by Elayne's reasoning"
+4,Rand al'Thor,King of the World,epithet,KEEP,,
+4,Rand al'Thor,Kinslayer,epithet,KEEP,,"Ba'alzamon's epithet for Rand, referring to Lews Therin's past"
+4,Rand al'Thor,Lews Therin,epithet,DROP,rank_decorated,"Ba'alzamon repeatedly calls Rand by this name, referring to the Dragon from the Age of Legends"
+4,Rand al'Thor,Lews Therin Kinslayer,epithet,KEEP,,Full epithet used by Ba'alzamon
+4,Rand al'Thor,Lord Shepherd,epithet,KEEP,,Min's sarcastic address
+4,Rand al'Thor,Shadowkiller,epithet,KEEP,,Perrin thinks this name; it appears to be a wolf name for Rand
+4,Rand al'Thor,sheepfarmer,epithet,KEEP,,
+4,Rand al'Thor,sheepherder,epithet,KEEP,,Used by Lan
+4,Rand al'Thor,ta'veren,epithet,KEEP,,Moiraine refers to him as such
+4,Rand al'Thor,the Dragon,epithet,KEEP,,historical title
+4,Rand al'Thor,the Dragon Reborn,epithet,KEEP,,Revealed at chapter end by Moiraine
+4,Rand al'Thor,the man whose face had been seen in the sky,epithet,KEEP,,How the tales describe him after events at Falme
+4,Rand al'Thor,the wolf,epithet,KEEP,,
+4,Rand al'Thor,woolhead,epithet,KEEP,,
+4,Rand al'Thor,young Master al'Thor,epithet,KEEP,,
+4,Rand al'Thor,young prince,epithet,DROP,corrected_misnomer,Coline mistakenly thought he was a prince
+4,Rand al'Thor,Car'a'carn,title,KEEP,,"chief of chiefs, proclaimed by Bair"
+4,Rand al'Thor,King of Illian,title,KEEP,,
+4,Rand al'Thor,Lord Dragon,title,COLLAPSE,article_dup,how Masema addresses him
+4,Rand al'Thor,Lord Dragon Rand al'Thor,title,KEEP,,
+4,Rand al'Thor,Lord of the Morning,title,KEEP,,one of his titles
+4,Rand al'Thor,Lord Rand,title,DROP,rank_decorated,used by Shienaran women; Rand has not claimed this title
+4,Rand al'Thor,Lord Rand of House al'Thor,title,KEEP,,Formal identification at the city gate
+4,Rand al'Thor,Majesty,title,KEEP,,
+4,Rand al'Thor,Master al'Thor,title,DROP,rank_decorated,
+4,Rand al'Thor,my Lord Dragon,title,KEEP,,
+4,Rand al'Thor,Prince of the Dawn,title,KEEP,,
+4,Rand al'Thor,the Lord Dragon,title,KEEP,,Used by Shienarans
+4,Rand al'Thor,True Defender of the Light,title,KEEP,,
+5,Tam al'Thor,father,epithet,KEEP,,used by Rand
+5,Tam al'Thor,Master al'Thor,title,DROP,rank_decorated,
+6,Bela,dream-Bela,epithet,KEEP,,
+6,Bela,plump Bela,epithet,DROP,descriptor_epithet,
+6,Bela,shaggy Bela,epithet,KEEP,,
+6,Bela,shaggy mare,epithet,COLLAPSE,article_dup,
+6,Bela,stout mare,epithet,KEEP,,
+6,Bela,the mare,epithet,KEEP,,
+6,Bela,the shaggy mare,epithet,KEEP,,
+6,Bela,the short shaggy mare,epithet,KEEP,,
+7,Black Rider,black-cloaked rider,epithet,COLLAPSE,article_dup,
+7,Black Rider,Fade,epithet,KEEP,,Rand refers to this figure as a Fade
+7,Black Rider,Halfman,epithet,KEEP,,
+7,Black Rider,horseman,epithet,COLLAPSE,article_dup,
+7,Black Rider,Myrddraal,epithet,KEEP,,Used in narrative
+7,Black Rider,the black-cloaked rider,epithet,KEEP,,
+7,Black Rider,the dark horseman,epithet,KEEP,,
+7,Black Rider,the horseman,epithet,KEEP,,
+7,Black Rider,the rider,epithet,DROP,rank_decorated,
+8,Brandelwyn al'Vere,Master al'Vere,title,DROP,rank_decorated,
+8,Brandelwyn al'Vere,Mayor,title,COLLAPSE,article_dup,Mayor of Emond's Field for twenty years
+8,Brandelwyn al'Vere,the Mayor,title,REVIEW,generic_role,
+9,Matrim Cauthon,battle leader,epithet,KEEP,,Nalesean calls him battle leader
+9,Matrim Cauthon,gambler,epithet,KEEP,,used by Rhuarc
+9,Matrim Cauthon,general,epithet,REVIEW,generic_role,Talmanes and Nalesean call him general
+9,Matrim Cauthon,gosling,epithet,KEEP,,used by Tylin
+9,Matrim Cauthon,hero,epithet,KEEP,,Melindhra calls him 'the hero'
+9,Matrim Cauthon,Hornsounder,epithet,KEEP,,
+9,Matrim Cauthon,kitten,epithet,KEEP,,used by Tylin
+9,Matrim Cauthon,lambkin,epithet,KEEP,,used by Tylin
+9,Matrim Cauthon,pigeon,epithet,KEEP,,used by Tylin
+9,Matrim Cauthon,piglet,epithet,KEEP,,used by Tylin in note
+9,Matrim Cauthon,pretty little fox,epithet,KEEP,,Used by Tylin
+9,Matrim Cauthon,rascal,epithet,KEEP,,Gill's assessment
+9,Matrim Cauthon,son of battles,epithet,KEEP,,shouted by the three at the end
+9,Matrim Cauthon,ta'veren,epithet,KEEP,,
+9,Matrim Cauthon,the finch,epithet,KEEP,,self-referential metaphor in this chapter
+9,Matrim Cauthon,the young Lord,epithet,KEEP,,
+9,Matrim Cauthon,trickster,epithet,KEEP,,shouted by the three at the end
+9,Matrim Cauthon,Tylin's Toy,epithet,KEEP,,
+9,Matrim Cauthon,young master,epithet,KEEP,,used by Ramey
+9,Matrim Cauthon,young Master Cauthon,epithet,KEEP,,
+9,Matrim Cauthon,duckling,nickname,KEEP,,
+9,Matrim Cauthon,little duckling,nickname,KEEP,,
+9,Matrim Cauthon,little pigeon,nickname,KEEP,,"Tylin's pet name for him, referenced in chapter"
+9,Matrim Cauthon,little rabbit,nickname,KEEP,,
+9,Matrim Cauthon,my sweet,nickname,KEEP,,Tylin's address in her letter
+9,Matrim Cauthon,sweetling,nickname,KEEP,,
+9,Matrim Cauthon,Toy,nickname,KEEP,,Used by Tuon
+9,Matrim Cauthon,Lord Cauthon,title,DROP,rank_decorated,Used by Mistress Anan
+9,Matrim Cauthon,Lord General Cauthon,title,KEEP,,
+9,Matrim Cauthon,Lord Mat,title,DROP,rank_decorated,Used by Melanril sarcastically/politely; Mat denies being a lord
+9,Matrim Cauthon,Lord Mat Cauthon,title,DROP,rank_decorated,Guards/servants address him as lord though he is not truly one
+9,Matrim Cauthon,Lord Matrim,title,DROP,rank_decorated,
+9,Matrim Cauthon,Master Cauthon,title,DROP,rank_decorated,
+9,Matrim Cauthon,Master Gleeman,title,KEEP,,Lan addresses Mat sarcastically as 'Master Gleeman' while he is studying the maps
+9,Matrim Cauthon,Master Mat Cauthon,title,DROP,rank_decorated,
+9,Matrim Cauthon,Master Matrim Cauthon,title,DROP,rank_decorated,
+10,Cenn Buie,old Cenn Buie,epithet,DROP,descriptor_epithet,how Rand thinks of him
+10,Cenn Buie,Master Buie,title,DROP,rank_decorated,
+10,Cenn Buie,Mayor,title,REVIEW,generic_role,becomes Mayor in the second trial vision
+11,Nynaeve al'Meara,crippled wilder,epithet,KEEP,,Used by Tarna Feir
+11,Nynaeve al'Meara,fool girl,epithet,KEEP,,Cadsuane addresses her thus
+11,Nynaeve al'Meara,maid,epithet,KEEP,,Playing a maid role to Elayne's lady
+11,Nynaeve al'Meara,Nynaeve bloody al'Meara,epithet,KEEP,,
+11,Nynaeve al'Meara,plain Nynaeve al'Meara,epithet,KEEP,,self-referential
+11,Nynaeve al'Meara,sleepyhead,epithet,KEEP,,Used by Siuan this chapter
+11,Nynaeve al'Meara,wilder,epithet,KEEP,,Called this by Faolain
+11,Nynaeve al'Meara,Accepted,title,KEEP,,
+11,Nynaeve al'Meara,Aes Sedai of the Green Ajah,title,KEEP,,False claim; she is an Accepted posing as full Aes Sedai
+11,Nynaeve al'Meara,Aes Sedai of the Yellow Ajah,title,KEEP,,Nynaeve proclaims this herself to Tylin
+11,Nynaeve al'Meara,Mistress al'Meara,title,DROP,rank_decorated,
+11,Nynaeve al'Meara,Nynaeve Aes Sedai,title,DROP,rank_decorated,
+11,Nynaeve al'Meara,Nynaeve Sedai,title,DROP,rank_decorated,Used by Amys
+11,Nynaeve al'Meara,the Wisdom,title,REVIEW,generic_role,Village Wisdom of Emond's Field
+11,Nynaeve al'Meara,village Wisdom,title,KEEP,,"Her former role, which Elaida dismisses as past"
+11,Nynaeve al'Meara,Wisdom,title,COLLAPSE,article_dup,Used by Lan
+11,Nynaeve al'Meara,Wise One,title,DROP,corrected_misnomer,"Aiel mistakenly address her by this title, thinking she is an Aes Sedai"
+13,Daise Congar,Mistress Congar,title,DROP,rank_decorated,
+13,Daise Congar,Wisdom,title,REVIEW,generic_role,referred to as the Wisdom of Emond's Field
+14,Egwene al'Vere,Egwene al'Vere,primary,PROMOTE,promotion,from 'Egwene'
+14,Egwene al'Vere,Dreamer,epithet,KEEP,,potential Talent as a Dreamer discussed
+14,Egwene al'Vere,short apprentice girl,epithet,KEEP,,used mockingly by Sevanna
+14,Egwene al'Vere,Tuli,nickname,KEEP,,"Name given by Renna as punishment, replacing her former allowed name"
+14,Egwene al'Vere,Accepted,title,KEEP,,Her new rank after the ceremony
+14,Egwene al'Vere,Aes Sedai of the Green Ajah,title,KEEP,,She calls herself this during the formal introduction ritual with the Wise Ones
+14,Egwene al'Vere,Amyrlin,title,COLLAPSE,article_dup,referred to as Amyrlin throughout chapter
+14,Egwene al'Vere,Amyrlin Seat,title,KEEP,,raised to this position in this chapter
+14,Egwene al'Vere,Egwene Sedai,title,DROP,rank_decorated,Used by Sulin
+14,Egwene al'Vere,Flame of Tar Valon,title,KEEP,,bestowed upon being raised Amyrlin
+14,Egwene al'Vere,the Amyrlin,title,KEEP,,
+14,Egwene al'Vere,Watcher of the Seals,title,KEEP,,bestowed upon being raised Amyrlin
+14,Egwene al'Vere,Wisdom,title,REVIEW,generic_role,In alternate life
+15,Perrin t'Bashere Aybara,Perrin t'Bashere Aybara,primary,PROMOTE,promotion,from 'Perrin Aybara'
+15,Perrin t'Bashere Aybara,anvil-headed blacksmith,epithet,KEEP,,
+15,Perrin t'Bashere Aybara,Bannerman,epithet,KEEP,,Carries the Dragon's banner into battle.
+15,Perrin t'Bashere Aybara,big man,epithet,KEEP,,Used by Zarine
+15,Perrin t'Bashere Aybara,blacksmith,epithet,COLLAPSE,article_dup,Lan addresses him this way
+15,Perrin t'Bashere Aybara,brother,epithet,REVIEW,generic_role,used by Hopper the wolf in sending
+15,Perrin t'Bashere Aybara,farmboy,epithet,KEEP,,What Zarine calls him
+15,Perrin t'Bashere Aybara,Goldeneyes,epithet,KEEP,,Slayer addresses him this way in the wolf dream
+15,Perrin t'Bashere Aybara,Lord Blacksmith,epithet,KEEP,,
+15,Perrin t'Bashere Aybara,my husband,epithet,KEEP,,Used by Faile
+15,Perrin t'Bashere Aybara,Perrin Golden-eyes,epithet,KEEP,,
+15,Perrin t'Bashere Aybara,Perrin Goldeneyes,epithet,KEEP,,Used by Faile; spreading as a legend in the Two Rivers
+15,Perrin t'Bashere Aybara,shaggy-hair,epithet,KEEP,,Used by Zarine/Faile
+15,Perrin t'Bashere Aybara,Slayer of Trollocs,epithet,KEEP,,
+15,Perrin t'Bashere Aybara,ta'veren,epithet,KEEP,,referred to as ta'veren by Alanna and Verin
+15,Perrin t'Bashere Aybara,the Blacksmith,epithet,REVIEW,generic_role,name given by Bors in his mind due to the youth's blacksmith-like musculature
+15,Perrin t'Bashere Aybara,the lad who claimed to be a blacksmith,epithet,KEEP,,how Bornhald recalls him
+15,Perrin t'Bashere Aybara,the yellow-eyed man,epithet,KEEP,,described by Tomas
+15,Perrin t'Bashere Aybara,Wolfbrother,epithet,KEEP,,the Green Man recognizes him as a Wolfbrother
+15,Perrin t'Bashere Aybara,young Aybara,epithet,DROP,descriptor_epithet,
+15,Perrin t'Bashere Aybara,Young Bull,epithet,KEEP,,name given by wolves; represents a massive wild bull with curved metal horns
+15,Perrin t'Bashere Aybara,wildling,nickname,KEEP,,used by the beautiful woman in the dream
+15,Perrin t'Bashere Aybara,Lord Aybara,title,DROP,rank_decorated,
+15,Perrin t'Bashere Aybara,Lord of the Two Rivers,title,DROP,rank_decorated,
+15,Perrin t'Bashere Aybara,Lord Perrin,title,DROP,rank_decorated,
+15,Perrin t'Bashere Aybara,Lord Perrin Aybara,title,DROP,rank_decorated,
+15,Perrin t'Bashere Aybara,Lord Perrin Aybara of the Two Rivers,title,DROP,rank_decorated,
+15,Perrin t'Bashere Aybara,Lord Perrin Goldeneyes,title,KEEP,,
+15,Perrin t'Bashere Aybara,Lord Perrin of the Two Rivers,title,DROP,rank_decorated,
+15,Perrin t'Bashere Aybara,Master Aybara,title,DROP,rank_decorated,
+15,Perrin t'Bashere Aybara,Master Goldeneyes,title,KEEP,,Used mockingly by Luc
+15,Perrin t'Bashere Aybara,my Lord Perrin,title,KEEP,,
+16,Thom Merrilin,clever old man,epithet,KEEP,,
+16,Thom Merrilin,coachman,epithet,KEEP,,disguised as a coachman to escape Mardecin
+16,Thom Merrilin,dangerous old man,epithet,KEEP,,
+16,Thom Merrilin,gleeman,epithet,COLLAPSE,article_dup,professional entertainer/storyteller
+16,Thom Merrilin,Gray Fox,epithet,KEEP,,Former epithet used by those who knew him
+16,Thom Merrilin,old gleeman,epithet,KEEP,,
+16,Thom Merrilin,old goat,epithet,KEEP,,Mat's internal name for him
+16,Thom Merrilin,old Thom Merrilin,epithet,DROP,descriptor_epithet,Referred to as 'old' by Perrin
+16,Thom Merrilin,the gleeman,epithet,REVIEW,generic_role,
+16,Thom Merrilin,Court-bard,title,KEEP,,Former position in Caemlyn
+16,Thom Merrilin,Master Bard,title,KEEP,,used by Moiraine
+16,Thom Merrilin,Master Gleeman,title,KEEP,,
+16,Thom Merrilin,Master Merrilin,title,DROP,rank_decorated,
+20,Marin al'Vere,Marin al'Vere,primary,PROMOTE,promotion,from 'Mistress al'Vere'
+21,Scratch,the inn's yellow cat,epithet,KEEP,,
+22,Haral Luhhan,Master Luhhan,title,DROP,rank_decorated,
+23,Jon Thane,the blacksmith,epithet,REVIEW,generic_role,His profession
+25,Moiraine Damodred,Moiraine Damodred,primary,PROMOTE,promotion,from 'Moiraine'
+25,Moiraine Damodred,Lady Moiraine,title,DROP,rank_decorated,formal address
+25,Moiraine Damodred,Lady Moiraine of House Damodred,title,KEEP,,
+25,Moiraine Damodred,Mistress Moiraine,title,DROP,rank_decorated,
+25,Moiraine Damodred,Moiraine Aes Sedai,title,DROP,rank_decorated,
+25,Moiraine Damodred,Moiraine Sedai,title,DROP,rank_decorated,Formal Aes Sedai title
+25,Moiraine Damodred,the Aes Sedai,title,REVIEW,empty_residue,
+25,Moiraine Damodred,the Lady Moiraine,title,DROP,rank_decorated,used by villagers
+26,Lan Mandragoran,Aan'allein,epithet,KEEP,,"Old Tongue name used by the Wise Ones, meaning 'One Man' / 'The Man Who Is an Entire People'"
+26,Lan Mandragoran,child king,epithet,KEEP,,"Rhuarc speaks of the ring of Malkieri kings and mentions only a child king survived, who courts death"
+26,Lan Mandragoran,sheepherder,epithet,KEEP,,What Lan calls Rand
+26,Lan Mandragoran,stone-face,epithet,KEEP,,Used by Zarine
+26,Lan Mandragoran,the Golden Crane,epithet,KEEP,,"banner of Malkier, associated with Lan"
+26,Lan Mandragoran,the War . . . ah . . . Master Andra,epithet,DROP,corrected_misnomer,Min nearly calls him Warder but corrects herself
+26,Lan Mandragoran,Dai Shan,title,REVIEW,empty_residue,Borderlands honorific meaning Battle Lord
+26,Lan Mandragoran,Diademed Battle Lord of the Malkieri,title,KEEP,,Formal title revealed by Moiraine
+26,Lan Mandragoran,Gaidin,title,KEEP,,"Another term for Warder, used by Moiraine"
+26,Lan Mandragoran,King of Malkier,title,KEEP,,Uncrowned
+26,Lan Mandragoran,Lan Dai Shan,title,DROP,rank_decorated,
+26,Lan Mandragoran,Lan Gaidin,title,KEEP,,Gaidin is the term for Warder
+26,Lan Mandragoran,last Lord of the Seven Towers,title,KEEP,,Moiraine addresses him by this title
+26,Lan Mandragoran,Lord Lan,title,DROP,rank_decorated,Used by Mistress Harfor
+26,Lan Mandragoran,Lord of the Lakes,title,KEEP,,
+26,Lan Mandragoran,Lord of the Seven Towers,title,KEEP,,Malkieri title
+26,Lan Mandragoran,Master Lan,title,DROP,rank_decorated,
+26,Lan Mandragoran,the Warder,title,KEEP,,common reference throughout chapter
+26,Lan Mandragoran,Warder,title,COLLAPSE,article_dup,his role as Aes Sedai's bonded protector
+29,Alsbet Luhhan,Mistress Luhhan,title,DROP,rank_decorated,
+34,Padan Fain,a Lugarder,epithet,KEEP,,Barthanes describes him as from Lugard
+34,Padan Fain,bony man,epithet,KEEP,,
+34,Padan Fain,Darkfriend and worse,epithet,KEEP,,as called by Moiraine
+34,Padan Fain,the beggar,epithet,KEEP,,his appearance in Caemlyn
+34,Padan Fain,the crazy man,epithet,KEEP,,"Whitebridge epithet for Fain (Bk1 Ch26), merged by curator decision."
+34,Padan Fain,the Dark One's hound,epithet,KEEP,,Description of his role after being changed at Shayol Ghul
+34,Padan Fain,the Darkfriend,epithet,KEEP,,How others refer to him
+34,Padan Fain,the peddler,epithet,REVIEW,generic_role,his occupation
+34,Padan Fain,Old Fain,nickname,DROP,descriptor_epithet,
+34,Padan Fain,Master Fain,title,DROP,rank_decorated,
+34,Padan Fain,Master Ordeith,title,KEEP,,
+36,Bili Congar,Old Bili,nickname,DROP,descriptor_epithet,
+36,Bili Congar,Master Congar,title,DROP,corrected_misnomer,Mat corrects himself to use this form
+39,Bandry Crawe,Ban,nickname,KEEP,,used by Rand
+39,Bandry Crawe,Master Crawe,title,DROP,rank_decorated,When referring to his house
+41,Oren Dautry,Master Dautry,title,DROP,rank_decorated,
+44,Laman,King Laman,title,KEEP,,King of Cairhien
+45,Abell Cauthon,my da,epithet,KEEP,,How Mat refers to him
+45,Abell Cauthon,Master Cauthon,title,DROP,rank_decorated,How his house is referred to
+55,Eldrene ay Ellan ay Carlan,the Rose of the Sun,epithet,KEEP,,Her epithet and part of Manetheren's warcry
+56,Cloud,the gray,epithet,KEEP,,description by color
+57,Master Hightower,the ferrety man,epithet,KEEP,,descriptive epithet used by narrator
+57,Master Hightower,the ferryman,epithet,KEEP,,his occupation
+58,Aldieb,Moiraine's mare,epithet,KEEP,,
+58,Aldieb,the mare,epithet,KEEP,,
+58,Aldieb,the white mare,epithet,KEEP,,
+58,Aldieb,Westwind,epithet,KEEP,,Meaning of name in Old Tongue - the wind that brought spring rains
+58,Aldieb,white mare,epithet,COLLAPSE,article_dup,
+59,Mandarb,Blade,epithet,KEEP,,Meaning of name in Old Tongue
+60,Avin,Master Avin,title,DROP,rank_decorated,Title form of address
+64,Min Farshaw,Min Farshaw,primary,PROMOTE,promotion,from 'Min'
+64,Min Farshaw,Lady Ta'veren,epithet,KEEP,,Dobraine's joking title for her
+64,Min Farshaw,the woman in men's clothes,epithet,KEEP,,
+64,Min Farshaw,wife,epithet,KEEP,,referred to as Rand's wife under the disguise
+64,Min Farshaw,cabbage,nickname,KEEP,,Mahiro's affectionate term for her
+64,Min Farshaw,sheepherder,nickname,KEEP,,Min's pet name for Rand
+64,Min Farshaw,Lady Min,title,DROP,rank_decorated,
+65,Logain,false Dragon,epithet,COLLAPSE,article_dup,he claims to be the Dragon Reborn
+65,Logain,gentled false Dragon,epithet,KEEP,,
+65,Logain,the false Dragon,epithet,KEEP,,how he is referred to throughout
+65,Logain,the unbeliever,epithet,KEEP,,Elaida's term for him
+65,Logain,Master Logain,title,DROP,rank_decorated,
+66,Governor Adan,Governor,title,DROP,rank_decorated,
+71,Yurian Stonebow,false Dragon,epithet,KEEP,,Rose from ashes of Trolloc Wars
+74,Artur Hawkwing,High King,title,COLLAPSE,article_dup,ruled a vast empire
+74,Artur Hawkwing,the High King,title,KEEP,,His ruling title
+77,Geofram Bornhald,Geofram Bornhald,primary,PROMOTE,promotion,from 'Bornhald'
+77,Geofram Bornhald,Lord Bornhald,title,DROP,rank_decorated,
+77,Geofram Bornhald,Lord Captain,title,COLLAPSE,article_dup,His rank within the Children
+77,Geofram Bornhald,Lord Captain Bornhald,title,DROP,rank_decorated,Full formal address
+77,Geofram Bornhald,Lord Captain Geofram Bornhald,title,DROP,rank_decorated,full title and name
+77,Geofram Bornhald,my Lord Captain,title,KEEP,,How subordinates address him
+77,Geofram Bornhald,the Lord Captain,title,REVIEW,empty_residue,
+87,Balwen Mayel,Balwen Ironhand,epithet,KEEP,,His epithet as king
+88,Caar,Caar One-Hand,epithet,KEEP,,Earned after escaping Aridhol's dungeons
+88,Caar,Prince Caar,title,KEEP,,His title as prince of Manetheren
+91,Mashadar,that thing,epithet,KEEP,,how Nynaeve refers to it
+92,Bayle Domon,Illianer,epithet,COLLAPSE,article_dup,called this by Juilin
+92,Bayle Domon,the Illianer,epithet,KEEP,,
+92,Bayle Domon,trader,epithet,KEEP,,Occupation
+92,Bayle Domon,Captain Domon,title,KEEP,,
+92,Bayle Domon,Master Bayle Domon,title,DROP,rank_decorated,
+92,Bayle Domon,Master Cauthon,title,KEEP,,Not applicable here; Bayle refers to Mat as 'Master Cauthon'
+92,Bayle Domon,Master Domon,title,DROP,rank_decorated,
+92,Bayle Domon,so'jhin,title,KEEP,,Bought by Egeanin and made so'jhin
+95,Elyas Machera,Long Tooth,epithet,KEEP,,wolf name for Elyas; image of a wolf with one long steel tooth
+98,Hopper,brother,epithet,REVIEW,generic_role,Relationship term between wolves
+99,Wind,leggy gray gelding,epithet,KEEP,,
+101,Raen,Mahdi,title,KEEP,,"means Seeker, his title as leader of the band"
+101,Raen,Seeker,title,KEEP,,title for the leader
+103,Aram,former Tinker,epithet,KEEP,,
+103,Aram,one-time Tinker,epithet,KEEP,,
+103,Aram,onetime Tinker,epithet,KEEP,,
+103,Aram,Tinker,epithet,KEEP,,
+107,Queen Morgase,good Queen Morgase,epithet,KEEP,,How people refer to her with respect
+107,Queen Morgase,our good Queen,epithet,KEEP,,fat officer uses this
+107,Queen Morgase,Defender of the Realm,title,KEEP,,
+107,Queen Morgase,High Seat of House Trakand,title,KEEP,,
+107,Queen Morgase,Majesty,title,KEEP,,
+107,Queen Morgase,"Morgase, by the Grace of the Light, Queen of Andor, Defender of the Realm, Protector of the People, High Seat of the House Trakand",title,KEEP,,full formal title
+107,Queen Morgase,my Queen,title,KEEP,,how she is addressed
+107,Queen Morgase,Protector of the People,title,KEEP,,
+107,Queen Morgase,Queen of Andor,title,DROP,rank_decorated,
+107,Queen Morgase,Your Majesty,title,KEEP,,
+110,Jaret Byar,Jaret Byar,primary,PROMOTE,promotion,from 'Byar'
+110,Jaret Byar,Child Byar,title,KEEP,,His rank and name within the Children
+111,Dain Bornhald,Dain Bornhald,primary,PROMOTE,promotion,from 'Dain'
+111,Dain Bornhald,Captain of the Children of the Light,title,KEEP,,
+111,Dain Bornhald,Child Bornhald,title,KEEP,,
+111,Dain Bornhald,Lord Bornhald,title,DROP,rank_decorated,
+121,Hyam Kinch,Master Kinch,title,DROP,rank_decorated,used by narrative
+122,Alpert Mull,Master Mull,title,DROP,rank_decorated,used by narrative
+123,Rulan Allwine,Master Allwine,title,DROP,rank_decorated,used by narrative
+129,Elaida do Avriny a'Roihan,Elaida do Avriny a'Roihan,primary,PROMOTE,promotion,from 'Elaida'
+129,Elaida do Avriny a'Roihan,Amyrlin Seat,title,KEEP,,Raised to this position during the chapter's events
+129,Elaida do Avriny a'Roihan,Elaida Sedai,title,DROP,rank_decorated,respectful address
+129,Elaida do Avriny a'Roihan,Flame of Tar Valon,title,KEEP,,on arrest warrant
+129,Elaida do Avriny a'Roihan,Watcher of the Seals,title,KEEP,,on arrest warrant
+130,Elayne Trakand,Elayne Trakand,primary,PROMOTE,promotion,from 'Elayne'
+130,Elayne Trakand,Elayne of Andor,epithet,KEEP,,Used by Thom in admiration
+130,Elayne Trakand,future Queen of Andor,epithet,KEEP,,
+130,Elayne Trakand,my fine Lady,epithet,KEEP,,Mat's mocking address
+130,Elayne Trakand,pretty girl,epithet,KEEP,,used by Alise
+130,Elayne Trakand,Accepted,title,KEEP,,
+130,Elayne Trakand,Aes Sedai of the Green Ajah,title,KEEP,,False claim for their mission; they are Accepted posing as full Aes Sedai
+130,Elayne Trakand,Daughter-Heir,title,COLLAPSE,article_dup,her position
+130,Elayne Trakand,Daughter-Heir of Andor,title,KEEP,,
+130,Elayne Trakand,Elayne Aes Sedai,title,DROP,rank_decorated,
+130,Elayne Trakand,Elayne of House Trakand,title,KEEP,,Full formal name used by the Amyrlin
+130,Elayne Trakand,Elayne Sedai,title,DROP,rank_decorated,
+130,Elayne Trakand,High Seat of House Trakand,title,KEEP,,
+130,Elayne Trakand,Lady Elayne,title,DROP,rank_decorated,
+130,Elayne Trakand,my Queen,title,KEEP,,
+130,Elayne Trakand,Queen of Andor,title,KEEP,,She reflects she is supposed to be Queen one day
+130,Elayne Trakand,the Daughter-Heir,title,KEEP,,
+130,Elayne Trakand,the Lady Elayne,title,DROP,rank_decorated,
+131,Gawyn Trakand,Gawyn Trakand,primary,PROMOTE,promotion,from 'Gawyn'
+131,Gawyn Trakand,the White Boar,epithet,KEEP,,Battle cry used by his followers
+131,Gawyn Trakand,First Prince of the Sword,title,KEEP,,
+131,Gawyn Trakand,Lord Gawyn,title,DROP,rank_decorated,
+133,Tigraine Mantear,Shaiel,epithet,KEEP,,Aiel name; revealed book 6
+133,Tigraine Mantear,the Daughter-Heir,title,KEEP,,Her former title before she vanished
+134,Luc Mantear,Hunter for the Horn,epithet,KEEP,,
+134,Luc Mantear,Isam Mandragoran,epithet,KEEP,,
+134,Luc Mantear,Slayer,epithet,KEEP,,
+134,Luc Mantear,First Prince of the Sword,title,KEEP,,Title he would have held if he had lived
+134,Luc Mantear,Lord Luc,title,DROP,rank_decorated,
+134,Luc Mantear,Lord Luc of Chiendelna,title,KEEP,,
+136,Basel Gill,Master Gill,title,DROP,rank_decorated,
+136,Basel Gill,shambayan,title,KEEP,,Faile appoints him as shambayan (household steward)
+137,Gareth Bryne,the Bull,epithet,KEEP,,His sigil; soldiers cheer it
+137,Gareth Bryne,Captain-General,title,KEEP,,Of the Queen's Guards
+137,Gareth Bryne,Lord Bryne,title,DROP,rank_decorated,
+137,Gareth Bryne,Lord Gareth,title,DROP,rank_decorated,noble address
+137,Gareth Bryne,Lord Gareth Bryne,title,DROP,rank_decorated,
+138,Loial son of Arent son of Halan,Loial son of Arent son of Halan,primary,PROMOTE,promotion,from 'Loial'
+138,Loial son of Arent son of Halan,Builder,epithet,COLLAPSE,article_dup,respectful term for Ogier
+138,Loial son of Arent son of Halan,friend Ogier,epithet,KEEP,,used by Mistress Madwen and others
+138,Loial son of Arent son of Halan,little brother,epithet,REVIEW,generic_role,used by the Green Man
+138,Loial son of Arent son of Halan,Ogier,epithet,COLLAPSE,article_dup,species descriptor used as identifier
+138,Loial son of Arent son of Halan,the Builder,epithet,KEEP,,Used by Hurin
+138,Loial son of Arent son of Halan,the Ogier,epithet,KEEP,,Frequently referred to as the Ogier
+138,Loial son of Arent son of Halan,alantin,title,KEEP,,Selene uses this term for him
+138,Loial son of Arent son of Halan,Master Loial,title,DROP,rank_decorated,used by Marin al'Vere
+141,Lamgwin Dorn,Lamgwin Dorn,primary,PROMOTE,promotion,from 'Lamgwin'
+141,Lamgwin Dorn,hulking Lamgwin,epithet,KEEP,,
+141,Lamgwin Dorn,hulking shadow,epithet,KEEP,,
+141,Lamgwin Dorn,scar-faced street tough,epithet,KEEP,,
+142,Martyn Tallanvor,Martyn Tallanvor,primary,PROMOTE,promotion,from 'Tallanvor'
+142,Martyn Tallanvor,Guardsman Lieutenant Martyn Tallanvor,title,KEEP,,
+142,Martyn Tallanvor,Guardsman-Lieutenant Tallanvor,title,KEEP,,his rank
+142,Martyn Tallanvor,Lord Tallanvor,title,DROP,rank_decorated,Used by Master Gill
+143,Galadedrid Damodred,Child of the Light,title,KEEP,,His new affiliation
+143,Galadedrid Damodred,Lord Galad,title,DROP,rank_decorated,
+143,Galadedrid Damodred,Lord Galadedrid,title,DROP,rank_decorated,formal address
+153,the Green Man,Nym,epithet,KEEP,,species descriptor
+153,the Green Man,Someshta,epithet,KEEP,,
+153,the Green Man,Treebrother,epithet,KEEP,,used by Loial
+154,Aginor,Forsaken,epithet,KEEP,,one of the Forsaken
+155,Lanfear,Chosen,epithet,KEEP,,
+155,Lanfear,Daughter of the Night,epithet,KEEP,,One of her titles
+155,Lanfear,Forsaken,epithet,KEEP,,
+155,Lanfear,Moonhunter,epithet,KEEP,,Wolf name for Lanfear
+155,Lanfear,Great Mistress,title,KEEP,,
+155,Lanfear,Lady Selene,title,KEEP,,formal address
+155,Lanfear,Mierin Sedai,title,DROP,rank_decorated,her name before she became Lanfear/fell to the Shadow
+156,Balthamel,Forsaken,epithet,KEEP,,one of the Forsaken
+157,Demandred,Lord of Chaos,epithet,KEEP,,References 'Let the Lord of Chaos rule' directive; unclear if this is his own title or a phrase from the Dark One
+159,Siuan Sanche,old buzzard,epithet,KEEP,,Used disparagingly by Duranda Tharne referring to Siuan's former Amyrlin self
+159,Siuan Sanche,once Amyrlin Seat,epithet,KEEP,,
+159,Siuan Sanche,secretary,epithet,KEEP,,
+159,Siuan Sanche,the bait,epithet,KEEP,,
+159,Siuan Sanche,Amyrlin Seat,title,COLLAPSE,article_dup,formal title
+159,Siuan Sanche,Flame of Tar Valon,title,COLLAPSE,article_dup,formal title
+159,Siuan Sanche,Siuan Sedai,title,DROP,rank_decorated,
+159,Siuan Sanche,the Amyrlin,title,KEEP,,
+159,Siuan Sanche,the Amyrlin Seat,title,KEEP,,
+159,Siuan Sanche,The Flame of Tar Valon,title,KEEP,,ceremonial title in the Welcome ritual
+159,Siuan Sanche,the former Amyrlin Seat,title,KEEP,,how Moghedien refers to her
+159,Siuan Sanche,the Mother,title,REVIEW,empty_residue,
+159,Siuan Sanche,The Watcher of the Seals,title,KEEP,,ceremonial title in the Welcome ritual
+159,Siuan Sanche,Watcher of the Seals,title,COLLAPSE,article_dup,formal title
+160,Ramey,the head groom,epithet,KEEP,,Identified as head groom
+161,Sheriam Bayanar,Sheriam Bayanar,primary,PROMOTE,promotion,from 'Sheriam Sedai'
+161,Sheriam Bayanar,fiery-haired Sheriam,epithet,KEEP,,
+161,Sheriam Bayanar,fiery-haired woman,epithet,KEEP,,
+161,Sheriam Bayanar,flame-haired Aes Sedai,epithet,KEEP,,
+161,Sheriam Bayanar,flame-haired woman,epithet,KEEP,,
+161,Sheriam Bayanar,Keeper,title,KEEP,,Named Keeper of the Chronicles by Egwene this chapter
+161,Sheriam Bayanar,Keeper of the Chronicles,title,KEEP,,
+161,Sheriam Bayanar,Mistress of Novices,title,KEEP,,her official position
+162,Red,the bay,epithet,KEEP,,Referred to as 'the bay' multiple times
+163,Agelmar Jagad,Agelmar Jagad,primary,PROMOTE,promotion,from 'Agelmar'
+163,Agelmar Jagad,Agelmar Dai Shan,title,DROP,rank_decorated,Dai Shan is a Borderlands honorific
+163,Agelmar Jagad,Lord Agelmar,title,DROP,rank_decorated,
+163,Agelmar Jagad,Lord of Fal Dara,title,KEEP,,
+164,Machin Shin,the Black Wind,epithet,KEEP,,Primary name used
+165,Ingtar,Lord Ingtar,title,DROP,rank_decorated,Noble title
+165,Ingtar,Lord Ingtar of House Shinowa,title,KEEP,,Full formal title used at the party
+170,Isam Mandragoran,Luc,epithet,KEEP,,Isam becomes Luc when he steps from Tel'aran'rhiod into the waking world in this scene; the two identities share memories and alternate.
+170,Isam Mandragoran,Luc Mantear,epithet,KEEP,,
+170,Isam Mandragoran,Slayer,epithet,KEEP,,
+171,Cowin Gemallan,Cowin Fairheart,epithet,KEEP,,Name by which he was known as a hero before his treachery was revealed
+171,Cowin Gemallan,Fairheart,epithet,KEEP,,Short form of his hero name
+174,Easar Togita,Easar Togita,primary,PROMOTE,promotion,from 'Easar'
+174,Easar Togita,Easar of Shienar,epithet,KEEP,,
+174,Easar Togita,King Easar,title,KEEP,,King of Shienar
+175,Avendesora,chora tree,epithet,KEEP,,Rand identifies it as the last chora tree
+175,Avendesora,the last chora tree,epithet,KEEP,,
+175,Avendesora,the Tree of Life,epithet,KEEP,,the common name for this tree
+176,the Dark One,Father of Lies,epithet,KEEP,,
+176,the Dark One,Heart of the Dark,epithet,KEEP,,translation of Ba'alzamon
+176,the Dark One,Shai'tan,epithet,KEEP,,the true name of the Dark One
+176,the Dark One,Sightblinder,epithet,KEEP,,Aiel name for the Dark One
+176,the Dark One,the Shadow,epithet,KEEP,,
+176,the Dark One,the Great Lord,title,KEEP,,shortened form used by the woman Darkfriend
+176,the Dark One,the Great Lord of the Dark,title,KEEP,,how Darkfriends refer to him
+191,Elansu,Elansu Shatayan,title,KEEP,,her formal title
+191,Elansu,shatayan,title,KEEP,,Shienaran word for housekeeper of a fortress
+192,Ronan,shambayan,title,KEEP,,"Shienaran equivalent to major-domo, Elansu's counterpart"
+194,Amalisa,Lady Amalisa,title,DROP,rank_decorated,
+196,Uno Nomesta,Uno Nomesta,primary,PROMOTE,promotion,from 'Uno'
+196,Uno Nomesta,the one-eyed man,epithet,KEEP,,
+196,Uno Nomesta,top-knotted Uno,epithet,KEEP,,
+199,Anaiya,Anaiya Sedai,title,DROP,rank_decorated,
+200,Liandrin,da'covale,epithet,KEEP,,
+200,Liandrin,Liandrin Sedai,title,DROP,rank_decorated,formal address as Aes Sedai
+201,Leane,swan-necked Domani,epithet,KEEP,,
+201,Leane,willowy Domani minx,epithet,KEEP,,
+201,Leane,willowy Domani woman,epithet,KEEP,,
+201,Leane,Keeper,title,KEEP,,shortened form
+201,Leane,Keeper of the Chronicles,title,KEEP,,her office
+201,Leane,Leane Sedai,title,DROP,rank_decorated,formal address
+202,Verin Mathwin,Brown sister,epithet,REVIEW,generic_role,Reference to her Ajah
+202,Verin Mathwin,stout little Verin,epithet,DROP,descriptor_epithet,
+202,Verin Mathwin,Wise One,epithet,DROP,corrected_misnomer,"What Urien mistakenly calls her, though she corrects him"
+202,Verin Mathwin,Mistress Mathwin,title,DROP,rank_decorated,Used by Jac al'Seen when addressing her
+202,Verin Mathwin,Verin Aes Sedai,title,DROP,rank_decorated,
+202,Verin Mathwin,Verin Mathwin Aes Sedai,title,DROP,rank_decorated,
+202,Verin Mathwin,Verin Sedai,title,DROP,rank_decorated,
+204,Carlinya,"pale, almost black-eyed White",epithet,KEEP,,
+204,Carlinya,White sister,epithet,REVIEW,generic_role,
+205,Alanna Mosvani,fiery Alanna,epithet,KEEP,,
+205,Alanna Mosvani,Green sister,epithet,REVIEW,generic_role,
+205,Alanna Mosvani,Alanna Aes Sedai,title,DROP,rank_decorated,
+205,Alanna Mosvani,Alanna Sedai,title,DROP,rank_decorated,How Egwene addresses her
+207,Pedron Niall,the old wolf,epithet,KEEP,,
+207,Pedron Niall,Lord Captain Commander,title,COLLAPSE,article_dup,
+207,Pedron Niall,my Lord Captain Commander,title,KEEP,,how he is addressed
+207,Pedron Niall,the Lord Captain Commander,title,REVIEW,empty_residue,
+208,Einor Saren,Questioner,epithet,KEEP,,Member of the Hand of the Light
+208,Einor Saren,Inquisitor,title,KEEP,,
+209,Jaichim Carridin,Anointed of the Light,title,KEEP,,
+209,Jaichim Carridin,Child Carridin,title,KEEP,,
+209,Jaichim Carridin,Inquisitor,title,KEEP,,
+209,Jaichim Carridin,Inquisitor of the Hand of the Light,title,KEEP,,
+209,Jaichim Carridin,Lord Carridin,title,DROP,rank_decorated,
+209,Jaichim Carridin,Lord Inquisitor Carridin,title,KEEP,,Tylin refers to him by this title
+209,Jaichim Carridin,my Lord Bors,title,KEEP,,how the servants address him
+209,Jaichim Carridin,My Lord Carridin,title,KEEP,,
+209,Jaichim Carridin,Questioner,title,KEEP,,His role
+209,Jaichim Carridin,Whitecloak ambassador,title,KEEP,,
+209,Jaichim Carridin,Whitecloak Inquisitor,title,KEEP,,
+210,Eamon Valda,Anointed of the Light,title,KEEP,,
+210,Eamon Valda,Lord Captain,title,REVIEW,empty_residue,His rank in the Children of the Light
+210,Eamon Valda,Lord Captain Eamon Valda,title,DROP,rank_decorated,
+214,Mazrim Taim,false Dragon,epithet,KEEP,,Can channel
+214,Mazrim Taim,hawk-nosed man,epithet,KEEP,,
+214,Mazrim Taim,hook-nosed man,epithet,KEEP,,
+214,Mazrim Taim,M'hael,title,KEEP,,"title given to him by the Asha'man, meaning 'leader' in the Old Tongue"
+214,Mazrim Taim,Master Taim,title,DROP,rank_decorated,
+215,Kajin,Lord Kajin,title,DROP,rank_decorated,
+216,Timora,Lady Timora,title,DROP,rank_decorated,noble lady in service to Amalisa
+217,Nisura,Lady Nisura,title,DROP,rank_decorated,addressed as a lady
+218,Gitara Moroso,Gitara Sedai,title,DROP,rank_decorated,Aes Sedai title
+219,Tomas,stocky gray-head,epithet,KEEP,,
+219,Tomas,Warder,title,KEEP,,
+221,Hurin,sniffer,epithet,COLLAPSE,article_dup,His role/ability to smell violence
+221,Hurin,the sniffer,epithet,KEEP,,refers to his ability to smell violence
+221,Hurin,Hurin of Shienar,title,KEEP,,
+221,Hurin,Lord Rand,title,KEEP,,how he addresses Rand
+225,Galldrian su Riatin Rie,Stag,epithet,KEEP,,His personal seal
+225,Galldrian su Riatin Rie,Defender of the Dragonwall,title,KEEP,,
+225,Galldrian su Riatin Rie,His Majesty,title,KEEP,,formal reference
+225,Galldrian su Riatin Rie,King of Cairhien,title,KEEP,,
+226,Masema Dagar,Masema Dagar,primary,PROMOTE,promotion,from 'Masema'
+226,Masema Dagar,Prophet of the Lord Dragon,title,KEEP,,
+226,Masema Dagar,the Prophet,title,KEEP,,He is called 'the Prophet' by his followers in Ghealdan; preaches the coming of the Dragon Reborn
+227,Alviarin Freidhen,Alviarin Freidhen,primary,PROMOTE,promotion,from 'Alviarin'
+227,Alviarin Freidhen,Keeper,title,KEEP,,
+227,Alviarin Freidhen,Keeper of the Chronicles,title,KEEP,,New appointment this chapter
+236,Maglin Madwen,Mistress Madwen,title,DROP,rank_decorated,how she is addressed
+237,Aldrin Caldevwin,Captain Caldevwin,title,KEEP,,full title
+243,Adeleas,Brown sister,epithet,REVIEW,generic_role,
+243,Adeleas,white-haired sister,epithet,REVIEW,generic_role,
+243,Adeleas,white-haired woman,epithet,KEEP,,One of 'two white-haired women'
+244,Vandene Namelle,Vandene Namelle,primary,PROMOTE,promotion,from 'Vandene'
+244,Vandene Namelle,white-haired Green,epithet,KEEP,,
+244,Vandene Namelle,white-haired sister,epithet,REVIEW,generic_role,
+244,Vandene Namelle,white-haired woman,epithet,KEEP,,One of 'two white-haired women'
+245,Jaem,stringy old Warder,epithet,KEEP,,
+245,Jaem,Vandene's gnarled old Warder,epithet,KEEP,,
+245,Jaem,Vandene's grizzled Warder,epithet,KEEP,,
+245,Jaem,Gaidin,title,KEEP,,Term for Warder
+246,Myrelle,Green sister,epithet,REVIEW,generic_role,Description by Moiraine
+246,Myrelle,head of the Green Ajah in Salidar,title,KEEP,,
+246,Myrelle,Myrelle Sedai,title,DROP,rank_decorated,
+248,Malena Aylar,Wisdom,title,REVIEW,generic_role,Wisdom of Emond's Field in the vision
+257,Cuale,innkeeper,epithet,REVIEW,generic_role,his profession
+257,Cuale,Master Cuale,title,DROP,rank_decorated,Formal address
+263,Ivon,Child Ivon,title,KEEP,,
+265,Aludra,Illuminator,epithet,KEEP,,Described as 'supposed to be an Illuminator'; Nynaeve believes she may genuinely be one
+265,Aludra,Mistress of the Chapter House,title,KEEP,,her former position in the Guild
+271,Jeral,Child Jeral,title,KEEP,,Rank and name
+272,Earwin,Child Earwin,title,KEEP,,Rank and name
+273,Wuan,Child Wuan,title,KEEP,,Rank and name
+274,Egeanin Sarna,Egeanin Sarna,primary,PROMOTE,promotion,from 'Egeanin'
+274,Egeanin Sarna,Captain Egeanin,title,KEEP,,Full title
+274,Egeanin Sarna,Captain of the Gold,title,KEEP,,
+274,Egeanin Sarna,Captain of the Green,title,KEEP,,
+274,Egeanin Sarna,Lady Egeanin Tamarath,title,KEEP,,
+274,Egeanin Sarna,Mistress Egeanin,title,DROP,rank_decorated,used by Thom in greeting
+276,Turak,High Lord,title,COLLAPSE,article_dup,His rank
+276,Turak,High Lord Turak,title,DROP,rank_decorated,Full title
+276,Turak,the High Lord,title,REVIEW,empty_residue,Reference form
+281,Barthanes Damodred,Barthanes Damodred,primary,PROMOTE,promotion,from 'Barthanes'
+281,Barthanes Damodred,Charging Boar,epithet,KEEP,,His personal seal
+281,Barthanes Damodred,Lord Barthanes,title,DROP,rank_decorated,Form of address
+287,Breane Taborwin,Cairhienin woman,epithet,KEEP,,
+288,Huan,my uncle Huan,epithet,KEEP,,How the Amyrlin refers to him
+288,Huan,the man with the braid,epithet,KEEP,,used repeatedly in the text
+288,Huan,the yellow-haired man,epithet,KEEP,,used to describe him
+290,Luthair Paendrag Mondwin,Luthair Paendrag Mondwin,primary,PROMOTE,promotion,from 'Luthair'
+290,Luthair Paendrag Mondwin,son of the Hawkwing,epithet,KEEP,,
+291,Tuon Athaem Kore Paendrag,Tuon Athaem Kore Paendrag,primary,PROMOTE,promotion,from 'Tuon'
+291,Tuon Athaem Kore Paendrag,Daughter of the Nine Moons,title,KEEP,,Her imperial title
+291,Tuon Athaem Kore Paendrag,High Lady Tuon,title,DROP,rank_decorated,"Used when she wears the veil, indicating she is merely a high lady rather than the Daughter of the Nine Moons"
+294,Rhian,little sister,epithet,REVIEW,generic_role,Used by Juin the Ogier
+295,Juin,Treebrother,title,KEEP,,How the Aiel address him
+297,Alar,Eldest of the Elders of Stedding Tsofu,title,KEEP,,
+303,Suroth Sabelle Meldarath,Suroth Sabelle Meldarath,primary,PROMOTE,promotion,from 'Suroth'
+303,Suroth Sabelle Meldarath,High Lady,title,REVIEW,empty_residue,
+303,Suroth Sabelle Meldarath,High Lady Suroth,title,DROP,rank_decorated,
+303,Suroth Sabelle Meldarath,High Lady Suroth Sabelle Meldarath,title,DROP,rank_decorated,
+304,Renna Emain,Renna Emain,primary,PROMOTE,promotion,from 'Renna'
+304,Renna Emain,sul'dam,title,KEEP,,
+305,Elbar,hook-nosed man,epithet,KEEP,,
+305,Elbar,hook-nosed officer,epithet,KEEP,,
+306,Alwhin,sharp-faced woman,epithet,KEEP,,
+306,Alwhin,der'sul'dam,title,KEEP,,Addressed as such by Elbar
+306,Alwhin,so'jhin,title,KEEP,,
+306,Alwhin,Voice,title,KEEP,,
+306,Alwhin,Voice of the Blood,title,KEEP,,
+309,Ryma,damane,epithet,KEEP,,
+309,Ryma,Pura,nickname,KEEP,,Name given to her by the Seanchan as a damane
+310,Seta Zarbey,Seta Zarbey,primary,PROMOTE,promotion,from 'Seta'
+310,Seta Zarbey,sul'dam,title,KEEP,,
+314,Birgitte Trahelion,Birgitte Trahelion,primary,PROMOTE,promotion,from 'Birgitte'
+314,Birgitte Trahelion,Birgitte Silverbow,epithet,KEEP,,
+314,Birgitte Trahelion,golden-haired Hunter for the Horn,epithet,KEEP,,
+314,Birgitte Trahelion,hero out of legend,epithet,KEEP,,
+314,Birgitte Trahelion,Hunter,epithet,KEEP,,
+314,Birgitte Trahelion,Hunter for the Horn,epithet,KEEP,,Referred to as 'the golden-haired Hunter' and later by name Birgitte
+314,Birgitte Trahelion,Hunter with the golden braid,epithet,KEEP,,
+314,Birgitte Trahelion,Captain-General,title,KEEP,,
+314,Birgitte Trahelion,Captain-General of the Queen's Guard,title,KEEP,,
+314,Birgitte Trahelion,Lady Birgitte,title,DROP,rank_decorated,
+314,Birgitte Trahelion,Lady Birgitte Trahelion,title,DROP,rank_decorated,
+314,Birgitte Trahelion,Warder,title,KEEP,,Merilille is astounded by her as a Warder
+317,Stepper,dun,epithet,COLLAPSE,article_dup,
+317,Stepper,dun stallion,epithet,COLLAPSE,article_dup,
+317,Stepper,the dun,epithet,KEEP,,
+317,Stepper,the dun stallion,epithet,KEEP,,
+318,Leya,the Tuatha'an woman,epithet,KEEP,,Descriptive reference
+318,Leya,Tuatha'an woman,epithet,COLLAPSE,article_dup,description by ethnicity
+318,Leya,Mistress Leya,title,DROP,rank_decorated,form of address used by Perrin
+330,Rilith,the weaver's daughter,epithet,KEEP,,Identified by her father's profession
+332,Banas,old Banas,epithet,DROP,descriptor_epithet,Described as old
+336,Faolain Orande,Faolain Orande,primary,PROMOTE,promotion,from 'Faolain'
+337,Theodrin Dabei,Theodrin Dabei,primary,PROMOTE,promotion,from 'Theodrin'
+337,Theodrin Dabei,Domani woman,epithet,KEEP,,
+337,Theodrin Dabei,"slim, apple-cheeked sister",epithet,REVIEW,generic_role,
+338,Marris,Marris Sedai,title,DROP,rank_decorated,Used by Leane when sending Faolain to her
+343,Coulin,Coulin Gaidin,title,KEEP,,Gaidin is the title for a Warder
+343,Coulin,Master of Arms,title,KEEP,,His position training Warders and those who come to train at the White Tower
+344,Modrellein,Queen Modrellein,title,KEEP,,Her title as Queen of Andor
+345,Brendas,the cool-eyed woman,epithet,KEEP,,How she is described before being named
+352,Beldeine Nyram,Beldeine Nyram,primary,PROMOTE,promotion,from 'Beldeine'
+352,Beldeine Nyram,pretty Green,epithet,KEEP,,
+352,Beldeine Nyram,Keeper,title,KEEP,,Keeper of the Chronicles in the vision
+352,Beldeine Nyram,Keeper of the Chronicles,title,KEEP,,
+354,Hammar,Hammar Gaidin,title,KEEP,,his Warder title
+355,Jearom,"Jearom, Gaidin",title,KEEP,,greatest blademaster title
+361,Joiya Byir,Black Ajah,epithet,KEEP,,
+361,Joiya Byir,Black sister,epithet,REVIEW,generic_role,
+361,Joiya Byir,Darkfriend,epithet,KEEP,,used by Egwene
+362,Silvie,poor old Silvie,epithet,KEEP,,self-description
+363,Laras,Mistress of the Kitchens,title,KEEP,,"Her functional title in the White Tower, later made formal by the Amyrlin"
+364,Raab,dark sailor,epithet,KEEP,,description used before his name is given
+364,Raab,one of the Sea Folk,epithet,KEEP,,description of his people
+365,Mada,the older woman,epithet,KEEP,,older than Saal
+366,Saal,the pretty young serving girl,epithet,KEEP,,first description
+366,Saal,the younger woman,epithet,KEEP,,younger than Mada
+371,Huan Mallia,Captain Mallia,title,KEEP,,his title as ship captain
+376,Gainor Furlan,innkeeper,epithet,REVIEW,generic_role,
+376,Gainor Furlan,Master Furlan,title,DROP,rank_decorated,The innkeeper at Remen
+377,Orban,Lord Orban,title,DROP,rank_decorated,
+378,Gann,Lord Gann,title,DROP,rank_decorated,
+379,Mother Leich,old woman,epithet,KEEP,,How Orban refers to her
+382,Gaul,Aielman,epithet,COLLAPSE,article_dup,
+382,Gaul,black-veiled Aiel,epithet,KEEP,,Common descriptive term
+382,Gaul,Shaarad,epithet,KEEP,,"Chiad calls him Shaarad, referring to his clan affiliation"
+382,Gaul,Stone Dog,epithet,KEEP,,Bain and Chiad taunt him with this faction nickname
+382,Gaul,the Aiel,epithet,KEEP,,generic reference to him as an individual
+382,Gaul,the Aielman,epithet,KEEP,,
+382,Gaul,the caged Aiel,epithet,KEEP,,Perrin's thoughts before freeing him.
+382,Gaul,wild Aielmen,epithet,KEEP,,How townspeople refer to him
+387,Zarine Bashere,black stallion,epithet,COLLAPSE,article_dup,
+387,Zarine Bashere,Blade,epithet,KEEP,,translation of Mandarb
+387,Zarine Bashere,Falcon,epithet,KEEP,,"Moiraine calls her this, linked to Min's vision"
+387,Zarine Bashere,great black warhorse,epithet,KEEP,,
+387,Zarine Bashere,liege lady,epithet,KEEP,,
+387,Zarine Bashere,tall black stallion,epithet,KEEP,,
+387,Zarine Bashere,the black stallion,epithet,KEEP,,
+387,Zarine Bashere,the Lady,epithet,REVIEW,empty_residue,Used by Dannil
+387,Zarine Bashere,Faile,nickname,DROP,rank_decorated,"Name meaning 'falcon' in the Old Tongue, what her father used to call her, what she decides to call herself at the end of the chapter"
+387,Zarine Bashere,Faile Aybara,nickname,KEEP,,Perrin considers writing this on letter after their marriage
+387,Zarine Bashere,Mandarb,nickname,KEEP,,"Name she initially chose for herself as a Hunter, meaning 'blade' in the Old Tongue, abandoned when she learned Lan's horse has that name"
+387,Zarine Bashere,gai'shain,title,KEEP,,referred to as such by her captors
+387,Zarine Bashere,Lady Faile,title,DROP,rank_decorated,Used by Jac al'Seen; farm folk take her for nobly born
+387,Zarine Bashere,Lady Faile t'Aybara,title,DROP,rank_decorated,
+387,Zarine Bashere,my Lady Faile,title,KEEP,,
+389,Chin Ellisor,Captain Ellisor,title,KEEP,,
+390,Bennae,Bennae Sedai,title,DROP,rank_decorated,
+391,Aviendha,Aielwoman,epithet,KEEP,,
+391,Aviendha,wilder,epithet,KEEP,,
+391,Aviendha,Lady Aviendha,title,DROP,rank_decorated,Used by Essande
+392,Bain,flame-haired,epithet,KEEP,,
+393,Chiad,Maiden,epithet,KEEP,,
+396,Rhuarc,Aielman,epithet,KEEP,,
+396,Rhuarc,clan chief,title,KEEP,,
+402,Amys,"youthful, white-haired Wise One",epithet,KEEP,,
+402,Amys,Wise One,title,KEEP,,
+403,Bair of the Haido Shaarad,Bair of the Haido Shaarad,primary,PROMOTE,promotion,from 'Bair'
+403,Bair of the Haido Shaarad,Wise One,title,KEEP,,
+404,Melaine,sun-haired Melaine,epithet,KEEP,,
+404,Melaine,sun-haired one,epithet,KEEP,,
+404,Melaine,sun-haired vixen,epithet,KEEP,,Nynaeve's internal description
+404,Melaine,sun-haired Wise One,epithet,KEEP,,
+404,Melaine,Wise One,title,KEEP,,
+405,Seana,Wise One,title,KEEP,,
+406,Mist,fog-colored mare,epithet,KEEP,,
+406,Mist,gray,epithet,COLLAPSE,article_dup,
+406,Mist,gray mare,epithet,COLLAPSE,article_dup,
+406,Mist,the gray,epithet,KEEP,,
+406,Mist,the gray mare,epithet,KEEP,,
+406,Mist,the mare,epithet,KEEP,,
+412,Sammael,Chosen,epithet,KEEP,,
+412,Sammael,Forsaken,title,KEEP,,
+412,Sammael,Great Master,title,KEEP,,How Carridin addresses him
+412,Sammael,Nae'blis,title,KEEP,,Claims this title to Graendal to cow her
+413,Coline,Cook,epithet,REVIEW,generic_role,everybody calls her Cook
+415,Comar,Lord Comar,title,DROP,rank_decorated,his title
+416,Elber,the fat officer,epithet,KEEP,,descriptor used for him
+417,Dyelin Taravin,Dyelin Taravin,primary,PROMOTE,promotion,from 'Dyelin'
+417,Dyelin Taravin,High Seat of House Taravin,title,KEEP,,
+417,Dyelin Taravin,Lady Dyelin,title,DROP,rank_decorated,
+417,Dyelin Taravin,Lady Dyelin of House Taravin,title,KEEP,,
+417,Dyelin Taravin,the Lady Dyelin,title,DROP,rank_decorated,her formal title
+419,Ailhuin Guenna,Mother Guenna,title,DROP,rank_decorated,How she is addressed as a Wise Woman
+419,Ailhuin Guenna,Wise Woman,title,KEEP,,equivalent of Wisdom in Tear
+420,Juilin Sandar,footman,epithet,KEEP,,disguised as a footman during escape from Mardecin
+420,Juilin Sandar,Juilin Thief-catcher,epithet,KEEP,,Nynaeve addresses him by this epithet
+420,Juilin Sandar,thief-catcher,epithet,KEEP,,his profession
+420,Juilin Sandar,thief-taker,epithet,KEEP,,Mat's variant term
+420,Juilin Sandar,Master Sandar,title,DROP,rank_decorated,
+424,Jurah Haret,innkeeper,epithet,REVIEW,generic_role,
+424,Jurah Haret,Master Haret,title,DROP,rank_decorated,
+425,Dermid Ajala,the smith,epithet,KEEP,,
+426,Be'lal,the Envious,epithet,KEEP,,called this because he envied Lews Therin
+426,Be'lal,the Netweaver,epithet,KEEP,,name for a schemer and planner
+426,Be'lal,Great Master Be'lal,title,KEEP,,Liandrin uses this title.
+430,Darlin,obvious Tairen nobleman,epithet,KEEP,,Min's description
+430,Darlin,High Lord Darlin,title,DROP,rank_decorated,
+430,Darlin,High Lord Darlin Sisnera,title,KEEP,,full name and title given in text
+430,Darlin,Lord Dragon's Steward of Tear,title,KEEP,,
+431,Callandor,the Sword held in the Stone,epithet,KEEP,,
+433,Berelain sur Paendrag Paeron,Berelain sur Paendrag Paeron,primary,PROMOTE,promotion,from 'Berelain'
+433,Berelain sur Paendrag Paeron,Mayener strumpet,epithet,KEEP,,Used by Faile in anger
+433,Berelain sur Paendrag Paeron,Mayener wench,epithet,KEEP,,
+433,Berelain sur Paendrag Paeron,First Lady Berelain,title,KEEP,,
+433,Berelain sur Paendrag Paeron,First of Mayene,title,KEEP,,Her ruling title
+433,Berelain sur Paendrag Paeron,my Lady First,title,KEEP,,
+433,Berelain sur Paendrag Paeron,the First,title,KEEP,,
+434,Boanne,Songmistress at Taralan,title,KEEP,,
+440,Farran,Hundredman Farran,title,KEEP,,
+444,Edorion Selorna,Edorion Selorna,primary,PROMOTE,promotion,from 'Edorion'
+444,Edorion Selorna,Edorion of House Selorna,title,KEEP,,
+444,Edorion Selorna,Lord Edorion,title,DROP,rank_decorated,
+446,Estean Andiama,Estean Andiama,primary,PROMOTE,promotion,from 'Estean'
+446,Estean Andiama,Estean of House Andiama,title,KEEP,,
+448,Torean,High Lord Torean,title,DROP,rank_decorated,Tairen High Lord
+448,Torean,the High Lord Torean,title,DROP,rank_decorated,
+450,Sunamon,High Lord Sunamon,title,DROP,rank_decorated,
+450,Sunamon,the High Lord Sunamon,title,DROP,rank_decorated,
+451,Meilan,High Lord Meilan,title,DROP,rank_decorated,
+451,Meilan,Lord Meilan,title,DROP,rank_decorated,
+451,Meilan,the High Lord Meilan,title,DROP,rank_decorated,
+454,Asmodean,bard,epithet,KEEP,,
+454,Asmodean,court-bard,epithet,KEEP,,a small conceit Asmodean surrounds himself with
+454,Asmodean,gleeman,epithet,REVIEW,generic_role,Role he played as Jasin Natael
+454,Asmodean,harper,epithet,KEEP,,
+455,Moghedien,Chosen,epithet,COLLAPSE,article_dup,She considers herself still one of the Chosen
+455,Moghedien,Forsaken,epithet,COLLAPSE,article_dup,
+455,Moghedien,Spider,epithet,KEEP,,
+455,Moghedien,the Chosen,epithet,KEEP,,
+455,Moghedien,the Forsaken,epithet,KEEP,,
+455,Moghedien,Great Mistress,title,KEEP,,Form of address used by the Black Ajah sisters toward her
+456,Rahvin,Chosen,epithet,KEEP,,
+456,Rahvin,Forsaken,epithet,KEEP,,
+456,Rahvin,Great Master,title,KEEP,,
+457,Lian,roofmistress,title,KEEP,,
+458,Paetram,Forkbeard,epithet,KEEP,,Described as having a forked yellow beard
+458,Paetram,master merchant,epithet,KEEP,,Identified by three silver chains on coat as a Kandori master merchant
+459,Dara,plump cook's helper,epithet,KEEP,,Mat's description of her
+462,Swallow,black mare,epithet,COLLAPSE,article_dup,
+462,Swallow,Faile's black mare,epithet,KEEP,,
+462,Swallow,night-black mare,epithet,KEEP,,
+462,Swallow,Tairen mare,epithet,KEEP,,
+462,Swallow,the black mare,epithet,KEEP,,
+462,Swallow,the glossy black mare,epithet,KEEP,,
+463,Coine din Jubai Wild Winds,Sailmistress,title,KEEP,,Captain of the Wavedancer
+464,Jorin din Jubai White Wing,Windfinder,title,KEEP,,Title of the Sea Folk woman who controls the winds/navigation
+465,Toram,Cargomaster,title,KEEP,,His role aboard the Wavedancer
+467,Alteima,High Lady Alteima,title,DROP,rank_decorated,
+467,Alteima,the High Lady Alteima,title,DROP,rank_decorated,
+468,Estanda,High Lady Estanda,title,DROP,rank_decorated,
+469,Leitha,Lady of the Land,title,KEEP,,
+470,Jeade'en,True Finder,epithet,KEEP,,"Translation in Old Tongue of the name Jeade'en, as noted by Rand"
+471,Pips,bay,epithet,KEEP,,
+471,Pips,blunt-nosed,epithet,KEEP,,
+471,Pips,blunt-nosed bay gelding,epithet,KEEP,,
+471,Pips,gelding,epithet,COLLAPSE,article_dup,Mat's gelding
+471,Pips,nondescript brown gelding,epithet,KEEP,,
+471,Pips,the gelding,epithet,KEEP,,
+472,Couladin,Car'a'carn,title,KEEP,,Falsely claimed
+476,Sealdre,Wise One,title,KEEP,,Implied by her ability to speak with other Wise Ones in dreams
+502,Solinda,Solinda Sedai,title,DROP,rank_decorated,
+510,Ihvon,slim Warder,epithet,KEEP,,
+511,Jac al'Seen,Master al'Seen,title,DROP,rank_decorated,
+512,Elisa al'Seen,Mistress al'Seen,title,DROP,rank_decorated,
+513,Astelle al'Seen,Old Mistress al'Seen,title,KEEP,,
+515,Flann Lewin,Master Lewin,title,DROP,rank_decorated,
+518,Natley Lewin,Nat,nickname,KEEP,,
+526,Natti Cauthon,Mistress Cauthon,title,DROP,rank_decorated,
+527,Bodewhin Cauthon,Bode,nickname,KEEP,,
+529,Hadnan Kadere,merchant,epithet,COLLAPSE,article_dup,
+529,Hadnan Kadere,peddler,epithet,REVIEW,generic_role,
+529,Hadnan Kadere,the merchant,epithet,REVIEW,generic_role,
+529,Hadnan Kadere,Master Kadere,title,DROP,rank_decorated,
+531,Dorindha,Maiden,epithet,KEEP,,
+531,Dorindha,roofmistress,title,KEEP,,roofmistress of Smoke Springs Hold
+532,Isendre,sorda,epithet,KEEP,,Aiel insult meaning a sly rat
+534,Adelin,yellow-haired woman,epithet,KEEP,,Described as yellow-haired in the text
+540,Bethamin Zeami,Bethamin Zeami,primary,PROMOTE,promotion,from 'Bethamin'
+540,Bethamin Zeami,Mistress Zeami,title,DROP,rank_decorated,
+540,Bethamin Zeami,sul'dam,title,KEEP,,
+541,Rendra,innkeeper,epithet,REVIEW,generic_role,
+541,Rendra,Mistress Rendra,title,DROP,rank_decorated,innkeeper of the Three Plum Court
+557,Danelle,dreamy Brown sister,epithet,REVIEW,generic_role,
+557,Danelle,young Brown,epithet,KEEP,,
+558,Joline Maza,Green,epithet,KEEP,,
+558,Joline Maza,Joline Aes Sedai,title,DROP,rank_decorated,
+561,Temaile Kinderode,Black sister,epithet,REVIEW,generic_role,
+562,Amathera,da'covale,epithet,KEEP,,
+562,Amathera,Panarch,title,COLLAPSE,article_dup,
+562,Amathera,Panarch Amathera,title,KEEP,,
+562,Amathera,Panarch of Tarabon,title,KEEP,,
+562,Amathera,the Panarch,title,KEEP,,Panarch of Tarabon
+563,Ispan Shefar,Ispan Shefar,primary,PROMOTE,promotion,from 'Ispan'
+563,Ispan Shefar,Black sister,epithet,REVIEW,generic_role,Elayne refers to her as the Black sister
+563,Ispan Shefar,Darkfriend,epithet,KEEP,,
+563,Ispan Shefar,Shadowrunner,epithet,KEEP,,used by Aviendha and others to describe her as a darkfriend/Black Ajah
+563,Ispan Shefar,Taraboner woman,epithet,KEEP,,
+563,Ispan Shefar,Ispan Sedai,title,DROP,rank_decorated,
+563,Ispan Shefar,Lady Ispan,title,DROP,rank_decorated,The cook refers to her as Lady Ispan; Elayne notes there is an Ispan on the list of Black sisters. Not yet directly present but has an active room in the palace.
+564,Jerinvar Barstere,Jer,nickname,KEEP,,
+564,Jerinvar Barstere,Mayor of Watch Hill,title,KEEP,,
+566,Sevanna of the Jumai Shaido,Sevanna of the Jumai Shaido,primary,PROMOTE,promotion,from 'Sevanna'
+566,Sevanna of the Jumai Shaido,Lina,nickname,KEEP,,"Therava's contemptuous nickname for Galina, not Sevanna — recorded under Galina"
+566,Sevanna of the Jumai Shaido,Lady Sevanna,title,DROP,rank_decorated,
+566,Sevanna of the Jumai Shaido,roofmistress,title,KEEP,,Stands for Suladric as roofmistress of Comarda Hold
+566,Sevanna of the Jumai Shaido,Wise One,title,KEEP,,Contested claim; she served no apprenticeship
+574,Teslyn Baradon,Teslyn Baradon,primary,PROMOTE,promotion,from 'Teslyn'
+574,Teslyn Baradon,damane,epithet,KEEP,,
+574,Teslyn Baradon,Tessi,nickname,KEEP,,Name used by the der'sul'dam for Teslyn as damane
+575,Javindhra,Sitter for the Red,title,KEEP,,Sitter for the Red Ajah in the Hall of the Tower
+578,Silviana,Mistress of Novices,title,KEEP,,
+579,Elegar,Lord Elegar,title,DROP,rank_decorated,
+580,Graendal,Chosen,epithet,KEEP,,
+580,Graendal,Forsaken,epithet,KEEP,,
+583,Admer Nem,Master Nem,title,DROP,rank_decorated,
+587,Enaila,diminutive woman,epithet,KEEP,,
+587,Enaila,fiery-haired Enaila,epithet,KEEP,,
+588,Melindhra,Shaido Maiden,epithet,KEEP,,described as the Shaido Maiden Mat has taken up with
+594,Sorilea,bony old woman,epithet,KEEP,,
+594,Sorilea,"leather-faced, white-haired Wise One",epithet,KEEP,,
+594,Sorilea,leathery white-haired Wise One,epithet,KEEP,,
+594,Sorilea,white-haired harridan,epithet,KEEP,,
+594,Sorilea,Wise One,title,KEEP,,
+594,Sorilea,Wise One of Shende Hold,title,KEEP,,
+595,Sulin,Far Dareis Mai,epithet,KEEP,,Used as a form of address by Rand
+595,Sulin,Maiden,epithet,KEEP,,
+595,Sulin,odd serving woman,epithet,KEEP,,Perrin perceives her as a servant due to her current role/punishment
+595,Sulin,white-haired leader of Rand's escort of Aiel Maidens,epithet,KEEP,,
+595,Sulin,white-haired Maiden,epithet,KEEP,,
+595,Sulin,white-haired serving woman,epithet,KEEP,,Sulin has been disguised as a servant to meet toh; she reveals herself in this chapter
+595,Sulin,white-haired woman,epithet,KEEP,,
+595,Sulin,My Lord Dragon,title,KEEP,,Form of address she uses for Rand
+595,Sulin,roofmistress,title,KEEP,,roofmistress of the Roof of the Maidens in Rhuidean; she told the Maidens who stayed to choose another and now leads those traveling
+596,Ronde Macura,seamstress,epithet,REVIEW,generic_role,runs the seamstress shop in Mardecin
+596,Ronde Macura,Mistress Macura,title,DROP,rank_decorated,
+600,Duranda Tharne,Mistress Tharne,title,DROP,rank_decorated,
+603,Traveler,big-nosed bay,epithet,KEEP,,
+603,Traveler,big-nosed bay gelding,epithet,KEEP,,
+603,Traveler,sturdy bay gelding,epithet,KEEP,,
+604,Valan Luca,pretty man,epithet,KEEP,,Birgitte's nickname for him
+604,Valan Luca,showman extraordinary,epithet,KEEP,,self-applied epithet
+604,Valan Luca,Master Luca,title,DROP,rank_decorated,
+605,Mistress Jharen,innkeeper,epithet,REVIEW,generic_role,runs The Light of Truth inn in Sienda
+606,Mistress Alfara,innkeeper,epithet,REVIEW,generic_role,"innkeeper of Bellon Ford Inn in Bellon, Amadicia"
+607,Sierin Vayu,Amyrlin Seat,title,KEEP,,was raised Amyrlin shortly after Moiraine and Siuan began their search
+610,Cerandin,the pale-haired Seanchan woman,epithet,KEEP,,
+610,Cerandin,the Seanchan woman,epithet,KEEP,,
+611,Petra,strongman,epithet,KEEP,,
+614,Taeric,Chavana,nickname,KEEP,,Claims to be one of the Chavana brothers; acrobat
+615,Barit,Chavana,nickname,KEEP,,Claims to be one of the Chavana brothers; acrobat
+628,Edesina Azzedin,Edesina Azzedin,primary,PROMOTE,promotion,from 'Edesina'
+628,Edesina Azzedin,damane,epithet,KEEP,,
+629,Kiruna Nachiman,Kiruna Nachiman,primary,PROMOTE,promotion,from 'Kiruna'
+629,Kiruna Nachiman,Green sister,epithet,REVIEW,generic_role,
+629,Kiruna Nachiman,Kiruna Sedai,title,DROP,rank_decorated,
+631,Morvrin,stout Brown sister,epithet,REVIEW,generic_role,
+634,Nuhel,Illianer Warder,epithet,KEEP,,
+634,Nuhel,Nuhel Gaidin,title,KEEP,,
+635,Meresin,Lieutenant Lord Meresin,title,KEEP,,
+636,Daricain,Lieutenant Lord Daricain,title,KEEP,,
+637,Morsa,Lady Morsa,title,DROP,rank_decorated,
+638,Jalindin,Seeker,title,KEEP,,Title within the Seanchan Seekers for Truth organization
+638,Jalindin,Seeker for Truth,title,KEEP,,
+642,Alliandre Maritha Kigarin,Alliandre Maritha Kigarin,primary,PROMOTE,promotion,from 'Alliandre'
+642,Alliandre Maritha Kigarin,"Alliandre, Blessed of the Light, Queen of Ghealdan",title,KEEP,,Full formal title as stated by Uno
+642,Alliandre Maritha Kigarin,Blessed of the Light,title,KEEP,,
+642,Alliandre Maritha Kigarin,Defender of Garen's Wall,title,KEEP,,
+642,Alliandre Maritha Kigarin,Queen Alliandre,title,KEEP,,
+642,Alliandre Maritha Kigarin,Queen of Ghealdan,title,KEEP,,
+643,Muelin,contortionist,epithet,KEEP,,
+644,Weiramon Saniago,Weiramon Saniago,primary,PROMOTE,promotion,from 'Weiramon'
+644,Weiramon Saniago,High Lord Weiramon,title,DROP,rank_decorated,
+644,Weiramon Saniago,my Lord Dragon,title,KEEP,,form of address used by Weiramon to Rand
+646,Roidan of the Thunder Walkers,Roidan of the Thunder Walkers,primary,PROMOTE,promotion,from 'Roidan'
+647,Kin Tovere,lensmaker,epithet,KEEP,,craftsman who makes lenses and looking glasses
+647,Kin Tovere,Master Tovere,title,DROP,rank_decorated,
+652,Melanril,House Asegora,title,KEEP,,Member of House Asegora
+654,Talmanes Delovinde,Talmanes Delovinde,primary,PROMOTE,promotion,from 'Talmanes'
+654,Talmanes Delovinde,Lord Talmanes,title,DROP,rank_decorated,
+654,Talmanes Delovinde,Talmanes of House Delovinde,title,KEEP,,
+655,Nalesean,Tairen,epithet,KEEP,,
+655,Nalesean,Lord Nalesean,title,DROP,rank_decorated,
+657,Dobraine Taborwin,Dobraine Taborwin,primary,PROMOTE,promotion,from 'Dobraine'
+657,Dobraine Taborwin,High Seat of House Taborwin,title,KEEP,,
+657,Dobraine Taborwin,Lord Dobraine,title,DROP,rank_decorated,
+657,Dobraine Taborwin,Lord Dobraine Taborwin,title,DROP,rank_decorated,
+658,Colavaere Saighan,Colavaere Saighan,primary,PROMOTE,promotion,from 'Colavaere'
+658,Colavaere Saighan,Lady Colavaere,title,DROP,rank_decorated,
+658,Colavaere Saighan,My Lady Colavaere,title,KEEP,,
+658,Colavaere Saighan,Queen of Cairhien,title,KEEP,,Self-proclaimed; stripped by Rand
+659,Maringil,Lord Maringil,title,DROP,rank_decorated,
+667,Brugh,Chavana,nickname,KEEP,,One of a pair of brothers called the Chavanas
+668,Agni Neres,Captain Neres,title,KEEP,,
+669,Nicola Treehill,Nicola Treehill,primary,PROMOTE,promotion,from 'Nicola'
+669,Nicola Treehill,novice,epithet,KEEP,,Her rank in Salidar
+671,Areina Nermasiv,Areina Nermasiv,primary,PROMOTE,promotion,from 'Areina'
+671,Areina Nermasiv,Hunter for the Horn,epithet,KEEP,,
+675,Phaedrine,Phaedrine Sedai,title,DROP,rank_decorated,
+679,Somara of the Bent Peak Daryne,Somara of the Bent Peak Daryne,primary,PROMOTE,promotion,from 'Somara'
+679,Somara of the Bent Peak Daryne,flaxen-haired friend,epithet,KEEP,,
+679,Somara of the Bent Peak Daryne,flaxen-haired Somara,epithet,KEEP,,
+679,Somara of the Bent Peak Daryne,flaxen-haired woman,epithet,KEEP,,
+679,Somara of the Bent Peak Daryne,flaxen-headed,epithet,KEEP,,
+680,Turol of the Stone Dogs,Turol of the Stone Dogs,primary,PROMOTE,promotion,from 'Turol'
+682,Davram Bashere,the Saldaean,epithet,KEEP,,
+682,Davram Bashere,Lord Bashere,title,DROP,rank_decorated,
+682,Davram Bashere,"Lord of Bashere, Tyr and Sidona",title,KEEP,,
+682,Davram Bashere,"Lord of Bashere, Tyr and Sidona, Guardian of the Blightborder, Defender of the Heartland, Marshal-General to Queen Tenobia of Saldaea",title,KEEP,,
+682,Davram Bashere,Marshal-General of Saldaea,title,KEEP,,
+683,Shaidar Haran,Halfman,epithet,KEEP,,Generic Myrddraal term applied to this individual
+683,Shaidar Haran,Hand of the Dark,epithet,KEEP,,Translation of 'Shaidar Haran' in the Old Tongue
+683,Shaidar Haran,Hand of the Shadow,epithet,KEEP,,
+683,Shaidar Haran,the Myrddraal,epithet,KEEP,,
+683,Shaidar Haran,Mia'cova,title,KEEP,,"Title meaning 'One Who Owns Me' / 'My Owner', used by Moghedien when addressing it"
+684,Ailron,"Ailron, Anointed by the Light, King and Defender of Amadicia, Guardian of the Southern Gate",title,KEEP,,
+684,Ailron,King of Amadicia,title,KEEP,,
+685,Mesaana,Chosen,epithet,KEEP,,
+685,Mesaana,Forsaken,epithet,KEEP,,
+685,Mesaana,Great Mistress,title,KEEP,,
+686,Semirhage,Chosen,epithet,KEEP,,
+686,Semirhage,Forsaken,epithet,KEEP,,
+687,Osan'gar,Chosen,epithet,KEEP,,Implied—one of the Forsaken reborn
+687,Osan'gar,Forsaken,epithet,KEEP,,
+687,Osan'gar,Asha'man Dashiva,title,KEEP,,
+688,Aran'gar,Chosen,epithet,KEEP,,Implied—one of the Forsaken reborn
+688,Aran'gar,Delana Sedai's secretary,epithet,KEEP,,
+688,Aran'gar,Forsaken,epithet,KEEP,,
+689,Coiren,Ambassador from the White Tower,title,KEEP,,
+689,Coiren,Coiren Sedai,title,DROP,rank_decorated,
+690,Katerine Alruddin,Katerine Sedai,title,DROP,rank_decorated,
+691,Galina Casban,da'tsang,epithet,KEEP,,Declared despised one by Sevanna and the Wise Ones
+691,Galina Casban,gai'shain,epithet,KEEP,,
+691,Galina Casban,Lina,nickname,KEEP,,Therava's contemptuous nickname for her
+691,Galina Casban,little Lina,nickname,KEEP,,
+691,Galina Casban,Galina Sedai,title,DROP,rank_decorated,
+691,Galina Casban,Highest,title,KEEP,,Called this privately by other Red sisters as head of the Red Ajah
+693,Therava,eagle-eyed Wise One,epithet,KEEP,,
+693,Therava,eagle-faced woman,epithet,KEEP,,
+693,Therava,Wise One,title,KEEP,,
+695,Janya Frende,Janya Sedai,title,DROP,rank_decorated,
+696,Tiana Noselle,Mistress of Novices,title,KEEP,,In Salidar
+697,Erian Boroleos,Erian Boroleos,primary,PROMOTE,promotion,from 'Erian'
+697,Erian Boroleos,pale Illianer sister,epithet,REVIEW,generic_role,
+698,Nesune Bihara,Nesune Bihara,primary,PROMOTE,promotion,from 'Nesune'
+698,Nesune Bihara,dark-haired Brown sister,epithet,REVIEW,generic_role,
+698,Nesune Bihara,slender Brown,epithet,KEEP,,
+698,Nesune Bihara,"slender, bird-like sister",epithet,REVIEW,generic_role,
+700,Mil Tesen,old Mil,nickname,DROP,descriptor_epithet,
+700,Mil Tesen,Master Tesen,title,DROP,rank_decorated,
+701,Sebban Balwer,Sebban Balwer,primary,PROMOTE,promotion,from 'Balwer'
+701,Sebban Balwer,secretary,epithet,KEEP,,Referred to as Niall's dried-up little secretary
+701,Sebban Balwer,sparrow perched on the saddle,epithet,KEEP,,
+701,Sebban Balwer,Master Balwer,title,DROP,rank_decorated,
+706,Arymilla,Lady Arymilla,title,DROP,rank_decorated,
+707,Elenia,Lady Elenia,title,DROP,rank_decorated,
+708,Jarid,High Seat of Sarand,title,KEEP,,
+711,Lir,Lord Lir,title,DROP,rank_decorated,
+712,Henren,Lord Henren,title,DROP,rank_decorated,
+713,Carlys,Lady Carlys,title,DROP,rank_decorated,
+715,Nasin,Lord Nasin,title,DROP,rank_decorated,
+718,Liah,scar-faced,epithet,KEEP,,
+719,Damer Flinn,bald-headed old man with a fringe of white hair,epithet,KEEP,,
+719,Damer Flinn,grizzled Asha'man,epithet,KEEP,,
+719,Damer Flinn,grizzled Damer,epithet,DROP,descriptor_epithet,
+719,Damer Flinn,grizzled old Damer,epithet,DROP,descriptor_epithet,
+719,Damer Flinn,grizzled onetime Guardsman,epithet,KEEP,,
+719,Damer Flinn,the old man,epithet,KEEP,,
+719,Damer Flinn,Master Flinn,title,DROP,rank_decorated,
+720,Eben Hopwil,young Eben,epithet,DROP,descriptor_epithet,
+727,Semaradrid Maravin,Semaradrid Maravin,primary,PROMOTE,promotion,from 'Semaradrid'
+727,Semaradrid Maravin,Lord Semaradrid,title,DROP,rank_decorated,
+732,Olver,young Olver,epithet,DROP,descriptor_epithet,
+733,Harnan,file leader,epithet,KEEP,,
+735,Paers,Lord Paers,title,DROP,rank_decorated,
+736,Culen,Lord Culen,title,DROP,rank_decorated,
+738,Chiape,Sh'boan,title,KEEP,,Was Sh'boan (a kind of empress) in the lands beyond the Aiel Waste before being taken by Graendal
+739,Shaofan,Sh'botay,title,KEEP,,Was to become Sh'botay (emperor-figure) in the lands beyond the Aiel Waste before being taken by Graendal
+744,Ituralde,Lord Ituralde,title,DROP,rank_decorated,
+747,Sarena,Lady Sarena,title,DROP,rank_decorated,
+749,Tarna Feir,Red sister,epithet,REVIEW,generic_role,How Salidar characters refer to her
+749,Tarna Feir,the Red,epithet,KEEP,,
+749,Tarna Feir,Tower envoy,epithet,KEEP,,
+749,Tarna Feir,yellow-haired Red sister,epithet,REVIEW,generic_role,
+749,Tarna Feir,Tarna Sedai,title,DROP,rank_decorated,
+750,Abdel Omerna,Lord Captain,title,REVIEW,empty_residue,
+750,Abdel Omerna,"Lord Captain, Anointed of the Light",title,KEEP,,
+756,Dagendra,blocky Maiden,epithet,KEEP,,
+767,Reene Harfor,First Maid,title,KEEP,,
+767,Reene Harfor,Mistress Harfor,title,DROP,rank_decorated,
+768,Halwin Norry,chief clerk,title,KEEP,,
+768,Halwin Norry,First Clerk,title,KEEP,,referred to as 'the First Clerk'
+768,Halwin Norry,Master Norry,title,DROP,rank_decorated,
+769,Master Dilham,innkeeper,epithet,REVIEW,generic_role,
+769,Master Dilham,round-faced man with three chins,epithet,KEEP,,
+770,Henre Haslin,Master of the Sword,title,KEEP,,Former Master of the Sword for the Queen's Guards
+771,Jonan Adley,Jonan Adley,primary,PROMOTE,promotion,from 'Adley'
+774,Ashmanaille,lanky Gray,epithet,KEEP,,
+780,Mulinda,skinny serving woman,epithet,KEEP,,
+781,Satina,plump woman,epithet,KEEP,,
+784,Romanda,Yellow Sitter,epithet,KEEP,,
+784,Romanda,Sitter,title,KEEP,,Eldest Sitter; by tradition makes pronouncements from the Hall
+785,Merilille Ceandevin,Merilille Ceandevin,primary,PROMOTE,promotion,from 'Merilille'
+785,Merilille Ceandevin,Gray,epithet,COLLAPSE,article_dup,referred to as the Gray Aes Sedai
+785,Merilille Ceandevin,Gray sister,epithet,REVIEW,generic_role,
+785,Merilille Ceandevin,slim Gray,epithet,KEEP,,
+785,Merilille Ceandevin,slim little Gray sister,epithet,REVIEW,generic_role,
+785,Merilille Ceandevin,the Gray,epithet,KEEP,,
+785,Merilille Ceandevin,unflappable Merilille,epithet,KEEP,,
+785,Merilille Ceandevin,Merilille Sedai,title,DROP,rank_decorated,
+786,Abelle,Lord Abelle of House Pendar,title,KEEP,,
+787,Luan,Lord Luan,title,DROP,rank_decorated,
+787,Luan,Lord Luan of House Norwelyn,title,KEEP,,
+788,Ellorien,Lady Ellorien,title,DROP,rank_decorated,
+788,Ellorien,Lady Ellorien of House Traemane,title,KEEP,,
+790,Havien Nurelle,First Lieutenant,title,KEEP,,
+790,Havien Nurelle,Lord Lieutenant,title,KEEP,,Lord Lieutenant in the Winged Guards
+792,Idrien Tarsin,Headmistress,title,KEEP,,
+794,Herid Fel,Master Fel,title,DROP,rank_decorated,
+796,Edarra,Wise One,title,KEEP,,
+797,Selande Darengil,Selande Darengil,primary,PROMOTE,promotion,from 'Selande'
+799,Anaiyella,High Lady Anaiyella,title,DROP,rank_decorated,
+801,Covril,Speaker,title,KEEP,,Referred to as a respected Speaker
+803,Nandera,graying Maiden,epithet,KEEP,,
+804,Chel Vanin,Master Vanin,title,DROP,rank_decorated,
+809,Corelna,green-eyed hawk of a woman with gray heavy in her flaxen hair,epithet,KEEP,,
+810,Tialin,lean redhead with a sharp nose,epithet,KEEP,,
+812,Sarene Nemdahl,Sarene Nemdahl,primary,PROMOTE,promotion,from 'Sarene'
+815,Deira ni Ghaline t'Bashere,Bashere's wife,epithet,KEEP,,
+815,Deira ni Ghaline t'Bashere,Lady Deira,title,DROP,rank_decorated,
+823,Harine din Togara Two Winds,Ambassador Extraordinary for the Mistress of the Ships to the Atha'an Miere,title,KEEP,,
+823,Harine din Togara Two Winds,Ambassador Extraordinary of the Mistress of the Ships to the Atha'an Miere,title,KEEP,,
+823,Harine din Togara Two Winds,Wavemistress,title,KEEP,,
+823,Harine din Togara Two Winds,Wavemistress of Clan Shodein,title,KEEP,,
+823,Harine din Togara Two Winds,Wavemistress to Clan Shodein,title,KEEP,,
+827,Zaida din Parede Blackwing,Wavemistress,title,KEEP,,
+827,Zaida din Parede Blackwing,Wavemistress of Clan Catelar,title,KEEP,,
+830,Jahar Narishma,my pretty,epithet,KEEP,,
+830,Jahar Narishma,pretty Jahar,epithet,KEEP,,
+830,Jahar Narishma,so-pretty Jahar,epithet,KEEP,,
+830,Jahar Narishma,Young Narishma,epithet,DROP,descriptor_epithet,
+832,Tervail Dura,Tervail Dura,primary,PROMOTE,promotion,from 'Tervail'
+833,Lelaine,Blue Sitter,epithet,KEEP,,
+834,Delana Mosalaine,Delana Mosalaine,primary,PROMOTE,promotion,from 'Delana'
+834,Delana Mosalaine,Gray Sitter,epithet,KEEP,,
+834,Delana Mosalaine,Delana Sedai,title,DROP,rank_decorated,
+835,Varilin,Sitter for the Gray,title,KEEP,,
+845,Rhadam Asunawa,High Inquisitor,title,KEEP,,
+852,Malind Nachenin,Malind Nachenin,primary,PROMOTE,promotion,from 'Malind'
+855,Shana,pop-eyed White,epithet,KEEP,,
+856,Merana Ambrey,Merana Ambrey,primary,PROMOTE,promotion,from 'Merana'
+856,Merana Ambrey,Gray sister,epithet,REVIEW,generic_role,
+856,Merana Ambrey,Merana Sedai,title,DROP,rank_decorated,
+859,Manel Rochaid,Manel Rochaid,primary,PROMOTE,promotion,from 'Rochaid'
+859,Manel Rochaid,Baijan'm'hael,title,KEEP,,self-styled rank meaning Attack Leader in the Old Tongue
+861,Seonid Traighan,Seonid Traighan,primary,PROMOTE,promotion,from 'Seonid'
+861,Seonid Traighan,Green,epithet,KEEP,,
+861,Seonid Traighan,Green sister,epithet,REVIEW,generic_role,
+861,Seonid Traighan,pale-cheeked Green,epithet,KEEP,,
+861,Seonid Traighan,Seonid Sedai,title,DROP,rank_decorated,
+862,Masuri Sokawa,Masuri Sokawa,primary,PROMOTE,promotion,from 'Masuri'
+862,Masuri Sokawa,Brown sister,epithet,REVIEW,generic_role,
+862,Masuri Sokawa,slender Brown,epithet,KEEP,,
+862,Masuri Sokawa,Masuri Sedai,title,DROP,rank_decorated,
+863,Kairen,Kairen Sedai,title,DROP,rank_decorated,
+864,Rafela Cindal,Rafela Cindal,primary,PROMOTE,promotion,from 'Rafela'
+864,Rafela Cindal,Blue sister,epithet,REVIEW,generic_role,
+864,Rafela Cindal,plump Blue sister,epithet,REVIEW,generic_role,
+864,Rafela Cindal,Rafela Sedai,title,DROP,rank_decorated,
+865,Demira Eriff,Demira Eriff,primary,PROMOTE,promotion,from 'Demira'
+865,Demira Eriff,Demira Sedai,title,DROP,rank_decorated,
+868,Vilnar Barada,Lord Aybara,title,KEEP,,"He uses this title when addressing Perrin, not as his own alias"
+868,Vilnar Barada,Underlieutenant sword-sworn to Lord Davram Bashere,title,KEEP,,
+872,Milam Harnder,Second Librarian in the Royal Palace,title,KEEP,,
+873,Setalle Anan,innkeeper,epithet,REVIEW,generic_role,
+873,Setalle Anan,the Anan woman,epithet,KEEP,,
+873,Setalle Anan,Mistress Anan,title,DROP,rank_decorated,
+874,Tylin Quintara Mitsobar,Tylin Quintara Mitsobar,primary,PROMOTE,promotion,from 'Tylin'
+874,Tylin Quintara Mitsobar,Guardian of the Sea of Storms,title,KEEP,,
+874,Tylin Quintara Mitsobar,High Lady Tylin,title,DROP,rank_decorated,promised elevation to Blood by Tuon in this chapter
+874,Tylin Quintara Mitsobar,Majesty,title,KEEP,,
+874,Tylin Quintara Mitsobar,Mistress of the Four Winds,title,KEEP,,
+874,Tylin Quintara Mitsobar,Queen of Altara,title,KEEP,,
+874,Tylin Quintara Mitsobar,Queen Tylin,title,KEEP,,
+874,Tylin Quintara Mitsobar,Throne of the Winds,title,KEEP,,her throne title
+874,Tylin Quintara Mitsobar,"Tylin Quintara, by the Grace of the Light, Queen of Altara, Mistress of the Four Winds, Guardian of the Sea of Storms, High Seat of House Mitsobar",title,KEEP,,
+877,Faeldrin Harella,Faeldrin Harella,primary,PROMOTE,promotion,from 'Faeldrin'
+878,Valinde Nathenos,Valinde Nathenos,primary,PROMOTE,promotion,from 'Valinde'
+879,Bera Harkin,Bera Harkin,primary,PROMOTE,promotion,from 'Bera'
+879,Bera Harkin,Bera Sedai,title,DROP,rank_decorated,
+881,Wildrose,bay mare,epithet,KEEP,,
+887,Charl Gedwyn,Charl Gedwyn,primary,PROMOTE,promotion,from 'Gedwyn'
+887,Charl Gedwyn,hard-faced man,epithet,KEEP,,
+887,Charl Gedwyn,Tsorovan'm'hael,title,KEEP,,self-styled rank meaning Storm Leader in the Old Tongue
+889,Rhiale,flame-haired woman,epithet,KEEP,,
+894,Someryn,incredibly tall woman,epithet,KEEP,,
+894,Someryn,Wise One,title,KEEP,,
+900,Toveine Gazal,once a Sitter for the Red,epithet,KEEP,,"Former Sitter, stripped of chair 20 years ago"
+904,Elza Penfell,Green sister,epithet,REVIEW,generic_role,
+910,Annoura Larisen,Aes Sedai advisor,epithet,KEEP,,
+910,Annoura Larisen,beak-nosed Gray sister,epithet,REVIEW,generic_role,
+910,Annoura Larisen,Gray advisor,epithet,KEEP,,
+910,Annoura Larisen,Annoura Sedai,title,DROP,rank_decorated,
+915,Aeldene Stonebridge,Aeldene Stonebridge,primary,PROMOTE,promotion,from 'Aeldene'
+916,Daishar,gelding,epithet,KEEP,,
+916,Daishar,Glory,epithet,KEEP,,Meaning of the name in the Old Tongue
+916,Daishar,roan,epithet,KEEP,,Color description
+916,Daishar,tall roan gelding,epithet,KEEP,,
+918,Nesta din Reas Two Moons,Mistress of the Ships,title,KEEP,,
+918,Nesta din Reas Two Moons,Mistress of the Ships to the Atha'an Miere,title,KEEP,,
+918,Nesta din Reas Two Moons,Shipmistress,title,KEEP,,
+919,Malin din Toral Breaking Wave,Sailmistress of Windrunner,title,KEEP,,
+919,Malin din Toral Breaking Wave,Wavemistress,title,KEEP,,
+919,Malin din Toral Breaking Wave,Wavemistress of Clan Somarin,title,KEEP,,
+920,Dorile din Eiran Long Feather,Windfinder,title,KEEP,,
+920,Dorile din Eiran Long Feather,Windfinder to a clan Wavemistress,title,KEEP,,
+920,Dorile din Eiran Long Feather,Windfinder to the Wavemistress of Clan Somarin,title,KEEP,,referred to as serving the Wavemistress of Clan Somarin
+922,Mili Skane,fox-faced woman,epithet,KEEP,,
+922,Mili Skane,sharp-faced woman,epithet,KEEP,,
+922,Mili Skane,the woman with the dagger,epithet,KEEP,,
+923,Sareitha Tomares,Brown,epithet,KEEP,,
+923,Sareitha Tomares,Brown sister,epithet,REVIEW,generic_role,
+923,Sareitha Tomares,the Tairen Brown,epithet,KEEP,,
+923,Sareitha Tomares,young Brown,epithet,KEEP,,referred to as young Brown sister
+923,Sareitha Tomares,Sareitha Sedai,title,DROP,rank_decorated,
+926,Jen,Master Jen,title,DROP,rank_decorated,
+927,Carin,Mistress Carin,title,DROP,rank_decorated,
+935,Cadsuane Melaidhrin,gray-haired Green,epithet,KEEP,,
+935,Cadsuane Melaidhrin,gray-haired sister,epithet,COLLAPSE,article_dup,
+935,Cadsuane Melaidhrin,Green sister,epithet,REVIEW,generic_role,
+935,Cadsuane Melaidhrin,the gray-haired sister,epithet,REVIEW,generic_role,
+935,Cadsuane Melaidhrin,Cadsuane Sedai,title,DROP,rank_decorated,
+938,Bertain Gallenne,Bertain Gallenne,primary,PROMOTE,promotion,from 'Gallenne'
+938,Bertain Gallenne,one-eyed Captain,epithet,KEEP,,
+938,Bertain Gallenne,one-eyed man,epithet,KEEP,,
+938,Bertain Gallenne,Lord Captain Gallenne,title,DROP,rank_decorated,
+938,Bertain Gallenne,Lord Gallenne,title,DROP,rank_decorated,
+939,Daigian Moseneillin,Daigian Moseneillin,primary,PROMOTE,promotion,from 'Daigian'
+939,Daigian Moseneillin,little Aes Sedai,epithet,KEEP,,
+939,Daigian Moseneillin,plump Daigian,epithet,DROP,descriptor_epithet,
+943,Reanne Corly,Eldest Sister,title,REVIEW,generic_role,
+943,Reanne Corly,Mistress Corly,title,DROP,rank_decorated,
+945,Garenia Rosoinde,Garenia Rosoinde,primary,PROMOTE,promotion,from 'Garenia'
+946,Enid,chief cook,epithet,KEEP,,
+948,Sarainya Vostovan,Sarainya Vostovan,primary,PROMOTE,promotion,from 'Sarainya'
+949,Moridin,Death,epithet,KEEP,,
+949,Moridin,wanderer,epithet,KEEP,,How he describes himself to Rand
+949,Moridin,Great Master,title,KEEP,,Madic addresses him as Great Master
+949,Moridin,Nae'blis,title,KEEP,,
+953,Riselle,Lady Riselle,title,DROP,rank_decorated,
+955,Pol,Merilille's maid,epithet,KEEP,,
+956,Careane,Green,epithet,KEEP,,
+956,Careane,stocky Green,epithet,KEEP,,
+959,Sumeko Karistovan,Sumeko Karistovan,primary,PROMOTE,promotion,from 'Sumeko'
+961,Seaine,Sitter,title,KEEP,,
+961,Seaine,Sitter for the White,title,KEEP,,
+962,Pevara,Red Sitter,title,KEEP,,
+963,Talene Minly,Black sister,epithet,REVIEW,generic_role,
+963,Talene Minly,statuesque Green,epithet,KEEP,,
+963,Talene Minly,Sitter,title,KEEP,,Green Ajah Sitter
+966,Shalon din Togara Morning Tide,Sea Folk wilder,epithet,KEEP,,
+966,Shalon din Togara Morning Tide,Sea Folk woman,epithet,KEEP,,
+966,Shalon din Togara Morning Tide,Windfinder,title,KEEP,,
+966,Shalon din Togara Morning Tide,Windfinder to Clan Shodein,title,KEEP,,
+966,Shalon din Togara Morning Tide,Windfinder to Harine din Togara,title,KEEP,,
+967,Derah din Selaan Rising Wave,Sailmistress,title,KEEP,,
+967,Derah din Selaan Rising Wave,Sailmistress of White Spray,title,KEEP,,
+968,Taval din Chanai Nine Gulls,Windfinder of White Spray,title,KEEP,,
+969,Elver Shaene,Captain Shaene,title,KEEP,,
+970,Tai'daishar,big black,epithet,KEEP,,
+970,Tai'daishar,big black gelding,epithet,KEEP,,
+970,Tai'daishar,"big, fiery-eyed black gelding",epithet,KEEP,,
+970,Tai'daishar,black gelding,epithet,KEEP,,
+970,Tai'daishar,Lord of Glory,epithet,KEEP,,
+970,Tai'daishar,the gelding,epithet,KEEP,,
+971,Seiera,mouse-colored mare,epithet,KEEP,,
+972,Caraline Damodred,High Seat of House Damodred,title,KEEP,,She declares this herself when Samitsu knocks her over
+972,Caraline Damodred,Lady Caraline,title,DROP,rank_decorated,
+972,Caraline Damodred,Lady Caraline Damodred,title,DROP,rank_decorated,
+973,Toram Riatin,tall pale man,epithet,KEEP,,
+973,Toram Riatin,the ugly one,epithet,KEEP,,"Fain's insult, not a real alias"
+973,Toram Riatin,Lord Toram Riatin,title,DROP,rank_decorated,
+974,Daved Hanlon,Captain of the Queen's Bodyguard,title,KEEP,,False rank gained through the assassination plot
+977,Niande,"plump, pale-haired sparrow",epithet,KEEP,,Min's description
+977,Niande,the Gray,epithet,KEEP,,
+978,Ander Tol,skinny farmer,epithet,KEEP,,
+978,Ander Tol,toothless fellow,epithet,KEEP,,
+978,Ander Tol,Master Tol,title,DROP,rank_decorated,
+980,Famelle Juarde,Famelle Juarde,primary,PROMOTE,promotion,from 'Famelle'
+982,Janira,graying Saldaean woman,epithet,KEEP,,
+988,Sibella,scrawny yellow-haired woman,epithet,KEEP,,
+989,Renaile din Calon Blue Star,Windfinder to Nesta din Reas Two Moons,title,KEEP,,
+989,Renaile din Calon Blue Star,Windfinder to the Mistress of the Ships,title,KEEP,,
+989,Renaile din Calon Blue Star,Windfinder to the Mistress of the Ships to the Atha'an Miere,title,KEEP,,
+995,Cairdin,Brother to the Eagle,epithet,REVIEW,generic_role,"Described as 'a young Brother to the Eagle', i.e. Far Aldazar Din"
+996,Laerad,Water Seeker,epithet,KEEP,,Described as 'grizzled Water Seeker'
+1000,Gregorin den Lushenos,Lord Gregorin,title,DROP,rank_decorated,
+1001,Mattin Stepaneos,King Mattin,title,KEEP,,
+1001,Mattin Stepaneos,King of Illian,title,KEEP,,
+1002,Ethenielle,Ethenielle of Kandor,epithet,KEEP,,
+1002,Ethenielle,Majesty,title,KEEP,,
+1002,Ethenielle,Queen of Kandor,title,KEEP,,
+1002,Ethenielle,Throne of the Clouds,title,KEEP,,
+1003,Serailla,First Councilor,title,KEEP,,
+1003,Serailla,Lady Serailla,title,DROP,rank_decorated,
+1004,Baldhere,Lord Baldhere,title,DROP,rank_decorated,
+1004,Baldhere,Swordbearer,title,KEEP,,
+1004,Baldhere,Swordbearer to the Throne of the Clouds,title,KEEP,,
+1006,Paitar Nachiman,Paitar of Arafel,epithet,KEEP,,
+1006,Paitar Nachiman,King of Arafel,title,KEEP,,
+1007,Tenobia si Bashere Kazadi,Tenobia si Bashere Kazadi,primary,PROMOTE,promotion,from 'Tenobia'
+1007,Tenobia si Bashere Kazadi,Tenobia of Saldaea,epithet,KEEP,,
+1007,Tenobia si Bashere Kazadi,Her Illumined Majesty,title,KEEP,,
+1007,Tenobia si Bashere Kazadi,High Seat of House Kazadi,title,KEEP,,
+1007,Tenobia si Bashere Kazadi,"Lady of Shahayni, Asnelle, Kunwar and Ganai",title,KEEP,,
+1007,Tenobia si Bashere Kazadi,Queen of Saldaea,title,KEEP,,
+1007,Tenobia si Bashere Kazadi,Shield of the North and Sword of the Blightborder,title,KEEP,,
+1010,Kyril Shianri,Lord Shianri,title,DROP,rank_decorated,
+1011,Alesune Chulin,shatayan of the royal household,title,KEEP,,
+1016,Turanna Norill,White sister,epithet,REVIEW,generic_role,
+1022,Kirstian Chalwin,Kirstian Chalwin,primary,PROMOTE,promotion,from 'Kirstian'
+1024,Chilares Arman,Chilares Arman,primary,PROMOTE,promotion,from 'Chilares'
+1024,Chilares Arman,"willowy, doe-eyed Chilares",epithet,KEEP,,
+1027,Rainyn,Windfinder,title,KEEP,,Serves on a darter
+1028,Talaan din Gelyn,Talaan din Gelyn,primary,PROMOTE,promotion,from 'Talaan'
+1028,Talaan din Gelyn,apprentice Windfinder,epithet,KEEP,,
+1029,Metarra din Junalle,Metarra din Junalle,primary,PROMOTE,promotion,from 'Metarra'
+1029,Metarra din Junalle,apprentice Windfinder,epithet,KEEP,,
+1030,Senine,Windfinder,title,KEEP,,Former Windfinder to the Mistress of the Ships before Nesta din Reas; now serves on a soarer
+1034,Alise Tenjile,Alise Tenjile,primary,PROMOTE,promotion,from 'Alise'
+1037,Caire din Gelyn Running Wave,Caire din Gelyn Running Wave,primary,PROMOTE,promotion,from 'Caire'
+1037,Caire din Gelyn Running Wave,Windfinder to a clan Wavemistress,title,KEEP,,
+1038,Tebreille din Gelyn South Wind,Tebreille din Gelyn South Wind,primary,PROMOTE,promotion,from 'Tebreille'
+1038,Tebreille din Gelyn South Wind,Caire's blood-sister,epithet,KEEP,,
+1038,Tebreille din Gelyn South Wind,Windfinder to a clan Wavemistress,title,KEEP,,
+1042,Nevarin,green-eyed Wise One,epithet,KEEP,,
+1042,Nevarin,Wise One,title,KEEP,,
+1043,Furen Alharra,Furen Alharra,primary,PROMOTE,promotion,from 'Furen'
+1058,Stayer,the bay,epithet,KEEP,,
+1062,Ortis,Squad-man Ortis,title,KEEP,,
+1067,Corgaide,Holder of the Keys,title,KEEP,,
+1068,Demetre Marcolin,First Captain Marcolin,title,KEEP,,
+1068,Demetre Marcolin,First Captain of the Companions,title,KEEP,,
+1069,Rosana,High Lady Rosana,title,DROP,rank_decorated,newly raised to High Lady
+1071,Pelivar Coelan,Pelivar Coelan,primary,PROMOTE,promotion,from 'Pelivar'
+1071,Pelivar Coelan,High Seat of House Coelan,title,KEEP,,
+1071,Pelivar Coelan,Lord Pelivar,title,DROP,rank_decorated,
+1072,Arathelle Renshar,Arathelle Renshar,primary,PROMOTE,promotion,from 'Arathelle'
+1072,Arathelle Renshar,High Seat of House Renshar,title,KEEP,,
+1072,Arathelle Renshar,Lady Arathelle,title,DROP,rank_decorated,
+1080,Moria Karentanis,Moria Karentanis,primary,PROMOTE,promotion,from 'Moria'
+1082,Aemlyn Carand,Aemlyn Carand,primary,PROMOTE,promotion,from 'Aemlyn'
+1082,Aemlyn Carand,High Seat of House Carand,title,KEEP,,
+1083,Culhan Carand,Culhan Carand,primary,PROMOTE,promotion,from 'Culhan'
+1084,Donel do Morny a'Lordeine,Donel do Morny a'Lordeine,primary,PROMOTE,promotion,from 'Donel'
+1084,Donel do Morny a'Lordeine,Lord Donel,title,DROP,rank_decorated,
+1085,Cian do Mehon a'Macansa,Cian do Mehon a'Macansa,primary,PROMOTE,promotion,from 'Cian'
+1085,Cian do Mehon a'Macansa,blocky Cian,epithet,KEEP,,
+1086,Segan do Avharin a'Roos,Segan do Avharin a'Roos,primary,PROMOTE,promotion,from 'Segan'
+1090,Roedran Almaric do Arreloa a'Naloy,Roedran Almaric do Arreloa a'Naloy,primary,PROMOTE,promotion,from 'Roedran'
+1090,Roedran Almaric do Arreloa a'Naloy,King Roedran,title,KEEP,,
+1096,Rodrivar Tihera,Captain of the Stone,title,KEEP,,
+1097,Bertome Saighan,Lord Bertome,title,DROP,rank_decorated,
+1098,Ailil Riatin,dainty Ailil,epithet,KEEP,,
+1098,Ailil Riatin,pale Lady Ailil,epithet,KEEP,,
+1098,Ailil Riatin,Lady Ailil,title,DROP,rank_decorated,
+1105,Assid Bakuun,Captain Bakuun,title,KEEP,,
+1106,Tiras,First Lieutenant,title,KEEP,,
+1107,Nerith,sul'dam,title,KEEP,,
+1108,Varil Nensen,Soldier Nensen,title,KEEP,,
+1109,Arlen Nalaam,Soldier Nalaam,title,KEEP,,
+1110,Denharad,Lance-captain,title,KEEP,,title for Ailil's cavalry officer
+1111,Furyk Karede,Banner-General Furyk Karede,title,KEEP,,
+1116,Kennar Miraj,morat'raken,epithet,KEEP,,
+1116,Kennar Miraj,Captain-General,title,KEEP,,
+1116,Kennar Miraj,Lord Captain-General,title,KEEP,,
+1117,Abaldar Yulan,Air Captain Yulan,title,KEEP,,
+1117,Abaldar Yulan,Captain of the Air,title,KEEP,,
+1117,Abaldar Yulan,Lord Abaldar Yulan,title,DROP,rank_decorated,
+1118,Lisaine Jarath,der'sul'dam,title,KEEP,,
+1119,Varek,under-lieutenant,epithet,KEEP,,
+1120,Chianmai,Banner-General Chianmai,title,KEEP,,
+1123,Velina,White Sitter,epithet,KEEP,,Sits for the White Ajah
+1124,Shevan,Brown Sitter,epithet,KEEP,,Sits for the Brown Ajah
+1125,Duhara,Red Sitter,epithet,KEEP,,Sits for the Red Ajah; aware of Elaida's dominance
+1126,Sedore,Yellow Sitter,epithet,KEEP,,Sits for the Yellow Ajah
+1127,Rubinde,Green Sitter,epithet,KEEP,,Sits for the Green Ajah; described as Mayener
+1131,Saerin Asnobar,Brown Sitter,epithet,KEEP,,
+1132,Yukiri,Gray Sitter,title,KEEP,,
+1133,Doesine,Yellow Sitter,epithet,KEEP,,
+1139,Sparrow,mare,epithet,KEEP,,
+1143,Lelaine Akashi,Lelaine Sedai,title,DROP,rank_decorated,
+1143,Lelaine Akashi,Sitter for the Blue Ajah,title,KEEP,,
+1144,Careane Fransi,Green sister,epithet,REVIEW,generic_role,
+1144,Careane Fransi,stocky Green,epithet,KEEP,,
+1144,Careane Fransi,the Domani Green,epithet,KEEP,,
+1146,Samitsu,slim Yellow sister,epithet,REVIEW,generic_role,
+1147,Marac,Lord Marac,title,DROP,rank_decorated,
+1150,Nadere,Wise One,title,KEEP,,
+1151,Monaelle,Wise One,title,KEEP,,
+1152,Tamela,Wise One,title,KEEP,,
+1153,Viendre,Wise One,title,KEEP,,
+1154,Shyanda,Wise One,title,KEEP,,
+1162,Mezar Kurin,Windfinder,title,KEEP,,
+1171,Gerard Arganda,First Captain,title,KEEP,,
+1180,Caseille Raskovni,lieutenant,title,REVIEW,generic_role,
+1180,Caseille Raskovni,under-lieutenant,title,KEEP,,
+1187,Alivia,former damane,epithet,KEEP,,
+1187,Alivia,golden-haired woman,epithet,KEEP,,
+1187,Alivia,hawk-eyed woman,epithet,KEEP,,
+1187,Alivia,strange wilder,epithet,KEEP,,Cadsuane's description
+1187,Alivia,very peculiar wilder,epithet,KEEP,,
+1191,Lemore,Larie,nickname,KEEP,,her damane name given by the Seanchan
+1194,Doilin Mellar,Captain Mellar,title,KEEP,,
+1194,Doilin Mellar,Captain of the Queen's Bodyguard,title,KEEP,,
+1194,Doilin Mellar,Captain of the Royal Guards,title,KEEP,,
+1194,Doilin Mellar,Guardsman-Captain Mellar,title,KEEP,,
+1194,Doilin Mellar,Guardsman-Lieutenant Mellar,title,KEEP,,
+1201,Shielyn,Windfinder,title,KEEP,,Zaida's own Windfinder
+1202,Merise,lovely woman,epithet,KEEP,,
+1202,Merise,the stern-faced sister,epithet,REVIEW,generic_role,
+1208,Selucia,dresser,epithet,KEEP,,
+1208,Selucia,shadow,epithet,KEEP,,Secret bodyguard role
+1208,Selucia,Tuon's golden-haired so'jhin,epithet,KEEP,,
+1208,Selucia,so'jhin,title,KEEP,,Her rank as a so'jhin (hereditary upper servant)
+1209,Anath,Soe'feia,title,KEEP,,Tuon's Truthspeaker
+1209,Anath,Truthspeaker,title,KEEP,,
+1210,Musenge,Captain Musenge,title,KEEP,,
+1211,Yuril,secretary,epithet,KEEP,,Public role; also secretly Tuon's Hand commanding her Seekers
+1211,Yuril,Hand,title,KEEP,,Commands Tuon's Seekers for Truth
+1212,Lidya,damane,epithet,KEEP,,
+1213,Ianelle,sul'dam,title,KEEP,,
+1214,Dali,damane,epithet,KEEP,,
+1215,Dani,damane,epithet,KEEP,,
+1216,Charral,damane,epithet,KEEP,,
+1217,Sera,damane,epithet,KEEP,,
+1218,Mylen,damane,epithet,KEEP,,
+1219,Catrona,sul'dam,title,KEEP,,
+1220,Tehan,Captain Tehan,title,KEEP,,
+1221,Neferi,Soe'feia,title,KEEP,,Was Tuon's previous Truthspeaker before dying
+1224,Calwyn Sutoma,Master Sutoma,title,DROP,rank_decorated,
+1227,Guisin,damane,epithet,KEEP,,
+1228,Darnella Shoran,innkeeper,epithet,REVIEW,generic_role,
+1228,Darnella Shoran,Mistress Shoran,title,DROP,rank_decorated,
+1230,Moad,Swordmaster,title,KEEP,,
+1231,Nethan,Warder,title,KEEP,,
+1232,Bassane,Warder,title,KEEP,,
+1234,Aleis Barsalla,First Counsel,title,KEEP,,
+1234,Aleis Barsalla,First Counsel of Far Madding,title,KEEP,,
+1237,Rasoria Domanche,Hunter for the Horn,epithet,KEEP,,
+1238,Kayen Yokata,Lord of Fal Eisen,title,KEEP,,
+1240,Nestelle din Sakura South Star,Windfinder,title,KEEP,,
+1241,Mistress Keene,innkeeper,epithet,REVIEW,generic_role,innkeeper of The Counsel's Head
+1242,Mistress Gallger,innkeeper,epithet,REVIEW,generic_role,innkeeper of The Golden Wheel
+1244,Timna,Guide,title,KEEP,,"One of the Guides on Tremalking, chosen to protect the Atha'an Miere from themselves"
+1245,Nisa,stout mare,epithet,KEEP,,

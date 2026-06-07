@@ -108,6 +108,104 @@ def looks_like_suspect_alias(text):
     return " " not in n and n in SUSPECT_SINGLE_WORDS
 
 
+# ── Titles, ranks, and name-core extraction ───────────────────────────────────
+# Aliases accumulate rank/article decoration ("Lord Agelmar", "Verin Sedai",
+# "the High Lady Alteima") and descriptor phrases ("stout little Verin") that are
+# not distinct names. They bloat the profile UI and the per-chapter roster sent
+# to the model. These helpers strip that decoration so the write-time gate and
+# the cleanup can drop redundant variants, and so the matcher can still RESOLVE a
+# decorated mention in chapter text to the bare name without STORING the variant.
+# Storage norms are NOT changed by any of this; match_key() feeds the matcher and
+# the predicates only.
+
+# Rank/honorific phrases, ordered LONGEST FIRST so multiword ranks are removed
+# before their single-word components (so "aes sedai" is stripped before a lone
+# "sedai" can match).
+RANK_TOKENS = [
+    "lord captain commander", "lord captain", "high lord", "high lady",
+    "aes sedai", "dai shan",
+    "lord", "lady", "master", "mistress", "mother", "sedai", "ser", "dame",
+]
+
+# Adjectives that, combined with a character's own name, form a DESCRIPTION
+# rather than a name ("stout little Verin"). Curated to high-confidence
+# physical/age descriptors so the cleanup may auto-drop the epithet.
+DESCRIPTOR_ADJECTIVES = {
+    "stout", "little", "big", "tall", "short", "old", "young", "fat", "thin",
+    "small", "large", "grizzled", "weaselly", "scrawny", "plump", "stocky",
+    "lean", "wiry", "burly", "gaunt", "portly",
+}
+
+
+def strip_titles(norm_str):
+    """Remove a single leading article and every RANK_TOKENS phrase (longest
+    first, on word boundaries) from an ALREADY-NORMALISED string; return the
+    name core with whitespace collapsed.
+
+        strip_titles("lord of fal dara")        -> "of fal dara"
+        strip_titles("verin mathwin aes sedai") -> "verin mathwin"
+        strip_titles("mistress mathwin")        -> "mathwin"
+
+    Storage norms are unaffected; this feeds match_key() and the redundancy
+    predicates only.
+    """
+    s = " " + " ".join((norm_str or "").split()) + " "   # pad for word-boundary
+    if s.startswith(" the "):
+        s = " " + s[5:]
+    for tok in RANK_TOKENS:                               # longest first
+        s = s.replace(" " + tok + " ", " ")
+    return " ".join(s.split())
+
+
+def match_key(name):
+    """strip_titles(norm(name)) — the rank/article-insensitive key used by the
+    matcher ONLY, so 'Verin Sedai' in chapter text resolves to Verin without a
+    'verin sedai' alias ever being stored."""
+    return strip_titles(norm(name))
+
+
+def is_rank_decorated_redundant(alias_norm, name_token_set):
+    """True if `alias_norm` is just the character's own name wearing rank/article
+    decoration: its residue after strip_titles is a non-empty subset of the
+    character's name tokens. Catches 'Verin Sedai', 'Lord Agelmar',
+    'Mistress Mathwin', 'High Lady Alteima', 'Agelmar Dai Shan'. Spares genuine
+    positional/singular titles ('Lord of Fal Dara'), whose residue contains
+    words that are not part of the name."""
+    residue = set(strip_titles(alias_norm).split())
+    return bool(residue) and residue <= set(name_token_set)
+
+
+def is_descriptor_epithet(alias_norm, name_token_set):
+    """True if `alias_norm` is a descriptive phrase built from adjectives plus
+    the character's own name ('stout little Verin').
+
+    Tokens (minus the articles "the"/"a") must include >=1 of the character's
+    name tokens AND >=1 DESCRIPTOR_ADJECTIVES, and every token must be a name
+    token, a descriptor, or an article. Spares 'the Dragon Reborn' (no name
+    token) and plain titles (no descriptor)."""
+    nts = set(name_token_set)
+    tokens = [t for t in norm(alias_norm).split() if t not in ("the", "a")]
+    if not tokens:
+        return False
+    has_name = any(t in nts for t in tokens)
+    has_desc = any(t in DESCRIPTOR_ADJECTIVES for t in tokens)
+    allowed = nts | DESCRIPTOR_ADJECTIVES | {"the", "a"}
+    return has_name and has_desc and all(t in allowed for t in tokens)
+
+
+# A note that flags the alias as a corrected mistake/misnomer ("mistakenly
+# called the Amyrlin", "wrongly named", "not actually her title"): such names
+# are not identifying and should never be recorded.
+CORRECTED_MISNOMER_RE = re.compile(
+    r"(?i)\b(mistak|wrongly|incorrectly|in error|erroneous|corrects?|misname|"
+    r"not (actually|really)|confus)")
+
+
+def is_corrected_misnomer(note):
+    """True if a free-text alias note marks the name as a corrected mistake."""
+    return bool(note and CORRECTED_MISNOMER_RE.search(note))
+
+
 # ── Placeholder / collective primary names ────────────────────────────────────
 # Lifted verbatim from hygiene_audit._is_b2 / _is_b1 / _is_c so the reconciler's
 # write-time gate and the auditor's report classify rows identically.
@@ -448,4 +546,19 @@ if __name__ == "__main__":   # pragma: no cover
     assert refine_nationality("Andor",
                               "Emond's Field, Two Rivers, Andor")[0] \
         == "Emond's Field, Two Rivers, Andor"
+    # title / rank / descriptor helpers (real examples from the cleanup task)
+    assert strip_titles("lord of fal dara") == "of fal dara"
+    assert strip_titles("verin mathwin aes sedai") == "verin mathwin"
+    assert strip_titles("mistress mathwin") == "mathwin"
+    assert match_key("Verin Sedai") == "verin"
+    assert is_rank_decorated_redundant("lord agelmar", {"agelmar", "jagad"})
+    assert is_rank_decorated_redundant("agelmar dai shan", {"agelmar", "jagad"})
+    assert is_rank_decorated_redundant("high lady alteima", {"alteima"})
+    assert is_rank_decorated_redundant("mistress mathwin", {"verin", "mathwin"})
+    assert not is_rank_decorated_redundant("lord of fal dara",
+                                           {"agelmar", "jagad"})
+    assert is_descriptor_epithet("stout little verin", {"verin", "mathwin"})
+    assert not is_descriptor_epithet("the dragon reborn", {"rand", "al'thor"})
+    assert is_corrected_misnomer("mistakenly called the Amyrlin")
+    assert not is_corrected_misnomer("a title she holds")
     print("directory_rules smoke check OK")

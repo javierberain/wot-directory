@@ -36,6 +36,7 @@ import argparse
 import difflib
 import json
 import os
+import re
 import sqlite3
 import sys
 from collections import defaultdict
@@ -52,6 +53,12 @@ from directory_rules import (
     is_black_ajah,
     ajah_conflict,
     classify_origin,
+    strip_titles,
+    match_key,
+    is_rank_decorated_redundant,
+    is_descriptor_epithet,
+    is_corrected_misnomer,
+    RANK_TOKENS,
 )
 
 DB_PATH = os.path.join(os.path.dirname(__file__), "..", "db", "wot.db")
@@ -87,6 +94,7 @@ class Roster:
 
     def __init__(self, conn):
         self.exact = {}                      # alias_norm -> cid
+        self.stripped = {}                   # match_key(alias_norm) -> cid|None
         self.entries = []                    # (alias_norm, frozenset(tokens), cid)
         self.aliases_by_cid = defaultdict(list)
         for cid, anorm in conn.execute(
@@ -96,11 +104,30 @@ class Roster:
             toks = frozenset(anorm.split())
             self.entries.append((anorm, toks, cid))
             self.aliases_by_cid[cid].append(anorm)
+            # Secondary rank/article-insensitive index so a decorated mention in
+            # chapter text ('Verin Sedai') resolves to the bare name without a
+            # 'verin sedai' alias being stored. A key shared by >1 character is
+            # marked ambiguous (None) so it can never mis-match.
+            key = match_key(anorm)
+            if key:
+                if key not in self.stripped:
+                    self.stripped[key] = cid
+                elif self.stripped[key] != cid:
+                    self.stripped[key] = None
 
     # -- individual strategies --
 
     def exact_match(self, name):
-        return self.exact.get(norm(name))
+        cid = self.exact.get(norm(name))
+        if cid is not None:
+            return cid
+        # Fall back to the rank/article-stripped key (ignoring ambiguous None).
+        key = match_key(name)
+        if key:
+            scid = self.stripped.get(key)
+            if scid is not None:
+                return scid
+        return None
 
     def token_candidates(self, name):
         """{cid: (distinctive_shared_count, score)} for known names in a
@@ -199,19 +226,271 @@ def get_primary_name(conn, cid):
     return r[0] if r else None
 
 
+def _has_column(conn, table, column):
+    return any(r[1] == column
+               for r in conn.execute(f"PRAGMA table_info({table})"))
+
+
+# ── Canonical-name promotion (primary_name = fullest known proper name) ────────
+# primary_name is set once at create and never promoted to a fuller name learned
+# later (so 'Agelmar' never became 'Agelmar Jagad'). These helpers promote the
+# primary to the fullest proper name among the character's own names — extending
+# it, never replacing it with a different name (superset guard).
+
+_NAME_ARTICLES = {"the", "a", "an"}
+
+
+def _strip_leading_rank(text):
+    """Remove a single leading article ('the') and/or a single leading
+    RANK_TOKENS phrase (longest first) from the ORIGINAL-cased `text`, preserving
+    the casing/spelling of the remaining tokens."""
+    toks = text.split()
+    low = [norm(t) for t in toks]
+    if low and low[0] == "the":
+        toks, low = toks[1:], low[1:]
+    for phrase in RANK_TOKENS:                      # already longest-first
+        pl = phrase.split()
+        if pl and low[:len(pl)] == pl:
+            toks, low = toks[len(pl):], low[len(pl):]
+            break
+    return " ".join(toks)
+
+
+def canonical_adopt_text(text):
+    """Clean a name for adoption as primary_name.
+
+    Two transforms, on the ORIGINAL-cased text (so casing/spelling survive):
+      1. strip a leading rank/article prefix ('High Lady Suroth Sabelle
+         Meldarath' -> 'Suroth Sabelle Meldarath'),
+      2. collapse the ceremonial connective ' of House ' to a single space
+         ('Elayne of House Trakand' -> 'Elayne Trakand').
+    Aiel ' of the ...' and Ogier 'son of ...' forms are left untouched.
+    """
+    s = re.sub(r"\s+of\s+house\s+", " ", " " + text.strip() + " ",
+               flags=re.IGNORECASE).strip()
+    s = _strip_leading_rank(s)
+    return " ".join(s.split())
+
+
+def _distinctive_name_tokens(name_norm):
+    """Tokens of a name's core: rank/article decoration stripped, articles
+    dropped. Used to score how 'full' a candidate name is."""
+    return [t for t in strip_titles(name_norm).split() if t not in _NAME_ARTICLES]
+
+
+def _adopt_tokens(text):
+    """Distinctive tokens of `text` after canonical adoption-cleaning — the basis
+    for scoring fullness and for the superset guard, so 'of House' / leading rank
+    are not counted as distinguishing tokens."""
+    return set(_distinctive_name_tokens(norm(canonical_adopt_text(text))))
+
+
+def choose_canonical_name(candidates):
+    """Pick the fullest proper name among (text, norm) candidates and return its
+    CLEANED canonical form (ready to adopt as primary_name).
+
+    candidates[0] MUST be the current primary (text, norm); the rest are
+    alternative names (given_name aliases, and — in the cleanup only — a
+    differing display_name). Each is scored by its number of distinctive name
+    tokens AFTER adoption-cleaning (leading rank/article stripped, ' of House '
+    collapsed). The winner is the unique highest-scoring candidate whose cleaned
+    token set is a SUPERSET of the current primary's cleaned tokens (it extends
+    the primary, never replaces it); its CLEANED text is returned. On a tie among
+    extensions, or if nothing beats the current primary, returns the current
+    primary's text unchanged. Side-effect-free; None only for an empty list.
+    """
+    if not candidates:
+        return None
+    cur_text = candidates[0][0]
+    cur_clean_norm = norm(canonical_adopt_text(cur_text))
+    cur_tokens = _adopt_tokens(cur_text)
+    cur_score = len(cur_tokens)
+    # Key by CLEANED norm so 'High Lady X' and 'the X' don't count as a tie, and
+    # so the same name from given_name + display_name collapses to one.
+    by_norm = {}
+    for text, _anorm in candidates[1:]:
+        clean = canonical_adopt_text(text)
+        cnorm = norm(clean)
+        if not cnorm or cnorm == cur_clean_norm or cnorm in by_norm:
+            continue
+        toks = _adopt_tokens(text)
+        if len(toks) > cur_score and cur_tokens <= toks:
+            by_norm[cnorm] = (len(toks), clean)
+    if not by_norm:
+        return cur_text
+    top = max(score for score, _ in by_norm.values())
+    winners = [clean for score, clean in by_norm.values() if score == top]
+    return winners[0] if len(winners) == 1 else cur_text
+
+
+def promotion_candidates(conn, cid):
+    """The (text, norm) candidates for choose_canonical_name, current primary
+    FIRST: the current primary, then given_name aliases, then a differing legacy
+    display_name (only present on a not-yet-migrated snapshot). Shared by
+    apply_promotion and the alias-cleanup so both score names identically."""
+    cur = conn.execute(
+        "SELECT primary_name FROM characters WHERE character_id = ?", (cid,)
+    ).fetchone()
+    if not cur:
+        return []
+    cur_primary = cur[0]
+    candidates = [(cur_primary, norm(cur_primary))]
+    for (text,) in conn.execute(
+        "SELECT alias_text FROM aliases WHERE character_id = ? "
+        "AND alias_type = 'given_name'", (cid,)
+    ):
+        candidates.append((text, norm(text)))
+    if _has_column(conn, "characters", "display_name"):
+        row = conn.execute(
+            "SELECT display_name FROM characters WHERE character_id = ?", (cid,)
+        ).fetchone()
+        dn = (row[0] or "").strip() if row else ""
+        if dn and norm(dn) != norm(cur_primary):
+            candidates.append((dn, norm(dn)))
+    return candidates
+
+
+def apply_promotion(conn, cid):
+    """Promote a character's primary_name to the fullest known proper name.
+
+    Gathers the current primary + given_name aliases (and, when the legacy
+    display_name column still exists, a differing display_name) as candidates,
+    runs choose_canonical_name, and — if a fuller name wins AND no other
+    character already owns that primary_name — flips the chosen alias to
+    'primary' and demotes the old primary to 'given_name'. If another character
+    already has the chosen primary_name, this is a duplicate-character case:
+    queue it for review and do NOT promote. Returns the new primary_name if
+    promoted, else None. Exactly one is_primary=1 alias remains.
+    """
+    candidates = promotion_candidates(conn, cid)
+    if not candidates:
+        return None
+    cur_primary = candidates[0][0]
+
+    chosen = choose_canonical_name(candidates)
+    if not chosen or norm(chosen) == norm(cur_primary):
+        return None
+
+    dup = conn.execute(
+        "SELECT character_id FROM characters "
+        "WHERE primary_name = ? AND character_id != ?", (chosen, cid)
+    ).fetchone()
+    if dup:
+        conn.execute(
+            "INSERT INTO review_queue (chapter_id, kind, payload, note) "
+            "VALUES (NULL, 'promotion_blocked_duplicate', ?, ?)",
+            (json.dumps({"character_id": cid, "from": cur_primary,
+                         "to": chosen, "conflicts_with": dup[0]}),
+             f"Cannot promote '{cur_primary}' -> '{chosen}': character_id "
+             f"{dup[0]} already has that primary_name."),
+        )
+        return None
+
+    chosen_norm = norm(chosen)
+    # Any decorated candidate whose CLEANED form is the adopted name (e.g.
+    # 'High Lady Suroth Sabelle Meldarath' -> 'Suroth Sabelle Meldarath',
+    # 'Elayne of House Trakand' -> 'Elayne Trakand') stays as a title alias
+    # rather than being lost when we adopt the tightened primary.
+    for text, anorm in candidates:
+        if anorm != chosen_norm and norm(canonical_adopt_text(text)) == chosen_norm:
+            conn.execute(
+                "UPDATE aliases SET alias_type = 'title', is_primary = 0 "
+                "WHERE character_id = ? AND alias_norm = ?", (cid, anorm),
+            )
+    # Ensure the chosen exists as an alias row (it may be a newly-cleaned form,
+    # or have come from display_name).
+    conn.execute(
+        "INSERT OR IGNORE INTO aliases "
+        "(character_id, alias_text, alias_norm, alias_type, is_primary) "
+        "VALUES (?, ?, ?, 'given_name', 0)",
+        (cid, chosen, chosen_norm),
+    )
+    # Demote the old primary, promote the chosen.
+    conn.execute(
+        "UPDATE aliases SET alias_type = 'given_name', is_primary = 0 "
+        "WHERE character_id = ? AND alias_norm = ?", (cid, norm(cur_primary)),
+    )
+    conn.execute(
+        "UPDATE aliases SET alias_type = 'primary', is_primary = 1 "
+        "WHERE character_id = ? AND alias_norm = ?", (cid, chosen_norm),
+    )
+    conn.execute(
+        "UPDATE characters SET primary_name = ?, updated_at = datetime('now') "
+        "WHERE character_id = ?", (chosen, cid),
+    )
+    n_primary = conn.execute(
+        "SELECT COUNT(*) FROM aliases WHERE character_id = ? AND is_primary = 1",
+        (cid,)).fetchone()[0]
+    assert n_primary == 1, \
+        f"character {cid} has {n_primary} primary aliases after promotion"
+    return chosen
+
+
+# Alias types that always represent identity and are never auto-dropped.
+PROTECTED_ALIAS_TYPES = ("primary", "given_name", "disguise")
+# Alias types subject to the quality gate / cleanup rules.
+DROPPABLE_ALIAS_TYPES = ("title", "epithet", "nickname")
+
+
+def name_token_set(conn, cid):
+    """The character's identity tokens — the rank/article-stripped tokens of its
+    primary + given_name aliases. A rank-decorated or descriptor alias is
+    redundant exactly when its residue is a subset of this set."""
+    toks = set()
+    for (anorm,) in conn.execute(
+        "SELECT alias_norm FROM aliases WHERE character_id = ? "
+        "AND alias_type IN ('primary', 'given_name')", (cid,)
+    ):
+        toks |= set(strip_titles(anorm).split())
+    return toks
+
+
 def add_aliases(conn, cid, aliases):
-    """Insert aliases, skipping generic forms of address (they pollute the
-    matcher index — the delete_aliases.py workload, now prevented at write)."""
+    """Insert aliases, applying the write-time quality gate so the alias index
+    and the per-chapter roster stay clean.
+
+    PROTECTED types (primary, given_name, disguise) are always inserted (minus
+    exact-generic junk). DROPPABLE types (title, epithet, nickname) are skipped
+    when rank-decorated redundant, descriptor epithets, or corrected misnomers.
+    Article-only duplicates of a title/epithet collapse to the 'the'-prefixed
+    form, symmetrically regardless of insert order.
+    """
+    nts = name_token_set(conn, cid)
     for a in aliases or []:
         text = (a.get("alias_text") or "").strip()
         if not text or is_generic_alias(text):
             continue
+        atype = a.get("alias_type", "nickname")
+        notes = a.get("notes")
+        n = norm(text)
+
+        if atype not in PROTECTED_ALIAS_TYPES:
+            if is_corrected_misnomer(notes):
+                continue
+            if is_rank_decorated_redundant(n, nts):
+                continue
+            if is_descriptor_epithet(n, nts):
+                continue
+            # Article-only duplicate: keep the "the"-prefixed form.
+            if atype in ("title", "epithet"):
+                if not n.startswith("the "):
+                    if conn.execute(
+                        "SELECT 1 FROM aliases WHERE character_id = ? "
+                        "AND alias_norm = ?", (cid, "the " + n)
+                    ).fetchone():
+                        continue                       # 'the X' exists; drop bare
+                else:
+                    conn.execute(                      # drop a bare 'X' if present
+                        "DELETE FROM aliases WHERE character_id = ? "
+                        "AND alias_norm = ? AND alias_type IN ('title','epithet')",
+                        (cid, n[4:]),
+                    )
+
         conn.execute(
             "INSERT OR IGNORE INTO aliases "
             "(character_id, alias_text, alias_norm, alias_type, notes) "
             "VALUES (?, ?, ?, ?, ?)",
-            (cid, text, norm(text),
-             a.get("alias_type", "nickname"), a.get("notes")),
+            (cid, text, n, atype, notes),
         )
 
 
@@ -243,6 +522,7 @@ def create_character(conn, char):
         (cid, primary, norm(primary)),
     )
     add_aliases(conn, cid, char.get("aliases_observed", []))
+    apply_promotion(conn, cid)
     return cid
 
 
@@ -285,6 +565,9 @@ def enrich_character(conn, cid, char, chapter_id):
             )
 
     add_aliases(conn, cid, char.get("aliases_observed", []))
+    # A fuller proper name may have arrived this chapter; promote the primary
+    # (enrich previously never touched primary_name).
+    apply_promotion(conn, cid)
     return reviews
 
 
