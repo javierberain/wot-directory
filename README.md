@@ -214,9 +214,8 @@ and cleanup. Public snapshots are regenerated from them with
 ## Database Strategy
 
 Production reads from `public_db/`, not `db/`. The public databases preserve
-the tables and columns required by the website, including
-`characters.display_name`, but intentionally exclude private or high-risk
-data:
+the tables and columns required by the website, but intentionally exclude
+private or high-risk data:
 
 - `chapters.full_text` is omitted.
 - `review_queue` is omitted entirely.
@@ -692,12 +691,12 @@ public_db/wot_book2.db
 public_db/wot_book3.db
 ```
 
-The exporter copies public-facing tables and columns, preserves
-`characters.display_name` even when older private snapshots lack that column,
-sets `books.source_file` to `NULL`, omits `chapters.full_text`, omits
-`review_queue`, and verifies that local-path-like strings are not present in
-public text columns. It prints row counts for every public-facing table and
-fails if verification does not pass.
+The exporter copies public-facing tables and columns, sets `books.source_file`
+to `NULL`, omits `chapters.full_text`, omits `review_queue`, and verifies that
+local-path-like strings are not present in public text columns. (The retired
+`characters.display_name` column is no longer carried into public snapshots —
+`primary_name` is the canonical label.) It prints row counts for every
+public-facing table and fails if verification does not pass.
 
 Custom directories are supported:
 
@@ -769,11 +768,13 @@ Each migration is one-shot — SQLite has no `ADD COLUMN IF NOT EXISTS`,
 so re-running a file errors on the ALTER statements. That is the
 intended signal that the migration has already been applied.
 
-Note: current book snapshots include `characters.display_name`, which the
-public website uses for display labels. `scripts/export_public_dbs.py`
-preserves that column in public snapshots and falls back to `primary_name`
-for older private snapshots that do not have it. Keep `db/schema.sql` and
-future migrations in sync before creating fresh databases from scratch.
+Note: `characters.display_name` was a half-finished experiment and has been
+**retired** (migration `003_retire_display_name.sql`). `primary_name` is the
+canonical label and is promoted to the fullest known proper name as later
+chapters reveal it (see `scripts/cleanup_aliases.py` / reconcile's
+`apply_promotion`). Fresh databases from `db/schema.sql` already lack the
+column; the exporter no longer carries it. Keep `db/schema.sql` and future
+migrations in sync before creating fresh databases from scratch.
 
 ## Usage
 
@@ -1051,6 +1052,17 @@ The original 17-pair historical batch — already applied to the live snapshots
 and carried forward — is preserved in `scripts/seed_distinct_pairs_initial.py`
 so it stays reproducible.
 
+Recurring, known-good pairs are baked into the script's `KNOWN_PAIRS` batch
+(referenced by `primary_name`, not id, so they resolve correctly in any snapshot
+and skip books where a character doesn't exist yet) and applied with `--known`:
+
+```bash
+python scripts/seed_distinct_pairs.py --known --commit
+```
+
+e.g. (`Lan Mandragoran`, `Lain Mandragoran`) — a ~97% surname similarity that is
+expected (uncle/nephew), not a misspelling.
+
 #### Check D suppression — `acknowledged_collisions`
 
 Check D flags any alias (`is_primary=0`) whose normalised text equals a
@@ -1089,6 +1101,18 @@ Dry-run by default; `--commit` writes (after a `<db>.pre-collision-ack.bak`
 backup). The alias text is normalised internally (so the raw or normalised form
 both work), `INSERT OR IGNORE` makes re-runs idempotent, and a missing
 `owner_cid`/`other_cid` is reported without inserting.
+
+Recurring, known-good acknowledgments are baked into the script's
+`KNOWN_COLLISIONS` batch (referenced by `primary_name` so they resolve in any
+snapshot and skip books where a character doesn't exist yet) and applied with
+`--known`:
+
+```bash
+python scripts/seed_acknowledged_collisions.py --known --commit
+```
+
+e.g. the Slayer dual identity — `Isam Mandragoran` and `Luc Mantear`
+cross-reference each other on purpose (two origins fused in one body).
 
 #### Check G registry — `disguise_map`
 

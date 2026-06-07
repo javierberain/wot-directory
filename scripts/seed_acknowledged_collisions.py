@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-seed_acknowledged_collisions.py - one-off seeder for the acknowledged_collisions
+seed_acknowledged_collisions.py - seeder for the acknowledged_collisions
 suppression table read by hygiene_audit.py Check D.
 
 Check D flags any alias (is_primary=0) whose normalised text equals a DIFFERENT
@@ -15,19 +15,22 @@ Because start_book.py seeds book N from book N-1 by copying the snapshot, an
 acknowledgment carries forward automatically: a collision acknowledged on book 6
 will not re-flag when book 7 is ingested.
 
-Inserts ONE row, keyed to the exact collision so genuinely new collisions still
-flag. Dry-run by default; pass --commit to write (a backup is taken first).
-Idempotent: re-running with --commit is a no-op via INSERT OR IGNORE.
+Two ways to seed:
+  --known : seed the built-in KNOWN_COLLISIONS batch below. Entries are keyed by
+            primary_name so a re-seed (or running against an earlier book)
+            resolves them to that snapshot's ids and SKIPS characters that don't
+            exist there. This is what makes the known suppressions survive a
+            re-seed and carry to books 1-8.
+  single  : --owner-cid/--other-cid/--alias-norm for an ad-hoc acknowledgment.
+
+Dry-run by default; pass --commit to write (a backup is taken first). Idempotent
+via INSERT OR IGNORE on (owner_cid, other_cid, alias_norm).
 
 Usage:
-    # preview (dry-run): no writes, no backup
+    python scripts/seed_acknowledged_collisions.py --known            # dry-run
+    python scripts/seed_acknowledged_collisions.py --known --commit
     python scripts/seed_acknowledged_collisions.py \
-        --owner-cid 110 --other-cid 410 --alias-norm "adine"
-
-    # apply (latest db/wot_book*.db snapshot by default)
-    python scripts/seed_acknowledged_collisions.py \
-        --owner-cid 110 --other-cid 410 --alias-norm "adine" \
-        --note "coincidental homonym, unrelated characters" --commit
+        --owner-cid 110 --other-cid 410 --alias-norm "adine" --commit
 """
 import argparse
 import glob
@@ -54,6 +57,20 @@ CREATE TABLE IF NOT EXISTS acknowledged_collisions (
 )
 """
 
+_SLAYER_NOTE = ("Luc and Isam: two origins fused in one body; cross-referenced "
+                "on purpose. Confirmed while processing book 9.")
+
+# Built-in, reproducible acknowledged collisions, referenced by primary_name
+# (NOT by id) so they resolve correctly in any snapshot and skip books where the
+# characters don't yet exist. Seed with --known.
+KNOWN_COLLISIONS = [
+    # Slayer: the Isam/Luc dual identity cross-references each other on purpose.
+    {"owner": "Isam Mandragoran", "other": "Luc Mantear",
+     "alias_norm": "luc mantear", "note": _SLAYER_NOTE},
+    {"owner": "Luc Mantear", "other": "Isam Mandragoran",
+     "alias_norm": "isam mandragoran", "note": _SLAYER_NOTE},
+]
+
 
 def discover_latest_db():
     """Return the path to the latest db/wot_book{N}.db snapshot, or None.
@@ -72,31 +89,78 @@ def discover_latest_db():
     return None
 
 
-def _char_name(conn, cid):
+def _cid_for_name(conn, name):
+    row = conn.execute(
+        "SELECT character_id FROM characters WHERE primary_name = ?", (name,)
+    ).fetchone()
+    return row[0] if row else None
+
+
+def _name_for_cid(conn, cid):
     row = conn.execute(
         "SELECT primary_name FROM characters WHERE character_id = ?", (cid,)
     ).fetchone()
     return row[0] if row else None
 
 
+def _build_entries(conn, args):
+    """Return (entries, skipped). entries: list of
+    (owner_cid, other_cid, alias_norm, note, label). skipped: list of
+    (label, reason) for known entries whose characters aren't in this DB."""
+    entries, skipped = [], []
+    if args.known:
+        for k in KNOWN_COLLISIONS:
+            label = f"{k['owner']} / {k['other']} :: {k['alias_norm']}"
+            oc = _cid_for_name(conn, k["owner"])
+            ot = _cid_for_name(conn, k["other"])
+            miss = [n for n, cid in ((k["owner"], oc), (k["other"], ot))
+                    if cid is None]
+            if miss:
+                skipped.append((label, f"not in this DB: {', '.join(miss)}"))
+                continue
+            entries.append((oc, ot, norm(k["alias_norm"]), k["note"], label))
+        return entries, skipped
+
+    # single-entry mode
+    if args.owner_cid is None or args.other_cid is None or not args.alias_norm:
+        sys.exit("Provide --owner-cid, --other-cid and --alias-norm, "
+                 "or use --known.")
+    if args.owner_cid == args.other_cid:
+        sys.exit("owner-cid and other-cid must differ (a collision is between "
+                 "two distinct characters).")
+    on = _name_for_cid(conn, args.owner_cid)
+    tn = _name_for_cid(conn, args.other_cid)
+    miss = [str(c) for c, n in ((args.owner_cid, on), (args.other_cid, tn))
+            if n is None]
+    if miss:
+        sys.exit(f"character_id(s) not found in this DB: {', '.join(miss)} "
+                 f"-- nothing acknowledged.")
+    label = f"{on} / {tn} :: {args.alias_norm}"
+    entries.append((args.owner_cid, args.other_cid, norm(args.alias_norm),
+                    args.note, label))
+    return entries, skipped
+
+
 def main():
     ap = argparse.ArgumentParser(
-        description="Acknowledge one Check D identity collision so it stops "
+        description="Acknowledge Check D identity collisions so they stop "
                     "re-flagging on every audit (and in future books).")
-    ap.add_argument("--owner-cid", type=int, required=True,
+    ap.add_argument("--known", action="store_true",
+                    help="seed the built-in KNOWN_COLLISIONS batch (by name) "
+                         "instead of a single --owner/--other/--alias entry")
+    ap.add_argument("--owner-cid", type=int,
                     help="character_id of the row CARRYING the alias")
-    ap.add_argument("--other-cid", type=int, required=True,
+    ap.add_argument("--other-cid", type=int,
                     help="character_id whose primary_name the alias matches")
-    ap.add_argument("--alias-norm", required=True,
-                    help="the colliding alias text (normalised internally so "
-                         "either the raw or normalised form works)")
+    ap.add_argument("--alias-norm",
+                    help="the colliding alias text (normalised internally)")
     ap.add_argument("--note", default=None,
                     help="short reason this collision is acknowledged")
     ap.add_argument("--db", default=None,
                     help="SQLite DB to seed (default: latest db/wot_book*.db)")
     ap.add_argument("--commit", action="store_true",
-                    help="apply the insert. Without --commit this is a dry-run: "
-                         "no writes, no backup.")
+                    help="apply the insert(s). Without --commit this is a "
+                         "dry-run: no writes, no backup.")
     args = ap.parse_args()
 
     db = args.db or discover_latest_db()
@@ -107,11 +171,6 @@ def main():
     if not os.path.exists(db_path):
         sys.exit(f"Database not found: {db_path}")
 
-    if args.owner_cid == args.other_cid:
-        sys.exit("owner-cid and other-cid must differ (a collision is between "
-                 "two distinct characters).")
-    alias_norm = norm(args.alias_norm)
-
     mode = "COMMIT" if args.commit else "DRY-RUN"
     print(f"Mode : {mode}")
     print(f"DB   : {db_path}")
@@ -120,61 +179,42 @@ def main():
     conn.execute("PRAGMA foreign_keys = ON")
     conn.row_factory = sqlite3.Row
 
-    # Both characters must exist (FK + a meaningful acknowledgment).
-    owner_name = _char_name(conn, args.owner_cid)
-    other_name = _char_name(conn, args.other_cid)
-    missing = [str(c) for c, n in ((args.owner_cid, owner_name),
-                                   (args.other_cid, other_name)) if n is None]
-    if missing:
-        conn.close()
-        sys.exit(f"character_id(s) not found in this DB: {', '.join(missing)} "
-                 f"-- nothing acknowledged.")
+    entries, skipped = _build_entries(conn, args)
+    for label, reason in skipped:
+        print(f"  SKIP   {label}  ({reason})")
+    for oc, ot, an, note, label in entries:
+        print(f"  {label}  (owner_cid={oc}, other_cid={ot}, alias_norm={an!r})")
 
-    print(f"  owner_cid={args.owner_cid} \"{owner_name}\"")
-    print(f"  other_cid={args.other_cid} \"{other_name}\"")
-    print(f"  alias_norm={alias_norm!r}")
-    if args.note:
-        print(f"  note={args.note!r}")
-
-    # Does the table exist, and is this exact row already present?
-    has_table = conn.execute(
-        "SELECT 1 FROM sqlite_master WHERE type='table' "
-        "AND name='acknowledged_collisions'").fetchone() is not None
-    already = bool(has_table and conn.execute(
-        "SELECT 1 FROM acknowledged_collisions "
-        "WHERE owner_cid=? AND other_cid=? AND alias_norm=?",
-        (args.owner_cid, args.other_cid, alias_norm)).fetchone())
-
-    # ── Dry-run: no writes, no backup ─────────────────────────────────────────
     if not args.commit:
         print()
-        if already:
-            print("Dry-run: this collision is ALREADY acknowledged. "
-                  "Commit would be a no-op.")
-        else:
-            print("Dry-run: would acknowledge this collision. "
-                  "Re-run with --commit to write.")
+        print(f"Dry-run: would acknowledge {len(entries)} collision(s) "
+              f"(skipped {len(skipped)}). Re-run with --commit to write.")
         conn.close()
         return
 
-    # ── Commit: backup, then insert ───────────────────────────────────────────
     bak_path = db_path + ".pre-collision-ack.bak"
     shutil.copy2(db_path, bak_path)
     print(f"Backup written: {bak_path}")
 
     conn.execute(CREATE_SQL)
-    cur = conn.execute(
-        "INSERT OR IGNORE INTO acknowledged_collisions "
-        "(owner_cid, other_cid, alias_norm, note) VALUES (?, ?, ?, ?)",
-        (args.owner_cid, args.other_cid, alias_norm, args.note))
+    inserted = already = 0
+    for oc, ot, an, note, label in entries:
+        cur = conn.execute(
+            "INSERT OR IGNORE INTO acknowledged_collisions "
+            "(owner_cid, other_cid, alias_norm, note) VALUES (?, ?, ?, ?)",
+            (oc, ot, an, note))
+        if cur.rowcount:
+            inserted += 1
+        else:
+            already += 1
     conn.commit()
-
     total = conn.execute(
         "SELECT COUNT(*) FROM acknowledged_collisions").fetchone()[0]
     conn.close()
 
-    print("  INSERT" if cur.rowcount else "  exists (already acknowledged)")
-    print(f"Done. acknowledged_collisions now holds {total} row(s).")
+    print(f"Done. inserted={inserted}  already-present={already}  "
+          f"skipped(missing)={len(skipped)}")
+    print(f"acknowledged_collisions now holds {total} row(s).")
 
 
 if __name__ == "__main__":

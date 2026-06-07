@@ -7,22 +7,23 @@ distinct_pairs records a human-confirmed "these are different people" character
 pair so Check E (fuzzy near-duplicate primary names) stops re-flagging them on
 every future pass — mirroring how Check E already skips alias-linked pairs.
 
-Inserts ONE pair. The two ids are normalised so the smaller becomes cid_low (the
-table also enforces CHECK (cid_low < cid_high)), so the order on the command
-line does not matter. Dry-run by default; pass --commit to write (a backup is
-taken first). Idempotent: re-running with --commit is a no-op via INSERT OR
-IGNORE.
+Two ways to seed:
+  --known : seed the built-in KNOWN_PAIRS batch below. Entries are keyed by
+            primary_name so a re-seed (or running against an earlier book)
+            resolves them to that snapshot's ids and SKIPS characters that don't
+            exist there. This is what makes the known pairs survive a re-seed
+            and carry to books 1-8.
+  single  : --cid-low/--cid-high for an ad-hoc pair (order doesn't matter; the
+            smaller id is stored as cid_low, which the table CHECK enforces).
 
-The original 17-pair historical batch (already applied to the live snapshots)
-is preserved in scripts/seed_distinct_pairs_initial.py.
+Dry-run by default; pass --commit to write (a backup is taken first). Idempotent
+via INSERT OR IGNORE. The original 17-pair historical batch is preserved in
+scripts/seed_distinct_pairs_initial.py.
 
 Usage:
-    # preview (dry-run): no writes, no backup
-    python scripts/seed_distinct_pairs.py --cid-low 446 --cid-high 729
-
-    # apply (latest db/wot_book*.db snapshot by default)
-    python scripts/seed_distinct_pairs.py --cid-low 446 --cid-high 729 \
-        --note "Foo vs Bar, distinct" --commit
+    python scripts/seed_distinct_pairs.py --known            # dry-run
+    python scripts/seed_distinct_pairs.py --known --commit
+    python scripts/seed_distinct_pairs.py --cid-low 446 --cid-high 729 --commit
 """
 import argparse
 import glob
@@ -47,6 +48,15 @@ CREATE TABLE IF NOT EXISTS distinct_pairs (
 )
 """
 
+# Built-in, reproducible distinct pairs, referenced by primary_name (NOT by id)
+# so they resolve correctly in any snapshot and skip books where the characters
+# don't yet exist. Seed with --known.
+KNOWN_PAIRS = [
+    {"a": "Lan Mandragoran", "b": "Lain Mandragoran",
+     "note": ("Lain is Lan's uncle and Isam's father; ~97% surname similarity "
+              "is expected, not a misspelling.")},
+]
+
 
 def discover_latest_db():
     """Return the path to the latest db/wot_book{N}.db snapshot, or None.
@@ -65,29 +75,73 @@ def discover_latest_db():
     return None
 
 
-def _char_name(conn, cid):
+def _cid_for_name(conn, name):
+    row = conn.execute(
+        "SELECT character_id FROM characters WHERE primary_name = ?", (name,)
+    ).fetchone()
+    return row[0] if row else None
+
+
+def _name_for_cid(conn, cid):
     row = conn.execute(
         "SELECT primary_name FROM characters WHERE character_id = ?", (cid,)
     ).fetchone()
     return row[0] if row else None
 
 
+def _build_entries(conn, args):
+    """Return (entries, skipped). entries: list of (cid_low, cid_high, note,
+    label). skipped: list of (label, reason)."""
+    entries, skipped = [], []
+    if args.known:
+        for k in KNOWN_PAIRS:
+            label = f"{k['a']} / {k['b']}"
+            ca, cb = _cid_for_name(conn, k["a"]), _cid_for_name(conn, k["b"])
+            miss = [n for n, cid in ((k["a"], ca), (k["b"], cb)) if cid is None]
+            if miss:
+                skipped.append((label, f"not in this DB: {', '.join(miss)}"))
+                continue
+            if ca == cb:
+                skipped.append((label, "both names resolve to the same row"))
+                continue
+            low, high = sorted((ca, cb))
+            entries.append((low, high, k["note"], label))
+        return entries, skipped
+
+    # single-pair mode
+    if args.cid_low is None or args.cid_high is None:
+        sys.exit("Provide --cid-low and --cid-high, or use --known.")
+    if args.cid_low == args.cid_high:
+        sys.exit("--cid-low and --cid-high must differ (a distinct pair is two "
+                 "different characters).")
+    low, high = sorted((args.cid_low, args.cid_high))
+    ln, hn = _name_for_cid(conn, low), _name_for_cid(conn, high)
+    miss = [str(c) for c, n in ((low, ln), (high, hn)) if n is None]
+    if miss:
+        sys.exit(f"character_id(s) not found in this DB: {', '.join(miss)} "
+                 f"-- nothing seeded.")
+    entries.append((low, high, args.note, f"{ln} / {hn}"))
+    return entries, skipped
+
+
 def main():
     ap = argparse.ArgumentParser(
-        description="Seed one confirmed-distinct pair into the distinct_pairs "
+        description="Seed confirmed-distinct pairs into the distinct_pairs "
                     "Check E suppression table.")
-    ap.add_argument("--cid-low", type=int, required=True,
+    ap.add_argument("--known", action="store_true",
+                    help="seed the built-in KNOWN_PAIRS batch (by name) instead "
+                         "of a single --cid-low/--cid-high pair")
+    ap.add_argument("--cid-low", type=int,
                     help="one character_id of the confirmed-distinct pair")
-    ap.add_argument("--cid-high", type=int, required=True,
-                    help="the other character_id (order does not matter; the "
-                         "smaller is stored as cid_low)")
+    ap.add_argument("--cid-high", type=int,
+                    help="the other character_id (order does not matter)")
     ap.add_argument("--note", default=None,
                     help="short reason the pair is confirmed distinct")
     ap.add_argument("--db", default=None,
                     help="SQLite DB to seed (default: latest db/wot_book*.db)")
     ap.add_argument("--commit", action="store_true",
-                    help="apply the insert. Without --commit this is a dry-run: "
-                         "no writes, no backup.")
+                    help="apply the insert(s). Without --commit this is a "
+                         "dry-run: no writes, no backup.")
     args = ap.parse_args()
 
     db = args.db or discover_latest_db()
@@ -98,13 +152,6 @@ def main():
     if not os.path.exists(db_path):
         sys.exit(f"Database not found: {db_path}")
 
-    if args.cid_low == args.cid_high:
-        sys.exit("--cid-low and --cid-high must differ (a distinct pair is two "
-                 "different characters).")
-    # Normalise so the smaller id is cid_low (the table also enforces this), so
-    # the user can pass them in either order.
-    low, high = sorted((args.cid_low, args.cid_high))
-
     mode = "COMMIT" if args.commit else "DRY-RUN"
     print(f"Mode : {mode}")
     print(f"DB   : {db_path}")
@@ -113,57 +160,40 @@ def main():
     conn.execute("PRAGMA foreign_keys = ON")
     conn.row_factory = sqlite3.Row
 
-    # Both characters must exist (FK + a readable, meaningful confirmation).
-    low_name = _char_name(conn, low)
-    high_name = _char_name(conn, high)
-    missing = [str(c) for c, n in ((low, low_name), (high, high_name))
-               if n is None]
-    if missing:
-        conn.close()
-        sys.exit(f"character_id(s) not found in this DB: {', '.join(missing)} "
-                 f"-- nothing seeded.")
+    entries, skipped = _build_entries(conn, args)
+    for label, reason in skipped:
+        print(f"  SKIP   {label}  ({reason})")
+    for low, high, note, label in entries:
+        print(f"  {label}  (cid_low={low}, cid_high={high})")
 
-    print(f"  cid_low={low} \"{low_name}\"")
-    print(f"  cid_high={high} \"{high_name}\"")
-    if args.note:
-        print(f"  note={args.note!r}")
-
-    # Does the table exist, and is this exact pair already present?
-    has_table = conn.execute(
-        "SELECT 1 FROM sqlite_master WHERE type='table' "
-        "AND name='distinct_pairs'").fetchone() is not None
-    already = bool(has_table and conn.execute(
-        "SELECT 1 FROM distinct_pairs WHERE cid_low=? AND cid_high=?",
-        (low, high)).fetchone())
-
-    # ── Dry-run: no writes, no backup ─────────────────────────────────────────
     if not args.commit:
         print()
-        if already:
-            print("Dry-run: this pair is ALREADY recorded as distinct. "
-                  "Commit would be a no-op.")
-        else:
-            print("Dry-run: would record this pair as distinct. "
-                  "Re-run with --commit to write.")
+        print(f"Dry-run: would record {len(entries)} distinct pair(s) "
+              f"(skipped {len(skipped)}). Re-run with --commit to write.")
         conn.close()
         return
 
-    # ── Commit: backup, then insert ───────────────────────────────────────────
     bak_path = db_path + ".pre-distinct-seed.bak"
     shutil.copy2(db_path, bak_path)
     print(f"Backup written: {bak_path}")
 
     conn.execute(CREATE_SQL)
-    cur = conn.execute(
-        "INSERT OR IGNORE INTO distinct_pairs (cid_low, cid_high, note) "
-        "VALUES (?, ?, ?)", (low, high, args.note))
+    inserted = already = 0
+    for low, high, note, label in entries:
+        cur = conn.execute(
+            "INSERT OR IGNORE INTO distinct_pairs (cid_low, cid_high, note) "
+            "VALUES (?, ?, ?)", (low, high, note))
+        if cur.rowcount:
+            inserted += 1
+        else:
+            already += 1
     conn.commit()
-
     total = conn.execute("SELECT COUNT(*) FROM distinct_pairs").fetchone()[0]
     conn.close()
 
-    print("  INSERT" if cur.rowcount else "  exists (already recorded)")
-    print(f"Done. distinct_pairs now holds {total} pair(s).")
+    print(f"Done. inserted={inserted}  already-present={already}  "
+          f"skipped(missing)={len(skipped)}")
+    print(f"distinct_pairs now holds {total} pair(s).")
 
 
 if __name__ == "__main__":
