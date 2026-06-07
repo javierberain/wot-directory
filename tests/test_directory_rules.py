@@ -73,6 +73,21 @@ def test_is_rank_decorated_redundant():
                                               {"siuan", "sanche"})
     # residue empty (pure rank word) is not "redundant" here
     assert not dr.is_rank_decorated_redundant("mother", {"siuan", "sanche"})
+    # MUST NOT fire when strip_titles removed nothing: an undecorated bare name
+    # (the bug that dropped 'Faile' when {faile, aybara} was the name set), or a
+    # positional title carrying no rank/article ('Queen of Andor').
+    assert not dr.is_rank_decorated_redundant("faile", {"zarine", "bashere"})
+    assert not dr.is_rank_decorated_redundant("faile", {"faile", "aybara"})
+    assert not dr.is_rank_decorated_redundant("queen of andor",
+                                              {"queen", "morgase"})
+    assert not dr.is_rank_decorated_redundant("lews therin",
+                                              {"rand", "al'thor", "lews",
+                                               "therin", "telamon"})
+    # still fires for genuinely rank/article-decorated names
+    assert dr.is_rank_decorated_redundant("lord agelmar", {"agelmar", "jagad"})
+    assert dr.is_rank_decorated_redundant("verin sedai", {"verin", "mathwin"})
+    assert dr.is_rank_decorated_redundant("mistress mathwin",
+                                          {"verin", "mathwin"})
 
 
 def test_is_descriptor_epithet():

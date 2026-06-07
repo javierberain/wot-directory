@@ -29,7 +29,7 @@ character_id,primary_name,alias_text,alias_type,action,rule,note
 4,Rand al'Thor,He Who Comes With the Dawn,epithet,KEEP,,"Aiel prophecy name, strongly implied by Elayne's reasoning"
 4,Rand al'Thor,King of the World,epithet,KEEP,,
 4,Rand al'Thor,Kinslayer,epithet,KEEP,,"Ba'alzamon's epithet for Rand, referring to Lews Therin's past"
-4,Rand al'Thor,Lews Therin,epithet,DROP,rank_decorated,"Ba'alzamon repeatedly calls Rand by this name, referring to the Dragon from the Age of Legends"
+4,Rand al'Thor,Lews Therin,epithet,KEEP,,"Ba'alzamon repeatedly calls Rand by this name, referring to the Dragon from the Age of Legends"
 4,Rand al'Thor,Lews Therin Kinslayer,epithet,KEEP,,Full epithet used by Ba'alzamon
 4,Rand al'Thor,Lord Shepherd,epithet,KEEP,,Min's sarcastic address
 4,Rand al'Thor,Shadowkiller,epithet,KEEP,,Perrin thinks this name; it appears to be a wolf name for Rand
@@ -268,7 +268,7 @@ character_id,primary_name,alias_text,alias_type,action,rule,note
 65,Logain,the false Dragon,epithet,KEEP,,how he is referred to throughout
 65,Logain,the unbeliever,epithet,KEEP,,Elaida's term for him
 65,Logain,Master Logain,title,DROP,rank_decorated,
-66,Governor Adan,Governor,title,DROP,rank_decorated,
+66,Governor Adan,Governor,title,KEEP,,
 71,Yurian Stonebow,false Dragon,epithet,KEEP,,Rose from ashes of Trolloc Wars
 74,Artur Hawkwing,High King,title,COLLAPSE,article_dup,ruled a vast empire
 74,Artur Hawkwing,the High King,title,KEEP,,His ruling title
@@ -308,7 +308,7 @@ character_id,primary_name,alias_text,alias_type,action,rule,note
 107,Queen Morgase,"Morgase, by the Grace of the Light, Queen of Andor, Defender of the Realm, Protector of the People, High Seat of the House Trakand",title,KEEP,,full formal title
 107,Queen Morgase,my Queen,title,KEEP,,how she is addressed
 107,Queen Morgase,Protector of the People,title,KEEP,,
-107,Queen Morgase,Queen of Andor,title,DROP,rank_decorated,
+107,Queen Morgase,Queen of Andor,title,KEEP,,
 107,Queen Morgase,Your Majesty,title,KEEP,,
 110,Jaret Byar,Jaret Byar,primary,PROMOTE,promotion,from 'Byar'
 110,Jaret Byar,Child Byar,title,KEEP,,His rank and name within the Children
@@ -651,7 +651,7 @@ character_id,primary_name,alias_text,alias_type,action,rule,note
 387,Zarine Bashere,tall black stallion,epithet,KEEP,,
 387,Zarine Bashere,the black stallion,epithet,KEEP,,
 387,Zarine Bashere,the Lady,epithet,REVIEW,empty_residue,Used by Dannil
-387,Zarine Bashere,Faile,nickname,DROP,rank_decorated,"Name meaning 'falcon' in the Old Tongue, what her father used to call her, what she decides to call herself at the end of the chapter"
+387,Zarine Bashere,Faile,nickname,KEEP,,"Name meaning 'falcon' in the Old Tongue, what her father used to call her, what she decides to call herself at the end of the chapter"
 387,Zarine Bashere,Faile Aybara,nickname,KEEP,,Perrin considers writing this on letter after their marriage
 387,Zarine Bashere,Mandarb,nickname,KEEP,,"Name she initially chose for herself as a Hunter, meaning 'blade' in the Old Tongue, abandoned when she learned Lan's horse has that name"
 387,Zarine Bashere,gai'shain,title,KEEP,,referred to as such by her captors

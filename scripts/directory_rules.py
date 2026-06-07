@@ -166,12 +166,19 @@ def match_key(name):
 
 def is_rank_decorated_redundant(alias_norm, name_token_set):
     """True if `alias_norm` is just the character's own name wearing rank/article
-    decoration: its residue after strip_titles is a non-empty subset of the
-    character's name tokens. Catches 'Verin Sedai', 'Lord Agelmar',
-    'Mistress Mathwin', 'High Lady Alteima', 'Agelmar Dai Shan'. Spares genuine
-    positional/singular titles ('Lord of Fal Dara'), whose residue contains
-    words that are not part of the name."""
-    residue = set(strip_titles(alias_norm).split())
+    decoration: a leading article or RANK_TOKENS phrase was ACTUALLY removed AND
+    the residue is a non-empty subset of the character's name tokens.
+
+    Catches 'Verin Sedai', 'Lord Agelmar', 'Mistress Mathwin', 'High Lady
+    Alteima', 'Agelmar Dai Shan'. Crucially it does NOT fire when strip_titles
+    removed nothing: a bare undecorated name ('Faile' when the name set is
+    {faile, aybara}) or a positional title with no rank/article ('Queen of
+    Andor') is left alone. Positional/singular titles whose residue isn't a name
+    subset ('Lord of Fal Dara') are also spared by the subset test."""
+    stripped = strip_titles(alias_norm)
+    if stripped == norm(alias_norm):
+        return False                      # no rank/article removed -> not a dup
+    residue = set(stripped.split())
     return bool(residue) and residue <= set(name_token_set)
 
 
@@ -557,6 +564,11 @@ if __name__ == "__main__":   # pragma: no cover
     assert is_rank_decorated_redundant("mistress mathwin", {"verin", "mathwin"})
     assert not is_rank_decorated_redundant("lord of fal dara",
                                            {"agelmar", "jagad"})
+    # Must NOT fire when strip_titles removed nothing (undecorated name / a
+    # positional title with no rank or article).
+    assert not is_rank_decorated_redundant("faile", {"zarine", "bashere"})
+    assert not is_rank_decorated_redundant("queen of andor",
+                                           {"queen", "morgase"})
     assert is_descriptor_epithet("stout little verin", {"verin", "mathwin"})
     assert not is_descriptor_epithet("the dragon reborn", {"rand", "al'thor"})
     assert is_corrected_misnomer("mistakenly called the Amyrlin")
