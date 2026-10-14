@@ -17,7 +17,7 @@ For slots of the form book{N} the order (N), label ("Book N") and seed
         --epub "books/Book_10_Crossroads_of_Twilight.epub" --title "Crossroads of Twilight"
 
     python scripts/start_book.py --slot newspring --order 11 --label "New Spring" \
-        --seed-from book10 --epub "books/New_Spring.epub" --title "New Spring"
+        --seed-from book10 --epub "books/New_Spring.epub" --title "New Spring" --prequel
 
     python scripts/start_book.py --slot book11 --seed-from newspring \
         --epub "books/Book_11_Knife_of_Dreams.epub" --title "Knife of Dreams"
@@ -62,6 +62,8 @@ def main():
     ap.add_argument("--title", help="override book title")
     ap.add_argument("--force", action="store_true",
                     help="overwrite an existing db/wot_{slot}.db (backed up first)")
+    ap.add_argument("--prequel", action="store_true",
+                    help="story set before book 1 (New Spring); see migration 005")
     args = ap.parse_args()
 
     slot = validate_slot(args.slot)
@@ -124,7 +126,7 @@ def main():
     print(f"Parsing EPUB into {os.path.basename(target)} as slot={slot} "
           f"order={order} label={label!r} ...")
     parse_epub.parse_book(args.epub, order, args.title, db_path=target,
-                          slot=slot, label=label)
+                          slot=slot, label=label, is_prequel=args.prequel)
 
     # 4. next step
     print(f"\nDone. Next:\n  python scripts/run_book.py --book {slot} --from 0 "

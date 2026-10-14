@@ -45,6 +45,8 @@ from directory_rules import (
     snapshot_path,
     resolve_book,
     is_fuller_proper_name,
+    normalize_age,
+    refine_age,
     norm,
     coerce_char_type,
     coerce_faction_type,
@@ -515,10 +517,11 @@ def create_character(conn, char):
             filiations, personality)
            VALUES (?, ?, ?, ?, ?, ?, ?)""",
         (primary, ctype, origin,
-         st.get("physical_traits"), st.get("age"), st.get("filiations"),
-         st.get("personality")),
+         st.get("physical_traits"), normalize_age(st.get("age")),
+         st.get("filiations"), st.get("personality")),
     )
     cid = cur.lastrowid
+    _CREATED_THIS_RUN.add(cid)
     conn.execute(
         "INSERT OR IGNORE INTO aliases "
         "(character_id, alias_text, alias_norm, alias_type, is_primary) "
@@ -530,12 +533,57 @@ def create_character(conn, char):
     return cid
 
 
+_CREATED_THIS_RUN = set()   # cids created by create_character() in this process
+
+
+def has_main_series_appearance(conn, cid):
+    """True when the character is on the page somewhere OUTSIDE prequel books.
+    A character the main series only ever names (Tamra Ospenya, Gitara
+    Moroso) gets her only description from the prequel, so the prequel guard
+    must not apply to her."""
+    cols = {r[1] for r in conn.execute("PRAGMA table_info(books)")}
+    if "is_prequel" not in cols:
+        return True
+    row = conn.execute(
+        "SELECT 1 FROM appearances a JOIN chapters ch ON ch.chapter_id = a.chapter_id "
+        "JOIN books b ON b.book_id = ch.book_id "
+        "WHERE a.character_id = ? AND b.is_prequel = 0 LIMIT 1", (cid,)).fetchone()
+    return row is not None
+
+
+PREQUEL_GUARDED_TRAITS = ("physical_traits", "age", "personality")   # expire
+PREQUEL_GUARDED_FACTION_TYPES = ("other", "order")                     # can be left
+
+
+def chapter_is_prequel(conn, chapter_id):
+    """True when the chapter belongs to a book flagged is_prequel (New Spring).
+    False on snapshots that predate migration 005."""
+    cols = {r[1] for r in conn.execute("PRAGMA table_info(books)")}
+    if "is_prequel" not in cols:
+        return False
+    row = conn.execute(
+        "SELECT b.is_prequel FROM chapters ch JOIN books b ON b.book_id = ch.book_id "
+        "WHERE ch.chapter_id = ?", (chapter_id,)).fetchone()
+    return bool(row and row[0])
+
+
 def enrich_character(conn, cid, char, chapter_id):
     """Fill empty stable traits; REFINE nationality (coarse->fine, conflict to
     review) instead of the old fill-once COALESCE. Returns a list of review
-    payloads to queue (origin conflicts), so the caller owns all queueing."""
+    payloads to queue (origin conflicts), so the caller owns all queueing.
+
+    Prequel guard: when the chapter is from a prequel (books.is_prequel), the
+    traits that EXPIRE (physical_traits, age, personality) are not filled on a
+    character who is on the page in the main series: 'young Accepted' written
+    into Moiraine's empty age field would be presented as a present-day fact.
+    Characters the main series only names (Tamra Ospenya) take their only
+    description from the prequel. Nationality, names and filiations (family)
+    are timeless and always refine/promote."""
     st = char.get("stable_traits", {}) or {}
     reviews = []
+    prequel_existing = (chapter_is_prequel(conn, chapter_id)
+                        and cid not in _CREATED_THIS_RUN
+                        and has_main_series_appearance(conn, cid))
 
     # nationality: refine toward the most specific value
     incoming_nat = st.get("nationality")
@@ -558,9 +606,24 @@ def enrich_character(conn, cid, char, chapter_id):
                 (new_nat, cid),
             )
 
+    # age: normalised vocabulary, forward-only refinement (young -> adult ->
+    # ... -> elderly; ageless on top; "about N" when a number is given). A
+    # prequel chapter never moves an existing character (it would move them
+    # BACKWARD in story time anyway).
+    if st.get("age") and not prequel_existing:
+        cur_age = conn.execute(
+            "SELECT age FROM characters WHERE character_id = ?", (cid,)).fetchone()[0]
+        new_age = refine_age(cur_age, st.get("age"))
+        if new_age != cur_age:
+            conn.execute(
+                "UPDATE characters SET age = ?, updated_at = datetime('now') "
+                "WHERE character_id = ?", (new_age, cid))
+
     # other stable traits keep fill-once-if-empty semantics
-    for col in ("physical_traits", "age", "filiations", "personality"):
+    for col in ("physical_traits", "filiations", "personality"):
         val = st.get(col)
+        if val and prequel_existing and col in PREQUEL_GUARDED_TRAITS:
+            continue        # prequel chapter, main-series character: skip
         if val:
             conn.execute(
                 f"UPDATE characters SET {col} = COALESCE({col}, ?), "
@@ -587,8 +650,19 @@ def enrich_character(conn, cid, char, chapter_id):
 
 def reconcile_factions(conn, cid, char, chapter_id):
     """Match each LLM-reported faction by name, create new ones, write joins.
-    Idempotent: re-running a chapter does not duplicate rows."""
+    Idempotent: re-running a chapter does not duplicate rows.
+    Prequel guard: a prequel chapter does not add a LEAVABLE faction (type
+    other/order: White Tower as a Warder, the Younglings) to a character who is
+    on the page in the main series; an Ajah, House, clan or society is a
+    lifelong identity and is still added. Characters the prequel itself
+    introduces, or whom the main series only names, get everything."""
+    guard = (bool(char.get("factions")) and chapter_is_prequel(conn, chapter_id)
+             and cid not in _CREATED_THIS_RUN and has_main_series_appearance(conn, cid))
     for fac in char.get("factions", []) or []:
+        if guard and coerce_faction_type(fac.get("faction_type")) in PREQUEL_GUARDED_FACTION_TYPES:
+            print(f"  [prequel] '{fac.get('name')}' not applied to "
+                  f"'{get_primary_name(conn, cid)}' (leavable faction, main-series character)")
+            continue
         name = (fac.get("name") or "").strip()
         if not name:
             continue
@@ -710,6 +784,23 @@ def resolve_one(conn, roster, char, data, chapter_id, auto):
             queue_review(conn, chapter_id, "suspicious_llm_match",
                          char, note, data)
             return None
+
+    # Namesake guard: an EXACT hit on a bare single-token alias (a given_name
+    # or nickname, not the row's primary name) is weak evidence when the
+    # extractor explicitly says this is a NEW character and offers no pointer.
+    # New Spring ch1 bound 'Jaim', a gray-bearded Aiel War soldier, to Jaim
+    # Torfinn (a Two Rivers youth) this way. Park it for a human instead of
+    # silently folding a namesake into an unrelated row.
+    if (cid is not None and method == "exact"
+            and char.get("is_new_character") and not pointer
+            and len(norm(name).split()) == 1
+            and norm(name) != norm(get_primary_name(conn, cid))):
+        note = (f"'{name}' exactly matches a single-name alias of "
+                f"'{get_primary_name(conn, cid)}' (cid {cid}), but the extractor "
+                f"says this is a NEW character. Namesake or the same person?")
+        print(f"  [REVIEW] namesake_alias: {note}")
+        queue_review(conn, chapter_id, "namesake_alias", char, note, data)
+        return None
 
     if cid is not None:
         print(f"  [{method}] '{name}' -> {get_primary_name(conn, cid)}")

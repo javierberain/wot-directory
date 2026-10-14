@@ -23,6 +23,7 @@ MIG_DIR = os.path.join(DB_DIR, "migrations")
 # migration number -> SQL that succeeds only if the migration is already applied
 ALREADY_APPLIED_PROBE = {
     "004": "SELECT slot, label FROM books LIMIT 1",
+    "005": "SELECT is_prequel FROM books LIMIT 1",
 }
 
 

@@ -713,3 +713,126 @@ def is_fuller_proper_name(candidate, current_primary):
             continue
         return False
     return True
+
+
+# ── Age normalisation ─────────────────────────────────────────────────────────
+# The extractor returns age as free text ("older (gray-haired)", "about
+# Egwene's age", "alive"). The directory stores a small ordered vocabulary so
+# the row reads consistently and a later chapter can move a character FORWARD
+# along the scale (never backward), the way nationality refines. A clear
+# number is kept as "about N". Non-age values (alive, deceased, unknown) and
+# pure comparatives ("older than Rand") are dropped to NULL. Returns None when
+# nothing age-like is found; the cleanup script lists those for a human.
+
+AGE_BANDS = ["child", "young", "adult", "middle years", "older", "elderly"]
+AGE_AGELESS = "ageless"
+
+_AGE_KEYWORDS = [
+    # order matters: first matching band wins
+    ("elderly",      r"\b(elderly|ancient|very old|(?<!-)aged|grandmother|grandfather|white[- ]haired|wizened|pensioner|dotage|great[- ]grand)\b"),
+    ("middle years", r"\b(middle[- ]aged|middle years|middle-years|midlife|mid-life|mature|prime|thirties|forties|fifties|30s|40s|50s|veteran|well beyond thirty|past thirty)\b"),
+    ("older",        r"\b(old|older|aging|ageing|gray|grey|graying|greying|silver|balding|senior|elder|lined face|matron)\b"),
+    ("young",        r"\b(young|youngish|younger|youngest|youth|youthful|teen|teenage|adolescent|novice|apprentice|youngster|lad|lass|twenties|20s|barely grown|of majority)\b"),
+    ("child",        r"\b(child|infant|baby|babe|toddler|boy|girl|little)\b"),
+    ("adult",        r"\b(adult|grown|man|woman|fully grown)\b"),
+]
+_AGE_NONAGE = re.compile(
+    r"^(alive|living|deceased|dead|unknown|n/?a|none|unclear|unspecified|not stated|immortal)\b", re.I)
+_AGE_NUMBER = re.compile(r"\b(\d{1,3})\b")
+_AGE_NUMBER_CONTEXT_BAD = re.compile(
+    r"\b(years? ago|years? (before|since|earlier|later|as)|thousand|hundred|centur|ages? ago|times?|seasons?)\b", re.I)
+_AGE_COMPARATIVE = re.compile(
+    r"(\([^)]*\bthan\b[^)]*\)|[^,;(]*\b(older|younger|elder|senior|junior)\b[^,;()]*\bthan\b[^,;()]*|\bold enough\b[^,;()]*|\b\w+\s+times\b[^,;()]*age[^,;()]*|\bof an age with\b[^,;()]*|\bsame age as\b[^,;()]*|\bnear\b[^,;()]*\bage\b)",
+    re.I)
+_AGE_UNITS = {"one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6, "seven": 7,
+              "eight": 8, "nine": 9, "ten": 10, "eleven": 11, "twelve": 12, "thirteen": 13,
+              "fourteen": 14, "fifteen": 15, "sixteen": 16, "seventeen": 17, "eighteen": 18,
+              "nineteen": 19}
+_AGE_TENS = {"twenty": 20, "thirty": 30, "forty": 40, "fifty": 50, "sixty": 60,
+             "seventy": 70, "eighty": 80, "ninety": 90}
+_AGE_WORDNUM = re.compile(
+    r"\b(" + "|".join(_AGE_TENS) + r")(?:[- ](" + "|".join(k for k in _AGE_UNITS if _AGE_UNITS[k] < 10) + r"))?\b"
+    r"|\b(" + "|".join(_AGE_UNITS) + r")\b", re.I)
+_AGE_SMALL_WORDS = _AGE_UNITS
+_AGE_YEARS_OLD = re.compile(r"\b(\d{1,3}|" + "|".join(_AGE_UNITS) + r")\s*(years?|yrs?)[- ]old\b", re.I)
+
+
+def _word_number(low):
+    """'nearly twenty' -> 20, 'sixty-three' -> 63, 'nine' -> 9, else None.
+    Ignores numbers that measure durations ('twenty years ago')."""
+    m = _AGE_WORDNUM.search(low)
+    if not m:
+        return None
+    if m.group(1):
+        n = _AGE_TENS[m.group(1).lower()] + (_AGE_UNITS[m.group(2).lower()] if m.group(2) else 0)
+    else:
+        n = _AGE_UNITS[m.group(3).lower()]
+    tail = low[m.end():m.end() + 24]
+    if re.match(r"\s*(years?|yrs?)\b", tail) and not re.match(r"\s*(years?|yrs?)[- ]old\b", tail):
+        return None      # "twenty years as a guard" is a duration, not an age
+    # a word number counting things ("four Wisdoms", "three husbands") is not
+    # an age: accept only when followed by nothing, punctuation, "or"/"and",
+    # or "years old"
+    if re.match(r"\s+[a-z]", tail) and not re.match(r"\s+(or|and|years?|yrs?)\b", tail):
+        return None
+    return n
+
+
+def normalize_age(value):
+    """Map free-text age to the vocabulary. Returns a string from AGE_BANDS,
+    'ageless', 'about N', or None (non-age / unrecognised / pure comparative)."""
+    s = (value or "").strip()
+    if not s:
+        return None
+    low = s.lower()
+    if _AGE_NONAGE.match(low):
+        return None
+    if re.search(r"\b(ageless|timeless)\b", low):
+        return AGE_AGELESS
+    m = _AGE_YEARS_OLD.search(low)
+    if m:
+        n = _AGE_SMALL_WORDS.get(m.group(1)) or int(m.group(1))
+        return "child" if n <= 12 else f"about {n}"
+    # drop comparatives ("older than Rand", "old enough to dance") so their
+    # 'old'/'young' tokens do not masquerade as a band
+    low = _AGE_COMPARATIVE.sub(" ", low)
+    if not _AGE_NUMBER_CONTEXT_BAD.search(low):
+        m = _AGE_NUMBER.search(low)
+        n = int(m.group(1)) if m else _word_number(low)
+        if n is not None and 1 <= n <= 120:
+            return "child" if n <= 12 else f"about {n}"
+    for band, pat in _AGE_KEYWORDS:
+        if re.search(pat, low):
+            return band
+    return None
+
+
+def age_rank(norm_value):
+    """Position on the scale for forward-only refinement. 'about N' maps onto
+    the bands; ageless sits above everything (it is never undone)."""
+    if norm_value is None:
+        return -1
+    if norm_value == AGE_AGELESS:
+        return len(AGE_BANDS) + 1
+    if norm_value.startswith("about "):
+        n = int(norm_value.split()[1])
+        return (0 if n <= 12 else 1 if n <= 25 else 2 if n <= 40
+                else 3 if n <= 55 else 4 if n <= 70 else 5)
+    return AGE_BANDS.index(norm_value) if norm_value in AGE_BANDS else -1
+
+
+def refine_age(current, incoming_raw):
+    """Forward-only refinement. Returns the value to store (may be the current
+    one). A numeric incoming value at the same band replaces a band word (more
+    specific); otherwise the later position on the scale wins."""
+    inc = normalize_age(incoming_raw)
+    if inc is None:
+        return current
+    if current is None:
+        return inc
+    rc, ri = age_rank(current), age_rank(inc)
+    if ri > rc:
+        return inc
+    if ri == rc and inc.startswith("about ") and not current.startswith("about "):
+        return inc
+    return current

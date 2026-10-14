@@ -188,6 +188,21 @@ def process(conn, dec, dry):
     roster = Roster(conn)
     local = {}
 
+    # A "create" whose name already has a row (a later chapter created it
+    # while this sighting sat in the queue) becomes a merge into that row;
+    # creating would violate the UNIQUE primary_name constraint and, worse,
+    # duplicate the character.
+    if action == "create":
+        wanted = dec.get("rename") or char.get("name_used_in_text", "")
+        existing = conn.execute(
+            "SELECT character_id FROM characters WHERE primary_name = ?",
+            (wanted,)).fetchone()
+        if existing:
+            print(f"      '{wanted}' already exists as character_id="
+                  f"{existing[0]} (created by a later chapter); merging instead")
+            action = "merge"
+            dec = dict(dec, action="merge", target_cid=existing[0])
+
     if action == "merge":
         cid = resolve_target(conn, dec)
         print(f"      merge into character_id={cid}")

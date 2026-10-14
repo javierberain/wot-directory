@@ -119,17 +119,17 @@ def _load_available_books_info():
     meta = {}
     try:
         conn = sqlite3.connect(f"file:{db_path}?mode=ro", uri=True)
-        for slot, label, title in conn.execute(
-                "SELECT slot, label, title FROM books"):
-            meta[slot] = (label, title)
+        for slot, label, title, prequel in conn.execute(
+                "SELECT slot, label, title, is_prequel FROM books"):
+            meta[slot] = (label, title, bool(prequel))
         conn.close()
     except Exception:
         pass
     out = []
     for slot in AVAILABLE_BOOKS:
-        label, title = meta.get(slot, (slot, slot))
+        label, title, prequel = meta.get(slot, (slot, slot, False))
         out.append({"slot": slot, "series_order": BOOK_ORDER[slot],
-                    "label": label, "title": title})
+                    "label": label, "title": title, "is_prequel": prequel})
     return out
 
 
@@ -254,7 +254,7 @@ def character(cid):
     ).fetchall()
 
     appearances = conn.execute("""
-        SELECT b.series_order, b.slot, b.label, b.title AS book_title,
+        SELECT b.series_order, b.slot, b.label, b.is_prequel, b.title AS book_title,
                ch.chapter_number, ch.title AS chapter_title,
                ap.whereabouts, ap.notable_actions, ap.alliances_shown,
                ap.demeanor
@@ -267,7 +267,7 @@ def character(cid):
 
     # Chapters where the character is referenced but not present (offstage).
     mentions = conn.execute("""
-        SELECT b.series_order, b.slot, b.label, b.title AS book_title,
+        SELECT b.series_order, b.slot, b.label, b.is_prequel, b.title AS book_title,
                ch.chapter_number, ch.title AS chapter_title, mn.context
         FROM mentions mn
         JOIN chapters ch ON ch.chapter_id = mn.chapter_id
@@ -367,6 +367,7 @@ def books():
             "series_order": b["series_order"],
             "slot": b["slot"],
             "label": b["label"],
+            "is_prequel": bool(b["is_prequel"]),
             "title": b["title"],
             "chapters": [dict(c) for c in chapters],
         })

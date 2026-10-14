@@ -321,6 +321,21 @@ def delete_all(conn, ids):
     else:
         n_dpairs = 0
 
+    # 5b. mentions, acknowledged_collisions, disguise_map (all FK -> characters;
+    #     all postdate this tool). A deleted character's suppression rows are
+    #     moot; a disguise_map row naming it is a data error worth seeing, so
+    #     it is deleted too but counted in the summary line printed below.
+    for tbl, cols in (("mentions", ("character_id",)),
+                      ("acknowledged_collisions", ("owner_cid", "other_cid")),
+                      ("disguise_map", ("true_cid", "persona_cid"))):
+        if conn.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name=?",
+                        (tbl,)).fetchone() is None:
+            continue
+        for col in cols:
+            n = conn.execute(f"DELETE FROM {tbl} WHERE {col} IN ({ph})", ids).rowcount
+            if n:
+                print(f"  also removed {n} {tbl}.{col} row(s)")
+
     # 6. characters (root row — deleted last)
     n_chars = conn.execute(
         f"DELETE FROM characters WHERE character_id IN ({ph})",

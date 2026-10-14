@@ -66,6 +66,7 @@ CREATE TABLE books (
     series_order  INTEGER NOT NULL UNIQUE,   -- reading order (sort key)
     slot          TEXT NOT NULL UNIQUE,      -- wot_{slot}.db, ?book=slot
     label         TEXT NOT NULL,             -- display text ('Book 10', 'New Spring')
+    is_prequel    INTEGER NOT NULL DEFAULT 0, -- story set before book 1
     title         TEXT NOT NULL,
     source_file   TEXT
 );
@@ -182,8 +183,8 @@ COPY_STATEMENTS = (
     (
         "books",
         """
-        INSERT INTO books (book_id, series_order, slot, label, title, source_file)
-        SELECT book_id, series_order, slot, label, title, NULL
+        INSERT INTO books (book_id, series_order, slot, label, is_prequel, title, source_file)
+        SELECT book_id, series_order, slot, label, COALESCE(is_prequel, 0), title, NULL
         FROM private.books
         """,
     ),

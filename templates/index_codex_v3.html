@@ -348,6 +348,16 @@
       letter-spacing: 0.02em;
     }
 
+    .essence-label {
+      font-family: inherit;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-right: 0.7rem;
+      vertical-align: 0.08em;
+    }
     .profile-summary {
       margin: 1rem 0 1.2rem;
       padding: 0.75rem 0.95rem;
@@ -799,6 +809,25 @@
       margin-top: 0;
     }
 
+    .order-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 0.45rem;
+      font-size: 0.8rem;
+    }
+    .order-toggle select {
+      font: inherit;
+      font-size: 0.8rem;
+      padding: 0.15rem 0.4rem;
+    }
+    .prequel-tag {
+      font-size: 0.7rem;
+      font-style: italic;
+      opacity: 0.75;
+      margin-left: 0.35rem;
+    }
     .spoiler-note {
       font-size: 0.77rem;
       color: var(--gold);
@@ -849,6 +878,13 @@
         <option value="">— choose —</option>
       </select>
       <span class="spoiler-note">Only characters and content up to this book will appear.</span>
+      <div class="order-toggle" id="order-toggle" hidden>
+        <label for="order-select">Order a character's chapters by</label>
+        <select id="order-select">
+          <option value="reading">reading order (publication)</option>
+          <option value="chrono">story chronology (prequel first)</option>
+        </select>
+      </div>
     </div>
   </header>
 
@@ -962,6 +998,25 @@
       return (x && x.label) ? x.label : ('Bk ' + String(x && x.series_order));
     }
 
+    // Thread ordering. 'reading' = publication order (series_order); 'chrono' =
+    // story chronology, which only differs for prequels (New Spring is read
+    // after book 10 but set before book 1). Spoiler gating never changes.
+    let threadOrder = 'reading';
+    try { threadOrder = localStorage.getItem('threadOrder') === 'chrono' ? 'chrono' : 'reading'; } catch (e) { }
+    function orderKey(x) {
+      const so = Number(x.series_order), ch = Number(x.chapter_number || 0);
+      const pre = threadOrder === 'chrono' && x.is_prequel ? 0 : 1;
+      return [pre, so, ch];
+    }
+    function cmpOrder(a, b) {
+      const ka = orderKey(a), kb = orderKey(b);
+      for (let i = 0; i < 3; i++) if (ka[i] !== kb[i]) return ka[i] - kb[i];
+      return 0;
+    }
+    function sortThread(arr) { return [...(arr || [])].sort(cmpOrder); }
+    function bookTag(x) {
+      return x && x.is_prequel ? '<span class="prequel-tag">prequel</span>' : '';
+    }
     function bookParam() { return 'book=' + selectedBook; }
 
     function onBookBoundaryChange(n) {
@@ -1047,6 +1102,20 @@
         .replace(/</g, '&lt;').replace(/>/g, '&gt;');
     }
 
+    // Presentation polish for free-text fields the extractor wrote as phrases
+    // ("still, controlled", "young woman, old enough to dance the Spring
+    // Pole"). Data stays as extracted; the page shows sentence case and a
+    // terminal full stop. Names are never passed through this (aliases, titles,
+    // primary names keep their own casing, e.g. "al'Thor", "the Dragon Reborn").
+    function prose(s) {
+      s = String(s == null ? '' : s).trim();
+      if (!s) return '';
+      // leading lowercase particle of a name ("al'Thor was...") is rare in these
+      // fields but real: only capitalise a plain letter not followed by an apostrophe
+      if (/^[a-z]/.test(s) && !/^[a-z]{1,3}['’][A-Z]/.test(s)) s = s[0].toUpperCase() + s.slice(1);
+      if (!/[.!?…"”’')\]]$/.test(s)) s += '.';
+      return s;
+    }
     function escapeHtml(s) {
       return (s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;')
         .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -1102,7 +1171,7 @@
               ${g.items.map(a => `
                 <div class="alias-sub-item">
                   <span class="alias-sub-name">${escapeHtml(a.alias_text)}</span>
-                  ${a.notes ? `<div class="rel-desc">${escapeHtml(a.notes)}</div>` : ''}
+                  ${a.notes ? `<div class="rel-desc">${escapeHtml(prose(a.notes))}</div>` : ''}
                 </div>
               `).join('')}
             </div>
@@ -1126,10 +1195,11 @@
         const seen = new Map();
         (appearances || []).forEach(a => {
           if (!seen.has(a.series_order)) {
-            seen.set(a.series_order, { label: bookLabel(a), title: a.book_title || bookLabel(a) });
+            seen.set(a.series_order, { label: bookLabel(a), title: a.book_title || bookLabel(a),
+              series_order: a.series_order, is_prequel: !!a.is_prequel });
           }
         });
-        return [...seen.entries()].sort((a, b) => Number(a[0]) - Number(b[0]));
+        return [...seen.entries()].sort((a, b) => cmpOrder(a[1], b[1]));
       }
 
       function chaptersForBook(appearances, selectedBook) {
@@ -1141,15 +1211,14 @@
             if (!seen.has(key)) {
               seen.set(key, {
                 series_order: a.series_order,
+                is_prequel: !!a.is_prequel,
                 label: bookLabel(a),
                 chapter_number: a.chapter_number,
                 chapter_title: a.chapter_title
               });
             }
           });
-        return [...seen.values()].sort((a, b) =>
-          Number(a.series_order) - Number(b.series_order) ||
-          Number(a.chapter_number) - Number(b.chapter_number));
+        return [...seen.values()].sort(cmpOrder);
       }
 
       function renderThreadCards(appearances) {
@@ -1158,11 +1227,11 @@
         }
         return appearances.map(a => `
       <div class="thread-card">
-        <div class="ch">${escapeHtml(bookLabel(a))}, Ch ${escapeHtml(String(a.chapter_number))}
+        <div class="ch">${escapeHtml(bookLabel(a))}${bookTag(a)}, Ch ${escapeHtml(String(a.chapter_number))}
           &mdash; ${escapeHtml(a.chapter_title)}</div>
-        ${a.whereabouts ? `<div class="where">${escapeHtml(a.whereabouts)}</div>` : ''}
-        ${a.demeanor ? `<div class="demeanor">&ldquo;${escapeHtml(a.demeanor)}&rdquo;</div>` : ''}
-        ${a.notable_actions ? `<div class="action-text">${escapeHtml(a.notable_actions)}</div>` : ''}
+        ${a.whereabouts ? `<div class="where">${escapeHtml(prose(a.whereabouts))}</div>` : ''}
+        ${a.demeanor ? `<div class="demeanor">&ldquo;${escapeHtml(prose(a.demeanor))}&rdquo;</div>` : ''}
+        ${a.notable_actions ? `<div class="action-text">${escapeHtml(prose(a.notable_actions))}</div>` : ''}
       </div>`).join('');
       }
 
@@ -1214,16 +1283,16 @@
         ['Nature', humanType],
         ['Origin', c.nationality],
         ['Age', c.age],
-        ['Kinship', c.filiations]
+        ['Ties', c.filiations]
       ].filter(([_, v]) => v)
-        .map(([k, v]) => `<li><span class="codex-label">${k}</span>${escapeHtml(v)}</li>`).join('');
+        .map(([k, v]) => `<li><span class="codex-label">${k}</span>${escapeHtml(k === 'Nature' || k === 'Origin' ? v : prose(v))}</li>`).join('');
 
       const appearanceBlock = c.physical_traits
-        ? `<p>${escapeHtml(c.physical_traits)}</p>`
+        ? `<p>${escapeHtml(prose(c.physical_traits))}</p>`
         : '<p class="hint">No physical description recorded yet.</p>';
 
       const essenceBlock = c.personality
-        ? `<div class="profile-summary"><strong>Essence.</strong> ${escapeHtml(c.personality)}</div>`
+        ? `<div class="profile-summary"><span class="essence-label">Essence</span>${escapeHtml(prose(c.personality))}</div>`
         : '';
 
       const factionRows = (d.factions || []).length
@@ -1235,12 +1304,15 @@
               ${escapeHtml(f.faction_type || 'faction')}${f.role === 'leader' ? ' · leader' : ''}
             </span>
           </div>
-          ${f.notes ? `<div class="rel-desc">${escapeHtml(f.notes)}</div>` : ''}
+          ${f.notes ? `<div class="rel-desc">${escapeHtml(prose(f.notes))}</div>` : ''}
         </div>`).join('')
         : '<p class="hint">No faction allegiance recorded yet.</p>';
 
       window.CHARACTER_THREADS = window.CHARACTER_THREADS || {};
-      window.CHARACTER_THREADS[cid] = d.appearances || [];
+      d.appearances = sortThread(d.appearances);
+      d.mentions = sortThread(d.mentions);
+      window.CHARACTER_THREADS[cid] = d.appearances;
+      window.CURRENT_CID = cid;
 
       const booksForThread = uniqueBooks(d.appearances || []);
       const threadControls = d.appearances.length
@@ -1281,7 +1353,7 @@
             <span class="rel-name">${escapeHtml(r.other_name)}</span>
             <span class="rel-badge">${escapeHtml(r.type.replace('_', ' '))}</span>
           </div>
-          ${r.description ? `<div class="rel-desc">${escapeHtml(r.description)}</div>` : ''}
+          ${r.description ? `<div class="rel-desc">${escapeHtml(prose(r.description))}</div>` : ''}
         </div>`).join('')
         : '<p class="hint">No relationships recorded yet.</p>';
 
@@ -1298,9 +1370,9 @@
             <p class="hint">${d.mentions.length} chapter${d.mentions.length === 1 ? '' : 's'} where this character is referenced but not present.</p>
             ${d.mentions.map(m => `
         <div class="thread-card">
-          <div class="ch">${escapeHtml(bookLabel(m))}, Ch ${escapeHtml(String(m.chapter_number))}
+          <div class="ch">${escapeHtml(bookLabel(m))}${bookTag(m)}, Ch ${escapeHtml(String(m.chapter_number))}
             &mdash; ${escapeHtml(m.chapter_title)}</div>
-          ${m.context ? `<div class="action-text">${escapeHtml(m.context)}</div>` : ''}
+          ${m.context ? `<div class="action-text">${escapeHtml(prose(m.context))}</div>` : ''}
         </div>`).join('')}
           </div>
         </section>` : '';
@@ -1309,7 +1381,7 @@
     <article class="codex-profile">
       <div class="profile-name">${escapeHtml(c.primary_name)} ${speciesChip}</div>
       <div class="profile-kicker">${escapeHtml(subtitle)}</div>
-      ${c.description ? `<p style="font-style:italic;">${escapeHtml(c.description)}</p>` : ''}
+      ${c.description ? `<p style="font-style:italic;">${escapeHtml(prose(c.description))}</p>` : ''}
       ${essenceBlock}
 
       <div class="codex-grid">
@@ -1376,7 +1448,7 @@
             <span class="rel-name">${escapeHtml(m.primary_name)}</span>
             <span class="rel-badge ${m.role === 'leader' ? 'leader' : ''}">${escapeHtml(m.role)}</span>
           </div>
-          ${m.notes ? `<div class="rel-desc">${escapeHtml(m.notes)}</div>` : ''}
+          ${m.notes ? `<div class="rel-desc">${escapeHtml(prose(m.notes))}</div>` : ''}
         </div>`).join('')
         : '<p class="hint">No members recorded yet.</p>';
       $('#profile-content').innerHTML = `
@@ -1698,6 +1770,16 @@
         sel.appendChild(opt);
       });
       if (AVAILABLE_BOOKS_INFO.length) sel.value = AVAILABLE_BOOKS_INFO[0].slot;
+      const orderSel = $('#order-select');
+      if (orderSel) {
+        if (AVAILABLE_BOOKS_INFO.some(b => b.is_prequel)) $('#order-toggle').hidden = false;
+        orderSel.value = threadOrder;
+        orderSel.addEventListener('change', e => {
+          threadOrder = e.target.value === 'chrono' ? 'chrono' : 'reading';
+          try { localStorage.setItem('threadOrder', threadOrder); } catch (err) { }
+          if (window.CURRENT_CID) loadCharacter(window.CURRENT_CID);
+        });
+      }
       sel.addEventListener('change', e => {
         const v = String(e.target.value || '');
         if (v) onBookBoundaryChange(v);

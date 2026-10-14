@@ -197,7 +197,7 @@ def title_from_chapter_html(raw):
 
 
 def parse_book(epub_path, series_order, title_override=None, db_path=None,
-               slot=None, label=None, epilogue_only=False):
+               slot=None, label=None, epilogue_only=False, is_prequel=False):
     """Parse one EPUB into the books/chapters tables of db_path.
 
     series_order : reading-order sort key (New Spring = 11, Knife of Dreams = 12)
@@ -305,11 +305,22 @@ def parse_book(epub_path, series_order, title_override=None, db_path=None,
         if clash:
             sys.exit(f"books row conflict: slot/order {clash} already present; "
                      f"refusing to insert slot={slot!r} order={series_order}")
-        cur.execute(
-            "INSERT OR IGNORE INTO books (series_order, slot, label, title, source_file) "
-            "VALUES (?, ?, ?, ?, ?)",
-            (series_order, slot, book_label, book_title, os.path.basename(epub_path)),
-        )
+        has_prequel = "is_prequel" in cols
+        if has_prequel:
+            cur.execute(
+                "INSERT OR IGNORE INTO books (series_order, slot, label, title, "
+                "source_file, is_prequel) VALUES (?, ?, ?, ?, ?, ?)",
+                (series_order, slot, book_label, book_title,
+                 os.path.basename(epub_path), 1 if is_prequel else 0),
+            )
+        else:
+            if is_prequel:
+                sys.exit("--prequel needs books.is_prequel: apply migration 005 first")
+            cur.execute(
+                "INSERT OR IGNORE INTO books (series_order, slot, label, title, source_file) "
+                "VALUES (?, ?, ?, ?, ?)",
+                (series_order, slot, book_label, book_title, os.path.basename(epub_path)),
+            )
         book_id = cur.execute("SELECT book_id FROM books WHERE slot = ?",
                               (slot,)).fetchone()[0]
 
@@ -348,12 +359,16 @@ def main():
     ap.add_argument("--db", help="target database (default: db/wot.db)")
     ap.add_argument("--epilogue-only", action="store_true",
                     help="insert only the epilogue into an existing book row")
+    ap.add_argument("--prequel", action="store_true",
+                    help="story is set before book 1 (New Spring): existing "
+                         "characters' traits/factions are not filled from it")
     args = ap.parse_args()
 
     if not os.path.exists(args.epub):
         sys.exit(f"File not found: {args.epub}")
     parse_book(args.epub, args.order, args.title, db_path=args.db,
-               slot=args.slot, label=args.label, epilogue_only=args.epilogue_only)
+               slot=args.slot, label=args.label, epilogue_only=args.epilogue_only,
+               is_prequel=args.prequel)
 
 
 if __name__ == "__main__":

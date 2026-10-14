@@ -28,6 +28,14 @@ CREATE TABLE IF NOT EXISTS books (
                                             -- 'book11' = Knife of Dreams ...)
     label        TEXT    NOT NULL,          -- short display text ('Book 10',
                                             -- 'New Spring', 'Book 11')
+    is_prequel   INTEGER NOT NULL DEFAULT 0, -- story set BEFORE book 1 (New
+                                            -- Spring). Reading order still
+                                            -- governs spoilers; this only
+                                            -- (a) stops a prequel chapter from
+                                            -- filling age/traits/factions on
+                                            -- characters that already exist and
+                                            -- (b) lets the site sort a thread
+                                            -- chronologically.
     title        TEXT    NOT NULL,
     source_file  TEXT                       -- original epub filename
 );

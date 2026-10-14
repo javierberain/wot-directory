@@ -1594,3 +1594,29 @@ automatically because the snapshot is copied from the previous cleaned book.
   any modification to the data layer. A serverless or ephemeral host
   would require migrating to an external database service and reworking
   the connection and migration machinery.
+
+### Prequels (New Spring)
+
+`books.is_prequel` (migration 005) marks a book whose story is set before book 1
+while it is READ after book 10. Spoiler gating is unchanged (reading order).
+With the flag set, `reconcile.py` does not fill time-dependent traits
+(`physical_traits`, `age`, `filiations`, `personality`) or add faction
+memberships on characters that already existed; characters the prequel itself
+introduces are unaffected. `scripts/revert_prequel_fills.py --prequel newspring
+--seed book10` repairs a snapshot ingested before the flag existed. The site
+offers an "order a character's chapters by" toggle (reading order vs. story
+chronology) whenever a prequel snapshot is served; prequel cards carry a small
+*prequel* tag.
+
+### Age vocabulary and the "Ties" row
+
+`characters.age` holds a small ordered vocabulary (`child`, `young`, `adult`,
+`middle years`, `older`, `elderly`, plus `ageless` and `about N` when the text
+gives a number); `directory_rules.normalize_age` maps the extractor's free text
+onto it and `refine_age` lets a later chapter move a character FORWARD on the
+scale only (young -> adult), so a protagonist described as "girl" in book 1 does
+not stay one. Non-age values ("alive", "deceased") and pure comparatives
+("older than Rand") are dropped. `scripts/normalize_ages.py --db <snapshot>`
+rewrites existing values (idempotent, dry-run by default). The profile row
+formerly labelled "Kinship" is shown as "Ties": `filiations` holds family,
+house, service and occupation ties, not only kinship.

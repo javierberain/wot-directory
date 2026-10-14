@@ -876,6 +876,25 @@ def do_merge(conn, canonical, duplicate,
             (dup_id, dup_id),
         ).rowcount
 
+    # ── e3. acknowledged_collisions / disguise_map (other suppression tables)──
+    # acknowledged_collisions(owner_cid, other_cid) records "alias X on A is
+    # not B": rows naming the duplicate are retargeted to the canonical (and
+    # dropped when that would make a self-pair). disguise_map(true_cid,
+    # persona_cid) likewise points at the canonical after the fold. Both are
+    # FK -> characters and both postdate this tool, so a merge used to fail
+    # the FK on step g whenever the duplicate had been named in one of them.
+    for tbl, cols in (("acknowledged_collisions", ("owner_cid", "other_cid")),
+                      ("disguise_map", ("true_cid", "persona_cid"))):
+        if conn.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name=?",
+                        (tbl,)).fetchone() is None:
+            continue
+        for col in cols:
+            conn.execute(f"UPDATE {tbl} SET {col} = ? WHERE {col} = ?",
+                         (canonical_id, dup_id))
+        if tbl == "acknowledged_collisions":
+            conn.execute("DELETE FROM acknowledged_collisions "
+                         "WHERE owner_cid = other_cid")
+
     # ── f. Orphan check ───────────────────────────────────────────────────────
     # Every dependent table must now have zero rows pointing at dup_id.
     # If any remain, we have a bug — rollback before deleting the character row.
