@@ -768,6 +768,46 @@ def slot_of(book_arg):
     return f"book{int(arg)}" if arg.isdigit() else arg
 
 
+def dedupe_chapter_characters(chars):
+    """Collapse extractor entries that name the SAME character twice in one
+    chapter (seen in book 10: 'Feather', 'Aiden', 'Mistress Vadere' each came
+    back as two entries; one was parked in review and the other created a row,
+    leaving a duplicate). Entries are merged on norm(name_used_in_text): the
+    first entry wins for scalar fields, aliases_observed/factions are unioned,
+    is_new_character is True only if every entry said so, and a pointer is kept
+    if any entry had one."""
+    merged, order = {}, []
+    for ch in chars or []:
+        key = norm(ch.get("name_used_in_text", ""))
+        if not key:
+            continue
+        if key not in merged:
+            merged[key] = dict(ch)
+            order.append(key)
+            continue
+        m = merged[key]
+        print(f"  [dedupe] '{ch.get('name_used_in_text')}' listed twice in this "
+              f"chapter's extraction; merging entries.")
+        m["is_new_character"] = bool(m.get("is_new_character")) and \
+            bool(ch.get("is_new_character"))
+        if not m.get("likely_matches_existing") and ch.get("likely_matches_existing"):
+            m["likely_matches_existing"] = ch["likely_matches_existing"]
+        seen = {norm(a.get("alias_text", "")) for a in m.get("aliases_observed") or []}
+        for a in ch.get("aliases_observed") or []:
+            if norm(a.get("alias_text", "")) not in seen:
+                m.setdefault("aliases_observed", []).append(a)
+        fseen = {norm(f.get("name", "")) for f in m.get("factions") or []}
+        for f in ch.get("factions") or []:
+            if norm(f.get("name", "")) not in fseen:
+                m.setdefault("factions", []).append(f)
+        st_m, st_c = m.get("stable_traits") or {}, ch.get("stable_traits") or {}
+        for k, v in st_c.items():
+            if v and not st_m.get(k):
+                st_m[k] = v
+        m["stable_traits"] = st_m
+    return [merged[k] for k in order]
+
+
 def reconcile(book_arg, chapter_number, auto=False, db_path=None):
     """book_arg is the snapshot slot ('book10', 'newspring'); a legacy integer
     N is accepted as 'bookN'. The extraction file is named by
@@ -807,7 +847,7 @@ def reconcile(book_arg, chapter_number, auto=False, db_path=None):
     print(f"\n=== Reconciling {book['slot']} (order {book_order}) chapter {chapter_number}: "
           f"{data['_meta']['chapter_title']} ===\n")
 
-    for char in data.get("characters", []):
+    for char in dedupe_chapter_characters(data.get("characters", [])):
         cid = resolve_one(conn, roster, char, data, chapter_id, auto)
         if cid is None:
             continue

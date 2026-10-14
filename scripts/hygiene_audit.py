@@ -41,6 +41,7 @@ load_dotenv()
 from directory_rules import (
     slot_from_filename,
     SLOT_RE,
+    is_fuller_proper_name,
     norm,
     GENERIC_ALIAS_EXACT,
     PRIMARY_NAME_ALLOWLIST,
@@ -938,6 +939,63 @@ def print_detail(conn, character_id):
         print()
 
 
+def check_k(conn):
+    """Fuller-name duplicates: a primary name that is a strict proper-name
+    extension of ANOTHER character's primary name ('Blaeric Negina' next to
+    'Blaeric', 'Careane Fransi' next to 'Careane'), with no alias linking the
+    two and no distinct_pairs suppression. The matcher creates these when the
+    extractor marks the full-name form as a new character. Same character_type
+    only (a wolf 'Thunder Mist' never pairs with a horse 'Mist'; a human pair
+    that is genuinely two people is suppressed via distinct_pairs).
+    Returns (flagged, n_suppressed)."""
+    rows = conn.execute(
+        "SELECT character_id, primary_name, character_type FROM characters").fetchall()
+    alias_norms = {}
+    for r in conn.execute("SELECT character_id, alias_norm FROM aliases"):
+        alias_norms.setdefault(r["character_id"], set()).add(r["alias_norm"])
+    suppressed = {(r["cid_low"], r["cid_high"]) for r in conn.execute(
+        "SELECT cid_low, cid_high FROM distinct_pairs")}
+    # index single-token-ish primaries by their first cleaned token for speed
+    by_tok = {}
+    for r in rows:
+        for t in set(strip_titles(norm(r["primary_name"])).split()):
+            by_tok.setdefault(t, []).append(r)
+    flagged, n_sup, seen = [], 0, set()
+    for long_ in rows:
+        toks = set(strip_titles(norm(long_["primary_name"])).split())
+        if len(toks) < 2:
+            continue
+        cands = {c["character_id"]: c for t in toks for c in by_tok.get(t, [])}
+        for short in cands.values():
+            if short["character_id"] == long_["character_id"]:
+                continue
+            if short["character_type"] != long_["character_type"]:
+                continue
+            if not is_fuller_proper_name(long_["primary_name"], short["primary_name"]):
+                continue
+            # given-name rule: the long name must START with the short one.
+            # A surname-only row ('Lewin', 'Mistress Ayellin') legitimately
+            # sits beside every family member and is not a duplicate.
+            s_toks = strip_titles(norm(short["primary_name"])).split()
+            l_toks = strip_titles(norm(long_["primary_name"])).split()
+            if l_toks[:len(s_toks)] != s_toks:
+                continue
+            key = tuple(sorted((short["character_id"], long_["character_id"])))
+            if key in seen:
+                continue
+            seen.add(key)
+            if key in suppressed:
+                n_sup += 1
+                continue
+            # already linked: the short name is an alias of the long row or
+            # the long name is an alias of the short row
+            if norm(short["primary_name"]) in alias_norms.get(long_["character_id"], set()) \
+               or norm(long_["primary_name"]) in alias_norms.get(short["character_id"], set()):
+                continue
+            flagged.append((short, long_))
+    return flagged, n_sup
+
+
 def check_j(conn, db_path):
     """Book slot/label integrity (migration 004): every books row has a
     well-formed slot and a non-empty label, slots are unique, series_order is
@@ -1235,6 +1293,26 @@ def main():
         print("  (none found)")
         print()
 
+    # ── Check K ───────────────────────────────────────────────────────────────
+    k_rows, k_sup = check_k(conn)
+    _header("CHECK K: FULLER-NAME DUPLICATE ROWS ")
+    print("A primary name that strictly extends another row's primary name of the")
+    print("same type ('Blaeric Negina' next to 'Blaeric') with no alias linking")
+    print("them: usually the same person created twice. Merge (canonical = the")
+    print("older row, --duplicate-alias-type given_name) or suppress via")
+    print("distinct_pairs if they are two people.")
+    if k_sup:
+        print(f"({k_sup} pair(s) suppressed via distinct_pairs)")
+    print()
+    if k_rows:
+        for short, long_ in k_rows:
+            print(f"  cid={short['character_id']} \"{short['primary_name']}\"  <->  "
+                  f"cid={long_['character_id']} \"{long_['primary_name']}\"  [{short['character_type']}]")
+        print()
+    else:
+        print("  (none found)")
+        print()
+
     # ── Check J ───────────────────────────────────────────────────────────────
     j_rows = check_j(conn, DB_PATH)
     _header("CHECK J: BOOK SLOT / LABEL INTEGRITY ")
@@ -1305,6 +1383,7 @@ def main():
     print(f"  Check H  - article-only dup aliases: {len(h_rows):4d} flagged")
     print(f"  Check I  - rank-decorated dup aliases:{len(i_rows):4d} flagged")
     print(f"  Check J  - book slot/label issues:   {len(j_rows):4d} flagged")
+    print(f"  Check K  - fuller-name duplicate rows:{len(k_rows):4d} flagged")
     print(f"  Unique characters to review (B+C):   {unique_chars:4d}")
     print()
     print("  Action: review the above and edit wot.db directly.")
