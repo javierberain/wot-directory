@@ -1,0 +1,27 @@
+[
+  {
+    "review_id": 203,
+    "action": "create",
+    "note": "Tower clerk; distinct from Mistress Ayellin (Emond's Field)"
+  },
+  {
+    "review_id": 204,
+    "action": "create",
+    "note": "Chachin townswoman; distinct from Nieda Sidoro (Illian)"
+  },
+  {
+    "review_id": 205,
+    "action": "create",
+    "note": "Edeyn Arrel's daughter; distinct from Riselle (Altara)"
+  },
+  {
+    "review_id": 206,
+    "action": "create",
+    "note": "serving woman in Lan's rooms, Chachin; distinct from Janya Frende (Brown Sitter)"
+  },
+  {
+    "review_id": 207,
+    "action": "dismiss",
+    "note": "extractor confused Ailene Tolvina with Aethelaine of Jurador; existing Kandor origin is correct"
+  }
+]
