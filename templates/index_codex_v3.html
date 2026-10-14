@@ -953,7 +953,14 @@
     // which boundaries exist).  selectedBook defaults to the earliest available
     // book and is never persisted — it resets to the earliest on every visit.
     const AVAILABLE_BOOKS_INFO = {{ available_books_info | tojson }};
-    let selectedBook = AVAILABLE_BOOKS_INFO.length ? AVAILABLE_BOOKS_INFO[0].series_order : 1;
+    // selectedBook is a SLOT ('book1', 'newspring'), never a number: slots are
+    // the file/URL identity; series_order is only the sort key; label is text.
+    let selectedBook = AVAILABLE_BOOKS_INFO.length ? AVAILABLE_BOOKS_INFO[0].slot : 'book1';
+    function bookLabel(x) {
+      // Display text for a row carrying series_order (and, post-migration-004,
+      // label). Falls back to 'Bk N' for any payload without a label.
+      return (x && x.label) ? x.label : ('Bk ' + String(x && x.series_order));
+    }
 
     function bookParam() { return 'book=' + selectedBook; }
 
@@ -1119,7 +1126,7 @@
         const seen = new Map();
         (appearances || []).forEach(a => {
           if (!seen.has(a.series_order)) {
-            seen.set(a.series_order, a.book_title || `Book ${a.series_order}`);
+            seen.set(a.series_order, { label: bookLabel(a), title: a.book_title || bookLabel(a) });
           }
         });
         return [...seen.entries()].sort((a, b) => Number(a[0]) - Number(b[0]));
@@ -1134,6 +1141,7 @@
             if (!seen.has(key)) {
               seen.set(key, {
                 series_order: a.series_order,
+                label: bookLabel(a),
                 chapter_number: a.chapter_number,
                 chapter_title: a.chapter_title
               });
@@ -1150,7 +1158,7 @@
         }
         return appearances.map(a => `
       <div class="thread-card">
-        <div class="ch">Bk ${escapeHtml(String(a.series_order))}, Ch ${escapeHtml(String(a.chapter_number))}
+        <div class="ch">${escapeHtml(bookLabel(a))}, Ch ${escapeHtml(String(a.chapter_number))}
           &mdash; ${escapeHtml(a.chapter_title)}</div>
         ${a.whereabouts ? `<div class="where">${escapeHtml(a.whereabouts)}</div>` : ''}
         ${a.demeanor ? `<div class="demeanor">&ldquo;${escapeHtml(a.demeanor)}&rdquo;</div>` : ''}
@@ -1241,8 +1249,8 @@
           <label for="thread-book-${cid}">Book</label>
           <select id="thread-book-${cid}" onchange="filterCharacterThread(${cid})">
             <option value="">All books</option>
-            ${booksForThread.map(([order, title]) =>
-          `<option value="${escapeAttr(String(order))}">Bk ${escapeHtml(String(order))}: ${escapeHtml(title)}</option>`
+            ${booksForThread.map(([order, b]) =>
+          `<option value="${escapeAttr(String(order))}">${escapeHtml(b.label)}: ${escapeHtml(b.title)}</option>`
         ).join('')}
           </select>
         </div>
@@ -1252,7 +1260,7 @@
             <option value="">All chapters</option>
             ${chaptersForBook(d.appearances || [], '').map(ch => {
           const label = ch.chapter_number === 0 ? 'Prologue' : `Ch ${ch.chapter_number}`;
-          return `<option value="${escapeAttr(String(ch.series_order))}-${escapeAttr(String(ch.chapter_number))}">Bk ${escapeHtml(String(ch.series_order))}, ${escapeHtml(label)}: ${escapeHtml(ch.chapter_title)}</option>`;
+          return `<option value="${escapeAttr(String(ch.series_order))}-${escapeAttr(String(ch.chapter_number))}">${escapeHtml(ch.label)}, ${escapeHtml(label)}: ${escapeHtml(ch.chapter_title)}</option>`;
         }).join('')}
           </select>
         </div>
@@ -1290,7 +1298,7 @@
             <p class="hint">${d.mentions.length} chapter${d.mentions.length === 1 ? '' : 's'} where this character is referenced but not present.</p>
             ${d.mentions.map(m => `
         <div class="thread-card">
-          <div class="ch">Bk ${escapeHtml(String(m.series_order))}, Ch ${escapeHtml(String(m.chapter_number))}
+          <div class="ch">${escapeHtml(bookLabel(m))}, Ch ${escapeHtml(String(m.chapter_number))}
             &mdash; ${escapeHtml(m.chapter_title)}</div>
           ${m.context ? `<div class="action-text">${escapeHtml(m.context)}</div>` : ''}
         </div>`).join('')}
@@ -1388,7 +1396,7 @@
       BOOKS = await (await fetch('/api/books?' + bookParam())).json();
       $('#book-select').innerHTML = '<option value="">&mdash; select &mdash;</option>'
         + BOOKS.map(b =>
-          `<option value="${escapeAttr(String(b.book_id))}">Bk ${escapeHtml(String(b.series_order))}: ${escapeHtml(b.title)}</option>`
+          `<option value="${escapeAttr(String(b.book_id))}">${escapeHtml(bookLabel(b))}: ${escapeHtml(b.title)}</option>`
         ).join('');
     }
     $('#book-select').addEventListener('change', e => {
@@ -1685,14 +1693,14 @@
       const sel = $('#boundary-select');
       AVAILABLE_BOOKS_INFO.forEach(b => {
         const opt = document.createElement('option');
-        opt.value = b.series_order;
-        opt.textContent = 'Through Bk ' + b.series_order + ': ' + b.title;
+        opt.value = b.slot;
+        opt.textContent = 'Through ' + b.label + ': ' + b.title;
         sel.appendChild(opt);
       });
-      if (AVAILABLE_BOOKS_INFO.length) sel.value = AVAILABLE_BOOKS_INFO[0].series_order;
+      if (AVAILABLE_BOOKS_INFO.length) sel.value = AVAILABLE_BOOKS_INFO[0].slot;
       sel.addEventListener('change', e => {
-        const v = parseInt(e.target.value, 10);
-        if (!isNaN(v)) onBookBoundaryChange(v);
+        const v = String(e.target.value || '');
+        if (v) onBookBoundaryChange(v);
       });
     })();
 

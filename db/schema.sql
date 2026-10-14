@@ -18,7 +18,16 @@ PRAGMA foreign_keys = ON;
 -- ----- Books -------------------------------------------------
 CREATE TABLE IF NOT EXISTS books (
     book_id      INTEGER PRIMARY KEY,
-    series_order INTEGER NOT NULL UNIQUE,   -- 1 = Eye of the World
+    series_order INTEGER NOT NULL UNIQUE,   -- READING order only (1 = Eye of the
+                                            -- World, 10 = Crossroads, 11 = New
+                                            -- Spring, 12 = Knife of Dreams ...).
+                                            -- Sort key for chapters/spoilers;
+                                            -- never a filename or a label.
+    slot         TEXT    NOT NULL UNIQUE,   -- storage identity: db/wot_{slot}.db
+                                            -- ('book1'..'book10', 'newspring',
+                                            -- 'book11' = Knife of Dreams ...)
+    label        TEXT    NOT NULL,          -- short display text ('Book 10',
+                                            -- 'New Spring', 'Book 11')
     title        TEXT    NOT NULL,
     source_file  TEXT                       -- original epub filename
 );

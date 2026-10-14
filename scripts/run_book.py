@@ -8,9 +8,13 @@ chapter's extraction sees every character found in the chapters before it.
 
 Usage:
     export ANTHROPIC_API_KEY=sk-...
-    python run_book.py --book 1                 # all chapters
-    python run_book.py --book 1 --from 0 --to 10
-    python run_book.py --book 1 --auto          # auto-commit confident items
+    python run_book.py --book book10            # all chapters (slot name)
+    python run_book.py --book newspring --from 1 --to 1
+    python run_book.py --book book10 --auto --batch   # auto-commit, Batch API
+    python run_book.py --book 9                 # legacy: integer N means slot bookN
+
+--book is the snapshot SLOT (db/wot_{slot}.db): book10, newspring, book11 ...
+The chapter loop itself still walks chapters by books.series_order.
 
 By default it pauses after each chapter so you can inspect the extraction
 JSON before it commits. Pass --auto to run straight through.
@@ -21,25 +25,32 @@ import sqlite3
 import subprocess
 import sys
 
-HERE = os.path.dirname(__file__)
-DB_DIR = os.path.join(HERE, "..", "db")
+HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+from directory_rules import snapshot_path, resolve_book  # noqa: E402
 
 
-def working_db(book_order):
-    """The per-book snapshot is the working DB (snapshot-as-working-DB model).
-    Book N is parsed, reconciled, and cleaned in db/wot_book{N}.db — never the
-    legacy scratch db/wot.db."""
-    return os.path.join(DB_DIR, f"wot_book{book_order}.db")
+def slot_of(book_arg):
+    """'newspring' -> 'newspring'; legacy integer/numeric '9' -> 'book9'."""
+    arg = str(book_arg).strip()
+    return f"book{int(arg)}" if arg.isdigit() else arg
 
 
-def chapters_for(book_order, lo, hi, db_path):
+def working_db(book_arg):
+    """The per-book snapshot is the working DB (snapshot-as-working-DB model):
+    db/wot_{slot}.db — never the legacy scratch db/wot.db."""
+    return snapshot_path(slot_of(book_arg))
+
+
+def chapters_for(book_arg, lo, hi, db_path):
     conn = sqlite3.connect(db_path)
+    book = resolve_book(conn, book_arg)
     rows = conn.execute("""
         SELECT ch.chapter_number, ch.title, ch.extracted
-        FROM chapters ch JOIN books b ON b.book_id = ch.book_id
-        WHERE b.series_order = ?
+        FROM chapters ch
+        WHERE ch.book_id = ?
         ORDER BY ch.chapter_number
-    """, (book_order,)).fetchall()
+    """, (book["book_id"],)).fetchall()
     conn.close()
     out = []
     for num, title, extracted in rows:
@@ -59,7 +70,9 @@ def run(cmd):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--book", type=int, required=True)
+    ap.add_argument("--book", type=str, required=True,
+                    help="snapshot slot (book10, newspring); an integer N "
+                         "is accepted as bookN")
     ap.add_argument("--from", dest="lo", type=int, default=None)
     ap.add_argument("--to", dest="hi", type=int, default=None)
     ap.add_argument("--auto", action="store_true",
@@ -67,7 +80,7 @@ def main():
     ap.add_argument("--skip-extracted", action="store_true", default=True,
                     help="skip chapters already marked extracted")
     ap.add_argument("--db", help="override working DB (default: "
-                    "db/wot_book{N}.db)")
+                    "db/wot_{slot}.db)")
     ap.add_argument("--batch", action="store_true", dest="use_batch",
                     help="extract via the Message Batches API (async, ~50%% "
                          "token price) instead of synchronous calls")
@@ -79,14 +92,17 @@ def main():
     db = args.db or working_db(args.book)
     if not os.path.exists(db):
         sys.exit(f"Working DB not found: {db}\n"
-                 f"Seed it first:  python scripts/start_book.py --book "
-                 f"{args.book} --epub \"<file>\" --title \"<title>\"")
+                 f"Seed it first:  python scripts/start_book.py --slot "
+                 f"{slot_of(args.book)} --epub \"<file>\" --title \"<title>\"")
 
-    chapters = chapters_for(args.book, args.lo, args.hi, db)
+    try:
+        chapters = chapters_for(args.book, args.lo, args.hi, db)
+    except LookupError as e:
+        sys.exit(f"{e}. Did you run start_book.py?")
     if not chapters:
         sys.exit("No chapters match. Did you run start_book.py?")
 
-    print(f"Book {args.book}: {len(chapters)} chapter(s) in range. "
+    print(f"{slot_of(args.book)}: {len(chapters)} chapter(s) in range. "
           f"Working DB: {db}\n")
 
     for num, title, extracted in chapters:
@@ -97,7 +113,7 @@ def main():
         print(f"\n{'='*60}\nChapter {num}: {title}\n{'='*60}")
 
         ext_cmd = [sys.executable, os.path.join(HERE, "extract_chapter.py"),
-                   "--book", str(args.book), "--chapter", str(num),
+                   "--book", slot_of(args.book), "--chapter", str(num),
                    "--db", db]
         if args.use_batch:
             ext_cmd.append("--batch")
@@ -118,7 +134,7 @@ def main():
                 continue
 
         rec_cmd = [sys.executable, os.path.join(HERE, "reconcile.py"),
-                   "--book", str(args.book), "--chapter", str(num),
+                   "--book", slot_of(args.book), "--chapter", str(num),
                    "--db", db]
         if args.auto:
             rec_cmd.append("--auto")

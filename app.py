@@ -24,7 +24,9 @@ Run:
     python app.py
     open http://127.0.0.1:5000
 """
+import glob
 import os
+import re
 import sqlite3
 
 from flask import Flask, g, jsonify, render_template, request
@@ -33,24 +35,57 @@ _PUBLIC_DB_DIR = os.path.join(os.path.dirname(__file__), "public_db")
 _EXPORT_COMMAND = "python scripts/export_public_dbs.py"
 
 # Sanitized snapshot files served by the web app, auto-discovered from
-# public_db/wot_book*.db. Exporting a new book's public snapshot is enough to
+# public_db/wot_{slot}.db. Exporting a new book's public snapshot is enough to
 # serve it — no code edit needed.
+#
+# Three things that used to be one integer are kept apart (see
+# db/migrations/004): the SLOT is the file/URL identity ('book10', 'newspring',
+# 'book11' = Knife of Dreams), books.series_order is the READING-order sort
+# key (New Spring = 11, Knife of Dreams = 12), and books.label is what the
+# site prints ('Book 10', 'New Spring'). Spoiler boundaries are slots.
+_SNAPSHOT_RE = re.compile(r"^wot_([a-z0-9]+)\.db$")
+_NON_SNAPSHOT_NAMES = {"wot.db", "wot_backup.db"}
+
+
 def _discover_books_db():
-    import glob as _glob
-    import re as _re
+    """{slot: path} for every public snapshot file."""
     out = {}
-    for path in _glob.glob(os.path.join(_PUBLIC_DB_DIR, "wot_book*.db")):
-        m = _re.match(r"wot_book(\d+)\.db$", os.path.basename(path))
+    for path in glob.glob(os.path.join(_PUBLIC_DB_DIR, "wot_*.db")):
+        base = os.path.basename(path)
+        if base in _NON_SNAPSHOT_NAMES:
+            continue
+        m = _SNAPSHOT_RE.match(base)
         if m:
-            out[int(m.group(1))] = path
+            out[m.group(1)] = path
     return out
 
 
+def _read_book_order(paths_by_slot):
+    """{slot: highest books.series_order inside that snapshot}. Slot names carry
+    no ordering of their own, so reading order is read from inside each file.
+    A file that cannot be read is skipped (and so is never served)."""
+    order = {}
+    for slot, path in paths_by_slot.items():
+        if not os.path.exists(path):
+            continue
+        try:
+            conn = sqlite3.connect(f"file:{path}?mode=ro", uri=True)
+            top = conn.execute("SELECT MAX(series_order) FROM books").fetchone()[0]
+            conn.close()
+        except sqlite3.Error:
+            continue
+        if top is not None:
+            order[slot] = top
+    return order
+
+
 BOOKS_DB = _discover_books_db()
+BOOK_ORDER = _read_book_order(BOOKS_DB)
 
 # Only books whose public snapshot file actually exists on disk can be served.
-# Computed once at startup so a missing file can never be served.
-AVAILABLE_BOOKS = sorted(n for n, path in BOOKS_DB.items() if os.path.exists(path))
+# Computed once at startup so a missing file can never be served. Ordered by
+# reading order (series_order), earliest first.
+AVAILABLE_BOOKS = sorted(BOOK_ORDER, key=BOOK_ORDER.get)
 MISSING_PUBLIC_DBS = [
     path for path in BOOKS_DB.values()
     if not os.path.exists(path)
@@ -71,28 +106,31 @@ if MISSING_PUBLIC_DBS:
 
 
 def _load_available_books_info():
-    """Return [{series_order, title}] for every available boundary.
+    """Return [{slot, series_order, label, title}] for every available
+    boundary, in reading order.
 
-    Queries the largest snapshot so all book titles are reachable in one
-    connection.  Result is used to populate the global spoiler selector in
-    the HTML template without a round-trip fetch.
+    Queries the latest snapshot (highest reading order) so every book's label
+    and title are reachable in one connection. Result populates the global
+    spoiler selector in the HTML template without a round-trip fetch.
     """
     if not AVAILABLE_BOOKS:
         return []
-    db_path = BOOKS_DB[max(AVAILABLE_BOOKS)]
-    titles = {}
+    db_path = BOOKS_DB[AVAILABLE_BOOKS[-1]]
+    meta = {}
     try:
-        conn = sqlite3.connect(db_path)
-        for row in conn.execute("SELECT series_order, title FROM books"):
-            if row[0] in AVAILABLE_BOOKS:
-                titles[row[0]] = row[1]
+        conn = sqlite3.connect(f"file:{db_path}?mode=ro", uri=True)
+        for slot, label, title in conn.execute(
+                "SELECT slot, label, title FROM books"):
+            meta[slot] = (label, title)
         conn.close()
     except Exception:
         pass
-    return [
-        {"series_order": n, "title": titles.get(n, f"Book {n}")}
-        for n in AVAILABLE_BOOKS
-    ]
+    out = []
+    for slot in AVAILABLE_BOOKS:
+        label, title = meta.get(slot, (slot, slot))
+        out.append({"slot": slot, "series_order": BOOK_ORDER[slot],
+                    "label": label, "title": title})
+    return out
 
 
 # Cached at startup; passed to the template so the selector renders without
@@ -103,24 +141,24 @@ app = Flask(__name__)
 
 
 def selected_book():
-    """Return the validated book number from ?book=N.
+    """Return the validated book SLOT from ?book=<slot>.
 
-    Fails closed: anything missing, non-numeric, or not in AVAILABLE_BOOKS
-    collapses to the EARLIEST available book, never the latest.
+    Legacy numeric links (?book=9) resolve to slot 'book9'. Fails closed:
+    anything missing, unknown, or not in AVAILABLE_BOOKS collapses to the
+    EARLIEST available book (in reading order), never the latest.
     """
-    try:
-        n = int(request.args.get("book", 0))
-    except (ValueError, TypeError):
-        n = 0
-    if not AVAILABLE_BOOKS or n not in AVAILABLE_BOOKS:
+    raw = (request.args.get("book") or "").strip().lower()
+    if raw.isdigit():
+        raw = f"book{int(raw)}"
+    if not AVAILABLE_BOOKS or raw not in BOOK_ORDER:
         return AVAILABLE_BOOKS[0] if AVAILABLE_BOOKS else None
-    return n
+    return raw
 
 
 def db():
     """Return the cached SQLite connection for the currently selected book boundary.
 
-    Connections are cached per-book on Flask's g using _db_{N} attributes so
+    Connections are cached per-book on Flask's g using _db_{slot} attributes so
     that a single request can theoretically open multiple boundaries (the
     teardown closes all of them).  In practice each request uses one boundary.
     """
@@ -216,7 +254,7 @@ def character(cid):
     ).fetchall()
 
     appearances = conn.execute("""
-        SELECT b.series_order, b.title AS book_title,
+        SELECT b.series_order, b.slot, b.label, b.title AS book_title,
                ch.chapter_number, ch.title AS chapter_title,
                ap.whereabouts, ap.notable_actions, ap.alliances_shown,
                ap.demeanor
@@ -229,7 +267,7 @@ def character(cid):
 
     # Chapters where the character is referenced but not present (offstage).
     mentions = conn.execute("""
-        SELECT b.series_order, b.title AS book_title,
+        SELECT b.series_order, b.slot, b.label, b.title AS book_title,
                ch.chapter_number, ch.title AS chapter_title, mn.context
         FROM mentions mn
         JOIN chapters ch ON ch.chapter_id = mn.chapter_id
@@ -327,6 +365,8 @@ def books():
         out.append({
             "book_id": b["book_id"],
             "series_order": b["series_order"],
+            "slot": b["slot"],
+            "label": b["label"],
             "title": b["title"],
             "chapters": [dict(c) for c in chapters],
         })
@@ -337,7 +377,7 @@ def books():
 def chapter(chid):
     conn = db()
     ch = conn.execute("""
-        SELECT ch.*, b.title AS book_title, b.series_order
+        SELECT ch.*, b.title AS book_title, b.series_order, b.slot, b.label
         FROM chapters ch JOIN books b ON b.book_id = ch.book_id
         WHERE ch.chapter_id = ?
     """, (chid,)).fetchone()
@@ -359,6 +399,9 @@ def chapter(chid):
             "chapter_number": ch["chapter_number"],
             "title": ch["title"],
             "book_title": ch["book_title"],
+            "series_order": ch["series_order"],
+            "slot": ch["slot"],
+            "label": ch["label"],
             "extracted": ch["extracted"],
         },
         "characters": [dict(c) for c in chars],

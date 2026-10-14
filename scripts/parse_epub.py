@@ -12,7 +12,7 @@ This parser is tuned to the EPUB layout of the uploaded copies:
     PROLOGUE and numbered chapters are kept.
 
 Usage:
-    python parse_epub.py <path-to-epub> --order <series_order> [--title "..."]
+    python parse_epub.py <path-to-epub> --order <series_order> [--slot S] [--label L] [--title "..."]
 
 Example:
     python parse_epub.py "Eye of the World.epub" --order 1 \
@@ -27,6 +27,9 @@ import zipfile
 import html  
 
 from bs4 import BeautifulSoup
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from directory_rules import validate_slot, default_order_and_label  # noqa: E402
 
 DB_PATH = os.path.join(os.path.dirname(__file__), "..", "db", "wot.db")
 SCHEMA_PATH = os.path.join(os.path.dirname(__file__), "..", "db", "schema.sql")
@@ -110,7 +113,10 @@ def classify(label):
     """
     Decide if a navMap label is a real chapter.
     Returns (kind, number, clean_title) or None to skip.
-      kind is 'prologue' or 'chapter'.
+      kind is 'prologue', 'chapter' or 'epilogue'. An epilogue has number None
+      here; parse_book assigns it max(chapter_number) + 1 once all chapters are
+      known (Lord of Chaos, Crossroads of Twilight and New Spring all end with
+      an epilogue; before this they were silently dropped).
       clean_title is None when the navMap label carries no title (a bare
       "Chapter 7" or "Prologue"); parse_book then recovers the real title from
       the chapter file's body.
@@ -125,6 +131,13 @@ def classify(label):
     if m:
         title = (m.group(1) or "").strip()
         return ("prologue", 0, title or None)
+    # Epilogue, with or without a title in the label:
+    #   "Epilogue: An Answer" -> title "An Answer"   (Crossroads of Twilight)
+    #   "Epilogue"            -> title None (recover from the body; New Spring)
+    m = re.match(r"(?i)^epilogue\b(?:[\s\u00a0:]+(.*))?$", label)
+    if m:
+        title = (m.group(1) or "").strip()
+        return ("epilogue", None, title or None)
     # Numbered chapter. The title after the number is OPTIONAL, and the pattern
     # is end-anchored so a number must be the whole token or be followed by a
     # separator (never glued to letters, so "1st Age" is not a chapter):
@@ -155,6 +168,10 @@ def html_to_text(raw):
         # The EPUB repeats a running title on every file; drop it.
         if line.startswith("The Eye of the World") and "Wheel of Time" in line:
             continue
+        # The omnibus edition (New Spring, Crossroads of Twilight onward) puts a
+        # bare "The Wheel of Time" running header as the first line of each file.
+        if not lines and line == "The Wheel of Time":
+            continue
         lines.append(line)
     return "\n".join(lines)
 
@@ -179,7 +196,19 @@ def title_from_chapter_html(raw):
     return None
 
 
-def parse_book(epub_path, series_order, title_override=None, db_path=None):
+def parse_book(epub_path, series_order, title_override=None, db_path=None,
+               slot=None, label=None, epilogue_only=False):
+    """Parse one EPUB into the books/chapters tables of db_path.
+
+    series_order : reading-order sort key (New Spring = 11, Knife of Dreams = 12)
+    slot         : storage identity (db/wot_{slot}.db); defaults to book{series_order}
+    label        : short display text; defaults to "Book {series_order}"
+    epilogue_only: insert only the epilogue into an EXISTING book row (backfill
+                   for snapshots parsed before epilogues were captured).
+    """
+    d_order, d_label = default_order_and_label(slot) if slot else (None, None)
+    slot = validate_slot(slot or f"book{series_order}")
+    book_label = label or d_label or f"Book {series_order}"
     zf = zipfile.ZipFile(epub_path)
     opf_dir, spine = find_opf_and_spine(zf)
     ncx_entries = parse_ncx(zf, opf_dir)
@@ -194,6 +223,9 @@ def parse_book(epub_path, series_order, title_override=None, db_path=None):
         if not info:
             continue
         kind, number, clean_title = info
+        if kind == "epilogue":
+            # numbered after every real chapter has been seen (below)
+            number = None
         start = spine_index.get(href)
         if start is None:
             print(f"  WARNING: {href} not in spine, skipping '{label}'")
@@ -205,11 +237,25 @@ def parse_book(epub_path, series_order, title_override=None, db_path=None):
             if nxt is not None:
                 end = nxt
         hrefs = spine[start:end]
-        chapters.append((number, clean_title, hrefs))
+        chapters.append((number, clean_title, hrefs, kind))
+
+    # Epilogue(s) get the next chapter number after the last numbered chapter.
+    numbered = [n for n, _, _, k in chapters if n is not None]
+    next_num = (max(numbered) + 1) if numbered else 1
+    fixed = []
+    for number, clean_title, hrefs, kind in chapters:
+        if kind == "epilogue":
+            number, next_num = next_num, next_num + 1
+        fixed.append((number, clean_title, hrefs, kind))
+    chapters = fixed
+    if epilogue_only:
+        chapters = [c for c in chapters if c[3] == "epilogue"]
+        if not chapters:
+            sys.exit("--epilogue-only: no epilogue entry found in this EPUB's TOC")
 
     # Stitch text for each chapter.
     parsed = []
-    for number, clean_title, hrefs in chapters:
+    for number, clean_title, hrefs, kind in chapters:
         parts = []
         first_raw = None
         for h in hrefs:
@@ -229,7 +275,9 @@ def parse_book(epub_path, series_order, title_override=None, db_path=None):
         # never runs for them.
         if not clean_title and first_raw is not None:
             clean_title = title_from_chapter_html(first_raw)
-        if not clean_title:
+        if kind == "epilogue":
+            clean_title = f"Epilogue: {clean_title}" if clean_title else "Epilogue"
+        elif not clean_title:
             clean_title = "Prologue" if number == 0 else f"Chapter {number}"
         parsed.append((number, clean_title, body))
 
@@ -239,14 +287,31 @@ def parse_book(epub_path, series_order, title_override=None, db_path=None):
     # Write to the database.
     conn = get_db(db_path)
     cur = conn.cursor()
-    cur.execute(
-        "INSERT OR IGNORE INTO books (series_order, title, source_file) "
-        "VALUES (?, ?, ?)",
-        (series_order, book_title, os.path.basename(epub_path)),
-    )
-    cur.execute("SELECT book_id FROM books WHERE series_order = ?",
-                (series_order,))
-    book_id = cur.fetchone()[0]
+    cols = {r[1] for r in cur.execute("PRAGMA table_info(books)")}
+    if "slot" not in cols:
+        sys.exit("books.slot column missing: apply db/migrations/004 first "
+                 "(python scripts/apply_migration.py --migration 004 --commit)")
+    if epilogue_only:
+        row = cur.execute("SELECT book_id FROM books WHERE slot = ?",
+                          (slot,)).fetchone()
+        if row is None:
+            sys.exit(f"--epilogue-only: no existing book row with slot {slot!r}")
+        book_id = row[0]
+    else:
+        clash = cur.execute(
+            "SELECT slot, series_order FROM books "
+            "WHERE (slot = ? AND series_order <> ?) OR (series_order = ? AND slot <> ?)",
+            (slot, series_order, series_order, slot)).fetchone()
+        if clash:
+            sys.exit(f"books row conflict: slot/order {clash} already present; "
+                     f"refusing to insert slot={slot!r} order={series_order}")
+        cur.execute(
+            "INSERT OR IGNORE INTO books (series_order, slot, label, title, source_file) "
+            "VALUES (?, ?, ?, ?, ?)",
+            (series_order, slot, book_label, book_title, os.path.basename(epub_path)),
+        )
+        book_id = cur.execute("SELECT book_id FROM books WHERE slot = ?",
+                              (slot,)).fetchone()[0]
 
     inserted = 0
     for number, clean_title, body in parsed:
@@ -261,12 +326,12 @@ def parse_book(epub_path, series_order, title_override=None, db_path=None):
             inserted += 1
     conn.commit()
 
-    print(f"\nBook: {book_title}  (series order {series_order})")
+    print(f"\nBook: {book_title}  (slot {slot}, label {book_label!r}, series order {series_order})")
     print(f"Chapters found: {len(parsed)}   newly inserted: {inserted}")
     print(f"{'#':>4}  {'words':>7}  title")
     for number, clean_title, body in parsed:
-        label = "PRO" if number == 0 else str(number)
-        print(f"{label:>4}  {len(body.split()):>7}  {clean_title}")
+        tag = "PRO" if number == 0 else str(number)
+        print(f"{tag:>4}  {len(body.split()):>7}  {clean_title}")
     conn.close()
 
 
@@ -275,13 +340,20 @@ def main():
     ap.add_argument("epub", help="path to the .epub file")
     ap.add_argument("--order", type=int, required=True,
                     help="series order, e.g. 1 for Eye of the World")
+    ap.add_argument("--slot", help="snapshot slot, e.g. book10 or newspring "
+                    "(default: book{order})")
+    ap.add_argument("--label", help="display label, e.g. 'New Spring' "
+                    "(default: 'Book {order}')")
     ap.add_argument("--title", help="override book title")
     ap.add_argument("--db", help="target database (default: db/wot.db)")
+    ap.add_argument("--epilogue-only", action="store_true",
+                    help="insert only the epilogue into an existing book row")
     args = ap.parse_args()
 
     if not os.path.exists(args.epub):
         sys.exit(f"File not found: {args.epub}")
-    parse_book(args.epub, args.order, args.title, db_path=args.db)
+    parse_book(args.epub, args.order, args.title, db_path=args.db,
+               slot=args.slot, label=args.label, epilogue_only=args.epilogue_only)
 
 
 if __name__ == "__main__":

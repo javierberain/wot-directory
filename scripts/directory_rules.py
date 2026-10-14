@@ -574,3 +574,142 @@ if __name__ == "__main__":   # pragma: no cover
     assert is_corrected_misnomer("mistakenly called the Amyrlin")
     assert not is_corrected_misnomer("a title she holds")
     print("directory_rules smoke check OK")
+
+
+# ── Book slots (snapshot identity vs reading order vs display label) ──────────
+# books.series_order is the READING-order sort key and nothing else (New Spring
+# = 11, Knife of Dreams = 12 ...). books.slot is the storage identity, i.e. the
+# snapshot file is db/wot_{slot}.db ('book1'..'book10', 'newspring', 'book11' =
+# Knife of Dreams). books.label is the short display text ('Book 10',
+# 'New Spring'). Every script resolves a `--book` argument through resolve_book()
+# so the three never get conflated again.
+
+import os as _os
+
+SLOT_RE = re.compile(r"^[a-z0-9]+$")
+BOOK_SLOT_RE = re.compile(r"^book(\d+)$")
+
+_DB_DIR = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", "db")
+
+# Files in db/ that look like snapshots but are not (legacy scratch DBs).
+NON_SNAPSHOT_DB_NAMES = frozenset({
+    "wot.db", "wot_backup.db", "wot_book1_cleanup.db", "wot_clean_book1.db",
+})
+_SNAPSHOT_FILE_RE = re.compile(r"^wot_([a-z0-9]+)\.db$")
+
+
+def validate_slot(slot):
+    """Return the slot if it is well-formed, else raise ValueError."""
+    if not isinstance(slot, str) or not SLOT_RE.match(slot):
+        raise ValueError(
+            f"bad slot {slot!r}: use lowercase letters and digits only "
+            f"(e.g. book10, newspring)")
+    return slot
+
+
+def snapshot_path(slot, db_dir=None):
+    """db/wot_{slot}.db for a validated slot."""
+    validate_slot(slot)
+    return _os.path.join(db_dir or _DB_DIR, f"wot_{slot}.db")
+
+
+def slot_from_filename(filename):
+    """'wot_newspring.db' -> 'newspring'; None for backups, scratch DBs, or
+    anything that is not a snapshot file."""
+    base = _os.path.basename(filename)
+    if base in NON_SNAPSHOT_DB_NAMES:
+        return None
+    m = _SNAPSHOT_FILE_RE.match(base)
+    return m.group(1) if m else None
+
+
+def default_order_and_label(slot):
+    """For slots of the form book{N} the reading order and label are implied:
+    ('book10' -> (10, 'Book 10')). Anything else -> (None, None) and the caller
+    must supply --order/--label explicitly."""
+    m = BOOK_SLOT_RE.match(slot)
+    if m:
+        n = int(m.group(1))
+        return n, f"Book {n}"
+    return None, None
+
+
+def resolve_book(conn, book_arg):
+    """Resolve a --book argument against the books table of an open connection.
+
+    Accepts a slot ('newspring'), or, for backward compatibility, an integer or
+    numeric string ('10'): that first tries slot 'book10', then falls back to
+    series_order == 10. Returns a dict with keys book_id, slot, series_order,
+    label, title. Raises LookupError if nothing matches.
+    """
+    cols = {r[1] for r in conn.execute("PRAGMA table_info(books)")}
+    has_slot = "slot" in cols
+    sel = ("SELECT book_id, series_order, title, "
+           + ("slot, label" if has_slot else "NULL, NULL")
+           + " FROM books WHERE ")
+
+    def pack(row):
+        if row is None:
+            return None
+        bid, so, title, slot, label = row
+        return {"book_id": bid, "series_order": so, "title": title,
+                "slot": slot or f"book{so}", "label": label or f"Book {so}"}
+
+    arg = str(book_arg).strip()
+    if arg.isdigit():
+        n = int(arg)
+        if has_slot:
+            row = conn.execute(sel + "slot = ?", (f"book{n}",)).fetchone()
+            if row:
+                return pack(row)
+        row = conn.execute(sel + "series_order = ?", (n,)).fetchone()
+        if row:
+            return pack(row)
+        raise LookupError(f"no book with slot 'book{n}' or series_order {n}")
+    validate_slot(arg)
+    if not has_slot:
+        raise LookupError(
+            f"this database has no books.slot column (migration 004 not "
+            f"applied); cannot resolve slot {arg!r}")
+    row = conn.execute(sel + "slot = ?", (arg,)).fetchone()
+    if row is None:
+        raise LookupError(f"no book with slot {arg!r}")
+    return pack(row)
+
+
+def is_fuller_proper_name(candidate, current_primary):
+    """True when `candidate` is a proper name that strictly EXTENDS the current
+    primary name: every cleaned token of the primary is present, at least one
+    new token is added, every token is a capitalised name token (so 'the
+    sul\'dam with red panels' never extends 'Red'), it is short (<= 4 tokens),
+    and it is not a placeholder. Used by reconcile.update_existing to record the
+    fuller name a chapter used for an existing character ('Rodel Ituralde' for
+    'Ituralde') as a given_name alias, so apply_promotion can adopt it."""
+    cand = (candidate or "").strip()
+    prim = (current_primary or "").strip()
+    if not cand or not prim or norm(cand) == norm(prim):
+        return False
+    if is_placeholder_name(cand) or is_generic_alias(cand):
+        return False
+    c_toks = strip_titles(norm(cand)).split()
+    p_toks = strip_titles(norm(prim)).split()
+    if not p_toks or not (1 < len(c_toks) <= 4):
+        return False
+    if not set(c_toks) > set(p_toks):
+        return False
+    # every remaining ORIGINAL-cased token must look like a name token
+    # (Capitalised, or an apostrophe compound like al'Thor / do Morny a'Lordeine
+    # particles 'do', 'a', 'ni', 't', 'si', 'din' are allowed lowercase)
+    particles = {"do", "a", "ni", "t", "si", "din", "al", "of", "son", "the"}
+    for tok in cand.split():
+        bare = tok.strip("’'\",.;:")
+        if not bare:
+            continue
+        if bare.lower() in particles:
+            continue
+        # Capitalised, or a lowercase particle fused by apostrophe to a
+        # capitalised name: al'Thor, a'Lordeine, t'Bashere, do'Avriny
+        if bare[0].isupper() or re.match(r"^[a-z]{1,3}['’][A-Z]", bare):
+            continue
+        return False
+    return True

@@ -32,18 +32,29 @@ import sys
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 DEFAULT_INPUT_DIR = ROOT / "db"
 DEFAULT_OUTPUT_DIR = ROOT / "public_db"
-_SNAPSHOT_RE = re.compile(r"^wot_book(\d+)\.db$")
+
+sys.path.insert(0, str(ROOT / "scripts"))
+from directory_rules import slot_from_filename  # noqa: E402
 
 
 def discover_snapshots(input_dir: pathlib.Path) -> list[str]:
-    """Every per-book private snapshot in input_dir, ordered by book number.
-    Auto-discovery means adding a book needs no code edit — drop the new
-    db/wot_bookN.db in and it is exported."""
+    """Every per-book private snapshot in input_dir (wot_{slot}.db, skipping
+    the legacy scratch DBs and backups), ordered by READING order: the highest
+    books.series_order inside each file. Slot names carry no ordering of their
+    own (wot_newspring.db sits between wot_book10.db and wot_book11.db).
+    Auto-discovery means adding a book needs no code edit."""
     found = []
-    for p in input_dir.glob("wot_book*.db"):
-        m = _SNAPSHOT_RE.match(p.name)
-        if m:
-            found.append((int(m.group(1)), p.name))
+    for p in input_dir.glob("wot_*.db"):
+        if slot_from_filename(p.name) is None:
+            continue
+        try:
+            conn = sqlite3.connect(f"file:{p}?mode=ro", uri=True)
+            top = conn.execute("SELECT MAX(series_order) FROM books").fetchone()[0]
+            conn.close()
+        except sqlite3.Error:
+            continue
+        if top is not None:
+            found.append((top, p.name))
     return [name for _, name in sorted(found)]
 
 
@@ -52,7 +63,9 @@ PRAGMA foreign_keys = ON;
 
 CREATE TABLE books (
     book_id       INTEGER PRIMARY KEY,
-    series_order  INTEGER NOT NULL UNIQUE,
+    series_order  INTEGER NOT NULL UNIQUE,   -- reading order (sort key)
+    slot          TEXT NOT NULL UNIQUE,      -- wot_{slot}.db, ?book=slot
+    label         TEXT NOT NULL,             -- display text ('Book 10', 'New Spring')
     title         TEXT NOT NULL,
     source_file   TEXT
 );
@@ -169,8 +182,8 @@ COPY_STATEMENTS = (
     (
         "books",
         """
-        INSERT INTO books (book_id, series_order, title, source_file)
-        SELECT book_id, series_order, title, NULL
+        INSERT INTO books (book_id, series_order, slot, label, title, source_file)
+        SELECT book_id, series_order, slot, label, title, NULL
         FROM private.books
         """,
     ),
@@ -348,6 +361,15 @@ def verify_one(input_path: pathlib.Path, output_path: pathlib.Path) -> list[str]
             errors.append(f"{output_path.name}: review_queue table is present")
 
         book_cols = table_columns(conn, "books")
+        for col in ("slot", "label"):
+            if col not in book_cols:
+                errors.append(f"{output_path.name}: books.{col} is missing")
+            else:
+                empty = conn.execute(
+                    f"SELECT COUNT(*) FROM books WHERE {col} IS NULL OR trim({col}) = ''"
+                ).fetchone()[0]
+                if empty:
+                    errors.append(f"{output_path.name}: {empty} books row(s) with empty {col}")
         if "source_file" in book_cols:
             non_null_sources = conn.execute(
                 "SELECT COUNT(*) FROM books WHERE source_file IS NOT NULL"
@@ -400,7 +422,7 @@ def parse_args() -> argparse.Namespace:
         "--input-dir",
         type=pathlib.Path,
         default=DEFAULT_INPUT_DIR,
-        help="Directory containing private wot_bookN.db snapshots.",
+        help="Directory containing private wot_{slot}.db snapshots.",
     )
     parser.add_argument(
         "--output-dir",
@@ -421,7 +443,7 @@ def main() -> int:
 
     snapshots = discover_snapshots(input_dir)
     if not snapshots:
-        print(f"No wot_book*.db snapshots found in {input_dir}")
+        print(f"No wot_{{slot}}.db snapshots found in {input_dir}")
         return 1
     print(f"Snapshots: {', '.join(snapshots)}")
 

@@ -39,7 +39,8 @@ import anthropic
 import httpx
 from dotenv import load_dotenv
 
-from directory_rules import VALID_CHAR_TYPES, VALID_FACTION_TYPES
+from directory_rules import (VALID_CHAR_TYPES, VALID_FACTION_TYPES,
+                             snapshot_path, resolve_book)
 
 load_dotenv()
 
@@ -359,19 +360,24 @@ def get_roster(conn):
     return roster_str, len(rows)
 
 
-def working_db(book_order):
+def slot_of(book_arg):
+    """'newspring' -> 'newspring'; legacy integer/numeric '9' -> 'book9'."""
+    arg = str(book_arg).strip()
+    return f"book{int(arg)}" if arg.isdigit() else arg
+
+
+def working_db(book_arg):
     """The per-book snapshot is the working DB (same convention as run_book.py's
-    working_db()). Book N is read from db/wot_book{N}.db — never the retired
-    db/wot.db scratch DB."""
-    return os.path.join(DB_DIR, f"wot_book{book_order}.db")
+    working_db()): db/wot_{slot}.db — never the retired db/wot.db scratch DB."""
+    return snapshot_path(slot_of(book_arg))
 
 
-def get_chapter(conn, book_order, chapter_number):
+def get_chapter(conn, book_id, chapter_number):
     return conn.execute("""
         SELECT ch.chapter_id, ch.title, ch.full_text, ch.extracted, b.title
         FROM chapters ch JOIN books b ON b.book_id = ch.book_id
-        WHERE b.series_order = ? AND ch.chapter_number = ?
-    """, (book_order, chapter_number)).fetchone()
+        WHERE b.book_id = ? AND ch.chapter_number = ?
+    """, (book_id, chapter_number)).fetchone()
 
 
 def build_request_params(tool, user_msg):
@@ -528,20 +534,29 @@ def _call_api_batch(client, params, custom_id,
         f"batch {batch.id} returned no result for custom_id {custom_id}.")
 
 
-def extract(book_order, chapter_number, do_print=False, db_path=None,
+def extract(book_arg, chapter_number, do_print=False, db_path=None,
             use_batch=False, poll_interval=_BATCH_POLL_INTERVAL):
+    """book_arg is the snapshot slot ('book10', 'newspring'); a legacy integer
+    N is accepted as 'bookN'. The extraction JSON and Batch custom_id keep
+    using books.series_order (b{order}_c{chapter}) so names stay stable."""
     if not os.environ.get("ANTHROPIC_API_KEY"):
         sys.exit("Set the ANTHROPIC_API_KEY environment variable first.")
 
-    db = db_path or working_db(book_order)
+    db = db_path or working_db(book_arg)
     if not os.path.exists(db):
         sys.exit(f"Working DB not found: {db}\n"
-                 f"Seed it first:  python scripts/start_book.py --book "
-                 f"{book_order} --epub \"<file>\" --title \"<title>\"")
+                 f"Seed it first:  python scripts/start_book.py --slot "
+                 f"{slot_of(book_arg)} --epub \"<file>\" --title \"<title>\"")
     conn = sqlite3.connect(db)
-    row = get_chapter(conn, book_order, chapter_number)
+    try:
+        book = resolve_book(conn, book_arg)
+    except LookupError as e:
+        sys.exit(str(e))
+    book_order = book["series_order"]
+    row = get_chapter(conn, book["book_id"], chapter_number)
     if not row:
-        sys.exit(f"Chapter not found: book {book_order}, chapter {chapter_number}")
+        sys.exit(f"Chapter not found: {book['slot']} (order {book_order}), "
+                 f"chapter {chapter_number}")
     chapter_id, ch_title, full_text, extracted, book_title = row
     if extracted:
         print("Note: chapter already marked extracted. Re-running anyway.")
@@ -590,6 +605,7 @@ def extract(book_order, chapter_number, do_print=False, db_path=None,
 
     data["_meta"] = {
         "book_order": book_order,
+        "slot": book["slot"],
         "chapter_number": chapter_number,
         "chapter_id": chapter_id,
         "chapter_title": ch_title,
@@ -627,10 +643,11 @@ def extract(book_order, chapter_number, do_print=False, db_path=None,
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--book", type=int, required=True, help="series order")
+    ap.add_argument("--book", type=str, required=True,
+                    help="snapshot slot (book10, newspring); integer N = bookN")
     ap.add_argument("--chapter", type=int, required=True,
                     help="chapter number (0 = prologue)")
-    ap.add_argument("--db", help="target database (default: db/wot_book{N}.db)")
+    ap.add_argument("--db", help="target database (default: db/wot_{slot}.db)")
     ap.add_argument("--print", action="store_true", dest="do_print",
                     help="also print the JSON to stdout")
     ap.add_argument("--batch", action="store_true", dest="use_batch",

@@ -39,6 +39,8 @@ load_dotenv()
 # auditor and the reconciler's write-time gate apply IDENTICAL logic — no more
 # "keep these copies in sync" discipline.
 from directory_rules import (
+    slot_from_filename,
+    SLOT_RE,
     norm,
     GENERIC_ALIAS_EXACT,
     PRIMARY_NAME_ALLOWLIST,
@@ -936,6 +938,41 @@ def print_detail(conn, character_id):
         print()
 
 
+def check_j(conn, db_path):
+    """Book slot/label integrity (migration 004): every books row has a
+    well-formed slot and a non-empty label, slots are unique, series_order is
+    strictly increasing in book_id order (reading order), and the audited file
+    is named db/wot_{slot}.db after the row with the highest series_order.
+    Returns a list of problem strings (empty = clean). A snapshot without the
+    slot column reports one problem telling you to run migration 004."""
+    cols = {r[1] for r in conn.execute("PRAGMA table_info(books)")}
+    if "slot" not in cols or "label" not in cols:
+        return ["books.slot/label columns missing: run "
+                "python scripts/apply_migration.py --migration 004 --commit"]
+    rows = conn.execute(
+        "SELECT book_id, series_order, slot, label, title FROM books "
+        "ORDER BY series_order").fetchall()
+    problems = []
+    seen = set()
+    for r in rows:
+        slot, label = r["slot"], r["label"]
+        if not slot or not SLOT_RE.match(slot):
+            problems.append(f"order {r['series_order']} ({r['title']}): bad slot {slot!r}")
+        elif slot in seen:
+            problems.append(f"duplicate slot {slot!r}")
+        seen.add(slot)
+        if not label or not label.strip():
+            problems.append(f"order {r['series_order']} ({r['title']}): empty label")
+    if rows:
+        top = rows[-1]
+        file_slot = slot_from_filename(db_path)
+        if file_slot is not None and file_slot != top["slot"]:
+            problems.append(
+                f"file is wot_{file_slot}.db but the highest-order book row is "
+                f"slot {top['slot']!r} (order {top['series_order']})")
+    return problems
+
+
 def main():
     ap = argparse.ArgumentParser(
         description="Read-only hygiene audit for the WoT character database.",
@@ -959,16 +996,24 @@ def main():
 
     # ── Resolve DB/BAK paths ──────────────────────────────────────────────────
     # With --db, audit that file. Without it, default to the LATEST per-book
-    # snapshot (db/wot_book{max}.db) — the real cleaned data — not the stale
-    # scratch db/wot.db.
+    # snapshot — the one whose books table reaches the highest series_order —
+    # not the stale scratch db/wot.db. Slot names (wot_newspring.db) carry no
+    # ordering, so the order is read from inside each candidate file.
     global DB_PATH, BAK_PATH
     if args.db is None:
         snaps = []
         for p in glob.glob(os.path.join(os.path.dirname(__file__), "..", "db",
-                                        "wot_book*.db")):
-            m = re.match(r"wot_book(\d+)\.db$", os.path.basename(p))
-            if m:
-                snaps.append((int(m.group(1)), p))
+                                        "wot_*.db")):
+            if slot_from_filename(p) is None:
+                continue
+            try:
+                c = sqlite3.connect(f"file:{p}?mode=ro", uri=True)
+                top = c.execute("SELECT MAX(series_order) FROM books").fetchone()[0]
+                c.close()
+            except sqlite3.Error:
+                continue
+            if top is not None:
+                snaps.append((top, p))
         if snaps:
             args.db = sorted(snaps)[-1][1]
     if args.db is not None:
@@ -1190,6 +1235,21 @@ def main():
         print("  (none found)")
         print()
 
+    # ── Check J ───────────────────────────────────────────────────────────────
+    j_rows = check_j(conn, DB_PATH)
+    _header("CHECK J: BOOK SLOT / LABEL INTEGRITY ")
+    print("books.slot (storage identity, wot_{slot}.db) and books.label (display)")
+    print("must be present, well-formed and unique; the file name must match the")
+    print("highest-order book's slot.")
+    print()
+    if j_rows:
+        for msg in j_rows:
+            print(f"  {msg}")
+        print()
+    else:
+        print("  (none found)")
+        print()
+
     # ── LLM advisory ──────────────────────────────────────────────────────────
     if args.with_llm:
         # Ambiguous = B2 rows (walk-on placeholders: could be meaningful)
@@ -1244,6 +1304,7 @@ def main():
     print(f"  Check G  - disguise map issues:      {len(g_rows):4d} flagged")
     print(f"  Check H  - article-only dup aliases: {len(h_rows):4d} flagged")
     print(f"  Check I  - rank-decorated dup aliases:{len(i_rows):4d} flagged")
+    print(f"  Check J  - book slot/label issues:   {len(j_rows):4d} flagged")
     print(f"  Unique characters to review (B+C):   {unique_chars:4d}")
     print()
     print("  Action: review the above and edit wot.db directly.")

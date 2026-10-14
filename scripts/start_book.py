@@ -2,56 +2,82 @@
 """
 start_book.py - Seed the per-book working snapshot for a new book.
 
-The pipeline is snapshot-based: book N is parsed, reconciled, and cleaned
-directly in its own private snapshot db/wot_book{N}.db, which is seeded from the
-previous CLEANED snapshot db/wot_book{N-1}.db. This is the step that was done by
-hand for book 4 (rebuild book 4 on the book-3 snapshot); it is now scripted so
-the legacy scratch db/wot.db is never the base.
+The pipeline is snapshot-based: each book is parsed, reconciled, and cleaned in
+its own private snapshot db/wot_{slot}.db, seeded from the previous CLEANED
+snapshot. Three things that used to be one integer are now separate:
+
+  slot          storage identity -> db/wot_{slot}.db   ('book10', 'newspring', 'book11')
+  series_order  READING order sort key                 (10, 11, 12 ...)
+  label         short display text on the site        ('Book 10', 'New Spring', 'Book 11')
+
+For slots of the form book{N} the order (N), label ("Book N") and seed
+(book{N-1}) are implied. Anything else must spell them out.
+
+    python scripts/start_book.py --slot book10 \
+        --epub "books/Book_10_Crossroads_of_Twilight.epub" --title "Crossroads of Twilight"
+
+    python scripts/start_book.py --slot newspring --order 11 --label "New Spring" \
+        --seed-from book10 --epub "books/New_Spring.epub" --title "New Spring"
+
+    python scripts/start_book.py --slot book11 --seed-from newspring \
+        --epub "books/Book_11_Knife_of_Dreams.epub" --title "Knife of Dreams"
+    # (book11 implies order 11, but New Spring holds 11 -> pass --order 12)
 
 What it does:
-  1. (N>=2) copy db/wot_book{N-1}.db -> db/wot_book{N}.db  (carries the cleaned
-     roster, aliases, factions, mentions, full_text of books 1..N-1).
-     (N==1) create a fresh db/wot_book1.db from db/schema.sql.
-  2. parse the EPUB into db/wot_book{N}.db (chapters land with extracted=0).
-  3. print the next command.
+  1. copy db/wot_{seed_from}.db -> db/wot_{slot}.db (carries the cleaned roster,
+     aliases, factions, mentions, full_text of everything read so far).
+     The very first book (--seed-from none) creates a fresh DB from schema.sql.
+  2. refuse if the seed already contains this slot or an order >= --order.
+  3. parse the EPUB into db/wot_{slot}.db (chapters land with extracted=0).
+  4. print the next command.
 
-Refuses to overwrite an existing db/wot_book{N}.db unless --force (which backs
-the existing file up first).
-
-    python scripts/start_book.py --book 5 \
-        --epub "books/The Fires of Heaven.epub" --title "The Fires of Heaven"
-    python scripts/run_book.py --book 5            # then ingest
+Refuses to overwrite an existing db/wot_{slot}.db unless --force (backed up first).
 """
 import argparse
 import os
 import shutil
+import sqlite3
 import sys
 
-HERE = os.path.dirname(__file__)
-DB_DIR = os.path.join(HERE, "..", "db")
-SCHEMA_PATH = os.path.join(DB_DIR, "schema.sql")
-
+HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import parse_epub  # noqa: E402
-
-
-def snapshot_path(n):
-    return os.path.join(DB_DIR, f"wot_book{n}.db")
+from directory_rules import (validate_slot, snapshot_path,  # noqa: E402
+                             default_order_and_label, BOOK_SLOT_RE)
 
 
 def main():
     ap = argparse.ArgumentParser(
-        description="Seed db/wot_book{N}.db from the previous snapshot and "
-                    "parse the new book's EPUB into it.")
-    ap.add_argument("--book", type=int, required=True, help="series order N")
+        description="Seed db/wot_{slot}.db from a previous snapshot and parse "
+                    "the new book's EPUB into it.")
+    ap.add_argument("--slot", required=True,
+                    help="snapshot slot: book10, newspring, book11 ...")
+    ap.add_argument("--order", type=int,
+                    help="reading-order sort key (default N for slot bookN)")
+    ap.add_argument("--label", help="display label (default 'Book N' for slot bookN)")
+    ap.add_argument("--seed-from", dest="seed_from",
+                    help="slot of the cleaned snapshot to copy from "
+                         "(default book{N-1} for slot bookN; 'none' for a fresh DB)")
     ap.add_argument("--epub", required=True, help="path to the .epub file")
     ap.add_argument("--title", help="override book title")
     ap.add_argument("--force", action="store_true",
-                    help="overwrite an existing db/wot_book{N}.db (backed up first)")
+                    help="overwrite an existing db/wot_{slot}.db (backed up first)")
     args = ap.parse_args()
 
-    n = args.book
-    target = snapshot_path(n)
+    slot = validate_slot(args.slot)
+    d_order, d_label = default_order_and_label(slot)
+    order = args.order if args.order is not None else d_order
+    label = args.label or d_label
+    seed_from = args.seed_from
+    if seed_from is None and d_order is not None:
+        seed_from = f"book{d_order - 1}" if d_order >= 2 else "none"
+    missing = [n for n, v in (("--order", order), ("--label", label),
+                              ("--seed-from", seed_from)) if v is None]
+    if missing:
+        ap.error(f"slot {slot!r} is not of the form bookN, so "
+                 f"{', '.join(missing)} must be given explicitly")
+
+    target = snapshot_path(slot)
     if not os.path.exists(args.epub):
         sys.exit(f"EPUB not found: {args.epub}")
 
@@ -65,26 +91,44 @@ def main():
         os.remove(target)
 
     # 1. seed
-    if n >= 2:
-        prev = snapshot_path(n - 1)
+    if seed_from.lower() != "none":
+        prev = snapshot_path(seed_from)
         if not os.path.exists(prev):
-            sys.exit(f"Previous snapshot not found: {prev}\n"
-                     f"Book {n} must be seeded from the cleaned book {n-1} "
-                     f"snapshot.")
+            sys.exit(f"Seed snapshot not found: {prev}\n"
+                     f"{slot} must be seeded from a cleaned snapshot.")
+        # 2. sanity checks against the seed BEFORE copying anything
+        conn = sqlite3.connect(prev)
+        try:
+            cols = {r[1] for r in conn.execute("PRAGMA table_info(books)")}
+            if "slot" not in cols:
+                sys.exit(f"{prev} has no books.slot column. Run\n"
+                         f"  python scripts/apply_migration.py --migration 004 --commit")
+            rows = conn.execute(
+                "SELECT slot, series_order FROM books ORDER BY series_order").fetchall()
+        finally:
+            conn.close()
+        if any(s == slot for s, _ in rows):
+            sys.exit(f"Seed {os.path.basename(prev)} already contains slot {slot!r}.")
+        max_order = max((o for _, o in rows), default=0)
+        if order <= max_order:
+            sys.exit(f"--order {order} must be greater than the seed's highest "
+                     f"series_order ({max_order}). Reading order is cumulative; "
+                     f"e.g. New Spring = 11 after book10, Knife of Dreams = 12.")
         shutil.copy2(prev, target)
-        print(f"Seeded {os.path.basename(target)} from "
-              f"{os.path.basename(prev)}")
+        print(f"Seeded {os.path.basename(target)} from {os.path.basename(prev)} "
+              f"(seed holds orders {[o for _, o in rows]})")
     else:
-        # parse_book -> get_db(target) creates a fresh DB from schema.sql.
-        print(f"Book 1: creating a fresh {os.path.basename(target)} from schema")
+        print(f"Creating a fresh {os.path.basename(target)} from schema")
 
-    # 2. parse the EPUB into the snapshot
-    print(f"Parsing EPUB into {os.path.basename(target)} ...")
-    parse_epub.parse_book(args.epub, n, args.title, db_path=target)
+    # 3. parse the EPUB into the snapshot
+    print(f"Parsing EPUB into {os.path.basename(target)} as slot={slot} "
+          f"order={order} label={label!r} ...")
+    parse_epub.parse_book(args.epub, order, args.title, db_path=target,
+                          slot=slot, label=label)
 
-    # 3. next step
-    print(f"\nDone. Next:\n  python scripts/run_book.py --book {n} --from 0 "
-          f"--to 1   # sanity-check, then --auto for the rest")
+    # 4. next step
+    print(f"\nDone. Next:\n  python scripts/run_book.py --book {slot} --from 0 "
+          f"--to 0   # sanity-check one chapter, then --auto --batch for the rest")
 
 
 if __name__ == "__main__":

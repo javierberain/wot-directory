@@ -28,7 +28,7 @@ def _setup(tmp):
     db = os.path.join(tmp, "scratch.db")
     conn = sqlite3.connect(db)
     conn.executescript(open(SCHEMA, encoding="utf-8").read())
-    conn.execute("INSERT INTO books (series_order, title) VALUES (4, 'TSR')")
+    conn.execute("INSERT INTO books (series_order, slot, label, title) VALUES (4, 'book4', 'Book 4', 'TSR')")
     bid = conn.execute("SELECT book_id FROM books").fetchone()[0]
     ch_ids = {}
     for n, title in [(1, "Ch One"), (2, "Ch Two"), (3, "Ch Three")]:

@@ -65,7 +65,7 @@ source paths.
 ## How it works
 
 ```
-   start_book.py  (seed db/wot_bookN.db from db/wot_book(N-1).db + parse EPUB)
+   start_book.py  (seed db/wot_{slot}.db from the previous cleaned snapshot + parse EPUB)
                                   |
                           extract_chapter.py   (calls Claude API)
                                   |
@@ -82,7 +82,7 @@ source paths.
                               app.py  ->  web UI
 ```
 
-`run_book.py --book N` drives `extract_chapter.py` + `reconcile.py` against
+`run_book.py --book <slot>` drives `extract_chapter.py` + `reconcile.py` against
 `db/wot_bookN.db` (the snapshot is the working DB; the old `db/wot.db` scratch
 target is retired — see **The three database layers**).
 
@@ -861,9 +861,11 @@ python scripts/reconcile.py --review
 ### 4. Or do a whole book at once
 
 ```bash
-python scripts/run_book.py --book 1                  # pauses per chapter
-python scripts/run_book.py --book 1 --auto           # runs straight through
-python scripts/run_book.py --book 1 --auto --batch   # extract via Batches API
+python scripts/run_book.py --book book1                  # pauses per chapter
+python scripts/run_book.py --book book1 --auto           # runs straight through
+python scripts/run_book.py --book book10 --auto --batch  # extract via Batches API
+# --book is the snapshot SLOT (book10, newspring, book11); a bare integer N is
+# still accepted and means slot bookN.
 ```
 
 It walks chapters in order, so the roster grows naturally and later
@@ -1501,35 +1503,56 @@ auto-discovers `db/wot_book*.db` and the app auto-discovers
 
 ## Adding the next book
 
-```bash
-# 1. seed db/wot_book{N}.db from the cleaned db/wot_book{N-1}.db and parse the
-#    EPUB into it (no API calls). Refuses to clobber an existing snapshot.
-python scripts/start_book.py --book 5 \
-    --epub "books/The Fires of Heaven.epub" --title "The Fires of Heaven"
+Three things that used to be one integer are kept apart (migration 004):
+the **slot** is the storage identity (`db/wot_{slot}.db`, `?book=<slot>`):
+`book10`, `newspring`, `book11` = Knife of Dreams; `books.series_order` is the
+**reading-order** sort key (Crossroads = 10, New Spring = 11, Knife of Dreams =
+12 ...); `books.label` is what the site prints (`Book 10`, `New Spring`,
+`Book 11`). For `bookN` slots the order, label and seed (`book{N-1}`) are
+implied; a named slot such as `newspring` must spell them out.
 
-# 2. sanity-check the first couple of chapters (targets db/wot_book5.db)
-python scripts/run_book.py --book 5 --from 0 --to 1
+```bash
+# 1. seed db/wot_{slot}.db from the previous CLEANED snapshot and parse the
+#    EPUB into it (no API calls). Refuses to clobber an existing snapshot.
+python scripts/start_book.py --slot book10 \
+    --epub "books/Book_10_Crossroads_of_Twilight.epub" --title "Crossroads of Twilight"
+#    New Spring: published after book 10, so it stacks after book10 in READING
+#    order (11) even though its story is a prequel.
+python scripts/start_book.py --slot newspring --order 11 --label "New Spring" \
+    --seed-from book10 --epub "books/New_Spring.epub" --title "New Spring"
+#    Knife of Dreams keeps its file name; only its reading order moves to 12.
+python scripts/start_book.py --slot book11 --order 12 --seed-from newspring \
+    --epub "books/Book_11_Knife_of_Dreams.epub" --title "Knife of Dreams"
+
+# 2. sanity-check the first chapter (targets db/wot_book10.db)
+python scripts/run_book.py --book book10 --from 0 --to 0
 #    inspect: no placeholder/collective rows, no generic aliases, origins
 #    compound + taxonomy-labelled, short/full names matched.
 
-# 3. if clean, run the rest unattended
-python scripts/run_book.py --book 5 --from 2 --auto
+# 3. if clean, run the rest unattended via the Batches API
+python scripts/run_book.py --book book10 --from 1 --auto --batch
 
 # 4. work the review queue + post-book audit (both default to the latest
-#    snapshot now — db/wot_book5.db)
-python scripts/reconcile.py --review --db db/wot_book5.db
-python scripts/hygiene_audit.py            # Checks A–F on the latest snapshot
+#    snapshot by reading order — db/wot_book10.db)
+python scripts/reconcile.py --review --db db/wot_book10.db
+python scripts/hygiene_audit.py            # Checks A–J on the latest snapshot
 #    resolve via scripts/resolve_review.py, merge_characters.py, etc.
 
-# 5. export sanitized public DBs (auto-discovers wot_book5.db) and verify
+# 5. export sanitized public DBs (auto-discovers wot_book10.db) and verify
 python scripts/export_public_dbs.py
 
 # 6. commit public_db/ + any code, push to main.
 #    GitHub Actions deploys and restarts the Lightsail service; the app
-#    auto-discovers public_db/wot_book5.db and serves it — no app.py edit.
+#    auto-discovers public_db/wot_book10.db and serves it — no app.py edit.
 ```
 
-`start_book.py` is **step 1 of ingesting a book** — don't seed `db/wot_bookN.db`
+Omnibus EPUBs: `scripts/split_omnibus.py --epub <omnibus> --book "<TOC label>"
+--title ... --out books/<file>.epub` carves one book out of a complete-series
+EPUB (only that book's slice is read). Epilogues are captured as
+`chapter_number = last + 1` with title `Epilogue[: subtitle]`; snapshots parsed
+before this (Lord of Chaos) can be backfilled with `parse_epub.py --epilogue-only`.
+
+`start_book.py` is **step 1 of ingesting a book** — don't seed `db/wot_{slot}.db`
 until you're ready to ingest it, or the auto-discovering exporter will publish
 an empty book N. The roster, aliases, factions, and mentions carry forward
 automatically because the snapshot is copied from the previous cleaned book.

@@ -42,6 +42,9 @@ import sys
 from collections import defaultdict
 
 from directory_rules import (
+    snapshot_path,
+    resolve_book,
+    is_fuller_proper_name,
     norm,
     coerce_char_type,
     coerce_faction_type,
@@ -62,6 +65,7 @@ from directory_rules import (
 )
 
 DB_PATH = os.path.join(os.path.dirname(__file__), "..", "db", "wot.db")
+_DEFAULT_DB_PATH = DB_PATH   # tests override DB_PATH; reconcile() honours that
 OUT_DIR = os.path.join(os.path.dirname(__file__), "..", "data", "extractions")
 
 FUZZY_THRESHOLD = 0.86   # difflib ratio above which we *suggest* (not auto-merge)
@@ -565,6 +569,16 @@ def enrich_character(conn, cid, char, chapter_id):
             )
 
     add_aliases(conn, cid, char.get("aliases_observed", []))
+    # The name the chapter itself used may be a FULLER proper form of the
+    # existing primary ('Rodel Ituralde' for a row still called 'Ituralde').
+    # Record it as a given_name alias so apply_promotion below can adopt it;
+    # without this the fullest-name rule never fires for characters first seen
+    # by a single name (found while closing book 10's prologue).
+    used = (char.get("name_used_in_text") or "").strip()
+    cur_primary = get_primary_name(conn, cid)
+    if is_fuller_proper_name(used, cur_primary):
+        add_aliases(conn, cid, [{"alias_text": used, "alias_type": "given_name",
+                                 "notes": "fuller form used in chapter text"}])
     # A fuller proper name may have arrived this chapter; promote the primary
     # (enrich previously never touched primary_name).
     apply_promotion(conn, cid)
@@ -748,7 +762,31 @@ def resolve_one(conn, roster, char, data, chapter_id, auto):
 
 # ── Main reconcile ────────────────────────────────────────────────────────────
 
-def reconcile(book_order, chapter_number, auto=False, db_path=None):
+def slot_of(book_arg):
+    """'newspring' -> 'newspring'; legacy integer/numeric '9' -> 'book9'."""
+    arg = str(book_arg).strip()
+    return f"book{int(arg)}" if arg.isdigit() else arg
+
+
+def reconcile(book_arg, chapter_number, auto=False, db_path=None):
+    """book_arg is the snapshot slot ('book10', 'newspring'); a legacy integer
+    N is accepted as 'bookN'. The extraction file is named by
+    books.series_order (b{order}_c{chapter}.json), resolved from the DB."""
+    if db_path is None:
+        # explicit --db wins; a test-overridden module DB_PATH next; otherwise
+        # the per-book snapshot for this slot (never the legacy scratch wot.db)
+        db_path = DB_PATH if DB_PATH != _DEFAULT_DB_PATH \
+            else snapshot_path(slot_of(book_arg))
+    if not os.path.exists(db_path):
+        sys.exit(f"Working DB not found: {db_path}")
+    conn = sqlite3.connect(db_path)
+    conn.execute("PRAGMA foreign_keys = ON")
+    try:
+        book = resolve_book(conn, book_arg)
+    except LookupError as e:
+        sys.exit(str(e))
+    book_order = book["series_order"]
+
     path = os.path.join(OUT_DIR, f"b{book_order}_c{chapter_number}.json")
     if not os.path.exists(path):
         sys.exit(f"No extraction file at {path}. Run extract_chapter.py first.")
@@ -756,13 +794,17 @@ def reconcile(book_order, chapter_number, auto=False, db_path=None):
         data = json.load(f)
 
     chapter_id = data["_meta"]["chapter_id"]
-    conn = sqlite3.connect(db_path or DB_PATH)
-    conn.execute("PRAGMA foreign_keys = ON")
+    owner = conn.execute(
+        "SELECT book_id FROM chapters WHERE chapter_id = ?", (chapter_id,)).fetchone()
+    if owner is None or owner[0] != book["book_id"]:
+        sys.exit(f"{os.path.basename(path)}: chapter_id {chapter_id} does not "
+                 f"belong to slot {book['slot']} in {os.path.basename(db_path)}; "
+                 f"refusing to reconcile against the wrong snapshot.")
     roster = Roster(conn)
 
     resolved = {}   # name_used_in_text -> cid
 
-    print(f"\n=== Reconciling book {book_order} chapter {chapter_number}: "
+    print(f"\n=== Reconciling {book['slot']} (order {book_order}) chapter {chapter_number}: "
           f"{data['_meta']['chapter_title']} ===\n")
 
     for char in data.get("characters", []):
@@ -883,13 +925,15 @@ def show_review_queue(db_path=None):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--book", type=int, help="series order")
+    ap.add_argument("--book", type=str,
+                    help="snapshot slot (book10, newspring); integer N = bookN")
     ap.add_argument("--chapter", type=int, help="chapter number")
     ap.add_argument("--auto", action="store_true",
                     help="auto-commit high-confidence items")
     ap.add_argument("--review", action="store_true",
                     help="list the review queue and exit")
-    ap.add_argument("--db", help="target database (default: db/wot.db)")
+    ap.add_argument("--db", help="target database (default: db/wot_{slot}.db "
+                    "for --book; db/wot.db for --review)")
     args = ap.parse_args()
 
     if args.review:
