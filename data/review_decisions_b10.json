@@ -1,0 +1,60 @@
+[
+  {
+    "review_id": 194,
+    "action": "merge",
+    "target": "Fen",
+    "add_alias": [
+      "Fen Mizar",
+      "given_name",
+      "full name, CoT ch3"
+    ]
+  },
+  {
+    "review_id": 195,
+    "action": "merge",
+    "target": "Feather",
+    "note": "wolf row already created in ch5 by a duplicate extractor entry"
+  },
+  {
+    "review_id": 196,
+    "action": "merge",
+    "target": "Doilin Mellar",
+    "add_alias": [
+      "Doilan Mellar",
+      "given_name",
+      "spelling variant in omnibus edition text"
+    ]
+  },
+  {
+    "review_id": 197,
+    "action": "create",
+    "note": "Windfinder; distinct from Shanelle (Yellow Ajah)"
+  },
+  {
+    "review_id": 198,
+    "action": "merge",
+    "target": "Aiden",
+    "note": "row already created in ch21 by a duplicate extractor entry"
+  },
+  {
+    "review_id": 199,
+    "action": "dismiss",
+    "note": "Lews Therin origin on Rand's row; keep Emond's Field"
+  },
+  {
+    "review_id": 200,
+    "action": "create",
+    "note": "White sister held by Shaido; distinct from Feran (Seia Doon)"
+  },
+  {
+    "review_id": 201,
+    "action": "merge",
+    "target": "Mistress Vadere",
+    "note": "row already created in ch26 by a duplicate extractor entry"
+  },
+  {
+    "review_id": 202,
+    "action": "dismiss",
+    "note": "Lews Therin origin on Rand's row; keep Emond's Field"
+  }
+]
